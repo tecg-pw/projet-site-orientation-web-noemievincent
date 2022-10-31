@@ -1,13 +1,30 @@
 <header class="uppercase text-blue">
     <div class="bg-lightblue flex items-center justify-between px-10 py-2 text-sm">
-        <div class="flex items-center gap-3">
-            <a href="/login">
-                <img src="/img/profile-pic.jpg" alt="{{__('Se connecter')}}" height="30" width="30"
-                     class="rounded-full">
-            </a>
-            <a href="/login" class="text-darkorange">{{__('Se connecter')}}</a>
-        </div>
-        <div class="flex gap-20">
+        @guest
+            <div>
+                <a href="/login" class="flex items-center gap-3">
+                    <img src="/img/profile-pic.png" alt="{{__('Se connecter')}}"
+                         class="rounded-full h-full">
+                    <span class="text-darkorange">
+                        {{__('Se connecter')}}
+                    </span>
+                </a>
+            </div>
+        @endguest
+        @auth
+            <div class="flex items-center gap-3">
+                <a href="/profile" class="flex items-center gap-3">
+                    <img src="/img/profile-pic.png" alt="{{__('Prénom Nom')}}" height="30" width="30"
+                         class="rounded-full">
+                    <span>
+                    {{__('Prénom Nom')}}
+                </span>
+                </a>
+                —
+                <a href="/logout" class="text-darkorange">{{__('Se déconnecter')}}</a>
+            </div>
+        @endauth
+        <div class="flex gap-16">
             <nav>
                 <h2 class="sr-only">{{__('Navigation secondaire')}}</h2>
                 <ul class="flex gap-8">
@@ -25,13 +42,13 @@
         </div>
     </div>
     <div class="px-10 py-6 bg-white/60">
-        <nav class="flex justify-between">
+        <nav class="flex justify-between items-center">
             <h2 class="sr-only">{{__('Navigation principale')}}</h2>
             <a href="/">
                 <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="24"
                      viewBox="0 0 128.8 34.8" style="enable-background:new 0 0 128.8 34.8;" xml:space="preserve"
-                     class="fill-blue" role="img" aria-labelledby="logoTitle">
+                     class="fill-blue" aria-labelledby="logoTitle">
                     <title id="logoTitle">{{__('Retourner à l‘accueil')}}</title>
                     <g id="logo">
                         <g id="Groupe_150" transform="translate(4)">
@@ -77,7 +94,7 @@
                     </g>
                 </svg>
             </a>
-            <ul class="flex gap-20">
+            <ul class="flex justify-between gap-24">
                 <li><a href="/projects" class="hover:font-semibold">{{__('Projets')}}</a></li>
                 <li><a href="/alumnis" class="hover:font-semibold">{{__('Alumnis')}}</a></li>
                 <li><a href="/about" class="hover:font-semibold">{{__('À propos')}}</a></li>
@@ -89,7 +106,8 @@
                 <svg version="1.1" id="search" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="22"
                      viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve"
-                     class="fill-blue">
+                     class="fill-blue" aria-labelledby="searchTitle">
+                    <title id="searchTitle">{{__('Faire une recherche')}}</title>
                     <path d="M20.6,19.1c4.1-4.9,3.5-12.3-1.5-16.4S6.8-0.8,2.7,4.2s-3.5,12.3,1.5,16.4c2.1,1.8,4.7,2.7,7.5,2.7
                         c2.7,0,5.4-1,7.5-2.7l9.1,9.1c0.4,0.4,1.1,0.4,1.5,0c0.4-0.4,0.4-1.1,0-1.5L20.6,19.1z M11.6,21.2c-5.3,0-9.5-4.3-9.5-9.5
                         s4.3-9.5,9.5-9.5s9.5,4.3,9.5,9.5C21.2,16.9,16.9,21.2,11.6,21.2C11.6,21.2,11.6,21.2,11.6,21.2z"/>

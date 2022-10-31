@@ -1,4 +1,4 @@
-<footer class="bg-lightblue px-10 py-4">
+<footer class="bg-lightblue px-10 py-4 text-sm">
     <div class="my-6 flex justify-between">
         <nav>
             <h2 class="text-blue font-bold text-lg mb-4">{{__('Navigation')}}</h2>
@@ -155,7 +155,7 @@
             <h2 class="text-blue font-bold text-lg mb-4">{{__('Recevez notre newsletter')}}</h2>
             <div>
                 <p class="font-light">{{__('Restez au courant de nos actualités et de nos événements en vous abonnant à notre newsletter !')}}</p>
-                <form action="/" class="flex items-center justify-between h-11 mt-4">
+                <form action="#" class="flex items-center justify-between h-11 mt-4">
                     <label for="newsletter" class="h-full flex-1">
                         <span class="sr-only">
                             {{__('Votre adresse e-mail')}}
@@ -163,7 +163,7 @@
                         <input placeholder="name@example.com" type="email" id="newsletter"
                                class="h-full w-full pl-3 border border-orange/50 border-r-0 focus:outline-none focus:border-orange focus:border-2 focus:border-r-0 rounded-l-lg placeholder:font-light">
                     </label>
-                    <button class="bg-orange text-white h-full px-6 rounded-r-lg uppercase">{{__('je m‘inscris')}}</button>
+                    <button class="bg-orange text-white h-full px-6 rounded-r-lg uppercase hover:bg-darkorange">{{__('je m‘inscris')}}</button>
                 </form>
             </div>
         </div>
