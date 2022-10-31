@@ -1,4 +1,4 @@
-<footer class="bg-lightblue px-10 py-4 text-sm">
+<footer class="bg-lightblue px-10 py-4 text-sm mt-28">
     <div class="my-6 flex justify-between">
         <nav>
             <h2 class="text-blue font-bold text-lg mb-4">{{__('Navigation')}}</h2>
