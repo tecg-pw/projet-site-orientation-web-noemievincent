@@ -8,19 +8,12 @@
     <title>Web Design</title>
     @vite('resources/css/app.css')
 </head>
-<body>
-<h1>
-    Web Design - formation web
+<body class="text-darkblue font-body">
+<h1 class="sr-only">
+    {{__('Web Design - formation web')}}
 </h1>
-<header>
-    <div>
-
-    </div>
-    <div>
-        <nav>
-
-        </nav>
-    </div>
-</header>
-</body>
+<x-header/>
+<main>
+</main>
+<x-footer/></body>
 </html>
