@@ -1,4 +1,4 @@
-<footer class="bg-blue-light px-10 py-4 text-sm mt-28">
+<footer class="bg-blue-light px-10 py-4 text-sm mt-20">
     <div class="my-6 flex justify-between">
         <nav>
             <h2 class="text-blue font-bold text-lg mb-4">{{__('Navigation')}}</h2>
@@ -155,7 +155,7 @@
             <h2 class="text-blue font-bold text-lg mb-4">{{__('Recevez notre newsletter')}}</h2>
             <div>
                 <p class="font-light">{{__('Restez au courant de nos actualités et de nos événements en vous abonnant à notre newsletter !')}}</p>
-                <form action="#" class="grid grid-cols-3 h-11 mt-4">
+                <form action="#" method="post" class="grid grid-cols-3 h-11 mt-4">
                     <label for="newsletter" class="h-full flex-1 col-span-full row-span-full">
                         <span class="sr-only">
                             {{__('Votre adresse e-mail')}}

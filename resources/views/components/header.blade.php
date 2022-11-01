@@ -1,3 +1,17 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Design - {{__('Connexion')}}</title>
+    @vite(['resources/css/app.css', 'resources/js/app.ts'])
+</head>
+<body class="text-blue-dark font-body flex flex-col h-screen">
+<h1 class="sr-only">
+    {{__('Web Design - formation web')}}
+</h1>
 <header class="uppercase text-blue">
     <div class="bg-blue-light flex items-center justify-between px-10 py-2 text-sm">
         @guest

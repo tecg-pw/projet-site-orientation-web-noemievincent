@@ -1,17 +1,3 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Web Design</title>
-    @vite('resources/css/app.css')
-</head>
-<body class="text-blue-dark font-body flex flex-col h-screen">
-<h1 class="sr-only">
-    {{__('Web Design - formation web')}}
-</h1>
 <x-header/>
 <main class="px-10 flex-1">
     <section aria-labelledby="introduction" class="flex gap-12 mt-10">

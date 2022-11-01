@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
           body: ['Open Sans', 'sans-serif'],
           display: ['Spartan', 'sans-serif'],
+          mono: ['Roboto Mono', 'mono-space'],
       },
       extend: {
           colors: {
@@ -23,9 +24,8 @@ module.exports = {
                   DEFAULT: '#003B48',
                   dark: '#002C36',
               },
-              'white': '#FFFFFF'
+              'white': '#FFFFFF',
           },
-
       }
   },
   plugins: [],
