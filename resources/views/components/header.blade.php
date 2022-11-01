@@ -16,7 +16,7 @@
                 <a href="/profile" class="flex items-center gap-3">
                     <img src="/img/profile-pic.png" alt="{{__('Prénom Nom')}}" height="30" width="30"
                          class="rounded-full">
-                    <span class="hover:text-orange transition ease-in-out duration-200">{{__('Prénom Nom')}}</span>
+                    <span class="hover:text-orange transition-all ease-in-out duration-200">{{__('Prénom Nom')}}</span>
                 </a>
                 —
                 <a href="/logout" class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Se déconnecter')}}</a>
@@ -26,16 +26,16 @@
             <nav>
                 <h2 class="sr-only">{{__('Navigation secondaire')}}</h2>
                 <ul class="flex gap-8">
-                    <li><a href="/tutorials" class="hover:text-orange transition ease-in-out duration-200">{{__('Tutoriels')}}</a></li>
-                    <li><a href="/docs" class="hover:text-orange transition ease-in-out duration-200">{{__('Documentations')}}</a></li>
-                    <li><a href="/faq" class="hover:text-orange transition ease-in-out duration-200">{{__('FAQ')}}</a></li>
+                    <li><a href="/tutorials" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Tutoriels')}}</a></li>
+                    <li><a href="/docs" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Documentations')}}</a></li>
+                    <li><a href="/faq" class="hover:text-orange transition-all ease-in-out duration-200">{{__('FAQ')}}</a></li>
                 </ul>
             </nav>
             <ul class="flex gap-2">
-                <li><a href="#" class="font-bold hover:text-orange transition ease-in-out duration-200">FR</a></li>
-                <li><a href="#" class="hover:text-orange transition ease-in-out duration-200">EN</a></li>
-                <li><a href="#" class="hover:text-orange transition ease-in-out duration-200">DE</a></li>
-                <li><a href="#" class="hover:text-orange transition ease-in-out duration-200">NL</a></li>
+                <li><a href="#" class="font-bold hover:text-orange transition-all ease-in-out duration-200">FR</a></li>
+                <li><a href="#" class="hover:text-orange transition-all ease-in-out duration-200">EN</a></li>
+                <li><a href="#" class="hover:text-orange transition-all ease-in-out duration-200">DE</a></li>
+                <li><a href="#" class="hover:text-orange transition-all ease-in-out duration-200">NL</a></li>
             </ul>
         </div>
     </div>
@@ -46,7 +46,7 @@
                 <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="24"
                      viewBox="0 0 128.8 34.8" style="enable-background:new 0 0 128.8 34.8;" xml:space="preserve"
-                     class="fill-blue-dark hover:fill-orange transition ease-in-out duration-200" aria-labelledby="logoTitle">
+                     class="fill-blue-dark hover:fill-orange transition-all ease-in-out duration-200" aria-labelledby="logoTitle">
                     <title id="logoTitle">{{__('Retourner à l‘accueil')}}</title>
                     <g id="logo">
                         <g id="Groupe_150" transform="translate(4)">
@@ -93,12 +93,12 @@
                 </svg>
             </a>
             <ul class="flex justify-between gap-24">
-                <li><a href="/projects" class="hover:text-orange transition ease-in-out duration-200">{{__('Projets')}}</a></li>
-                <li><a href="/alumnis" class="hover:text-orange transition ease-in-out duration-200">{{__('Alumnis')}}</a></li>
-                <li><a href="/about" class="hover:text-orange transition ease-in-out duration-200">{{__('À propos')}}</a></li>
-                <li><a href="/news" class="hover:text-orange transition ease-in-out duration-200">{{__('Actualités')}}</a></li>
-                <li><a href="/forum" class="hover:text-orange transition ease-in-out duration-200">{{__('Forum')}}</a></li>
-                <li><a href="/jobs" class="hover:text-orange transition ease-in-out duration-200">{{__('Stages')}}</a></li>
+                <li><a href="/projects" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Projets')}}</a></li>
+                <li><a href="/alumnis" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Alumnis')}}</a></li>
+                <li><a href="/about" class="hover:text-orange transition-all ease-in-out duration-200">{{__('À propos')}}</a></li>
+                <li><a href="/news" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Actualités')}}</a></li>
+                <li><a href="/forum" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Forum')}}</a></li>
+                <li><a href="/jobs" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Stages')}}</a></li>
             </ul>
             <a href="#">
                 <svg version="1.1" id="search" xmlns="http://www.w3.org/2000/svg"

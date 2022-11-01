@@ -1,7 +1,7 @@
 <article aria-labelledby="nom-du-projet" class="relative">
     <div class="flex gap-1 absolute -top-2 left-5 z-10">
         @for($i = 1; $i <= 2; $i++)
-            <a href="#" class="bg-blue text-white text-sm px-2 py-1 hover:bg-orange-dark transition ease-in-out duration-200">catégorie {{$i}}</a>
+            <a href="#" class="bg-blue text-white text-sm px-2 py-1 hover:bg-orange-dark transition-all ease-in-out duration-200">catégorie {{$i}}</a>
         @endfor
     </div>
     <div class="group bg-blue-card rounded-2xl relative">

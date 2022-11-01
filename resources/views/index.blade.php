@@ -29,8 +29,8 @@
                 mobiles.
             </p>
             <div class="uppercase flex gap-10 items-center">
-                <a href="/about" class="bg-orange text-white py-3 px-12 rounded-lg hover:bg-orange-dark transition ease-in-out duration-200">{{__('En savoir plus')}}</a>
-                <a href="https://hepl.be/fr" class="text-orange hover:text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid transition ease-in-out duration-200">{{__('Visiter le site de l‘HEPL')}}</a>
+                <a href="/about" class="bg-orange text-white py-3 px-12 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('En savoir plus')}}</a>
+                <a href="https://hepl.be/fr" class="text-orange hover:text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid transition-all ease-in-out duration-200">{{__('Visiter le site de l‘HEPL')}}</a>
             </div>
         </div>
         <img src="/img/marvin-meyer-SYTO3xs06fU-unsplash.jpg" alt="">
@@ -45,7 +45,7 @@
                         <x-projects.article/>
                     @endfor
                 </div>
-                <a href="/projects" class="flex items-center self-end gap-4 uppercase text-orange text-lg">
+                <a href="/projects" class="flex items-center self-end gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <span>{{__('Tous les projets')}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8" class="fill-orange h-full">
                         <path id="projects-link"
@@ -62,7 +62,7 @@
                         <x-forum.article/>
                     @endfor
                 </div>
-                <a href="/forum" class="flex items-center self-end gap-4 uppercase text-orange text-lg">
+                <a href="/forum" class="flex items-center self-end gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <span>{{__('Toutes les questions')}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8" class="fill-orange h-full">
                         <path id="forum-link"
