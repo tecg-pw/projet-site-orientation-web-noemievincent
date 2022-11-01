@@ -1,8 +1,8 @@
-<article aria-labelledby="question" class="relative rounded-2xl border border-blue/50 p-3">
+<article aria-labelledby="question" class="relative rounded-2xl border border-blue/50 p-3 hover:bg-blue-card transition ease-in-out duration-200">
     <a href="/forum/slug" class="full-link">{{__('Lire la question :name')}}</a>
     <div class="flex flex-col gap-4">
         <div class="flex justify-between">
-            <h3 id="question" class="text-lg">{{__('Intitulé de la question')}}</h3>
+            <h3 id="question" class="text-xl">{{__('Intitulé de la question')}}</h3>
             <a href="#" class="text-sm">{{__('catégorie')}}</a>
         </div>
         <p class="font-light cut-text text-sm">

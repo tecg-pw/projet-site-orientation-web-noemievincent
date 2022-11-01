@@ -12,14 +12,20 @@ module.exports = {
       },
       extend: {
           colors: {
-              'lightblue': '#D5E9F1',
-              'darkorange': '#89500B',
-              'orange': '#AB630D',
-              'darkblue': '#002C36',
-              'blue': '#003B48',
-              'card': '#D9E7ED',
+              'orange': {
+                  light: '#C9A376',
+                  DEFAULT: '#AB630D',
+                  dark: '#89500B',
+              },
+              'blue': {
+                  card: '#D9E7ED',
+                  light: '#D5E9F1',
+                  DEFAULT: '#003B48',
+                  dark: '#002C36',
+              },
               'white': '#FFFFFF'
           },
+
       }
   },
   plugins: [],

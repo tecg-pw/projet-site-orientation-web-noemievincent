@@ -8,7 +8,7 @@
     <title>Web Design</title>
     @vite('resources/css/app.css')
 </head>
-<body class="text-darkblue font-body flex flex-col h-screen">
+<body class="text-blue-dark font-body flex flex-col h-screen">
 <h1 class="sr-only">
     {{__('Web Design - formation web')}}
 </h1>
@@ -29,8 +29,8 @@
                 mobiles.
             </p>
             <div class="uppercase flex gap-10 items-center">
-                <a href="/about" class="bg-orange text-white py-3 px-6 rounded-lg">{{__('En savoir plus')}}</a>
-                <a href="https://hepl.be/fr" class="text-orange">{{__('Visiter le site de l‘HEPL')}}</a>
+                <a href="/about" class="bg-orange text-white py-3 px-12 rounded-lg hover:bg-orange-dark transition ease-in-out duration-200">{{__('En savoir plus')}}</a>
+                <a href="https://hepl.be/fr" class="text-orange hover:text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid transition ease-in-out duration-200">{{__('Visiter le site de l‘HEPL')}}</a>
             </div>
         </div>
         <img src="/img/marvin-meyer-SYTO3xs06fU-unsplash.jpg" alt="">
@@ -56,7 +56,7 @@
             </section>
             <section aria-labelledby="forum" class="flex flex-col gap-6">
                 <h2 id="forum"
-                    class="font-display font-medium text-blue text-4xl tracking-wider uppercase mb-6">{{__('Posez-nous vos questions')}}</h2>
+                    class="font-display font-medium text-blue text-4xl tracking-wider uppercase">{{__('Posez-nous vos questions')}}</h2>
                 <div class="flex flex-col gap-6">
                     @for($i = 0; $i < 2; $i++)
                         <x-forum.article/>

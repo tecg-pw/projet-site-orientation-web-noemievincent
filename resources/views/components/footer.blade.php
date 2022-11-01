@@ -1,21 +1,21 @@
-<footer class="bg-lightblue px-10 py-4 text-sm mt-28">
+<footer class="bg-blue-light px-10 py-4 text-sm mt-28">
     <div class="my-6 flex justify-between">
         <nav>
             <h2 class="text-blue font-bold text-lg mb-4">{{__('Navigation')}}</h2>
-            <ul class="flex flex-col gap-1">
-                <li><a href="/projects" class="">{{__('Projets')}}</a></li>
-                <li><a href="/alumnis" class="">{{__('Alumnis')}}</a></li>
-                <li><a href="/about" class="">{{__('À propos')}}</a></li>
-                <li><a href="/news" class="">{{__('Actualités')}}</a></li>
-                <li><a href="/forum" class="">{{__('Forum')}}</a></li>
-                <li><a href="/jobs" class="">{{__('Stages')}}</a></li>
+            <ul class="flex flex-col gap-2">
+                <li><a href="/projects" class="hover:text-orange transition ease-in-out duration-200">{{__('Projets')}}</a></li>
+                <li><a href="/alumnis" class="hover:text-orange transition ease-in-out duration-200">{{__('Alumnis')}}</a></li>
+                <li><a href="/about" class="hover:text-orange transition ease-in-out duration-200">{{__('À propos')}}</a></li>
+                <li><a href="/news" class="hover:text-orange transition ease-in-out duration-200">{{__('Actualités')}}</a></li>
+                <li><a href="/forum" class="hover:text-orange transition ease-in-out duration-200">{{__('Forum')}}</a></li>
+                <li><a href="/jobs" class="hover:text-orange transition ease-in-out duration-200">{{__('Stages')}}</a></li>
             </ul>
         </nav>
         <div>
             <h2 class="text-blue font-bold text-lg mb-4">{{__('Suivez-nous')}}</h2>
-            <ul class="flex flex-col gap-1">
+            <ul class="flex flex-col gap-3">
                 <li>
-                    <a href="#" class="flex items-center gap-2">
+                    <a href="#" class="flex items-center gap-2 hover:text-orange transition ease-in-out duration-200">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
                              viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center gap-2">
+                    <a href="#" class="flex items-center gap-2 hover:text-orange transition ease-in-out duration-200">
                         <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
                              viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
@@ -95,7 +95,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center gap-2">
+                    <a href="#" class="flex items-center gap-2 hover:text-orange transition ease-in-out duration-200">
                         <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
                              viewBox="0 0 20 16.3" style="enable-background:new 0 0 20 16.3;" xml:space="preserve">
@@ -113,7 +113,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center gap-2">
+                    <a href="#" class="flex items-center gap-2 hover:text-orange transition ease-in-out duration-200">
                         <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
                              viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;" xml:space="preserve">
@@ -155,21 +155,21 @@
             <h2 class="text-blue font-bold text-lg mb-4">{{__('Recevez notre newsletter')}}</h2>
             <div>
                 <p class="font-light">{{__('Restez au courant de nos actualités et de nos événements en vous abonnant à notre newsletter !')}}</p>
-                <form action="#" class="flex items-center justify-between h-11 mt-4">
-                    <label for="newsletter" class="h-full flex-1">
+                <form action="#" class="grid grid-cols-3 h-11 mt-4">
+                    <label for="newsletter" class="h-full flex-1 col-span-full row-span-full">
                         <span class="sr-only">
                             {{__('Votre adresse e-mail')}}
                         </span>
                         <input placeholder="name@example.com" type="email" id="newsletter"
-                               class="h-full w-full pl-3 border border-orange/50 border-r-0 focus:outline-none focus:border-orange focus:border-2 focus:border-r-0 rounded-l-lg placeholder:font-light">
+                               class="h-full w-full pl-3 border border-orange-light focus:outline-none focus:border-2 focus:border-orange rounded-lg placeholder:font-light">
                     </label>
-                    <button class="bg-orange text-white h-full px-6 rounded-r-lg uppercase hover:bg-darkorange">{{__('je m‘inscris')}}</button>
+                    <button class="row-span-full col-start-3 bg-orange text-white h-full px-6 rounded-r-lg uppercase hover:bg-orange-dark">{{__('je m‘inscris')}}</button>
                 </form>
             </div>
         </div>
     </div>
     <div class="flex justify-between text-sm mt-10">
         <p>{{__('Copyright © 2022 Tous droits réservés')}}</p>
-        <a href="/terms" class="text-darkorange">{{__('Mentions légales')}}</a>
+        <a href="/terms" class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Mentions légales')}}</a>
     </div>
 </footer>

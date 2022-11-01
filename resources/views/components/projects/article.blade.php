@@ -1,13 +1,13 @@
-<article aria-labelledby="nom-du-projet" class="group relative">
+<article aria-labelledby="nom-du-projet" class="relative">
     <div class="flex gap-1 absolute -top-2 left-5 z-10">
         @for($i = 1; $i <= 2; $i++)
-            <a href="#" class="bg-blue text-white text-sm px-3 py-1">catégorie {{$i}}</a>
+            <a href="#" class="bg-blue text-white text-sm px-2 py-1 hover:bg-orange-dark transition ease-in-out duration-200">catégorie {{$i}}</a>
         @endfor
     </div>
-    <div class="bg-card rounded-2xl relative">
+    <div class="group bg-blue-card rounded-2xl relative">
         <a href="/projects/slug" class="full-link">{{__('Voir le projet :name')}}</a>
         <div>
-            <div class="relative before:overlay before:bg-blue/5 before:rounded-t-2xl group-hover:before:bg-blue/30">
+            <div class="relative before:overlay before:bg-blue/5 before:rounded-t-2xl before:transition before:ease-in-out before:duration-200 group-hover:before:bg-blue/30">
                 <img src="/img/project.png" alt="{{__('Voir le projet :name')}}"
                      class="object-cover w-full rounded-t-2xl">
             </div>

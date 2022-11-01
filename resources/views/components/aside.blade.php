@@ -1,5 +1,5 @@
 <aside>
-    <section aria-labelledby="news" class="mb-14 flex flex-col gap-4">
+    <section aria-labelledby="news" class="mb-14 flex flex-col gap-2">
         <h2 id="news"
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('À la une')}}</h2>
         <div class="flex flex-col gap-3">
@@ -7,7 +7,7 @@
                 <x-news.article/>
             @endfor
         </div>
-        <a href="/news" class="flex items-center self-end gap-4 uppercase text-orange text-sm">
+        <a href="/news" class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1">
             <span>{{__('Toutes les actualités')}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8" class="fill-orange h-full">
                 <path id="news-link"
@@ -16,15 +16,15 @@
             </svg>
         </a>
     </section>
-    <section aria-labelledby="jobs" class="mb-14 flex flex-col gap-4">
+    <section aria-labelledby="jobs" class="mb-14 flex flex-col gap-2">
         <h2 id="jobs"
-            class="font-display font-medium text-blue text-2xl tracking-wider uppercase mb-4">{{__('Offres de stages')}}</h2>
-        <div class="flex flex-col gap-6">
+            class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('Offres de stages')}}</h2>
+        <div class="flex flex-col gap-3">
             @for($i = 0; $i < 2; $i++)
                 <x-jobs.article/>
             @endfor
         </div>
-        <a href="/jobs" class="flex items-center self-end gap-4 uppercase text-orange text-sm">
+        <a href="/jobs" class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1">
             <span>{{__('Toutes les offres')}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8" class="fill-orange h-full">
                 <path id="jobs-link"
