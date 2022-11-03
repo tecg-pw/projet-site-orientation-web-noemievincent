@@ -27,6 +27,9 @@ Route::get('/projects/name/slug', function () {
 Route::get('/news', function () {
     return view('news.index');
 });
+Route::get('/news/slug', function () {
+    return view('news.show');
+});
 
 //Auth
 Route::get('/login', function () {

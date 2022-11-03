@@ -15,7 +15,7 @@
                     <span>{{__('Retour aux projets')}}</span>
                 </a>
                 <h2 id="slug"
-                    class="font-display font-bold text-blue text-5xl tracking-wider uppercase">{{__('Portfolio')}}</h2>
+                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{__('Portfolio')}}</h2>
             </div>
             <div class="flex justify-between gap-28">
                 <div class="h-full w-2/6 flex flex-col gap-6">
