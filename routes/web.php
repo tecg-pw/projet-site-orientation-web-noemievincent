@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/terms', function () {
+    return view('terms');
+});
+
+// Projects
 Route::get('/projects', function () {
     return view('projects.index');
 });
@@ -24,6 +29,7 @@ Route::get('/projects/name/slug', function () {
     return view('projects.show');
 });
 
+// News
 Route::get('/news', function () {
     return view('news.index');
 });
