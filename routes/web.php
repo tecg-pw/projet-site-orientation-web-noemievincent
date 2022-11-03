@@ -37,6 +37,14 @@ Route::get('/news/slug', function () {
     return view('news.show');
 });
 
+// Forum
+Route::get('/forum', function () {
+    return view('forum.index');
+});
+Route::get('/forum/slug', function () {
+    return view('forum.show');
+});
+
 //Auth
 Route::get('/login', function () {
     return view('auth.login');

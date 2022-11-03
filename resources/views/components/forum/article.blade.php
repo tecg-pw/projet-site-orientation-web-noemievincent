@@ -16,7 +16,7 @@
         <div class="flex justify-between">
             <div class="flex gap-6 items-center text-sm font-light">
                 <a href="/profile" class="flex items-center gap-3">
-                    <img src="/img/profile-pic.png" alt="{{__('Prénom Nom')}}" height="25"
+                    <img src="/img/profile-30x30.png" alt="{{__('Prénom Nom')}}" height="25"
                          width="25"
                          class="rounded-full">
                     <span>{{__('Prénom Nom')}}</span>

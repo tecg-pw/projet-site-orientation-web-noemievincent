@@ -24,6 +24,10 @@ module.exports = {
                     DEFAULT: '#003B48',
                     dark: '#002C36',
                 },
+                'green': {
+                    light: '#9FD18D',
+                    DEFAULT: '#345D24',
+                },
                 'white': '#FFFFFF',
             },
             fontSize: {
