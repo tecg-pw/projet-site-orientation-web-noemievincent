@@ -30,4 +30,11 @@
         text-overflow: ellipsis;
         display: -webkit-box;
     }
+
+    .truncate {
+        width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }

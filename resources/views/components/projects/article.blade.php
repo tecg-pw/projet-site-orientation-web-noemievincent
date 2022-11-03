@@ -5,7 +5,7 @@
         @endfor
     </div>
     <div class="group bg-blue-card rounded-2xl relative">
-        <a href="/projects/slug" class="full-link">{{__('Voir le projet :name')}}</a>
+        <a href="/projects/name/slug" class="full-link">{{__('Voir le projet :name')}}</a>
         <div>
             <div class="relative before:overlay before:bg-blue/5 before:rounded-t-2xl before:transition before:ease-in-out before:duration-200 group-hover:before:bg-blue/30">
                 <img src="/img/project.png" alt="{{__('Voir le projet :name')}}"

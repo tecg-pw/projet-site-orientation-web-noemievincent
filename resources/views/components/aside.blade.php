@@ -1,5 +1,5 @@
-<aside>
-    <section aria-labelledby="news" class="mb-14 flex flex-col gap-2">
+<aside class="flex flex-col gap-14">
+    <section aria-labelledby="news" class="flex flex-col gap-2">
         <h2 id="news"
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('À la une')}}</h2>
         <div class="flex flex-col gap-3">
@@ -16,7 +16,7 @@
             </svg>
         </a>
     </section>
-    <section aria-labelledby="jobs" class="mb-14 flex flex-col gap-2">
+    <section aria-labelledby="jobs" class="flex flex-col gap-2">
         <h2 id="jobs"
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('Offres de stages')}}</h2>
         <div class="flex flex-col gap-3">

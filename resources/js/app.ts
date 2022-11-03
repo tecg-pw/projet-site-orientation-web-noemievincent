@@ -12,9 +12,11 @@ function handlePassword() {
     let show = document.getElementById('show');
     let hide = document.getElementById('hide');
 
-    btn.addEventListener('click', (e) => {
-        (input.type === 'password') ? input.type = 'text' : input.type = 'password';
-        show.classList.toggle('hidden');
-        hide.classList.toggle('hidden');
-    });
+    if (btn) {
+        btn.addEventListener('click', (e) => {
+            (input.type === 'password') ? input.type = 'text' : input.type = 'password';
+            show.classList.toggle('hidden');
+            hide.classList.toggle('hidden');
+        });
+    }
 }
