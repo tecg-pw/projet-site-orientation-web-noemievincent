@@ -21,7 +21,7 @@ Route::get('/terms', function () {
     return view('terms');
 });
 
-// Projects
+//ROUTE : Projects
 Route::get('/projects', function () {
     return view('projects.index');
 });
@@ -29,7 +29,7 @@ Route::get('/projects/name/slug', function () {
     return view('projects.show');
 });
 
-// News
+//ROUTE : News
 Route::get('/news', function () {
     return view('news.index');
 });
@@ -37,18 +37,18 @@ Route::get('/news/slug', function () {
     return view('news.show');
 });
 
-// Forum
+//ROUTE : Forum + FAQ
 Route::get('/forum', function () {
     return view('forum.index');
 });
 Route::get('/forum/slug', function () {
     return view('forum.show');
 });
-
 Route::get('/faq', function () {
     return view('faq.index');
 });
 
+//ROUTE : Profile
 Route::get('/username', function () {
     return view('profile.index');
 });
@@ -56,7 +56,7 @@ Route::get('/username/edit', function () {
     return view('profile.edit');
 });
 
-//Auth
+//ROUTE : Auth
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login')->middleware('guest');

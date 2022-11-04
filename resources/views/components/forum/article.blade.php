@@ -2,7 +2,14 @@
     <a href="/forum/slug" class="full-link">{{__('Lire la question :name')}}</a>
     <div class="flex flex-col gap-4">
         <div class="flex justify-between">
-            <h3 id="question" class="text-xl">{{__('Intitulé de la question')}}</h3>
+            <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
+                     class="fill-green bg-green-light rounded-full p-1">
+                    <path
+                        d="M9 16.17L5.53 12.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L9 16.17z"/>
+                </svg>
+                <h3 id="question" class="text-xl">{{__('Intitulé de la question')}}</h3>
+            </div>
             <a href="#" class="text-sm">{{__('catégorie')}}</a>
         </div>
         <p class="font-light cut-text text-sm">

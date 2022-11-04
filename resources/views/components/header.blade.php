@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Web Design - {{__('Connexion')}}</title>
+    <title>Web Design</title>
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
 <body class="text-blue-dark font-body flex flex-col h-screen">
