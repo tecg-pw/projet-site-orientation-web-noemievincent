@@ -20,16 +20,22 @@ dolore aliqua. N’oubliez pas de jeter un oeil à notre ')}} <a href="/faq"
                     </p>
                 @endguest
                 @auth()
-                    <a href="/forum/create"
-                       class="flex self-start gap-2 uppercase bg-orange text-white py-3 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                             class="fill-white" aria-labelledby="forumTitle">
-                            <title id="forumTitle">{{__('Poser une question')}}</title>
-                            <path
-                                d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z"/>
-                        </svg>
-                        <span>{{__('Poser une question')}}</span>
-                    </a>
+                    <div class="flex justify-between items-center">
+                        <a href="/forum?ask-a-question"
+                           class="flex self-start gap-2 uppercase bg-orange text-white py-3 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 class="fill-white" aria-labelledby="forumTitle">
+                                <title id="forumTitle">{{__('Poser une question')}}</title>
+                                <path
+                                    d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z"/>
+                            </svg>
+                            <span>{{__('Poser une question')}}</span>
+                        </a>
+                        <p>
+                            Retrouvez vos questions et réponses sur votre
+                            <a href="/profile" class="underline underline-offset-2 decoration-1 decoration-solid text-orange">profil</a>
+                        </p>
+                    </div>
                 @endauth
             </div>
             @auth()
