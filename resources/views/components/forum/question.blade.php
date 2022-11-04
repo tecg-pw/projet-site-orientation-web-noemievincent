@@ -63,6 +63,7 @@
         @endguest
         @auth()
             <form action="/forum/slug/reply" class="flex flex-col gap-4">
+                @csrf
                 <label for="reply" class="sr-only">{{__('Votre réponse')}}</label>
                 <textarea name="reply" id="reply" cols="30" rows="10"
                           class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200"></textarea>

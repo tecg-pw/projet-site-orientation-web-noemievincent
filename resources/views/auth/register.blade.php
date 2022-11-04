@@ -6,6 +6,7 @@
             <p>Nulla officia magna ullamco id irure aute aliqua dolore qui duis.</p>
         </div>
         <form action="/register" method="post" class="flex flex-col gap-4">
+            @csrf
             <div class="flex justify-between gap-3">
                 <fieldset class="flex flex-col gap-1 w-full">
                     <label for="firstname" class="text-lg text-blue-dark flex items-center gap-2">

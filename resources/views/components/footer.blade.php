@@ -158,6 +158,7 @@
                 <div>
                     <p class="font-light">{{__('Restez au courant de nos actualités et de nos événements en vous abonnant à notre newsletter !')}}</p>
                     <form action="#" method="post" class="grid grid-cols-3 h-11 mt-4">
+                        @csrf
                         <label for="newsletter" class="h-full flex-1 col-span-full row-span-full">
                             <span class="sr-only">
                                 {{__('Votre adresse e-mail')}}

@@ -3,6 +3,7 @@
     <section aria-labelledby="login" class="col-start-2">
         <h2 id="login" class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('Connexion')}}</h2>
         <form action="/login" method="post" class="flex flex-col gap-4">
+            @csrf
             <fieldset class="flex flex-col gap-1">
                 <label for="email" class="text-lg text-blue-dark flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"

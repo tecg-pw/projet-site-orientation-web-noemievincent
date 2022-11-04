@@ -109,6 +109,7 @@
         <div>
             <h3 class="font-semibold font-display text-xl">{{__('Modifier votre mot de passe')}}</h3>
             <form action="username/edit-password" class="flex flex-col gap-8">
+                @csrf
                 <div class="flex flex-col gap-4">
                     <fieldset class="flex flex-col gap-1">
                         <label for="password" class="">

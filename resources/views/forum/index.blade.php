@@ -35,6 +35,7 @@ dolore aliqua. N’oubliez pas de jeter un oeil à notre ')}} <a href="/faq"
             @auth()
                 <div class="flex flex-col gap-6">
                     <form action="forum/create" class="flex flex-col gap-4">
+                        @csrf
                         <fieldset class="flex flex-col gap-2">
                             <label for="subject" class="text-lg">{{__('Sujet de la question')}}</label>
                             <input type="text" id="subject"
