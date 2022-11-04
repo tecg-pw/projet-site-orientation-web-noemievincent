@@ -110,7 +110,6 @@ dolore aliqua. N’oubliez pas de jeter un oeil à notre ')}} <a href="/faq"
                 </div>
             </div>
             @if($_SERVER['QUERY_STRING'] === 'last-subjects' || $_SERVER['QUERY_STRING'] === '')
-
                 <div class="flex flex-col gap-20">
                     <div class="flex flex-col gap-6">
                         @for($i = 0; $i < 5; $i++)

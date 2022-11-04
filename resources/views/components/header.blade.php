@@ -19,7 +19,8 @@
                 <a href="/login" class="flex items-center gap-3">
                     <img src="https://placehold.jp/30x30.png" alt="{{__('Se connecter')}}"
                          class="rounded-full h-full">
-                    <span class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
+                    <span
+                        class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
                         {{__('Se connecter')}}
                     </span>
                 </a>
@@ -33,16 +34,22 @@
                     <span class="hover:text-orange transition-all ease-in-out duration-200">{{__('Prénom Nom')}}</span>
                 </a>
                 —
-                <a href="/logout" class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Se déconnecter')}}</a>
+                <a href="/logout"
+                   class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Se déconnecter')}}</a>
             </div>
         @endauth
         <div class="flex gap-16">
             <nav>
                 <h2 class="sr-only">{{__('Navigation secondaire')}}</h2>
                 <ul class="flex gap-8">
-                    <li><a href="/tutorials" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Tutoriels')}}</a></li>
-                    <li><a href="/docs" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Documentations')}}</a></li>
-                    <li><a href="/faq" class="hover:text-orange transition-all ease-in-out duration-200">{{__('FAQ')}}</a></li>
+                    <li><a href="/tutorials"
+                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Tutoriels')}}</a>
+                    </li>
+                    <li><a href="/docs"
+                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Documentations')}}</a>
+                    </li>
+                    <li><a href="/faq"
+                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('FAQ')}}</a></li>
                 </ul>
             </nav>
             <ul class="flex gap-2">
@@ -60,7 +67,8 @@
                 <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="24"
                      viewBox="0 0 128.8 34.8" style="enable-background:new 0 0 128.8 34.8;" xml:space="preserve"
-                     class="fill-blue-dark hover:fill-orange transition-all ease-in-out duration-200" aria-labelledby="logoTitle">
+                     class="fill-blue-dark hover:fill-orange transition-all ease-in-out duration-200"
+                     aria-labelledby="logoTitle">
                     <title id="logoTitle">{{__('Retourner à l‘accueil')}}</title>
                     <g id="logo">
                         <g id="Groupe_150" transform="translate(4)">
@@ -107,14 +115,20 @@
                 </svg>
             </a>
             <ul class="flex justify-between gap-24">
-                <li><a href="/projects" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Projets')}}</a></li>
-                <li><a href="/alumnis" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Alumnis')}}</a></li>
-                <li><a href="/about" class="hover:text-orange transition-all ease-in-out duration-200">{{__('À propos')}}</a></li>
-                <li><a href="/news" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Actualités')}}</a></li>
-                <li><a href="/forum" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Forum')}}</a></li>
-                <li><a href="/jobs" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Stages')}}</a></li>
+                <li><a href="/projects"
+                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('Projets')}}</a></li>
+                <li><a href="/alumnis"
+                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('Alumnis')}}</a></li>
+                <li><a href="/about"
+                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('À propos')}}</a></li>
+                <li><a href="/news"
+                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('Actualités')}}</a></li>
+                <li><a href="/forum"
+                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('Forum')}}</a></li>
+                <li><a href="/jobs"
+                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('Stages')}}</a></li>
             </ul>
-            <a href="#">
+            <a href="?search">
                 <svg version="1.1" id="search" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="22"
                      viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve"
@@ -127,4 +141,22 @@
             </a>
         </nav>
     </div>
+    @if($_SERVER['QUERY_STRING'] === 'search')
+    <div class="max-w-3xl px-10 py-4">
+        <form action="/search-results" method="post" class="flex col-start-3 h-12">
+            @csrf
+            <label for="search-keyword" class="h-full flex-1">
+                            <span class="sr-only">
+                                {{__('Recherchez un mot clé')}}
+                            </span>
+                <input placeholder="Recherchez un mot clé" type="search" id="search-keyword"
+                       class="h-full w-full pl-3 py-1 border border-orange-light border-r-0 focus:outline-none rounded-l-lg placeholder:font-light transition ease-in-out duration-200">
+            </label>
+            <button
+                class="bg-orange text-white h-full px-10 rounded-r-lg uppercase hover:bg-orange-dark transition ease-in-out duration-200">
+                {{__('Rechercher')}}
+            </button>
+        </form>
+    </div>
+    @endif
 </header>
