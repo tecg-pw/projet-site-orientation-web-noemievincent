@@ -45,13 +45,24 @@ Route::get('/forum/slug', function () {
     return view('forum.show');
 });
 
+Route::get('/faq', function () {
+    return view('faq.index');
+});
+
+Route::get('/username', function () {
+    return view('profile.index');
+});
+Route::get('/username/edit', function () {
+    return view('profile.edit');
+});
+
 //Auth
 Route::get('/login', function () {
     return view('auth.login');
-});
+})->name('login')->middleware('guest');
 Route::get('/register', function () {
     return view('auth.register');
-});
+})->middleware('guest');
 Route::get('/reset-password', function () {
     return view('auth.reset-password');
-});
+})->middleware('guest');

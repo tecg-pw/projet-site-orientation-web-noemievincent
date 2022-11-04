@@ -31,7 +31,6 @@
                         </svg>
                     </a>
             </div>
-
         </section>
         <x-aside/>
     </div>

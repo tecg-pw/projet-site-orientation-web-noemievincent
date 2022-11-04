@@ -17,7 +17,7 @@
         @guest
             <div>
                 <a href="/login" class="flex items-center gap-3">
-                    <img src="/img/profile-30x30.png" alt="{{__('Se connecter')}}"
+                    <img src="https://placehold.jp/30x30.png" alt="{{__('Se connecter')}}"
                          class="rounded-full h-full">
                     <span class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
                         {{__('Se connecter')}}
@@ -28,7 +28,7 @@
         @auth
             <div class="flex items-center gap-3">
                 <a href="/profile" class="flex items-center gap-3">
-                    <img src="/img/profile-30x30.png" alt="{{__('Prénom Nom')}}" height="30" width="30"
+                    <img src="https://placehold.jp/30x30.png" alt="{{__('Prénom Nom')}}"
                          class="rounded-full">
                     <span class="hover:text-orange transition-all ease-in-out duration-200">{{__('Prénom Nom')}}</span>
                 </a>

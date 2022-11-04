@@ -16,8 +16,7 @@
         <div class="flex justify-between">
             <div class="flex gap-6 items-center text-sm font-light">
                 <a href="/profile" class="flex items-center gap-3">
-                    <img src="/img/profile-30x30.png" alt="{{__('Prénom Nom')}}" height="25"
-                         width="25"
+                    <img src="https://placehold.jp/25x25.png" alt="{{__('Prénom Nom')}}"
                          class="rounded-full">
                     <span>{{__('Prénom Nom')}}</span>
                 </a>

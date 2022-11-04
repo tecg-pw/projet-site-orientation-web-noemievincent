@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-6">
     <div class="flex flex-col gap-6">
         <div class="flex gap-4">
-            <img src="/img/profile-268x268.png" alt="nom"
+            <img src="https://placehold.jp/50x50.png" alt="nom"
                  class="rounded-full h-12">
             <div>
                 <p class="text-lg font-medium">Prénom Nom</p>
