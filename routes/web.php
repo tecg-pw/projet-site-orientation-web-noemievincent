@@ -51,6 +51,23 @@ Route::get('/faq', function () {
     return view('faq.index');
 });
 
+//ROUTE : Jobs
+Route::get('/jobs/offers', function () {
+    return view('jobs.index');
+});
+Route::get('/jobs/slug', function () {
+    return view('jobs.show');
+});
+Route::get('/jobs/create', function () {
+    return view('jobs.create');
+});
+Route::get('/partners/offers', function () {
+    return view('partners.index');
+});
+Route::get('/partners/slug', function () {
+    return view('partners.show');
+});
+
 //ROUTE : Profile
 Route::get('/username', function () {
     return view('profile.index');

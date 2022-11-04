@@ -8,7 +8,7 @@
     <title>Web Design</title>
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
-<body class="text-blue-dark font-body flex flex-col h-screen">
+<body class="text-blue-dark font-body flex flex-col h-screen selection:bg-orange-light selection:text-white">
 <h1 class="sr-only">
     {{__('Web Design - formation web')}}
 </h1>
@@ -125,7 +125,7 @@
                        class="hover:text-orange transition-all ease-in-out duration-200">{{__('Actualités')}}</a></li>
                 <li><a href="/forum"
                        class="hover:text-orange transition-all ease-in-out duration-200">{{__('Forum')}}</a></li>
-                <li><a href="/jobs"
+                <li><a href="/jobs/offers"
                        class="hover:text-orange transition-all ease-in-out duration-200">{{__('Stages')}}</a></li>
             </ul>
             <a href="?search">

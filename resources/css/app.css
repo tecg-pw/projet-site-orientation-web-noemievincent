@@ -5,12 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    ul, ol {
-        list-style: revert;
-    }
-}
-
 @layer components {
     .full-link {
         position: absolute;

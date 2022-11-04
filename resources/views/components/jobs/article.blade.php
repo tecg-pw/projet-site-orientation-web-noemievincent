@@ -1,6 +1,6 @@
-<article aria-labelledby="job" class="rounded-2xl border border-blue/50 hover:bg-blue-card transition ease-in-out duration-200">
+<article aria-labelledby="job" class="rounded-2xl border border-blue/50 hover:bg-blue-card transition ease-in-out duration-200 w-full">
     <div class="relative">
-        <a href="/jobs/slug" class="full-link">{{__('Voir l‘offre :name')}}</a>
+        <a href="/jobs/offers/slug" class="full-link">{{__('Voir l‘offre :name')}}</a>
         <div>
             <div class="p-3 flex flex-col gap-3">
                 <h3 id="job" class="text-2xl uppercase">Intitulé du stage</h3>
