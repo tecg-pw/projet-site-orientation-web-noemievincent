@@ -23,7 +23,7 @@
                         <h3 class="font-semibold font-display text-xl">{{__('Informations de l‘entreprise')}}</h3>
                         <div class="flex justify-between gap-6">
                             <fieldset class="flex flex-col gap-1 w-full">
-                                <label for="logo" class="text-lg text-blue-dark flex items-center gap-2">
+                                <label for="company-logo" class="text-lg text-blue-dark flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="18" width="18"
                                          class="fill-blue-dark">
                                         <path
@@ -31,7 +31,7 @@
                                     </svg>
                                     <span>{{__('Logo de votre enteprise')}}</span>
                                 </label>
-                                <input type="file" id="logo"
+                                <input type="file" id="company-logo" name="company-logo"
                                        class="py-2 file:border file:border-solid file:border-blue file:rounded-lg file:bg-white file:px-3 file:py-1 file:text-blue">
                             </fieldset>
                             <fieldset class="flex flex-col gap-1 w-full">
@@ -110,8 +110,8 @@
                                     <div>
                                         @for($i = 1; $i < 8; $i++)
                                             <fieldset class="flex gap-2 items-center">
-                                                <input type="checkbox" id="compétence {{$i}}" value="compétence {{$i}}">
-                                                <label for="compétence {{$i}}">Compétence {{$i}}</label>
+                                                <input type="checkbox" id="compétence-{{$i}}" value="compétence {{$i}}">
+                                                <label for="compétence-{{$i}}">Compétence {{$i}}</label>
                                             </fieldset>
                                         @endfor
                                     </div>
@@ -157,7 +157,7 @@
                                     <input type="radio" id="email-reception" name="email-reception">
                                     <label for="email-reception" class="flex gap-2 items-center">
                                         <span>{{__('Par email')}}</span>
-                                        <p class="text-sm font-light">{{__('(Vous recevrez les informations du candidat directement par e-mail)')}}</p>
+                                        <span class="text-sm font-light">{{__('(Vous recevrez les informations du candidat directement par e-mail)')}}</span>
                                     </label>
                                 </fieldset>
                                 <fieldset class="ml-6 grid grid-cols-3">
@@ -171,7 +171,7 @@
                                     <input type="radio" id="website-reception" name="website-reception">
                                     <label for="website-reception" class="flex gap-2 items-center">
                                         <span>{{__('Redirection sur une page de votre site')}}</span>
-                                        <p class="text-sm font-light">{{__('(La candidature se fera directement sur votre site)')}}</p>
+                                        <span class="text-sm font-light">{{__('(La candidature se fera directement sur votre site)')}}</span>
                                     </label>
                                 </fieldset>
                                 <fieldset class="ml-6 grid grid-cols-3">

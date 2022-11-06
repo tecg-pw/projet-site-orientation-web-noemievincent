@@ -20,15 +20,15 @@
             </fieldset>
             <fieldset class="flex flex-col gap-1">
                 <label for="password" class="">
-                    <div class="text-lg text-blue-dark flex items-center gap-2">
+                    <span class="text-lg text-blue-dark flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                              class="fill-blue-dark">
                             <path
                                 d="M12,8a2,2,0,0,0-2,2,2,2,0,0,0,1,1.72V15a1,1,0,0,0,2,0V11.72A2,2,0,0,0,14,10,2,2,0,0,0,12,8Zm0-6A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
                         </svg>
                         <span>{{__('Mot de passe')}}</span>
-                    </div>
-                    <p class="font-light text-sm">{{__('Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule')}}</p>
+                    </span>
+                    <span class="font-light text-sm">{{__('Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule')}}</span>
                 </label>
                 <div class="flex justify-between items-center px-3 border border-orange-light rounded-lg">
                     <input type="password" id="password" placeholder="azerty"

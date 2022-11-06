@@ -3,7 +3,7 @@
     <div class="grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="search-results" class="col-span-3 flex flex-col gap-8">
 {{--            @if('resultats')--}}
-                <div>
+{{--                <div>--}}
 {{--                    <div class="flex flex-col gap-2">--}}
 {{--                        <h2 id="search-results"--}}
 {{--                            class="font-display font-bold text-blue text-5xl tracking-wider uppercase">{{__('Résultats pour')}}</h2>--}}
@@ -121,7 +121,7 @@
 {{--                            </svg>--}}
 {{--                        </a>--}}
 {{--                    </div>--}}
-                </div>
+{{--                </div>--}}
 {{--            @else--}}
                 <div>
                     <div class="flex flex-col gap-2">

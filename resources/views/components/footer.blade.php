@@ -18,7 +18,7 @@
                 <ul class="flex flex-col gap-3">
                     <li>
                         <a href="#" class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
-                            <svg version="1.1" id="facebook" xmlns="http://www.w3.org/2000/svg"
+                            <svg version="1.1" id="footer-facebook" xmlns="http://www.w3.org/2000/svg"
                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
                                  viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
                                 <style type="text/css">
@@ -30,7 +30,7 @@
                                         fill: #FFFFFF;
                                     }
                                 </style>
-                                <g id="facebook">
+                                <g>
                                     <path class="fb_blue" d="M18.9,20c0.6,0,1.1-0.5,1.1-1.1V1.1C20,0.5,19.5,0,18.9,0H1.1C0.5,0,0,0.5,0,1.1v17.8
             C0,19.5,0.5,20,1.1,20H18.9L18.9,20z"/>
                                     <path id="f" class="fb_white" d="M13.8,20v-7.7h2.6l0.4-3h-3V7.3c0-0.9,0.2-1.5,1.5-1.5h1.6V3.1c-0.3,0-1.2-0.1-2.3-0.1
@@ -42,20 +42,20 @@
                     </li>
                     <li>
                         <a href="#" class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
-                            <svg version="1.1" id="instagram" xmlns="http://www.w3.org/2000/svg"
+                            <svg version="1.1" id="footer-instagram" xmlns="http://www.w3.org/2000/svg"
                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
                                  viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
                                 <style type="text/css">
                                     .insta_gradient {
-                                        fill: url(#SVGID_1_);
+                                        fill: url(#SVGID_1_footer);
                                     }
 
                                     .insta_white {
                                         fill: #FFFFFF;
                                     }
                                 </style>
-                                <g id="instagram">
-                                    <radialGradient id="SVGID_1_" cx="-603.0173" cy="811.7922" r="9.9923"
+                                <g>
+                                    <radialGradient id="SVGID_1_footer" cx="-603.0173" cy="811.7922" r="9.9923"
                                                     gradientTransform="matrix(0 -1.982 1.8439 0 -1491.5541 -1173.6573)"
                                                     gradientUnits="userSpaceOnUse">
                                         <stop offset="0" style="stop-color:#FFDD55"/>
@@ -67,7 +67,7 @@
             C0,7.5,0,8.6,0,10c0,4.2,0,5.4,0,5.6c0.1,0.8,0.2,1.4,0.5,1.9C1,18.6,2,19.5,3.2,19.8C3.7,19.9,4.1,20,4.7,20c0.2,0,2.8,0,5.3,0
             s5,0,5.3,0c0.7,0,1.1-0.1,1.5-0.2c1.2-0.3,2.2-1.1,2.7-2.2c0.3-0.6,0.4-1.1,0.5-1.9c0-0.2,0-2.9,0-5.7s0-5.5,0-5.7
             c-0.1-0.8-0.2-1.3-0.5-1.9C19.3,2,19,1.6,18.6,1.3c-0.7-0.6-1.5-1-2.4-1.2C15.8,0,15.7,0,13.3,0L10,0L10,0z"/>
-                                    <radialGradient id="SVGID_00000029040846286603395010000013500758515109746617_"
+                                    <radialGradient id="SVGID_00000029040846286603395010000013500758515109746617_footer"
                                                     cx="568.2048" cy="381.2207" r="9.9923"
                                                     gradientTransform="matrix(0.1739 0.8687 -3.5818 0.7172 1263.2953 -765.5728)"
                                                     gradientUnits="userSpaceOnUse">
@@ -75,7 +75,7 @@
                                         <stop offset="0.128" style="stop-color:#3771C8"/>
                                         <stop offset="1" style="stop-color:#6600FF;stop-opacity:0"/>
                                     </radialGradient>
-                                    <path style="fill:url(#SVGID_00000029040846286603395010000013500758515109746617_);" d="M10,0C5.8,0,4.6,0,4.4,0
+                                    <path style="fill:url(#SVGID_00000029040846286603395010000013500758515109746617_footer);" d="M10,0C5.8,0,4.6,0,4.4,0
             C3.5,0.1,3,0.2,2.4,0.5C2,0.7,1.6,1,1.2,1.4C0.6,2,0.2,2.8,0.1,3.8C0,4.3,0,4.4,0,6.7C0,7.5,0,8.6,0,10c0,4.2,0,5.4,0,5.6
             c0.1,0.8,0.2,1.4,0.5,1.9C1,18.6,2,19.5,3.2,19.8C3.7,19.9,4.1,20,4.7,20c0.2,0,2.8,0,5.3,0s5,0,5.3,0c0.7,0,1.1-0.1,1.5-0.2
             c1.2-0.3,2.2-1.1,2.7-2.2c0.3-0.6,0.4-1.1,0.5-1.9c0-0.2,0-2.9,0-5.7s0-5.5,0-5.7c-0.1-0.8-0.2-1.3-0.5-1.9C19.3,2,19,1.6,18.6,1.3
@@ -98,7 +98,7 @@
                     </li>
                     <li>
                         <a href="#" class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
-                            <svg version="1.1" id="twitter" xmlns="http://www.w3.org/2000/svg"
+                            <svg version="1.1" id="footer-twitter" xmlns="http://www.w3.org/2000/svg"
                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
                                  viewBox="0 0 20 16.3" style="enable-background:new 0 0 20 16.3;" xml:space="preserve">
                                 <style type="text/css">
@@ -116,7 +116,7 @@
                     </li>
                     <li>
                         <a href="#" class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
-                            <svg version="1.1" id="github" xmlns="http://www.w3.org/2000/svg"
+                            <svg version="1.1" id="footer-github" xmlns="http://www.w3.org/2000/svg"
                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
                                  viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;" xml:space="preserve">
                                 <style type="text/css">
@@ -141,14 +141,14 @@
                 <h3 class="text-blue font-bold text-lg mb-4">{{__('Infos de contact')}}</h3>
                 <div class="flex flex-col gap-3" itemscope itemtype="https://schema.org/School">
                     <p itemprop="legalName">{{__('HEPL - Haute École de la Province de Liège')}}</p>
-                    <span itemscope itemtype="https://schema.org/PostalAddress" itemprop="address">
+                    <div itemscope itemtype="https://schema.org/PostalAddress" itemprop="address">
                         <p itemprop="streetAddress">{{__('Quai des Carmes 45')}}</p>
                         <p>
                             <span itemprop="postalCode">4101</span>
                             <span itemprop="addressRegion">Seraing</span>,
                             <span itemprop="addressLocality">{{__('Belgique')}}</span>
                         </p>
-                    </span>
+                    </div>
                     <a href="mailto:hepl@provincedeliege.be" itemprop="email">hepl@provincedeliege.be</a>
                     <p itemprop="telephone">+32 (0)4 279 55 20</p>
                 </div>

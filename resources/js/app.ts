@@ -7,16 +7,18 @@ function init() {
 }
 
 function handlePassword() {
-    let input = document.getElementById('password') as HTMLInputElement;
-    let btn = document.getElementById('show-password');
-    let show = document.getElementById('show');
-    let hide = document.getElementById('hide');
+    let inputs = document.getElementsByClassName('password') as HTMLCollection;
+    let btns = document.getElementsByClassName('show-password') as HTMLCollection;
+    let show = document.getElementsByClassName('show') as HTMLCollection;
+    let hide = document.getElementsByClassName('hide') as HTMLCollection;
 
-    if (btn) {
+    // @ts-ignore
+    Array.from(btns).forEach((btn, index) => {
         btn.addEventListener('click', (e) => {
+            let input = inputs[index] as HTMLInputElement;
             (input.type === 'password') ? input.type = 'text' : input.type = 'password';
-            show.classList.toggle('hidden');
-            hide.classList.toggle('hidden');
+            show[index].classList.toggle('hidden');
+            hide[index].classList.toggle('hidden');
         });
-    }
+    })
 }

@@ -3,7 +3,7 @@
         <a href="/jobs/offers/slug" class="full-link">{{__('Voir l‘offre :name')}}</a>
         <div>
             <div class="p-3 flex flex-col gap-3">
-                <h3 id="job" class="text-2xl uppercase">Intitulé du stage</h3>
+                <h4 id="job" class="text-2xl uppercase">Intitulé du stage</h4>
                 <div class="flex gap-2">
                     <img src="/img/company.png" alt="" height="50" width="50">
                     <div>

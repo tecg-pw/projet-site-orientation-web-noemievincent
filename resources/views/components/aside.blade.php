@@ -1,10 +1,11 @@
 <aside class="flex flex-col gap-14">
-    <section aria-labelledby="news" class="flex flex-col gap-2">
-        <h2 id="news"
-            class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('À la une')}}</h2>
+    <h2 class="sr-only">{{__('Nos nouveautés')}}</h2>
+    <section aria-labelledby="aside-news" class="flex flex-col gap-2">
+        <h3 id="aside-news"
+            class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('À la une')}}</h3>
         <div class="flex flex-col gap-3">
             @for($i = 0; $i < 3; $i++)
-                <x-news.article/>
+                <x-news.aside-article/>
             @endfor
         </div>
         <a href="/news" class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
@@ -16,12 +17,12 @@
             </svg>
         </a>
     </section>
-    <section aria-labelledby="jobs" class="flex flex-col gap-2">
-        <h2 id="jobs"
-            class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('Offres de stages')}}</h2>
+    <section aria-labelledby="aside-jobs" class="flex flex-col gap-2">
+        <h3 id="aside-jobs"
+            class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('Offres de stages')}}</h3>
         <div class="flex flex-col gap-3">
             @for($i = 0; $i < 2; $i++)
-                <x-jobs.article/>
+                <x-jobs.aside-article/>
             @endfor
         </div>
         <a href="/jobs" class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
