@@ -1,4 +1,4 @@
-<article aria-labelledby="question" class="relative rounded-2xl border border-blue/50 p-3 hover:bg-blue-card transition ease-in-out duration-200">
+<article aria-labelledby="question" class="relative rounded-2xl border border-blue/20 p-3 hover:bg-blue-card transition ease-in-out duration-200">
     <a href="/forum/slug" class="full-link">{{__('Lire la question :name')}}</a>
     <div class="flex flex-col gap-4">
         <div class="flex justify-between">

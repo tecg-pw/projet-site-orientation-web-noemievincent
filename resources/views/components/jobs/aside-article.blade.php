@@ -1,13 +1,13 @@
-<article aria-labelledby="job" class="rounded-2xl border border-blue/50 hover:bg-blue-card transition ease-in-out duration-200 w-full">
+<article aria-labelledby="job" class="rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 w-full">
     <div class="relative">
         <a href="/jobs/offers/slug" class="full-link">{{__('Voir l‘offre :name')}}</a>
         <div>
             <div class="p-3 flex flex-col gap-3">
                 <h4 id="job" class="text-2xl uppercase">Intitulé du stage</h4>
                 <div class="flex gap-2">
-                    <img src="/img/company.png" alt="" height="50" width="50">
+                    <img src="https://placehold.jp/50x50.png" alt="" height="50" width="50" class="rounded-full">
                     <div>
-                        <a href="#">nom de l'entreprise</a>
+                        <p>nom de l'entreprise</p>
                         <p class="font-light">lieu du stage</p>
                     </div>
                 </div>
@@ -16,9 +16,9 @@
                     —
                     <p>xx {{__('semaines')}}</p>
                 </div>
-                <div class="flex justify-between font-light ">
+                <div class="flex justify-between">
                     <p class="text-sm">{{__('publié le')}} <time datetime="">dd/mm/yyyy</time></p>
-                    <a href="forum/slug" class="flex items-center gap-4 uppercase text-orange text-sm">
+                    <a href="forum/slug" class="flex items-center gap-3 uppercase text-orange text-sm">
                         <span>{{__('Voir l‘offre')}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                              aria-labelledby="jobTitle" class="fill-orange h-full">

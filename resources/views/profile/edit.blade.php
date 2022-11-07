@@ -122,8 +122,8 @@
                                 <span>{{__('Ancien mot de passe')}}</span>
                             </span>
                         </label>
-                        <div class="flex justify-between items-center px-3 border border-orange-light rounded-lg">
-                            <input type="password" id="old-password" name="old-password" placeholder="azerty"
+                        <div class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
+                            <input type="password" id="old-password" name="old-password"
                                    class="password py-2 h-full w-full placeholder:font-light focus:outline-none font-mono font-lig">
                             <span class="show-password cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="20" height="20"
@@ -146,10 +146,11 @@
                                 </svg>
                                 <span>{{__('Nouveau mot de passe')}}</span>
                             </span>
-                            <span class="font-light text-sm">{{__('Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule')}}</span>
+                            <span
+                                class="font-light text-sm">{{__('Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule')}}</span>
                         </label>
-                        <div class="flex justify-between items-center px-3 border border-orange-light rounded-lg">
-                            <input type="password" id="new-password" name="new-password" placeholder="azerty"
+                        <div class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
+                            <input type="password" id="new-password" name="new-password"
                                    class="password py-2 h-full w-full placeholder:font-light focus:outline-none font-mono font-lig">
                             <span class="show-password cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="20" height="20"

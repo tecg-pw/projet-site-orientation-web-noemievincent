@@ -157,14 +157,14 @@
                 <h3 class="text-blue font-bold text-lg mb-4">{{__('Recevez notre newsletter')}}</h3>
                 <div>
                     <p class="font-light">{{__('Restez au courant de nos actualités et de nos événements en vous abonnant à notre newsletter !')}}</p>
-                    <form action="#" method="post" class="grid grid-cols-3 h-11 mt-4">
+                    <form action="#" method="post" class="grid grid-cols-3 h-11 mt-4 rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
                         @csrf
                         <label for="newsletter" class="h-full flex-1 col-span-full row-span-full">
                             <span class="sr-only">
                                 {{__('Votre adresse e-mail')}}
                             </span>
                             <input placeholder="name@example.com" type="email" id="newsletter"
-                                   class="h-full w-full pl-3 border border-orange-light focus:outline-none focus:border-2 focus:border-orange rounded-lg placeholder:font-light transition ease-in-out duration-200">
+                                   class="h-full w-full pl-3 border border-orange-light focus:outline-none rounded-lg placeholder:font-light transition ease-in-out duration-200">
                         </label>
                         <button class="row-span-full col-start-3 bg-orange text-white h-full px-6 rounded-r-lg uppercase hover:bg-orange-dark transition ease-in-out duration-200">{{__('je m‘inscris')}}</button>
                     </form>

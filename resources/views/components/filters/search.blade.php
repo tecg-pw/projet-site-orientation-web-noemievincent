@@ -1,6 +1,6 @@
-<div class="flex col-start-3">
+<div class="flex col-start-3 rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
     <label for="search-keyword" class="h-full flex-1">
-                            <span class="sr-only">
+        <span class="sr-only">
                                 {{__('Recherchez un mot clé')}}
                             </span>
         <input placeholder="Recherchez un mot clé" type="search" id="search-keyword"

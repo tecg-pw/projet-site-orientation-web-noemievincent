@@ -37,4 +37,8 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+    .radio-btn:checked {
+        accent-color: red;
+    }
 }

@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="bg-white">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="L'option Web forme des spécialistes en design Web, en design d’interaction et en développement d'applications mobiles. ">
+    <meta name="keywords" content="HEPL, Bachelier en Web, Technique Graphique, Design Web, Développement d'applications mobiles, Développement front-end, Développement back-end">
+    <meta name="author" content="Noémie Vincent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web Design</title>
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
-<body class="text-blue-dark font-body flex flex-col h-screen selection:bg-orange-light selection:text-white">
+<body class="bg-white text-blue-dark font-body flex flex-col h-screen selection:bg-orange-light selection:text-white">
 <h1 class="sr-only">
     {{__('Web Design - formation web')}}
 </h1>
@@ -137,22 +139,22 @@
             </a>
         </nav>
     </div>
-    @if($_SERVER['QUERY_STRING'] === 'search')
-        <div class="max-w-3xl px-10 py-4">
-            <form action="/search-results" method="post" class="flex col-start-3 h-12">
-                @csrf
-                <label for="search-keyword" class="h-full flex-1">
-                            <span class="sr-only">
-                                {{__('Recherchez un mot clé')}}
-                            </span>
-                    <input placeholder="Recherchez un mot clé" type="search" id="search-keyword"
-                           class="h-full w-full pl-3 py-1 border border-orange-light border-r-0 focus:outline-none rounded-l-lg placeholder:font-light transition ease-in-out duration-200">
-                </label>
-                <button
-                        class="bg-orange text-white h-full px-10 rounded-r-lg uppercase hover:bg-orange-dark transition ease-in-out duration-200">
-                    {{__('Rechercher')}}
-                </button>
-            </form>
-        </div>
-    @endif
+{{--    @if($_SERVER['QUERY_STRING'] === 'search')--}}
+{{--        <div class="max-w-3xl px-10 py-4">--}}
+{{--            <form action="/search-results" method="post" class="flex col-start-3 h-12">--}}
+{{--                @csrf--}}
+{{--                <label for="search-keyword" class="h-full flex-1">--}}
+{{--                            <span class="sr-only">--}}
+{{--                                {{__('Recherchez un mot clé')}}--}}
+{{--                            </span>--}}
+{{--                    <input placeholder="Recherchez un mot clé" type="search" id="search-keyword"--}}
+{{--                           class="h-full w-full pl-3 py-1 border border-orange-light border-r-0 focus:outline-none rounded-l-lg placeholder:font-light transition ease-in-out duration-200">--}}
+{{--                </label>--}}
+{{--                <button--}}
+{{--                        class="bg-orange text-white h-full px-10 rounded-r-lg uppercase hover:bg-orange-dark transition ease-in-out duration-200">--}}
+{{--                    {{__('Rechercher')}}--}}
+{{--                </button>--}}
+{{--            </form>--}}
+{{--        </div>--}}
+{{--    @endif--}}
 </header>

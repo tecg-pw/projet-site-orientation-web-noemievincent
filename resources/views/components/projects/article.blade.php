@@ -1,7 +1,7 @@
 <article aria-labelledby="nom-du-projet" class="relative">
-    <div class="flex gap-1 absolute -top-2 left-5 z-10">
+    <div class="flex gap-2 absolute -top-2 left-5 z-10">
         @for($i = 1; $i <= 2; $i++)
-            <a href="#" class="bg-blue text-white text-sm px-2 py-1 hover:bg-orange-dark transition-all ease-in-out duration-200">catégorie {{$i}}</a>
+            <a href="#" class="rounded bg-blue text-white text-sm px-3 py-1 hover:bg-orange-dark transition-all ease-in-out duration-200">catégorie {{$i}}</a>
         @endfor
     </div>
     <div class="group bg-blue-card rounded-2xl relative">
@@ -14,7 +14,7 @@
             <div class="p-4 flex flex-col gap-12">
                 <h3 id="nom-du-projet" class="uppercase text-2xl">Nom du projet</h3>
                 <div>
-                    <p class="text-xl mb-1">Nom Prénom</p>
+                    <p class="text-xl mb-1">Prénom Nom</p>
                     <div class="flex justify-between">
                         <time datetime="" class="font-light">Date du projet</time>
                         <a href="/projects/slug">

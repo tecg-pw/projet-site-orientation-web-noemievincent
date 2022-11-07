@@ -55,13 +55,13 @@ Route::get('/faq', function () {
 Route::get('/jobs/offers', function () {
     return view('jobs.index');
 });
-Route::get('/jobs/slug', function () {
+Route::get('/jobs/offers/slug', function () {
     return view('jobs.show');
 });
 Route::get('/jobs/create', function () {
     return view('jobs.create');
 });
-Route::get('/partners/offers', function () {
+Route::get('/jobs/partners', function () {
     return view('partners.index');
 });
 Route::get('/partners/slug', function () {

@@ -32,7 +32,7 @@
                                     <span>{{__('Logo de votre enteprise')}}</span>
                                 </label>
                                 <input type="file" id="company-logo" name="company-logo"
-                                       class="py-2 file:border file:border-solid file:border-blue file:rounded-lg file:bg-white file:px-3 file:py-1 file:text-blue">
+                                       class="py-2 file:border file:border-solid file:border-orange file:rounded-lg file:bg-white file:px-3 file:py-1 file:text-blue file:hover:bg-orange file:cursor-pointer file:hover:text-white file:transition-all file:ease-in-out file:duration-200">
                             </fieldset>
                             <fieldset class="flex flex-col gap-1 w-full">
                                 <label for="name" class="text-lg text-blue-dark flex items-center gap-2">
@@ -110,7 +110,8 @@
                                     <div>
                                         @for($i = 1; $i < 8; $i++)
                                             <fieldset class="flex gap-2 items-center">
-                                                <input type="checkbox" id="compétence-{{$i}}" value="compétence {{$i}}">
+                                                <input type="checkbox" id="compétence-{{$i}}" value="compétence {{$i}}"
+                                                       class="accent-orange">
                                                 <label for="compétence-{{$i}}">Compétence {{$i}}</label>
                                             </fieldset>
                                         @endfor
@@ -151,36 +152,40 @@
                     </div>
                     <div>
                         <h3 class="font-semibold font-display text-xl">{{__('Mode des réception des candidatures')}}</h3>
-                        <div class="flex flex-col gap-6">
+                        <fieldset class="flex flex-col gap-6">
                             <div class="flex flex-col gap-2">
-                                <fieldset class="flex gap-3 items-center">
-                                    <input type="radio" id="email-reception" name="email-reception">
+                                <div class="radio-btn--parent flex gap-3 items-center">
+                                    <input type="radio" id="email-reception" name="reception-mode" value="email"
+                                           class="radio-btn accent-orange">
                                     <label for="email-reception" class="flex gap-2 items-center">
                                         <span>{{__('Par email')}}</span>
-                                        <span class="text-sm font-light">{{__('(Vous recevrez les informations du candidat directement par e-mail)')}}</span>
+                                        <span
+                                            class="text-sm font-light">{{__('(Vous recevrez les informations du candidat directement par e-mail)')}}</span>
                                     </label>
-                                </fieldset>
-                                <fieldset class="ml-6 grid grid-cols-3">
+                                </div>
+                                <div class="input-field ml-6 grid grid-cols-3">
                                     <label for="applications-email" class="sr-only">{{__('Adresse e-mail')}}</label>
-                                    <input type="email" id="applications-email"
+                                    <input type="email" id="applications-email" name="applications-email"
                                            class="pl-3 py-2 col-span-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                                </fieldset>
+                                </div>
                             </div>
                             <div class="flex flex-col gap-2">
-                                <fieldset class="flex gap-3 items-center">
-                                    <input type="radio" id="website-reception" name="website-reception">
-                                    <label for="website-reception" class="flex gap-2 items-center">
+                                <div class="flex gap-3 items-center">
+                                    <input type="radio" id="url-reception" name="reception-mode" value="url"
+                                           class="accent-orange">
+                                    <label for="url-reception" class="flex gap-2 items-center">
                                         <span>{{__('Redirection sur une page de votre site')}}</span>
-                                        <span class="text-sm font-light">{{__('(La candidature se fera directement sur votre site)')}}</span>
+                                        <span
+                                            class="text-sm font-light">{{__('(La candidature se fera directement sur votre site)')}}</span>
                                     </label>
-                                </fieldset>
-                                <fieldset class="ml-6 grid grid-cols-3">
-                                    <label for="applications-website" class="sr-only">{{__('Adresse du site')}}</label>
-                                    <input type="text" id="applications-website"
+                                </div>
+                                <div class="ml-6 grid grid-cols-3">
+                                    <label for="applications-url" class="sr-only">{{__('Adresse e-mail')}}</label>
+                                    <input type="text" id="applications-url" name="applications-url"
                                            class="pl-3 py-2 col-span-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                                </fieldset>
+                                </div>
                             </div>
-                        </div>
+                        </fieldset>
                     </div>
                     <div class="flex flex-col gap-3">
                         <button type="submit"
@@ -189,7 +194,6 @@
                         </button>
                         <p class="font-light text-sm">{{__('Avant d’être publiée, votre offre sera vérifiée par un administrateur.')}}</p>
                     </div>
-
                 </form>
             </div>
         </section>

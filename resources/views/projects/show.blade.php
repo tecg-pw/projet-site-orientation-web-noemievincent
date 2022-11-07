@@ -19,11 +19,13 @@
             </div>
             <div class="flex justify-between gap-28">
                 <div class="h-full w-2/6 flex flex-col gap-6">
-                    <div>
+                    <div class="flex flex-col gap-3">
                         <img src="https://placehold.jp/230x230.png" alt="nom-de-leleve"
                              class="rounded-full">
-                        <p class="text-xl font-semibold">Gwenaëlle Batta</p>
-                        <p class="text-sm">Étudiante 2020-2023</p>
+                        <div>
+                            <p class="text-xl font-semibold">Gwenaëlle Batta</p>
+                            <p class="text-sm">Étudiante 2020-2023</p>
+                        </div>
                     </div>
                     <div>
                         <ul class="flex gap-4">
