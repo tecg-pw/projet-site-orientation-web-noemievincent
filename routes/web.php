@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/test', [\App\Http\Controllers\ProjectController::class, 'index']);
+
+
 Route::get('/terms', function () {
     return view('terms');
 });
