@@ -17,14 +17,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/test', [\App\Http\Controllers\ProjectController::class, 'index']);
-
-
 Route::get('/terms', function () {
     return view('terms');
 });
-Route::get('/search-results', function () {
-    return view('search-results');
+Route::get('/search', function () {
+    return view('search');
 });
 
 //ROUTE : Projects

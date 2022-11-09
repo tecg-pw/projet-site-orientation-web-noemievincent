@@ -1,11 +1,30 @@
-<!doctype html>
+@php
+    $sub_nav_items = [
+        'tutorials' => 'tutoriels',
+        'documentations' => 'documentations',
+        'faq' => 'faq',
+    ];
+
+    $main_nav_items = [
+        'projects' => 'projets',
+        'alumnis' => 'alumnis',
+        'about' => 'à propos',
+        'news' => 'actualités',
+        'forum' => 'forum',
+        'jobs' => 'stages',
+    ];
+@endphp
+    <!doctype html>
 <html lang="fr" class="bg-white">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="L'option Web forme des spécialistes en design Web, en design d’interaction et en développement d'applications mobiles. ">
-    <meta name="keywords" content="HEPL, Bachelier en Web, Technique Graphique, Design Web, Développement d'applications mobiles, Développement front-end, Développement back-end">
+    <meta name="description"
+          content="L'option Web forme des spécialistes en design Web, en design d’interaction et en développement d'applications mobiles. ">
+    <meta name="keywords"
+          content="HEPL, Bachelier en Web, Technique Graphique, Design Web, Développement d'applications mobiles, Développement front-end, Développement back-end">
     <meta name="author" content="Noémie Vincent">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web Design</title>
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
@@ -22,7 +41,7 @@
                     <img src="https://placehold.jp/30x30.png" alt="{{__('Se connecter')}}"
                          class="rounded-full h-full">
                     <span
-                            class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
+                        class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
                         {{__('Se connecter')}}
                     </span>
                 </a>
@@ -44,14 +63,11 @@
             <nav>
                 <h2 class="sr-only">{{__('Navigation secondaire')}}</h2>
                 <ul class="flex gap-8">
-                    <li><a href="/tutorials"
-                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Tutoriels')}}</a>
-                    </li>
-                    <li><a href="/docs"
-                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Documentations')}}</a>
-                    </li>
-                    <li><a href="/faq"
-                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('FAQ')}}</a></li>
+                    @foreach($sub_nav_items as $slug => $name)
+                        <li><a href="/{{$slug}}"
+                               class="{{Request::is($slug) ? 'font-bold' : ''}} hover:text-orange transition-all ease-in-out duration-200">{{ucwords($name)}}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </nav>
             <ul class="flex gap-2">
@@ -67,7 +83,7 @@
             <h2 class="sr-only">{{__('Navigation principale')}}</h2>
             <a href="/">
                 <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="24"
+                     x="0px" y="0px" height="24"
                      viewBox="0 0 128.8 34.8" style="enable-background:new 0 0 128.8 34.8;" xml:space="preserve"
                      class="fill-blue-dark hover:fill-orange transition-all ease-in-out duration-200"
                      aria-labelledby="logoTitle">
@@ -104,7 +120,8 @@
                             <path d="M116.7,24.8h1.9l4.3,6.7v-6.7h1.9v9.9h-1.9l-4.3-6.7v6.7h-1.9V24.8z"/>
                         </g>
                         <g>
-                            <path d="M0,0h7.6l6.6,25.3L21.5,0h5.1L34,25.3L40.5,0h7.6l-10,34.6h-7.6L24,13.1l-6.5,21.5H10L0,0z"/>
+                            <path
+                                d="M0,0h7.6l6.6,25.3L21.5,0h5.1L34,25.3L40.5,0h7.6l-10,34.6h-7.6L24,13.1l-6.5,21.5H10L0,0z"/>
                             <path d="M44.5,0H54c2.4,0,4.7,0.4,6.9,1.3c2.1,0.9,4,2.1,5.6,3.7c3.3,3.2,5.1,7.7,5,12.3
 			c0.1,4.6-1.7,9.1-5,12.3c-1.6,1.6-3.5,2.9-5.6,3.7c-2.2,0.9-4.5,1.3-6.9,1.3h-9.5V0z M53.3,28.6c2,0,3.9-0.5,5.6-1.5
 			c1.6-1,2.9-2.4,3.9-4c1-1.8,1.5-3.8,1.4-5.8c0-2-0.5-4-1.4-5.8c-0.9-1.7-2.2-3.1-3.9-4c-1.7-1-3.6-1.5-5.6-1.5h-2v22.5h2V28.6z"/>
@@ -113,22 +130,15 @@
                 </svg>
             </a>
             <ul class="flex justify-between gap-24">
-                <li><a href="/projects"
-                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('Projets')}}</a></li>
-                <li><a href="/alumnis"
-                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('Alumnis')}}</a></li>
-                <li><a href="/about"
-                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('À propos')}}</a></li>
-                <li><a href="/news"
-                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('Actualités')}}</a></li>
-                <li><a href="/forum"
-                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('Forum')}}</a></li>
-                <li><a href="/jobs/offers"
-                       class="hover:text-orange transition-all ease-in-out duration-200">{{__('Stages')}}</a></li>
+                @foreach($main_nav_items as $slug => $name)
+                    <li><a href="/{{$slug}}"
+                           class="{{Request::is($slug) ? 'font-bold' : ''}} hover:text-orange transition-all ease-in-out duration-200">{{ucwords($name)}}</a>
+                    </li>
+                @endforeach
             </ul>
-            <a href="?search">
+            <a href="/search">
                 <svg version="1.1" id="search" xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="22"
+                     x="0px" y="0px" height="22"
                      viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve"
                      class="fill-blue-dark" aria-labelledby="searchTitle">
                     <title id="searchTitle">{{__('Faire une recherche')}}</title>
@@ -139,22 +149,4 @@
             </a>
         </nav>
     </div>
-{{--    @if($_SERVER['QUERY_STRING'] === 'search')--}}
-{{--        <div class="max-w-3xl px-10 py-4">--}}
-{{--            <form action="/search-results" method="post" class="flex col-start-3 h-12">--}}
-{{--                @csrf--}}
-{{--                <label for="search-keyword" class="h-full flex-1">--}}
-{{--                            <span class="sr-only">--}}
-{{--                                {{__('Recherchez un mot clé')}}--}}
-{{--                            </span>--}}
-{{--                    <input placeholder="Recherchez un mot clé" type="search" id="search-keyword"--}}
-{{--                           class="h-full w-full pl-3 py-1 border border-orange-light border-r-0 focus:outline-none rounded-l-lg placeholder:font-light transition ease-in-out duration-200">--}}
-{{--                </label>--}}
-{{--                <button--}}
-{{--                        class="bg-orange text-white h-full px-10 rounded-r-lg uppercase hover:bg-orange-dark transition ease-in-out duration-200">--}}
-{{--                    {{__('Rechercher')}}--}}
-{{--                </button>--}}
-{{--            </form>--}}
-{{--        </div>--}}
-{{--    @endif--}}
 </header>
