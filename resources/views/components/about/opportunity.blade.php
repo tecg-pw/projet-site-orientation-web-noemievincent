@@ -2,7 +2,7 @@
     'showJob', 'name', 'definition'
 ])
 <div
-    class="rounded-2xl border border-blue/20 p-5">
+    class="bg-white rounded-2xl border border-blue/20 p-5">
     <div class="flex justify-between items-center mb-2">
         <h3 class="text-xl font-semibold">{{ucfirst(__($name))}}</h3>
         @if($showJob)

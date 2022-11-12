@@ -29,7 +29,7 @@
     <title>Web Design</title>
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
-<body class="bg-white text-blue-dark font-body flex flex-col h-screen selection:bg-orange-light selection:text-white">
+<body class="text-blue-dark font-body flex flex-col h-screen selection:bg-orange-light selection:text-white">
 <h1 class="sr-only">
     {{__('Web Design - formation web')}}
 </h1>

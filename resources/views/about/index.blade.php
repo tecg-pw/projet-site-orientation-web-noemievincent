@@ -242,7 +242,7 @@
                     <div class="grid grid-cols-3 gap-8">
                         @for($i = 0; $i < 6; $i++)
                             <div
-                                class="rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5 relative">
+                                class="bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5 relative">
                                 <a href="/teachers/slug" class="full-link">{{__('Voir la fiche de :name')}}</a>
                                 <div class="flex justify-between">
                                     <div class="flex flex-col gap-4">
@@ -322,7 +322,7 @@
                     </div>
                     <div class="grid grid-cols-2 gap-8">
                         @foreach($opportunities as $name => $definition)
-                            <x-opportunity :showJob="$showJob" :name="$name" :definition="$definition"/>
+                            <x-about.opportunity :showJob="$showJob" :name="$name" :definition="$definition"/>
                         @endforeach
                     </div>
                 </section>
