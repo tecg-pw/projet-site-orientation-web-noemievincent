@@ -35,6 +35,14 @@ Route::get('/teachers/slug', function () {
     return view('about.show-teacher');
 });
 
+//ROUTE : Alumnis
+Route::get('/alumnis', function () {
+    return view('alumnis.index');
+});
+Route::get('/alumnis/slug', function () {
+    return view('alumnis.show');
+});
+
 //ROUTE : Projects
 Route::get('/projects', function () {
     return view('projects.index');
@@ -75,7 +83,7 @@ Route::get('/jobs/create', function () {
 Route::get('/jobs/partners', function () {
     return view('partners.index');
 });
-Route::get('/partners/slug', function () {
+Route::get('/jobs/partners/slug', function () {
     return view('partners.show');
 });
 

@@ -3,7 +3,7 @@
     <div class="relative">
         <a href="/jobs/partners/slug" class="full-link">{{__('Voir l‘offre :name')}}</a>
         <div>
-            <div class="p-3 flex flex-col gap-3">
+            <div class="p-3 flex flex-col gap-2">
                 <div class="flex gap-3">
                     <img src="https://placehold.jp/60x60.png" alt="" class="rounded-full">
                     <h3 id="job" class="text-2xl uppercase">Nom de l'entreprise</h3>
