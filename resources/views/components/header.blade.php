@@ -11,7 +11,7 @@
         'about' => 'à propos',
         'news' => 'actualités',
         'forum' => 'forum',
-        'jobs' => 'stages',
+        'jobs/offers' => 'stages',
     ];
 @endphp
     <!doctype html>

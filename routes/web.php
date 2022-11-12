@@ -24,6 +24,17 @@ Route::get('/search', function () {
     return view('search');
 });
 
+//ROUTE : About
+Route::get('/about', function () {
+    return view('about.index');
+});
+Route::get('/classes/slug', function () {
+    return view('about.show-class');
+});
+Route::get('/teachers/slug', function () {
+    return view('about.show-teacher');
+});
+
 //ROUTE : Projects
 Route::get('/projects', function () {
     return view('projects.index');

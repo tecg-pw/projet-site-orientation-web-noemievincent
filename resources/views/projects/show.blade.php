@@ -31,7 +31,7 @@
                         <ul class="flex gap-4">
                             <li><a href="https://github.com/">
                                     <svg version="1.1" id="github" xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="36"
+                                         x="0px" y="0px" height="36"
                                          viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;"
                                          aria-labelledby="githubTitle"
                                          xml:space="preserve">
@@ -52,7 +52,7 @@
                                 </a></li>
                             <li><a href="https://www.linkedin.com">
                                     <svg version="1.1" id="linkedin" xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="36"
+                                         x="0px" y="0px" height="36"
                                          viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;"
                                          aria-labelledby="linkedinTitle"
                                          xml:space="preserve">
@@ -80,7 +80,7 @@
                                 </a></li>
                             <li><a href="https://www.instagram.com/">
                                     <svg version="1.1" id="instagram" xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="36"
+                                         x="0px" y="0px" height="36"
                                          viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
                                          xml:space="preserve" aria-labelledby="instagramTitle">
                                         <title id="instagramTitle">{{__('Se rendre sur l‘instagram de :name')}}</title>
@@ -175,37 +175,49 @@
                             </ul>
                             <div class="bg-blue/50 h-max-content w-px"></div>
                             <time datetime="">Juin 2022</time>
+                            <div class="bg-blue/50 h-max-content w-px"></div>
+                            <a href="/classes/slug">{{__('Design Web')}}</a>
                         </div>
                         <x-share/>
                     </div>
                     <div>
                         <p>
-                            Ce site a été réalisé dans le cadre du cours de Design Web afin présenter nos travaux effectués durant l’année. Ce site a été codé principalement grâce à Wordpress, CSS3 et Javascript.
+                            Ce site a été réalisé dans le cadre du cours de Design Web afin présenter nos travaux
+                            effectués durant l’année. Ce site a été codé principalement grâce à Wordpress, CSS3 et
+                            Javascript.
                         </p>
                         <p>
-                            Ce projet est un site destiné à présenter nos différents sites aux jurys de fin d’année et de montrer notre savoir-faire en Wordpress, langage que nous avons étudié lors du cours de Design Web. C’est le site sur lequel vous vous trouvez en ce moment.
+                            Ce projet est un site destiné à présenter nos différents sites aux jurys de fin d’année et
+                            de montrer notre savoir-faire en Wordpress, langage que nous avons étudié lors du cours de
+                            Design Web. C’est le site sur lequel vous vous trouvez en ce moment.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <img src="/img/project-picture-big.png" alt="">
+                    <div class="flex flex-wrap gap-8">
+                        <img src="https://placehold.jp/320x374.png" alt="">
+                        <img src="https://placehold.jp/320x374.png" alt="">
+                        <img src="https://placehold.jp/672x374.png" alt="">
                     </div>
                 </div>
             </div>
             <div class="flex justify-between items-center text-orange">
-                <a href="/projects/name/slug" class="flex items-center self-end gap-4 mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6" class="-scale-100 fill-orange h-full">
+                <a href="/projects/name/slug"
+                   class="flex items-center self-end gap-4 mt-1 hover:gap-6 transition-all ease-in-out duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
+                         class="-scale-100 fill-orange h-full">
                         <path
-                              d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
-                              transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                            d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
+                            transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                     </svg>
                     <span>{{__('projet précedent')}}</span>
                 </a>
-                <a href="/projects/name/slug" class="flex items-center self-end gap-4 mt-1 hover:gap-6 transition-all ease-in-out duration-200">
+                <a href="/projects/name/slug"
+                   class="flex items-center self-end gap-4 mt-1 hover:gap-6 transition-all ease-in-out duration-200">
                     <span>{{__('projet suivant')}}</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6" class="fill-orange h-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
+                         class="fill-orange h-full">
                         <path
-                              d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
-                              transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                            d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
+                            transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                     </svg>
                 </a>
             </div>
@@ -217,11 +229,14 @@
                             <x-projects.article/>
                         @endfor
                     </div>
-                    <a href="/gwenaelle-batta" class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
+                    <a href="/gwenaelle-batta"
+                       class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
                         <span>{{__('Tous ses projets')}}</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6" class="fill-orange h-full">
-                            <path d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
-                                  transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
+                             class="fill-orange h-full">
+                            <path
+                                d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
+                                transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                         </svg>
                     </a>
                 </div>
