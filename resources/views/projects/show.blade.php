@@ -18,7 +18,7 @@
                     class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{__('Portfolio')}}</h2>
             </div>
             <div class="flex justify-between gap-28">
-                <div class="h-full w-2/6 flex flex-col gap-6">
+                <div class="flex flex-col gap-6">
                     <div class="flex flex-col gap-3">
                         <img src="https://placehold.jp/230x230.png" alt="nom-de-leleve"
                              class="rounded-full">

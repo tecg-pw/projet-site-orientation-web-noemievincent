@@ -148,7 +148,7 @@
                     </div>
                     <div class="mt-12">
                         <p class="mb-3 text-2xl">{{__('Votre recherche n‘a aucun résultat')}}</p>
-                        <ul class="ml-6 list-inside text-lg leading-7">
+                        <ul class="ml-6 list-disc list-inside marker:text-orange text-lg leading-7">
                             <li>{{__('Vérifiez que l’orthographe est correcte.')}}</li>
                             <li>{{__('Supprimez les guillemets autour des expressions pour rechercher chaque mot séparément. ')}}</li>
                             <li>{{__('Envisagez d’élargir votre recherche avec OR.')}}</li>
