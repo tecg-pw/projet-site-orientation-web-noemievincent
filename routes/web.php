@@ -87,6 +87,14 @@ Route::get('/jobs/partners/slug', function () {
     return view('partners.show');
 });
 
+//ROUTE : Tutorials + Resources
+Route::get('/tutorials', function () {
+    return view('tutorials.index');
+});
+Route::get('/resources', function () {
+    return view('resources.index');
+});
+
 //ROUTE : Profile
 Route::get('/username', function () {
     return view('profile.index');

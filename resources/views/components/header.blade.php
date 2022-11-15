@@ -1,7 +1,7 @@
 @php
     $sub_nav_items = [
         'tutorials' => 'tutoriels',
-        'documentations' => 'documentations',
+        'resources' => 'ressources',
         'faq' => 'faq',
     ];
 

@@ -14,7 +14,7 @@
         width: 100%;
         z-index: 20;
         opacity: 0;
-        /*background-color: pink;*/
+        /*background-color: orangered;*/
     }
 
     .overlay {
@@ -39,7 +39,23 @@
         text-overflow: ellipsis;
     }
 
-    .radio-btn:checked {
-        accent-color: red;
+    .tag#html {
+        background-color: #E44D26;
+    }
+
+    .tag#css {
+        background-color: #4FA3D8;
+    }
+
+    .tag#js {
+        background-color: #F2C610;
+    }
+
+    .tag#php {
+        background-color: #777BB3;
+    }
+
+    .tag#mysql {
+        background-color: #F29111;
     }
 }

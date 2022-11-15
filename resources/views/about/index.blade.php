@@ -65,6 +65,11 @@
                                         <li><p class="flex justify-between">
                                                 <span>{{__('Rencontre professionnelle')}}</span><span>15h</span>
                                             </p></li>
+                                        <li>
+                                            <p class="flex justify-between">
+                                                <span>{{__('Initiation à la programmation')}}</span><span>30h</span>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="">
@@ -81,11 +86,6 @@
                                         <li><a href="classes/slug"
                                                class="flex justify-between hover:text-orange transition-all ease-in-out duration-200"><span
                                                     class="underline underline-offset-2">{{__('Design Web')}}</span><span>30h</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="classes/slug"
-                                               class="flex justify-between hover:text-orange transition-all ease-in-out duration-200"><span
-                                                    class="underline underline-offset-2">{{__('Initiation à la programmation')}}</span><span>30h</span></a>
                                         </li>
                                     </ul>
                                 </div>
