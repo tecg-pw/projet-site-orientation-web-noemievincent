@@ -1,6 +1,6 @@
 <x-header/>
 <main class="px-10 flex-1 mt-6">
-    <div class="grid grid-cols-4 justify-between gap-12">
+    <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="username" class="col-span-3 flex flex-col gap-8">
             <h2 id="username"
                 class="sr-only">username</h2>

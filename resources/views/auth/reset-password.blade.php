@@ -1,9 +1,11 @@
 <x-header/>
-<main class="px-10 flex-1 mx-96 mt-12">
+<main class="px-10 flex-1 xl:mx-96 mt-12">
     <section aria-labelledby="reset-password" class="col-start-2">
         <div class="mb-8">
-            <h2 id="reset-password" class="uppercase font-display font-bold text-4xl text-blue">{{__('Mot de passe oublié ?')}}</h2>
-            <p>Veuillez saisir votre adresse email ci-dessous. Vous recevrez un lien pour réinitialiser votre mot de passe.</p>
+            <h2 id="reset-password"
+                class="uppercase font-display font-bold text-4xl text-blue">{{__('Mot de passe oublié ?')}}</h2>
+            <p>Veuillez saisir votre adresse email ci-dessous. Vous recevrez un lien pour réinitialiser votre mot de
+                passe.</p>
         </div>
         <form action="/reset-password" method="post" class="flex flex-col gap-4 mb-12">
             @csrf
@@ -26,7 +28,8 @@
                 {{__('Réinitialiser mon mot de passe')}}
             </button>
         </form>
-        <a href="/login" class="flex items-center self-end gap-2 text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
+        <a href="/login"
+           class="flex items-center self-end gap-2 text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" class="fill-orange h-full">
                 <g>
                     <rect width="24" height="24" opacity="0" transform="rotate(90 12 12)"/>

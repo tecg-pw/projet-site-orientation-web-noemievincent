@@ -15,7 +15,7 @@
 @endphp
 <x-header/>
 <main class="px-10 flex-1 mt-6">
-    <div class="grid grid-cols-4 justify-between gap-12">
+    <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="about" class="col-span-3 flex flex-col gap-8">
             <h2 id="about"
                 class="font-display font-bold text-blue text-5xl tracking-wider uppercase">{{__('À propos de la section')}}</h2>

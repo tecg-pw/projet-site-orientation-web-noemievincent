@@ -4,7 +4,9 @@
             <img src="https://placehold.jp/50x50.png" alt="nom"
                  class="rounded-full h-12">
             <div>
-                <p class="text-lg font-medium">Prénom Nom</p>
+                <p class="text-lg font-medium"><a href="/username"
+                                                  class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">Prénom
+                        Nom</a></p>
                 <p class="text-sm">Statut</p>
             </div>
         </div>

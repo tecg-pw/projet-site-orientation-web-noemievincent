@@ -7,7 +7,7 @@
                  class="rounded-full">
             <div>
                 <h3 class="cursor-pointer font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
-                    <a href="/teachers/slug"></a>Prénom Nom</h3>
+                    <a href="/teachers/slug">Prénom Nom</a></h3>
                 <p>prénom.nom@hepl.be</p>
             </div>
         </div>

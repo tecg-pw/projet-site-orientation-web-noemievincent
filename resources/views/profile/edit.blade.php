@@ -1,5 +1,5 @@
 <x-header/>
-<main class="px-10 flex-1 mx-96 mt-12">
+<main class="px-10 flex-1 lg:mx-96 mt-12">
     <section aria-labelledby="edit-profile" class="col-start-2 flex flex-col gap-12">
         <div>
             <div class="flex flex-col gap-4">
@@ -122,7 +122,8 @@
                                 <span>{{__('Ancien mot de passe')}}</span>
                             </span>
                         </label>
-                        <div class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
+                        <div
+                            class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
                             <input type="password" id="old-password" name="old-password"
                                    class="password py-2 h-full w-full placeholder:font-light focus:outline-none font-mono font-lig">
                             <span class="show-password cursor-pointer">
@@ -149,7 +150,8 @@
                             <span
                                 class="font-light text-sm">{{__('Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule')}}</span>
                         </label>
-                        <div class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
+                        <div
+                            class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
                             <input type="password" id="new-password" name="new-password"
                                    class="password py-2 h-full w-full placeholder:font-light focus:outline-none font-mono font-lig">
                             <span class="show-password cursor-pointer">

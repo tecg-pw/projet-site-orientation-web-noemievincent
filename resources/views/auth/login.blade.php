@@ -1,5 +1,5 @@
 <x-header/>
-<main class="px-10 flex-1 mx-96 mt-12">
+<main class="px-10 flex-1 xl:mx-96 mt-12">
     <section aria-labelledby="login" class="col-start-2">
         <h2 id="login" class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('Connexion')}}</h2>
         <form action="/login" method="post" class="flex flex-col gap-4">
@@ -28,9 +28,11 @@
                         </svg>
                         <span>{{__('Mot de passe')}}</span>
                     </span>
-                    <span class="font-light text-sm">{{__('Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule')}}</span>
+                    <span
+                        class="font-light text-sm">{{__('Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule')}}</span>
                 </label>
-                <div class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
+                <div
+                    class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
                     <input type="password" id="password" name="password"
                            class="password py-2 h-full w-full placeholder:font-light focus:outline-none font-mono font-lig">
                     <span class="show-password cursor-pointer">
@@ -54,7 +56,8 @@
             </div>
             <div class="flex justify-between gap-16 items-center mt-6">
                 <p class="text-sm font-light">{{__('Pas encore de compte ?')}} <a href="/register"
-                                                       class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Inscrivez-vous')}}</a></p>
+                                                                                  class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Inscrivez-vous')}}</a>
+                </p>
                 <button type="submit"
                         class="uppercase font-light bg-orange text-white py-2 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
                     {{__('Me connecter')}}

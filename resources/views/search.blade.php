@@ -9,7 +9,7 @@
 @endphp
 <x-header/>
 <main class="mt-6 flex-1 px-10">
-    <div class="grid grid-cols-4 justify-between gap-12">
+    <div class="xl:grid grid-cols-4 justify-between gap-12">
         <div class="col-span-3">
             <div class="mb-12">
                 <form action="/search-results" method="post" class="flex col-start-3 h-14">
@@ -85,11 +85,9 @@
                     </div>
                     <div class="flex flex-col gap-6">
                         <h3 class="text-2xl font-semibold font-display">{{__('Tutoriels')}}</h3>
-                        <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
+                        <div class="grid grid-cols-2 gap-8">
                             @for($i = 0; $i < 3; $i++)
-                                <div class="w-full border border-blue">
-                                    tutoriels
-                                </div>
+                                <x-resources.tutorial/>
                             @endfor
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
@@ -121,7 +119,7 @@
                     </div>
                     <div class="flex flex-col gap-6">
                         <h3 class="text-2xl font-semibold font-display">{{__('Utilisateurs')}}</h3>
-                        <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
+                        <div class="grid grid-cols-3 gap-8" x>
                             @for($i = 0; $i < 3; $i++)
                                 <div class="w-full border border-blue">
                                     utilisateurs

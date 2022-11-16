@@ -1,6 +1,6 @@
 <x-header/>
 <main class="px-10 flex-1 mt-6">
-    <div class="grid grid-cols-4 justify-between gap-12">
+    <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/jobs/offers"
@@ -23,7 +23,7 @@
                         <img src="https://placehold.jp/80x80.png" alt="nom" height="80" width="80"
                              class="rounded-full items-start">
                         <div>
-                            <a href="#"
+                            <a href="/jobs/partners/slug"
                                class="text-xl underline underline-offset-2 hover:text-orange transition ease-in-out duration-200">
                                 EPIC Agency</a>
                             <p class="">Liège</p>

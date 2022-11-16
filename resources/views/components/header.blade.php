@@ -29,10 +29,11 @@
     <title>Web Design</title>
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
-{{--<div--}}
-{{--    class="text-center bg-rose-300 sm:bg-orange-200 md:bg-green-200 lg:bg-pink-200 xl:bg-bleu-200 2xl:bg-purple-200">--}}
-{{--    preview--}}
-{{--</div>--}}
+<div
+    class="text-center bg-red-300 sm:bg-orange-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-cyan-300 2xl:bg-purple-200 transition ease-in-out duration-700">
+    <p class="after:content-['phone'] sm:after:content-['tablet'] md:after:content-['small_screen'] lg:after:content-['default_screen'] xl:after:content-['large_screen'] 2xl:after:content-['extra_large_screen']">
+        size for : </p>
+</div>
 <body class="text-blue-dark font-body flex flex-col h-screen selection:bg-blue-light">
 <h1 class="sr-only">
     {{__('Web Design - formation web')}}

@@ -6,8 +6,8 @@
                  width="160"
                  class="rounded-full">
             <div>
-                <h3 class="cursor-pointer font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
-                    <a href="/alumnis/slug"></a>Prénom Nom</h3>
+                <h3 class="font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
+                    <a href="/alumnis/slug">Prénom Nom</a></h3>
                 <span><time datetime="">20xx</time> - <time datetime="">20xx</time></span>
             </div>
         </div>

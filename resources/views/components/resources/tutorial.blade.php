@@ -17,7 +17,7 @@
                         {{__('Intitulé du tutoriel')}}
                     </a>
                 </h3>
-                <a href="#" class="relative z-30 group">
+                <a href="#" class="relative group">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                          viewBox="0 0 24 24"
                          class="fill-orange-light/0 group-hover:fill-orange-light stroke-1 stroke-orange-light transition-all ease-in-out duration-200">

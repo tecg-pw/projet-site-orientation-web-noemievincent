@@ -1,6 +1,6 @@
 <x-header/>
 <main class="px-10 flex-1 mt-6">
-    <div class="grid grid-cols-4 justify-between gap-12">
+    <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/projects"
@@ -22,7 +22,9 @@
                     <div class="flex justify-between items-center">
                         <p>publiée le
                             <time datetime="">dd/mm/yyyy</time>
-                            par William Bednar dans <a href="#" class="underline underline-offset-2 decoration-1 decoration-solid hover:text-orange">conseil</a></p>
+                            par William Bednar dans <a href="#"
+                                                       class="underline underline-offset-2 decoration-1 decoration-solid hover:text-orange">conseil</a>
+                        </p>
                         <x-share/>
                     </div>
                     <div class="leading-8 flex flex-col gap-4">
