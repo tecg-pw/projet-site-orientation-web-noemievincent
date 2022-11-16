@@ -58,4 +58,24 @@
     .tag#mysql {
         background-color: #F29111;
     }
+
+    .tag#html:hover {
+        background-color: #BD3A18;
+    }
+
+    .tag#css:hover {
+        background-color: #2B87C1;
+    }
+
+    .tag#js:hover {
+        background-color: #C4A00B;
+    }
+
+    .tag#php:hover {
+        background-color: #555A99;
+    }
+
+    .tag#mysql:hover {
+        background-color: #C4740B;
+    }
 }

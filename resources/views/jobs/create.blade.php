@@ -14,7 +14,7 @@
                     <a href="/jobs/partners"
                        class="uppercase text-lg text-orange underline">{{__('Entreprises partenaires')}}</a>
                     <a href="/jobs/create"
-                       class="uppercase text-lg text-orange underline font-bold">{{__('Proposer un stage')}}</a>
+                       class="uppercase text-lg text-orange font-bold">{{__('Proposer un stage')}}</a>
                 </div>
                 <p class="text-lg">{{__('Vous êtes une entreprise en recherche de stagiaires ? Publiez directement votre proposition sur ce site et les candidatures seront garanties.')}}</p>
                 <form action="/jobs/create" method="post" class="flex flex-col gap-6">

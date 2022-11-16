@@ -9,9 +9,12 @@
             </div>
             <div class="flex flex-col gap-3">
                 <div class="flex gap-12 col-span-2">
-                    <a href="/jobs/offers" class="uppercase text-lg text-orange underline">{{__('Offres de stages')}}</a>
-                    <a href="/jobs/partners" class="uppercase text-lg text-orange underline font-bold">{{__('Entreprises partenaires')}}</a>
-                    <a href="/jobs/create" class="uppercase text-lg text-orange underline">{{__('Proposer un stage')}}</a>
+                    <a href="/jobs/offers"
+                       class="uppercase text-lg text-orange underline">{{__('Offres de stages')}}</a>
+                    <a href="/jobs/partners"
+                       class="uppercase text-lg text-orange font-bold">{{__('Entreprises partenaires')}}</a>
+                    <a href="/jobs/create"
+                       class="uppercase text-lg text-orange underline">{{__('Proposer un stage')}}</a>
                 </div>
                 <div class="flex gap-6 items-center">
                     <p class="uppercase text-lg">{{__('Filtrer par')}}</p>

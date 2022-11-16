@@ -47,7 +47,7 @@
                 <div class="flex flex-col gap-2">
                     <p>{{__('Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.')}}</p>
                     <a href="#"
-                       class="underline underline-offset-2 hover:text-orange">{{__('Découvrez le repo GitHub du cours et les différents exercices qui y sont réalisés.')}}</a>
+                       class="self-start underline underline-offset-2 hover:text-orange">{{__('Découvrez le repo GitHub du cours et les différents exercices qui y sont réalisés.')}}</a>
                 </div>
             </div>
             <div class="flex flex-col gap-5">

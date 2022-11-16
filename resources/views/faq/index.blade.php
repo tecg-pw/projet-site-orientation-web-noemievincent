@@ -13,9 +13,12 @@
             <div class="flex flex-col gap-3">
                 <div class="grid grid-cols-3 gap-x-11">
                     <div class="flex gap-12 col-span-2">
-                        <a href="?general" class="uppercase text-lg text-orange underline {{$_SERVER['QUERY_STRING'] === 'general' || $_SERVER['QUERY_STRING'] === '' ? 'font-bold' : ''}}">{{__('Général')}}</a>
-                        <a href="?inscription" class="uppercase text-lg text-orange underline {{$_SERVER['QUERY_STRING'] === 'inscription' ? 'font-bold' : ''}}">{{__('Inscription')}}</a>
-                        <a href="?hepl" class="uppercase text-lg text-orange underline {{$_SERVER['QUERY_STRING'] === 'hepl' ? 'font-bold' : ''}}">{{__('La HEPL')}}</a>
+                        <a href="?general"
+                           class="uppercase text-lg text-orange {{Request::has('general') || Request::all() == null ? 'font-bold' : 'underline'}} ? 'font-bold' : ''}}">{{__('Général')}}</a>
+                        <a href="?inscription"
+                           class="uppercase text-lg text-orange {{Request::has('inscription') ? 'font-bold' : 'underline'}}">{{__('Inscription')}}</a>
+                        <a href="?hepl"
+                           class="uppercase text-lg text-orange {{Request::has('hepl') ? 'font-bold' : 'underline'}}">{{__('La HEPL')}}</a>
                     </div>
                     <x-filters.search/>
                 </div>
@@ -28,7 +31,8 @@
                                 <div class="flex justify-between">
                                     <h3 id="question" class="text-xl">{{__('Intitulé de la question')}}</h3>
                                     <a href="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="18" width="9"
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="18"
+                                             width="9"
                                              class="-rotate-90 fill-orange h-full">
                                             <path
                                                 d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"

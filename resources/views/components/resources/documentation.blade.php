@@ -11,7 +11,7 @@
     class="bg-white rounded-2xl border border-blue/20 p-5">
     <div class="flex flex-col gap-3">
         <div>
-            <h3 class="mb-2 text-xl font-semibold underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
+            <h3 class="mb-2 text-xl font-semibold inline hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
                 <a href="#">
                     {{__('Intitulé')}}
                 </a>

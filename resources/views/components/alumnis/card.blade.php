@@ -1,17 +1,17 @@
 <div
-    class="bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5 relative">
-    <a href="/alumnis/slug" class="full-link">{{__('Voir la fiche de :name')}}</a>
+    class="bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5">
     <div class="flex justify-between">
         <div class="flex flex-col gap-4">
             <img src="https://placehold.jp/160x160.png" alt="nom-de-leleve" height="160"
                  width="160"
                  class="rounded-full">
             <div>
-                <h3 class="font-semibold text-xl">Prénom Nom</h3>
+                <h3 class="cursor-pointer font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
+                    <a href="/alumnis/slug"></a>Prénom Nom</h3>
                 <span><time datetime="">20xx</time> - <time datetime="">20xx</time></span>
             </div>
         </div>
-        <ul class="flex flex-col gap-4">
+        <ul class="self-start flex flex-col gap-4">
             <li><a href="https://github.com/">
                     <svg version="1.1" id="github" xmlns="http://www.w3.org/2000/svg"
                          x="0px" y="0px" height="36"

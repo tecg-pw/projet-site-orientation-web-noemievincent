@@ -39,42 +39,58 @@
                 <div class="flex flex-col gap-3">
                     <div class="grid grid-cols-3 gap-x-11">
                         <div class="flex gap-12 col-span-2">
-{{--                            @if('username' = 'auth name')--}}
-{{--                                <a href="?forum-tab=questions"--}}
-{{--                                   class="uppercase text-lg text-orange underline {{$_SERVER['QUERY_STRING'] === 'forum-tab=questions' || $_SERVER['QUERY_STRING'] === '' ? 'font-bold' : ''}}">{{__('Mes questions')}}</a>--}}
-{{--                                <a href="?forum-tab=replies"--}}
-{{--                                   class="uppercase text-lg text-orange underline {{$_SERVER['QUERY_STRING'] === 'forum-tab=replies' ? 'font-bold' : ''}}">{{__('Mes réponses')}}</a>--}}
-{{--                            @else--}}
-                                <a href="?forum-tab=questions"
-                                   class="uppercase text-lg text-orange underline {{$_SERVER['QUERY_STRING'] === 'forum-tab=questions' || $_SERVER['QUERY_STRING'] === '' ? 'font-bold' : ''}}">{{__('Ses questions')}}</a>
-                                <a href="?forum-tab=replies"
-                                   class="uppercase text-lg text-orange underline {{$_SERVER['QUERY_STRING'] === 'forum-tab=replies' ? 'font-bold' : ''}}">{{__('Ses réponses')}}</a>
-{{--                            @endif--}}
+                            {{--                            @if('username' = 'auth name')--}}
+                            {{--                                <a href="?forum-tab=questions"--}}
+                            {{--                                   class="uppercase text-lg text-orange underline {{$_SERVER['QUERY_STRING'] === 'forum-tab=questions' || $_SERVER['QUERY_STRING'] === '' ? 'font-bold' : ''}}">{{__('Mes questions')}}</a>--}}
+                            {{--                                <a href="?forum-tab=replies"--}}
+                            {{--                                   class="uppercase text-lg text-orange underline {{$_SERVER['QUERY_STRING'] === 'forum-tab=replies' ? 'font-bold' : ''}}">{{__('Mes réponses')}}</a>--}}
+                            {{--                            @else--}}
+                            <a href="?forum-tab=questions"
+                               class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : 'underline'}}">{{__('Ses questions')}}</a>
+                            <a href="?forum-tab=replies"
+                               class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'replies' ? 'font-bold' : 'underline'}}">{{__('Ses réponses')}}</a>
+                            {{--                            @endif--}}
                         </div>
                         <x-filters.search/>
                     </div>
                 </div>
-                <div class="flex flex-col gap-6">
-                    @for($i = 0; $i < 2; $i++)
-                        <x-forum.article/>
-                    @endfor
-                </div>
-                <div class="flex flex-col gap-6 hidden">
-                    @for($i = 0; $i < 2; $i++)
-                        <x-forum.reply/>
-                    @endfor
-                </div>
+                @if(Request::input('forum-tab') === 'questions' || Request::all() == null)
+                    <div class="flex flex-col gap-6">
+                        @for($i = 0; $i < 2; $i++)
+                            <x-forum.article/>
+                        @endfor
+                    </div>
+                @endif
+
+                @if(Request::input('forum-tab') === 'replies')
+                    <div class="flex flex-col gap-6">
+                        @for($i = 0; $i < 2; $i++)
+                            <x-forum.reply/>
+                        @endfor
+                    </div>
+                @endif
             </div>
             <div class="bg-blue/50 h-px w-full"></div>
             {{--                @auth()--}}
             {{--                    @if('username' = 'auth name')--}}
             <div>
                 <h3 class="font-semibold font-display text-xl">{{__('Tutoriels enregistrés')}}</h3>
-                <div class="bg-pink-200">
-                    FILTRES
+                <div class="flex flex-col gap-3">
+                    <div class="flex gap-6 items-center">
+                        <p class="uppercase text-lg">{{__('Filtrer par')}}</p>
+                        <a href="#" class="text-orange text-xs">{{__('supprimer les filtres')}}</a>
+                    </div>
+                    <div class="grid grid-cols-3 gap-x-11">
+                        <div class="flex gap-4 col-span-2">
+                            <x-filters.languages/>
+                        </div>
+                        <x-filters.search/>
+                    </div>
                 </div>
-                <div class="bg-green-200">
-                    Tutoriels
+                <div class="grid grid-cols-2 gap-8 mt-6">
+                    @for($i = 0; $i < 3; $i++)
+                        <x-resources.tutorial/>
+                    @endfor
                 </div>
             </div>
             {{--                    @endif--}}

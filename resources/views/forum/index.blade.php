@@ -33,7 +33,8 @@ dolore aliqua. N’oubliez pas de jeter un oeil à notre ')}} <a href="/faq"
                         </a>
                         <p>
                             Retrouvez vos questions et réponses sur votre
-                            <a href="/profile" class="underline underline-offset-2 decoration-1 decoration-solid text-orange">profil</a>
+                            <a href="/profile"
+                               class="underline underline-offset-2 decoration-1 decoration-solid text-orange">profil</a>
                         </p>
                     </div>
                 @endauth
@@ -74,44 +75,26 @@ dolore aliqua. N’oubliez pas de jeter un oeil à notre ')}} <a href="/faq"
             <div class="flex flex-col gap-3">
                 <div class="flex gap-6 items-center">
                     <p class="uppercase text-lg">{{__('Filtrer par')}}</p>
-                    <a href="#" class="text-orange text-xs">{{__('supprimer les filtres')}}</a>
+                    <a href="/forum" class="text-orange text-xs">{{__('supprimer les filtres')}}</a>
                 </div>
                 <div class="grid grid-cols-3 gap-x-11">
                     <div class="flex gap-4 col-span-2 text-sm items-center">
                         <a href="?last-subjects"
-                           class="rounded-lg py-1 px-3 bg-white border border-blue/40 {{$_SERVER['QUERY_STRING'] === 'last-subjects' || $_SERVER['QUERY_STRING'] === '' ? 'bg-blue/20' : ''}}">{{__('Derniers sujets')}}</a>
+                           class="rounded-lg py-1 px-3 border border-blue/40 {{Request::has('last-subjects') || Request::all() == null ? 'bg-blue/20' : 'bg-white'}}">{{__('Derniers sujets')}}</a>
                         <a href="?last-replies"
-                           class="rounded-lg py-1 px-3 bg-white border border-blue/40 {{$_SERVER['QUERY_STRING'] === 'last-replies' ? 'bg-blue/20' : ''}}">{{__('Dernières réponses')}}</a>
+                           class="rounded-lg py-1 px-3 border border-blue/40 {{Request::has('last-replies') ? 'bg-blue/20' : 'bg-white'}}">{{__('Dernières réponses')}}</a>
                         <x-filters.forum-categories/>
                         <x-filters.forum-status/>
                     </div>
                     <x-filters.search/>
                 </div>
             </div>
-            @if($_SERVER['QUERY_STRING'] === 'last-subjects' || $_SERVER['QUERY_STRING'] === '')
-                <div class="flex flex-col gap-20">
-                    <div class="flex flex-col gap-6">
-                        @for($i = 0; $i < 5; $i++)
-                            <x-forum.article/>
-                        @endfor
-                    </div>
-                    <div class="bg-pink-200">
-                        PAGINATION
-                    </div>
-                </div>
+            @if(Request::has('last-subjects') || Request::all() == null)
+                <x-forum.last-subjects/>
             @endif
 
-            @if($_SERVER['QUERY_STRING'] === 'last-replies')
-                <div class="flex flex-col gap-20">
-                    <div class="flex flex-col gap-10">
-                        @for($i = 0; $i < 5; $i++)
-                            <x-forum.reply/>
-                        @endfor
-                    </div>
-                    <div class="bg-pink-200">
-                        PAGINATION
-                    </div>
-                </div>
+            @if(Request::has('last-replies'))
+                <x-forum.last-replies/>
             @endif
         </section>
         <x-aside/>
