@@ -43,7 +43,7 @@
         <a href="/">
             <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
                  height="24" viewBox="0 0 130 35"
-                 xml:space="preserve" class="fill-blue-dark hover:fill-orange transition-all ease-in-out duration-200"
+                 xml:space="preserve" class="fill-blue-dark hover:fill-orange transition ease-in-out duration-200"
                  aria-labelledby="logoTitle">
                 <title id="logoTitle">{{__('Retourner à l‘accueil')}}</title>
                 <g>
@@ -87,9 +87,9 @@
                 </g>
             </svg>
         </a>
-        <div class="burgermenu w-8 h-6 relative">
+        <div class="burgermenu w-6 h-5 relative">
             <label for="toggle"
-                   class="hamburger w-full h-full flex flex-col justify-between transition-all ease-in-out duration-200">
+                   class="hamburger w-full h-full flex flex-col justify-between">
                 <span class="top-bun"></span>
                 <span class="meat"></span>
                 <span class="bottom-bun"></span>
@@ -98,7 +98,7 @@
         </div>
     </div>
     <div
-        class="menu bg-blue-light px-4 py-6 flex flex-col gap-10 fixed z-[100] top-14 bottom-0 left-full -right-[150%] transition-all ease-in-out duration-700 lg:static lg:flex-col-reverse lg:bg-transparent lg:p-0 lg:gap-0">
+        class="menu bg-blue-light px-4 py-6 flex flex-col gap-10 fixed z-[100] top-14 h-full left-full -right-[150%] transition-position ease-in-out duration-700 lg:static lg:flex-col-reverse lg:bg-transparent lg:p-0 lg:gap-0">
         <nav class="lg:bg-white/60 lg:px-10 lg:py-6">
             <h2 class="sr-only">{{__('Navigation principale')}}</h2>
             <div class="flex flex-col gap-8 lg:flex-row lg:justify-between lg:items-center">

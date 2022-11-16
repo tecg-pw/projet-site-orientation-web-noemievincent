@@ -1,25 +1,33 @@
-<footer class="bg-blue-light px-10 py-4 text-sm mt-20">
+<footer class="bg-blue-light px-4 py-8 text-sm mt-20 lg:px-10">
     <section aria-labelledby="footer">
         <h2 id="footer" class="sr-only">{{__('Pied de page')}}</h2>
-        <div class="my-6 flex justify-between">
-            <nav>
+        <div class="lg:my-6 flex flex-col gap-6 lg:flex-row justify-between">
+            <nav class="hidden lg:block">
                 <h3 class="text-blue font-bold text-lg mb-4">{{__('Navigation')}}</h3>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="/projects" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Projets')}}</a></li>
-                    <li><a href="/alumnis" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Alumnis')}}</a></li>
-                    <li><a href="/about" class="hover:text-orange transition-all ease-in-out duration-200">{{__('À propos')}}</a></li>
-                    <li><a href="/news" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Actualités')}}</a></li>
-                    <li><a href="/forum" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Forum')}}</a></li>
-                    <li><a href="/jobs" class="hover:text-orange transition-all ease-in-out duration-200">{{__('Stages')}}</a></li>
+                    <li><a href="/projects"
+                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Projets')}}</a></li>
+                    <li><a href="/alumnis"
+                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Alumnis')}}</a></li>
+                    <li><a href="/about"
+                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('À propos')}}</a></li>
+                    <li><a href="/news"
+                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Actualités')}}</a>
+                    </li>
+                    <li><a href="/forum"
+                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Forum')}}</a></li>
+                    <li><a href="/jobs"
+                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Stages')}}</a></li>
                 </ul>
             </nav>
             <div>
-                <h3 class="text-blue font-bold text-lg mb-4">{{__('Suivez-nous')}}</h3>
+                <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('Suivez-nous')}}</h3>
                 <ul class="flex flex-col gap-3">
                     <li>
-                        <a href="#" class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
+                        <a href="#"
+                           class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
                             <svg version="1.1" id="footer-facebook" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
+                                 x="0px" y="0px" width="20"
                                  viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
                                 <style type="text/css">
                                     .fb_blue {
@@ -41,9 +49,10 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
+                        <a href="#"
+                           class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
                             <svg version="1.1" id="footer-instagram" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
+                                 x="0px" y="0px" width="20"
                                  viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
                                 <style type="text/css">
                                     .insta_gradient {
@@ -75,7 +84,9 @@
                                         <stop offset="0.128" style="stop-color:#3771C8"/>
                                         <stop offset="1" style="stop-color:#6600FF;stop-opacity:0"/>
                                     </radialGradient>
-                                    <path style="fill:url(#SVGID_00000029040846286603395010000013500758515109746617_footer);" d="M10,0C5.8,0,4.6,0,4.4,0
+                                    <path
+                                        style="fill:url(#SVGID_00000029040846286603395010000013500758515109746617_footer);"
+                                        d="M10,0C5.8,0,4.6,0,4.4,0
             C3.5,0.1,3,0.2,2.4,0.5C2,0.7,1.6,1,1.2,1.4C0.6,2,0.2,2.8,0.1,3.8C0,4.3,0,4.4,0,6.7C0,7.5,0,8.6,0,10c0,4.2,0,5.4,0,5.6
             c0.1,0.8,0.2,1.4,0.5,1.9C1,18.6,2,19.5,3.2,19.8C3.7,19.9,4.1,20,4.7,20c0.2,0,2.8,0,5.3,0s5,0,5.3,0c0.7,0,1.1-0.1,1.5-0.2
             c1.2-0.3,2.2-1.1,2.7-2.2c0.3-0.6,0.4-1.1,0.5-1.9c0-0.2,0-2.9,0-5.7s0-5.5,0-5.7c-0.1-0.8-0.2-1.3-0.5-1.9C19.3,2,19,1.6,18.6,1.3
@@ -97,9 +108,10 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
+                        <a href="#"
+                           class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
                             <svg version="1.1" id="footer-twitter" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
+                                 x="0px" y="0px" width="20"
                                  viewBox="0 0 20 16.3" style="enable-background:new 0 0 20 16.3;" xml:space="preserve">
                                 <style type="text/css">
                                     .twitter_blue {
@@ -115,9 +127,10 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
+                        <a href="#"
+                           class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
                             <svg version="1.1" id="footer-github" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20"
+                                 x="0px" y="0px" width="20"
                                  viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;" xml:space="preserve">
                                 <style type="text/css">
                                     .github_gray {
@@ -138,7 +151,7 @@
                 </ul>
             </div>
             <div>
-                <h3 class="text-blue font-bold text-lg mb-4">{{__('Infos de contact')}}</h3>
+                <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('Infos de contact')}}</h3>
                 <div class="flex flex-col gap-3" itemscope itemtype="https://schema.org/School">
                     <p itemprop="legalName">{{__('HEPL - Haute École de la Province de Liège')}}</p>
                     <div itemscope itemtype="https://schema.org/PostalAddress" itemprop="address">
@@ -154,10 +167,11 @@
                 </div>
             </div>
             <div class="max-w-md">
-                <h3 class="text-blue font-bold text-lg mb-4">{{__('Recevez notre newsletter')}}</h3>
+                <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('Recevez notre newsletter')}}</h3>
                 <div>
                     <p class="font-light">{{__('Restez au courant de nos actualités et de nos événements en vous abonnant à notre newsletter !')}}</p>
-                    <form action="#" method="post" class="grid grid-cols-3 h-11 mt-4 rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
+                    <form action="#" method="post"
+                          class="grid grid-cols-3 h-11 mt-4 rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
                         @csrf
                         <label for="newsletter" class="h-full flex-1 col-span-full row-span-full">
                             <span class="sr-only">
@@ -166,14 +180,16 @@
                             <input placeholder="name@example.com" type="email" id="newsletter"
                                    class="h-full w-full pl-3 border border-orange-light focus:outline-none rounded-lg placeholder:font-light transition ease-in-out duration-200">
                         </label>
-                        <button class="row-span-full col-start-3 bg-orange text-white h-full px-6 rounded-r-lg uppercase hover:bg-orange-dark transition ease-in-out duration-200">{{__('je m‘inscris')}}</button>
+                        <button
+                            class="row-span-full col-start-3 bg-orange text-white h-full px-6 rounded-r-lg uppercase hover:bg-orange-dark transition ease-in-out duration-200 text-sm lg:text-base">{{__('je m‘inscris')}}</button>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="flex justify-between text-sm mt-10">
+        <div class="flex flex-col gap-1 lg:flex-row lg:justify-between text-sm mt-8">
             <p>{{__('Copyright © 2022 Tous droits réservés')}}</p>
-            <a href="/terms" class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Mentions légales')}}</a>
+            <a href="/terms"
+               class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Mentions légales')}}</a>
         </div>
     </section>
 </footer>

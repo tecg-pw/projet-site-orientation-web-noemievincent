@@ -103,7 +103,7 @@
     }
 
     .toggle:checked + .top-bar .burgermenu .hamburger .top-bun {
-        transform: rotate(-44deg);
+        transform: rotate(-46deg) translateX(-1px);
     }
 
     .toggle:checked + .top-bar .burgermenu .hamburger .meat {
@@ -111,9 +111,9 @@
     }
 
     .toggle:checked + .top-bar .burgermenu .hamburger .bottom-bun {
-        transform: rotate(44deg) translate(1px);
+        transform: rotate(46deg);
     }
-    
+
     .toggle:checked ~ .menu {
         left: 0;
         right: 0;

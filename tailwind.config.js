@@ -33,6 +33,9 @@ module.exports = {
             fontSize: {
                 404: '160px',
             },
+            transitionProperty: {
+                'position': 'left, right, top, bottom',
+            }
         }
     },
     plugins: [],
