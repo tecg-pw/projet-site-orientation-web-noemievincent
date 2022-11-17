@@ -12,14 +12,10 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('opportunities', function (Blueprint $table) {
+        Schema::create('language_tutorial', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->text('description');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at');
-            $table->softDeletes();
         });
     }
 
@@ -30,6 +26,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('opportunities');
+        Schema::dropIfExists('language_tutorial');
     }
 };

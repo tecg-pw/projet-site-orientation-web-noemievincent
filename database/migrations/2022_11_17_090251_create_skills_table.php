@@ -12,14 +12,12 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('opportunities', function (Blueprint $table) {
+        Schema::create('skills', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->text('description');
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at');
-            $table->softDeletes();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
@@ -30,6 +28,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('opportunities');
+        Schema::dropIfExists('skills');
     }
 };
