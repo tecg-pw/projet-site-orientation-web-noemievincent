@@ -22,7 +22,7 @@ return new class extends Migration {
             $table->string('password');
             $table->string('picture')->nullable();
             $table->string('genre')->nullable();
-            $table->text('bio');
+            $table->text('bio')->nullable();
             $table->string('role')->default('user');
             $table->rememberToken();
             $table->timestamp('created_at')->useCurrent();

@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('picture')->nullable();
+            $table->string('picture');
             $table->text('body');
             $table->timestamp('date');
             $table->string('website_link')->nullable();

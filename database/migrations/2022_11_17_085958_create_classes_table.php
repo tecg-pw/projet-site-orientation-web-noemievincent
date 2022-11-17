@@ -22,7 +22,7 @@ return new class extends Migration {
             $table->integer('hours');
             $table->integer('ects');
             $table->string('ects_link');
-            $table->string('github_link');
+            $table->string('github_link')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at');
             $table->softDeletes();
