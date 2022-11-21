@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Teacher;
+use App\Models\Student;
 use File;
 use Illuminate\Database\Seeder;
 use Str;
 
-class TeachersSeeder extends Seeder
+class StudentsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,11 +16,11 @@ class TeachersSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/teachers.json");
-        $teachers = json_decode($json);
+        $json = File::get("database/data/students.json");
+        $students = json_decode($json);
 
-        foreach ($teachers as $key => $value) {
-            Teacher::create([
+        foreach ($students as $key => $value) {
+            Student::create([
                 "firstname" => $value->firstname,
                 "lastname" => $value->lastname,
                 "fullname" => $value->firstname . ' ' . $value->lastname,
@@ -28,9 +28,17 @@ class TeachersSeeder extends Seeder
                 "email" => $value->email,
                 "picture" => $value->picture,
                 "bio" => $value->bio,
+                "genre" => $value->genre,
                 "role" => $value->role,
+                "website_link" => $value->website_link,
                 "github_link" => $value->github_link,
+                "instagram_link" => $value->instagram_link,
                 "linkedin_link" => $value->linkedin_link,
+                "start_year" => $value->start_year,
+                "end_year" => $value->end_year,
+                "opportunity_id" => $value->opportunity_id,
+                "company_id" => $value->company_id,
+                "internship_id" => $value->internship_id,
             ]);
         }
     }

@@ -21,12 +21,12 @@
             </div>
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-3 gap-8">
-                    @for($i = 0; $i < 9; $i++)
-                        <x-alumnis.card/>
-                    @endfor
+                    @foreach($alumnis as $alumni)
+                        <x-alumnis.card :alumni="$alumni"/>
+                    @endforeach
                 </div>
                 <div class="bg-pink-200">
-                    PAGINATION
+                    {{$alumnis->links()}}
                 </div>
             </div>
         </section>

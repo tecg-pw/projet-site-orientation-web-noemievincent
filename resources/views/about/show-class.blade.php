@@ -1,7 +1,7 @@
-<x-header :head_title="'Nom du cours'"/>
+<x-header :head_title="$course->name"/>
 <main class="px-10 flex-1 mt-6">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
-        <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
+        <section aria-labelledby="{{$course->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/about#classes"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
@@ -14,40 +14,42 @@
                     </svg>
                     <span>{{__('classes.single.back_to_classes_link')}}</span>
                 </a>
-                <h2 id="slug"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{__("Design Web")}}</h2>
+                <h2 id="{{$course->slug}}"
+                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$course->name}}</h2>
             </div>
             <div class="flex justify-between">
                 <ul class="text-lg">
-                    <li><span class="font-semibold">{{__('classes.single.year')}}</span><span>{{__('Bloc 2')}}</span>
+                    <li><span
+                            class="font-semibold">{{__('classes.single.year')}}</span><span>Bloc {{$course->year}}</span>
                     </li>
                     <li class="flex gap-2"><span class="font-semibold">{{__('classes.single.teachers')}}</span>
                         <ul class="flex gap-2">
-                            <li><a href="/teachers/slug"
-                                   class="underline underline-offset-2 hover:text-orange transition-all ease-in-out duration-200">Myriam
-                                    Dupont</a></li>
-                            <li><a href="/teachers/slug"
-                                   class="underline underline-offset-2 hover:text-orange transition-all ease-in-out duration-200">Cédric
-                                    Müller</a></li>
-                            <li><a href="/teachers/slug"
-                                   class="underline underline-offset-2 hover:text-orange transition-all ease-in-out duration-200">Toon
-                                    Van Den Bos</a></li>
+                            @foreach($teachers as $teacher)
+                                <li><a href="/teachers/{{$teacher->slug}}"
+                                       class="underline underline-offset-2 hover:text-orange transition-all ease-in-out duration-200">{{$teacher->fullname}}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </li>
-                    <li><span class="font-semibold">{{__('classes.single.hours')}}</span><span>{{__('165h')}}</span>
-                    <li><span class="font-semibold">{{__('classes.single.period')}}</span><span>{{__('annuel')}}</span>
-                    <li><span class="font-semibold">{{__('classes.single.ects')}}</span><span>{{__('14')}}</span>
+                    <li><span class="font-semibold">{{__('classes.single.hours')}}</span><span>{{$course->hours}}</span>
+                    <li><span
+                            class="font-semibold">{{__('classes.single.period')}}</span><span>{{$course->period}}</span>
+                    <li><span class="font-semibold">{{__('classes.single.ects')}}</span><span>{{$course->ects}}</span>
                     </li>
                 </ul>
-                <a href="#"
-                   class="text-orange underline underline-offset-2 hover:text-orange-dark">{{__('classes.single.ects_link')}}</a>
+                @if($course->ects_link)
+                    <a href="{{$course->ects_link}}"
+                       class="text-orange underline underline-offset-2 hover:text-orange-dark">{{__('classes.single.ects_link')}}</a>
+                @endif
             </div>
             <div>
                 <h3 class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('classes.single.desc_title')}}</h3>
                 <div class="flex flex-col gap-2">
-                    <p>{{__('Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.')}}</p>
-                    <a href="#"
-                       class="self-start underline underline-offset-2 hover:text-orange">{{__('classes.single.github_link')}}</a>
+                    <p>{{$course->description}}</p>
+                    @if($course->github_link)
+                        <a href="{{$course->github_link}}"
+                           class="self-start underline underline-offset-2 hover:text-orange">{{__('classes.single.github_link')}}</a>
+                    @endif
                 </div>
             </div>
             <div class="flex flex-col gap-5">

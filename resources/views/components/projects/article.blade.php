@@ -1,4 +1,5 @@
-<article aria-labelledby="nom-du-projet" class="relative">
+@props(['project', 'student'])
+<article aria-labelledby="{{$project->title}}" class="relative">
     <div class="flex gap-2 absolute -top-2 left-5 z-10">
         @for($i = 1; $i <= 2; $i++)
             <a href="#"
@@ -6,21 +7,22 @@
         @endfor
     </div>
     <div class="group bg-blue-card rounded-2xl relative">
-        <a href="/projects/name/slug" class="full-link">{{__('projects.see_link', ['title' => 'nom du projet'])}}</a>
+        <a href="/projects/{{$student->slug}}/{{$project->slug}}"
+           class="full-link">{{__('projects.see_link', ['title' => $project->title])}}</a>
         <div>
             <div
                 class="relative before:overlay before:bg-blue/5 before:rounded-t-2xl before:transition before:ease-in-out before:duration-200 group-hover:before:bg-blue/30">
                 <img src="https://placehold.jp/450x350.png" height="350" width="450"
-                     alt="{{__('projects.see_project', ['title' => 'nom du projet'])}}"
+                     alt="{{__('projects.see_project', ['title' => $project->title])}}"
                      class="object-cover w-full rounded-t-2xl">
             </div>
             <div class="p-4 flex flex-col gap-12">
-                <h3 id="nom-du-projet" class="uppercase text-2xl">Nom du projet</h3>
+                <h3 id="{{$project->slug}}" class="uppercase text-2xl">{{$project->title}}</h3>
                 <div>
-                    <p class="text-xl mb-1">Prénom Nom</p>
+                    <p class="text-xl mb-1">{{$student->fullname}}</p>
                     <div class="flex justify-between">
                         <time datetime="" class="font-light">Date du projet</time>
-                        <a href="/projects/slug">
+                        <a href="/projects/{{$project->slug}}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24"
                                  height="24" width="12" aria-labelledby="projectTitle">
                                 <title

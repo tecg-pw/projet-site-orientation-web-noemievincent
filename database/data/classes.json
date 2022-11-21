@@ -67,7 +67,7 @@
     },
     {
         "name": "Création de pages Web - HTML",
-        "description": "",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
         "year": 1,
         "period": "Quadrimestre 1",
@@ -78,7 +78,7 @@
     },
     {
         "name": "Création de pages Web - CSS",
-        "description": "",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
         "year": 1,
         "period": "Quadrimestre 2",
@@ -89,7 +89,7 @@
     },
     {
         "name": "Design Web",
-        "description": "",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
         "year": 1,
         "period": "Quadrimestre 2",
@@ -101,7 +101,7 @@
     {
         "name": "Créations infographiques 2D",
         "description": "",
-        "orientation": "graphic-design",
+        "orientation": "dg",
         "year": 1,
         "period": "",
         "hours": 60,
@@ -112,7 +112,7 @@
     {
         "name": "Introduction à l'image numérique",
         "description": "",
-        "orientation": "graphic-design",
+        "orientation": "dg",
         "year": 1,
         "period": "",
         "hours": 30,
@@ -123,7 +123,7 @@
     {
         "name": "Image et argumentation",
         "description": "",
-        "orientation": "graphic-design",
+        "orientation": "dg",
         "year": 1,
         "period": "",
         "hours": 30,
@@ -134,7 +134,7 @@
     {
         "name": "Créations infographiques 3D",
         "description": "",
-        "orientation": "3D/videos",
+        "orientation": "3d",
         "year": 1,
         "period": "",
         "hours": 60,
@@ -145,7 +145,7 @@
     {
         "name": "Photo",
         "description": "",
-        "orientation": "3D/videos",
+        "orientation": "3d",
         "year": 1,
         "period": "",
         "hours": 30,
@@ -156,7 +156,7 @@
     {
         "name": "Introduction à l'animation 3D",
         "description": "",
-        "orientation": "3D/videos",
+        "orientation": "3d",
         "year": 1,
         "period": "",
         "hours": 30,
@@ -165,14 +165,212 @@
         "github_link": ""
     },
     {
-        "name": "Vidéos",
+        "name": "Vidéo",
         "description": "",
-        "orientation": "3D/videos",
+        "orientation": "3d",
         "year": 1,
         "period": "",
         "hours": 45,
         "ects": null,
         "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Anglais",
+        "description": "",
+        "orientation": "common",
+        "year": 2,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Communication",
+        "description": "",
+        "orientation": "common",
+        "year": 2,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Entreprise",
+        "description": "",
+        "orientation": "common",
+        "year": 2,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Graphisme",
+        "description": "",
+        "orientation": "common",
+        "year": 2,
+        "period": "",
+        "hours": 90,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Culture artistique",
+        "description": "",
+        "orientation": "common",
+        "year": 2,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Design d‘applications mobiles",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "Quadrimestre 1",
+        "hours": 30,
+        "ects": 2,
+        "ects_link": "https://hepl.be/static/GRA-1-061-2022.html",
+        "github_link": ""
+    },
+    {
+        "name": "Développement côté client",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "Quadrimestre 1",
+        "hours": 75,
+        "ects": 6,
+        "ects_link": "https://hepl.be/static/GRA-1-045-2022.html",
+        "github_link": "https://github.com/tecg-dcc"
+    },
+    {
+        "name": "Système de gestion de contenu",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "Quadrimestre 1",
+        "hours": 45,
+        "ects": 4,
+        "ects_link": "",
+        "github_link": "https://github.com/tecg-sgc"
+    },
+    {
+        "name": "Développement côté serveur",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "Quadrimestre 2",
+        "hours": 60,
+        "ects": 6,
+        "ects_link": "https://hepl.be/static/GRA-1-049-2022.html",
+        "github_link": "https://github.com/tecg-dcs"
+    },
+    {
+        "name": "Multimédia interactif",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "Quadrimestre 2",
+        "hours": 60,
+        "ects": 6,
+        "ects_link": "https://hepl.be/static/GRA-1-048-2022.html",
+        "github_link": "https://github.com/tecg-mmi"
+    },
+    {
+        "name": "Design Web",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "annuel",
+        "hours": 165,
+        "ects": 14,
+        "ects_link": "https://hepl.be/static/GRA-1-047-2022.html",
+        "github_link": "https://github.com/tecg-dw"
+    },
+    {
+        "name": "Anglais",
+        "description": "",
+        "orientation": "common",
+        "year": 3,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Introduction aux droits d‘auteurs",
+        "description": "",
+        "orientation": "common",
+        "year": 3,
+        "period": "",
+        "hours": 15,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Entreprise",
+        "description": "",
+        "orientation": "common",
+        "year": 3,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Développement d‘applications mobiles",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 3,
+        "period": "Quadrimestre 1",
+        "hours": 45,
+        "ects": 3,
+        "ects_link": "https://hepl.be/static/GRA-1-059-2022.html",
+        "github_link": "https://github.com/tecg-dam"
+    },
+    {
+        "name": "Projets Web",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 3,
+        "period": "Quadrimestre 1",
+        "hours": 240,
+        "ects": 19,
+        "ects_link": "https://hepl.be/static/GRA-1-058-2022.html",
+        "github_link": "https://github.com/tecg-pw"
+    },
+    {
+        "name": "Projet de fin d‘étude",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 3,
+        "period": "Quadrimestre 2",
+        "hours": 210,
+        "ects": 19,
+        "ects_link": "https://hepl.be/static/GRA-1-025-2022.html",
+        "github_link": "https://github.com/tecg-pfe"
+    },
+    {
+        "name": "Stage de 12 semaines en entreprise",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 3,
+        "period": "Quadrimestre 2",
+        "hours": 140,
+        "ects": 12,
+        "ects_link": "https://hepl.be/static/GRA-1-026-2022.html",
         "github_link": ""
     }
 ]

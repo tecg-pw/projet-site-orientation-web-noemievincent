@@ -1,7 +1,7 @@
-<x-header :head_title="'Nom du professeur'"/>
+<x-header :head_title="$teacher->fullname"/>
 <main class="px-10 flex-1 mt-6">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
-        <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
+        <section aria-labelledby="{{$teacher->fullname}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/about#teachers"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
@@ -16,27 +16,31 @@
                 </a>
                 <div class="flex justify-between">
                     <div class="flex gap-6">
-                        <img src="https://placehold.jp/120x120.png" alt="nom-du-professeur" height="120"
+                        <img src="https://placehold.jp/120x120.png" alt="{{$teacher->fullname}}" height="120"
                              width="120"
                              class="rounded-full">
                         <div class="flex flex-col gap-3">
-                            <h2 id="slug"
-                                class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{__("Daniel Schreurs")}}</h2>
+                            <h2 id="{{$teacher->fullname}}"
+                                class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$teacher->fullname}}</h2>
                             <div class="text-lg">
-                                <p>{{__('Professeur — Ancien élève')}}</p>
-                                <a href="mailto:daniel.schreurs@hepl.be">daniel.schreurs@hepl.be</a>
+                                @if($teacher->role == 'teacher')
+                                    <p>{{__('roles.teacher')}}</p>
+                                @elseif($teacher->role == 'student_teacher')
+                                    <p>{{__('roles.student_teacher')}}</p>
+                                @endif
+                                <a href="mailto:{{$teacher->email}}">{{$teacher->email}}</a>
                             </div>
                         </div>
                     </div>
                     <ul class="flex gap-4">
-                        <li><a href="https://github.com/">
+                        <li><a href="{{$teacher->github_link}}">
                                 <svg version="1.1" id="github" xmlns="http://www.w3.org/2000/svg"
                                      x="0px" y="0px" height="36"
                                      viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;"
                                      aria-labelledby="githubTitle"
                                      xml:space="preserve">
                                             <title
-                                                id="githubTitle">{{__('alumnis.single.github_link', ['name' => 'nom de l‘élève'])}}</title>
+                                                id="githubTitle">{{__('alumnis.single.github_link', ['name' => $teacher->fullname])}}</title>
                                     <style type="text/css">
                                         .github_gray {
                                             fill-rule: evenodd;
@@ -51,14 +55,14 @@
                                             c0.4,0.3,0.7,0.9,0.7,1.9c0,1.3,0,2.4,0,2.8c0,0.3,0.2,0.6,0.7,0.5c4-1.3,6.8-5.1,6.8-9.5C20,4.5,15.5,0,10,0z"/>
                                         </svg>
                             </a></li>
-                        <li><a href="https://www.linkedin.com">
+                        <li><a href="{{$teacher->linkedin_link}}">
                                 <svg version="1.1" id="linkedin" xmlns="http://www.w3.org/2000/svg"
                                      x="0px" y="0px" height="36"
                                      viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;"
                                      aria-labelledby="linkedinTitle"
                                      xml:space="preserve">
                                             <title
-                                                id="linkedinTitle">{{__('alumnis.single.linkedin_link', ['name' => 'nom de l‘élève'])}}</title>
+                                                id="linkedinTitle">{{__('alumnis.single.linkedin_link', ['name' => $teacher->fullname])}}</title>
                                     <style type="text/css">
                                         .linkedin-blue {
                                             fill: #006699;
@@ -83,16 +87,16 @@
                     </ul>
                 </div>
                 <div>
-                    <p>{{__('Amet non laboris commodo sint occaecat. Occaecat cupidatat labore tempor ea veniam nulla ipsum. Aliquip cillum est minim nulla est. Ipsum in occaecat consectetur aute qui tempor duis minim fugiat. Voluptate magna ad commodo non adipisicing reprehenderit nostrud id voluptate minim eu mollit enim dolore commodo. Consequat labore ullamco elit excepteur in duis quis proident do enim incididunt occaecat est est commodo.')}}</p>
+                    <p>{{$teacher->bio}}</p>
                 </div>
             </div>
             <section aria-labelledby="classes">
                 <h3 id="classes"
                     class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('teachers.single.classes_title')}}</h3>
                 <div class="grid grid-cols-2 gap-4">
-                    @for($i = 0; $i < 3; $i++)
-                        <x-about.class/>
-                    @endfor
+                    @foreach($courses as $course)
+                        <x-about.class :course="$course"/>
+                    @endforeach
                 </div>
             </section>
             <section aria-labelledby="projects" class="flex flex-col gap-5">

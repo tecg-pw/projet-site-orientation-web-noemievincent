@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AlumnisController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,23 +29,13 @@ Route::get('/search', function () {
 });
 
 //ROUTE : About
-Route::get('/about', function () {
-    return view('about.index');
-});
-Route::get('/classes/slug', function () {
-    return view('about.show-class');
-});
-Route::get('/teachers/slug', function () {
-    return view('about.show-teacher');
-});
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/classes/{course:slug}', [CourseController::class, 'show']);
+Route::get('/teachers/{teacher:slug}', [TeacherController::class, 'show']);
 
 //ROUTE : Alumnis
-Route::get('/alumnis', function () {
-    return view('alumnis.index');
-});
-Route::get('/alumnis/slug', function () {
-    return view('alumnis.show');
-});
+Route::get('/alumnis', [AlumnisController::class, 'index']);
+Route::get('/alumnis/{alumni:slug}', [AlumnisController::class, 'show']);
 
 //ROUTE : Projects
 Route::get('/projects', function () {

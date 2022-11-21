@@ -7,7 +7,7 @@ use File;
 use Illuminate\Database\Seeder;
 use Str;
 
-class ClassesSeeder extends Seeder
+class CoursesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,7 +22,7 @@ class ClassesSeeder extends Seeder
         foreach ($teachers as $key => $value) {
             Course::create([
                 "name" => $value->name,
-                "slug" => Str::slug($value->year . '-' . $value->name),
+                "slug" => Str::slug($value->name . '-' . $value->year),
                 "description" => $value->description,
                 "orientation" => $value->orientation,
                 "year" => $value->year,

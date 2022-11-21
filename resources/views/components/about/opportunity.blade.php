@@ -1,10 +1,10 @@
 @props([
-    'showJob', 'name', 'definition'
+    'showJob', 'opportunity'
 ])
 <div
     class="bg-white rounded-2xl border border-blue/20 p-5">
     <div class="flex justify-between mb-2">
-        <h3 class="text-xl font-semibold">{{ucfirst(__($name))}}</h3>
+        <h3 class="text-xl font-semibold">{{ucfirst($opportunity->name)}}</h3>
         @if($showJob)
             <a href="/jobs/partners/slug" class="flex items-center gap-3 group">
                 <span
@@ -14,6 +14,6 @@
             </a>
         @endif
     </div>
-    <p class="text-sm">{{__($definition)}}
+    <p class="text-sm">{{$opportunity->description}}
     </p>
 </div>
