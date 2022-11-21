@@ -1,4 +1,4 @@
-<x-header/>
+<x-header :head_title="'Nom de l‘utilisateur'"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="username" class="col-span-3 flex flex-col gap-8">
@@ -18,7 +18,7 @@
                 {{--                    @if('username' = 'auth name')--}}
                 <a href="/username/edit"
                    class="mt-2 flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
-                    <span>{{__('Modifier mes informations')}}</span>
+                    <span>{{__('profile.edit_link')}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="fill-orange h-full">
                         <path
@@ -35,7 +35,7 @@
                 anim.</p>
             <div class="bg-blue/50 h-px w-full"></div>
             <div class="flex flex-col gap-4">
-                <h3 class="font-semibold font-display text-xl">{{__('Questions posées et réponses')}}</h3>
+                <h3 class="font-semibold font-display text-xl">{{__('profile.forum_title')}}</h3>
                 <div class="flex flex-col gap-3">
                     <div class="grid grid-cols-3 gap-x-11">
                         <div class="flex gap-12 col-span-2">
@@ -74,11 +74,11 @@
             {{--                @auth()--}}
             {{--                    @if('username' = 'auth name')--}}
             <div>
-                <h3 class="font-semibold font-display text-xl">{{__('Tutoriels enregistrés')}}</h3>
+                <h3 class="font-semibold font-display text-xl">{{__('profile.tutorials_title')}}</h3>
                 <div class="flex flex-col gap-3">
                     <div class="flex gap-6 items-center">
-                        <p class="uppercase text-lg">{{__('Filtrer par')}}</p>
-                        <a href="#" class="text-orange text-xs">{{__('supprimer les filtres')}}</a>
+                        <p class="uppercase text-lg">{{__('filters.title')}}</p>
+                        <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
                     </div>
                     <div class="grid grid-cols-3 gap-x-11">
                         <div class="flex gap-4 col-span-2">

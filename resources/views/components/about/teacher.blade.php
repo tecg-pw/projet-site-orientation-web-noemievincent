@@ -18,7 +18,8 @@
                          viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;"
                          aria-labelledby="githubTitle"
                          xml:space="preserve">
-                                            <title id="githubTitle">{{__('Se rendre sur le github de :name')}}</title>
+                                            <title
+                                                id="githubTitle">{{__('alumnis.single.github_link', ['name' => 'nom de l‘élève'])}}</title>
                         <style type="text/css">
                             .github_gray {
                                 fill-rule: evenodd;
@@ -40,7 +41,7 @@
                          aria-labelledby="linkedinTitle"
                          xml:space="preserve">
                                             <title
-                                                id="linkedinTitle">{{__('Se rendre sur le linkedin de :name')}}</title>
+                                                id="linkedinTitle">{{__('alumnis.single.linkedin_link', ['name' => 'nom de l‘élève'])}}</title>
                         <style type="text/css">
                             .linkedin-blue {
                                 fill: #006699;

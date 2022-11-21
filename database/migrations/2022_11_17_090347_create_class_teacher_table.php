@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('class_teacher', function (Blueprint $table) {
+        Schema::create('course_teacher', function (Blueprint $table) {
             $table->id();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at');
@@ -26,6 +26,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('class_teacher');
+        Schema::dropIfExists('course_teacher');
     }
 };

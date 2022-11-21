@@ -3,7 +3,7 @@
     $name = 'Développeur Web front-end';
     $definition = 'La mission d’un développeur Web front-end consiste à participer à la création de l’interface utilisateur d’un site ou d’une application web. Il intervient sur tous les éléments apparaissant à l’écran et géré par le navigateur web de l’utilisateur. Il y a donc une partie design/ergonomie et une partie développement dans sa mission.';
 @endphp
-<x-header/>
+<x-header :head_title="'Nom de l‘élève'"/>
 <main class="px-10 flex-1 mt-6">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
@@ -17,7 +17,7 @@
                               d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
                               transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                     </svg>
-                    <span>{{__('Retour aux élèves')}}</span>
+                    <span>{{__('alumnis.single.back_to_students_link')}}</span>
                 </a>
                 <div class="flex justify-between">
                     <div class="flex gap-6">
@@ -46,7 +46,8 @@
                                      viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;"
                                      aria-labelledby="githubTitle"
                                      xml:space="preserve">
-                                            <title id="githubTitle">{{__('Se rendre sur le github de :name')}}</title>
+                                            <title
+                                                id="githubTitle">{{__('alumnis.single.github_link', ['name' => 'nom de l‘élève'])}}</title>
                                     <style type="text/css">
                                         .github_gray {
                                             fill-rule: evenodd;
@@ -68,7 +69,7 @@
                                      aria-labelledby="linkedinTitle"
                                      xml:space="preserve">
                                             <title
-                                                id="linkedinTitle">{{__('Se rendre sur le linkedin de :name')}}</title>
+                                                id="linkedinTitle">{{__('alumnis.single.linkedin_link', ['name' => 'nom de l‘élève'])}}</title>
                                     <style type="text/css">
                                         .linkedin-blue {
                                             fill: #006699;
@@ -90,6 +91,65 @@
                                     </g>
                                         </svg>
                             </a></li>
+                        <li><a href="https://www.instagram.com/">
+                                <svg version="1.1" id="instagram" xmlns="http://www.w3.org/2000/svg"
+                                     x="0px" y="0px" height="36"
+                                     viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                     xml:space="preserve" aria-labelledby="instagramTitle">
+                                        <title
+                                            id="instagramTitle">{{__('alumnis.single.instagram_link', ['name' => 'nom de l‘élève'])}}</title>
+                                    <style type="text/css">
+                                        .insta_gradient {
+                                            fill: url(#SVGID_1_);
+                                        }
+
+                                        .insta_white {
+                                            fill: #FFFFFF;
+                                        }
+                                    </style>
+                                    <g>
+                                        <radialGradient id="SVGID_1_" cx="-603.0173" cy="811.7922" r="9.9923"
+                                                        gradientTransform="matrix(0 -1.982 1.8439 0 -1491.5541 -1173.6573)"
+                                                        gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" style="stop-color:#FFDD55"/>
+                                            <stop offset="0.1" style="stop-color:#FFDD55"/>
+                                            <stop offset="0.5" style="stop-color:#FF543E"/>
+                                            <stop offset="1" style="stop-color:#C837AB"/>
+                                        </radialGradient>
+                                        <path class="insta_gradient" d="M10,0C5.8,0,4.6,0,4.4,0C3.5,0.1,3,0.2,2.4,0.5C2,0.7,1.6,1,1.2,1.4C0.6,2,0.2,2.8,0.1,3.8C0,4.3,0,4.4,0,6.7
+            C0,7.5,0,8.6,0,10c0,4.2,0,5.4,0,5.6c0.1,0.8,0.2,1.4,0.5,1.9C1,18.6,2,19.5,3.2,19.8C3.7,19.9,4.1,20,4.7,20c0.2,0,2.8,0,5.3,0
+            s5,0,5.3,0c0.7,0,1.1-0.1,1.5-0.2c1.2-0.3,2.2-1.1,2.7-2.2c0.3-0.6,0.4-1.1,0.5-1.9c0-0.2,0-2.9,0-5.7s0-5.5,0-5.7
+            c-0.1-0.8-0.2-1.3-0.5-1.9C19.3,2,19,1.6,18.6,1.3c-0.7-0.6-1.5-1-2.4-1.2C15.8,0,15.7,0,13.3,0L10,0L10,0z"/>
+                                        <radialGradient
+                                            id="SVGID_00000029040846286603395010000013500758515109746617_"
+                                            cx="568.2048" cy="381.2207" r="9.9923"
+                                            gradientTransform="matrix(0.1739 0.8687 -3.5818 0.7172 1263.2953 -765.5728)"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" style="stop-color:#3771C8"/>
+                                            <stop offset="0.128" style="stop-color:#3771C8"/>
+                                            <stop offset="1" style="stop-color:#6600FF;stop-opacity:0"/>
+                                        </radialGradient>
+                                        <path
+                                            style="fill:url(#SVGID_00000029040846286603395010000013500758515109746617_);"
+                                            d="M10,0C5.8,0,4.6,0,4.4,0
+            C3.5,0.1,3,0.2,2.4,0.5C2,0.7,1.6,1,1.2,1.4C0.6,2,0.2,2.8,0.1,3.8C0,4.3,0,4.4,0,6.7C0,7.5,0,8.6,0,10c0,4.2,0,5.4,0,5.6
+            c0.1,0.8,0.2,1.4,0.5,1.9C1,18.6,2,19.5,3.2,19.8C3.7,19.9,4.1,20,4.7,20c0.2,0,2.8,0,5.3,0s5,0,5.3,0c0.7,0,1.1-0.1,1.5-0.2
+            c1.2-0.3,2.2-1.1,2.7-2.2c0.3-0.6,0.4-1.1,0.5-1.9c0-0.2,0-2.9,0-5.7s0-5.5,0-5.7c-0.1-0.8-0.2-1.3-0.5-1.9C19.3,2,19,1.6,18.6,1.3
+            c-0.7-0.6-1.5-1-2.4-1.2C15.8,0,15.7,0,13.3,0L10,0L10,0z"/>
+                                        <path class="insta_white" d="M10,2.6c-2,0-2.3,0-3,0S5.6,2.8,5.1,3C4.7,3.2,4.3,3.4,3.8,3.8C3.4,4.3,3.2,4.7,3,5.1c-0.2,0.5-0.3,1-0.3,1.8
+            c0,0.8,0,1,0,3s0,2.3,0,3c0,0.8,0.2,1.3,0.3,1.8c0.2,0.5,0.4,0.9,0.8,1.3c0.4,0.4,0.8,0.7,1.3,0.8c0.5,0.2,1,0.3,1.8,0.3
+            c0.8,0,1,0,3,0s2.3,0,3,0c0.8,0,1.3-0.2,1.8-0.3c0.5-0.2,0.9-0.4,1.3-0.8c0.4-0.4,0.7-0.8,0.8-1.3c0.2-0.5,0.3-1,0.3-1.8
+            c0-0.8,0-1,0-3s0-2.3,0-3c0-0.8-0.2-1.3-0.3-1.8c-0.2-0.5-0.4-0.9-0.8-1.3c-0.4-0.4-0.8-0.7-1.3-0.8c-0.5-0.2-1-0.3-1.8-0.3
+            C12.3,2.6,12,2.6,10,2.6L10,2.6z M9.3,3.9c0.2,0,0.4,0,0.7,0c2,0,2.2,0,3,0c0.7,0,1.1,0.2,1.4,0.3c0.3,0.1,0.6,0.3,0.8,0.6
+            c0.3,0.3,0.4,0.5,0.6,0.8C15.8,5.9,16,6.3,16,7c0,0.8,0,1,0,3s0,2.2,0,3c0,0.7-0.2,1.1-0.3,1.4c-0.1,0.3-0.3,0.6-0.6,0.8
+            c-0.3,0.3-0.5,0.4-0.8,0.6C14.1,15.8,13.7,16,13,16c-0.8,0-1,0-3,0s-2.2,0-3,0c-0.7,0-1.1-0.2-1.4-0.3c-0.3-0.1-0.6-0.3-0.8-0.6
+            c-0.3-0.3-0.4-0.5-0.6-0.8C4.1,14.1,4,13.7,4,13c0-0.8,0-1,0-3s0-2.2,0-3c0-0.7,0.2-1.1,0.3-1.4c0.1-0.3,0.3-0.6,0.6-0.8
+            c0.3-0.3,0.5-0.4,0.8-0.6C5.9,4.1,6.3,4,7,4C7.7,4,8,3.9,9.3,3.9L9.3,3.9z M13.9,5.2c-0.5,0-0.9,0.4-0.9,0.9s0.4,0.9,0.9,0.9
+            c0.5,0,0.9-0.4,0.9-0.9S14.4,5.2,13.9,5.2L13.9,5.2z M10,6.2c-2.1,0-3.8,1.7-3.8,3.8s1.7,3.8,3.8,3.8c2.1,0,3.8-1.7,3.8-3.8
+            S12.1,6.2,10,6.2L10,6.2z M10,7.5c1.4,0,2.5,1.1,2.5,2.5s-1.1,2.5-2.5,2.5S7.5,11.3,7.5,10S8.6,7.5,10,7.5z"/>
+                                    </g>
+                            </svg>
+                            </a></li>
                     </ul>
                 </div>
                 <div>
@@ -99,18 +159,18 @@
             <div class="grid grid-cols-3 gap-11">
                 <section aria-labelledby="internship" class="col-span-1">
                     <h3 id="internship"
-                        class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('À fait son stage chez')}}</h3>
+                        class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.internship_title')}}</h3>
                     <x-partners.article/>
                 </section>
                 <section aria-labelledby="job" class="col-span-2">
                     <h3 id="job"
-                        class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('Travaille en tant que')}}</h3>
+                        class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.job_title')}}</h3>
                     <x-about.opportunity :showJob="$showJob" :name="$name" :definition="$definition"/>
                 </section>
             </div>
             <section aria-labelledby="projects" class="flex flex-col gap-5">
                 <h2 id="projects"
-                    class="font-display font-semibold text-blue text-xl tracking-wider">{{__('Projets de Gwenaëlle')}}</h2>
+                    class="font-display font-semibold text-blue text-xl tracking-wider">{{__('alumnis.single.projects_from', ['name' => 'nom de l‘élève'])}}</h2>
                 <div class="flex flex-col gap-2">
                     <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
                         @for($i = 0; $i < 3; $i++)
@@ -119,7 +179,7 @@
                     </div>
                     <a href="/projects"
                        class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-                        <span>{{__('Tous ses projets')}}</span>
+                        <span>{{__('alumnis.single.all_projects_from_link')}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                              class="fill-orange h-full">
                             <path

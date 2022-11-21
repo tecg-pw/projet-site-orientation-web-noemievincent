@@ -1,27 +1,19 @@
 <footer class="bg-blue-light px-4 py-8 text-sm mt-20 lg:px-10">
     <section aria-labelledby="footer">
-        <h2 id="footer" class="sr-only">{{__('Pied de page')}}</h2>
+        <h2 id="footer" class="sr-only">{{__('footer.title')}}</h2>
         <div class="lg:my-6 flex flex-col gap-6 lg:flex-row justify-between">
             <nav class="hidden lg:block">
-                <h3 class="text-blue font-bold text-lg mb-4">{{__('Navigation')}}</h3>
+                <h3 class="text-blue font-bold text-lg mb-4">{{__('footer.nav_title')}}</h3>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="/projects"
-                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Projets')}}</a></li>
-                    <li><a href="/alumnis"
-                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Alumnis')}}</a></li>
-                    <li><a href="/about"
-                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('À propos')}}</a></li>
-                    <li><a href="/news"
-                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Actualités')}}</a>
-                    </li>
-                    <li><a href="/forum"
-                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Forum')}}</a></li>
-                    <li><a href="/jobs"
-                           class="hover:text-orange transition-all ease-in-out duration-200">{{__('Stages')}}</a></li>
+                    @foreach(__('header.main_nav_items') as $slug => $name)
+                        <li><a href="/{{$slug}}"
+                               class="hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </nav>
             <div>
-                <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('Suivez-nous')}}</h3>
+                <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('footer.socials_title')}}</h3>
                 <ul class="flex flex-col gap-3">
                     <li>
                         <a href="#"
@@ -151,15 +143,15 @@
                 </ul>
             </div>
             <div>
-                <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('Infos de contact')}}</h3>
+                <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('footer.contact_title')}}</h3>
                 <div class="flex flex-col gap-3" itemscope itemtype="https://schema.org/School">
-                    <p itemprop="legalName">{{__('HEPL - Haute École de la Province de Liège')}}</p>
+                    <p itemprop="legalName">HEPL - Haute École de la Province de Liège</p>
                     <div itemscope itemtype="https://schema.org/PostalAddress" itemprop="address">
-                        <p itemprop="streetAddress">{{__('Quai des Carmes 45')}}</p>
+                        <p itemprop="streetAddress">{{__('footer.contact_street_address')}}</p>
                         <p>
                             <span itemprop="postalCode">4101</span>
                             <span itemprop="addressRegion">Seraing</span>,
-                            <span itemprop="addressLocality">{{__('Belgique')}}</span>
+                            <span itemprop="addressLocality">{{__('footer.contact_address__locality')}}</span>
                         </p>
                     </div>
                     <a href="mailto:hepl@provincedeliege.be" itemprop="email">hepl@provincedeliege.be</a>
@@ -167,29 +159,29 @@
                 </div>
             </div>
             <div class="max-w-md">
-                <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('Recevez notre newsletter')}}</h3>
+                <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('footer.newsletter_title')}}</h3>
                 <div>
-                    <p class="font-light">{{__('Restez au courant de nos actualités et de nos événements en vous abonnant à notre newsletter !')}}</p>
+                    <p class="font-light">{{__('footer.newsletter_tagline')}}</p>
                     <form action="#" method="post"
                           class="grid grid-cols-3 h-11 mt-4 rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
                         @csrf
                         <label for="newsletter" class="h-full flex-1 col-span-full row-span-full">
                             <span class="sr-only">
-                                {{__('Votre adresse e-mail')}}
+                                {{__('footer.newsletter_label')}}
                             </span>
                             <input placeholder="name@example.com" type="email" id="newsletter"
                                    class="h-full w-full pl-3 border border-orange-light focus:outline-none rounded-lg placeholder:font-light transition ease-in-out duration-200">
                         </label>
                         <button
-                            class="row-span-full col-start-3 bg-orange text-white h-full px-6 rounded-r-lg uppercase hover:bg-orange-dark transition ease-in-out duration-200 text-sm lg:text-base">{{__('je m‘inscris')}}</button>
+                            class="row-span-full col-start-3 bg-orange text-white h-full px-6 rounded-r-lg hover:bg-orange-dark transition ease-in-out duration-200 text-sm lg:text-base">{{__('footer.newsletter_button')}}</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="flex flex-col gap-1 lg:flex-row lg:justify-between text-sm mt-8">
-            <p>{{__('Copyright © 2022 Tous droits réservés')}}</p>
+            <p>{{__('footer.copyright')}}</p>
             <a href="/terms"
-               class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Mentions légales')}}</a>
+               class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('footer.legal_terms')}}</a>
         </div>
     </section>
 </footer>

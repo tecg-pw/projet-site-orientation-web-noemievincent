@@ -1,0 +1,178 @@
+[
+    {
+        "name": "Anglais",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Graphisme",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 120,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Typographie et mise en page",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 75,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Culture artistique",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Rencontre professionnelle",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 15,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Initiation à la programmation",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Création de pages Web - HTML",
+        "description": "",
+        "orientation": "web",
+        "year": 1,
+        "period": "Quadrimestre 1",
+        "hours": 60,
+        "ects": "5",
+        "ects_link": "https://hepl.be/static/GRA-1-007-2022.html",
+        "github_link": "https://github.com/tecg-cpw"
+    },
+    {
+        "name": "Création de pages Web - CSS",
+        "description": "",
+        "orientation": "web",
+        "year": 1,
+        "period": "Quadrimestre 2",
+        "hours": 60,
+        "ects": "5",
+        "ects_link": "https://hepl.be/static/GRA-1-010-2022.html",
+        "github_link": "https://github.com/tecg-cpw"
+    },
+    {
+        "name": "Design Web",
+        "description": "",
+        "orientation": "web",
+        "year": 1,
+        "period": "Quadrimestre 2",
+        "hours": 30,
+        "ects": "3",
+        "ects_link": "https://hepl.be/static/GRA-1-011-2022.html",
+        "github_link": "https://github.com/tecg-dwt"
+    },
+    {
+        "name": "Créations infographiques 2D",
+        "description": "",
+        "orientation": "graphic-design",
+        "year": 1,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Introduction à l'image numérique",
+        "description": "",
+        "orientation": "graphic-design",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Image et argumentation",
+        "description": "",
+        "orientation": "graphic-design",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Créations infographiques 3D",
+        "description": "",
+        "orientation": "3D/videos",
+        "year": 1,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Photo",
+        "description": "",
+        "orientation": "3D/videos",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Introduction à l'animation 3D",
+        "description": "",
+        "orientation": "3D/videos",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    },
+    {
+        "name": "Vidéos",
+        "description": "",
+        "orientation": "3D/videos",
+        "year": 1,
+        "period": "",
+        "hours": 45,
+        "ects": null,
+        "ects_link": "",
+        "github_link": ""
+    }
+]

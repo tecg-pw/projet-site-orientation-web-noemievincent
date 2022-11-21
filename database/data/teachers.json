@@ -1,0 +1,62 @@
+[
+    {
+        "firstname": "Dominique",
+        "lastname": "Vilain",
+        "email": "dominique.vilain@hepl.be",
+        "picture": "",
+        "bio": "",
+        "role": "teacher",
+        "github_link": "https://github.com/dominiquevilain",
+        "linkedin_link": "https://www.linkedin.com/in/dominiquevilain/?originalSubdomain=be"
+    },
+    {
+        "firstname": "Myriam",
+        "lastname": "Dupont",
+        "email": "myriam.dupont@hepl.be",
+        "picture": "",
+        "bio": "",
+        "role": "teacher",
+        "github_link": "https://github.com/myriamdupont",
+        "linkedin_link": ""
+    },
+    {
+        "firstname": "Daniel",
+        "lastname": "Schreurs",
+        "email": "daniel.schreurs@hepl.be",
+        "picture": "",
+        "bio": "",
+        "role": "student_teacher",
+        "github_link": "https://github.com/DanielSchreurs",
+        "linkedin_link": "https://www.linkedin.com/in/danielschreursbelgique/"
+    },
+    {
+        "firstname": "Cédric",
+        "lastname": "Müller",
+        "email": "cedric.muller@hepl.be",
+        "picture": "",
+        "bio": "",
+        "role": "student_teacher",
+        "github_link": "https://github.com/MullerCWeb",
+        "linkedin_link": "https://www.linkedin.com/in/mullercedric96/"
+    },
+    {
+        "firstname": "François",
+        "lastname": "Parmentier",
+        "email": "francois.parmentier@hepl.be",
+        "picture": "",
+        "bio": "",
+        "role": "teacher",
+        "github_link": "https://github.com/fprms",
+        "linkedin_link": "https://www.linkedin.com/in/fprms/"
+    },
+    {
+        "firstname": "Toon",
+        "lastname": "Van Den Bos",
+        "email": "toon@whitecude.be",
+        "picture": "",
+        "bio": "",
+        "role": "teacher",
+        "github_link": "https://github.com/toonvandenbos",
+        "linkedin_link": "https://www.linkedin.com/in/toon-van-den-bos/"
+    }
+]

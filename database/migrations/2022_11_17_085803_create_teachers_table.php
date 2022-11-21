@@ -18,7 +18,6 @@ return new class extends Migration {
             $table->string('lastname');
             $table->string('slug')->unique();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('picture')->nullable();
             $table->text('bio')->nullable();
             $table->string('role');

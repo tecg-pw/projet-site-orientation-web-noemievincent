@@ -1,4 +1,4 @@
-<x-header/>
+<x-header :head_title="'Nom du projet'"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
@@ -12,10 +12,10 @@
                               d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
                               transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                     </svg>
-                    <span>{{__('Retour aux projets')}}</span>
+                    <span>{{__('projects.single.back_to_projects_link')}}</span>
                 </a>
                 <h2 id="slug"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{__('Portfolio')}}</h2>
+                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">Portfolio</h2>
             </div>
             <div class="flex justify-between gap-28">
                 <div class="flex flex-col gap-6">
@@ -35,7 +35,8 @@
                                          viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;"
                                          aria-labelledby="githubTitle"
                                          xml:space="preserve">
-                                        <title id="githubTitle">{{__('Se rendre sur le github de :name')}}</title>
+                                        <title
+                                            id="githubTitle">{{__('alumnis.single.github_link', ['name' => 'nom de l‘élève'])}}</title>
                                         <style type="text/css">
                                             .github_gray {
                                                 fill-rule: evenodd;
@@ -56,7 +57,8 @@
                                          viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;"
                                          aria-labelledby="linkedinTitle"
                                          xml:space="preserve">
-                                        <title id="linkedinTitle">{{__('Se rendre sur le linkedin de :name')}}</title>
+                                        <title
+                                            id="linkedinTitle">{{__('alumnis.single.linkedin_link', ['name' => 'nom de l‘élève'])}}</title>
                                         <style type="text/css">
                                             .linkedin-blue {
                                                 fill: #006699;
@@ -83,7 +85,8 @@
                                          x="0px" y="0px" height="36"
                                          viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
                                          xml:space="preserve" aria-labelledby="instagramTitle">
-                                        <title id="instagramTitle">{{__('Se rendre sur l‘instagram de :name')}}</title>
+                                        <title
+                                            id="instagramTitle">{{__('alumnis.single.instagram_link', ['name' => 'nom de l‘élève'])}}</title>
                                         <style type="text/css">
                                             .insta_gradient {
                                                 fill: url(#SVGID_1_);
@@ -143,7 +146,7 @@
                         <ul class="flex flex-col gap-2">
                             <li><a href="#"
                                    class="flex items-center justify-between self-end uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-                                    <span>{{__('GitHub du projet')}}</span>
+                                    <span>{{__('projects.single.github_link')}}</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                                          class="fill-orange h-full">
                                         <path
@@ -153,7 +156,7 @@
                                 </a></li>
                             <li><a href="#"
                                    class="flex items-center justify-between self-end uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-                                    <span>{{__('Site du projet')}}</span>
+                                    <span>{{__('projects.single.website_link')}}</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                                          class="fill-orange h-full">
                                         <path
@@ -176,7 +179,7 @@
                             <div class="bg-blue/50 h-max-content w-px"></div>
                             <time datetime="">Juin 2022</time>
                             <div class="bg-blue/50 h-max-content w-px"></div>
-                            <a href="/classes/slug">{{__('Design Web')}}</a>
+                            <a href="/classes/slug">Design Web</a>
                         </div>
                         <x-share/>
                     </div>
@@ -208,11 +211,11 @@
                             d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
                             transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                     </svg>
-                    <span>{{__('projet précedent')}}</span>
+                    <span>projet précedent</span>
                 </a>
                 <a href="/projects/name/slug"
                    class="flex items-center self-end gap-4 mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-                    <span>{{__('projet suivant')}}</span>
+                    <span>projet suivant</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                          class="fill-orange h-full">
                         <path
@@ -222,7 +225,7 @@
                 </a>
             </div>
             <div class="flex flex-col gap-5">
-                <h2 class="font-display font-semibold text-blue text-xl tracking-wider">{{__('Autres projets de :name')}}</h2>
+                <h2 class="font-display font-semibold text-blue text-xl tracking-wider">{{__('projects.single.others_projects_from', ['name' => 'nom de l‘élève'])}}</h2>
                 <div class="flex flex-col gap-2">
                     <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
                         @for($i = 0; $i < 3; $i++)
@@ -231,7 +234,7 @@
                     </div>
                     <a href="/gwenaelle-batta"
                        class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-                        <span>{{__('Tous ses projets')}}</span>
+                        <span>{{__('projects.single.all_projects_from_link')}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                              class="fill-orange h-full">
                             <path

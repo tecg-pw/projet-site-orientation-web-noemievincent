@@ -1,8 +1,8 @@
-<aside class="flex flex-col gap-14 hidden lg:block">
-    <h2 class="sr-only">{{__('Nos nouveautés')}}</h2>
+<aside class="flex flex-col hidden lg:block">
+    <h2 class="sr-only">{{__('aside.title')}}</h2>
     <section aria-labelledby="aside-news" class="flex flex-col gap-2">
         <h3 id="aside-news"
-            class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('À la une')}}</h3>
+            class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('aside.news_title')}}</h3>
         <div class="flex flex-col gap-3">
             @for($i = 0; $i < 3; $i++)
                 <x-news.aside-article/>
@@ -10,7 +10,7 @@
         </div>
         <a href="/news"
            class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-            <span>{{__('Toutes les actualités')}}</span>
+            <span>{{__('aside.all_news_link')}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                  class="fill-orange h-full">
                 <path id="news-link"
@@ -19,9 +19,9 @@
             </svg>
         </a>
     </section>
-    <section aria-labelledby="aside-jobs" class="flex flex-col gap-2">
+    <section aria-labelledby="aside-jobs" class="flex flex-col gap-2 mt-8">
         <h3 id="aside-jobs"
-            class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('Offres de stages')}}</h3>
+            class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('aside.offers_title')}}</h3>
         <div class="flex flex-col gap-3">
             @for($i = 0; $i < 2; $i++)
                 <x-jobs.aside-article/>
@@ -29,7 +29,7 @@
         </div>
         <a href="/jobs"
            class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-            <span>{{__('Toutes les offres')}}</span>
+            <span>{{__('aside.all_offers_link')}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                  class="fill-orange h-full">
                 <path id="jobs-link"

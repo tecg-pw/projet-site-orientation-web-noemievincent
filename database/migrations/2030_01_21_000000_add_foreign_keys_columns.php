@@ -20,7 +20,7 @@ return new class extends Migration {
 
         Schema::table('projects', static function (Blueprint $table) {
             $table->foreignId('student_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('class_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
 
         Schema::table('news', static function (Blueprint $table) {
@@ -52,8 +52,8 @@ return new class extends Migration {
             $table->foreignId('project_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('class_teacher', static function (Blueprint $table) {
-            $table->foreignId('class_id')->constrained()->onUpdate('cascade');
+        Schema::table('course_teacher', static function (Blueprint $table) {
+            $table->foreignId('course_id')->constrained()->onUpdate('cascade');
             $table->foreignId('teacher_id')->constrained()->onUpdate('cascade');
         });
 

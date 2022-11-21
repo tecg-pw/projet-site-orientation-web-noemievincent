@@ -1,19 +1,4 @@
-@php
-    $sub_nav_items = [
-        'tutorials' => 'tutoriels',
-        'resources' => 'ressources',
-        'faq' => 'faq',
-    ];
-
-    $main_nav_items = [
-        'projects' => 'projets',
-        'alumnis' => 'alumnis',
-        'about' => 'à propos',
-        'news' => 'actualités',
-        'forum' => 'forum',
-        'jobs/offers' => 'stages',
-    ];
-@endphp
+@props(['head_title'])
     <!doctype html>
 <html lang="fr" class="bg-white">
 <head>
@@ -26,7 +11,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Web Design</title>
+    <title>{{__($head_title)}} - Web Design</title>
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
 <div
@@ -36,7 +21,7 @@
 </div>
 <body class="text-blue-dark font-body flex flex-col h-screen selection:bg-blue-light">
 <h1 class="sr-only">
-    {{__('Web Design - formation web')}}
+    {{__('header.title')}}
 </h1>
 <header class="uppercase text-blue mb-16 h-full relative lg:mb-0">
     <input id="toggle" class="toggle absolute hidden" type="checkbox">
@@ -46,7 +31,7 @@
                  height="24" viewBox="0 0 130 35"
                  xml:space="preserve" class="fill-blue-dark hover:fill-orange transition ease-in-out duration-200"
                  aria-labelledby="logoTitle">
-                <title id="logoTitle">{{__('Retourner à l‘accueil')}}</title>
+                <title id="logoTitle">{{__('header.home_link')}}</title>
                 <g>
                     <g transform="translate(4)">
                         <path d="M74.5,10.4h2.2l1.9,7.2l2.1-7.2h1.5l2.1,7.2l1.9-7.2h2.2l-2.9,9.9h-2.2l-1.9-6.2l-1.9,6.2
@@ -87,6 +72,7 @@
                     </g>
                 </g>
             </svg>
+            <span class="sr-only">{{__('header.home_link')}}</span>
         </a>
         <div class="burgermenu w-6 h-5 relative">
             <label for="toggle"
@@ -94,14 +80,14 @@
                 <span class="top-bun"></span>
                 <span class="meat"></span>
                 <span class="bottom-bun"></span>
-                <span class="hidden">{{__('Ouvrir le menu')}}</span>
+                <span class="hidden">{{__('header.open_menu')}}</span>
             </label>
         </div>
     </div>
     <div
         class="menu bg-blue-light px-4 py-6 flex flex-col gap-10 fixed z-[100] top-14 h-full left-full -right-[150%] transition-position ease-in-out duration-700 lg:static lg:flex-col-reverse lg:bg-transparent lg:p-0 lg:gap-0">
         <nav class="lg:bg-white/60 lg:px-10 lg:py-6">
-            <h2 class="sr-only">{{__('Navigation principale')}}</h2>
+            <h2 class="sr-only">{{__('header.main_nav_title')}}</h2>
             <div class="flex flex-col gap-8 lg:flex-row lg:justify-between lg:items-center">
                 <a href="/" class="hidden lg:block">
                     <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +95,7 @@
                          xml:space="preserve"
                          class="fill-blue-dark hover:fill-orange transition-all ease-in-out duration-200"
                          aria-labelledby="logoTitle">
-                                <title id="logoTitle">{{__('Retourner à l‘accueil')}}</title>
+                                <title id="logoTitle">{{__('header.home_link')}}</title>
                         <g>
                             <g transform="translate(4)">
                                 <path d="M74.5,10.4h2.2l1.9,7.2l2.1-7.2h1.5l2.1,7.2l1.9-7.2h2.2l-2.9,9.9h-2.2l-1.9-6.2l-1.9,6.2
@@ -152,14 +138,14 @@
                             </svg>
                 </a>
                 <ul class="flex flex-col gap-4 lg:flex-row lg:gap-24">
-                    @foreach($main_nav_items as $slug => $name)
+                    @foreach(__('header.main_nav_items') as $slug => $name)
                         <li><a href="/{{$slug}}"
-                               class="font-semibold {{Request::is($slug) ? 'lg:font-bold' : 'lg:font-normal'}} hover:text-orange transition-all ease-in-out duration-200">{{ucwords($name)}}</a>
+                               class="font-semibold {{Request::is($slug) ? 'lg:font-bold' : 'lg:font-normal'}} hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
                         </li>
                     @endforeach
                 </ul>
                 <a href="/search" class="flex gap-2 items-center">
-                    <span class="font-semibold lg:sr-only">{{__('Recherche')}}</span>
+                    <span class="font-semibold lg:sr-only">{{__('header.search')}}</span>
                     <svg version="1.1" id="search" xmlns="http://www.w3.org/2000/svg"
                          height="18" width="18" viewBox="0 0 30 30" xml:space="preserve"
                          class="fill-blue-dark">
@@ -174,11 +160,11 @@
             class="space-y-10 lg:space-y-0 lg:bg-blue-light lg:flex lg:flex-row-reverse lg:items-center lg:justify-between lg:px-10 lg:py-3 lg:text-sm">
             <div class="space-y-10 lg:space-y-0 lg:flex lg:flex-row lg:gap-16">
                 <nav>
-                    <h2 class="sr-only">{{__('Navigation secondaire')}}</h2>
+                    <h2 class="sr-only">{{__('header.sub_nav_title')}}</h2>
                     <ul class="flex flex-col gap-3 lg:flex-row lg:gap-8">
-                        @foreach($sub_nav_items as $slug => $name)
+                        @foreach(__('header.sub_nav_items') as $slug => $name)
                             <li><a href="/{{$slug}}"
-                                   class="{{Request::is($slug) ? 'lg:font-bold' : ''}} hover:text-orange transition-all ease-in-out duration-200">{{ucwords($name)}}</a>
+                                   class="{{Request::is($slug) ? 'lg:font-bold' : ''}} hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -196,26 +182,24 @@
                 @guest
                     <div>
                         <a href="/login" class="flex items-center gap-3">
-                            <img src="https://placehold.jp/30x30.png" alt="{{__('Se connecter')}}"
+                            <img src="https://placehold.jp/30x30.png" alt="{{__('header.login_link')}}"
                                  class="rounded-full h-full">
                             <span
-                                class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
-                                                                {{__('Se connecter')}}
-                                                            </span>
+                                class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('header.login_link')}}</span>
                         </a>
                     </div>
                 @endguest
                 @auth
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 lg:flex-row lg:items-center">
                         <a href="/profile" class="flex items-center gap-3">
-                            <img src="https://placehold.jp/30x30.png" alt="{{__('Prénom Nom')}}"
+                            <img src="https://placehold.jp/30x30.png" alt="Prénom Nom"
                                  class="rounded-full">
                             <span
-                                class="hover:text-orange transition-all ease-in-out duration-200">{{__('Prénom Nom')}}</span>
+                                class="hover:text-orange transition-all ease-in-out duration-200">Prénom Nom</span>
                         </a>
-                        <span class="hidden">—</span>
+                        <span class="hidden lg:block">—</span>
                         <a href="/logout"
-                           class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Se déconnecter')}}</a>
+                           class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('header.logout_link')}}</a>
                     </div>
                 @endauth
             </div>

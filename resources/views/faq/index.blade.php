@@ -1,25 +1,25 @@
-<x-header/>
+<x-header :head_title="'faq.head_title'"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="faq" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-2">
                 <h2 id="faq"
-                    class="font-display font-bold text-blue text-5xl tracking-wider uppercase">{{__('Foire aux questions')}}</h2>
-                <p class="text-lg ">{{__('Tout ce que vous devez savoir sur la section et la formation. Vous ne trouvez pas la réponse que vous cherchez ? N’hésitez pas à poser votre question sur le ')}}
+                    class="font-display font-bold text-blue text-5xl tracking-wider uppercase">{{__('faq.title')}}</h2>
+                <p class="text-lg ">{{__('faq.tagline')}}
                     <a href="/forum"
-                       class="underline underline-offset-2 decoration-1 decoration-solid text-orange">forum</a>
+                       class="underline underline-offset-2 decoration-1 decoration-solid text-orange">{{__('faq.tagline_link')}}</a>
                 </p>
             </div>
             <div class="flex flex-col gap-3">
                 <div class="grid grid-cols-3 gap-x-11">
-                    <div class="flex gap-12 col-span-2">
-                        <a href="?general"
-                           class="uppercase text-lg text-orange {{Request::has('general') || Request::all() == null ? 'font-bold' : 'underline'}} ? 'font-bold' : ''}}">{{__('Général')}}</a>
-                        <a href="?inscription"
-                           class="uppercase text-lg text-orange {{Request::has('inscription') ? 'font-bold' : 'underline'}}">{{__('Inscription')}}</a>
-                        <a href="?hepl"
-                           class="uppercase text-lg text-orange {{Request::has('hepl') ? 'font-bold' : 'underline'}}">{{__('La HEPL')}}</a>
-                    </div>
+                    <ul class="flex gap-12 col-span-2">
+                        @foreach(__('faq.tabs') as $slug => $label)
+                            <li>
+                                <a href="?{{$slug}}"
+                                   class="uppercase text-lg text-orange {{Request::has($slug) || (Request::all() == null && $slug === 'general') ? 'font-bold' : 'underline'}}">{{__($label)}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
                     <x-filters.search/>
                 </div>
             </div>

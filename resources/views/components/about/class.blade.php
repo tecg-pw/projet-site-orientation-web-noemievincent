@@ -1,6 +1,6 @@
 <div
     class="bg-white rounded-2xl border border-blue/20 p-5 hover:bg-blue-card transition ease-in-out duration-200 relative">
-    <a href="/classes/slug" class="full-link">{{__('Voir le cours')}}</a>
+    <a href="/classes/slug" class="full-link">{{__('classes.see_class_link')}}</a>
     <div>
         <div class="flex justify-between items-center mb-2">
             <h3 class="text-xl font-semibold">{{__('Intitulé du cours')}}</h3>

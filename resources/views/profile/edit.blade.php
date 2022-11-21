@@ -1,4 +1,4 @@
-<x-header/>
+<x-header :head_title="'profile.edit.head_title'"/>
 <main class="px-10 flex-1 lg:mx-96 mt-12">
     <section aria-labelledby="edit-profile" class="col-start-2 flex flex-col gap-12">
         <div>
@@ -7,15 +7,15 @@
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="-scale-x-100 fill-orange h-full" aria-labelledby="questionTitle">
-                        <title id="questionTitle">{{__('Retourner sur le profil')}}</title>
+                        <title id="questionTitle">{{__('profile.edit.back_to_profile_link')}}</title>
                         <path
                             d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
                             transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                     </svg>
-                    <span>{{__('Retour au profil')}}</span>
+                    <span>{{__('profile.edit.back_to_profile_link')}}</span>
                 </a>
                 <h2 id="edit-profile"
-                    class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('Modifier votre profil')}}</h2>
+                    class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('profile.edit.informations_form.title')}}</h2>
             </div>
             <form action="/username/edit-infos" method="post" class="flex flex-col gap-8">
                 <div class="flex flex-col gap-4">
@@ -23,7 +23,7 @@
                         <div class="relative">
                             <label for="file"
                                    class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center rounded-full bg-blue/40 hover:bg-blue/60 cursor-pointer transition-all ease-in-out duration-200">
-                                <span class="sr-only">{{__('Changez votre photo de profil')}}</span>
+                                <span class="sr-only">{{__('profile.edit.informations_form.picture_label')}}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      class="fill-white">
                                     <path
@@ -100,14 +100,14 @@
                 </div>
                 <div class="flex gap-8 items-center justify-between">
                     <button type="submit"
-                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('Enregistrer les modifications')}}
+                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('profile.edit.informations_form.button_label')}}
                     </button>
-                    <a href="#" class="uppercase text-orange">{{__('Annuler')}}</a>
+                    <a href="#" class="uppercase text-orange">{{__('profile.edit.cancel_link')}}</a>
                 </div>
             </form>
         </div>
         <div>
-            <h3 class="font-semibold font-display text-xl">{{__('Modifier votre mot de passe')}}</h3>
+            <h3 class="font-semibold font-display text-xl">{{__('profile.edit.password_form.title')}}</h3>
             <form action="username/edit-password" class="flex flex-col gap-8">
                 @csrf
                 <div class="flex flex-col gap-4">
@@ -170,15 +170,15 @@
                 </div>
                 <div class="flex gap-8 items-center justify-between">
                     <button type="submit"
-                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('Changer mon mot de passe')}}
+                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('profile.edit.password_form.button_label')}}
                     </button>
-                    <a href="#" class="uppercase text-orange">{{__('Annuler')}}</a>
+                    <a href="#" class="uppercase text-orange">{{__('profile.edit.cancel_link')}}</a>
                 </div>
             </form>
         </div>
         <div class="flex justify-between">
-            <a href="/logout" class="uppercase text-orange">{{__('Me déconnecter')}}</a>
-            <a href="/username/delete" class="uppercase text-red-800">{{__('Supprimer mon compte')}}</a>
+            <a href="/logout" class="uppercase text-orange">{{__('profile.edit.logout_link')}}</a>
+            <a href="/username/delete" class="uppercase text-red-800">{{__('profile.edit.delete_account_link')}}</a>
         </div>
     </section>
 </main>

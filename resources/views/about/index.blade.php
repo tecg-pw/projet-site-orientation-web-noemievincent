@@ -13,42 +13,34 @@
         'Développeur Web back-end' => 'Le développeur back-end s’occupe du côté technique et fonctionnel d’un site web. Contrairement au développeur front-end, celui-ci travaille dans l’ombre et se charge de toute la partie back-office, c’est-à-dire les éléments indispensables pour le fonctionnement du site, mais qui sont invisibles des internautes.',
     ];
 @endphp
-<x-header/>
+<x-header :head_title="'about.head_title'"/>
 <main class="px-10 flex-1 mt-6">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="about" class="col-span-3 flex flex-col gap-8">
             <h2 id="about"
-                class="font-display font-bold text-blue text-5xl tracking-wider uppercase">{{__('À propos de la section')}}</h2>
-            <p class="flex flex-col gap-2">
-                <span
-                    class="">{{__('Les Bacheliers en Techniques graphiques - orientation Techniques infographiques sont des spécialistes des métiers de l’image numérique interactive, fixe ou en mouvement.')}}</span>
-                <span
-                    class="">{{__('Au quotidien, les infographistes identifient la demande et les besoins graphiques du client tout en évaluant les contraintes de conception et de réalisation. Ils proposent ensuite des solutions techniques graphiques et créatives qui répondront aux besoins des clients.')}}</span>
-                <span
-                    class="">{{__('Les étudiants réalisent des projets graphiques d’envergure qui répondent à divers cahiers des charges inspirés du terrain professionnel ou proposés par de vrais clients. Ils ont l’occasion de participer à des concours, festivals et événements graphiques nationaux et internationaux comme WordSkills Belgium. Ils effectuent enfin 12 semaines de stage en milieu professionnel.')}}</span>
+                class="font-display font-bold text-blue text-5xl tracking-wider uppercase">{{__('about.title')}}</h2>
+            <p>
+                {{__('about.tagline')}}
             </p>
             <div class="flex flex-col gap-12">
                 <section aria-labelledby="classes">
                     <div class="flex flex-col gap-3 mb-6">
                         <h2 id="classes"
-                            class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('Programme des cours')}}</h2>
-                        <p class="font-light">{{__('Trouvez plus de détails sur les programmes sur le ')}}<a
+                            class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('classes.title')}}</h2>
+                        <p class="font-light">{{__('classes.tagline')}}<a
                                 class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid"
-                                href="https://www.hepl.be/fr/techniques-infographiques/web#parcours">{{__('site de la HEPL')}}</a>.
+                                href="https://www.hepl.be/fr/techniques-infographiques/web#parcours">{{__('classes.tagline_link')}}</a>.
                         </p>
-                        <p class="flex flex-col gap-2">
-                        <span
-                            class="">{{__('Au cours du premier bloc, les étudiants découvrent les trois domaines d’activité principale de techniques graphiques : le Web, le Design graphique et la 3D/Vidéo.')}}</span>
-                            <span
-                                class="">{{__('À partir du deuxième bloc, les étudiants choisissent entre ces trois options.')}}</span>
+                        <p>
+                            {{__('classes.description')}}
                         </p>
                     </div>
                     <div class="flex flex-col gap-8">
                         <div class="bg-blue-card p-5 rounded-lg">
-                            <h3 class="text-2xl font-semibold mb-3">{{__('Bloc 1')}}</h3>
+                            <h3 class="text-2xl font-semibold mb-3">{{__('classes.years.1')}}</h3>
                             <div class="grid grid-cols-3 gap-12">
                                 <div class="">
-                                    <h4 class="text-lg font-semibold mb-2">{{__('tronc commun')}}</h4>
+                                    <h4 class="text-lg font-semibold mb-2">{{__('classes.orientation.common')}}</h4>
                                     <ul class="flex flex-col gap-2">
                                         <li><p
                                                 class="flex justify-between">
@@ -73,7 +65,7 @@
                                     </ul>
                                 </div>
                                 <div class="">
-                                    <h4 class="text-lg font-semibold mb-2">{{__('option Web')}}</h4>
+                                    <h4 class="text-lg font-semibold mb-2">{{__('classes.orientation.web')}}</h4>
                                     <ul class="flex flex-col gap-2">
                                         <li><a href="classes/slug"
                                                class="flex justify-between hover:text-orange transition-all ease-in-out duration-200"><span
@@ -91,7 +83,7 @@
                                 </div>
                                 <div class="flex flex-col gap-8">
                                     <div class="">
-                                        <h4 class="text-lg font-semibold mb-2">{{__('option Design Graphique')}}</h4>
+                                        <h4 class="text-lg font-semibold mb-2">{{__('classes.orientation.dg')}}</h4>
                                         <ul class="flex flex-col gap-2">
                                             <li>
                                                 <p class="flex justify-between">
@@ -109,7 +101,7 @@
                                         </ul>
                                     </div>
                                     <div class="">
-                                        <h4 class="text-lg font-semibold mb-2">{{__('option 3D/Vidéo')}}</h4>
+                                        <h4 class="text-lg font-semibold mb-2">{{__('classes.orientation.3d')}}</h4>
                                         <ul class="flex flex-col gap-2">
                                             <li>
                                                 <p class="flex justify-between">
@@ -137,10 +129,10 @@
                         </div>
                         <div class="flex justify-between gap-8 items-start">
                             <div class="bg-blue-card p-5 rounded-lg flex-1">
-                                <h3 class="text-2xl font-semibold mb-3">{{__('Bloc 2')}}</h3>
+                                <h3 class="text-2xl font-semibold mb-3">{{__('classes.years.2')}}</h3>
                                 <div class="flex flex-col gap-4">
                                     <div class="">
-                                        <h4 class="text-lg font-semibold mb-2">{{__('tronc commun')}}</h4>
+                                        <h4 class="text-lg font-semibold mb-2">{{__('classes.orientation.common')}}</h4>
                                         <ul class="flex flex-col gap-2">
                                             <li><p
                                                     class="flex justify-between">
@@ -160,7 +152,7 @@
                                         </ul>
                                     </div>
                                     <div class="">
-                                        <h4 class="text-lg font-semibold mb-2">{{__('option Web')}}</h4>
+                                        <h4 class="text-lg font-semibold mb-2">{{__('classes.orientation.web')}}</h4>
                                         <ul class="flex flex-col gap-2">
                                             <li><a href="classes/slug"
                                                    class="flex justify-between hover:text-orange transition-all ease-in-out duration-200"><span
@@ -193,10 +185,10 @@
                                 </div>
                             </div>
                             <div class="bg-blue-card p-5 rounded-lg flex-1">
-                                <h3 class="text-2xl font-semibold mb-3">{{__('Bloc 3')}}</h3>
+                                <h3 class="text-2xl font-semibold mb-3">{{__('classes.years.3')}}</h3>
                                 <div class="flex flex-col gap-4">
                                     <div class="">
-                                        <h4 class="text-lg font-semibold mb-2">{{__('tronc commun')}}</h4>
+                                        <h4 class="text-lg font-semibold mb-2">{{__('classes.orientation.common')}}</h4>
                                         <ul class="flex flex-col gap-2">
                                             <li><p
                                                     class="flex justify-between">
@@ -211,7 +203,7 @@
                                         </ul>
                                     </div>
                                     <div class="">
-                                        <h4 class="text-lg font-semibold mb-2">{{__('option Web')}}</h4>
+                                        <h4 class="text-lg font-semibold mb-2">{{__('classes.orientation.web')}}</h4>
                                         <ul class="flex flex-col gap-2">
                                             <li><a href="classes/slug"
                                                    class="flex justify-between hover:text-orange transition-all ease-in-out duration-200"><span
@@ -238,7 +230,7 @@
                 </section>
                 <section aria-labelledby="teachers">
                     <h2 id="teachers"
-                        class="text-4xl font-medium uppercase tracking-wider font-display text-blue mb-6">{{__('Nos professeurs')}}</h2>
+                        class="text-4xl font-medium uppercase tracking-wider font-display text-blue mb-6">{{__('teachers.title')}}</h2>
                     <div class="grid grid-cols-3 gap-8">
                         @for($i = 0; $i < 6; $i++)
                             <x-about.teacher/>
@@ -248,10 +240,10 @@
                 <section aria-labelledby="opportunities">
                     <div class="flex flex-col gap-2 mb-6">
                         <h2 id="opportunities"
-                            class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('Les débouchés')}}</h2>
-                        <p>{{__('Notre formation permet d’ouvrir un très grand nombre de portes et le milieu de l’informatique ne manque pas de débouchés. Voyez par vous-même et découvrez ce que deviennent ')}}
+                            class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('opportunities.title')}}</h2>
+                        <p>{{__('opportunities.tagline')}}
                             <a href="/alumnis"
-                               class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid transition ease-in-out duration-200">{{__('nos anciens élèves')}}</a>
+                               class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid transition ease-in-out duration-200">{{__('opportunities.tagline_link')}}</a>
                             !</p>
                     </div>
                     <div class="grid grid-cols-2 gap-8">
