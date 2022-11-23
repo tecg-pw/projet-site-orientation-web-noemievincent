@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('category_project', function (Blueprint $table) {
             $table->id();
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at');
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

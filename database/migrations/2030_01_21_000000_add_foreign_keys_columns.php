@@ -23,9 +23,9 @@ return new class extends Migration {
             $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('news', static function (Blueprint $table) {
-            $table->foreignId('category_id')->constrained('new_categories')->onUpdate('cascade');
-            $table->foreignId('author_id')->constrained('users')->onUpdate('cascade');
+        Schema::table('articles', static function (Blueprint $table) {
+            $table->foreignId('category_id')->constrained('article_categories')->onUpdate('cascade');
+            $table->foreignId('author_id')->constrained()->onUpdate('cascade');
         });
 
         Schema::table('offers', static function (Blueprint $table) {

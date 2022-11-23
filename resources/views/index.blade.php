@@ -23,7 +23,7 @@
                     class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('home.projects_title')}}</h2>
                 <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
                     @for($i = 0; $i < 6; $i++)
-                        <x-projects.article/>
+                        {{--                        <x-projects.article/>--}}
                     @endfor
                 </div>
                 <a href="/projects"

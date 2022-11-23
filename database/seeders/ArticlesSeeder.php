@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Project;
+use App\Models\Article;
 use Carbon\Carbon;
 use File;
 use Illuminate\Database\Seeder;
 use Str;
 
-class ProjectsSeeder extends Seeder
+class ArticlesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,20 +17,19 @@ class ProjectsSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/projects.json");
-        $projects = json_decode($json);
+        $json = File::get("database/data/articles.json");
+        $articles = json_decode($json);
 
-        foreach ($projects as $key => $value) {
-            Project::create([
+        foreach ($articles as $key => $value) {
+            Article::create([
                 "title" => $value->title,
                 "slug" => Str::slug($value->title),
                 "picture" => $value->picture,
+                "excerpt" => $value->excerpt,
                 "body" => $value->body,
-                "website_link" => $value->website_link,
-                "github_link" => $value->github_link,
                 "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
-                "student_id" => $value->student_id,
-                "course_id" => $value->course_id,
+                "category_id" => $value->category_id,
+                "author_id" => $value->author_id,
             ]);
         }
     }
