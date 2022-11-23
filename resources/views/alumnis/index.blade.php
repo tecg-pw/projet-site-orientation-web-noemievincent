@@ -8,16 +8,23 @@
                 <p class="text-lg ">{{__('alumnis.tagline')}}</p>
             </div>
             <div class="flex flex-col gap-3">
-                <div class="flex gap-6 items-center">
-                    <p class="uppercase text-lg">{{__('filters.title')}}</p>
-                    <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
-                </div>
                 <div class="grid grid-cols-3 gap-x-11">
-                    <div class="flex gap-4 col-span-2">
-                        <x-filters.date/>
+                    <div class="flex gap-6 items-center col-span-2">
+                        <p class="uppercase text-lg">{{__('filters.title')}}</p>
+                        <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
                     </div>
                     <x-filters.search/>
                 </div>
+                <form class="flex col-span-2 items-center justify-between">
+                    @csrf
+                    <div class="flex gap-4">
+                        <x-filters.date :dates="$dates" :property="'end_year'" :format="'Y'"/>
+                    </div>
+                    <button type="submit"
+                            class="font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                        {{__('Filtrer')}}
+                    </button>
+                </form>
             </div>
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-3 gap-8">

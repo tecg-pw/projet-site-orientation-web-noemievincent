@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ProjectCategory extends Model
 {
     use HasFactory, SoftDeletes;
-
+    
     protected $fillable = [
         'name', 'slug'
     ];

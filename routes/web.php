@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AlumnisController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,12 +39,8 @@ Route::get('/alumnis', [AlumnisController::class, 'index']);
 Route::get('/alumnis/{alumni:slug}', [AlumnisController::class, 'show']);
 
 //ROUTE : Projects
-Route::get('/projects', function () {
-    return view('projects.index');
-});
-Route::get('/projects/name/slug', function () {
-    return view('projects.show');
-});
+Route::get('/projects', [ProjectsController::class, 'index']);
+Route::get('/projects/{student:slug}/{project:slug}', [ProjectsController::class, 'show']);
 
 //ROUTE : News
 Route::get('/news', function () {

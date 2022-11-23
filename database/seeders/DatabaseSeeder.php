@@ -22,10 +22,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(OpportunitiesSeeder::class);
+        $this->call(StudentsSeeder::class);
         $this->call(TeachersSeeder::class);
         $this->call(CoursesSeeder::class);
         $this->call(CourseTeacherSeeder::class);
-        $this->call(StudentsSeeder::class);
         $this->call(ProjectsSeeder::class);
         $this->call(ProjectCategoriesSeeder::class);
         $this->call(CategoryProjectSeeder::class);

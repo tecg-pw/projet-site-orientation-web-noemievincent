@@ -19,4 +19,9 @@ class Article extends Model
     {
         return $this->belongsTo(ArticleCategory::class);
     }
+
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(Author::class);
+    }
 }

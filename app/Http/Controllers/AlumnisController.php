@@ -14,12 +14,22 @@ class AlumnisController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function index()
     {
         $alumnis = Student::paginate(9);
-        return view('alumnis.index', compact('alumnis'));
+
+        $dates = Student::select('end_year')->whereNotNull('end_year')->groupBy('end_year')->get();
+
+//        foreach ($end_dates as $key => $date) {
+//            return $date;
+//        }
+//
+//        return $end_dates;
+
+
+        return view('alumnis.index', compact('alumnis', 'dates'));
     }
 
     /**

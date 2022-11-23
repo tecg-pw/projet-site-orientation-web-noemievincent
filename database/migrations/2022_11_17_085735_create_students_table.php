@@ -27,8 +27,8 @@ return new class extends Migration {
             $table->string('github_link')->nullable();
             $table->string('instagram_link')->nullable();
             $table->string('linkedin_link')->nullable();
-            $table->integer('start_year');
-            $table->integer('end_year')->nullable();
+            $table->timestamp('start_year');
+            $table->timestamp('end_year')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at');
             $table->softDeletes();

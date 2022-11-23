@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Student;
+use Carbon\Carbon;
 use File;
 use Illuminate\Database\Seeder;
 use Str;
@@ -34,8 +35,8 @@ class StudentsSeeder extends Seeder
                 "github_link" => $value->github_link,
                 "instagram_link" => $value->instagram_link,
                 "linkedin_link" => $value->linkedin_link,
-                "start_year" => $value->start_year,
-                "end_year" => $value->end_year,
+                "start_year" => Carbon::create($value->start_year),
+                "end_year" => $value->end_year != null ? Carbon::create($value->end_year) : $value->end_year,
                 "opportunity_id" => $value->opportunity_id,
                 "company_id" => $value->company_id,
                 "internship_id" => $value->internship_id,

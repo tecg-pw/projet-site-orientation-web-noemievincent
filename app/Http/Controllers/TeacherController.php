@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -51,6 +52,12 @@ class TeacherController extends Controller
     public function show(Teacher $teacher)
     {
         $courses = Teacher::find($teacher->id)->courses()->get();
+
+        if ($teacher->role == 'student_teacher') {
+            $projects = Student::where('slug', $teacher->slug)->first()->projects;
+            return view('about.show-teacher', compact('teacher', 'courses', 'projects'));
+        }
+
         return view('about.show-teacher', compact('teacher', 'courses'));
     }
 

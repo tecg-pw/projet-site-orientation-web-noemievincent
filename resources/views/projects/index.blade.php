@@ -8,26 +8,33 @@
                 <p class="text-lg ">{{__('projects.tagline')}}</p>
             </div>
             <div class="flex flex-col gap-3">
-                <div class="flex gap-6 items-center">
-                    <p class="uppercase text-lg">{{__('filters.title')}}</p>
-                    <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
-                </div>
                 <div class="grid grid-cols-3 gap-x-11">
-                    <div class="flex gap-4 col-span-2">
-                        <x-filters.project-categories/>
-                        <x-filters.date/>
+                    <div class="flex gap-6 items-center col-span-2">
+                        <p class="uppercase text-lg">{{__('filters.title')}}</p>
+                        <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
                     </div>
                     <x-filters.search/>
                 </div>
+                <form class="flex col-span-2 items-center justify-between">
+                    @csrf
+                    <div class="flex gap-4">
+                        <x-filters.project-categories :categories="$categories"/>
+                        <x-filters.date :dates="$dates" :property="'published_at'" :format="'F Y'"/>
+                    </div>
+                    <button type="submit"
+                            class="font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                        {{__('Filtrer')}}
+                    </button>
+                </form>
             </div>
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
-                    @for($i = 0; $i < 9; $i++)
-                        <x-projects.article/>
-                    @endfor
+                    @foreach($projects as $project)
+                        <x-projects.article :project="$project" :student="$project->student"/>
+                    @endforeach
                 </div>
-                <div class="bg-pink-200">
-                    PAGINATION
+                <div>
+                    {{$projects->links()}}
                 </div>
             </div>
         </section>
