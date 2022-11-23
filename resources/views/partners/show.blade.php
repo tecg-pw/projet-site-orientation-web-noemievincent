@@ -1,7 +1,8 @@
-<x-header/>
+<x-header :head_title="'Nom'"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
-        <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
+        <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8" itemscope
+                 itemtype="https://schema.org/Corporation">
             <div class="flex flex-col gap-4">
                 <a href="/jobs/partners"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
@@ -18,13 +19,16 @@
                     <div class="flex gap-6">
                         <img src="https://placehold.jp/120x120.png" alt="nom" height="120"
                              width="120"
-                             class="rounded-full">
+                             class="rounded-full" itemprop="logo">
                         <div class="flex flex-col gap-3">
                             <h2 id="slug"
-                                class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{__("Léonard Web Solutions")}}</h2>
-                            <div class="text-lg">
-                                <p>{{__('Rue de Bellaire, 9')}}</p>
-                                <p>{{__('4801 VERVIERS')}}</p>
+                                class="font-display font-bold text-blue text-4xl tracking-wider uppercase"
+                                itemprop="name">{{__("Léonard Web Solutions")}}</h2>
+                            <div class="flex flex-col text-lg" itemscope itemtype="https://schema.org/PostalAddress"
+                                 itemprop="location">
+                                <p><span itemprop="streetAddress">Rue</span></p>
+                                <p><span itemprop="postalCode">Code</span> <span
+                                        itemprop="addressLocality">Localité</span></p>
                             </div>
                         </div>
                     </div>
@@ -49,7 +53,7 @@
                 <div class="flex flex-col gap-2">
                     <div class="grid grid-cols-3 gap-8">
                         @for($i = 0; $i < 6; $i++)
-                            <x-partners.card/>
+                            <x-partners.member/>
                         @endfor
                     </div>
                 </div>
@@ -71,7 +75,7 @@
                 <div class="flex flex-col gap-2">
                     <div class="grid grid-cols-3 gap-8">
                         @for($i = 0; $i <3; $i++)
-                            <x-alumnis.card/>
+                            {{--                            <x-alumnis.card/>--}}
                         @endfor
                     </div>
                 </div>

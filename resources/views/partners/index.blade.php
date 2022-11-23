@@ -1,4 +1,4 @@
-<x-header/>
+<x-header :head_title="'Entreprises Partenaires'"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="partners" class="col-span-3 flex flex-col gap-8">

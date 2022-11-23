@@ -19,7 +19,7 @@ return [
     'sub_nav_items' => [
         'tutorials' => 'Tutoriels',
         'resources' => 'Ressources',
-        'faq' => 'FAQ',
+        'faq' => 'Faq',
     ],
     'login_link' => 'Se connecter',
     'logout_link' => 'Se déconnecter',

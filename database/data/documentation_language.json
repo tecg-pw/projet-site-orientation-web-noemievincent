@@ -1,0 +1,66 @@
+[
+    {
+        "documentation_id": 1,
+        "language_id": 1
+    },
+    {
+        "documentation_id": 1,
+        "language_id": 2
+    },
+    {
+        "documentation_id": 1,
+        "language_id": 3
+    },
+    {
+        "documentation_id": 2,
+        "language_id": 4
+    },
+    {
+        "documentation_id": 3,
+        "language_id": 1
+    },
+    {
+        "documentation_id": 4,
+        "language_id": 5
+    },
+    {
+        "documentation_id": 5,
+        "language_id": 1
+    },
+    {
+        "documentation_id": 5,
+        "language_id": 2
+    },
+    {
+        "documentation_id": 5,
+        "language_id": 3
+    },
+    {
+        "documentation_id": 5,
+        "language_id": 4
+    },
+    {
+        "documentation_id": 5,
+        "language_id": 5
+    },
+    {
+        "documentation_id": 6,
+        "language_id": 1
+    },
+    {
+        "documentation_id": 6,
+        "language_id": 2
+    },
+    {
+        "documentation_id": 6,
+        "language_id": 3
+    },
+    {
+        "documentation_id": 6,
+        "language_id": 4
+    },
+    {
+        "documentation_id": 6,
+        "language_id": 5
+    }
+]

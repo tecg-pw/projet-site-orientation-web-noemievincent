@@ -53,7 +53,7 @@ Route::get('/news/slug', function () {
     return view('news.show');
 });
 
-//ROUTE : Forum + FAQ
+//ROUTE : Forum + Faq
 Route::get('/forum', function () {
     return view('forum.index');
 });

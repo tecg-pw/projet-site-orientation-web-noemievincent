@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
+            $table->string('fullname');
             $table->string('slug')->unique();
             $table->string('picture')->nullable();
             $table->string('github_link')->nullable();

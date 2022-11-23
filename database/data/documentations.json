@@ -1,0 +1,32 @@
+[
+    {
+        "title": "MDN Web Docs",
+        "description": "Laborum est sit culpa fugiat dolor pariatur nostrud. Qui irure duis laborum et amet ex non deserunt. Enim velit incididunt irure Lorem do excepteur eiusmod do voluptate aute id minim ipsum eiusmod culpa. Aliqua in occaecat est voluptate nisi adipisicing mollit laboris minim cillum dolor fugiat id veniam. Exercitation sunt mollit do cillum laborum irure culpa laborum irure cillum Lorem irure elit nulla. Est Lorem consectetur laboris veniam et dolore ex laboris mollit. Occaecat ut veniam elit. Esse reprehenderit tempor in ad enim ad laboris.",
+        "link": "https://developer.mozilla.org/fr/"
+    },
+    {
+        "title": "PHP",
+        "description": "Laborum est sit culpa fugiat dolor pariatur nostrud. Qui irure duis laborum et amet ex non deserunt. Enim velit incididunt irure Lorem do excepteur eiusmod do voluptate aute id minim ipsum eiusmod culpa. Aliqua in occaecat est voluptate nisi adipisicing mollit laboris minim cillum dolor fugiat id veniam. Exercitation sunt mollit do cillum laborum irure culpa laborum irure cillum Lorem irure elit nulla. Est Lorem consectetur laboris veniam et dolore ex laboris mollit. Occaecat ut veniam elit. Esse reprehenderit tempor in ad enim ad laboris.",
+        "link": "https://www.php.net/"
+    },
+    {
+        "title": "HTML Living Standard — WHATWG",
+        "description": "Laborum est sit culpa fugiat dolor pariatur nostrud. Qui irure duis laborum et amet ex non deserunt. Enim velit incididunt irure Lorem do excepteur eiusmod do voluptate aute id minim ipsum eiusmod culpa. Aliqua in occaecat est voluptate nisi adipisicing mollit laboris minim cillum dolor fugiat id veniam. Exercitation sunt mollit do cillum laborum irure culpa laborum irure cillum Lorem irure elit nulla. Est Lorem consectetur laboris veniam et dolore ex laboris mollit. Occaecat ut veniam elit. Esse reprehenderit tempor in ad enim ad laboris.",
+        "link": "https://html.spec.whatwg.org/multipage/"
+    },
+    {
+        "title": "SQL",
+        "description": "Laborum est sit culpa fugiat dolor pariatur nostrud. Qui irure duis laborum et amet ex non deserunt. Enim velit incididunt irure Lorem do excepteur eiusmod do voluptate aute id minim ipsum eiusmod culpa. Aliqua in occaecat est voluptate nisi adipisicing mollit laboris minim cillum dolor fugiat id veniam. Exercitation sunt mollit do cillum laborum irure culpa laborum irure cillum Lorem irure elit nulla. Est Lorem consectetur laboris veniam et dolore ex laboris mollit. Occaecat ut veniam elit. Esse reprehenderit tempor in ad enim ad laboris.",
+        "link": "https://sql.sh/"
+    },
+    {
+        "title": "ZEAL",
+        "description": "Laborum est sit culpa fugiat dolor pariatur nostrud. Qui irure duis laborum et amet ex non deserunt. Enim velit incididunt irure Lorem do excepteur eiusmod do voluptate aute id minim ipsum eiusmod culpa. Aliqua in occaecat est voluptate nisi adipisicing mollit laboris minim cillum dolor fugiat id veniam. Exercitation sunt mollit do cillum laborum irure culpa laborum irure cillum Lorem irure elit nulla. Est Lorem consectetur laboris veniam et dolore ex laboris mollit. Occaecat ut veniam elit. Esse reprehenderit tempor in ad enim ad laboris.",
+        "link": "https://zealdocs.org/"
+    },
+    {
+        "title": "DASH",
+        "description": "Laborum est sit culpa fugiat dolor pariatur nostrud. Qui irure duis laborum et amet ex non deserunt. Enim velit incididunt irure Lorem do excepteur eiusmod do voluptate aute id minim ipsum eiusmod culpa. Aliqua in occaecat est voluptate nisi adipisicing mollit laboris minim cillum dolor fugiat id veniam. Exercitation sunt mollit do cillum laborum irure culpa laborum irure cillum Lorem irure elit nulla. Est Lorem consectetur laboris veniam et dolore ex laboris mollit. Occaecat ut veniam elit. Esse reprehenderit tempor in ad enim ad laboris.",
+        "link": "https://kapeli.com/dash"
+    }
+]

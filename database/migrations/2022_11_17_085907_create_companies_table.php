@@ -17,7 +17,9 @@ return new class extends Migration {
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('logo');
-            $table->string('address')->nullable();
+            $table->string('streetAddress')->nullable();
+            $table->string('postalCode')->nullable();
+            $table->string('addressLocality')->nullable();
             $table->text('description')->nullable();
             $table->string('website_link')->nullable();
             $table->timestamp('created_at')->useCurrent();

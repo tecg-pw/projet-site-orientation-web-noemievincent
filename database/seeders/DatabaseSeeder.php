@@ -32,5 +32,17 @@ class DatabaseSeeder extends Seeder
         $this->call(AuthorSeeder::class);
         $this->call(ArticleCategoriesSeeder::class);
         $this->call(ArticlesSeeder::class);
+        $this->call(CompaniesSeeder::class);
+        $this->call(CompanyMembersSeeder::class);
+        $this->call(OffersSeeder::class);
+        $this->call(SkillsSeeder::class);
+        $this->call(OfferSkillSeeder::class);
+        $this->call(FaqSeeder::class);
+        $this->call(LanguagesSeeder::class);
+        $this->call(TutorialsSeeder::class);
+        $this->call(DocumentationsSeeder::class);
+        $this->call(ToolsSeeder::class);
+        $this->call(LanguageTutorialSeeder::class);
+        $this->call(DocumentationLanguageSeeder::class);
     }
 }
