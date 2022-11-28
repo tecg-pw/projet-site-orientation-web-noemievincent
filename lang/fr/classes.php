@@ -3,8 +3,9 @@
 return [
 
     'title' => 'Programmes de cours',
-    'tagline' => 'Trouvez plus de détails sur les programmes sur le ',
-    'tagline_link' => 'site de la HEPL',
+    'tagline' => '<p class="font-light">Trouvez plus de détails sur les programmes sur le <a
+                                class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid"
+                                href="https://www.hepl.be/fr/techniques-infographiques/web#parcours">site de la HEPL</a>.</p>',
     'description' => 'Au cours du premier bloc, les étudiants découvrent les trois domaines d’activité principale de techniques graphiques : le Web, le Design graphique et la 3D/Vidéo. À partir du deuxième bloc, les étudiants choisissent entre ces trois options.',
     'see_link' => 'Voir le cours',
     'years' => [

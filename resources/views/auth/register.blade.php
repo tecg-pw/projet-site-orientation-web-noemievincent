@@ -1,9 +1,10 @@
-<x-header/>
+<x-header :head_title="'auth.register.head_title'"/>
 <main class="px-10 flex-1 xl:mx-96 mt-12">
     <section aria-labelledby="register" class="col-start-2">
         <div class="mb-8">
-            <h2 id="register" class="uppercase font-display font-bold text-4xl text-blue">{{__('Inscription')}}</h2>
-            <p>Nulla officia magna ullamco id irure aute aliqua dolore qui duis.</p>
+            <h2 id="register"
+                class="uppercase font-display font-bold text-4xl text-blue">{{__('auth.register.title')}}</h2>
+            <p>{{__('auth.register.tagline')}}</p>
         </div>
         <form action="/register" method="post" class="flex flex-col gap-4">
             @csrf
@@ -15,7 +16,7 @@
                             <path
                                 d="M12,2A10,10,0,0,0,4.65,18.76h0a10,10,0,0,0,14.7,0h0A10,10,0,0,0,12,2Zm0,18a8,8,0,0,1-5.55-2.25,6,6,0,0,1,11.1,0A8,8,0,0,1,12,20ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Zm8.91,6A8,8,0,0,0,15,12.62a4,4,0,1,0-6,0A8,8,0,0,0,5.09,16,7.92,7.92,0,0,1,4,12a8,8,0,0,1,16,0A7.92,7.92,0,0,1,18.91,16Z"/>
                         </svg>
-                        <span>{{__('Prénom')}}</span>
+                        <span>{{__('forms.labels.firstname')}}</span>
                     </label>
                     <input type="text" id="firstname" placeholder="Pierre"
                            class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
@@ -27,7 +28,7 @@
                             <path
                                 d="M12,2A10,10,0,0,0,4.65,18.76h0a10,10,0,0,0,14.7,0h0A10,10,0,0,0,12,2Zm0,18a8,8,0,0,1-5.55-2.25,6,6,0,0,1,11.1,0A8,8,0,0,1,12,20ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Zm8.91,6A8,8,0,0,0,15,12.62a4,4,0,1,0-6,0A8,8,0,0,0,5.09,16,7.92,7.92,0,0,1,4,12a8,8,0,0,1,16,0A7.92,7.92,0,0,1,18.91,16Z"/>
                         </svg>
-                        <span>{{__('Nom')}}</span>
+                        <span>{{__('forms.labels.lastname')}}</span>
                     </label>
                     <input type="text" id="lastname" placeholder="Dumont"
                            class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
@@ -42,7 +43,7 @@
                             <path d="M15 10v1a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/>
                         </g>
                     </svg>
-                    <span>{{__('Adresse e-mail')}}</span>
+                    <span>{{__('forms.labels.email')}}</span>
                 </label>
                 <input type="email" id="email" placeholder="name@example.com"
                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
@@ -55,10 +56,10 @@
                             <path
                                 d="M12,8a2,2,0,0,0-2,2,2,2,0,0,0,1,1.72V15a1,1,0,0,0,2,0V11.72A2,2,0,0,0,14,10,2,2,0,0,0,12,8Zm0-6A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
                         </svg>
-                        <span>{{__('Mot de passe')}}</span>
+                        <span>{{__('forms.labels.password')}}</span>
                     </span>
                     <span
-                        class="font-light text-sm">{{__('Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule')}}</span>
+                        class="font-light text-sm">{{__('forms.labels.password_requirements')}}</span>
                 </label>
                 <div
                     class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
@@ -76,12 +77,10 @@
                 </div>
             </fieldset>
             <div class="flex justify-between gap-16 items-center mt-6">
-                <p class="text-sm font-light">{{__('Déjà un compte ?')}} <a href="/login"
-                                                                            class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Connectez-vous')}}</a>
-                </p>
+                {!! __('auth.register.login_link') !!}
                 <button type="submit"
                         class="uppercase font-light bg-orange text-white py-2 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
-                    {{__('Créer mon compte')}}
+                    {{__('forms.buttons.register')}}
                 </button>
             </div>
         </form>

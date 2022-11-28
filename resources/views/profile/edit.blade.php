@@ -3,7 +3,7 @@
     <section aria-labelledby="edit-profile" class="col-start-2 flex flex-col gap-12">
         <div>
             <div class="flex flex-col gap-4">
-                <a href="/forum"
+                <a href="/username"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="-scale-x-100 fill-orange h-full" aria-labelledby="questionTitle">
@@ -15,7 +15,7 @@
                     <span>{{__('profile.edit.back_to_profile_link')}}</span>
                 </a>
                 <h2 id="edit-profile"
-                    class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('profile.edit.informations_form.title')}}</h2>
+                    class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('profile.edit.informations_form_title')}}</h2>
             </div>
             <form action="/username/edit-infos" method="post" class="flex flex-col gap-8">
                 <div class="flex flex-col gap-4">
@@ -23,7 +23,7 @@
                         <div class="relative">
                             <label for="file"
                                    class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center rounded-full bg-blue/40 hover:bg-blue/60 cursor-pointer transition-all ease-in-out duration-200">
-                                <span class="sr-only">{{__('profile.edit.informations_form.picture_label')}}</span>
+                                <span class="sr-only">{{__('forms.labels.picture')}}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      class="fill-white">
                                     <path
@@ -42,7 +42,7 @@
                                         <path
                                             d="M12,2A10,10,0,0,0,4.65,18.76h0a10,10,0,0,0,14.7,0h0A10,10,0,0,0,12,2Zm0,18a8,8,0,0,1-5.55-2.25,6,6,0,0,1,11.1,0A8,8,0,0,1,12,20ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Zm8.91,6A8,8,0,0,0,15,12.62a4,4,0,1,0-6,0A8,8,0,0,0,5.09,16,7.92,7.92,0,0,1,4,12a8,8,0,0,1,16,0A7.92,7.92,0,0,1,18.91,16Z"/>
                                     </svg>
-                                    <span>{{__('Prénom')}}</span>
+                                    <span>{{__('forms.labels.firstname')}}</span>
                                 </label>
                                 <input type="text" id="firstname" placeholder="Pierre"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
@@ -54,7 +54,7 @@
                                         <path
                                             d="M12,2A10,10,0,0,0,4.65,18.76h0a10,10,0,0,0,14.7,0h0A10,10,0,0,0,12,2Zm0,18a8,8,0,0,1-5.55-2.25,6,6,0,0,1,11.1,0A8,8,0,0,1,12,20ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Zm8.91,6A8,8,0,0,0,15,12.62a4,4,0,1,0-6,0A8,8,0,0,0,5.09,16,7.92,7.92,0,0,1,4,12a8,8,0,0,1,16,0A7.92,7.92,0,0,1,18.91,16Z"/>
                                     </svg>
-                                    <span>{{__('Nom')}}</span>
+                                    <span>{{__('forms.labels.lastname')}}</span>
                                 </label>
                                 <input type="text" id="lastname" placeholder="Dumont"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
@@ -70,44 +70,38 @@
                                     <path d="M15 10v1a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/>
                                 </g>
                             </svg>
-                            <span>{{__('Adresse e-mail')}}</span>
+                            <span>{{__('forms.labels.email')}}</span>
                         </label>
                         <input type="email" id="email" placeholder="name@example.com"
                                class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
                     </fieldset>
                     <fieldset class="flex flex-col gap-1">
-                        <label for="email" class="text-lg text-blue-dark">{{__('Vous êtes')}}</label>
+                        <label for="email" class="text-lg text-blue-dark">{{__('forms.labels.genre')}}</label>
                         <div class="flex justify-between">
-                            <div class="flex gap-2">
-                                <input type="radio" id="male" name="gender">
-                                <label for="male">{{__('Un homme')}}</label>
-                            </div>
-                            <div class="flex gap-2">
-                                <input type="radio" id="female" name="gender">
-                                <label for="female">{{__('Une femme')}}</label>
-                            </div>
-                            <div class="flex gap-2">
-                                <input type="radio" id="prefer-not-to-say" name="gender">
-                                <label for="prefer-not-to-say">{{__('Je ne souhaite pas le préciser')}}</label>
-                            </div>
+                            @foreach(__('forms.genres') as $id => $label)
+                                <div class="flex gap-2">
+                                    <input type="radio" id="{{$id}}" name="gender">
+                                    <label for="{{$id}}">{{$label}}</label>
+                                </div>
+                            @endforeach
                         </div>
                     </fieldset>
                     <fieldset class="flex flex-col gap-2">
-                        <label for="reply" class="text-lg text-blue-dark">{{__('Description')}}</label>
+                        <label for="reply" class="text-lg text-blue-dark">{{__('forms.labels.description')}}</label>
                         <textarea name="reply" id="reply" cols="30" rows="5"
                                   class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200"></textarea>
                     </fieldset>
                 </div>
                 <div class="flex gap-8 items-center justify-between">
                     <button type="submit"
-                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('profile.edit.informations_form.button_label')}}
+                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('forms.buttons.edit_infos')}}
                     </button>
-                    <a href="#" class="uppercase text-orange">{{__('profile.edit.cancel_link')}}</a>
+                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
                 </div>
             </form>
         </div>
         <div>
-            <h3 class="font-semibold font-display text-xl">{{__('profile.edit.password_form.title')}}</h3>
+            <h3 class="font-semibold font-display text-xl">{{__('profile.edit.password_form_title')}}</h3>
             <form action="username/edit-password" class="flex flex-col gap-8">
                 @csrf
                 <div class="flex flex-col gap-4">
@@ -119,7 +113,7 @@
                                     <path
                                         d="M12,8a2,2,0,0,0-2,2,2,2,0,0,0,1,1.72V15a1,1,0,0,0,2,0V11.72A2,2,0,0,0,14,10,2,2,0,0,0,12,8Zm0-6A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
                                 </svg>
-                                <span>{{__('Ancien mot de passe')}}</span>
+                                <span>{{__('forms.labels.old_password')}}</span>
                             </span>
                         </label>
                         <div
@@ -145,10 +139,10 @@
                                     <path
                                         d="M12,8a2,2,0,0,0-2,2,2,2,0,0,0,1,1.72V15a1,1,0,0,0,2,0V11.72A2,2,0,0,0,14,10,2,2,0,0,0,12,8Zm0-6A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
                                 </svg>
-                                <span>{{__('Nouveau mot de passe')}}</span>
+                                <span>{{__('forms.labels.new_password')}}</span>
                             </span>
                             <span
-                                class="font-light text-sm">{{__('Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule')}}</span>
+                                class="font-light text-sm">{{__('forms.labels.password_requirements')}}</span>
                         </label>
                         <div
                             class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
@@ -166,19 +160,19 @@
                         </div>
                     </fieldset>
                     <a href="/reset-password"
-                       class="font-light text-sm text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Mot de passe oublié ?')}}</a>
+                       class="font-light text-sm text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('forms.links.reset_password')}}</a>
                 </div>
                 <div class="flex gap-8 items-center justify-between">
                     <button type="submit"
-                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('profile.edit.password_form.button_label')}}
+                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('forms.buttons.edit_password')}}
                     </button>
-                    <a href="#" class="uppercase text-orange">{{__('profile.edit.cancel_link')}}</a>
+                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
                 </div>
             </form>
         </div>
         <div class="flex justify-between">
-            <a href="/logout" class="uppercase text-orange">{{__('profile.edit.logout_link')}}</a>
-            <a href="/username/delete" class="uppercase text-red-800">{{__('profile.edit.delete_account_link')}}</a>
+            <a href="/logout" class="uppercase text-orange">{{__('forms.links.logout')}}</a>
+            <a href="/username/delete" class="uppercase text-red-800">{{__('forms.links.delete_account')}}</a>
         </div>
     </section>
 </main>

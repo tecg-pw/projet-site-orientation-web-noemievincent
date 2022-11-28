@@ -1,4 +1,4 @@
-<x-header/>
+<x-header :head_title="'Nom'"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
@@ -7,15 +7,15 @@
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="-scale-x-100 fill-orange h-full" aria-labelledby="projectsTitle">
-                        <title id="projectsTitle">{{__('Retourner sur la page des projets')}}</title>
+                        <title id="projectsTitle">{{__('jobs.single.back_to_offers_link')}}</title>
                         <path id="projects-link"
                               d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
                               transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                     </svg>
-                    <span>{{__('Retour aux offres')}}</span>
+                    <span>{{__('jobs.single.back_to_offers_link')}}</span>
                 </a>
                 <h2 id="slug"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{__('Front-end developer')}}</h2>
+                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">Front-end developer</h2>
             </div>
             <div class="grid grid-cols-3 gap-11">
                 <div class="flex flex-col gap-6 col-span-1">
@@ -36,7 +36,7 @@
                     </div>
                     <section aria-labelledby="skills">
                         <h3 id="skills"
-                            class="font-display font-semibold text-blue text-lg">{{__('Compétences nécessaires')}}</h3>
+                            class="font-display font-semibold text-blue text-lg">{{__('jobs.single.skills_title')}}</h3>
                         <ul class="list-disc list-inside marker:text-orange">
                             <li>{{__('HTML')}}</li>
                             <li>{{__('CSS')}}</li>
@@ -47,17 +47,17 @@
                 <div class="flex flex-col gap-10 col-span-2">
                     <a href="#"
                        class="flex self-end gap-3 uppercase bg-orange text-white py-3 pl-7 pr-5 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
-                        <span>{{__('Postuler')}}</span>
+                        <span>{{__('jobs.single.apply_button')}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                              class="fill-white" aria-labelledby="applyTitle">
-                            <title id="applyTitle">{{__('Postuler')}}</title>
+                            <title id="applyTitle">{{__('jobs.single.apply_button')}}</title>
                             <path
                                 d="M18,10.82a1,1,0,0,0-1,1V19a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V8A1,1,0,0,1,5,7h7.18a1,1,0,0,0,0-2H5A3,3,0,0,0,2,8V19a3,3,0,0,0,3,3H16a3,3,0,0,0,3-3V11.82A1,1,0,0,0,18,10.82Zm3.92-8.2a1,1,0,0,0-.54-.54A1,1,0,0,0,21,2H15a1,1,0,0,0,0,2h3.59L8.29,14.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L20,5.41V9a1,1,0,0,0,2,0V3A1,1,0,0,0,21.92,2.62Z"/>
                         </svg>
                     </a>
                     <section aria-labelledby="description">
                         <h3 id="description"
-                            class="font-display font-semibold text-blue text-xl tracking-wider mb-4">{{__('Description et missions du stage')}}</h3>
+                            class="font-display font-semibold text-blue text-xl tracking-wider mb-4">{{__('jobs.single.description_title')}}</h3>
                         <p>
                             Sint ipsum voluptate laboris sit amet. Velit id fugiat deserunt occaecat enim irure
                             consectetur cillum aute excepteur non ex Lorem minim. Anim ad aliqua enim ullamco

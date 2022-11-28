@@ -17,17 +17,10 @@
             </p>
         </div>
         <div class="flex gap-4 font-light">
-            <p>publiée le
-                <time datetime="">dd/mm/yyyy</time>
-                à
-                <time datetime="">00h00</time>
-            </p>
+            {!! __('forum.reply.infos', ['date' => 'dd/yy/mmmm', 'time' => '00:00']) !!}
             @if(Request::path() != 'forum/slug')
                 <div class="bg-blue/50 h-max-content w-px"></div>
-                <p>dans <a href="/forum/slug"
-                           class="underline underline-offset-2 decoration-1 decoration-solid hover:text-orange">Intitulé
-                        de
-                        la question</a></p>
+                {!! __('forum.reply.question', ['question' => 'Intitulé de la question', 'slug' => 'slug']) !!}
             @endif
         </div>
     </div>

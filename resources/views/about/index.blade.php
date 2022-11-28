@@ -12,10 +12,7 @@
                     <div class="flex flex-col gap-3 mb-6">
                         <h2 id="classes"
                             class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('classes.title')}}</h2>
-                        <p class="font-light">{{__('classes.tagline')}}<a
-                                class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid"
-                                href="https://www.hepl.be/fr/techniques-infographiques/web#parcours">{{__('classes.tagline_link')}}</a>.
-                        </p>
+                        {!! __('classes.tagline') !!}
                         <p>
                             {{__('classes.description')}}
                         </p>
@@ -157,10 +154,7 @@
                     <div class="flex flex-col gap-2 mb-6">
                         <h2 id="opportunities"
                             class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('opportunities.title')}}</h2>
-                        <p>{{__('opportunities.tagline')}}
-                            <a href="/alumnis"
-                               class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid transition ease-in-out duration-200">{{__('opportunities.tagline_link')}}</a>
-                            !</p>
+                        {!! __('opportunities.tagline') !!}
                     </div>
                     <div class="grid grid-cols-2 gap-8">
                         @foreach($opportunities as $opportunity)

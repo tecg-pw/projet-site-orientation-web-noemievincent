@@ -7,7 +7,7 @@
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="-scale-x-100 fill-orange h-full" aria-labelledby="newsTitle">
-                        <title id="newsTitle">{{__('Retourner sur la page des actualités')}}</title>
+                        <title id="newsTitle">{{__('news.single.back_to_news_link')}}</title>
                         <path
                             d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
                             transform="translate(0.001 0.001)" fill-rule="evenodd"/>
@@ -21,11 +21,7 @@
             <div class="flex justify-between gap-28">
                 <div class="h-full w-full flex flex-col gap-6">
                     <div class="flex justify-between items-center">
-                        <p>publiée le
-                            <time datetime="">dd/mm/yyyy</time>
-                            par William Bednar dans <a href="#"
-                                                       class="underline underline-offset-2 decoration-1 decoration-solid hover:text-orange">conseil</a>
-                        </p>
+                        {!! __('news.single.infos', ['date' => 'dd/mm/yyyy', 'author' => 'Dominique Vilain', 'category' => 'conseil']) !!}
                         <x-share/>
                     </div>
                     <div class="leading-8 flex flex-col gap-4">

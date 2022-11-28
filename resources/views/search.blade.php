@@ -7,7 +7,7 @@
         'users' => 'utilisateurs',
     ];
 @endphp
-<x-header/>
+<x-header :head_title="'search.head_title'"/>
 <main class="mt-6 flex-1 px-10">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
         <div class="col-span-3">
@@ -16,14 +16,14 @@
                     @csrf
                     <label for="search-keyword" class="h-full flex-1">
                             <span class="sr-only">
-                                {{__('Recherchez un mot clé')}}
+                                {{__('search.label')}}
                             </span>
-                        <input placeholder="Recherchez un mot clé" type="search" id="search-keyword"
+                        <input placeholder="{{__('search.label')}}" type="search" id="search-keyword"
                                class="h-full w-full pl-3 py-1 border border-orange-light border-r-0 focus:outline-none rounded-l-lg placeholder:font-light transition ease-in-out duration-200">
                     </label>
                     <button
                         class="bg-orange text-white h-full px-10 rounded-r-lg uppercase hover:bg-orange-dark transition ease-in-out duration-200">
-                        {{__('Rechercher')}}
+                        {{__('search.button')}}
                     </button>
                 </form>
             </div>
@@ -32,13 +32,13 @@
                 <div class="flex flex-col gap-8">
                     <div class="flex flex-col gap-2">
                         <h2 id="search-results"
-                            class="text-5xl font-bold uppercase tracking-wider font-display text-blue">{{__('Résultats pour')}}</h2>
-                        <p class="text-2xl font-semibold text-blue">&laquo; {{__('termes recherchés')}} &raquo;</p>
+                            class="text-5xl font-bold uppercase tracking-wider font-display text-blue">{{__('search.title')}}</h2>
+                        <p class="text-2xl font-semibold text-blue">&laquo; termes recherchés &raquo;</p>
                     </div>
                     <div class="flex flex-col gap-3">
                         <div class="flex items-center gap-6">
-                            <p class="text-lg uppercase">{{__('Afficher les résultats par')}}</p>
-                            <a href="?" class="text-xs text-orange">{{__('supprimer les filtres')}}</a>
+                            <p class="text-lg uppercase">{{__('filters.titles.results')}}</p>
+                            <a href="?" class="text-xs text-orange">{{__('filters.clear_link')}}</a>
                         </div>
                         <ul class="col-span-2 flex gap-4">
                             @foreach($filters_items as $slug => $name)
@@ -50,14 +50,14 @@
                         </ul>
                     </div>
                     <div class="flex flex-col gap-4">
-                        <h3 class="text-2xl font-semibold font-display">{{__('Projets')}}</h3>
+                        <h3 class="text-2xl font-semibold font-display">{{__('search.titles.projects')}}</h3>
                         <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
                             @for($i = 0; $i < 3; $i++)
-                                <x-projects.article/>
+                                {{--                                <x-projects.article/>--}}
                             @endfor
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
-                            <span>{{__('Plus de résultats')}}</span>
+                            <span>{{__('search.more_results')}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                                  class="h-full rotate-90 fill-orange">
                                 <path
@@ -67,14 +67,14 @@
                         </a>
                     </div>
                     <div class="flex flex-col gap-4">
-                        <h3 class="text-2xl font-semibold font-display">{{__('Questions du forum')}}</h3>
+                        <h3 class="text-2xl font-semibold font-display">{{__('search.titles.forum')}}</h3>
                         <div class="flex flex-col gap-4">
                             @for($i = 0; $i < 2; $i++)
-                                <x-forum.article/>
+                                {{--                                <x-forum.article/>--}}
                             @endfor
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
-                            <span>{{__('Plus de résultats')}}</span>
+                            <span>{{__('search.more_results')}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                                  class="h-full rotate-90 fill-orange">
                                 <path
@@ -84,14 +84,14 @@
                         </a>
                     </div>
                     <div class="flex flex-col gap-6">
-                        <h3 class="text-2xl font-semibold font-display">{{__('Tutoriels')}}</h3>
+                        <h3 class="text-2xl font-semibold font-display">{{__('search.titles.tutorials')}}</h3>
                         <div class="grid grid-cols-2 gap-8">
                             @for($i = 0; $i < 3; $i++)
-                                <x-resources.tutorial/>
+                                {{--                                <x-resources.tutorial/>--}}
                             @endfor
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
-                            <span>{{__('Plus de résultats')}}</span>
+                            <span>{{__('search.more_results')}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                                  class="h-full rotate-90 fill-orange">
                                 <path
@@ -101,14 +101,14 @@
                         </a>
                     </div>
                     <div class="flex flex-col gap-6">
-                        <h3 class="text-2xl font-semibold font-display">{{__('Actualités')}}</h3>
+                        <h3 class="text-2xl font-semibold font-display">{{__('search.titles.news')}}</h3>
                         <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
                             @for($i = 0; $i < 3; $i++)
-                                <x-news.article/>
+                                {{--                                <x-news.article/>--}}
                             @endfor
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
-                            <span>{{__('Plus de résultats')}}</span>
+                            <span>{{__('search.more_results')}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                                  class="h-full rotate-90 fill-orange">
                                 <path
@@ -118,16 +118,16 @@
                         </a>
                     </div>
                     <div class="flex flex-col gap-6">
-                        <h3 class="text-2xl font-semibold font-display">{{__('Utilisateurs')}}</h3>
-                        <div class="grid grid-cols-3 gap-8" x>
+                        <h3 class="text-2xl font-semibold font-display">{{__('search.titles.users')}}</h3>
+                        <div class="grid grid-cols-3 gap-8">
                             @for($i = 0; $i < 3; $i++)
-                                <div class="w-full border border-blue">
-                                    utilisateurs
-                                </div>
+                                {{--                                <div class="w-full border border-blue">--}}
+                                {{--                                    utilisateurs--}}
+                                {{--                                </div>--}}
                             @endfor
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
-                            <span>{{__('Plus de résultats')}}</span>
+                            <span>{{__('search.more_results')}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                                  class="h-full rotate-90 fill-orange">
                                 <path
@@ -141,15 +141,15 @@
                 <div>
                     <div class="flex flex-col gap-2">
                         <h2 id="search-results"
-                            class="text-5xl font-bold uppercase tracking-wider font-display text-blue">{{__('Aucun résultats pour')}}</h2>
-                        <p class="text-2xl font-semibold text-blue">&laquo; {{__('termes recherchés')}} &raquo;</p>
+                            class="text-5xl font-bold uppercase tracking-wider font-display text-blue">{{__('search.no_results.title')}}</h2>
+                        <p class="text-2xl font-semibold text-blue">&laquo; termes recherchés &raquo;</p>
                     </div>
                     <div class="mt-12">
-                        <p class="mb-3 text-2xl">{{__('Votre recherche n‘a aucun résultat')}}</p>
+                        <p class="mb-3 text-2xl">{{__('search.no_results.tagline')}}</p>
                         <ul class="ml-6 list-disc list-inside marker:text-orange text-lg leading-7">
-                            <li>{{__('Vérifiez que l’orthographe est correcte.')}}</li>
-                            <li>{{__('Supprimez les guillemets autour des expressions pour rechercher chaque mot séparément. ')}}</li>
-                            <li>{{__('Envisagez d’élargir votre recherche avec OR.')}}</li>
+                            @foreach(__('search.no_results.hints') as $hint)
+                                <li>{{$hint}}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

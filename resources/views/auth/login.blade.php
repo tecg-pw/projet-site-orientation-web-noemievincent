@@ -1,7 +1,7 @@
-<x-header/>
+<x-header :head_title="'auth.login.head_title'"/>
 <main class="px-10 flex-1 xl:mx-96 mt-12">
     <section aria-labelledby="login" class="col-start-2">
-        <h2 id="login" class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('Connexion')}}</h2>
+        <h2 id="login" class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('auth.login.title')}}</h2>
         <form action="/login" method="post" class="flex flex-col gap-4">
             @csrf
             <fieldset class="flex flex-col gap-1">
@@ -13,7 +13,7 @@
                             <path d="M15 10v1a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/>
                         </g>
                     </svg>
-                    <span>{{__('Adresse e-mail')}}</span>
+                    <span>{{__('forms.labels.email')}}</span>
                 </label>
                 <input type="email" id="email" placeholder="name@example.com"
                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
@@ -26,10 +26,10 @@
                             <path
                                 d="M12,8a2,2,0,0,0-2,2,2,2,0,0,0,1,1.72V15a1,1,0,0,0,2,0V11.72A2,2,0,0,0,14,10,2,2,0,0,0,12,8Zm0-6A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
                         </svg>
-                        <span>{{__('Mot de passe')}}</span>
+                        <span>{{__('forms.labels.password')}}</span>
                     </span>
                     <span
-                        class="font-light text-sm">{{__('Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule')}}</span>
+                        class="font-light text-sm">{{__('forms.labels.password_requirements')}}</span>
                 </label>
                 <div
                     class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
@@ -48,19 +48,18 @@
             </fieldset>
             <div class="flex justify-between items-center font-light text-sm">
                 <fieldset class="flex gap-2 items-center">
-                    <input type="checkbox" id="remember" value="{{__('Se souvenir de moi')}}" class="accent-orange">
-                    <label for="remember">{{__('Se souvenir de moi')}}</label>
+                    <input type="checkbox" id="remember" value="{{__('forms.labels.remember_me')}}"
+                           class="accent-orange">
+                    <label for="remember">{{__('forms.labels.remember_me')}}</label>
                 </fieldset>
                 <a href="/reset-password"
-                   class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Mot de passe oublié ?')}}</a>
+                   class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('forms.links.reset_password')}}</a>
             </div>
             <div class="flex justify-between gap-16 items-center mt-6">
-                <p class="text-sm font-light">{{__('Pas encore de compte ?')}} <a href="/register"
-                                                                                  class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('Inscrivez-vous')}}</a>
-                </p>
+                {!! __('auth.login.register_link') !!}
                 <button type="submit"
                         class="uppercase font-light bg-orange text-white py-2 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
-                    {{__('Me connecter')}}
+                    {{__('forms.buttons.login')}}
                 </button>
             </div>
         </form>

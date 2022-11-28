@@ -5,10 +5,7 @@
             <div class="flex flex-col gap-2">
                 <h2 id="faq"
                     class="font-display font-bold text-blue text-5xl tracking-wider uppercase">{{__('faq.title')}}</h2>
-                <p class="text-lg ">{{__('faq.tagline')}}
-                    <a href="/forum"
-                       class="underline underline-offset-2 decoration-1 decoration-solid text-orange">{{__('faq.tagline_link')}}</a>
-                </p>
+                {!! __('faq.tagline') !!}
             </div>
             <div class="flex flex-col gap-3">
                 <div class="grid grid-cols-3 gap-x-11">
@@ -53,10 +50,7 @@
                         </article>
                     @endfor
                 </div>
-                <p class="text-lg ">{{__('Tout ce que vous devez savoir sur la section et la formation. Vous ne trouvez pas la réponse que vous cherchez ? N’hésitez pas à poser votre question sur le ')}}
-                    <a href="/forum"
-                       class="underline underline-offset-2 decoration-1 decoration-solid text-orange">forum</a>
-                </p>
+                {!! __('faq.tagline') !!}
             </div>
         </section>
         <x-aside/>
