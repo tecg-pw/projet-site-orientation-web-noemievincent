@@ -18,7 +18,7 @@
                 <form class="flex col-span-2 items-center justify-between">
                     @csrf
                     <div class="flex gap-4">
-                        <x-filters.languages/>
+                        <x-filters.languages :languages="$languages"/>
                     </div>
                     <button type="submit"
                             class="font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
@@ -28,12 +28,12 @@
             </div>
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-2 gap-8">
-                    @for($i = 0; $i < 6; $i++)
-                        <x-resources.tutorial/>
-                    @endfor
+                    @foreach($tutorials as $tutorial)
+                        <x-resources.tutorial :tutorial="$tutorial"/>
+                    @endforeach
                 </div>
-                <div class="bg-pink-200">
-                    PAGINATION
+                <div>
+                    {{$tutorials->links()}}
                 </div>
             </div>
         </section>

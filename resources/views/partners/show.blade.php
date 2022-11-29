@@ -1,7 +1,7 @@
-<x-header :head_title="'Nom'"/>
+<x-header :head_title="$company->name"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
-        <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8" itemscope
+        <section aria-labelledby="{{$company->slug}}" class="col-span-3 flex flex-col gap-8" itemscope
                  itemtype="https://schema.org/Corporation">
             <div class="flex flex-col gap-4">
                 <a href="/jobs/partners"
@@ -21,23 +21,23 @@
                              width="120"
                              class="rounded-full" itemprop="logo">
                         <div class="flex flex-col gap-3">
-                            <h2 id="slug"
+                            <h2 id="{{$company->slug}}"
                                 class="font-display font-bold text-blue text-4xl tracking-wider uppercase"
-                                itemprop="name">Léonard Web Solutions</h2>
+                                itemprop="name">{{$company->name}}</h2>
                             <div class="flex flex-col text-lg" itemscope itemtype="https://schema.org/PostalAddress"
                                  itemprop="location">
-                                <p><span itemprop="streetAddress">Rue</span></p>
-                                <p><span itemprop="postalCode">Code</span> <span
-                                        itemprop="addressLocality">Localité</span></p>
+                                <p><span itemprop="streetAddress">{{$company->streetAddres}}</span></p>
+                                <p><span itemprop="postalCode">{{$company->postalCode}}</span> <span
+                                        itemprop="addressLocality">{{$company->addressLocality}}</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <p>{{__('Amet non laboris commodo sint occaecat. Occaecat cupidatat labore tempor ea veniam nulla ipsum. Aliquip cillum est minim nulla est. Ipsum in occaecat consectetur aute qui tempor duis minim fugiat. Voluptate magna ad commodo non adipisicing reprehenderit nostrud id voluptate minim eu mollit enim dolore commodo. Consequat labore ullamco elit excepteur in duis quis proident do enim incididunt occaecat est est commodo. Amet non laboris commodo sint occaecat. Occaecat cupidatat labore tempor ea veniam nulla ipsum. Aliquip cillum est minim nulla est. Ipsum in occaecat consectetur aute qui tempor duis minim fugiat. Voluptate magna ad commodo non adipisicing reprehenderit nostrud id voluptate minim eu mollit enim dolore commodo. Consequat labore ullamco elit excepteur in duis quis proident do enim incididunt occaecat est est commodo.')}}</p>
+                    <p>{{$company->description}}</p>
                 </div>
             </div>
-            <a href="#"
+            <a href="{{$company->website_link}}"
                class="flex self-start gap-3 uppercase bg-orange text-white py-3 pl-7 pr-5 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
                 <span>{{__('jobs.partners.single.website_button')}}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
@@ -52,21 +52,19 @@
                     class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.members_title')}}</h3>
                 <div class="flex flex-col gap-2">
                     <div class="grid grid-cols-3 gap-8">
-                        @for($i = 0; $i < 6; $i++)
-                            <x-partners.member/>
-                        @endfor
+                        @foreach($company->members as $member)
+                            <x-partners.member :member="$member"/>
+                        @endforeach
                     </div>
                 </div>
             </div>
             <div class="flex flex-col gap-5">
                 <h3
                     class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.internships_title')}}</h3>
-                <div class="flex flex-col gap-2">
-                    <div class="grid grid-cols-3 gap-8">
-                        @for($i = 0; $i < 2; $i++)
-                            <x-jobs.article/>
-                        @endfor
-                    </div>
+                <div class="grid grid-cols-3 gap-8">
+                    @foreach($company->offers as $offer)
+                        <x-jobs.article :offer="$offer"/>
+                    @endforeach
                 </div>
             </div>
             <div class="flex flex-col gap-5">

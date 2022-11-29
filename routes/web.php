@@ -3,8 +3,13 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AlumnisController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\OffersController;
+use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\ResourcesController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\TutorialsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,12 +48,8 @@ Route::get('/projects', [ProjectsController::class, 'index']);
 Route::get('/projects/{student:slug}/{project:slug}', [ProjectsController::class, 'show']);
 
 //ROUTE : News
-Route::get('/news', function () {
-    return view('news.index');
-});
-Route::get('/news/slug', function () {
-    return view('news.show');
-});
+Route::get('/news', [NewsController::class, 'index']);
+Route::get('/news/{article:slug}', [NewsController::class, 'show']);
 
 //ROUTE : Forum + Faq
 Route::get('/forum', function () {
@@ -62,29 +63,17 @@ Route::get('/faq', function () {
 });
 
 //ROUTE : Jobs
-Route::get('/jobs/offers', function () {
-    return view('jobs.index');
-});
-Route::get('/jobs/offers/slug', function () {
-    return view('jobs.show');
-});
+Route::get('/jobs/offers', [OffersController::class, 'index']);
+Route::get('/jobs/offers/{company:slug}/{offer:slug}', [OffersController::class, 'show']);
 Route::get('/jobs/create', function () {
     return view('jobs.create');
 });
-Route::get('/jobs/partners', function () {
-    return view('partners.index');
-});
-Route::get('/jobs/partners/slug', function () {
-    return view('partners.show');
-});
+Route::get('/jobs/partners', [PartnersController::class, 'index']);
+Route::get('/jobs/partners/{company:slug}', [PartnersController::class, 'show']);
 
 //ROUTE : Tutorials + Resources
-Route::get('/tutorials', function () {
-    return view('tutorials.index');
-});
-Route::get('/resources', function () {
-    return view('resources.index');
-});
+Route::get('/tutorials', [TutorialsController::class, 'index']);
+Route::get('/resources', [ResourcesController::class, 'index']);
 
 //ROUTE : Profile
 Route::get('/username', function () {

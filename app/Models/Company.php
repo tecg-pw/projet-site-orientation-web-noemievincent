@@ -13,6 +13,8 @@ class Company extends Model
 
     protected $fillable = ['name', 'slug', 'logo', 'streetAddress', 'postalCode', 'addressLocality', 'website_link', 'description'];
 
+    protected $with = ['offers', 'members'];
+
     public function members(): HasMany
     {
         return $this->hasMany(CompanyMember::class);

@@ -9,8 +9,15 @@
             <div>
                 <h3 class="font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
                     <a href="/alumnis/{{$alumni->slug}}">{{$alumni->fullname}}</a></h3>
-                <span><time datetime="">{{$alumni->start_year->format('Y')}}</time> - <time
-                        datetime="">{{$alumni->end_year != null ? $alumni->end_year->format('Y') : __('alumnis.end_year')}}</time></span>
+                <span class="flex gap-1">
+                    <time
+                        datetime="{{$alumni->start_year->format('Y-m')}}">{{$alumni->start_year->format('Y')}}</time> -
+                    @if($alumni->end_year != null)
+                        <time datetime="{{$alumni->end_year->format('Y-m')}}">{{$alumni->end_year->format('Y')}}</time>
+                    @else
+                        <p>{{__('alumnis.end_year')}}</p>
+                    @endif
+                </span>
             </div>
         </div>
         <ul class="self-start flex flex-col gap-4">

@@ -18,7 +18,7 @@
                 <form class="flex col-span-2 items-center justify-between">
                     @csrf
                     <div class="flex gap-4">
-                        <x-filters.news-categories/>
+                        <x-filters.news-categories :categories="$categories"/>
                         {{--                        <x-filters.date :dates="$dates" :property="'end_year'" :format="'Y'"/>--}}
                     </div>
                     <button type="submit"
@@ -29,9 +29,9 @@
             </div>
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
-                    @for($i = 0; $i < 9; $i++)
-                        <x-news.article/>
-                    @endfor
+                    @foreach($news as $new)
+                        <x-news.article :new="$new"/>
+                    @endforeach
                 </div>
                 <div class="bg-pink-200">
                     PAGINATION

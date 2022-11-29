@@ -12,9 +12,9 @@
                     class="text-4xl font-medium uppercase tracking-wider font-display text-blue mb-6">{{__('resources.documentations_title')}}</h2>
                 <div class="flex flex-col gap-20">
                     <div class="grid grid-cols-2 gap-8">
-                        @for($i = 0; $i < 6; $i++)
-                            <x-resources.documentation/>
-                        @endfor
+                        @foreach($documentations as $documentation)
+                            <x-resources.documentation :documentation="$documentation"/>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -23,9 +23,9 @@
                     class="text-4xl font-medium uppercase tracking-wider font-display text-blue mb-6">{{__('resources.tools_title')}}</h2>
                 <div class="flex flex-col gap-20">
                     <div class="grid grid-cols-2 gap-8">
-                        @for($i = 0; $i < 12; $i++)
-                            <x-resources.tool/>
-                        @endfor
+                        @foreach($tools as $tool)
+                            <x-resources.tool :tool="$tool"/>
+                        @endforeach
                     </div>
                 </div>
             </div>

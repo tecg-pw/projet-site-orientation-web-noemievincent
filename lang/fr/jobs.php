@@ -10,6 +10,7 @@ return [
         'partners' => 'Entreprises partenaires',
         'create' => 'Proposer un stage',
     ],
+    'published_at' => '<p class="text-sm">publiée le <time datetime=":datetime">:date</time></p>',
     'single' => [
         'back_to_offers_link' => 'Retour aux offres',
         'skills_title' => 'Compétences nécessaires',

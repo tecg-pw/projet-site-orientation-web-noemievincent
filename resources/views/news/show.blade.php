@@ -1,7 +1,7 @@
-<x-header :head_title="'Nom de l‘actualité'"/>
+<x-header :head_title="$article->title"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
-        <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
+        <section aria-labelledby="{{$article->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/news"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
@@ -14,38 +14,21 @@
                     </svg>
                     <span>{{__('news.single.back_to_news_link')}}</span>
                 </a>
-                <h2 id="slug"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">Comment accompagner son
-                    ado et l’aider à choisir sa voie ?</h2>
+                <h2 id="{{$article->slug}}"
+                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$article->title}}</h2>
             </div>
             <div class="flex justify-between gap-28">
                 <div class="h-full w-full flex flex-col gap-6">
                     <div class="flex justify-between items-center">
-                        {!! __('news.single.infos', ['date' => 'dd/mm/yyyy', 'author' => 'Dominique Vilain', 'category' => 'conseil']) !!}
+                        {!! __('news.single.infos', ['datetime' => $article->published_at->format('d-m-Y'), 'date' => $article->published_at->format('d F Y'), 'author' => $article->author->name, 'category' => 'à faire']) !!}
                         <x-share/>
                     </div>
                     <div class="leading-8 flex flex-col gap-4">
                         <p class="font-bold">
-                            Le 31 mai et le 28 juin 2022, la HEPL organisait deux soirées dédiées aux parents qui
-                            souhaitent aider concrètement leur adolescent dans son choix d’études pour l’enseignement
-                            supérieur.
+                            {{$article->excerpt}}
                         </p>
                         <p>
-                            D’emblée, un constat se doit d’être fait : tous les élèves ne bénéficient pas de la même
-                            préparation à la transition secondaire-supérieur au sein de leurs écoles. Or les jeunes ont
-                            besoin d’un certain nombre et types d’informations pour opérer un choix d’études et
-                            dessiner ainsi leur avenir professionnel.
-                            Trouver sa voie est un processus réflexif ; il implique de connaître les formations
-                            accessibles, les professions liées mais aussi de se connaître soi-même. Le rôle des parents
-                            est primordial dans cette recherche. Au-delà de la collecte d’informations, les
-                            encouragements, les moments de partage et de discussion, en toute bienveillance et dans le
-                            non-jugement, sont également une aide précieuse pour soutenir leur enfant dans cette
-                            réflexion.
-                            Cette conférence-atelier a présenté les éléments indispensables à mettre en pratique pour
-                            comprendre un adolescent et l’accompagner au mieux au cours de cette étape clé.
-                            Les participants ont également eu l’opportunité d’apprendre ce qu’il se cache derrière
-                            certains termes spécifiques de l’enseignement supérieur tels que : unité d’enseignement
-                            (UE), activité d’apprentissage (AA), crédits ECTS, quadrimestre…
+                            {{$article->body}}
                         </p>
                     </div>
                 </div>
@@ -77,7 +60,7 @@
                 <div class="flex flex-col gap-2">
                     <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
                         @for($i = 0; $i < 3; $i++)
-                            <x-news.article/>
+                            {{--                            <x-news.article :new="$article"/>--}}
                         @endfor
                     </div>
                     <a href="/news"

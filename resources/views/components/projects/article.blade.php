@@ -21,7 +21,8 @@
                 <div>
                     <p class="text-xl mb-1">{{$student->fullname}}</p>
                     <div class="flex justify-between">
-                        <time datetime="" class="font-light">{{$project->published_at->format('F Y')}}</time>
+                        <time datetime="{{$project->published_at->format('Y-m')}}"
+                              class="font-light">{{$project->published_at->format('F Y')}}</time>
                         <a href="/projects/{{$project->slug}}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24"
                                  height="24" width="12" aria-labelledby="projectTitle">

@@ -47,7 +47,7 @@
         background-color: #4FA3D8;
     }
 
-    .tag#js {
+    .tag#javascript {
         background-color: #F2C610;
     }
 
@@ -55,7 +55,7 @@
         background-color: #777BB3;
     }
 
-    .tag#mysql {
+    .tag#sql {
         background-color: #F29111;
     }
 
@@ -67,7 +67,7 @@
         background-color: #2B87C1;
     }
 
-    .tag#js:hover {
+    .tag#javascript:hover {
         background-color: #C4A00B;
     }
 
@@ -75,7 +75,7 @@
         background-color: #555A99;
     }
 
-    .tag#mysql:hover {
+    .tag#sql:hover {
         background-color: #C4740B;
     }
 

@@ -1,7 +1,7 @@
-<x-header :head_title="'Nom'"/>
+<x-header :head_title="$offer->title"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
-        <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
+        <section aria-labelledby="{{$offer->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/jobs/offers"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
@@ -14,8 +14,8 @@
                     </svg>
                     <span>{{__('jobs.single.back_to_offers_link')}}</span>
                 </a>
-                <h2 id="slug"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">Front-end developer</h2>
+                <h2 id="{{$offer->slug}}"
+                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$offer->title}}</h2>
             </div>
             <div class="grid grid-cols-3 gap-11">
                 <div class="flex flex-col gap-6 col-span-1">
@@ -23,29 +23,30 @@
                         <img src="https://placehold.jp/80x80.png" alt="nom" height="80" width="80"
                              class="rounded-full items-start">
                         <div>
-                            <a href="/jobs/partners/slug"
+                            <a href="/jobs/partners/{{$company->slug}}"
                                class="text-xl underline underline-offset-2 hover:text-orange transition ease-in-out duration-200">
-                                EPIC Agency</a>
-                            <p class="">Liège</p>
+                                {{$company->name}}</a>
+                            <p class="">{{$offer->location}}</p>
                         </div>
                     </div>
                     <div class="flex gap-2">
-                        <time datetime="">6 février 2023</time>
+                        <time
+                            datetime="{{$offer->published_at->format('d-m-Y')}}">{{$offer->published_at->format('d F Y')}}</time>
                         -
-                        <p>12 semaines</p>
+                        <p>{{$offer->duration}}</p>
                     </div>
                     <section aria-labelledby="skills">
                         <h3 id="skills"
                             class="font-display font-semibold text-blue text-lg">{{__('jobs.single.skills_title')}}</h3>
                         <ul class="list-disc list-inside marker:text-orange">
-                            <li>{{__('HTML')}}</li>
-                            <li>{{__('CSS')}}</li>
-                            <li>{{__('PHP')}}</li>
+                            @foreach($offer->skills as $skill)
+                                <li>{{$skill->name}}</li>
+                            @endforeach
                         </ul>
                     </section>
                 </div>
                 <div class="flex flex-col gap-10 col-span-2">
-                    <a href="#"
+                    <a href="{{$offer->method_link}}"
                        class="flex self-end gap-3 uppercase bg-orange text-white py-3 pl-7 pr-5 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
                         <span>{{__('jobs.single.apply_button')}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
@@ -59,23 +60,7 @@
                         <h3 id="description"
                             class="font-display font-semibold text-blue text-xl tracking-wider mb-4">{{__('jobs.single.description_title')}}</h3>
                         <p>
-                            Sint ipsum voluptate laboris sit amet. Velit id fugiat deserunt occaecat enim irure
-                            consectetur cillum aute excepteur non ex Lorem minim. Anim ad aliqua enim ullamco
-                            exercitation occaecat consequat elit voluptate minim quis deserunt sint. Veniam cupidatat do
-                            ipsum id tempor aliquip occaecat adipisicing ad minim. Occaecat reprehenderit ad aliqua do
-                            nisi aute.Sint ipsum voluptate laboris sit amet. Velit id fugiat deserunt occaecat enim
-                            irure consectetur cillum aute excepteur non ex Lorem minim. Anim ad aliqua enim ullamco
-                            exercitation occaecat consequat elit voluptate minim quis deserunt sint. Veniam cupidatat do
-                            ipsum id tempor aliquip occaecat adipisicing ad minim. Occaecat reprehenderit ad aliqua do
-                            nisi aute. Sint ipsum voluptate laboris sit amet. Velit id fugiat deserunt occaecat enim
-                            irure consectetur cillum aute excepteur non ex Lorem minim. Anim ad aliqua enim ullamco
-                            exercitation occaecat consequat elit voluptate minim quis deserunt sint. Veniam cupidatat do
-                            ipsum id tempor aliquip occaecat adipisicing ad minim. Occaecat reprehenderit ad aliqua do
-                            nisi aute.Sint ipsum voluptate laboris sit amet. Velit id fugiat deserunt occaecat enim
-                            irure consectetur cillum aute excepteur non ex Lorem minim. Anim ad aliqua enim ullamco
-                            exercitation occaecat consequat elit voluptate minim quis deserunt sint. Veniam cupidatat do
-                            ipsum id tempor aliquip occaecat adipisicing ad minim. Occaecat reprehenderit ad aliqua do
-                            nisi aute.
+                            {{$offer->body}}
                         </p>
                     </section>
                 </div>
