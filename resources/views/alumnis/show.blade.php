@@ -1,8 +1,3 @@
-@php
-    $showJob = true;
-    $name = 'Développeur Web front-end';
-    $definition = 'La mission d’un développeur Web front-end consiste à participer à la création de l’interface utilisateur d’un site ou d’une application web. Il intervient sur tous les éléments apparaissant à l’écran et géré par le navigateur web de l’utilisateur. Il y a donc une partie design/ergonomie et une partie développement dans sa mission.';
-@endphp
 <x-header :head_title="$alumni->fullname"/>
 <main class="px-10 flex-1 mt-6">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
@@ -164,18 +159,23 @@
                     <p>{{__('Amet non laboris commodo sint occaecat. Occaecat cupidatat labore tempor ea veniam nulla ipsum. Aliquip cillum est minim nulla est. Ipsum in occaecat consectetur aute qui tempor duis minim fugiat. Voluptate magna ad commodo non adipisicing reprehenderit nostrud id voluptate minim eu mollit enim dolore commodo. Consequat labore ullamco elit excepteur in duis quis proident do enim incididunt occaecat est est commodo.')}}</p>
                 </div>
             </div>
-            {{--            <div class="grid grid-cols-3 gap-11">--}}
-            {{--                <section aria-labelledby="internship" class="col-span-1">--}}
-            {{--                    <h3 id="internship"--}}
-            {{--                        class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.internship_title')}}</h3>--}}
-            {{--                    <x-partners.article/>--}}
-            {{--                </section>--}}
-            {{--                <section aria-labelledby="job" class="col-span-2">--}}
-            {{--                    <h3 id="job"--}}
-            {{--                        class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.job_title')}}</h3>--}}
-            {{--                    <x-about.opportunity :showJob="$showJob" :name="$name" :definition="$definition"/>--}}
-            {{--                </section>--}}
-            {{--            </div>--}}
+            <div class="grid grid-cols-3 gap-11">
+                @if(isset($alumni->internship))
+                    <section aria-labelledby="internship" class="col-span-1">
+                        <h3 id="internship"
+                            class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.internship_title')}}</h3>
+                        <x-partners.article :partner="$alumni->internship"/>
+                    </section>
+                @endif
+                @if(isset($alumni->opportunity))
+                    <section aria-labelledby="job" class="col-span-2">
+                        <h3 id="job"
+                            class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.job_title')}}</h3>
+                        <x-about.opportunity :company="isset($alumni->company) ? $alumni->company : null"
+                                             :opportunity="$alumni->opportunity"/>
+                    </section>
+                @endif
+            </div>
             <section aria-labelledby="projects" class="flex flex-col gap-5">
                 <h2 id="projects"
                     class="font-display font-semibold text-blue text-xl tracking-wider">{{__('alumnis.single.projects_from', ['name' => $alumni->firstname])}}</h2>

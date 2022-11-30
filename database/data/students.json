@@ -14,9 +14,9 @@
         "gallery": "",
         "start_year": "2020",
         "end_year": null,
-        "opportunity_id": null,
-        "company_id": null,
-        "internship_id": null
+        "opportunity_id": 9,
+        "company_id": 2,
+        "internship_id": 2
     },
     {
         "firstname": "Noémie",

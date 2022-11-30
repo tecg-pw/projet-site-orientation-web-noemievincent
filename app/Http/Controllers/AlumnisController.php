@@ -22,13 +22,6 @@ class AlumnisController extends Controller
 
         $dates = Student::select('end_year')->whereNotNull('end_year')->groupBy('end_year')->get();
 
-//        foreach ($end_dates as $key => $date) {
-//            return $date;
-//        }
-//
-//        return $end_dates;
-
-
         return view('alumnis.index', compact('alumnis', 'dates'));
     }
 
@@ -61,6 +54,8 @@ class AlumnisController extends Controller
      */
     public function show(Student $alumni)
     {
+//        return $alumni;
+
         return view('alumnis.show', compact('alumni'));
     }
 

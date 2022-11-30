@@ -14,11 +14,13 @@ class Project extends Model
 
     protected $dates = ['published_at'];
 
-    protected $with = ['categories', 'course'];
+    protected $with = ['categories', 'course', 'student'];
 
     protected $fillable = [
         'title', 'slug', 'picture', 'body', 'date', 'website_link', 'github_link', 'gallery', 'student_id', 'course_id'
     ];
+
+//    protected $casts = ['gallery' => 'array'];
 
     public function student(): BelongsTo
     {

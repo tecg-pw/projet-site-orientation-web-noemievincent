@@ -51,7 +51,9 @@ class CourseController extends Controller
     public function show(Course $course)
     {
         $teachers = Course::find($course->id)->teachers()->get();
-        return view('about.show-class', compact('course', 'teachers'));
+        $projects = Course::find($course->id)->projects()->get();
+        
+        return view('about.show-class', compact('course', 'teachers', 'projects'));
     }
 
     /**

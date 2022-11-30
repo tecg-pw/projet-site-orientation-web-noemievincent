@@ -19,13 +19,12 @@ class PartnersController extends Controller
      */
     public function index()
     {
-        $partners = Company::without('offers', 'members')->paginate(9);
+        $partners = Company::paginate(9);
 
-        $companies = Company::without('offers', 'members')->get();
+        //filters
+        $companies = Company::get();
         $locations = Offer::without('company')->select('location')->groupBy('location')->get();
-
-//        return $partners;
-
+        
         return view('partners.index', compact('partners', 'companies', 'locations'));
     }
 
@@ -58,9 +57,11 @@ class PartnersController extends Controller
      */
     public function show(Company $company)
     {
-        return $company;
+        $members = Company::find($company->id)->members()->get();
+        $offers = Company::find($company->id)->offers()->get();
+        $students = Company::find($company->id)->students()->get();
 
-        return view('partners.show', compact('company'));
+        return view('partners.show', compact('company', 'members', 'offers', 'students'));
     }
 
     /**

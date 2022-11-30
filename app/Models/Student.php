@@ -14,7 +14,7 @@ class Student extends Model
 
     protected $dates = ['start_year', 'end_year'];
 
-    protected $with = ['projects'];
+    protected $with = ['opportunity', 'company', 'internship'];
 
     protected $fillable = [
         'firstname', 'lastname', 'fullname', 'slug', 'email', 'picture', 'bio', 'role', 'genre', 'github_link', 'linkedin_link', 'instagram_link', 'website_link', 'start_year', 'end_year', 'opportunity_id', 'company_id', 'internship_id'

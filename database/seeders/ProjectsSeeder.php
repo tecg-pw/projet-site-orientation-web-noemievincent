@@ -28,6 +28,8 @@ class ProjectsSeeder extends Seeder
                 "body" => $value->body,
                 "website_link" => $value->website_link,
                 "github_link" => $value->github_link,
+//                "gallery" => json_encode($value->gallery),
+//                "gallery" => $value->gallery,
                 "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
                 "student_id" => $value->student_id,
                 "course_id" => $value->course_id,

@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use App\Models\ArticleCategory;
+use App\Models\Faq;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class NewsController extends Controller
+class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,13 +18,10 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = Article::with('category')->paginate(9);
-
-        $categories = ArticleCategory::all();
-
-//        return $news;
-
-        return view('news.index', compact('news', 'categories'));
+        $questions = Faq::all();
+//        $questions = Faq::where('category', 'general')->get();
+        
+        return view('faq.index', compact('questions'));
     }
 
     /**
@@ -53,15 +49,11 @@ class NewsController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return Application|Factory|View
+     * @return Response
      */
-    public function show(Article $article)
+    public function show($id)
     {
-        $articles = ArticleCategory::find($article->category_id)->articles()->get();
-
-//        return $articles;
-
-        return view('news.show', compact('article', 'articles'));
+        //
     }
 
     /**

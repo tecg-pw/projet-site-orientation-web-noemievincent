@@ -47,37 +47,43 @@
                         d="M18,10.82a1,1,0,0,0-1,1V19a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V8A1,1,0,0,1,5,7h7.18a1,1,0,0,0,0-2H5A3,3,0,0,0,2,8V19a3,3,0,0,0,3,3H16a3,3,0,0,0,3-3V11.82A1,1,0,0,0,18,10.82Zm3.92-8.2a1,1,0,0,0-.54-.54A1,1,0,0,0,21,2H15a1,1,0,0,0,0,2h3.59L8.29,14.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L20,5.41V9a1,1,0,0,0,2,0V3A1,1,0,0,0,21.92,2.62Z"/>
                 </svg>
             </a>
-            <div class="flex flex-col gap-5">
-                <h3
-                    class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.members_title')}}</h3>
-                <div class="flex flex-col gap-2">
+            @if(count($members) > 0)
+                <div class="flex flex-col gap-5">
+                    <h3
+                        class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.members_title')}}</h3>
+                    <div class="flex flex-col gap-2">
+                        <div class="grid grid-cols-3 gap-8">
+                            @foreach($members as $member)
+                                <x-partners.member :member="$member"/>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            @endif
+            @if(count($offers) > 0)
+                <div class="flex flex-col gap-5">
+                    <h3
+                        class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.internships_title')}}</h3>
                     <div class="grid grid-cols-3 gap-8">
-                        @foreach($company->members as $member)
-                            <x-partners.member :member="$member"/>
+                        @foreach($offers as $offer)
+                            <x-jobs.article :offer="$offer"/>
                         @endforeach
                     </div>
                 </div>
-            </div>
-            <div class="flex flex-col gap-5">
-                <h3
-                    class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.internships_title')}}</h3>
-                <div class="grid grid-cols-3 gap-8">
-                    @foreach($company->offers as $offer)
-                        <x-jobs.article :offer="$offer"/>
-                    @endforeach
-                </div>
-            </div>
-            <div class="flex flex-col gap-5">
-                <h3
-                    class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.alumnis_title')}}</h3>
-                <div class="flex flex-col gap-2">
-                    <div class="grid grid-cols-3 gap-8">
-                        @for($i = 0; $i <3; $i++)
-                            {{--                            <x-alumnis.card/>--}}
-                        @endfor
+            @endif
+            @if(count($students) > 0)
+                <div class="flex flex-col gap-5">
+                    <h3
+                        class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.alumnis_title')}}</h3>
+                    <div class="flex flex-col gap-2">
+                        <div class="grid grid-cols-3 gap-8">
+                            @foreach($students as $student)
+                                <x-alumnis.card :alumni="$student"/>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
         </section>
         <x-aside/>
     </div>

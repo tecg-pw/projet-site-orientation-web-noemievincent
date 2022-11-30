@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use App\Models\ArticleCategory;
+use App\Models\Project;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class NewsController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,13 +18,12 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = Article::with('category')->paginate(9);
+        $projects = Project::latest('published_at')->limit(6)->get();
+//        $questions = Project::latest('published_at')->limit(6)->get();
 
-        $categories = ArticleCategory::all();
+//        return $projects;
 
-//        return $news;
-
-        return view('news.index', compact('news', 'categories'));
+        return view('index', compact('projects'));
     }
 
     /**
@@ -53,15 +51,11 @@ class NewsController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return Application|Factory|View
+     * @return Response
      */
-    public function show(Article $article)
+    public function show($id)
     {
-        $articles = ArticleCategory::find($article->category_id)->articles()->get();
-
-//        return $articles;
-
-        return view('news.show', compact('article', 'articles'));
+        //
     }
 
     /**

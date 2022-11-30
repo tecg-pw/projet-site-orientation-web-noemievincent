@@ -22,9 +22,9 @@
                 <h2 id="projects"
                     class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('home.projects_title')}}</h2>
                 <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
-                    {{--                    @foreach($projects as $project)--}}
-                    {{--                        <x-projects.article :project="$project" :student="$project->student"/>--}}
-                    {{--                    @endforeach--}}
+                    @foreach($projects as $project)
+                        <x-projects.article :project="$project" :student="$project->student"/>
+                    @endforeach
                 </div>
                 <a href="/projects"
                    class="flex items-center gap-4 self-end text-lg uppercase transition-all duration-200 ease-in-out text-orange hover:gap-6">

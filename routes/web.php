@@ -3,6 +3,8 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AlumnisController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OffersController;
 use App\Http\Controllers\PartnersController;
@@ -23,9 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [function () {
-    return view('index');
-}]);
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/terms', function () {
     return view('terms');
@@ -58,9 +58,7 @@ Route::get('/forum', function () {
 Route::get('/forum/slug', function () {
     return view('forum.show');
 });
-Route::get('/faq', function () {
-    return view('faq.index');
-});
+Route::get('/faq', [FaqController::class, 'index']);
 
 //ROUTE : Jobs
 Route::get('/jobs/offers', [OffersController::class, 'index']);

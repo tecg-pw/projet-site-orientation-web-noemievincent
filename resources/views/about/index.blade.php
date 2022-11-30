@@ -158,7 +158,7 @@
                     </div>
                     <div class="grid grid-cols-2 gap-8">
                         @foreach($opportunities as $opportunity)
-                            <x-about.opportunity :showJob="false" :opportunity="$opportunity"/>
+                            <x-about.opportunity :opportunity="$opportunity"/>
                         @endforeach
                     </div>
                 </section>

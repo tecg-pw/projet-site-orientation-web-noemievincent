@@ -22,13 +22,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(OpportunitiesSeeder::class);
-        $this->call(StudentsSeeder::class);
         $this->call(TeachersSeeder::class);
         $this->call(CoursesSeeder::class);
         $this->call(CourseTeacherSeeder::class);
-        $this->call(ProjectsSeeder::class);
-        $this->call(ProjectCategoriesSeeder::class);
-        $this->call(CategoryProjectSeeder::class);
         $this->call(AuthorSeeder::class);
         $this->call(ArticleCategoriesSeeder::class);
         $this->call(ArticlesSeeder::class);
@@ -37,6 +33,10 @@ class DatabaseSeeder extends Seeder
         $this->call(OffersSeeder::class);
         $this->call(SkillsSeeder::class);
         $this->call(OfferSkillSeeder::class);
+        $this->call(StudentsSeeder::class);
+        $this->call(ProjectsSeeder::class);
+        $this->call(ProjectCategoriesSeeder::class);
+        $this->call(CategoryProjectSeeder::class);
         $this->call(FaqSeeder::class);
         $this->call(LanguagesSeeder::class);
         $this->call(TutorialsSeeder::class);
