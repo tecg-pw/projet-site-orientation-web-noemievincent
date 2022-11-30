@@ -1,26 +1,24 @@
+@props(['reply'])
 <div class="flex flex-col gap-4">
     <div class="flex gap-4">
-        <img src="https://placehold.jp/50x50.png" alt="nom"
+        <img src="https://placehold.jp/50x50.png" alt="{{$reply->user->fullname}}"
              class="rounded-full">
         <div>
-            <p class="text-lg font-medium"><a href="/username"
-                                              class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">Prénom
-                    Nom</a></p>
-            <p class="text-sm">Statut</p>
+            <p class="text-lg font-medium"><a href="/{{$reply->user->slug}}"
+                                              class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$reply->user->fullname}}</a>
+            </p>
+            <p class="text-sm">{{__('roles.' . $reply->user->role)}}</p>
         </div>
     </div>
     <div class="flex flex-col gap-2">
-        <div>
-            <p>
-                Aucun prérequis pour rentrer en infographie. Si ce n’est avoir un minimum de sens
-                artistique.
-            </p>
-        </div>
+        <p>
+            {{$reply->body}}
+        </p>
         <div class="flex gap-4 font-light">
-            {!! __('forum.reply.infos', ['date' => 'dd/yy/mmmm', 'time' => '00:00']) !!}
-            @if(Request::path() != 'forum/slug')
+            {!! __('forum.reply.infos', ['datetime' => $reply->published_at->format('d-m-Y'), 'date' => $reply->published_at->format('d/m/Y'), 'datetimeHours' => $reply->published_at->format('H:i'), 'time' => $reply->published_at->format('H:i')]) !!}
+            @if(Request::path() != 'forum/' . $reply->question->slug)
                 <div class="bg-blue/50 h-max-content w-px"></div>
-                {!! __('forum.reply.question', ['question' => 'Intitulé de la question', 'slug' => 'slug']) !!}
+                {!! __('forum.reply.question', ['question' => $reply->question->title, 'slug' => $reply->question->slug]) !!}
             @endif
         </div>
     </div>

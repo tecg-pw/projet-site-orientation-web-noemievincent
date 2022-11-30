@@ -6,5 +6,5 @@ return [
     'student_teacher' => 'Professeur — Ancien étudiant',
     'student' => 'Étudiant',
     'alumni' => 'Ancien étudiant',
-
+    'user' => 'Utilisateur'
 ];

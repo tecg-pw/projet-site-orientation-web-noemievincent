@@ -23,11 +23,7 @@
                             <h2 id="{{$teacher->fullname}}"
                                 class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$teacher->fullname}}</h2>
                             <div class="text-lg">
-                                @if($teacher->role == 'teacher')
-                                    <p>{{__('roles.teacher')}}</p>
-                                @elseif($teacher->role == 'student_teacher')
-                                    <p>{{__('roles.student_teacher')}}</p>
-                                @endif
+                                <p>{{__('roles.' . $teacher->role)}}</p>
                                 <a href="mailto:{{$teacher->email}}">{{$teacher->email}}</a>
                             </div>
                         </div>

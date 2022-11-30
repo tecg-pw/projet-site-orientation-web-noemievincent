@@ -1,44 +1,37 @@
+@props(['question'])
 <div class="flex flex-col gap-6">
     <div class="flex flex-col gap-6">
         <div class="flex gap-4">
-            <img src="https://placehold.jp/50x50.png" alt="nom"
+            <img src="https://placehold.jp/50x50.png" alt="{{$question->user->fullname}}"
                  class="rounded-full h-12">
             <div>
-                <p class="text-lg font-medium"><a href="/username"
-                                                  class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">Prénom
-                        Nom</a></p>
-                <p class="text-sm">Statut</p>
+                <p class="text-lg font-medium"><a href="/{{$question->user->slug}}"
+                                                  class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$question->user->fullname}}</a>
+                </p>
+                <p class="text-sm">{{__('roles.' . $question->user->role)}}</p>
             </div>
         </div>
         <div>
             <p>
-                Bonjour à tous ,
-                Je me posais une ou deux questions et les voici :
-                - Faut-il des connaissances dans le dessin sur pc ou sur papier pour pouvoir faire de
-                l’infographie car je n’en ai jamais fait mais les cours m’interessent vraiment.
-                - Est ce qu’il faut avoir pratiqué de l’infographie en secondaire pour pouvoir entrer dans cette
-                section
-                Merci de vos réponses !!! =)
+                {{$question->body}}
             </p>
         </div>
         <div class="flex justify-between items-center">
             <div class="flex gap-4 font-light">
-                <p>publiée le
-                    <time datetime="">dd/mm/yyyy</time>
-                    à
-                    <time datetime="">00h00</time>
-                </p>
+                {!! __('forum.single.infos', ['datetime' => $question->published_at->format('d-m-Y'), 'date' => $question->published_at->format('d/m/Y'), 'datetimeHours' => $question->published_at->format('H:i'), 'time' => $question->published_at->format('H:i')]) !!}
                 <div class="bg-blue/50 h-max-content w-px"></div>
-                <p>catégorie</p>
-                <div class="bg-blue/50 h-max-content w-px"></div>
-                <p class="flex gap-2 text-green">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
-                         class="fill-green h-full">
-                        <path
-                            d="M9 16.17L5.53 12.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L9 16.17z"/>
-                    </svg>
-                    {{__('forum.single.resolved')}}
-                </p>
+                <p>{{$question->category->name}}</p>
+                @if($question->is_solved)
+                    <div class="bg-blue/50 h-max-content w-px"></div>
+                    <p class="flex gap-2 text-green">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
+                             class="fill-green h-full">
+                            <path
+                                d="M9 16.17L5.53 12.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L9 16.17z"/>
+                        </svg>
+                        {{__('forum.single.resolved')}}
+                    </p>
+                @endif
             </div>
             @auth()
                 <a href="#reply"

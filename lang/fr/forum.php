@@ -15,10 +15,12 @@ return [
         'more_replies' => 'Plus de réponses',
         'resolved' => 'Résolue',
         'answer_button' => 'Répondre',
+        'infos' => '<p>publiée le <time datetime=":datetime">:date</time> à <time datetime=":datetimeHours">:time</time></p>',
         'guest_link' => '<p><a href="/login" class="underline underline-offset-2 decoration-1 decoration-solid text-orange">Connectez-vous</a> ou <a href="/register" class="underline underline-offset-2 decoration-1 decoration-solid text-orange">créez un compte</a> pour répondre</p>',
     ],
     'reply' => [
-        'infos' => '<p>publiée le <time datetime="">:date</time> à <time datetime="">:time</time></p>',
+        'count' => 'réponses',
+        'infos' => '<p>publiée le <time datetime=":datetime">:date</time> à <time datetime=":datetimeHours">:time</time></p>',
         'question' => '<p>dans <a href="/forum/:slug" class="underline underline-offset-2 decoration-1 decoration-solid hover:text-orange">:question</a></p>',
     ]
 ];

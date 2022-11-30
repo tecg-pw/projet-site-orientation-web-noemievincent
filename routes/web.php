@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AlumnisController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OffersController;
@@ -52,12 +53,8 @@ Route::get('/news', [NewsController::class, 'index']);
 Route::get('/news/{article:slug}', [NewsController::class, 'show']);
 
 //ROUTE : Forum + Faq
-Route::get('/forum', function () {
-    return view('forum.index');
-});
-Route::get('/forum/slug', function () {
-    return view('forum.show');
-});
+Route::get('/forum', [ForumController::class, 'index']);
+Route::get('/forum/{question:slug}', [ForumController::class, 'show']);
 Route::get('/faq', [FaqController::class, 'index']);
 
 //ROUTE : Jobs

@@ -1,10 +1,11 @@
+@props(['replies'])
 <div class="flex flex-col gap-20">
     <div class="flex flex-col gap-10">
-        @for($i = 0; $i < 5; $i++)
-            <x-forum.reply/>
-        @endfor
+        @foreach($replies as $reply)
+            <x-forum.reply :reply="$reply"/>
+        @endforeach
     </div>
-    <div class="bg-pink-200">
-        PAGINATION
+    <div>
+        {{$replies->links()}}
     </div>
 </div>

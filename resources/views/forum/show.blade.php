@@ -1,7 +1,7 @@
-<x-header :head_title="'question'"/>
+<x-header :head_title="$question->title"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
-        <section aria-labelledby="slug" class="col-span-3 flex flex-col gap-8">
+        <section aria-labelledby="{{$question->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/forum"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
@@ -14,15 +14,14 @@
                     </svg>
                     <span>{{__('forum.single.back_to_questions_link')}}</span>
                 </a>
-                <h2 id="slug"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">Question section
-                    Infograpbhie</h2>
+                <h2 id="{{$question->slug}}"
+                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$question->title}}</h2>
             </div>
-            <x-forum.question/>
+            <x-forum.question :question="$question"/>
             <div class="flex flex-col gap-8">
-                @for($i = 0; $i < 3; $i++)
-                    <x-forum.reply/>
-                @endfor
+                @foreach($replies as $reply)
+                    <x-forum.reply :reply="$reply"/>
+                @endforeach
                 <a href="#" class="flex items-center gap-4 uppercase text-orange text-sm mt-1">
                     <span>{{__('forum.single.more_replies')}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
@@ -34,7 +33,7 @@
                 </a>
             </div>
         </section>
-        <x-aside/>
+        <x-aside :aside="$aside"/>
     </div>
 </main>
 <x-footer/>

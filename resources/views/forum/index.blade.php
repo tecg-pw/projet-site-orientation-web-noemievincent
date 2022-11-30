@@ -85,14 +85,14 @@
                 </form>
             </div>
             @if(Request::has('last-subjects') || Request::all() == null)
-                <x-forum.last-subjects/>
+                <x-forum.last-subjects :questions="$questions"/>
             @endif
 
             @if(Request::has('last-replies'))
-                <x-forum.last-replies/>
+                <x-forum.last-replies :replies="$replies"/>
             @endif
         </section>
-        <x-aside/>
+        <x-aside :aside="$aside"/>
     </div>
 </main>
 <x-footer/>
