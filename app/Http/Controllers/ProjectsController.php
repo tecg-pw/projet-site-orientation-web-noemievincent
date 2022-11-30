@@ -25,9 +25,9 @@ class ProjectsController extends Controller
         $dates = Project::without('categories')->select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
         $categories = ProjectCategory::select('name')->whereNotNull('name')->groupBy('name')->get();
 
-//        return $dates;
+        $aside = AsideController::get();
 
-        return view('projects.index', compact('projects', 'dates', 'categories'));
+        return view('projects.index', compact('projects', 'dates', 'categories', 'aside'));
     }
 
     /**
@@ -59,9 +59,9 @@ class ProjectsController extends Controller
      */
     public function show(Student $student, Project $project)
     {
-//        return $project->previous()->student;
+        $aside = AsideController::get();
 
-        return view('projects.show', compact('project', 'student'));
+        return view('projects.show', compact('project', 'student', 'aside'));
     }
 
     /**

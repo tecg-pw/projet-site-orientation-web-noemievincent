@@ -23,9 +23,9 @@ class NewsController extends Controller
 
         $categories = ArticleCategory::all();
 
-//        return $news;
+        $aside = AsideController::get();
 
-        return view('news.index', compact('news', 'categories'));
+        return view('news.index', compact('news', 'categories', 'aside'));
     }
 
     /**
@@ -59,9 +59,9 @@ class NewsController extends Controller
     {
         $articles = ArticleCategory::find($article->category_id)->articles()->get();
 
-//        return $articles;
+        $aside = AsideController::get();
 
-        return view('news.show', compact('article', 'articles'));
+        return view('news.show', compact('article', 'articles', 'aside'));
     }
 
     /**

@@ -85,7 +85,7 @@
                 </div>
             @endif
         </section>
-        <x-aside/>
+        <x-aside :aside="$aside"/>
     </div>
 </main>
 <x-footer/>

@@ -23,7 +23,9 @@ class TutorialsController extends Controller
 
         $languages = Language::all();
 
-        return view('tutorials.index', compact('tutorials', 'languages'));
+        $aside = AsideController::get();
+
+        return view('tutorials.index', compact('tutorials', 'languages', 'aside'));
     }
 
     /**

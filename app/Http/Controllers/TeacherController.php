@@ -58,7 +58,9 @@ class TeacherController extends Controller
             return view('about.show-teacher', compact('teacher', 'courses', 'projects'));
         }
 
-        return view('about.show-teacher', compact('teacher', 'courses'));
+        $aside = AsideController::get();
+
+        return view('about.show-teacher', compact('teacher', 'courses', 'aside'));
     }
 
     /**

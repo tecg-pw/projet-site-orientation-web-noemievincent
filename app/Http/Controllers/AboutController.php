@@ -24,7 +24,9 @@ class AboutController extends Controller
         $teachers = Teacher::all();
         $opportunities = Opportunity::all();
 
-        return view('about.index', compact('courses', 'teachers', 'opportunities'));
+        $aside = AsideController::get();
+
+        return view('about.index', compact('courses', 'teachers', 'opportunities', 'aside'));
     }
 
     /**

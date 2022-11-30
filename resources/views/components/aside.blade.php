@@ -1,12 +1,13 @@
+@props(['aside'])
 <aside class="flex flex-col hidden lg:block">
     <h2 class="sr-only">{{__('aside.title')}}</h2>
     <section aria-labelledby="aside-news" class="flex flex-col gap-2">
         <h3 id="aside-news"
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('aside.news_title')}}</h3>
         <div class="flex flex-col gap-3">
-            @for($i = 0; $i < 3; $i++)
-                <x-news.aside-article/>
-            @endfor
+            @foreach($aside['news'] as $new)
+                <x-news.aside-article :new="$new"/>
+            @endforeach
         </div>
         <a href="/news"
            class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
@@ -23,9 +24,9 @@
         <h3 id="aside-jobs"
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('aside.offers_title')}}</h3>
         <div class="flex flex-col gap-3">
-            @for($i = 0; $i < 2; $i++)
-                <x-jobs.aside-article/>
-            @endfor
+            @foreach($aside['offers'] as $offer)
+                <x-jobs.aside-article :offer="$offer"/>
+            @endforeach
         </div>
         <a href="/jobs"
            class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">

@@ -52,8 +52,10 @@ class CourseController extends Controller
     {
         $teachers = Course::find($course->id)->teachers()->get();
         $projects = Course::find($course->id)->projects()->get();
-        
-        return view('about.show-class', compact('course', 'teachers', 'projects'));
+
+        $aside = AsideController::get();
+
+        return view('about.show-class', compact('course', 'teachers', 'projects', 'aside'));
     }
 
     /**

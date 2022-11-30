@@ -21,9 +21,11 @@ class HomeController extends Controller
         $projects = Project::latest('published_at')->limit(6)->get();
 //        $questions = Project::latest('published_at')->limit(6)->get();
 
-//        return $projects;
+        $aside = AsideController::get();
 
-        return view('index', compact('projects'));
+//        return $aside['news'];
+
+        return view('index', compact('projects', 'aside'));
     }
 
     /**

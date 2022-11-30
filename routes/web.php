@@ -63,9 +63,7 @@ Route::get('/faq', [FaqController::class, 'index']);
 //ROUTE : Jobs
 Route::get('/jobs/offers', [OffersController::class, 'index']);
 Route::get('/jobs/offers/{company:slug}/{offer:slug}', [OffersController::class, 'show']);
-Route::get('/jobs/create', function () {
-    return view('jobs.create');
-});
+Route::get('/jobs/create', [OffersController::class, 'create']);
 Route::get('/jobs/partners', [PartnersController::class, 'index']);
 Route::get('/jobs/partners/{company:slug}', [PartnersController::class, 'show']);
 

@@ -24,14 +24,16 @@ class PartnersController extends Controller
         //filters
         $companies = Company::get();
         $locations = Offer::without('company')->select('location')->groupBy('location')->get();
-        
-        return view('partners.index', compact('partners', 'companies', 'locations'));
+
+        $aside = AsideController::get();
+
+        return view('partners.index', compact('partners', 'companies', 'locations', 'aside'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function create()
     {
@@ -61,7 +63,9 @@ class PartnersController extends Controller
         $offers = Company::find($company->id)->offers()->get();
         $students = Company::find($company->id)->students()->get();
 
-        return view('partners.show', compact('company', 'members', 'offers', 'students'));
+        $aside = AsideController::get();
+
+        return view('partners.show', compact('company', 'members', 'offers', 'students', 'aside'));
     }
 
     /**

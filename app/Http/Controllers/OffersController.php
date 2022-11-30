@@ -24,17 +24,21 @@ class OffersController extends Controller
         $companies = Company::all();
         $locations = Offer::without('skills')->select('location')->groupBy('location')->get();
 
-        return view('jobs.index', compact('offers', 'companies', 'locations'));
+        $aside = AsideController::get();
+
+        return view('jobs.index', compact('offers', 'companies', 'locations', 'aside'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function create()
     {
-        //
+        $aside = AsideController::get();
+
+        return view('jobs.create', compact('aside'));
     }
 
     /**
@@ -56,9 +60,9 @@ class OffersController extends Controller
      */
     public function show(Company $company, Offer $offer)
     {
-//        return $offer;
+        $aside = AsideController::get();
 
-        return view('jobs.show', compact('company', 'offer'));
+        return view('jobs.show', compact('company', 'offer', 'aside'));
     }
 
     /**

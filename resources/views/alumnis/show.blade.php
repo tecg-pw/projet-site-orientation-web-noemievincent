@@ -200,7 +200,7 @@
                 </div>
             </section>
         </section>
-        <x-aside/>
+        <x-aside :aside="$aside"/>
     </div>
 </main>
 <x-footer/>

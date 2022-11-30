@@ -20,8 +20,10 @@ class FaqController extends Controller
     {
         $questions = Faq::all();
 //        $questions = Faq::where('category', 'general')->get();
-        
-        return view('faq.index', compact('questions'));
+
+        $aside = AsideController::get();
+
+        return view('faq.index', compact('questions', 'aside'));
     }
 
     /**

@@ -21,9 +21,10 @@ class ResourcesController extends Controller
     {
         $documentations = Documentation::all();
         $tools = Tool::all();
-//        return $tools;
 
-        return view('resources.index', compact('documentations', 'tools'));
+        $aside = AsideController::get();
+
+        return view('resources.index', compact('documentations', 'tools', 'aside'));
     }
 
     /**
