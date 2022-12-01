@@ -32,8 +32,7 @@ return [
     'reset_password' => [
         'head_title' => 'Réinitialiser votre mot de passe',
         'title' => 'Mot de passe oublié ?',
-        'tagline' => 'Veuillez saisir votre adresse email ci-dessous. Vous recevrez un lien pour réinitialiser votre mot de
-                passe.',
+        'tagline' => 'Veuillez saisir votre adresse email ci-dessous. Vous recevrez un lien pour réinitialiser votre mot de passe.',
         'back_to_login_link' => 'Retourner sur la page de connexion',
     ],
 
