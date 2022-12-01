@@ -2,6 +2,10 @@
 
 return [
 
+    'description' => 'L‘option Web forme des spécialistes en design Web, en design d’interaction et en développement d‘applications mobiles.',
+    'keywords' => [
+        'HEPL', 'Bachelier en Web', 'Technique Graphique', 'Design Web', 'Développement d‘applications mobiles', 'Développement front-end', 'Développement back-end'
+    ],
     'title' => 'Web Design - formation web',
     'home_link' => 'Retourner à l‘accueil',
     'open_menu' => 'Ouvrir le menu',

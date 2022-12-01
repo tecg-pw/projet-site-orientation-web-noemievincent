@@ -2,33 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Question;
-use App\Models\QuestionCategory;
-use App\Models\Reply;
+use App\Models\Language;
+use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class ForumController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Application|Factory|View
+     * @return Response
      */
     public function index()
     {
-        $questions = Question::with('user')->latest('published_at')->paginate(5);
-        $replies = Reply::with('user')->latest('published_at')->paginate(5);
-
-        //filters
-        $categories = QuestionCategory::all();
-        
-        $aside = AsideController::get();
-
-        return view('forum.index', compact('questions', 'replies', 'categories', 'aside'));
+        //
     }
 
     /**
@@ -58,24 +49,29 @@ class ForumController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function show(Question $question)
+    public function show(User $user)
     {
-        $replies = Reply::where('question_id', $question->id)->get();
+        $questions = User::find($user->id)->questions()->get();
+        $replies = User::find($user->id)->replies()->get();
+        $tutorials = User::find($user->id)->tutorials()->get();
+
+        $languages = Language::all();
+
 
         $aside = AsideController::get();
 
-        return view('forum.show', compact('question', 'replies', 'aside'));
+        return view('profile.index', compact('user', 'questions', 'replies', 'tutorials', 'languages', 'aside'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return Response
+     * @return Application|Factory|View
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('profile.edit', compact('user'));
     }
 
     /**

@@ -33,8 +33,8 @@
                         <x-news.article :new="$new"/>
                     @endforeach
                 </div>
-                <div class="bg-pink-200">
-                    PAGINATION
+                <div>
+                    {{$news->links()}}
                 </div>
             </div>
         </section>

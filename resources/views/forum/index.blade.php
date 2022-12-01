@@ -16,8 +16,7 @@
                         <a href="/forum?ask-a-question"
                            class="flex self-start gap-2 uppercase bg-orange text-white py-3 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 class="fill-white" aria-labelledby="forumTitle">
-                                <title id="forumTitle">{{__('Poser une question')}}</title>
+                                 class="fill-white">
                                 <path
                                     d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z"/>
                             </svg>
@@ -45,9 +44,9 @@
                             <label for="category" class="text-lg">{{__('forms.labels.category')}} :</label>
                             <select name="category" id="category" class="rounded-lg px-4">
                                 <option value="category">Catégorie</option>
-                                @for($i = 1; $i < 5; $i++)
-                                    <option value="category-{{$i}}">Catégorie {{$i}}</option>
-                                @endfor
+                                @foreach($categories as $category)
+                                    <option value="{{$category->slug}}">{{$category->name}}</option>
+                                @endforeach
                             </select>
                         </fieldset>
                         <div class="flex gap-8 items-center justify-end">
@@ -75,7 +74,7 @@
                            class="rounded-lg py-1 px-3 border border-blue/40 {{Request::has('last-subjects') || Request::all() == null ? 'bg-blue/20' : 'bg-white'}}">{{__('forum.last_subjects')}}</a>
                         <a href="?last-replies"
                            class="rounded-lg py-1 px-3 border border-blue/40 {{Request::has('last-replies') ? 'bg-blue/20' : 'bg-white'}}">{{__('forum.last_replies')}}</a>
-                        <x-filters.forum-categories/>
+                        <x-filters.forum-categories :categories="$categories"/>
                         <x-filters.forum-status/>
                     </div>
                     <button type="submit"

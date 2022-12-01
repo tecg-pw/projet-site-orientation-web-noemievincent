@@ -4,7 +4,7 @@
         <img src="https://placehold.jp/50x50.png" alt="{{$reply->user->fullname}}"
              class="rounded-full">
         <div>
-            <p class="text-lg font-medium"><a href="/{{$reply->user->slug}}"
+            <p class="text-lg font-medium"><a href="/users/{{$reply->user->slug}}"
                                               class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$reply->user->fullname}}</a>
             </p>
             <p class="text-sm">{{__('roles.' . $reply->user->role)}}</p>

@@ -16,9 +16,7 @@ class Reply extends Model
     protected $fillable = [
         'body', 'published_at', 'question_id', 'user_id'
     ];
-
-    protected $with = ['user'];
-
+    
     public function question(): BelongsTo
     {
         return $this->belongsTo(Question::class);

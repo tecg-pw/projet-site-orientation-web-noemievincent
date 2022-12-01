@@ -1,18 +1,18 @@
-@props(['member'])
+@props(['user'])
 <div
     class="bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5">
     <div class="flex justify-between">
         <div class="flex flex-col gap-4">
             <img src="https://placehold.jp/160x160.png" alt="nom" height="160" width="160" class="rounded-full">
-            <h3 class="cursor-pointer font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$member->fullname}}</h3>
+            <h3 class="cursor-pointer font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$user->fullname}}</h3>
         </div>
         <ul class="flex flex-col gap-4">
-            <li><a href="{{$member->github_link}}">
+            <li><a href="{{$user->github_link}}">
                     <svg version="1.1" id="github" xmlns="http://www.w3.org/2000/svg"
                          x="0px" y="0px" height="36" viewBox="0 0 20 19.5"
                          aria-labelledby="githubTitle" xml:space="preserve">
                         <title
-                            id="githubTitle">{{__('Se rendre sur le github de :name', ['name' => $member->fullname])}}</title>
+                            id="githubTitle">{{__('Se rendre sur le github de :name', ['name' => $user->fullname])}}</title>
                         <style type="text/css">
                             .github_gray {
                                 fill-rule: evenodd;
@@ -27,12 +27,12 @@
                                             c0.4,0.3,0.7,0.9,0.7,1.9c0,1.3,0,2.4,0,2.8c0,0.3,0.2,0.6,0.7,0.5c4-1.3,6.8-5.1,6.8-9.5C20,4.5,15.5,0,10,0z"/>
                                         </svg>
                 </a></li>
-            <li><a href="{{$member->linkedin_link}}">
+            <li><a href="{{$user->linkedin_link}}">
                     <svg version="1.1" id="linkedin" xmlns="http://www.w3.org/2000/svg"
                          x="0px" y="0px" height="36" viewBox="0 0 20 19.5"
                          aria-labelledby="linkedinTitle" xml:space="preserve">
                         <title
-                            id="linkedinTitle">{{__('Se rendre sur le linkedin de :name', ['name' => $member->fullname])}}</title>
+                            id="linkedinTitle">{{__('Se rendre sur le linkedin de :name', ['name' => $user->fullname])}}</title>
                         <style type="text/css">
                             .linkedin-blue {
                                 fill: #006699;

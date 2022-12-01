@@ -7,6 +7,13 @@ return [
     'label' => 'Recherchez un mot clé',
     'button' => 'Rechercher',
     'more_results' => 'Plus de résultats',
+    'filters_items' => [
+        'projects' => 'projets',
+        'forum' => 'questions du forum',
+        'tutorials' => 'tutoriels',
+        'news' => 'actualités',
+        'users' => 'utilisateurs',
+    ],
     'titles' => [
         'projects' => 'Projets',
         'forum' => 'Question du forum',

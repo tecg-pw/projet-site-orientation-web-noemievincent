@@ -18,7 +18,7 @@ class Question extends Model
         'title', 'slug', 'body', 'is_solved', 'published_at', 'category_id', 'user_id'
     ];
 
-    protected $with = ['user', 'category'];
+    protected $with = ['category'];
     protected $withCount = ['replies'];
 
     public function replies(): HasMany

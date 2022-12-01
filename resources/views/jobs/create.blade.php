@@ -108,19 +108,25 @@
                                 <fieldset class="flex flex-col gap-2">
                                     <label for="desc"
                                            class="text-lg ">{{__('jobs.create.form.offer.labels.skills')}}</label>
-                                    <div>
-                                        @for($i = 1; $i < 8; $i++)
-                                            <fieldset class="flex gap-2 items-center">
-                                                <input type="checkbox" id="compétence-{{$i}}" value="compétence {{$i}}"
+                                    <fieldset>
+                                        @foreach($skills as $skill)
+                                            <div class="flex gap-2 items-center">
+                                                <input type="checkbox" id="{{$skill->slug}}" value="{{$skill->slug}}"
                                                        class="accent-orange">
-                                                <label for="compétence-{{$i}}">Compétence {{$i}}</label>
-                                            </fieldset>
-                                        @endfor
-                                    </div>
+                                                <label for="{{$skill->slug}}">{{$skill->name}}</label>
+                                            </div>
+                                        @endforeach
+                                    </fieldset>
                                 </fieldset>
                                 <div>
-                                    <p>{{__('Autres')}} :</p>
-                                    à faire
+                                    <p class="mb-1">{{__('jobs.create.form.offer.labels.other_skills')}}</p>
+                                    <div class="flex flex-col gap-3">
+                                        <label
+                                            for="add-skill"
+                                            class="sr-only">{{__('jobs.create.form.offer.labels.add_skills')}}</label>
+                                        <input type="text" id="add-skill"
+                                               class="self-start pl-3 py-1 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
+                                    </div>
                                 </div>
                             </div>
                         </div>

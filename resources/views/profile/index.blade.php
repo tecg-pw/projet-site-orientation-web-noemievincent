@@ -1,22 +1,21 @@
-<x-header :head_title="'Nom de l‘utilisateur'"/>
+<x-header :head_title="$user->fullname"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
-        <section aria-labelledby="username" class="col-span-3 flex flex-col gap-8">
-            <h2 id="username"
-                class="sr-only">username</h2>
+        <section aria-labelledby="{{$user->slug}}" class="col-span-3 flex flex-col gap-8">
+            <h2 id="{{$user->slug}}"
+                class="sr-only">{{$user->fullname}}</h2>
             <div class="flex justify-between items-start">
                 <div class="flex gap-8">
-                    <img src="https://placehold.jp/120x120.png" alt="nom-de-leleve"
+                    <img src="https://placehold.jp/120x120.png" alt="{{$user->fullname}}"
                          class="rounded-full">
                     <div class="mt-2">
-                        <p class="text-2xl font-semibold">Prénom Nom</p>
-                        <p class="text-lg">Utilisateur <span class="font-light">depuis <time
-                                    datetime="">Mai 2020</time></span></p>
+                        <p class="text-2xl font-semibold">{{$user->fullname}}</p>
+                        {!! __('profile.infos', ['datetime' => $user->created_at->format('m-Y'), 'date' => $user->created_at->format('F Y')]) !!}
                     </div>
                 </div>
                 {{--                @auth()--}}
                 {{--                    @if('username' = 'auth name')--}}
-                <a href="/username/edit"
+                <a href="/users/{{$user->slug}}/edit"
                    class="mt-2 flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <span>{{__('profile.edit_link')}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
@@ -29,10 +28,7 @@
                 {{--                    @endif--}}
                 {{--                @endauth--}}
             </div>
-            <p>Elit ex eiusmod proident voluptate. Esse sunt ipsum eiusmod deserunt fugiat nostrud aliqua dolor
-                aute minim
-                ex aliquip. Enim qui velit ullamco. Sit culpa minim eiusmod laborum esse voluptate esse
-                anim.</p>
+            <p>{{$user->bio}}</p>
             <div class="bg-blue/50 h-px w-full"></div>
             <div class="flex flex-col gap-4">
                 <h3 class="font-semibold font-display text-xl">{{__('profile.forum_title')}}</h3>
@@ -56,17 +52,17 @@
                 </div>
                 @if(Request::input('forum-tab') === 'questions' || Request::all() == null)
                     <div class="flex flex-col gap-6">
-                        @for($i = 0; $i < 2; $i++)
-                            <x-forum.article/>
-                        @endfor
+                        @foreach($questions as $question)
+                            <x-forum.article :question="$question"/>
+                        @endforeach
                     </div>
                 @endif
 
                 @if(Request::input('forum-tab') === 'replies')
                     <div class="flex flex-col gap-6">
-                        @for($i = 0; $i < 2; $i++)
-                            <x-forum.reply/>
-                        @endfor
+                        @foreach($replies as $reply)
+                            <x-forum.reply :reply="$reply"/>
+                        @endforeach
                     </div>
                 @endif
             </div>
@@ -76,27 +72,34 @@
             <div>
                 <h3 class="font-semibold font-display text-xl">{{__('profile.tutorials_title')}}</h3>
                 <div class="flex flex-col gap-3">
-                    <div class="flex gap-6 items-center">
-                        <p class="uppercase text-lg">{{__('filters.title')}}</p>
-                        <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
-                    </div>
                     <div class="grid grid-cols-3 gap-x-11">
-                        <div class="flex gap-4 col-span-2">
-                            <x-filters.languages/>
+                        <div class="flex gap-6 items-center col-span-2">
+                            <p class="uppercase text-lg">{{__('filters.title')}}</p>
+                            <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
                         </div>
                         <x-filters.search/>
                     </div>
+                    <form class="flex col-span-2 items-center justify-between">
+                        @csrf
+                        <div class="flex gap-4">
+                            <x-filters.languages :languages="$languages"/>
+                        </div>
+                        <button type="submit"
+                                class="font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                            {{__('filters.filter_button')}}
+                        </button>
+                    </form>
                 </div>
                 <div class="grid grid-cols-2 gap-8 mt-6">
-                    @for($i = 0; $i < 3; $i++)
-                        <x-resources.tutorial/>
-                    @endfor
+                    @foreach($tutorials as $tutorial)
+                        <x-resources.tutorial :tutorial="$tutorial" :is_favorite="true"/>
+                    @endforeach
                 </div>
             </div>
             {{--                    @endif--}}
             {{--                @endauth--}}
         </section>
-        <x-aside/>
+        <x-aside :aside="$aside"/>
     </div>
 </main>
 <x-footer/>

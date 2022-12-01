@@ -46,6 +46,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TutorialsSeeder::class);
         $this->call(DocumentationsSeeder::class);
         $this->call(ToolsSeeder::class);
+        $this->call(TutorialUserSeeder::class);
         $this->call(LanguageTutorialSeeder::class);
         $this->call(DocumentationLanguageSeeder::class);
     }

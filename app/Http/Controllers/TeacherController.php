@@ -53,12 +53,15 @@ class TeacherController extends Controller
     {
         $courses = Teacher::find($teacher->id)->courses()->get();
 
+        $aside = AsideController::get();
+
         if ($teacher->role == 'student_teacher') {
-            $projects = Student::where('slug', $teacher->slug)->first()->projects;
-            return view('about.show-teacher', compact('teacher', 'courses', 'projects'));
+            if (Student::where('slug', $teacher->slug)->exists()) {
+                $projects = Student::where('slug', $teacher->slug)->first()->projects;
+                return view('about.show-teacher', compact('teacher', 'courses', 'projects', 'aside'));
+            }
         }
 
-        $aside = AsideController::get();
 
         return view('about.show-teacher', compact('teacher', 'courses', 'aside'));
     }

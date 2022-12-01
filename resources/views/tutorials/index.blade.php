@@ -29,7 +29,7 @@
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-2 gap-8">
                     @foreach($tutorials as $tutorial)
-                        <x-resources.tutorial :tutorial="$tutorial"/>
+                        <x-resources.tutorial :tutorial="$tutorial" is_favorite="false"/>
                     @endforeach
                 </div>
                 <div>

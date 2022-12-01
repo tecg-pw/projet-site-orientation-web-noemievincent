@@ -11,8 +11,10 @@ use App\Http\Controllers\OffersController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ResourcesController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TutorialsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,9 +33,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/terms', function () {
     return view('terms');
 });
-Route::get('/search', function () {
-    return view('search');
-});
+Route::get('/search', [SearchController::class, 'index']);
 
 //ROUTE : About
 Route::get('/about', [AboutController::class, 'index']);
@@ -69,12 +69,8 @@ Route::get('/tutorials', [TutorialsController::class, 'index']);
 Route::get('/resources', [ResourcesController::class, 'index']);
 
 //ROUTE : Profile
-Route::get('/username', function () {
-    return view('profile.index');
-});
-Route::get('/username/edit', function () {
-    return view('profile.edit');
-});
+Route::get('/users/{user:slug}', [UserController::class, 'show']);
+Route::get('/users/{user:slug}/edit', [UserController::class, 'edit'])->middleware('auth');
 
 //ROUTE : Auth
 Route::get('/login', function () {

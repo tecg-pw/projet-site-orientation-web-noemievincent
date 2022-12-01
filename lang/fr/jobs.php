@@ -43,7 +43,9 @@ return [
                     'title' => 'Titre de l‘offre',
                     'body' => 'Description et missions du stage',
                     'skills' => 'Compétences nécessaires',
-                ]
+                    'other_skills' => 'Autres :',
+                    'add_skills' => 'Ajoutez une compétence'
+                ],
             ],
             'contract' => [
                 'title' => 'Convention de stage',

@@ -5,7 +5,7 @@
             <img src="https://placehold.jp/50x50.png" alt="{{$question->user->fullname}}"
                  class="rounded-full h-12">
             <div>
-                <p class="text-lg font-medium"><a href="/{{$question->user->slug}}"
+                <p class="text-lg font-medium"><a href="/users/{{$question->user->slug}}"
                                                   class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$question->user->fullname}}</a>
                 </p>
                 <p class="text-sm">{{__('roles.' . $question->user->role)}}</p>
@@ -37,8 +37,7 @@
                 <a href="#reply"
                    class="flex items-center gap-4 uppercase text-orange hover:text-orange-dark transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
-                         class="fill-orange h-full" aria-labelledby="replyTitle">
-                        <title id="replyTitle">{{__('forum.single.answer_button')}}</title>
+                         class="fill-orange h-full">
                         <path
                             d="M17,9.5H7.41l1.3-1.29A1,1,0,0,0,7.29,6.79l-3,3a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l3,3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L7.41,11.5H17a1,1,0,0,1,1,1v4a1,1,0,0,0,2,0v-4A3,3,0,0,0,17,9.5Z"/>
                     </svg>
@@ -65,8 +64,7 @@
                     <button type="submit"
                             class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
-                             class="fill-white h-full" aria-labelledby="replyTitle">
-                            <title id="replyTitle">{{__('forms.buttons.post_reply')}}</title>
+                             class="fill-white h-full">
                             <path
                                 d="M17,9.5H7.41l1.3-1.29A1,1,0,0,0,7.29,6.79l-3,3a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l3,3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L7.41,11.5H17a1,1,0,0,1,1,1v4a1,1,0,0,0,2,0v-4A3,3,0,0,0,17,9.5Z"/>
                         </svg>

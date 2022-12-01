@@ -1,5 +1,5 @@
 @props(['project', 'student'])
-<article aria-labelledby="{{$project->title}}" class="relative">
+<article aria-labelledby="{{$project->slug}}" class="relative">
     <div class="flex gap-2 absolute -top-2 left-5 z-10">
         @foreach($project->categories as $category)
             <a href="#"

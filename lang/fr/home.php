@@ -3,6 +3,7 @@
 return [
 
     'head_title' => 'Accueil',
+    'title' => 'Web Design',
     'hero_description' => 'L’option Web forme des spécialistes en design Web, en design d’interaction et en développement
                 d’applications mobiles. Les étudiantes et les étudiants sont formés pour être capables de s’occuper des
                 aspects visuels des interfaces et des expériences d’utilisation qu’en auront les utilisateurs.

@@ -1,12 +1,12 @@
 @props(['head_title'])
     <!doctype html>
-<html lang="fr" class="bg-white">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="bg-white">
 <head>
     <meta charset="UTF-8">
     <meta name="description"
-          content="L'option Web forme des spécialistes en design Web, en design d’interaction et en développement d'applications mobiles. ">
+          content="{{__('header.description')}}">
     <meta name="keywords"
-          content="HEPL, Bachelier en Web, Technique Graphique, Design Web, Développement d'applications mobiles, Développement front-end, Développement back-end">
+          content="@foreach(__('header.keywords') as $keyword){{$keyword}}@endforeach">
     <meta name="author" content="Noémie Vincent">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -29,9 +29,7 @@
         <a href="/">
             <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
                  height="24" viewBox="0 0 130 35"
-                 xml:space="preserve" class="fill-blue-dark hover:fill-orange transition ease-in-out duration-200"
-                 aria-labelledby="logoTitle">
-                <title id="logoTitle">{{__('header.home_link')}}</title>
+                 xml:space="preserve" class="fill-blue-dark hover:fill-orange transition ease-in-out duration-200">
                 <g>
                     <g transform="translate(4)">
                         <path d="M74.5,10.4h2.2l1.9,7.2l2.1-7.2h1.5l2.1,7.2l1.9-7.2h2.2l-2.9,9.9h-2.2l-1.9-6.2l-1.9,6.2
@@ -191,7 +189,7 @@
                 @endguest
                 @auth
                     <div class="flex flex-col gap-2 lg:flex-row lg:items-center">
-                        <a href="/profile" class="flex items-center gap-3">
+                        <a href="/username" class="flex items-center gap-3">
                             <img src="https://placehold.jp/30x30.png" alt="Prénom Nom"
                                  class="rounded-full">
                             <span

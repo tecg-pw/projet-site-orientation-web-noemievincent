@@ -5,6 +5,7 @@ return [
     'edit_link' => 'Modifier mes informations',
     'forum_title' => 'Questions et réponses',
     'tutorials_title' => 'Tutoriels enregistrés',
+    'infos' => '<p class="text-lg">Utilisateur <span class="font-light">depuis <time datetime=:datetime">:date</time></span></p>',
     'edit' => [
         'head_title' => 'Modifier mes informations',
         'back_to_profile_link' => 'Retour au profil',

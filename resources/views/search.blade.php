@@ -1,12 +1,3 @@
-@php
-    $filters_items = [
-        'projects' => 'projets',
-        'forum' => 'questions du forum',
-        'tutorials' => 'tutoriels',
-        'news' => 'actualités',
-        'users' => 'utilisateurs',
-    ];
-@endphp
 <x-header :head_title="'search.head_title'"/>
 <main class="mt-6 flex-1 px-10">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
@@ -33,7 +24,7 @@
                     <div class="flex flex-col gap-2">
                         <h2 id="search-results"
                             class="text-5xl font-bold uppercase tracking-wider font-display text-blue">{{__('search.title')}}</h2>
-                        <p class="text-2xl font-semibold text-blue">&laquo; termes recherchés &raquo;</p>
+                        <p class="text-2xl font-semibold text-blue">&laquo; {{$search_term}} &raquo;</p>
                     </div>
                     <div class="flex flex-col gap-3">
                         <div class="flex items-center gap-6">
@@ -41,7 +32,7 @@
                             <a href="?" class="text-xs text-orange">{{__('filters.clear_link')}}</a>
                         </div>
                         <ul class="col-span-2 flex gap-4">
-                            @foreach($filters_items as $slug => $name)
+                            @foreach(__('search.filters_items') as $slug => $name)
                                 <li><a href="?{{$slug}}"
                                        class="{{Request::has($slug) ? 'bg-blue/20' : ''}} rounded-lg py-1 px-4 bg-white border border-blue/40">{{ucfirst($name)}}
                                         (x)</a>
@@ -52,9 +43,9 @@
                     <div class="flex flex-col gap-4">
                         <h3 class="text-2xl font-semibold font-display">{{__('search.titles.projects')}}</h3>
                         <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
-                            @for($i = 0; $i < 3; $i++)
-                                {{--                                <x-projects.article/>--}}
-                            @endfor
+                            @foreach($projects as $project)
+                                <x-projects.article :project="$project" :student="$project->student"/>
+                            @endforeach
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
                             <span>{{__('search.more_results')}}</span>
@@ -69,9 +60,9 @@
                     <div class="flex flex-col gap-4">
                         <h3 class="text-2xl font-semibold font-display">{{__('search.titles.forum')}}</h3>
                         <div class="flex flex-col gap-4">
-                            @for($i = 0; $i < 2; $i++)
-                                {{--                                <x-forum.article/>--}}
-                            @endfor
+                            @foreach($questions as $question)
+                                <x-forum.article :question="$question"/>
+                            @endforeach
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
                             <span>{{__('search.more_results')}}</span>
@@ -86,9 +77,9 @@
                     <div class="flex flex-col gap-6">
                         <h3 class="text-2xl font-semibold font-display">{{__('search.titles.tutorials')}}</h3>
                         <div class="grid grid-cols-2 gap-8">
-                            @for($i = 0; $i < 3; $i++)
-                                {{--                                <x-resources.tutorial/>--}}
-                            @endfor
+                            @foreach($tutorials as $tutorial)
+                                <x-resources.tutorial :tutorial="$tutorial" :is_favorite="false"/>
+                            @endforeach
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
                             <span>{{__('search.more_results')}}</span>
@@ -103,9 +94,9 @@
                     <div class="flex flex-col gap-6">
                         <h3 class="text-2xl font-semibold font-display">{{__('search.titles.news')}}</h3>
                         <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
-                            @for($i = 0; $i < 3; $i++)
-                                {{--                                <x-news.article/>--}}
-                            @endfor
+                            @foreach($news as $new)
+                                <x-news.article :new="$new"/>
+                            @endforeach
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
                             <span>{{__('search.more_results')}}</span>
@@ -120,11 +111,9 @@
                     <div class="flex flex-col gap-6">
                         <h3 class="text-2xl font-semibold font-display">{{__('search.titles.users')}}</h3>
                         <div class="grid grid-cols-3 gap-8">
-                            @for($i = 0; $i < 3; $i++)
-                                {{--                                <div class="w-full border border-blue">--}}
-                                {{--                                    utilisateurs--}}
-                                {{--                                </div>--}}
-                            @endfor
+                            @foreach($users as $user)
+                                <x-user :user="$user"/>
+                            @endforeach
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
                             <span>{{__('search.more_results')}}</span>
@@ -142,7 +131,7 @@
                     <div class="flex flex-col gap-2">
                         <h2 id="search-results"
                             class="text-5xl font-bold uppercase tracking-wider font-display text-blue">{{__('search.no_results.title')}}</h2>
-                        <p class="text-2xl font-semibold text-blue">&laquo; termes recherchés &raquo;</p>
+                        <p class="text-2xl font-semibold text-blue">&laquo; {{$search_term}} &raquo;</p>
                     </div>
                     <div class="mt-12">
                         <p class="mb-3 text-2xl">{{__('search.no_results.tagline')}}</p>
@@ -156,7 +145,7 @@
                 {{--            @endif--}}
             </section>
         </div>
-        <x-aside/>
+        <x-aside :aside="$aside"/>
     </div>
 </main>
 <x-footer/>

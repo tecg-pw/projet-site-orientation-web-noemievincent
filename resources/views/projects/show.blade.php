@@ -6,11 +6,10 @@
                 <a href="/projects"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
-                         class="-scale-x-100 fill-orange h-full" aria-labelledby="projectsTitle">
-                        <title id="projectsTitle">{{__('Retourner sur la page des projets')}}</title>
-                        <path id="projects-link"
-                              d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
-                              transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                         class="-scale-x-100 fill-orange h-full">
+                        <path
+                            d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
+                            transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                     </svg>
                     <span>{{__('projects.single.back_to_projects_link')}}</span>
                 </a>
@@ -206,32 +205,6 @@
                     {{--                    </div>--}}
                 </div>
             </div>
-            {{--            <div class="flex justify-between items-center text-orange">--}}
-            {{--                @if($project->previous() !== null)--}}
-            {{--                    <a href="/projects/{{$project->previous()->student->slug}}/{{$project->previous()->slug}}"--}}
-            {{--                       class="flex items-center self-end gap-4 mt-1 hover:gap-6 transition-all ease-in-out duration-200">--}}
-            {{--                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"--}}
-            {{--                             class="-scale-100 fill-orange h-full">--}}
-            {{--                            <path--}}
-            {{--                                d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"--}}
-            {{--                                transform="translate(0.001 0.001)" fill-rule="evenodd"/>--}}
-            {{--                        </svg>--}}
-            {{--                        <span>{{$project->previous()->title}}</span>--}}
-            {{--                    </a>--}}
-            {{--                @endif--}}
-            {{--                @if($project->next() !== null)--}}
-            {{--                    <a href="/projects/{{$project->next()->student->slug}}/{{$project->next()->slug}}"--}}
-            {{--                       class="flex items-center self-end gap-4 mt-1 hover:gap-6 transition-all ease-in-out duration-200">--}}
-            {{--                        <span>{{$project->next()->title}}</span>--}}
-            {{--                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"--}}
-            {{--                             class="fill-orange h-full">--}}
-            {{--                            <path--}}
-            {{--                                d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"--}}
-            {{--                                transform="translate(0.001 0.001)" fill-rule="evenodd"/>--}}
-            {{--                        </svg>--}}
-            {{--                    </a>--}}
-            {{--                @endif--}}
-            {{--            </div>--}}
             <div class="flex flex-col gap-5">
                 <h2 class="font-display font-semibold text-blue text-xl tracking-wider">{{__('projects.single.others_projects_from', ['name' => $student->firstname])}}</h2>
                 <div class="flex flex-col gap-2">

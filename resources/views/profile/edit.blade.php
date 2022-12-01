@@ -3,11 +3,10 @@
     <section aria-labelledby="edit-profile" class="col-start-2 flex flex-col gap-12">
         <div>
             <div class="flex flex-col gap-4">
-                <a href="/username"
+                <a href="/users/{{$user->slug}}"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
-                         class="-scale-x-100 fill-orange h-full" aria-labelledby="questionTitle">
-                        <title id="questionTitle">{{__('profile.edit.back_to_profile_link')}}</title>
+                         class="-scale-x-100 fill-orange h-full">
                         <path
                             d="M.4,23.649a1.084,1.084,0,0,0,1.6,0l9.341-9.916a2.5,2.5,0,0,0,0-3.392L1.929.35A1.084,1.084,0,0,0,.343.338,1.227,1.227,0,0,0,0,1.191a1.231,1.231,0,0,0,.331.858l8.611,9.14a1.252,1.252,0,0,1,0,1.7L.4,21.953a1.251,1.251,0,0,0,0,1.7"
                             transform="translate(0.001 0.001)" fill-rule="evenodd"/>
@@ -17,7 +16,7 @@
                 <h2 id="edit-profile"
                     class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('profile.edit.informations_form_title')}}</h2>
             </div>
-            <form action="/username/edit-infos" method="post" class="flex flex-col gap-8">
+            <form action="/users/{{$user->slug}}/edit-infos" method="post" class="flex flex-col gap-8">
                 <div class="flex flex-col gap-4">
                     <div class="flex gap-8">
                         <div class="relative">
@@ -31,7 +30,7 @@
                                 </svg>
                             </label>
                             <input type="file" id="file" class="hidden">
-                            <img src="https://placehold.jp/160x160.png" alt="nom-de-leleve"
+                            <img src="https://placehold.jp/160x160.png" alt="{{$user->name}}"
                                  class="rounded-full">
                         </div>
                         <div class="flex-1 flex flex-col justify-between gap-3">
@@ -44,7 +43,7 @@
                                     </svg>
                                     <span>{{__('forms.labels.firstname')}}</span>
                                 </label>
-                                <input type="text" id="firstname" placeholder="Pierre"
+                                <input type="text" id="firstname" value="{{$user->firstname}}"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
                             </fieldset>
                             <fieldset class="flex flex-col gap-1 w-full">
@@ -56,7 +55,7 @@
                                     </svg>
                                     <span>{{__('forms.labels.lastname')}}</span>
                                 </label>
-                                <input type="text" id="lastname" placeholder="Dumont"
+                                <input type="text" id="lastname" value="{{$user->lastname}}"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
                             </fieldset>
                         </div>
@@ -72,7 +71,7 @@
                             </svg>
                             <span>{{__('forms.labels.email')}}</span>
                         </label>
-                        <input type="email" id="email" placeholder="name@example.com"
+                        <input type="email" id="email" value="{{$user->email}}"
                                class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
                     </fieldset>
                     <fieldset class="flex flex-col gap-1">
@@ -89,7 +88,7 @@
                     <fieldset class="flex flex-col gap-2">
                         <label for="reply" class="text-lg text-blue-dark">{{__('forms.labels.description')}}</label>
                         <textarea name="reply" id="reply" cols="30" rows="5"
-                                  class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200"></textarea>
+                                  class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">{{$user->bio}}</textarea>
                     </fieldset>
                 </div>
                 <div class="flex gap-8 items-center justify-between">
@@ -102,7 +101,7 @@
         </div>
         <div>
             <h3 class="font-semibold font-display text-xl">{{__('profile.edit.password_form_title')}}</h3>
-            <form action="username/edit-password" class="flex flex-col gap-8">
+            <form action="/users{{$user->slug}}/edit-password" class="flex flex-col gap-8">
                 @csrf
                 <div class="flex flex-col gap-4">
                     <fieldset class="flex flex-col gap-1">
@@ -172,7 +171,7 @@
         </div>
         <div class="flex justify-between">
             <a href="/logout" class="uppercase text-orange">{{__('forms.links.logout')}}</a>
-            <a href="/username/delete" class="uppercase text-red-800">{{__('forms.links.delete_account')}}</a>
+            <a href="/{{$user->slug}}/delete" class="uppercase text-red-800">{{__('forms.links.delete_account')}}</a>
         </div>
     </section>
 </main>

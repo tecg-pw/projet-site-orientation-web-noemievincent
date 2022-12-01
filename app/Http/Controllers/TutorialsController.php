@@ -20,7 +20,6 @@ class TutorialsController extends Controller
     public function index()
     {
         $tutorials = Tutorial::paginate(9);
-
         $languages = Language::all();
 
         $aside = AsideController::get();

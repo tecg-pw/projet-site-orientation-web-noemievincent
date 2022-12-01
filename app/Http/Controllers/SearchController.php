@@ -2,33 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Project;
 use App\Models\Question;
-use App\Models\QuestionCategory;
-use App\Models\Reply;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
+use App\Models\Tutorial;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class ForumController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Application|Factory|View
+     * @return Response
      */
     public function index()
     {
-        $questions = Question::with('user')->latest('published_at')->paginate(5);
-        $replies = Reply::with('user')->latest('published_at')->paginate(5);
+        $search_term = "terme recherché";
 
-        //filters
-        $categories = QuestionCategory::all();
-        
+        $projects = Project::limit(3)->get();
+        $questions = Question::limit(3)->get();
+        $tutorials = Tutorial::limit(3)->get();
+        $news = Article::limit(3)->get();
+        $users = User::limit(3)->get();
+
+
         $aside = AsideController::get();
 
-        return view('forum.index', compact('questions', 'replies', 'categories', 'aside'));
+        return view('search', compact('search_term', 'projects', 'questions', 'tutorials', 'news', 'users', 'aside'));
     }
 
     /**
@@ -56,15 +58,11 @@ class ForumController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return Application|Factory|View
+     * @return Response
      */
-    public function show(Question $question)
+    public function show($id)
     {
-        $replies = Reply::where('question_id', $question->id)->get();
-
-        $aside = AsideController::get();
-
-        return view('forum.show', compact('question', 'replies', 'aside'));
+        //
     }
 
     /**
