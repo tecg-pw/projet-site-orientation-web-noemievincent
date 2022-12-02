@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\ProjectCategory;
+use App\Models\ProjectCategoryTranslation;
 use File;
 use Illuminate\Database\Seeder;
 use Str;
@@ -19,10 +20,16 @@ class ProjectCategoriesSeeder extends Seeder
         $json = File::get("database/data/project_categories.json");
         $categories = json_decode($json);
 
+        for ($i = 0; $i < (count($categories) / 2); $i++) {
+            ProjectCategory::create();
+        }
+
         foreach ($categories as $key => $value) {
-            ProjectCategory::create([
+            ProjectCategoryTranslation::create([
                 "name" => $value->name,
                 "slug" => Str::slug($value->name),
+                "locale" => $value->locale,
+                "category_id" => $value->category_id,
             ]);
         }
     }

@@ -14,23 +14,7 @@ return new class extends Migration {
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('fullname');
-            $table->string('slug')->unique();
-            $table->string('email')->unique();
-            $table->string('picture')->nullable();
-            $table->string('genre')->nullable();
-            $table->text('bio')->nullable();
-            $table->string('role');
-            $table->string('website_link')->nullable();
-            $table->string('github_link')->nullable();
-            $table->string('instagram_link')->nullable();
-            $table->string('linkedin_link')->nullable();
-            $table->timestamp('start_year');
-            $table->timestamp('end_year')->nullable();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at');
+            $table->timestamps();
             $table->softDeletes();
         });
     }

@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Tutorial;
+use App\Models\TutorialTranslation;
 use File;
 use Illuminate\Database\Seeder;
-use Str;
 
 class TutorialsSeeder extends Seeder
 {
@@ -19,12 +19,17 @@ class TutorialsSeeder extends Seeder
         $json = File::get("database/data/tutorials.json");
         $tutorials = json_decode($json);
 
+        for ($i = 0; $i < (count($tutorials) / 2); $i++) {
+            Tutorial::create();
+        }
+
         foreach ($tutorials as $key => $value) {
-            Tutorial::create([
+            TutorialTranslation::create([
                 "title" => $value->title,
-                "slug" => Str::slug($value->title),
                 "description" => $value->description,
                 "link" => $value->link,
+                "locale" => $value->locale,
+                "tutorial_id" => $value->tutorial_id,
             ]);
         }
     }

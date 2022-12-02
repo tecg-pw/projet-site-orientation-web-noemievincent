@@ -1,20 +1,62 @@
 [
     {
-        "name": "Application"
+        "locale": "fr",
+        "name": "Application",
+        "category_id": 1
     },
     {
-        "name": "Client externe"
+        "locale": "fr",
+        "name": "Client externe",
+        "category_id": 2
     },
     {
-        "name": "Jeu"
+        "locale": "fr",
+        "name": "Jeu",
+        "category_id": 3
     },
     {
-        "name": "PFE"
+        "locale": "fr",
+        "name": "PFE",
+        "category_id": 4
     },
     {
-        "name": "Portfolio"
+        "locale": "fr",
+        "name": "Portfolio",
+        "category_id": 5
     },
     {
-        "name": "Site web"
+        "locale": "fr",
+        "name": "Site web",
+        "category_id": 6
+    },
+    {
+        "locale": "en",
+        "name": "Mobile app",
+        "category_id": 1
+    },
+    {
+        "locale": "en",
+        "name": "External client",
+        "category_id": 2
+    },
+    {
+        "locale": "en",
+        "name": "Mobile game",
+        "category_id": 3
+    },
+    {
+        "locale": "en",
+        "name": "End-of-studies project",
+        "category_id": 4
+    },
+    {
+        "locale": "en",
+        "name": "Portfolio",
+        "category_id": 5
+    },
+    {
+        "locale": "en",
+        "name": "Website",
+        "category_id": 6
     }
 ]

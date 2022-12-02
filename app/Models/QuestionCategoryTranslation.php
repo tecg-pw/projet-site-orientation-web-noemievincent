@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ProjectCategory extends Model
+class QuestionCategoryTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $with = ['translations'];
+    protected $table = 'question_categories_translations';
 
-    public function translations(): HasMany
+    protected $fillable = ['name', 'slug'];
+
+    public function questions(): HasMany
     {
-        return $this->hasMany(ProjectCategoryTranslation::class);
+        return $this->hasMany(Question::class, 'category_id');
     }
 }

@@ -1,5 +1,6 @@
 [
     {
+        "locale": "fr",
         "firstname": "Dominique",
         "lastname": "Vilain",
         "email": "dominique.vilain@hepl.be",
@@ -7,9 +8,23 @@
         "bio": "",
         "role": "teacher",
         "github_link": "https://github.com/dominiquevilain",
-        "linkedin_link": "https://www.linkedin.com/in/dominiquevilain/?originalSubdomain=be"
+        "linkedin_link": "https://www.linkedin.com/in/dominiquevilain/?originalSubdomain=be",
+        "teacher_id": 1
     },
     {
+        "locale": "en",
+        "firstname": "Dominique",
+        "lastname": "Vilain",
+        "email": "dominique.vilain@hepl.be",
+        "picture": "",
+        "bio": "",
+        "role": "teacher",
+        "github_link": "https://github.com/dominiquevilain",
+        "linkedin_link": "https://www.linkedin.com/in/dominiquevilain/?originalSubdomain=be",
+        "teacher_id": 1
+    },
+    {
+        "locale": "fr",
         "firstname": "Myriam",
         "lastname": "Dupont",
         "email": "myriam.dupont@hepl.be",
@@ -17,9 +32,23 @@
         "bio": "",
         "role": "teacher",
         "github_link": "https://github.com/myriamdupont",
-        "linkedin_link": ""
+        "linkedin_link": "",
+        "teacher_id": 2
     },
     {
+        "locale": "en",
+        "firstname": "Myriam",
+        "lastname": "Dupont",
+        "email": "myriam.dupont@hepl.be",
+        "picture": "",
+        "bio": "",
+        "role": "teacher",
+        "github_link": "https://github.com/myriamdupont",
+        "linkedin_link": "",
+        "teacher_id": 2
+    },
+    {
+        "locale": "fr",
         "firstname": "Daniel",
         "lastname": "Schreurs",
         "email": "daniel.schreurs@hepl.be",
@@ -27,9 +56,23 @@
         "bio": "",
         "role": "student_teacher",
         "github_link": "https://github.com/DanielSchreurs",
-        "linkedin_link": "https://www.linkedin.com/in/danielschreursbelgique/"
+        "linkedin_link": "https://www.linkedin.com/in/danielschreursbelgique/",
+        "teacher_id": 3
     },
     {
+        "locale": "en",
+        "firstname": "Daniel",
+        "lastname": "Schreurs",
+        "email": "daniel.schreurs@hepl.be",
+        "picture": "",
+        "bio": "",
+        "role": "student_teacher",
+        "github_link": "https://github.com/DanielSchreurs",
+        "linkedin_link": "https://www.linkedin.com/in/danielschreursbelgique/",
+        "teacher_id": 3
+    },
+    {
+        "locale": "fr",
         "firstname": "Cédric",
         "lastname": "Müller",
         "email": "cedric.muller@hepl.be",
@@ -37,9 +80,23 @@
         "bio": "",
         "role": "student_teacher",
         "github_link": "https://github.com/MullerCWeb",
-        "linkedin_link": "https://www.linkedin.com/in/mullercedric96/"
+        "linkedin_link": "https://www.linkedin.com/in/mullercedric96/",
+        "teacher_id": 4
     },
     {
+        "locale": "en",
+        "firstname": "Cédric",
+        "lastname": "Müller",
+        "email": "cedric.muller@hepl.be",
+        "picture": "",
+        "bio": "",
+        "role": "student_teacher",
+        "github_link": "https://github.com/MullerCWeb",
+        "linkedin_link": "https://www.linkedin.com/in/mullercedric96/",
+        "teacher_id": 4
+    },
+    {
+        "locale": "fr",
         "firstname": "François",
         "lastname": "Parmentier",
         "email": "francois.parmentier@hepl.be",
@@ -47,9 +104,23 @@
         "bio": "",
         "role": "teacher",
         "github_link": "https://github.com/fprms",
-        "linkedin_link": "https://www.linkedin.com/in/fprms/"
+        "linkedin_link": "https://www.linkedin.com/in/fprms/",
+        "teacher_id": 5
     },
     {
+        "locale": "en",
+        "firstname": "François",
+        "lastname": "Parmentier",
+        "email": "francois.parmentier@hepl.be",
+        "picture": "",
+        "bio": "",
+        "role": "teacher",
+        "github_link": "https://github.com/fprms",
+        "linkedin_link": "https://www.linkedin.com/in/fprms/",
+        "teacher_id": 5
+    },
+    {
+        "locale": "fr",
         "firstname": "Toon",
         "lastname": "Van Den Bos",
         "email": "toon@whitecude.be",
@@ -57,6 +128,19 @@
         "bio": "",
         "role": "teacher",
         "github_link": "https://github.com/toonvandenbos",
-        "linkedin_link": "https://www.linkedin.com/in/toon-van-den-bos/"
+        "linkedin_link": "https://www.linkedin.com/in/toon-van-den-bos/",
+        "teacher_id": 6
+    },
+    {
+        "locale": "en",
+        "firstname": "Toon",
+        "lastname": "Van Den Bos",
+        "email": "toon@whitecude.be",
+        "picture": "",
+        "bio": "",
+        "role": "teacher",
+        "github_link": "https://github.com/toonvandenbos",
+        "linkedin_link": "https://www.linkedin.com/in/toon-van-den-bos/",
+        "teacher_id": 6
     }
 ]

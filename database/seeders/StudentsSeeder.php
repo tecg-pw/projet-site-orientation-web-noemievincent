@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Student;
+use App\Models\StudentTranslation;
 use Carbon\Carbon;
 use File;
 use Illuminate\Database\Seeder;
@@ -20,8 +21,12 @@ class StudentsSeeder extends Seeder
         $json = File::get("database/data/students.json");
         $students = json_decode($json);
 
+        for ($i = 0; $i < (count($students) / 2); $i++) {
+            Student::create();
+        }
+
         foreach ($students as $key => $value) {
-            Student::create([
+            StudentTranslation::create([
                 "firstname" => $value->firstname,
                 "lastname" => $value->lastname,
                 "fullname" => $value->firstname . ' ' . $value->lastname,
@@ -37,9 +42,11 @@ class StudentsSeeder extends Seeder
                 "linkedin_link" => $value->linkedin_link,
                 "start_year" => Carbon::create($value->start_year),
                 "end_year" => $value->end_year != null ? Carbon::create($value->end_year) : $value->end_year,
-                "opportunity_id" => $value->opportunity_id,
-                "company_id" => $value->company_id,
-                "internship_id" => $value->internship_id,
+                "locale" => $value->locale,
+                "student_id" => $value->student_id,
+//                "opportunity_id" => $value->opportunity_id,
+//                "company_id" => $value->company_id,
+//                "internship_id" => $value->internship_id,
             ]);
         }
     }

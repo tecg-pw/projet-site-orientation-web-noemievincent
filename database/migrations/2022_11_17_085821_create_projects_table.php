@@ -14,16 +14,7 @@ return new class extends Migration {
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug');
-            $table->string('picture');
-            $table->text('body');
-            $table->string('website_link')->nullable();
-            $table->string('github_link')->nullable();
-            $table->json('gallery')->nullable();
-            $table->timestamp('published_at');
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at');
+            $table->timestamps();
             $table->softDeletes();
         });
     }

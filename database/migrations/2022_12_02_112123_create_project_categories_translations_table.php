@@ -12,8 +12,11 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('tutorials', function (Blueprint $table) {
+        Schema::create('project_categories_translations', function (Blueprint $table) {
             $table->id();
+            $table->string('locale');
+            $table->string('name');
+            $table->string('slug');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +29,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('tutorials');
+        Schema::dropIfExists('project_categories_translations');
     }
 };

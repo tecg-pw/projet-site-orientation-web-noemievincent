@@ -1,11 +1,32 @@
 [
     {
-        "name": "Inscription"
+        "locale": "fr",
+        "name": "Inscription",
+        "category_id": 1
     },
     {
-        "name": "Parler avec les anciens"
+        "locale": "fr",
+        "name": "Parler avec les anciens",
+        "category_id": 2
     },
     {
-        "name": "Question technique"
+        "locale": "fr",
+        "name": "Question technique",
+        "category_id": 3
+    },
+    {
+        "locale": "en",
+        "name": "Inscription",
+        "category_id": 1
+    },
+    {
+        "locale": "en",
+        "name": "Parler avec les anciens",
+        "category_id": 2
+    },
+    {
+        "locale": "en",
+        "name": "Question technique",
+        "category_id": 3
     }
 ]

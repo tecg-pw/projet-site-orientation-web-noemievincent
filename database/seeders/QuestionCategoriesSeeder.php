@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\QuestionCategory;
+use App\Models\QuestionCategoryTranslation;
 use File;
 use Illuminate\Database\Seeder;
 use Str;
@@ -19,10 +20,16 @@ class QuestionCategoriesSeeder extends Seeder
         $json = File::get("database/data/question_categories.json");
         $categories = json_decode($json);
 
+        for ($i = 0; $i < (count($categories) / 2); $i++) {
+            QuestionCategory::create();
+        }
+
         foreach ($categories as $key => $value) {
-            QuestionCategory::create([
+            QuestionCategoryTranslation::create([
                 "name" => $value->name,
                 "slug" => Str::slug($value->name),
+                "locale" => $value->locale,
+                "category_id" => $value->category_id,
             ]);
         }
     }

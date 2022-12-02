@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
+use App\Models\ProjectTranslation;
 use Carbon\Carbon;
 use File;
 use Illuminate\Database\Seeder;
@@ -20,17 +21,21 @@ class ProjectsSeeder extends Seeder
         $json = File::get("database/data/projects.json");
         $projects = json_decode($json);
 
+        for ($i = 0; $i < (count($projects) / 2); $i++) {
+            Project::create();
+        }
+
         foreach ($projects as $key => $value) {
-            Project::create([
+            ProjectTranslation::create([
                 "title" => $value->title,
                 "slug" => Str::slug($value->title),
                 "picture" => $value->picture,
                 "body" => $value->body,
                 "website_link" => $value->website_link,
                 "github_link" => $value->github_link,
-//                "gallery" => json_encode($value->gallery),
-//                "gallery" => $value->gallery,
                 "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
+                "locale" => $value->locale,
+                "project_id" => $value->project_id,
                 "student_id" => $value->student_id,
                 "course_id" => $value->course_id,
             ]);

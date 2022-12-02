@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Teacher;
+use App\Models\TeacherTranslation;
 use File;
 use Illuminate\Database\Seeder;
 use Str;
@@ -19,8 +20,12 @@ class TeachersSeeder extends Seeder
         $json = File::get("database/data/teachers.json");
         $teachers = json_decode($json);
 
+        for ($i = 0; $i < (count($teachers) / 2); $i++) {
+            Teacher::create();
+        }
+
         foreach ($teachers as $key => $value) {
-            Teacher::create([
+            TeacherTranslation::create([
                 "firstname" => $value->firstname,
                 "lastname" => $value->lastname,
                 "fullname" => $value->firstname . ' ' . $value->lastname,
@@ -31,6 +36,8 @@ class TeachersSeeder extends Seeder
                 "role" => $value->role,
                 "github_link" => $value->github_link,
                 "linkedin_link" => $value->linkedin_link,
+                "locale" => $value->locale,
+                "teacher_id" => $value->teacher_id,
             ]);
         }
     }

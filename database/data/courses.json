@@ -1,5 +1,6 @@
 [
     {
+        "locale": "fr",
         "name": "Anglais",
         "description": "",
         "orientation": "common",
@@ -8,9 +9,24 @@
         "hours": 30,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 1
     },
     {
+        "locale": "en",
+        "name": "Anglais",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 1
+    },
+    {
+        "locale": "fr",
         "name": "Graphisme",
         "description": "",
         "orientation": "common",
@@ -19,9 +35,24 @@
         "hours": 120,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 2
     },
     {
+        "locale": "en",
+        "name": "Graphisme",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 120,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 2
+    },
+    {
+        "locale": "fr",
         "name": "Typographie et mise en page",
         "description": "",
         "orientation": "common",
@@ -30,9 +61,24 @@
         "hours": 75,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 3
     },
     {
+        "locale": "en",
+        "name": "Typographie et mise en page",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 75,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 3
+    },
+    {
+        "locale": "fr",
         "name": "Culture artistique",
         "description": "",
         "orientation": "common",
@@ -41,9 +87,24 @@
         "hours": 30,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 4
     },
     {
+        "locale": "en",
+        "name": "Culture artistique",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 4
+    },
+    {
+        "locale": "fr",
         "name": "Rencontre professionnelle",
         "description": "",
         "orientation": "common",
@@ -52,9 +113,24 @@
         "hours": 15,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 5
     },
     {
+        "locale": "en",
+        "name": "Rencontre professionnelle",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 15,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 5
+    },
+    {
+        "locale": "fr",
         "name": "Initiation à la programmation",
         "description": "",
         "orientation": "common",
@@ -63,9 +139,24 @@
         "hours": 30,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 6
     },
     {
+        "locale": "en",
+        "name": "Initiation à la programmation",
+        "description": "",
+        "orientation": "common",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 6
+    },
+    {
+        "locale": "fr",
         "name": "Création de pages Web - HTML",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -74,9 +165,24 @@
         "hours": 60,
         "ects": "5",
         "ects_link": "https://hepl.be/static/GRA-1-007-2022.html",
-        "github_link": "https://github.com/tecg-cpw"
+        "github_link": "https://github.com/tecg-cpw",
+        "course_id": 7
     },
     {
+        "locale": "en",
+        "name": "Création de pages Web - HTML",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 1,
+        "period": "Quadrimestre 1",
+        "hours": 60,
+        "ects": "5",
+        "ects_link": "https://hepl.be/static/GRA-1-007-2022.html",
+        "github_link": "https://github.com/tecg-cpw",
+        "course_id": 7
+    },
+    {
+        "locale": "fr",
         "name": "Création de pages Web - CSS",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -85,9 +191,24 @@
         "hours": 60,
         "ects": "5",
         "ects_link": "https://hepl.be/static/GRA-1-010-2022.html",
-        "github_link": "https://github.com/tecg-cpw"
+        "github_link": "https://github.com/tecg-cpw",
+        "course_id": 8
     },
     {
+        "locale": "en",
+        "name": "Création de pages Web - CSS",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 1,
+        "period": "Quadrimestre 2",
+        "hours": 60,
+        "ects": "5",
+        "ects_link": "https://hepl.be/static/GRA-1-010-2022.html",
+        "github_link": "https://github.com/tecg-cpw",
+        "course_id": 8
+    },
+    {
+        "locale": "fr",
         "name": "Design Web",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -96,9 +217,24 @@
         "hours": 30,
         "ects": "3",
         "ects_link": "https://hepl.be/static/GRA-1-011-2022.html",
-        "github_link": "https://github.com/tecg-dwt"
+        "github_link": "https://github.com/tecg-dwt",
+        "course_id": 9
     },
     {
+        "locale": "en",
+        "name": "Design Web",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 1,
+        "period": "Quadrimestre 2",
+        "hours": 30,
+        "ects": "3",
+        "ects_link": "https://hepl.be/static/GRA-1-011-2022.html",
+        "github_link": "https://github.com/tecg-dwt",
+        "course_id": 9
+    },
+    {
+        "locale": "fr",
         "name": "Créations infographiques 2D",
         "description": "",
         "orientation": "dg",
@@ -107,9 +243,24 @@
         "hours": 60,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 10
     },
     {
+        "locale": "en",
+        "name": "Créations infographiques 2D",
+        "description": "",
+        "orientation": "dg",
+        "year": 1,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 10
+    },
+    {
+        "locale": "fr",
         "name": "Introduction à l'image numérique",
         "description": "",
         "orientation": "dg",
@@ -118,9 +269,24 @@
         "hours": 30,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 11
     },
     {
+        "locale": "en",
+        "name": "Introduction à l'image numérique",
+        "description": "",
+        "orientation": "dg",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 11
+    },
+    {
+        "locale": "fr",
         "name": "Image et argumentation",
         "description": "",
         "orientation": "dg",
@@ -129,9 +295,24 @@
         "hours": 30,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 12
     },
     {
+        "locale": "en",
+        "name": "Image et argumentation",
+        "description": "",
+        "orientation": "dg",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 12
+    },
+    {
+        "locale": "fr",
         "name": "Créations infographiques 3D",
         "description": "",
         "orientation": "3d",
@@ -140,9 +321,24 @@
         "hours": 60,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 13
     },
     {
+        "locale": "en",
+        "name": "Créations infographiques 3D",
+        "description": "",
+        "orientation": "3d",
+        "year": 1,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 13
+    },
+    {
+        "locale": "fr",
         "name": "Photo",
         "description": "",
         "orientation": "3d",
@@ -151,9 +347,24 @@
         "hours": 30,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 14
     },
     {
+        "locale": "en",
+        "name": "Photo",
+        "description": "",
+        "orientation": "3d",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 14
+    },
+    {
+        "locale": "fr",
         "name": "Introduction à l'animation 3D",
         "description": "",
         "orientation": "3d",
@@ -162,9 +373,24 @@
         "hours": 30,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 15
     },
     {
+        "locale": "en",
+        "name": "Introduction à l'animation 3D",
+        "description": "",
+        "orientation": "3d",
+        "year": 1,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 15
+    },
+    {
+        "locale": "fr",
         "name": "Vidéo",
         "description": "",
         "orientation": "3d",
@@ -173,9 +399,24 @@
         "hours": 45,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 16
     },
     {
+        "locale": "en",
+        "name": "Vidéo",
+        "description": "",
+        "orientation": "3d",
+        "year": 1,
+        "period": "",
+        "hours": 45,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 16
+    },
+    {
+        "locale": "fr",
         "name": "Anglais",
         "description": "",
         "orientation": "common",
@@ -184,9 +425,24 @@
         "hours": 60,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 17
     },
     {
+        "locale": "en",
+        "name": "Anglais",
+        "description": "",
+        "orientation": "common",
+        "year": 2,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 17
+    },
+    {
+        "locale": "fr",
         "name": "Communication",
         "description": "",
         "orientation": "common",
@@ -195,9 +451,24 @@
         "hours": 60,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 18
     },
     {
+        "locale": "en",
+        "name": "Communication",
+        "description": "",
+        "orientation": "common",
+        "year": 2,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 18
+    },
+    {
+        "locale": "fr",
         "name": "Entreprise",
         "description": "",
         "orientation": "common",
@@ -206,9 +477,24 @@
         "hours": 60,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 19
     },
     {
+        "locale": "en",
+        "name": "Entreprise",
+        "description": "",
+        "orientation": "common",
+        "year": 2,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 19
+    },
+    {
+        "locale": "fr",
         "name": "Graphisme",
         "description": "",
         "orientation": "common",
@@ -217,9 +503,24 @@
         "hours": 90,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 20
     },
     {
+        "locale": "en",
+        "name": "Graphisme",
+        "description": "",
+        "orientation": "common",
+        "year": 2,
+        "period": "",
+        "hours": 90,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 20
+    },
+    {
+        "locale": "fr",
         "name": "Culture artistique",
         "description": "",
         "orientation": "common",
@@ -228,9 +529,24 @@
         "hours": 30,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 21
     },
     {
+        "locale": "en",
+        "name": "Culture artistique",
+        "description": "",
+        "orientation": "common",
+        "year": 2,
+        "period": "",
+        "hours": 30,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 21
+    },
+    {
+        "locale": "fr",
         "name": "Design d‘applications mobiles",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -239,9 +555,24 @@
         "hours": 30,
         "ects": 2,
         "ects_link": "https://hepl.be/static/GRA-1-061-2022.html",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 22
     },
     {
+        "locale": "en",
+        "name": "Design d‘applications mobiles",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "Quadrimestre 1",
+        "hours": 30,
+        "ects": 2,
+        "ects_link": "https://hepl.be/static/GRA-1-061-2022.html",
+        "github_link": "",
+        "course_id": 22
+    },
+    {
+        "locale": "fr",
         "name": "Développement côté client",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -250,9 +581,24 @@
         "hours": 75,
         "ects": 6,
         "ects_link": "https://hepl.be/static/GRA-1-045-2022.html",
-        "github_link": "https://github.com/tecg-dcc"
+        "github_link": "https://github.com/tecg-dcc",
+        "course_id": 23
     },
     {
+        "locale": "en",
+        "name": "Développement côté client",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "Quadrimestre 1",
+        "hours": 75,
+        "ects": 6,
+        "ects_link": "https://hepl.be/static/GRA-1-045-2022.html",
+        "github_link": "https://github.com/tecg-dcc",
+        "course_id": 23
+    },
+    {
+        "locale": "fr",
         "name": "Système de gestion de contenu",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -261,9 +607,24 @@
         "hours": 45,
         "ects": 4,
         "ects_link": "",
-        "github_link": "https://github.com/tecg-sgc"
+        "github_link": "https://github.com/tecg-sgc",
+        "course_id": 24
     },
     {
+        "locale": "en",
+        "name": "Système de gestion de contenu",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "Quadrimestre 1",
+        "hours": 45,
+        "ects": 4,
+        "ects_link": "",
+        "github_link": "https://github.com/tecg-sgc",
+        "course_id": 24
+    },
+    {
+        "locale": "fr",
         "name": "Développement côté serveur",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -272,9 +633,24 @@
         "hours": 60,
         "ects": 6,
         "ects_link": "https://hepl.be/static/GRA-1-049-2022.html",
-        "github_link": "https://github.com/tecg-dcs"
+        "github_link": "https://github.com/tecg-dcs",
+        "course_id": 25
     },
     {
+        "locale": "en",
+        "name": "Développement côté serveur",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "Quadrimestre 2",
+        "hours": 60,
+        "ects": 6,
+        "ects_link": "https://hepl.be/static/GRA-1-049-2022.html",
+        "github_link": "https://github.com/tecg-dcs",
+        "course_id": 25
+    },
+    {
+        "locale": "fr",
         "name": "Multimédia interactif",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -283,9 +659,24 @@
         "hours": 60,
         "ects": 6,
         "ects_link": "https://hepl.be/static/GRA-1-048-2022.html",
-        "github_link": "https://github.com/tecg-mmi"
+        "github_link": "https://github.com/tecg-mmi",
+        "course_id": 26
     },
     {
+        "locale": "en",
+        "name": "Multimédia interactif",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "Quadrimestre 2",
+        "hours": 60,
+        "ects": 6,
+        "ects_link": "https://hepl.be/static/GRA-1-048-2022.html",
+        "github_link": "https://github.com/tecg-mmi",
+        "course_id": 26
+    },
+    {
+        "locale": "fr",
         "name": "Design Web",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -294,9 +685,24 @@
         "hours": 165,
         "ects": 14,
         "ects_link": "https://hepl.be/static/GRA-1-047-2022.html",
-        "github_link": "https://github.com/tecg-dw"
+        "github_link": "https://github.com/tecg-dw",
+        "course_id": 27
     },
     {
+        "locale": "en",
+        "name": "Design Web",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 2,
+        "period": "annuel",
+        "hours": 165,
+        "ects": 14,
+        "ects_link": "https://hepl.be/static/GRA-1-047-2022.html",
+        "github_link": "https://github.com/tecg-dw",
+        "course_id": 27
+    },
+    {
+        "locale": "fr",
         "name": "Anglais",
         "description": "",
         "orientation": "common",
@@ -305,9 +711,24 @@
         "hours": 60,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 28
     },
     {
+        "locale": "en",
+        "name": "Anglais",
+        "description": "",
+        "orientation": "common",
+        "year": 3,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 28
+    },
+    {
+        "locale": "fr",
         "name": "Introduction aux droits d‘auteurs",
         "description": "",
         "orientation": "common",
@@ -316,9 +737,24 @@
         "hours": 15,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 29
     },
     {
+        "locale": "en",
+        "name": "Introduction aux droits d‘auteurs",
+        "description": "",
+        "orientation": "common",
+        "year": 3,
+        "period": "",
+        "hours": 15,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 29
+    },
+    {
+        "locale": "fr",
         "name": "Entreprise",
         "description": "",
         "orientation": "common",
@@ -327,9 +763,24 @@
         "hours": 60,
         "ects": null,
         "ects_link": "",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 30
     },
     {
+        "locale": "en",
+        "name": "Entreprise",
+        "description": "",
+        "orientation": "common",
+        "year": 3,
+        "period": "",
+        "hours": 60,
+        "ects": null,
+        "ects_link": "",
+        "github_link": "",
+        "course_id": 30
+    },
+    {
+        "locale": "fr",
         "name": "Développement d‘applications mobiles",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -338,9 +789,24 @@
         "hours": 45,
         "ects": 3,
         "ects_link": "https://hepl.be/static/GRA-1-059-2022.html",
-        "github_link": "https://github.com/tecg-dam"
+        "github_link": "https://github.com/tecg-dam",
+        "course_id": 31
     },
     {
+        "locale": "en",
+        "name": "Développement d‘applications mobiles",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 3,
+        "period": "Quadrimestre 1",
+        "hours": 45,
+        "ects": 3,
+        "ects_link": "https://hepl.be/static/GRA-1-059-2022.html",
+        "github_link": "https://github.com/tecg-dam",
+        "course_id": 31
+    },
+    {
+        "locale": "fr",
         "name": "Projets Web",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -349,9 +815,24 @@
         "hours": 240,
         "ects": 19,
         "ects_link": "https://hepl.be/static/GRA-1-058-2022.html",
-        "github_link": "https://github.com/tecg-pw"
+        "github_link": "https://github.com/tecg-pw",
+        "course_id": 32
     },
     {
+        "locale": "en",
+        "name": "Projets Web",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 3,
+        "period": "Quadrimestre 1",
+        "hours": 240,
+        "ects": 19,
+        "ects_link": "https://hepl.be/static/GRA-1-058-2022.html",
+        "github_link": "https://github.com/tecg-pw",
+        "course_id": 32
+    },
+    {
+        "locale": "fr",
         "name": "Projet de fin d‘étude",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -360,9 +841,24 @@
         "hours": 210,
         "ects": 19,
         "ects_link": "https://hepl.be/static/GRA-1-025-2022.html",
-        "github_link": "https://github.com/tecg-pfe"
+        "github_link": "https://github.com/tecg-pfe",
+        "course_id": 33
     },
     {
+        "locale": "en",
+        "name": "Projet de fin d‘étude",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 3,
+        "period": "Quadrimestre 2",
+        "hours": 210,
+        "ects": 19,
+        "ects_link": "https://hepl.be/static/GRA-1-025-2022.html",
+        "github_link": "https://github.com/tecg-pfe",
+        "course_id": 33
+    },
+    {
+        "locale": "fr",
         "name": "Stage de 12 semaines en entreprise",
         "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
         "orientation": "web",
@@ -371,6 +867,20 @@
         "hours": 140,
         "ects": 12,
         "ects_link": "https://hepl.be/static/GRA-1-026-2022.html",
-        "github_link": ""
+        "github_link": "",
+        "course_id": 34
+    },
+    {
+        "locale": "en",
+        "name": "Stage de 12 semaines en entreprise",
+        "description": "Incididunt cupidatat laborum duis do consectetur. Enim non eu velit cillum Lorem commodo. Labore tempor consectetur proident laborum laboris elit. Do aliqua commodo sint ea do dolor nisi sint ipsum. Aliqua mollit quis ad fugiat reprehenderit tempor do deserunt qui aliqua.",
+        "orientation": "web",
+        "year": 3,
+        "period": "Quadrimestre 2",
+        "hours": 140,
+        "ects": 12,
+        "ects_link": "https://hepl.be/static/GRA-1-026-2022.html",
+        "github_link": "",
+        "course_id": 34
     }
 ]

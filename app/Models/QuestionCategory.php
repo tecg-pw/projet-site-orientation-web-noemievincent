@@ -11,10 +11,10 @@ class QuestionCategory extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'slug'];
+    protected $with = ['translations'];
 
-    public function questions(): HasMany
+    public function translations(): HasMany
     {
-        return $this->hasMany(Question::class, 'category_id');
+        return $this->hasMany(QuestionCategoryTranslation::class);
     }
 }
