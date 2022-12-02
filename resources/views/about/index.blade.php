@@ -38,7 +38,7 @@
                                     <ul class="flex flex-col gap-2">
                                         @foreach($courses as $course)
                                             @if($course->year == 1 && $course->orientation == 'web')
-                                                <li><a href="classes/{{$course->slug}}"
+                                                <li><a href="/{{app()->getLocale()}}/classes/{{$course->slug}}"
                                                        class="flex justify-between hover:text-orange transition-all ease-in-out duration-200">
                                                         <span
                                                             class="underline underline-offset-2">{{$course->name}}</span><span>{{$course->hours}}h</span>
@@ -96,7 +96,7 @@
                                         <ul class="flex flex-col gap-2">
                                             @foreach($courses as $course)
                                                 @if($course->year == 2 && $course->orientation == 'web')
-                                                    <li><a href="classes/{{$course->slug}}"
+                                                    <li><a href="/{{app()->getLocale()}}/classes/{{$course->slug}}"
                                                            class="flex justify-between hover:text-orange transition-all ease-in-out duration-200">
                                                         <span
                                                             class="underline underline-offset-2">{{$course->name}}</span><span>{{$course->hours}}h</span>
@@ -127,7 +127,7 @@
                                         <ul class="flex flex-col gap-2">
                                             @foreach($courses as $course)
                                                 @if($course->year == 3 && $course->orientation == 'web')
-                                                    <li><a href="classes/{{$course->slug}}"
+                                                    <li><a href="/{{app()->getLocale()}}/classes/{{$course->slug}}"
                                                            class="flex justify-between hover:text-orange transition-all ease-in-out duration-200">
                                                         <span
                                                             class="underline underline-offset-2">{{$course->name}}</span><span>{{$course->hours}}h</span>

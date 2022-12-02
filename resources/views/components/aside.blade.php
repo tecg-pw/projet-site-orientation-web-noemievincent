@@ -9,7 +9,7 @@
                 <x-news.aside-article :new="$new"/>
             @endforeach
         </div>
-        <a href="/news"
+        <a href="/{{app()->getLocale()}}/news"
            class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
             <span>{{__('aside.all_news_link')}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
@@ -28,7 +28,7 @@
                 <x-jobs.aside-article :offer="$offer"/>
             @endforeach
         </div>
-        <a href="/jobs"
+        <a href="/{{app()->getLocale()}}/jobs"
            class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
             <span>{{__('aside.all_offers_link')}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"

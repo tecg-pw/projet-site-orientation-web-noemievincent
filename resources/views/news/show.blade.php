@@ -3,7 +3,7 @@
     <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$article->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
-                <a href="/news"
+                <a href="/{{app()->getLocale()}}/news"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="-scale-x-100 fill-orange h-full">
@@ -45,7 +45,7 @@
                                 @endif
                             @endforeach
                         </div>
-                        <a href="/news"
+                        <a href="/{{app()->getLocale()}}/news"
                            class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
                             <span>{{__('news.single.all_news_link')}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"

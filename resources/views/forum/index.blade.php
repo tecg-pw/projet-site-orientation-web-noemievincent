@@ -13,7 +13,7 @@
                 @endguest
                 @auth()
                     <div class="flex justify-between items-center">
-                        <a href="/forum?ask-a-question"
+                        <a href="/{{app()->getLocale()}}/forum?ask-a-question"
                            class="flex self-start gap-2 uppercase bg-orange text-white py-3 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  class="fill-white">

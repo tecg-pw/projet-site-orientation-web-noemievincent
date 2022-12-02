@@ -2,7 +2,7 @@
 <article aria-labelledby="{{$partner->slug}}" itemscope itemtype="https://schema.org/Corporation"
          class="bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 w-full">
     <div class="relative">
-        <a href="/jobs/partners/{{$partner->slug}}" class="full-link">{{$partner->name}}</a>
+        <a href="/{{app()->getLocale()}}/jobs/partners/{{$partner->slug}}" class="full-link">{{$partner->name}}</a>
         <div>
             <div class="p-3 flex flex-col gap-3">
                 <div class="flex gap-3">

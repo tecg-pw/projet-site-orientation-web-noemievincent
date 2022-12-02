@@ -15,7 +15,7 @@
                 </div>
                 {{--                @auth()--}}
                 {{--                    @if('username' = 'auth name')--}}
-                <a href="/users/{{$user->slug}}/edit"
+                <a href="/{{app()->getLocale()}}/users/{{$user->slug}}/edit"
                    class="mt-2 flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <span>{{__('profile.edit_link')}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"

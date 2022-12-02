@@ -5,7 +5,7 @@
             <h2 id="404" class="font-bold text-404">404</h2>
             <p class="">{{__('404.tagline')}}</p>
         </div>
-        <a href="/"
+        <a href="/{{app()->getLocale()}}"
            class="w-full flex items-center justify-center gap-2 text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" class="fill-orange h-full">
                 <g>

@@ -26,7 +26,7 @@
 <header class="uppercase text-blue mb-16 h-full relative lg:mb-0">
     <input id="toggle" class="toggle absolute hidden" type="checkbox">
     <div class="bg-blue-light top-bar w-full px-4 py-4 flex justify-between fixed z-50 lg:hidden">
-        <a href="/">
+        <a href="/{{app()->getLocale()}}">
             <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
                  height="24" viewBox="0 0 130 35"
                  xml:space="preserve" class="fill-blue-dark hover:fill-orange transition ease-in-out duration-200">
@@ -87,7 +87,7 @@
         <nav class="lg:bg-white/60 lg:px-10 lg:py-6">
             <h2 class="sr-only">{{__('header.main_nav_title')}}</h2>
             <div class="flex flex-col gap-8 lg:flex-row lg:justify-between lg:items-center">
-                <a href="/" class="hidden lg:block">
+                <a href="/{{app()->getLocale()}}" class="hidden lg:block">
                     <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
                          height="24" viewBox="0 0 130 35"
                          xml:space="preserve"
@@ -137,12 +137,12 @@
                 </a>
                 <ul class="flex flex-col gap-4 lg:flex-row lg:gap-24">
                     @foreach(__('header.main_nav_items') as $slug => $name)
-                        <li><a href="/{{$slug}}"
-                               class="font-semibold {{Request::is($slug) ? 'lg:font-bold' : 'lg:font-normal'}} hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
+                        <li><a href="/{{app()->getLocale()}}/{{$slug}}"
+                               class="font-semibold {{Request::is(app()->getLocale() . '/' . $slug) ? 'lg:font-bold' : 'lg:font-normal'}} hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
                         </li>
                     @endforeach
                 </ul>
-                <a href="/search" class="flex gap-2 items-center">
+                <a href="/{{app()->getLocale()}}/search" class="flex gap-2 items-center">
                     <span class="font-semibold lg:sr-only">{{__('header.search')}}</span>
                     <svg version="1.1" id="search" xmlns="http://www.w3.org/2000/svg"
                          height="18" width="18" viewBox="0 0 30 30" xml:space="preserve"
@@ -161,25 +161,24 @@
                     <h2 class="sr-only">{{__('header.sub_nav_title')}}</h2>
                     <ul class="flex flex-col gap-3 lg:flex-row lg:gap-8">
                         @foreach(__('header.sub_nav_items') as $slug => $name)
-                            <li><a href="/{{$slug}}"
-                                   class="{{Request::is($slug) ? 'lg:font-bold' : ''}} hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
+                            <li><a href="/{{app()->getLocale()}}/{{$slug}}"
+                                   class="{{Request::is(app()->getLocale() . '/' . $slug) ? 'lg:font-bold' : ''}} hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
                             </li>
                         @endforeach
                     </ul>
                 </nav>
                 <ul class="flex gap-2">
-                    <li><a href="#"
-                           class="font-bold hover:text-orange transition-all ease-in-out duration-200">FR</a>
-                    </li>
-                    <li><a href="#" class="hover:text-orange transition-all ease-in-out duration-200">EN</a></li>
-                    <li><a href="#" class="hover:text-orange transition-all ease-in-out duration-200">DE</a></li>
-                    <li><a href="#" class="hover:text-orange transition-all ease-in-out duration-200">NL</a></li>
+                    @foreach(config('app.available_locales') as $locale)
+                        <li><a href="/{{$locale}} "
+                               class="{{$locale == app()->getLocale() ? 'font-bold' : ''}} hover:text-orange transition-all ease-in-out duration-200">{{ucwords($locale)}}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
             <div>
                 @guest
                     <div>
-                        <a href="/login" class="flex items-center gap-3">
+                        <a href="/{{app()->getLocale()}}/login" class="flex items-center gap-3">
                             <img src="https://placehold.jp/30x30.png" alt="{{__('header.login_link')}}"
                                  class="rounded-full h-full">
                             <span
@@ -189,7 +188,7 @@
                 @endguest
                 @auth
                     <div class="flex flex-col gap-2 lg:flex-row lg:items-center">
-                        <a href="/username" class="flex items-center gap-3">
+                        <a href="/{{app()->getLocale()}}/username" class="flex items-center gap-3">
                             <img src="https://placehold.jp/30x30.png" alt="Prénom Nom"
                                  class="rounded-full">
                             <span

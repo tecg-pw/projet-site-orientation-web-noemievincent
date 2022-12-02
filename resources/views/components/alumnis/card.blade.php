@@ -8,7 +8,7 @@
                  class="rounded-full">
             <div>
                 <h3 class="font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
-                    <a href="/alumnis/{{$alumni->slug}}">{{$alumni->fullname}}</a></h3>
+                    <a href="/{{app()->getLocale()}}/alumnis/{{$alumni->slug}}">{{$alumni->fullname}}</a></h3>
                 <span class="flex gap-1">
                     <time
                         datetime="{{$alumni->start_year->format('Y-m')}}">{{$alumni->start_year->format('Y')}}</time> -

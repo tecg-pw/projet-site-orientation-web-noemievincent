@@ -8,7 +8,7 @@
                  class="rounded-full">
             <div>
                 <h3 class="cursor-pointer font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
-                    <a href="/teachers/{{$teacher->slug}}">{{$teacher->fullname}}</a></h3>
+                    <a href="/{{app()->getLocale()}}/teachers/{{$teacher->slug}}">{{$teacher->fullname}}</a></h3>
                 <p>{{$teacher->email}}</p>
             </div>
         </div>

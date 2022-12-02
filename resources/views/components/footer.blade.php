@@ -6,7 +6,7 @@
                 <h3 class="text-blue font-bold text-lg mb-4">{{__('footer.nav_title')}}</h3>
                 <ul class="flex flex-col gap-2">
                     @foreach(__('header.main_nav_items') as $slug => $name)
-                        <li><a href="/{{$slug}}"
+                        <li><a href="/{{app()->getLocale()}}/{{$slug}}"
                                class="hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
                         </li>
                     @endforeach
@@ -180,7 +180,7 @@
         </div>
         <div class="flex flex-col gap-1 lg:flex-row lg:justify-between text-sm mt-8">
             <p>{{__('footer.copyright')}}</p>
-            <a href="/terms"
+            <a href="/{{app()->getLocale()}}/terms"
                class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('footer.legal_terms')}}</a>
         </div>
     </section>

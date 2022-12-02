@@ -8,7 +8,7 @@
                 {{__('home.hero_description')}}
             </p>
             <div class="flex items-center gap-10 uppercase">
-                <a href="/about"
+                <a href="/{{app()->getLocale()}}/about"
                    class="rounded-lg px-12 py-3 text-white transition-all duration-200 ease-in-out bg-orange hover:bg-orange-dark">{{__('home.learn_more_button')}}</a>
                 <a href="https://hepl.be/fr"
                    class="transition-all duration-200 ease-in-out text-orange hover:text-orange-dark hover:underline hover:decoration-solid hover:decoration-2 hover:underline-offset-2">{{__('home.visit_website_link')}}</a>
@@ -26,7 +26,7 @@
                         <x-projects.article :project="$project" :student="$project->student"/>
                     @endforeach
                 </div>
-                <a href="/projects"
+                <a href="/{{app()->getLocale()}}/projects"
                    class="flex items-center gap-4 self-end text-lg uppercase transition-all duration-200 ease-in-out text-orange hover:gap-6">
                     <span>{{__('home.all_projects_link')}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
@@ -45,7 +45,7 @@
                         <x-forum.article :question="$question"/>
                     @endforeach
                 </div>
-                <a href="/forum"
+                <a href="/{{app()->getLocale()}}/forum"
                    class="flex items-center gap-4 self-end text-lg uppercase transition-all duration-200 ease-in-out text-orange hover:gap-6">
                     <span>{{__('home.all_questions_link')}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"

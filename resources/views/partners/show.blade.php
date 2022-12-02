@@ -4,7 +4,7 @@
         <section aria-labelledby="{{$company->slug}}" class="col-span-3 flex flex-col gap-8" itemscope
                  itemtype="https://schema.org/Corporation">
             <div class="flex flex-col gap-4">
-                <a href="/jobs/partners"
+                <a href="/{{app()->getLocale()}}/jobs/partners"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="-scale-x-100 fill-orange h-full">

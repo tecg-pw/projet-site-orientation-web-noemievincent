@@ -3,7 +3,7 @@
     <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$offer->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
-                <a href="/jobs/offers"
+                <a href="/{{app()->getLocale()}}/jobs/offers"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="-scale-x-100 fill-orange h-full">
@@ -22,7 +22,7 @@
                         <img src="https://placehold.jp/80x80.png" alt="nom" height="80" width="80"
                              class="rounded-full items-start">
                         <div>
-                            <a href="/jobs/partners/{{$company->slug}}"
+                            <a href="/{{app()->getLocale()}}/jobs/partners/{{$company->slug}}"
                                class="text-xl underline underline-offset-2 hover:text-orange transition ease-in-out duration-200">
                                 {{$company->name}}</a>
                             <p class="">{{$offer->location}}</p>

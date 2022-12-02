@@ -3,7 +3,7 @@
     <div class="lg:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$project->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
-                <a href="/projects"
+                <a href="/{{app()->getLocale()}}/projects"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="-scale-x-100 fill-orange h-full">
@@ -22,7 +22,7 @@
                         <img src="https://placehold.jp/230x230.png" alt="{{$student->fullname}}"
                              class="rounded-full">
                         <div>
-                            <a href="/alumnis/{{$student->slug}}"
+                            <a href="/{{app()->getLocale()}}/alumnis/{{$student->slug}}"
                                class="text-xl font-semibold hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$student->fullname}}</a>
                             <p>@if($student->role == 'student')
                                     {{__('roles.student')}}
@@ -191,7 +191,7 @@
                             <time
                                 datetime="{{$project->published_at->format('Y-m')}}">{{$project->published_at->format('F Y')}}</time>
                             <div class="bg-blue/50 h-max-content w-px"></div>
-                            <a href="/classes/{{$project->course->slug}}">{{$project->course->name}}</a>
+                            <a href="/{{app()->getLocale()}}/classes/{{$project->course->slug}}">{{$project->course->name}}</a>
                         </div>
                         <x-share/>
                     </div>
@@ -217,7 +217,7 @@
                             @endif
                         @endforeach
                     </div>
-                    <a href="/gwenaelle-batta"
+                    <a href="/{{app()->getLocale()}}/projects"
                        class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
                         <span>{{__('projects.single.all_projects_from_link')}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"

@@ -27,7 +27,7 @@
                 {{__('forms.buttons.reset_password')}}
             </button>
         </form>
-        <a href="/login"
+        <a href="/{{app()->getLocale()}}/login"
            class="flex items-center self-end gap-2 text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" class="fill-orange h-full">
                 <g>

@@ -7,7 +7,7 @@
         @endforeach
     </div>
     <div class="group bg-blue-card rounded-2xl relative">
-        <a href="/projects/{{$student->slug}}/{{$project->slug}}"
+        <a href="/{{app()->getLocale()}}/projects/{{$student->slug}}/{{$project->slug}}"
            class="full-link">{{__('projects.see_link', ['title' => $project->title])}}</a>
         <div>
             <div

@@ -9,11 +9,11 @@
             </div>
             <div class="flex flex-col gap-3">
                 <div class="flex gap-12 col-span-2">
-                    <a href="/jobs/offers"
+                    <a href="/{{app()->getLocale()}}/jobs/offers"
                        class="uppercase text-lg text-orange underline">{{__('jobs.tabs.offers')}}</a>
-                    <a href="/jobs/partners"
+                    <a href="/{{app()->getLocale()}}/jobs/partners"
                        class="uppercase text-lg text-orange underline">{{__('jobs.tabs.partners')}}</a>
-                    <a href="/jobs/create"
+                    <a href="/{{app()->getLocale()}}/jobs/create"
                        class="uppercase text-lg text-orange font-bold">{{__('jobs.tabs.create')}}</a>
                 </div>
                 <p class="text-lg">{{__('jobs.create.form.tagline')}}</p>

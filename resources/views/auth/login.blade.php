@@ -52,7 +52,7 @@
                            class="accent-orange">
                     <label for="remember">{{__('forms.labels.remember_me')}}</label>
                 </fieldset>
-                <a href="/reset-password"
+                <a href="/{{app()->getLocale()}}/reset-password"
                    class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('forms.links.reset_password')}}</a>
             </div>
             <div class="flex justify-between gap-16 items-center mt-6">

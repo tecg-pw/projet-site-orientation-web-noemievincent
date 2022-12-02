@@ -2,7 +2,8 @@
 <article aria-labelledby="{{$offer->slug}}"
          class="bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 w-full">
     <div class="relative">
-        <a href="/jobs/offers/{{$offer->company->slug}}/{{$offer->slug}}" class="full-link">{{$offer->title}}</a>
+        <a href="/{{app()->getLocale()}}/jobs/offers/{{$offer->company->slug}}/{{$offer->slug}}"
+           class="full-link">{{$offer->title}}</a>
         <div>
             <div class="p-3 flex flex-col gap-3">
                 <h3 id="{{$offer->slug}}" class="text-xl uppercase">{{$offer->title}}</h3>

@@ -3,7 +3,7 @@
     <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$alumni->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
-                <a href="/alumnis"
+                <a href="/{{app()->getLocale()}}/alumnis"
                    class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="-scale-x-100 fill-orange h-full">
@@ -186,7 +186,7 @@
                             @endif
                         @endforeach
                     </div>
-                    <a href="/projects"
+                    <a href="/{{app()->getLocale()}}/projects"
                        class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
                         <span>{{__('alumnis.single.all_projects_from_link')}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"

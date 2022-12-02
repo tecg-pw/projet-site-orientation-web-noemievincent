@@ -1,7 +1,7 @@
 @props(['question'])
 <article aria-labelledby="{{$question->slug}}"
          class="relative bg-white rounded-2xl border border-blue/20 p-4 hover:bg-blue-card transition ease-in-out duration-200">
-    <a href="/forum/{{$question->slug}}" class="full-link">{{$question->title}}</a>
+    <a href="/{{app()->getLocale()}}/forum/{{$question->slug}}" class="full-link">{{$question->title}}</a>
     <div class="flex flex-col gap-4">
         <div class="flex justify-between">
             <div class="flex items-center gap-2">
@@ -21,7 +21,7 @@
         </p>
         <div class="flex justify-between">
             <div class="flex gap-6 items-center text-sm font-light">
-                <a href="/users/{{$question->user->slug}}" class="flex items-center gap-3">
+                <a href="/{{app()->getLocale()}}/users/{{$question->user->slug}}" class="flex items-center gap-3">
                     <img src="https://placehold.jp/25x25.png" alt="{{$question->user->fullname}}"
                          class="rounded-full">
                     <span>{{$question->user->fullname}}</span>
