@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use App\Models\ProjectCategory;
 use App\Models\Student;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -20,14 +19,15 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Project::with('student')->latest('published_at')->paginate();
+        $projects = Project::paginate(9);
 
-        $dates = Project::without('categories')->select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
-        $categories = ProjectCategory::select('name')->whereNotNull('name')->groupBy('name')->get();
+//        $dates = Project::without('categories')->select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
+//        $categories = ProjectCategory::select('name')->whereNotNull('name')->groupBy('name')->get();
 
         $aside = AsideController::get();
 
-        return view('projects.index', compact('projects', 'dates', 'categories', 'aside'));
+//        return view('projects.index', compact('projects', 'dates', 'categories', 'aside'));
+        return view('projects.index', compact('projects', 'aside'));
     }
 
     /**

@@ -1,29 +1,68 @@
 [
     {
+        "locale": "fr",
         "name": "White Cube",
         "logo": "",
         "description": "Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.",
         "streetAddress": "Rue des Anges, 17",
         "postalCode": "4000",
         "addressLocality": " Liège, BELGIQUE",
-        "website_link": "https://whitecube.be/"
+        "website_link": "https://whitecube.be/",
+        "company_id": 1
     },
     {
+        "locale": "en",
+        "name": "White Cube",
+        "logo": "",
+        "description": "Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.",
+        "streetAddress": "Rue des Anges, 17",
+        "postalCode": "4000",
+        "addressLocality": " Liège, BELGIQUE",
+        "website_link": "https://whitecube.be/",
+        "company_id": 1
+    },
+    {
+        "locale": "fr",
         "name": "Léonard Web Solutions",
         "logo": "",
         "description": "Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.",
         "streetAddress": "Rue de Bellaire, 9",
         "postalCode": "4802",
         "addressLocality": " Heusy, BELGIQUE",
-        "website_link": "https://www.lws.be/"
+        "website_link": "https://www.lws.be/",
+        "company_id": 2
     },
     {
+        "locale": "en",
+        "name": "Léonard Web Solutions",
+        "logo": "",
+        "description": "Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.",
+        "streetAddress": "Rue de Bellaire, 9",
+        "postalCode": "4802",
+        "addressLocality": " Heusy, BELGIQUE",
+        "website_link": "https://www.lws.be/",
+        "company_id": 2
+    },
+    {
+        "locale": "fr",
         "name": "Epic Agency",
         "logo": "",
         "description": "Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.",
         "streetAddress": "Rue Wiertz, 38",
         "postalCode": "4000",
         "addressLocality": " Liège, BELGIQUE",
-        "website_link": "https://www.epic.net/"
+        "website_link": "https://www.epic.net/",
+        "company_id": 3
+    },
+    {
+        "locale": "en",
+        "name": "Epic Agency",
+        "logo": "",
+        "description": "Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.",
+        "streetAddress": "Rue Wiertz, 38",
+        "postalCode": "4000",
+        "addressLocality": " Liège, BELGIQUE",
+        "website_link": "https://www.epic.net/",
+        "company_id": 3
     }
 ]

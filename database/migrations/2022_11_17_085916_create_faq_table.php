@@ -14,12 +14,7 @@ return new class extends Migration {
     {
         Schema::create('faq', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug')->unique();
-            $table->text('body');
-            $table->string('category')->default('general');
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at');
+            $table->timestamps();
             $table->softDeletes();
         });
     }

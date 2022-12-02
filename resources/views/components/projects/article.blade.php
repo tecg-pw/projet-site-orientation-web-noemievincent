@@ -1,11 +1,11 @@
 @props(['project', 'student'])
 <article aria-labelledby="{{$project->slug}}" class="relative">
-    <div class="flex gap-2 absolute -top-2 left-5 z-10">
-        @foreach($project->categories as $category)
-            <a href="#"
-               class="rounded bg-blue text-white text-sm px-3 py-1 hover:bg-orange-dark transition-all ease-in-out duration-200">{{$category->name}}</a>
-        @endforeach
-    </div>
+    {{--    <div class="flex gap-2 absolute -top-2 left-5 z-10">--}}
+    {{--        @foreach($project->categories as $category)--}}
+    {{--            <a href="#"--}}
+    {{--               class="rounded bg-blue text-white text-sm px-3 py-1 hover:bg-orange-dark transition-all ease-in-out duration-200">{{$category->name}}</a>--}}
+    {{--        @endforeach--}}
+    {{--    </div>--}}
     <div class="group bg-blue-card rounded-2xl relative">
         <a href="/{{app()->getLocale()}}/projects/{{$student->slug}}/{{$project->slug}}"
            class="full-link">{{__('projects.see_link', ['title' => $project->title])}}</a>

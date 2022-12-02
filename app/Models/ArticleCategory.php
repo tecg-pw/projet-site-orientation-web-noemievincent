@@ -11,12 +11,10 @@ class ArticleCategory extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = [
-        'name', 'slug'
-    ];
-    
-    public function articles(): HasMany
+    protected $with = ['translations'];
+
+    public function translations(): HasMany
     {
-        return $this->hasMany(Article::class, 'category_id');
+        return $this->hasMany(ArticleCategoryTranslation::class);
     }
 }

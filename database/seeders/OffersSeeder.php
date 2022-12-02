@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Offer;
+use App\Models\OfferTranslation;
 use Carbon\Carbon;
 use File;
 use Illuminate\Database\Seeder;
@@ -20,8 +21,12 @@ class OffersSeeder extends Seeder
         $json = File::get("database/data/offers.json");
         $offers = json_decode($json);
 
+        for ($i = 0; $i < (count($offers) / 2); $i++) {
+            Offer::create();
+        }
+
         foreach ($offers as $key => $value) {
-            Offer::create([
+            OfferTranslation::create([
                 "title" => $value->title,
                 "slug" => Str::slug($value->title),
                 "body" => $value->body,
@@ -33,6 +38,8 @@ class OffersSeeder extends Seeder
                 "contact_name" => $value->contact_name,
                 "contact_email" => $value->contact_email,
                 "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
+                "locale" => $value->locale,
+                "offer_id" => $value->offer_id,
                 "company_id" => $value->company_id,
             ]);
         }

@@ -12,7 +12,7 @@ class Project extends Model
     use HasFactory, SoftDeletes;
 
     protected $with = ['translations'];
-    
+
     public function translations(): HasMany
     {
         return $this->hasMany(ProjectTranslation::class);

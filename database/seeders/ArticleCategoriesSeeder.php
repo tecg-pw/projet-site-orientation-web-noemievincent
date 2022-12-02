@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\ArticleCategory;
+use App\Models\ArticleCategoryTranslation;
 use File;
 use Illuminate\Database\Seeder;
 use Str;
@@ -19,10 +20,16 @@ class ArticleCategoriesSeeder extends Seeder
         $json = File::get("database/data/article_categories.json");
         $categories = json_decode($json);
 
+        for ($i = 0; $i < (count($categories) / 2); $i++) {
+            ArticleCategory::create();
+        }
+
         foreach ($categories as $key => $value) {
-            ArticleCategory::create([
+            ArticleCategoryTranslation::create([
                 "name" => $value->name,
                 "slug" => Str::slug($value->name),
+                "locale" => $value->locale,
+                "category_id" => $value->category_id,
             ]);
         }
     }

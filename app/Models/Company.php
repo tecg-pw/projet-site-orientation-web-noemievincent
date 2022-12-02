@@ -11,22 +11,10 @@ class Company extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'slug', 'logo', 'streetAddress', 'postalCode', 'addressLocality', 'website_link', 'description'];
+    protected $with = ['translations'];
 
-//    protected $with = ['offers', 'members'];
-
-    public function members(): HasMany
+    public function translations(): HasMany
     {
-        return $this->hasMany(CompanyMember::class);
-    }
-
-    public function offers(): HasMany
-    {
-        return $this->hasMany(Offer::class);
-    }
-
-    public function students(): HasMany
-    {
-        return $this->hasMany(Student::class);
+        return $this->hasMany(CompanyTranslation::class);
     }
 }

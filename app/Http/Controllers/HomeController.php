@@ -19,6 +19,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return 'Page d‘accueil';
+
         $projects = Project::latest('published_at')->limit(6)->get();
         $questions = Question::latest('published_at')->limit(6)->get();
 

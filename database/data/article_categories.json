@@ -1,11 +1,32 @@
 [
     {
-        "name": "Actualité"
+        "locale": "fr",
+        "name": "Actualité",
+        "category_id": 1
     },
     {
-        "name": "Conseil"
+        "locale": "fr",
+        "name": "Conseil",
+        "category_id": 2
     },
     {
-        "name": "Évènement"
+        "locale": "fr",
+        "name": "Évènement",
+        "category_id": 3
+    },
+    {
+        "locale": "en",
+        "name": "Actualité",
+        "category_id": 1
+    },
+    {
+        "locale": "en",
+        "name": "Conseil",
+        "category_id": 2
+    },
+    {
+        "locale": "en",
+        "name": "Évènement",
+        "category_id": 3
     }
 ]

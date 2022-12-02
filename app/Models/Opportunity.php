@@ -11,12 +11,10 @@ class Opportunity extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = [
-        'name', 'slug', 'description'
-    ];
+    protected $with = ['translations'];
 
-    public function students(): HasMany
+    public function translations(): HasMany
     {
-        return $this->hasMany(Student::class);
+        return $this->hasMany(OpportunityTranslation::class);
     }
 }
