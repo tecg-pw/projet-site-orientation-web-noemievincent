@@ -21,12 +21,12 @@
     },
     {
         "locale": "en",
-        "name": "Parler avec les anciens",
+        "name": "Talking with former students",
         "category_id": 2
     },
     {
         "locale": "en",
-        "name": "Question technique",
+        "name": "Technical question",
         "category_id": 3
     }
 ]

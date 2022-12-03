@@ -16,17 +16,17 @@
     },
     {
         "locale": "en",
-        "name": "Actualité",
+        "name": "News",
         "category_id": 1
     },
     {
         "locale": "en",
-        "name": "Conseil",
+        "name": "Advice",
         "category_id": 2
     },
     {
         "locale": "en",
-        "name": "Évènement",
+        "name": "Event",
         "category_id": 3
     }
 ]

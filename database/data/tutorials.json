@@ -22,7 +22,7 @@
     },
     {
         "locale": "en",
-        "title": "Introduction JS : dessiner et animer",
+        "title": "Introduction JS: drawing and animating",
         "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
         "link": "https://fr.khanacademy.org/computing/computer-programming/programming",
         "tutorial_id": 1
@@ -78,7 +78,7 @@
     },
     {
         "locale": "en",
-        "title": "Les listes HTML",
+        "title": "HTML Lists base",
         "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
         "link": "https://github.com/tecg-cpw/html-lists-base",
         "tutorial_id": 1
