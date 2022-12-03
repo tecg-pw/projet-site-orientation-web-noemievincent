@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProjectTranslation extends Model
@@ -14,7 +13,7 @@ class ProjectTranslation extends Model
 
     protected $dates = ['published_at'];
 
-    protected $with = ['categories', 'course', 'student'];
+//    protected $with = ['categories'];
 
     protected $fillable = [
         'locale', 'title', 'slug', 'picture', 'body', 'date', 'website_link', 'github_link', 'gallery', 'project_id', 'student_id', 'course_id'
@@ -35,8 +34,8 @@ class ProjectTranslation extends Model
         return $this->belongsTo(Course::class);
     }
 
-    public function categories(): BelongsToMany
-    {
-        return $this->belongsToMany(ProjectCategoryTranslation::class, 'category_project', 'project_id', 'category_id');
-    }
+//    public function categories(): BelongsToMany
+//    {
+//        return $this->belongsToMany(ProjectCategory::class, 'category_project', 'project_id', 'category_id');
+//    }
 }

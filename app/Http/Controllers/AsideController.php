@@ -9,8 +9,16 @@ class AsideController extends Controller
 {
     static function get()
     {
-        $news = Article::latest('published_at')->limit(3)->get();
-        $offers = Offer::latest('published_at')->limit(3)->get();
+        $allNews = Article::limit(3)->get();
+        foreach ($allNews as $new) {
+            $news[] = $new->translations->where('locale', app()->getLocale())->first();
+        }
+
+
+        $allOffers = Offer::limit(3)->get();
+        foreach ($allOffers as $offer) {
+            $offers[] = $offer->translations->where('locale', app()->getLocale())->first();
+        }
 
         return compact('news', 'offers');
     }

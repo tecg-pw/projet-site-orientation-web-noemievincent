@@ -16,9 +16,14 @@ class ProjectCategoryTranslation extends Model
     protected $fillable = [
         'locale', 'name', 'slug', 'category_id'
     ];
-    
+
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(ProjectCategory::class);
+    }
+
+    public function projects(): BelongsToMany
+    {
+        return $this->belongsToMany(Project::class);
     }
 }

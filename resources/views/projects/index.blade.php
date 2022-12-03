@@ -18,8 +18,8 @@
                 <form class="flex col-span-2 items-center justify-between">
                     @csrf
                     <div class="flex gap-4">
-                        {{--                        <x-filters.project-categories :categories="$categories"/>--}}
-                        {{--                        <x-filters.date :dates="$dates" :property="'published_at'" :format="'F Y'"/>--}}
+                        <x-filters.project-categories :categories="$categories"/>
+                        <x-filters.date :dates="$dates" :property="'published_at'" :format="'F Y'"/>
                     </div>
                     <button type="submit"
                             class="font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
@@ -30,12 +30,10 @@
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
                     @foreach($projects as $projectRef)
-                        @foreach($projectRef->translations->where('locale', app()->getLocale()) as $project)
-                            @php
-                                dd($project)
-                            @endphp
-                            {{--                            <x-projects.article :project="$project" :student="$project->student"/>--}}
-                        @endforeach
+                        <x-projects.article
+                            :project="$projectRef->translations->where('locale', app()->getLocale())->first()"
+                            :student="$projectRef->translations->where('locale', app()->getLocale())->first()->student->translations->where('locale', app()->getLocale())->first()"
+                            :all-categories="$projectRef->categories"/>
                     @endforeach
                 </div>
                 <div>

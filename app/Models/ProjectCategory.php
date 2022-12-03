@@ -15,6 +15,6 @@ class ProjectCategory extends Model
 
     public function translations(): HasMany
     {
-        return $this->hasMany(ProjectCategoryTranslation::class);
+        return $this->hasMany(ProjectCategoryTranslation::class, 'category_id');
     }
 }

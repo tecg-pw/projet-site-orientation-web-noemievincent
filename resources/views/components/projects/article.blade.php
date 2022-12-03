@@ -1,11 +1,15 @@
-@props(['project', 'student'])
+@props(['project', 'student', 'allCategories'])
+@php
+    foreach ($allCategories as $category) {
+        $categories[] = $category->translations->where('locale', app()->getLocale())->first();
+    }
+@endphp
 <article aria-labelledby="{{$project->slug}}" class="relative">
-    {{--    <div class="flex gap-2 absolute -top-2 left-5 z-10">--}}
-    {{--        @foreach($project->categories as $category)--}}
-    {{--            <a href="#"--}}
-    {{--               class="rounded bg-blue text-white text-sm px-3 py-1 hover:bg-orange-dark transition-all ease-in-out duration-200">{{$category->name}}</a>--}}
-    {{--        @endforeach--}}
-    {{--    </div>--}}
+    <div class="flex gap-2 absolute -top-2 left-5 z-10">
+        @foreach($categories as $category)
+            <p class="rounded bg-blue text-white text-sm px-3 py-1 hover:bg-orange-dark transition-all ease-in-out duration-200">{{$category->name}}</p>
+        @endforeach
+    </div>
     <div class="group bg-blue-card rounded-2xl relative">
         <a href="/{{app()->getLocale()}}/projects/{{$student->slug}}/{{$project->slug}}"
            class="full-link">{{__('projects.see_link', ['title' => $project->title])}}</a>
@@ -21,8 +25,8 @@
                 <div>
                     <p class="text-xl mb-1">{{$student->fullname}}</p>
                     <div class="flex justify-between">
-                        <time datetime="{{$project->published_at->format('Y-m')}}"
-                              class="font-light">{{$project->published_at->format('F Y')}}</time>
+                        <time datetime="{{$project->published_at->translatedFormat('Y-m')}}"
+                              class="font-light">{{ucfirst($project->published_at->translatedFormat('F Y'))}}</time>
                         <a href="/projects/{{$project->slug}}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24"
                                  height="24" width="12" aria-labelledby="projectTitle">

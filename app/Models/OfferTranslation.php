@@ -16,7 +16,7 @@ class OfferTranslation extends Model
 
     protected $dates = ['start_date', 'published_at'];
 
-    protected $with = ['skills'];
+    protected $with = ['company', 'skills'];
 
     public function offer(): BelongsTo
     {
@@ -30,6 +30,6 @@ class OfferTranslation extends Model
 
     public function skills(): BelongsToMany
     {
-        return $this->belongsToMany(Skill::class);
+        return $this->belongsToMany(Skill::class, 'offer_skill', 'skill_id', 'offer_id');
     }
 }

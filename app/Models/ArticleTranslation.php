@@ -17,7 +17,7 @@ class ArticleTranslation extends Model
         'locale', 'title', 'slug', 'picture', 'body', 'excerpt', 'article_id', 'category_id', 'author_id'
     ];
 
-    protected $with = ['author'];
+    protected $with = ['author', 'category'];
 
     public function article(): BelongsTo
     {
@@ -26,7 +26,7 @@ class ArticleTranslation extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(ArticleCategory::class);
+        return $this->belongsTo(ArticleCategory::class, 'category_id');
     }
 
     public function author(): BelongsTo

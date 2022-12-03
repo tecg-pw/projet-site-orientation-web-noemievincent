@@ -6,7 +6,8 @@
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('aside.news_title')}}</h3>
         <div class="flex flex-col gap-3">
             @foreach($aside['news'] as $new)
-                <x-news.aside-article :new="$new"/>
+                <x-news.aside-article :new="$new"
+                                      :category="$new->category->translations->where('locale', app()->getLocale())->first()"/>
             @endforeach
         </div>
         <a href="/{{app()->getLocale()}}/news"
@@ -25,7 +26,8 @@
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('aside.offers_title')}}</h3>
         <div class="flex flex-col gap-3">
             @foreach($aside['offers'] as $offer)
-                <x-jobs.aside-article :offer="$offer"/>
+                <x-jobs.aside-article :offer="$offer"
+                                      :company="$offer->company->translations->where('locale', app()->getLocale())->first()"/>
             @endforeach
         </div>
         <a href="/{{app()->getLocale()}}/jobs"

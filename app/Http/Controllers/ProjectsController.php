@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\ProjectCategoryTranslation;
+use App\Models\ProjectTranslation;
 use App\Models\Student;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -21,13 +23,14 @@ class ProjectsController extends Controller
     {
         $projects = Project::paginate(9);
 
-//        $dates = Project::without('categories')->select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
-//        $categories = ProjectCategory::select('name')->whereNotNull('name')->groupBy('name')->get();
+        $dates = ProjectTranslation::select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
+        $categories = ProjectCategoryTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
 
         $aside = AsideController::get();
 
-//        return view('projects.index', compact('projects', 'dates', 'categories', 'aside'));
-        return view('projects.index', compact('projects', 'aside'));
+//        return $aside;
+
+        return view('projects.index', compact('projects', 'dates', 'categories', 'aside'));
     }
 
     /**

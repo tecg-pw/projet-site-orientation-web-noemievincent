@@ -4,7 +4,8 @@
         <label for="date" class="sr-only">{{__('filters.titles.date')}} :</label>
         <select name="date" id="date" class="bg-transparent">
             @foreach($dates as $date)
-                <option value="{{$date->$property->format($format)}}">{{$date->$property->format($format)}}</option>
+                <option
+                    value="{{$date->$property->translatedFormat($format)}}">{{ucfirst($date->$property->translatedFormat($format))}}</option>
             @endforeach
         </select>
     </fieldset>

@@ -10,7 +10,7 @@ return [
         'partners' => 'Partner companies',
         'create' => 'Submit an internship',
     ],
-    'published_at' => '<p class="text-sm">published on the <time datetime=":datetime">:date</time></p>',
+    'published_at' => '<p class="text-sm">published on <time datetime=":datetime">:date</time></p>',
     'single' => [
         'back_to_offers_link' => 'Back to offers',
         'skills_title' => 'Skills needed',

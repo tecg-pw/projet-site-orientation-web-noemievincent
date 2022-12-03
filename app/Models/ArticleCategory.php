@@ -15,6 +15,6 @@ class ArticleCategory extends Model
 
     public function translations(): HasMany
     {
-        return $this->hasMany(ArticleCategoryTranslation::class);
+        return $this->hasMany(ArticleCategoryTranslation::class, 'category_id');
     }
 }
