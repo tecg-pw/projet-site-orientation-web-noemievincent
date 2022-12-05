@@ -21,8 +21,13 @@ class ProjectsSeeder extends Seeder
         $json = File::get("database/data/projects.json");
         $projects = json_decode($json);
 
-        for ($i = 0; $i < (count($projects) / 2); $i++) {
-            Project::create();
+        foreach ($projects as $key => $value) {
+            if ($key % 2 == 0) {
+                Project::create([
+                    "student_id" => $value->student_id,
+                    "course_id" => $value->course_id,
+                ]);
+            }
         }
 
         foreach ($projects as $key => $value) {
@@ -36,8 +41,6 @@ class ProjectsSeeder extends Seeder
                 "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
                 "locale" => $value->locale,
                 "project_id" => $value->project_id,
-                "student_id" => $value->student_id,
-                "course_id" => $value->course_id,
             ]);
         }
     }

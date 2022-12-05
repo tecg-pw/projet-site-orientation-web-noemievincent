@@ -16,7 +16,7 @@ class StudentTranslation extends Model
 
     protected $dates = ['start_year', 'end_year'];
 
-//    protected $with = ['projects', 'opportunity', 'company', 'internship'];
+    protected $with = ['opportunity', 'company', 'internship'];
 
     protected $fillable = [
         'locale', 'firstname', 'lastname', 'fullname', 'slug', 'email', 'picture', 'bio', 'role', 'genre', 'github_link', 'linkedin_link', 'instagram_link', 'website_link', 'start_year', 'end_year', 'student_id', 'opportunity_id', 'company_id', 'internship_id'
@@ -29,7 +29,7 @@ class StudentTranslation extends Model
 
     public function projects(): HasMany
     {
-        return $this->hasMany(Project::class);
+        return $this->hasMany(Project::class, 'student_id');
     }
 
     public function opportunity(): BelongsTo

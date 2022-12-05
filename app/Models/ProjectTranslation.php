@@ -14,9 +14,7 @@ class ProjectTranslation extends Model
     protected $table = 'projecttranslations';
 
     protected $dates = ['published_at'];
-
-//    protected $with = ['student'];
-
+    
     protected $fillable = [
         'locale', 'title', 'slug', 'picture', 'body', 'date', 'website_link', 'github_link', 'gallery', 'project_id', 'student_id', 'course_id'
     ];
@@ -24,15 +22,5 @@ class ProjectTranslation extends Model
     public function project(): BelongsTo
     {
         return $this->belongsTo(Project::class);
-    }
-
-    public function student(): BelongsTo
-    {
-        return $this->belongsTo(Student::class);
-    }
-
-    public function course(): BelongsTo
-    {
-        return $this->belongsTo(Course::class);
     }
 }

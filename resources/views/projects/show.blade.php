@@ -17,6 +17,9 @@
                     class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$project->title}}</h2>
             </div>
             <div class="flex justify-between gap-28">
+                @php
+                    dd()
+                @endphp
                 <div class="flex flex-col gap-6">
                     <div class="flex flex-col gap-3">
                         <img src="https://placehold.jp/230x230.png" alt="{{$student->fullname}}"

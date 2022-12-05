@@ -12,6 +12,11 @@ return new class extends Migration {
      */
     public function up()
     {
+        Schema::table('projects', static function (Blueprint $table) {
+            $table->foreignId('student_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('course_id')->constrained()->onUpdate('cascade');
+        });
+
         Schema::table('studenttranslations', static function (Blueprint $table) {
             $table->foreignId('student_id')->constrained()->onUpdate('cascade');
             $table->foreignId('opportunity_id')->nullable()->constrained()->onUpdate('cascade');
@@ -21,8 +26,6 @@ return new class extends Migration {
 
         Schema::table('projecttranslations', static function (Blueprint $table) {
             $table->foreignId('project_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('student_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
 
         Schema::table('projectcategoriestranslations', static function (Blueprint $table) {

@@ -32,7 +32,7 @@
                     @foreach($projects as $projectRef)
                         <x-projects.article
                             :project="$projectRef->translations->where('locale', app()->getLocale())->first()"
-                            :student="$projectRef->translations->where('locale', app()->getLocale())->first()->student->translations->where('locale', app()->getLocale())->first()"
+                            :student="$projectRef->student->translations->where('locale', app()->getLocale())->first()"
                             :all-categories="$projectRef->categories"/>
                     @endforeach
                 </div>

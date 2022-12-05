@@ -37,7 +37,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
 
-//        Route::pattern('locale', '^(?!nova).*$');
+        $locales = implode('|', config('app.available_locales'));
+        Route::pattern('locale', $locales);
     }
 
     /**

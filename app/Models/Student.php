@@ -11,7 +11,7 @@ class Student extends Model
 {
     use HasFactory, SoftDeletes;
 
-//    protected $with = ['translations'];
+    protected $with = ['translations'];
 
     public function translations(): HasMany
     {
