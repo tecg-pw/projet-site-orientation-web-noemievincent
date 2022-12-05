@@ -25,7 +25,6 @@ class ProjectsSeeder extends Seeder
             if ($key % 2 == 0) {
                 Project::create([
                     "student_id" => $value->student_id,
-                    "course_id" => $value->course_id,
                 ]);
             }
         }
@@ -41,6 +40,7 @@ class ProjectsSeeder extends Seeder
                 "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
                 "locale" => $value->locale,
                 "project_id" => $value->project_id,
+                "course_id" => $value->course_id,
             ]);
         }
     }

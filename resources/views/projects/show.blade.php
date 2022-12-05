@@ -17,9 +17,6 @@
                     class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$project->title}}</h2>
             </div>
             <div class="flex justify-between gap-28">
-                @php
-                    dd()
-                @endphp
                 <div class="flex flex-col gap-6">
                     <div class="flex flex-col gap-3">
                         <img src="https://placehold.jp/230x230.png" alt="{{$student->fullname}}"
@@ -186,7 +183,7 @@
                     <div class="flex justify-between items-center">
                         <div class="flex gap-3">
                             <ul class="flex gap-2">
-                                @foreach($project->categories as $category)
+                                @foreach($categories as $category)
                                     <li class="after:content-['-'] flex gap-2 last:after:content-none">{{$category->name}}</li>
                                 @endforeach
                             </ul>
@@ -215,7 +212,10 @@
                         @foreach($student->projects as $index => $otherProject)
                             @if($index < 3)
                                 @if($otherProject->id != $project->id)
-                                    <x-projects.article :project="$otherProject" :student="$student"/>
+                                    <x-projects.article
+                                        :project="$otherProject->translations->where('locale', app()->getLocale())->first()"
+                                        :student="$student"
+                                        :all-categories="$otherProject->categories"/>
                                 @endif
                             @endif
                         @endforeach

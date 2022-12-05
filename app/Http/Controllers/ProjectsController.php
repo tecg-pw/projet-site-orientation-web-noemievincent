@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Models\ProjectCategoryTranslation;
 use App\Models\ProjectTranslation;
+use App\Models\Student;
 use App\Models\StudentTranslation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -60,12 +61,20 @@ class ProjectsController extends Controller
      */
     public function show(string $locale, string $student, ProjectTranslation $project)
     {
-        $student = StudentTranslation::where('slug', $student)->where('locale', $locale)->get();
+        $studentId = StudentTranslation::without('projects', 'opportunity', 'company', 'internship')->select('student_id')->where('slug', $student)->where('locale', $locale)->first();
+        $student = Student::find(1)->first()->translations->where('locale', $locale)->first();
+
+        $allCategories = Project::find($project->project_id)->categories;
+        $categories = [];
+        foreach ($allCategories as $category) {
+            $categories[] = $category->translations->where('locale', app()->getLocale())->first();
+        }
+
 //        return $student;
 
         $aside = AsideController::get();
 
-        return view('projects.show', compact('project', 'student', 'aside'));
+        return view('projects.show', compact('project', 'student', 'categories', 'aside'));
     }
 
     /**

@@ -22,8 +22,8 @@ class ProjectCategoryTranslation extends Model
         return $this->belongsToMany(ProjectCategory::class);
     }
 
-    public function projects(): BelongsToMany
-    {
-        return $this->belongsToMany(Project::class);
-    }
+//    public function projects(): BelongsToMany
+//    {
+//        return $this->belongsToMany(Project::class);
+//    }
 }

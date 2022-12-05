@@ -13,7 +13,7 @@ class Project extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $with = ['translations', 'categories', 'student'];
+    protected $with = ['translations', 'categories'];
 
     public function translations(): HasMany
     {
@@ -28,10 +28,5 @@ class Project extends Model
     public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class, 'student_id');
-    }
-
-    public function course(): BelongsTo
-    {
-        return $this->belongsTo(Course::class);
     }
 }
