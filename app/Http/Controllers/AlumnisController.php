@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\StudentTranslation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -20,7 +21,7 @@ class AlumnisController extends Controller
     {
         $alumnis = Student::paginate(9);
 
-        $dates = Student::select('end_year')->whereNotNull('end_year')->groupBy('end_year')->get();
+        $dates = StudentTranslation::select('end_year')->whereNotNull('end_year')->groupBy('end_year')->get();
 
         $aside = AsideController::get();
 

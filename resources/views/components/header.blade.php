@@ -168,8 +168,14 @@
                     </ul>
                 </nav>
                 <ul class="flex gap-2">
+                    @php
+                        $segments = Request::segments();
+                        array_shift($segments);
+
+                        $url = implode('/', $segments);
+                    @endphp
                     @foreach(config('app.available_locales') as $locale)
-                        <li><a href="/{{$locale}} "
+                        <li><a href="/{{empty($url) ? $locale : $locale . '/' . $url}}"
                                class="{{$locale == app()->getLocale() ? 'font-bold' : ''}} hover:text-orange transition-all ease-in-out duration-200">{{ucwords($locale)}}</a>
                         </li>
                     @endforeach

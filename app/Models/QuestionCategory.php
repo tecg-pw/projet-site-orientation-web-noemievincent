@@ -15,6 +15,6 @@ class QuestionCategory extends Model
 
     public function translations(): HasMany
     {
-        return $this->hasMany(QuestionCategoryTranslation::class);
+        return $this->hasMany(QuestionCategoryTranslation::class, 'category_id');
     }
 }

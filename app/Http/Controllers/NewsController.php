@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\ArticleCategory;
+use App\Models\ArticleCategoryTranslation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -19,9 +20,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = Article::with('category')->paginate(9);
+        $news = Article::paginate(9);
 
-        $categories = ArticleCategory::all();
+        $categories = ArticleCategoryTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
 
         $aside = AsideController::get();
 

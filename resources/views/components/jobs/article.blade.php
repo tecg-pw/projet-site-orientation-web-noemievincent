@@ -1,8 +1,8 @@
-@props(['offer'])
+@props(['offer', 'company'])
 <article aria-labelledby="{{$offer->slug}}"
          class="bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 w-full">
     <div class="relative">
-        <a href="/{{app()->getLocale()}}/jobs/offers/{{$offer->company->slug}}/{{$offer->slug}}"
+        <a href="/{{app()->getLocale()}}/jobs/offers/{{$company->slug}}/{{$offer->slug}}"
            class="full-link">{{$offer->title}}</a>
         <div>
             <div class="p-3 flex flex-col gap-3">
@@ -10,7 +10,7 @@
                 <div class="flex gap-2">
                     <img src="https://placehold.jp/50x50.png" alt="" height="50" width="50" class="rounded-full">
                     <div>
-                        <p>{{$offer->company->name}}</p>
+                        <p>{{$company->name}}</p>
                         <p class="font-light">{{$offer->location}}</p>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                     —
                     <p>{{$offer->duration}}</p>
                 </div>
-                {!! __('jobs.published_at', ['datetime' => $offer->published_at->format('d-m-Y'), 'date' => $offer->published_at->format('d F Y')]) !!}
+                {!! __('jobs.published_at', ['datetime' => $offer->published_at->translatedFormat('d-m-Y'), 'date' => $offer->published_at->translatedFormat('d F Y')]) !!}
             </div>
         </div>
     </div>

@@ -13,7 +13,9 @@
                 <div class="flex flex-col gap-20">
                     <div class="grid grid-cols-2 gap-8">
                         @foreach($documentations as $documentation)
-                            <x-resources.documentation :documentation="$documentation"/>
+                            <x-resources.documentation
+                                :documentation="$documentation->translations->where('locale', app()->getLocale())->first()"
+                                :languages="$documentation->languages"/>
                         @endforeach
                     </div>
                 </div>
@@ -24,7 +26,8 @@
                 <div class="flex flex-col gap-20">
                     <div class="grid grid-cols-2 gap-8">
                         @foreach($tools as $tool)
-                            <x-resources.tool :tool="$tool"/>
+                            <x-resources.tool
+                                :tool="$tool->translations->where('locale', app()->getLocale())->first()"/>
                         @endforeach
                     </div>
                 </div>

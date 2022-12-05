@@ -15,6 +15,6 @@ class Tool extends Model
 
     public function translations(): HasMany
     {
-        return $this->hasMany(TeacherTranslation::class);
+        return $this->hasMany(ToolTranslation::class);
     }
 }

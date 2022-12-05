@@ -19,14 +19,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return 'Page d‘accueil';
-
-        $projects = Project::latest('published_at')->limit(6)->get();
-        $questions = Question::latest('published_at')->limit(6)->get();
-
+        $projects = Project::limit(6)->get();
+        $questions = Question::limit(6)->get();
+        
         $aside = AsideController::get();
-
-//        return $aside['news'];
 
         return view('index', compact('projects', 'questions', 'aside'));
     }

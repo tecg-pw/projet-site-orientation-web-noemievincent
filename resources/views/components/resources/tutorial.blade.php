@@ -1,4 +1,4 @@
-@props(['tutorial', 'is_favorite'])
+@props(['tutorial', 'languages', 'is_favorite'])
 <div
     class="bg-white rounded-2xl border border-blue/20 p-5">
     <div class="flex flex-col gap-3">
@@ -24,7 +24,7 @@
             </p>
         </div>
         <ul class="flex gap-2">
-            @foreach($tutorial->languages as $language)
+            @foreach($languages as $language)
                 <x-resources.languages :language="$language"/>
             @endforeach
         </ul>

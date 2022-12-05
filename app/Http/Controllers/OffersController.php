@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\CompanyTranslation;
 use App\Models\Offer;
+use App\Models\OfferTranslation;
 use App\Models\Skill;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -20,10 +22,10 @@ class OffersController extends Controller
      */
     public function index()
     {
-        $offers = Offer::with('company')->paginate(9);
+        $offers = Offer::paginate(9);
 
-        $companies = Company::all();
-        $locations = Offer::without('skills')->select('location')->groupBy('location')->get();
+        $companies = CompanyTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
+        $locations = OfferTranslation::without('skills')->select('location')->groupBy('location')->get();
 
         $aside = AsideController::get();
 
@@ -38,7 +40,7 @@ class OffersController extends Controller
     public function create()
     {
         $skills = Skill::all();
-        
+
         $aside = AsideController::get();
 
         return view('jobs.create', compact('skills', 'aside'));

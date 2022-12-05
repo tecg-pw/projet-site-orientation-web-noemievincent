@@ -38,7 +38,8 @@
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
                     @foreach($partners as $partner)
-                        <x-partners.article :partner="$partner"/>
+                        <x-partners.article
+                            :partner="$partner->translations->where('locale', app()->getLocale())->first()"/>
                     @endforeach
                 </div>
                 <div>

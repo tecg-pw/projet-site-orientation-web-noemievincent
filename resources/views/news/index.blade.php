@@ -30,7 +30,8 @@
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
                     @foreach($news as $new)
-                        <x-news.article :new="$new"/>
+                        <x-news.article :new="$new->translations->where('locale', app()->getLocale())->first()"
+                                        :category="$new->translations->where('locale', app()->getLocale())->first()->category->translations->where('locale', app()->getLocale())->first()"/>
                     @endforeach
                 </div>
                 <div>

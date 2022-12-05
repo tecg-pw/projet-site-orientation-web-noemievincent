@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
-use App\Models\Offer;
+use App\Models\CompanyTranslation;
+use App\Models\OfferTranslation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -22,8 +23,8 @@ class PartnersController extends Controller
         $partners = Company::paginate(9);
 
         //filters
-        $companies = Company::get();
-        $locations = Offer::without('company')->select('location')->groupBy('location')->get();
+        $companies = CompanyTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
+        $locations = OfferTranslation::without('skills')->select('location')->groupBy('location')->get();
 
         $aside = AsideController::get();
 

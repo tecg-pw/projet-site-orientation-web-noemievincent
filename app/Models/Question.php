@@ -18,7 +18,7 @@ class Question extends Model
         'title', 'slug', 'body', 'is_solved', 'published_at', 'category_id', 'user_id'
     ];
 
-    protected $with = ['category'];
+    protected $with = ['user', 'category'];
     protected $withCount = ['replies'];
 
     public function replies(): HasMany
@@ -33,6 +33,6 @@ class Question extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(QuestionCategory::class);
+        return $this->belongsTo(QuestionCategory::class, 'category_id');
     }
 }

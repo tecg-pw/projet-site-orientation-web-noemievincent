@@ -29,7 +29,10 @@
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-2 gap-8">
                     @foreach($tutorials as $tutorial)
-                        <x-resources.tutorial :tutorial="$tutorial" is_favorite="false"/>
+                        <x-resources.tutorial
+                            :tutorial="$tutorial->translations->where('locale', app()->getLocale())->first()"
+                            :languages="$tutorial->languages"
+                            is_favorite="false"/>
                     @endforeach
                 </div>
                 <div>

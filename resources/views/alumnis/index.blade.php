@@ -29,7 +29,7 @@
             <div class="flex flex-col gap-20">
                 <div class="grid grid-cols-3 gap-8">
                     @foreach($alumnis as $alumni)
-                        <x-alumnis.card :alumni="$alumni"/>
+                        <x-alumnis.card :alumni="$alumni->translations->where('locale', app()->getLocale())->first()"/>
                     @endforeach
                 </div>
                 <div class="bg-pink-200">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
-use App\Models\QuestionCategory;
+use App\Models\QuestionCategoryTranslation;
 use App\Models\Reply;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -24,8 +24,8 @@ class ForumController extends Controller
         $replies = Reply::with('user')->latest('published_at')->paginate(5);
 
         //filters
-        $categories = QuestionCategory::all();
-        
+        $categories = QuestionCategoryTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
+
         $aside = AsideController::get();
 
         return view('forum.index', compact('questions', 'replies', 'categories', 'aside'));

@@ -22,8 +22,11 @@
                 <h2 id="projects"
                     class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('home.projects_title')}}</h2>
                 <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
-                    @foreach($projects as $project)
-                        <x-projects.article :project="$project" :student="$project->student"/>
+                    @foreach($projects as $projectRef)
+                        <x-projects.article
+                            :project="$projectRef->translations->where('locale', app()->getLocale())->first()"
+                            :student="$projectRef->translations->where('locale', app()->getLocale())->first()->student->translations->where('locale', app()->getLocale())->first()"
+                            :all-categories="$projectRef->categories"/>
                     @endforeach
                 </div>
                 <a href="/{{app()->getLocale()}}/projects"
@@ -42,7 +45,8 @@
                     class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('home.forum_title')}}</h2>
                 <div class="flex flex-col gap-6">
                     @foreach($questions as $question)
-                        <x-forum.article :question="$question"/>
+                        <x-forum.article :question="$question"
+                                         :category="$question->category->translations->where('locale', app()->getLocale())->first()"/>
                     @endforeach
                 </div>
                 <a href="/{{app()->getLocale()}}/forum"

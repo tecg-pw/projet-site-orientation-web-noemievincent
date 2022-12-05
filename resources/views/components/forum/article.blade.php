@@ -1,4 +1,4 @@
-@props(['question'])
+@props(['question', 'category'])
 <article aria-labelledby="{{$question->slug}}"
          class="relative bg-white rounded-2xl border border-blue/20 p-4 hover:bg-blue-card transition ease-in-out duration-200">
     <a href="/{{app()->getLocale()}}/forum/{{$question->slug}}" class="full-link">{{$question->title}}</a>
@@ -14,7 +14,7 @@
                 @endif
                 <h3 id="{{$question->slug}}" class="text-xl">{{$question->title}}</h3>
             </div>
-            <a href="#" class="text-sm">{{$question->category->name}}</a>
+            <a href="#" class="text-sm">{{$category->name}}</a>
         </div>
         <p class="font-light cut-text text-sm">
             {{$question->body}}

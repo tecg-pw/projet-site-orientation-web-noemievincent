@@ -1,4 +1,4 @@
-@props(['documentation'])
+@props(['documentation', 'languages'])
 <div
     class="bg-white rounded-2xl border border-blue/20 p-5">
     <div class="flex flex-col gap-3">
@@ -12,7 +12,7 @@
             </p>
         </div>
         <ul class="flex gap-2">
-            @foreach($documentation->languages as $language)
+            @foreach($languages as $language)
                 <x-resources.languages :language="$language"/>
             @endforeach
         </ul>
