@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('article_categories_translations', function (Blueprint $table) {
+        Schema::create('questioncategoriestranslations', function (Blueprint $table) {
             $table->id();
             $table->string('locale');
             $table->string('name');
@@ -29,6 +29,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('article_categories_translations');
+        Schema::dropIfExists('questioncategoriestranslations');
     }
 };

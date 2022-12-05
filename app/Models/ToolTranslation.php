@@ -11,6 +11,8 @@ class ToolTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'tooltranslations';
+
     protected $fillable = ['locale', 'title', 'slug', 'description', 'link', 'tool_id'];
 
     public function tool(): BelongsTo

@@ -12,12 +12,12 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('tutorial_translations', function (Blueprint $table) {
+        Schema::create('opportunitytranslations', function (Blueprint $table) {
             $table->id();
             $table->string('locale');
-            $table->string('title');
+            $table->string('name');
+            $table->string('slug');
             $table->text('description');
-            $table->string('link');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +30,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('tutorial_translations');
+        Schema::dropIfExists('opportunitytranslations');
     }
 };

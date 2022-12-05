@@ -12,17 +12,25 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('company_members', function (Blueprint $table) {
+        Schema::create('studenttranslations', function (Blueprint $table) {
             $table->id();
+            $table->string('locale');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('fullname');
-            $table->string('slug')->unique();
+            $table->string('slug');
+            $table->string('email');
             $table->string('picture')->nullable();
+            $table->string('genre')->nullable();
+            $table->text('bio')->nullable();
+            $table->string('role');
+            $table->string('website_link')->nullable();
             $table->string('github_link')->nullable();
+            $table->string('instagram_link')->nullable();
             $table->string('linkedin_link')->nullable();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at');
+            $table->timestamp('start_year');
+            $table->timestamp('end_year')->nullable();
+            $table->timestamps();
             $table->softDeletes();
         });
     }
@@ -34,6 +42,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('company_members');
+        Schema::dropIfExists('studenttranslations');
     }
 };

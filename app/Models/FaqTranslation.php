@@ -11,7 +11,7 @@ class FaqTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'faq_translations';
+    protected $table = 'faqtranslations';
 
     protected $fillable = ['locale', 'title', 'slug', 'body', 'category', 'faq_id'];
 

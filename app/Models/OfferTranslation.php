@@ -12,11 +12,13 @@ class OfferTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'offertranslations';
+
     protected $fillable = ['locale', 'title', 'slug', 'body', 'start_date', 'duration', 'location', 'method', 'method_link', 'contact_name', 'contact_email', 'published_at', 'offer_id', 'company_id'];
 
     protected $dates = ['start_date', 'published_at'];
 
-    protected $with = ['company', 'skills'];
+//    protected $with = ['company', 'skills'];
 
     public function offer(): BelongsTo
     {

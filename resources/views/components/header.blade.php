@@ -194,11 +194,12 @@
                 @endguest
                 @auth
                     <div class="flex flex-col gap-2 lg:flex-row lg:items-center">
-                        <a href="/{{app()->getLocale()}}/username" class="flex items-center gap-3">
+                        <a href="/{{app()->getLocale()}}/users/{{auth()->user()->slug}}"
+                           class="flex items-center gap-3">
                             <img src="https://placehold.jp/30x30.png" alt="Prénom Nom"
                                  class="rounded-full">
                             <span
-                                class="hover:text-orange transition-all ease-in-out duration-200">Prénom Nom</span>
+                                class="hover:text-orange transition-all ease-in-out duration-200">{{auth()->user()->fullname}}</span>
                         </a>
                         <span class="hidden lg:block">—</span>
                         <a href="/logout"

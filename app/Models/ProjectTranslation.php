@@ -11,9 +11,11 @@ class ProjectTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'projecttranslations';
+
     protected $dates = ['published_at'];
 
-//    protected $with = ['categories'];
+//    protected $with = ['student'];
 
     protected $fillable = [
         'locale', 'title', 'slug', 'picture', 'body', 'date', 'website_link', 'github_link', 'gallery', 'project_id', 'student_id', 'course_id'
@@ -33,9 +35,4 @@ class ProjectTranslation extends Model
     {
         return $this->belongsTo(Course::class);
     }
-
-//    public function categories(): BelongsToMany
-//    {
-//        return $this->belongsToMany(ProjectCategory::class, 'category_project', 'project_id', 'category_id');
-//    }
 }

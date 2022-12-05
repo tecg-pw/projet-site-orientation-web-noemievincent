@@ -11,13 +11,15 @@ class ArticleTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'articletranslations';
+
     protected $dates = ['published_at'];
 
     protected $fillable = [
         'locale', 'title', 'slug', 'picture', 'body', 'excerpt', 'article_id', 'category_id', 'author_id'
     ];
 
-    protected $with = ['author', 'category'];
+//    protected $with = ['author', 'category'];
 
     public function article(): BelongsTo
     {

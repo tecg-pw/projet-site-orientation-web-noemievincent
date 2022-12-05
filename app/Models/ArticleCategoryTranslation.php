@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ArticleCategoryTranslation extends Model
 {
     use HasFactory, SoftDeletes;
-
-    protected $table = 'article_categories_translations';
+    
+    protected $table = 'articlecategoriestranslations';
 
     protected $fillable = [
         'locale', 'name', 'slug', 'category_id'

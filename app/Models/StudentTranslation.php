@@ -12,9 +12,11 @@ class StudentTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'studenttranslations';
+
     protected $dates = ['start_year', 'end_year'];
 
-//    protected $with = ['opportunity', 'company', 'internship'];
+//    protected $with = ['projects', 'opportunity', 'company', 'internship'];
 
     protected $fillable = [
         'locale', 'firstname', 'lastname', 'fullname', 'slug', 'email', 'picture', 'bio', 'role', 'genre', 'github_link', 'linkedin_link', 'instagram_link', 'website_link', 'start_year', 'end_year', 'student_id', 'opportunity_id', 'company_id', 'internship_id'

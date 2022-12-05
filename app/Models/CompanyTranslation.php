@@ -12,6 +12,8 @@ class CompanyTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'companytranslations';
+
     protected $fillable = ['locale', 'name', 'slug', 'logo', 'streetAddress', 'postalCode', 'addressLocality', 'website_link', 'description', 'company_id'];
 
 //    protected $with = ['offers', 'members'];

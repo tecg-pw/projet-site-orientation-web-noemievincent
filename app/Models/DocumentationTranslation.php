@@ -11,8 +11,10 @@ class DocumentationTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'documentationtranslations';
+
     protected $fillable = ['locale', 'title', 'slug', 'description', 'link', 'documentation_id'];
-    
+
     public function documentation(): BelongsTo
     {
         return $this->belongsTo(Documentation::class);

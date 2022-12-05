@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\CourseTranslation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -48,7 +49,7 @@ class CourseController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function show(Course $course)
+    public function show(string $locale, CourseTranslation $course)
     {
         $teachers = Course::find($course->id)->teachers()->get();
         $projects = Course::find($course->id)->projects()->get();

@@ -13,7 +13,7 @@ class Faq extends Model
 
     protected $table = 'faq';
 
-    protected $with = ['translations'];
+//    protected $with = ['translations'];
 
     public function translations(): HasMany
     {

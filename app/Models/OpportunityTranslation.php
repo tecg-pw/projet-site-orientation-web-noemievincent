@@ -12,6 +12,8 @@ class OpportunityTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'opportunitytranslations';
+
     protected $fillable = [
         'locale', 'name', 'slug', 'description', 'opportunity_id'
     ];

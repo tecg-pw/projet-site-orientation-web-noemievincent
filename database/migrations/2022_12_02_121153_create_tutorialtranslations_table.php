@@ -12,8 +12,12 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('question_categories', function (Blueprint $table) {
+        Schema::create('tutorialtranslations', function (Blueprint $table) {
             $table->id();
+            $table->string('locale');
+            $table->string('title');
+            $table->text('description');
+            $table->string('link');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +30,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('question_categories');
+        Schema::dropIfExists('tutorialtranslations');
     }
 };

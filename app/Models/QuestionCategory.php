@@ -11,7 +11,9 @@ class QuestionCategory extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $with = ['translations'];
+    protected $table = 'questioncategories';
+
+//    protected $with = ['translations'];
 
     public function translations(): HasMany
     {

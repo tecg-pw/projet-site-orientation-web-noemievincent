@@ -12,17 +12,19 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('company_translations', function (Blueprint $table) {
+        Schema::create('coursetranslations', function (Blueprint $table) {
             $table->id();
             $table->string('locale');
             $table->string('name');
             $table->string('slug');
-            $table->string('logo');
-            $table->string('streetAddress')->nullable();
-            $table->string('postalCode')->nullable();
-            $table->string('addressLocality')->nullable();
-            $table->text('description')->nullable();
-            $table->string('website_link')->nullable();
+            $table->text('description');
+            $table->text('orientation');
+            $table->string('year');
+            $table->string('period')->nullable();
+            $table->integer('hours');
+            $table->integer('ects')->nullable();
+            $table->string('ects_link')->nullable();
+            $table->string('github_link')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -35,6 +37,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('company_translations');
+        Schema::dropIfExists('coursetranslations');
     }
 };

@@ -12,7 +12,7 @@ class Tutorial extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $with = ['translations', 'languages'];
+//    protected $with = ['translations', 'languages'];
 
     public function translations(): HasMany
     {

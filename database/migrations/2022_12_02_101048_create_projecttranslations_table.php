@@ -12,11 +12,17 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('question_categories_translations', function (Blueprint $table) {
+        Schema::create('projecttranslations', function (Blueprint $table) {
             $table->id();
             $table->string('locale');
-            $table->string('name');
+            $table->string('title');
             $table->string('slug');
+            $table->string('picture');
+            $table->text('body');
+            $table->string('website_link')->nullable();
+            $table->string('github_link')->nullable();
+            $table->json('gallery')->nullable();
+            $table->timestamp('published_at');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +35,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('question_categories_translations');
+        Schema::dropIfExists('projecttranslations');
     }
 };

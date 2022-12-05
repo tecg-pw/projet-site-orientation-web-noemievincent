@@ -49,14 +49,13 @@ class UserController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function show(User $user)
+    public function show(string $locale, User $user)
     {
         $questions = User::find($user->id)->questions()->get();
         $replies = User::find($user->id)->replies()->get();
         $tutorials = User::find($user->id)->tutorials()->get();
 
         $languages = Language::all();
-
 
         $aside = AsideController::get();
 

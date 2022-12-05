@@ -12,6 +12,8 @@ class TutorialTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'tutorialtranslations';
+
     protected $fillable = ['locale', 'title', 'description', 'link', 'tutorial_id'];
 
     public function tutorial(): BelongsTo

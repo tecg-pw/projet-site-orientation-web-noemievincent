@@ -12,6 +12,8 @@ class CourseTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'coursetranslations';
+
     protected $fillable = [
         'name', 'slug', 'description', 'orientation', 'year', 'period', 'hours', 'ects', 'ects_link', 'github_link'
     ];

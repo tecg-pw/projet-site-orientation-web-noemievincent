@@ -11,7 +11,7 @@ class ProjectCategoryTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'project_categories_translations';
+    protected $table = 'projectcategoriestranslations';
 
     protected $fillable = [
         'locale', 'name', 'slug', 'category_id'

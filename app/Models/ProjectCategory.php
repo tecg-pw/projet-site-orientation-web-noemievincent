@@ -11,7 +11,9 @@ class ProjectCategory extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $with = ['translations'];
+    protected $table = 'projectcategories';
+
+//    protected $with = ['translations'];
 
     public function translations(): HasMany
     {

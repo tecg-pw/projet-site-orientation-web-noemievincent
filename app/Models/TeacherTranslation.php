@@ -12,6 +12,8 @@ class TeacherTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'teachertranslations';
+
     protected $fillable = [
         'locale', 'firstname', 'lastname', 'fullname', 'slug', 'email', 'picture', 'bio', 'role', 'github_link', 'linkedin_link', 'teacher_id'
     ];

@@ -55,9 +55,9 @@ class AlumnisController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function show(Student $alumni)
+    public function show(string $locale, StudentTranslation $alumni)
     {
-//        return $alumni;
+        return $alumni;
         $aside = AsideController::get();
 
         return view('alumnis.show', compact('alumni', 'aside'));

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use App\Models\ProjectCategoryTranslation;
 use App\Models\ProjectTranslation;
-use App\Models\Student;
+use App\Models\StudentTranslation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -22,15 +21,15 @@ class ProjectsController extends Controller
     public function index()
     {
         $projects = Project::paginate(9);
-
-        $dates = ProjectTranslation::select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
-        $categories = ProjectCategoryTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
-
-        $aside = AsideController::get();
-
-//        return $aside;
-
-        return view('projects.index', compact('projects', 'dates', 'categories', 'aside'));
+//
+//        $dates = ProjectTranslation::select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
+//        $categories = ProjectCategoryTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
+//
+//        $aside = AsideController::get();
+//
+////        return $aside;
+//
+//        return view('projects.index', compact('projects', 'dates', 'categories', 'aside'));
     }
 
     /**
@@ -60,8 +59,10 @@ class ProjectsController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function show(Student $student, Project $project)
+    public function show(string $locale, StudentTranslation $student, ProjectTranslation $project)
     {
+        return $project;
+
         $aside = AsideController::get();
 
         return view('projects.show', compact('project', 'student', 'aside'));

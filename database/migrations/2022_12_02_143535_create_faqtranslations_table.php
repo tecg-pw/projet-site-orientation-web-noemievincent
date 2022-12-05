@@ -12,19 +12,13 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('course_translations', function (Blueprint $table) {
+        Schema::create('faqtranslations', function (Blueprint $table) {
             $table->id();
             $table->string('locale');
-            $table->string('name');
+            $table->string('title');
             $table->string('slug');
-            $table->text('description');
-            $table->text('orientation');
-            $table->string('year');
-            $table->string('period')->nullable();
-            $table->integer('hours');
-            $table->integer('ects')->nullable();
-            $table->string('ects_link')->nullable();
-            $table->string('github_link')->nullable();
+            $table->text('body');
+            $table->string('category')->default('general');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -37,6 +31,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('course_translations');
+        Schema::dropIfExists('faqtranslations');
     }
 };

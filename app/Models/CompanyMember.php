@@ -11,6 +11,8 @@ class CompanyMember extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'companymembers';
+
     protected $fillable = ['firstname', 'lastname', 'fullname', 'slug', 'picture', 'github_link', 'linkedin_link', 'company_id'];
 
     public function company(): BelongsTo

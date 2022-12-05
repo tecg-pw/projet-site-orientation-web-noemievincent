@@ -12,12 +12,17 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('opportunity_translations', function (Blueprint $table) {
+        Schema::create('companytranslations', function (Blueprint $table) {
             $table->id();
             $table->string('locale');
             $table->string('name');
             $table->string('slug');
-            $table->text('description');
+            $table->string('logo');
+            $table->string('streetAddress')->nullable();
+            $table->string('postalCode')->nullable();
+            $table->string('addressLocality')->nullable();
+            $table->text('description')->nullable();
+            $table->string('website_link')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +35,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('opportunity_translations');
+        Schema::dropIfExists('companytranslations');
     }
 };

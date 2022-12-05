@@ -12,7 +12,7 @@ class QuestionCategoryTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'question_categories_translations';
+    protected $table = 'questioncategoriestranslations';
 
     protected $fillable = ['name', 'slug'];
 

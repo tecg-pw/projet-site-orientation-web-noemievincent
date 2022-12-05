@@ -12,52 +12,52 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::table('student_translations', static function (Blueprint $table) {
+        Schema::table('studenttranslations', static function (Blueprint $table) {
             $table->foreignId('student_id')->constrained()->onUpdate('cascade');
             $table->foreignId('opportunity_id')->nullable()->constrained()->onUpdate('cascade');
             $table->foreignId('company_id')->nullable()->constrained()->onUpdate('cascade');
             $table->foreignId('internship_id')->nullable()->constrained('companies')->onUpdate('cascade');
         });
 
-        Schema::table('project_translations', static function (Blueprint $table) {
+        Schema::table('projecttranslations', static function (Blueprint $table) {
             $table->foreignId('project_id')->constrained()->onUpdate('cascade');
             $table->foreignId('student_id')->constrained()->onUpdate('cascade');
             $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('project_categories_translations', static function (Blueprint $table) {
-            $table->foreignId('category_id')->constrained('project_categories')->onUpdate('cascade');
+        Schema::table('projectcategoriestranslations', static function (Blueprint $table) {
+            $table->foreignId('category_id')->constrained('projectcategories')->onUpdate('cascade');
         });
 
-        Schema::table('course_translations', static function (Blueprint $table) {
+        Schema::table('coursetranslations', static function (Blueprint $table) {
             $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('opportunity_translations', static function (Blueprint $table) {
+        Schema::table('opportunitytranslations', static function (Blueprint $table) {
             $table->foreignId('opportunity_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('teacher_translations', static function (Blueprint $table) {
+        Schema::table('teachertranslations', static function (Blueprint $table) {
             $table->foreignId('teacher_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('article_translations', static function (Blueprint $table) {
+        Schema::table('articletranslations', static function (Blueprint $table) {
             $table->foreignId('article_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('category_id')->constrained('article_categories')->onUpdate('cascade');
+            $table->foreignId('category_id')->constrained('articlecategories')->onUpdate('cascade');
             $table->foreignId('author_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('article_categories_translations', static function (Blueprint $table) {
-            $table->foreignId('category_id')->constrained('article_categories')->onUpdate('cascade');
+        Schema::table('articlecategoriestranslations', static function (Blueprint $table) {
+            $table->foreignId('category_id')->constrained('articlecategories')->onUpdate('cascade');
         });
 
-        Schema::table('offer_translations', static function (Blueprint $table) {
+        Schema::table('offertranslations', static function (Blueprint $table) {
             $table->foreignId('offer_id')->constrained()->onUpdate('cascade');
             $table->foreignId('company_id')->constrained()->onUpdate('cascade');
         });
 
         Schema::table('questions', static function (Blueprint $table) {
-            $table->foreignId('category_id')->constrained('question_categories')->onUpdate('cascade');
+            $table->foreignId('category_id')->constrained('questioncategories')->onUpdate('cascade');
             $table->foreignId('user_id')->constrained()->onUpdate('cascade');
         });
 
@@ -66,25 +66,37 @@ return new class extends Migration {
             $table->foreignId('user_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('question_categories_translations', static function (Blueprint $table) {
-            $table->foreignId('category_id')->constrained('question_categories')->onUpdate('cascade');
+        Schema::table('questioncategoriestranslations', static function (Blueprint $table) {
+            $table->foreignId('category_id')->constrained('questioncategories')->onUpdate('cascade');
         });
 
-        Schema::table('faq_translations', static function (Blueprint $table) {
+        Schema::table('faqtranslations', static function (Blueprint $table) {
             $table->foreignId('faq_id')->constrained('faq')->onUpdate('cascade');
         });
 
-        Schema::table('company_translations', static function (Blueprint $table) {
+        Schema::table('companytranslations', static function (Blueprint $table) {
             $table->foreignId('company_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('company_members', static function (Blueprint $table) {
+        Schema::table('companymembers', static function (Blueprint $table) {
             $table->foreignId('company_id')->constrained()->onUpdate('cascade');
+        });
+
+        Schema::table('tutorialtranslations', static function (Blueprint $table) {
+            $table->foreignId('tutorial_id')->constrained()->onUpdate('cascade');
+        });
+
+        Schema::table('tooltranslations', static function (Blueprint $table) {
+            $table->foreignId('tool_id')->constrained()->onUpdate('cascade');
+        });
+
+        Schema::table('documentationtranslations', static function (Blueprint $table) {
+            $table->foreignId('documentation_id')->constrained()->onUpdate('cascade');
         });
 
 
         Schema::table('category_project', static function (Blueprint $table) {
-            $table->foreignId('category_id')->constrained('project_categories')->onUpdate('cascade');
+            $table->foreignId('category_id')->constrained('projectcategories')->onUpdate('cascade');
             $table->foreignId('project_id')->constrained()->onUpdate('cascade');
         });
 
@@ -98,9 +110,6 @@ return new class extends Migration {
             $table->foreignId('skill_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('tutorial_translations', static function (Blueprint $table) {
-            $table->foreignId('tutorial_id')->constrained()->onUpdate('cascade');
-        });
 
         Schema::table('tutorial_user', static function (Blueprint $table) {
             $table->foreignId('tutorial_id')->constrained()->onUpdate('cascade');
@@ -110,14 +119,6 @@ return new class extends Migration {
         Schema::table('language_tutorial', static function (Blueprint $table) {
             $table->foreignId('language_id')->constrained()->onUpdate('cascade');
             $table->foreignId('tutorial_id')->constrained()->onUpdate('cascade');
-        });
-
-        Schema::table('tool_translations', static function (Blueprint $table) {
-            $table->foreignId('tool_id')->constrained()->onUpdate('cascade');
-        });
-
-        Schema::table('documentation_translations', static function (Blueprint $table) {
-            $table->foreignId('documentation_id')->constrained()->onUpdate('cascade');
         });
 
         Schema::table('documentation_language', static function (Blueprint $table) {
