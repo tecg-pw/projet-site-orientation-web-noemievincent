@@ -83,7 +83,7 @@
         </div>
     </div>
     <div
-        class="menu bg-blue-light px-4 py-6 flex flex-col gap-10 fixed z-[100] top-14 h-full left-full -right-[150%] transition-position ease-in-out duration-700 lg:static lg:flex-col-reverse lg:bg-transparent lg:p-0 lg:gap-0">
+        class="menu bg-red-light px-4 py-6 flex flex-col gap-10 fixed z-[100] top-14 h-full left-full -right-[150%] transition-position ease-in-out duration-700 lg:static lg:flex-col-reverse lg:bg-transparent lg:p-0 lg:gap-0">
         <nav class="lg:bg-white/60 lg:px-10 lg:py-6">
             <h2 class="sr-only">{{__('header.main_nav_title')}}</h2>
             <div class="flex flex-col gap-8 lg:flex-row lg:justify-between lg:items-center">
@@ -196,14 +196,17 @@
                     <div class="flex flex-col gap-2 lg:flex-row lg:items-center">
                         <a href="/{{app()->getLocale()}}/users/{{auth()->user()->slug}}"
                            class="flex items-center gap-3">
-                            <img src="https://placehold.jp/30x30.png" alt="Prénom Nom"
+                            <img src="https://placehold.jp/30x30.png" alt="{{auth()->user()->fullname}}"
                                  class="rounded-full">
-                            <span
-                                class="hover:text-orange transition-all ease-in-out duration-200">{{auth()->user()->fullname}}</span>
-                        </a>
-                        <span class="hidden lg:block">—</span>
-                        <a href="/logout"
-                           class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('header.logout_link')}}</a>
+                            <span dusk="logged-user-fullname"
+                                  class="hover:text-orange transition-all ease-in-out duration-200">{{auth()->user()->fullname}}</span>
+                        </a><span class="hidden lg:block">—</span>
+                        <form action="/logout"
+                              method="post">
+                            @csrf
+                            <button type="submit"
+                                    class="uppercase text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('header.logout_link')}}</button>
+                        </form>
                     </div>
                 @endauth
             </div>

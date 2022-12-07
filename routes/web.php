@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AlumnisController;
+use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ForumController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OffersController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\RegisterSessionController;
 use App\Http\Controllers\ResourcesController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TeacherController;
@@ -27,7 +29,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', function () {
+    $locale = substr(Request::server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
+    return redirect('/' . $locale);
+});
 Route::get('/{locale?}', [HomeController::class, 'index'])->middleware('setLocale');
 
 Route::get('/{locale?}/terms', function () {
@@ -73,12 +78,14 @@ Route::get('/{locale?}/users/{user:slug}', [UserController::class, 'show'])->mid
 Route::get('/{locale?}/users/{user:slug}/edit', [UserController::class, 'edit'])->middleware(['auth', 'setLocale']);
 
 //ROUTE : Auth
-Route::get('/{locale?}/login', function () {
-    return view('auth.login');
-})->name('login')->middleware(['guest', 'setLocale']);
-Route::get('/{locale?}/register', function () {
-    return view('auth.register');
-})->middleware(['guest', 'setLocale']);
+Route::get('/{locale?}/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware(['guest', 'setLocale']);
+Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware('guest');
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
+
+Route::get('/{locale?}/register', [RegisterSessionController::class, 'create'])->middleware(['guest', 'setLocale']);
+Route::post('/register', [RegisterSessionController::class, 'store'])->middleware('guest');
+
 Route::get('/{locale?}/reset-password', function () {
     return view('auth.reset-password');
 })->middleware(['guest', 'setLocale']);
+

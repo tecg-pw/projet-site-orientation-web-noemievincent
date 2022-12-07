@@ -137,6 +137,12 @@ return new class extends Migration {
      */
     public function down()
     {
-        //
+        Schema::table('questions', function (Blueprint $table) {
+            $table->dropConstrainedForeignId('category_id');
+        });
+
+//        Schema::table('projects', function (Blueprint $table) {
+//            $table->dropConstrainedForeignId('course_id');
+//        });
     }
 };

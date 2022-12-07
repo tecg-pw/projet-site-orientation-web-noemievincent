@@ -18,7 +18,7 @@
                         </svg>
                         <span>{{__('forms.labels.firstname')}}</span>
                     </label>
-                    <input type="text" id="firstname" placeholder="Pierre"
+                    <input type="text" id="firstname" placeholder="Pierre" name="firstname" dusk="firstname-field"
                            class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
                 </fieldset>
                 <fieldset class="flex flex-col gap-1 w-full">
@@ -30,7 +30,7 @@
                         </svg>
                         <span>{{__('forms.labels.lastname')}}</span>
                     </label>
-                    <input type="text" id="lastname" placeholder="Dumont"
+                    <input type="text" id="lastname" placeholder="Dumont" name="lastname" dusk="lastname-field"
                            class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
                 </fieldset>
             </div>
@@ -45,7 +45,7 @@
                     </svg>
                     <span>{{__('forms.labels.email')}}</span>
                 </label>
-                <input type="email" id="email" placeholder="name@example.com"
+                <input type="email" id="email" placeholder="name@example.com" name="email" dusk="email-field"
                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
             </fieldset>
             <fieldset class="flex flex-col gap-1">
@@ -63,7 +63,7 @@
                 </label>
                 <div
                     class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
-                    <input type="password" id="password" name="password"
+                    <input type="password" id="password" name="password" dusk="password-field"
                            class="password py-2 h-full w-full placeholder:font-light focus:outline-none  font-mono font-lig">
                     <span class="show-password cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="20" height="20"
@@ -77,8 +77,8 @@
                 </div>
             </fieldset>
             <div class="flex justify-between gap-16 items-center mt-6">
-                {!! __('auth.register.login_link') !!}
-                <button type="submit"
+                {!! __('auth.register.login_link', ['locale' => app()->getLocale()]) !!}
+                <button type="submit" dusk="submit-credentials"
                         class="uppercase font-light bg-orange text-white py-2 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
                     {{__('forms.buttons.register')}}
                 </button>
