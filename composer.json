@@ -11,9 +11,11 @@
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
+        "laravel/nova": "~4.0",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "laravel/nova": "*"
+        "spatie/laravel-translatable": "^6.1",
+        "spatie/nova-translatable": "^3.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",
@@ -69,8 +71,8 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "./nova"
+            "type": "composer",
+            "url": "https://nova.laravel.com"
         }
     ],
     "minimum-stability": "dev",

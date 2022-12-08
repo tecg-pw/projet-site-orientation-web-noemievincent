@@ -2,23 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProjectTranslation extends Model
 {
-    use HasFactory, SoftDeletes;
+    use SoftDeletes;
 
     protected $table = 'projecttranslations';
-
     protected $dates = ['published_at'];
 
-    protected $with = ['course'];
+//    protected $with = ['course'];
 
     protected $fillable = [
-        'locale', 'title', 'slug', 'picture', 'body', 'date', 'website_link', 'github_link', 'gallery', 'project_id', 'student_id', 'course_id'
+        'locale', 'title', 'slug', 'picture', 'body', 'published_at', 'website_link', 'github_link', 'gallery', 'project_id', 'course_id'
     ];
 
     public function project(): BelongsTo
@@ -28,7 +26,7 @@ class ProjectTranslation extends Model
 
     public function course(): BelongsTo
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(CourseTranslation::class);
     }
-    
+
 }

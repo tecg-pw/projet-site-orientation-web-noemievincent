@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Models\ProjectCategoryTranslation;
 use App\Models\ProjectTranslation;
-use App\Models\Student;
-use App\Models\StudentTranslation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -61,20 +59,34 @@ class ProjectsController extends Controller
      */
     public function show(string $locale, string $student, ProjectTranslation $project)
     {
-        $studentId = StudentTranslation::without('projects', 'opportunity', 'company', 'internship')->select('student_id')->where('slug', $student)->where('locale', $locale)->first();
-        $student = Student::find(1)->first()->translations->where('locale', $locale)->first();
+        $projects = Project::with('course', 'student')->find($project->project_id);
+        $course = $projects->course->translations->where('locale', $locale)->first();
+
+        $student = $projects->student->translations->where('locale', $locale)->first();
+
+        $alternatives = [];
+
+        foreach ($projects->translations as $projectRef) {
+            if ($projectRef->locale != app()->getLocale()) {
+                $alternatives[] = $projectRef;
+            } else {
+                $project = $projectRef;
+            }
+        }
+
+
+//        $studentId = StudentTranslation::without('projects', 'opportunity', 'company', 'internship')->select('student_id')->where('slug', $student)->where('locale', $locale)->first();
+//        $student = Student::find(1)->first()->translations->where('locale', $locale)->first();
 
         $allCategories = Project::find($project->project_id)->categories;
         $categories = [];
         foreach ($allCategories as $category) {
-            $categories[] = $category->translations->where('locale', app()->getLocale())->first();
+            $categories[] = $category->translations->where('locale', $locale)->first();
         }
-
-//        return $student;
 
         $aside = AsideController::get();
 
-        return view('projects.show', compact('project', 'student', 'categories', 'aside'));
+        return view('projects.show', compact('project', 'alternatives', 'student', 'course', 'categories', 'aside'));
     }
 
     /**

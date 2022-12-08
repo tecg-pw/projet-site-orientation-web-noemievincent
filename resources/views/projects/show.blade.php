@@ -191,9 +191,20 @@
                             <time
                                 datetime="{{$project->published_at->format('Y-m')}}">{{$project->published_at->format('F Y')}}</time>
                             <div class="bg-blue/50 h-max-content w-px"></div>
-                            <a href="/{{app()->getLocale()}}/classes/{{$project->course->slug}}">{{$project->course->name}}</a>
+                            <a href="/{{app()->getLocale()}}/classes/{{$course->slug}}">{{$course->name}}</a>
                         </div>
                         <x-share/>
+                    </div>
+                    <div class="flex gap-2">
+                        <p>{{__('projects.single.alternative')}}</p>
+                        <ul class="flex gap-2">
+                            @foreach($alternatives as $key => $alt)
+                                <li>
+                                    <a class="hover:underline underline-offset-2 decoration-1 decoration-solid text-orange"
+                                       href="/{{$alt->locale}}/projects/{{$student->slug}}/{{$alt->slug}}">{{__('locales.' . $alt->locale)}}</a>{{$key == count($alternatives)-1 ? '' : ', '}}
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                     <div>
                         <p>{{$project->body}}</p>

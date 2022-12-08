@@ -7,6 +7,7 @@ return [
     'tagline' => 'TFE, portfolios, applications, jeu,… Découvrez les nombreux projets réalisés par nos étudiants au fil des années.',
     'see_link' => 'Voir le projet :title',
     'single' => [
+        'alternative' => 'Ce projet est aussi disponible en :',
         'back_to_projects_link' => 'Retour aux projets',
         'github_link' => 'GitHub du projet',
         'website_link' => 'Site du projet',
