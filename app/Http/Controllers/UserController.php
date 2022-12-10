@@ -51,11 +51,13 @@ class UserController extends Controller
      */
     public function show(string $locale, User $user)
     {
-        $questions = User::find($user->id)->questions()->get();
-        $replies = User::find($user->id)->replies()->get();
-        $tutorials = User::find($user->id)->tutorials()->get();
+        $questions = $user->questions;
+        $replies = $user->replies;
 
+        $tutorials = $user->tutorials;
         $languages = Language::all();
+
+//        return $tutorials;
 
         $aside = AsideController::get();
 
@@ -68,7 +70,7 @@ class UserController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function edit(User $user)
+    public function edit(string $locale, User $user)
     {
         return view('profile.edit', compact('user'));
     }

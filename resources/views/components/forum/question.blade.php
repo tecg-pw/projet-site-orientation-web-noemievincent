@@ -5,7 +5,7 @@
             <img src="https://placehold.jp/50x50.png" alt="{{$question->user->fullname}}"
                  class="rounded-full h-12">
             <div>
-                <p class="text-lg font-medium"><a href="/users/{{$question->user->slug}}"
+                <p class="text-lg font-medium"><a href="/{{app()->getLocale()}}/users/{{$question->user->slug}}"
                                                   class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$question->user->fullname}}</a>
                 </p>
                 <p class="text-sm">{{__('roles.' . $question->user->role)}}</p>
