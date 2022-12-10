@@ -23,7 +23,7 @@ class Project extends Resource
      *
      * @var string
      */
-//    public static $title = 'id';
+    public static $title = 'id';
     /**
      * The columns that should be searched.
      *
@@ -32,11 +32,6 @@ class Project extends Resource
     public static $search = [
         'id',
     ];
-
-    public function title()
-    {
-        return $this->id;
-    }
 
     /**
      * Get the fields displayed by the resource.

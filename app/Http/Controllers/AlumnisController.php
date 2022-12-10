@@ -57,10 +57,14 @@ class AlumnisController extends Controller
      */
     public function show(string $locale, StudentTranslation $alumni)
     {
-        return $alumni;
+        $alumniRef = Student::find($alumni->student_id);
+        $alumni = $alumniRef->translations->where('locale', $locale)->first();
+
+        $projects = $alumniRef->projects;
+
         $aside = AsideController::get();
 
-        return view('alumnis.show', compact('alumni', 'aside'));
+        return view('alumnis.show', compact('alumni', 'projects', 'aside'));
     }
 
     /**

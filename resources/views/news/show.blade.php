@@ -19,8 +19,19 @@
             <div class="flex justify-between gap-28">
                 <div class="h-full w-full flex flex-col gap-6">
                     <div class="flex justify-between items-center">
-                        {!! __('news.single.infos', ['datetime' => $article->published_at->format('d-m-Y'), 'date' => $article->published_at->format('d F Y'), 'author' => $article->author->name, 'category' => $article->category->name]) !!}
+                        {!! __('news.single.infos', ['datetime' => $article->published_at->format('d-m-Y'), 'date' => $article->published_at->translatedFormat('d F Y'), 'author' => $author->name, 'category' => $category->translations->where('locale', app()->getLocale())->first()->name]) !!}
                         <x-share/>
+                    </div>
+                    <div class="flex gap-2">
+                        <p>{{__('news.single.alternative')}}</p>
+                        <ul class="flex gap-2">
+                            @foreach($alternatives as $key => $alt)
+                                <li>
+                                    <a class="hover:underline underline-offset-2 decoration-1 decoration-solid text-orange"
+                                       href="/{{$alt->locale}}/news/{{$alt->slug}}">{{__('locales.' . $alt->locale)}}</a>{{$key == count($alternatives)-1 ? '' : ', '}}
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                     <div class="leading-8 flex flex-col gap-4">
                         <p class="font-bold">
@@ -34,14 +45,14 @@
             </div>
             @if(count($articles) > 1)
                 <div class="flex flex-col gap-5">
-                    <h2 class="font-display font-semibold text-blue text-xl tracking-wider">{{__('news.single.others_news_in', ['category' => $article->category->name])}}</h2>
+                    <h2 class="font-display font-semibold text-blue text-xl tracking-wider">{{__('news.single.others_news_in', ['category' => $category->translations->where('locale', app()->getLocale())->first()->name])}}</h2>
                     <div class="flex flex-col gap-2">
                         <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
-                            @foreach($articles as $index => $otherArticle)
-                                @if($index < 3)
-                                    @if($otherArticle->id != $article->id)
-                                        <x-news.article :new="$otherArticle"/>
-                                    @endif
+                            @foreach($articles as $otherArticle)
+                                @if($otherArticle->translations->where('locale', app()->getLocale())->first()->article_id != $article->article_id)
+                                    <x-news.article
+                                        :new="$otherArticle->translations->where('locale', app()->getLocale())->first()"
+                                        :category="$category->translations->where('locale', app()->getLocale())->first()"/>
                                 @endif
                             @endforeach
                         </div>

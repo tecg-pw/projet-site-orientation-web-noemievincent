@@ -21,14 +21,4 @@ class CourseTranslation extends Model
         return $this->belongsTo(Course::class);
     }
 
-//    public function projects(): HasMany
-//    {
-//        return $this->hasMany(ProjectTranslation::class);
-//    }
-//
-//    public function teachers(): BelongsToMany
-//    {
-//        return $this->belongsToMany(Teacher::class);
-//    }
-
 }

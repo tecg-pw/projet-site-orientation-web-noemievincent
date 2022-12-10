@@ -9,7 +9,7 @@
             </div>
             <div class="flex flex-col">
                 @guest()
-                    {!!__('forum.guest_link')!!}
+                    {!!__('forum.guest_link', ['locale' => app()->getLocale()])!!}
                 @endguest
                 @auth()
                     <div class="flex justify-between items-center">

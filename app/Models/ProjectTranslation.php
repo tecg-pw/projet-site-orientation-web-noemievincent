@@ -13,8 +13,6 @@ class ProjectTranslation extends Model
     protected $table = 'projecttranslations';
     protected $dates = ['published_at'];
 
-//    protected $with = ['course'];
-
     protected $fillable = [
         'locale', 'title', 'slug', 'picture', 'body', 'published_at', 'website_link', 'github_link', 'gallery', 'project_id', 'course_id'
     ];

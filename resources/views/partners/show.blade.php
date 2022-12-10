@@ -64,7 +64,8 @@
                         class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.internships_title')}}</h3>
                     <div class="grid grid-cols-3 gap-8">
                         @foreach($offers as $offer)
-                            <x-jobs.article :offer="$offer"/>
+                            <x-jobs.article :offer="$offer->translations->where('locale', app()->getLocale())->first()"
+                                            :company="$offer->company->translations->where('locale', app()->getLocale())->first()"/>
                         @endforeach
                     </div>
                 </div>
@@ -76,7 +77,8 @@
                     <div class="flex flex-col gap-2">
                         <div class="grid grid-cols-3 gap-8">
                             @foreach($students as $student)
-                                <x-alumnis.card :alumni="$student"/>
+                                <x-alumnis.card
+                                    :alumni="$student->translations->where('locale', app()->getLocale())->first()"/>
                             @endforeach
                         </div>
                     </div>

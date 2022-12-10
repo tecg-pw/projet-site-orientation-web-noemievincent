@@ -40,7 +40,7 @@
                 <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
                     @foreach($offers as $offer)
                         <x-jobs.article :offer="$offer->translations->where('locale', app()->getLocale())->first()"
-                                        :company="$offer->translations->where('locale', app()->getLocale())->first()->company->translations->where('locale', app()->getLocale())->first()"/>
+                                        :company="$offer->company->translations->where('locale', app()->getLocale())->first()"/>
                     @endforeach
                 </div>
                 <div>

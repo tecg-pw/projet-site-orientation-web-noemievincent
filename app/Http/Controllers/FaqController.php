@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Faq;
+use App\Models\FaqCategory;
+use App\Models\FaqCategoryTranslation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -16,14 +17,20 @@ class FaqController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $questions = Faq::all();
-//        $questions = Faq::where('category', 'general')->get();
+        $categorySlug = $request->query('category') ?? 'general';
+
+        $categoryRef = FaqCategoryTranslation::where('locale', app()->getLocale())->where('slug', $categorySlug)->first();
+        $category = FaqCategory::find($categoryRef->category_id);
+
+        $questions = $category->questions;
+
+        $categories = FaqCategory::all();
 
         $aside = AsideController::get();
 
-        return view('faq.index', compact('questions', 'aside'));
+        return view('faq.index', compact('questions', 'categories', 'aside'));
     }
 
     /**

@@ -19,9 +19,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $projects = Project::limit(6)->get();
+        $projects = Project::with('student')->limit(6)->get();
         $questions = Question::limit(6)->get();
-        
+
         $aside = AsideController::get();
 
         return view('index', compact('projects', 'questions', 'aside'));

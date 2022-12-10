@@ -63,11 +63,29 @@ class OffersController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function show(Company $company, Offer $offer)
+    public function show(string $locale, CompanyTranslation $company, string $offer)
     {
+        $companyRef = Company::find($company->company_id);
+        $company = $companyRef->translations->where('locale', app()->getLocale())->first();
+
+        foreach ($companyRef->offers as $o) {
+            if ($o->translations->where('locale', app()->getLocale())->first()->slug === $offer) {
+                $offerRef = $o;
+            }
+        }
+
+        $offer = $offerRef->translations->where('locale', app()->getLocale())->first();
+
+        $alternatives = [];
+        foreach ($offerRef->translations as $translation) {
+            if ($translation->locale != app()->getLocale()) {
+                $alternatives[] = $translation;
+            }
+        }
+
         $aside = AsideController::get();
 
-        return view('jobs.show', compact('company', 'offer', 'aside'));
+        return view('jobs.show', compact('company', 'alternatives', 'offer', 'aside'));
     }
 
     /**

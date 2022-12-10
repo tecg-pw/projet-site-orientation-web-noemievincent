@@ -17,11 +17,14 @@ return new class extends Migration {
             $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
 
+        Schema::table('students', static function (Blueprint $table) {
+            $table->foreignId('company_id')->nullable()->constrained()->onUpdate('cascade');
+            $table->foreignId('internship_id')->nullable()->constrained('companies')->onUpdate('cascade');
+        });
+
         Schema::table('studenttranslations', static function (Blueprint $table) {
             $table->foreignId('student_id')->constrained()->onUpdate('cascade');
             $table->foreignId('opportunity_id')->nullable()->constrained()->onUpdate('cascade');
-            $table->foreignId('company_id')->nullable()->constrained()->onUpdate('cascade');
-            $table->foreignId('internship_id')->nullable()->constrained('companies')->onUpdate('cascade');
         });
 
         Schema::table('projecttranslations', static function (Blueprint $table) {
@@ -44,19 +47,25 @@ return new class extends Migration {
             $table->foreignId('teacher_id')->constrained()->onUpdate('cascade');
         });
 
+        Schema::table('articles', static function (Blueprint $table) {
+            $table->foreignId('author_id')->constrained()->onUpdate('cascade');
+        });
+
         Schema::table('articletranslations', static function (Blueprint $table) {
             $table->foreignId('article_id')->constrained()->onUpdate('cascade');
             $table->foreignId('category_id')->constrained('articlecategories')->onUpdate('cascade');
-            $table->foreignId('author_id')->constrained()->onUpdate('cascade');
         });
 
         Schema::table('articlecategoriestranslations', static function (Blueprint $table) {
             $table->foreignId('category_id')->constrained('articlecategories')->onUpdate('cascade');
         });
 
+        Schema::table('offers', static function (Blueprint $table) {
+            $table->foreignId('company_id')->constrained()->onUpdate('cascade');
+        });
+
         Schema::table('offertranslations', static function (Blueprint $table) {
             $table->foreignId('offer_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('company_id')->constrained()->onUpdate('cascade');
         });
 
         Schema::table('questions', static function (Blueprint $table) {
@@ -71,6 +80,14 @@ return new class extends Migration {
 
         Schema::table('questioncategoriestranslations', static function (Blueprint $table) {
             $table->foreignId('category_id')->constrained('questioncategories')->onUpdate('cascade');
+        });
+
+        Schema::table('faqcategoriestranslations', static function (Blueprint $table) {
+            $table->foreignId('category_id')->constrained('faqcategories')->onUpdate('cascade');
+        });
+
+        Schema::table('faq', static function (Blueprint $table) {
+            $table->foreignId('category_id')->constrained('faqcategories')->onUpdate('cascade');
         });
 
         Schema::table('faqtranslations', static function (Blueprint $table) {

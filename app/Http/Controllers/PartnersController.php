@@ -58,11 +58,14 @@ class PartnersController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function show(Company $company)
+    public function show(string $locale, CompanyTranslation $company)
     {
-        $members = Company::find($company->id)->members()->get();
-        $offers = Company::find($company->id)->offers()->get();
-        $students = Company::find($company->id)->students()->get();
+        $companyRef = Company::find($company->company_id);
+        $company = $companyRef->translations->where('locale', app()->getLocale())->first();
+
+        $members = $companyRef->members;
+        $offers = $companyRef->offers;
+        $students = $companyRef->students;
 
         $aside = AsideController::get();
 

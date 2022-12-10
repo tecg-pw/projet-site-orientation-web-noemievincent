@@ -21,15 +21,18 @@
                     <li><span
                             class="font-semibold">{{__('classes.single.year')}}</span><span>Bloc {{$course->year}}</span>
                     </li>
-                    <li class="flex gap-2"><span class="font-semibold">{{__('classes.single.teachers')}}</span>
-                        <ul class="flex gap-2">
-                            @foreach($teachers as $teacher)
-                                <li><a href="/teachers/{{$teacher->slug}}"
-                                       class="underline underline-offset-2 hover:text-orange transition-all ease-in-out duration-200">{{$teacher->fullname}}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
+                    @if(count($teachers) > 0)
+                        <li class="flex gap-2"><span class="font-semibold">{{__('classes.single.teachers')}}</span>
+                            <ul class="flex gap-2">
+                                @foreach($teachers as $key => $teacher)
+                                    <li>
+                                        <a href="/{{app()->getLocale()}}/teachers/{{$teacher->translations->where('locale', app()->getLocale())->first()->slug}}"
+                                           class="underline underline-offset-2 hover:text-orange transition-all ease-in-out duration-200">{{$teacher->translations->where('locale', app()->getLocale())->first()->fullname}}</a>{{$key == count($teachers)-1 ? '' : ', '}}
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endif
                     <li><span class="font-semibold">{{__('classes.single.hours')}}</span><span>{{$course->hours}}</span>
                     <li><span
                             class="font-semibold">{{__('classes.single.period')}}</span><span>{{$course->period}}</span>
@@ -57,7 +60,9 @@
                     <div class="flex flex-col gap-2">
                         <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
                             @foreach($projects as $project)
-                                <x-projects.article :project="$project" :student="$project->student"/>
+                                <x-projects.article
+                                    :project="$project->translations->where('locale', app()->getLocale())->first()"
+                                    :student="$project->student" :all-categories="$project->categories"/>
                             @endforeach
                         </div>
                         <a href="/{{app()->getLocale()}}/projects"

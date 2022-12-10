@@ -21,8 +21,12 @@ class ArticlesSeeder extends Seeder
         $json = File::get("database/data/articles.json");
         $articles = json_decode($json);
 
-        for ($i = 0; $i < (count($articles) / 2); $i++) {
-            Article::create();
+        foreach ($articles as $key => $value) {
+            if ($key % 2 == 0) {
+                Article::create([
+                    "author_id" => $value->author_id,
+                ]);
+            }
         }
 
         foreach ($articles as $key => $value) {
@@ -36,7 +40,6 @@ class ArticlesSeeder extends Seeder
                 "locale" => $value->locale,
                 "article_id" => $value->article_id,
                 "category_id" => $value->category_id,
-                "author_id" => $value->author_id,
             ]);
         }
     }

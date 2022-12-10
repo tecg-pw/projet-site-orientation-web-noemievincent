@@ -20,7 +20,7 @@
             <div class="flex gap-4 font-light">
                 {!! __('forum.single.infos', ['datetime' => $question->published_at->format('d-m-Y'), 'date' => $question->published_at->format('d/m/Y'), 'datetimeHours' => $question->published_at->format('H:i'), 'time' => $question->published_at->format('H:i')]) !!}
                 <div class="bg-blue/50 h-max-content w-px"></div>
-                <p>{{$question->category->name}}</p>
+                <p>{{$question->category->translations->where('locale', app()->getLocale())->first()->name}}</p>
                 @if($question->is_solved)
                     <div class="bg-blue/50 h-max-content w-px"></div>
                     <p class="flex gap-2 text-green">

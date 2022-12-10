@@ -51,8 +51,11 @@ class CourseController extends Controller
      */
     public function show(string $locale, CourseTranslation $course)
     {
-        $teachers = Course::find($course->id)->teachers()->get();
-        $projects = Course::find($course->id)->projects()->get();
+        $courseRef = Course::find($course->course_id);
+        $course = $courseRef->translations->where('locale', app()->getLocale())->first();
+
+        $teachers = $courseRef->teachers;
+        $projects = $courseRef->projects;
 
         $aside = AsideController::get();
 

@@ -10,10 +10,13 @@
             <div class="flex flex-col gap-3">
                 <div class="grid grid-cols-3 gap-x-11">
                     <ul class="flex gap-12 col-span-2">
-                        @foreach(__('faq.tabs') as $slug => $label)
+                        @foreach($categories as $category)
+                            @php
+                                $category = $category->translations->where('locale', app()->getLocale())->first();
+                            @endphp
                             <li>
-                                <a href="?{{$slug}}"
-                                   class="uppercase text-lg text-orange {{Request::has($slug) || (Request::all() == null && $slug === 'general') ? 'font-bold' : 'underline'}}">{{__($label)}}</a>
+                                <a href="?category={{$category->slug}}"
+                                   class="uppercase text-lg text-orange {{Request::query('category') === $category->slug || (Request::all() == null && $category->slug === 'general') ? 'font-bold' : 'underline'}}">{{__($category->name)}}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -23,7 +26,7 @@
             <div class="flex flex-col gap-20">
                 <div class="flex flex-col gap-6">
                     @foreach($questions as $question)
-                        <x-faq.faq :question="$question"/>
+                        <x-faq.faq :question="$question->translations->where('locale', app()->getLocale())->first()"/>
                     @endforeach
                 </div>
                 {!! __('faq.tagline') !!}

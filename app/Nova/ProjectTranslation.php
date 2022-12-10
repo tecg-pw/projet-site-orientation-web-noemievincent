@@ -26,7 +26,7 @@ class ProjectTranslation extends Resource
      *
      * @var string
      */
-//    public static $title = 'title';
+    public static $title = 'title';
     /**
      * The columns that should be searched.
      *
@@ -35,11 +35,6 @@ class ProjectTranslation extends Resource
     public static $search = [
         'id', 'title', 'slug'
     ];
-
-    public function title()
-    {
-        return $this->id;
-    }
 
     /**
      * Get the fields displayed by the resource.

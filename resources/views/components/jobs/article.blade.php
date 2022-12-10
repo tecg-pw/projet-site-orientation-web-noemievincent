@@ -16,7 +16,7 @@
                 </div>
                 <div class="flex gap-2 font-light text-sm">
                     <time
-                        datetime="{{$offer->start_date->format('d-m-Y')}}">{{$offer->start_date->format('d F Y')}}</time>
+                        datetime="{{$offer->start_date->format('d-m-Y')}}">{{$offer->start_date->translatedFormat('d F Y')}}</time>
                     —
                     <p>{{$offer->duration}}</p>
                 </div>

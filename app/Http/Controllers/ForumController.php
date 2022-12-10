@@ -58,7 +58,7 @@ class ForumController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function show(Question $question)
+    public function show(string $locale, Question $question)
     {
         $replies = Reply::where('question_id', $question->id)->get();
 

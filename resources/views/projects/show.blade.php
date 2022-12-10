@@ -220,14 +220,12 @@
                 <h2 class="font-display font-semibold text-blue text-xl tracking-wider">{{__('projects.single.others_projects_from', ['name' => $student->firstname])}}</h2>
                 <div class="flex flex-col gap-2">
                     <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
-                        @foreach($student->projects as $index => $otherProject)
-                            @if($index < 3)
-                                @if($otherProject->id != $project->id)
-                                    <x-projects.article
-                                        :project="$otherProject->translations->where('locale', app()->getLocale())->first()"
-                                        :student="$student"
-                                        :all-categories="$otherProject->categories"/>
-                                @endif
+                        @foreach($otherProjects as $otherProject)
+                            @if($otherProject->translations->where('locale', app()->getLocale())->first()->project_id != $project->project_id)
+                                <x-projects.article
+                                    :project="$otherProject->translations->where('locale', app()->getLocale())->first()"
+                                    :student="$student"
+                                    :all-categories="$otherProject->categories"/>
                             @endif
                         @endforeach
                     </div>

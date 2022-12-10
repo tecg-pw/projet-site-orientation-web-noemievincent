@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Models\ProjectCategoryTranslation;
 use App\Models\ProjectTranslation;
+use App\Models\Student;
+use App\Models\StudentTranslation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -57,28 +59,31 @@ class ProjectsController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function show(string $locale, string $student, ProjectTranslation $project)
+    public function show(string $locale, StudentTranslation $student, string $project)
     {
-        $projects = Project::with('course', 'student')->find($project->project_id);
-        $course = $projects->course->translations->where('locale', $locale)->first();
+        $studentRef = Student::find($student->student_id);
+        $student = $studentRef->translations->where('locale', $locale)->first();
 
-        $student = $projects->student->translations->where('locale', $locale)->first();
-
-        $alternatives = [];
-
-        foreach ($projects->translations as $projectRef) {
-            if ($projectRef->locale != app()->getLocale()) {
-                $alternatives[] = $projectRef;
-            } else {
-                $project = $projectRef;
+        foreach ($studentRef->projects as $p) {
+            if ($p->translations->where('locale', app()->getLocale())->first()->slug === $project) {
+                $projectRef = $p;
             }
         }
 
+        $project = $projectRef->translations->where('locale', $locale)->first();
 
-//        $studentId = StudentTranslation::without('projects', 'opportunity', 'company', 'internship')->select('student_id')->where('slug', $student)->where('locale', $locale)->first();
-//        $student = Student::find(1)->first()->translations->where('locale', $locale)->first();
+        $course = $projectRef->course->translations->where('locale', $locale)->first();
 
-        $allCategories = Project::find($project->project_id)->categories;
+        $otherProjects = $studentRef->projects->where('id', '!=', $projectRef->id)->take(3);
+
+        $alternatives = [];
+        foreach ($projectRef->translations as $translation) {
+            if ($translation->locale != app()->getLocale()) {
+                $alternatives[] = $translation;
+            }
+        }
+
+        $allCategories = Project::find($projectRef->id)->categories;
         $categories = [];
         foreach ($allCategories as $category) {
             $categories[] = $category->translations->where('locale', $locale)->first();
@@ -86,7 +91,7 @@ class ProjectsController extends Controller
 
         $aside = AsideController::get();
 
-        return view('projects.show', compact('project', 'alternatives', 'student', 'course', 'categories', 'aside'));
+        return view('projects.show', compact('project', 'alternatives', 'student', 'otherProjects', 'course', 'categories', 'aside'));
     }
 
     /**

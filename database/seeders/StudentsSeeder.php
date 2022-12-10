@@ -21,8 +21,13 @@ class StudentsSeeder extends Seeder
         $json = File::get("database/data/students.json");
         $students = json_decode($json);
 
-        for ($i = 0; $i < (count($students) / 2); $i++) {
-            Student::create();
+        foreach ($students as $key => $value) {
+            if ($key % 2 == 0) {
+                Student::create([
+                    "company_id" => $value->company_id,
+                    "internship_id" => $value->internship_id,
+                ]);
+            }
         }
 
         foreach ($students as $key => $value) {
@@ -36,7 +41,7 @@ class StudentsSeeder extends Seeder
                 "bio" => $value->bio,
                 "genre" => $value->genre,
                 "role" => $value->role,
-                "website_link" => $value->website_link,
+                "website_link" => rtrim($value->website_link, '/'),
                 "github_link" => $value->github_link,
                 "instagram_link" => $value->instagram_link,
                 "linkedin_link" => $value->linkedin_link,
@@ -45,8 +50,6 @@ class StudentsSeeder extends Seeder
                 "locale" => $value->locale,
                 "student_id" => $value->student_id,
                 "opportunity_id" => $value->opportunity_id,
-//                "company_id" => $value->company_id,
-//                "internship_id" => $value->internship_id,
             ]);
         }
     }

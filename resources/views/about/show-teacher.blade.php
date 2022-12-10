@@ -90,7 +90,7 @@
                     class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('teachers.single.classes_title')}}</h3>
                 <div class="grid grid-cols-2 gap-4">
                     @foreach($courses as $course)
-                        <x-about.class :course="$course"/>
+                        <x-about.class :course="$course->translations->where('locale', app()->getLocale())->first()"/>
                     @endforeach
                 </div>
             </section>
@@ -100,10 +100,10 @@
                         class="font-display font-semibold text-blue text-xl tracking-wider">{{__('alumnis.single.projects_from', ['name' => $teacher->firstname])}}</h2>
                     <div class="flex flex-col gap-2">
                         <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
-                            @foreach($projects as $index => $project)
-                                @if($index < 3)
-                                    <x-projects.article :project="$project" :student="$teacher"/>
-                                @endif
+                            @foreach($projects as $project)
+                                <x-projects.article
+                                    :project="$project->translations->where('locale', app()->getLocale())->first()"
+                                    :student="$teacher" :all-categories="$project->categories"/>
                             @endforeach
                         </div>
                         <a href="/{{app()->getLocale()}}/projects"

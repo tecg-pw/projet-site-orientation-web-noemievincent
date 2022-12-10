@@ -6,19 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Student extends Model
+class FaqCategory extends Model
 {
     use SoftDeletes;
+
+    protected $table = 'faqcategories';
 
     protected $with = ['translations'];
 
     public function translations(): HasMany
     {
-        return $this->hasMany(StudentTranslation::class);
+        return $this->hasMany(FaqCategoryTranslation::class, 'category_id');
     }
 
-    public function projects(): HasMany
+    public function questions(): HasMany
     {
-        return $this->hasMany(Project::class, 'student_id');
+        return $this->hasMany(Faq::class, 'category_id');
     }
 }

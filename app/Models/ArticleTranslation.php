@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ArticleTranslation extends Model
 {
-    use HasFactory, SoftDeletes;
+    use SoftDeletes;
 
     protected $table = 'articletranslations';
 
@@ -19,8 +18,6 @@ class ArticleTranslation extends Model
         'locale', 'title', 'slug', 'picture', 'body', 'excerpt', 'article_id', 'category_id', 'author_id'
     ];
 
-//    protected $with = ['author', 'category'];
-
     public function article(): BelongsTo
     {
         return $this->belongsTo(Article::class);
@@ -28,11 +25,6 @@ class ArticleTranslation extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(ArticleCategory::class, 'category_id');
-    }
-
-    public function author(): BelongsTo
-    {
-        return $this->belongsTo(Author::class);
+        return $this->belongsTo(ArticleCategoryTranslation::class, 'category_id');
     }
 }

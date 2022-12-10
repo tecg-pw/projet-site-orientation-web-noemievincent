@@ -21,8 +21,12 @@ class OffersSeeder extends Seeder
         $json = File::get("database/data/offers.json");
         $offers = json_decode($json);
 
-        for ($i = 0; $i < (count($offers) / 2); $i++) {
-            Offer::create();
+        foreach ($offers as $key => $value) {
+            if ($key % 2 == 0) {
+                Offer::create([
+                    "company_id" => $value->company_id,
+                ]);
+            }
         }
 
         foreach ($offers as $key => $value) {
@@ -40,7 +44,6 @@ class OffersSeeder extends Seeder
                 "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
                 "locale" => $value->locale,
                 "offer_id" => $value->offer_id,
-                "company_id" => $value->company_id,
             ]);
         }
     }

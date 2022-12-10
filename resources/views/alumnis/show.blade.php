@@ -34,7 +34,7 @@
                                        class="hover:text-orange hover:underline hover:underline-offset-2 transition ease-in-out duration-200">{{$alumni->email}}</a>
                                     <div class="bg-blue/50 h-max-content w-px"></div>
                                     <a href="{{$alumni->website_link}}"
-                                       class="hover:text-orange hover:underline hover:underline-offset-2 transition ease-in-out duration-200">{{$alumni->website_link}}</a>
+                                       class="hover:text-orange hover:underline hover:underline-offset-2 transition ease-in-out duration-200">{{preg_replace('(https://|http://)', '',$alumni->website_link)}}</a>
                                 </div>
                             </div>
                         </div>
@@ -163,15 +163,17 @@
                     <section aria-labelledby="internship" class="col-span-1">
                         <h3 id="internship"
                             class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.internship_title')}}</h3>
-                        <x-partners.article :partner="$alumni->internship"/>
+                        <x-partners.article
+                            :partner="$alumni->internship->translations->where('locale', app()->getLocale())->first()"/>
                     </section>
                 @endif
                 @if(isset($alumni->opportunity))
                     <section aria-labelledby="job" class="col-span-2">
                         <h3 id="job"
                             class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.job_title')}}</h3>
-                        <x-about.opportunity :company="isset($alumni->company) ? $alumni->company : null"
-                                             :opportunity="$alumni->opportunity"/>
+                        <x-about.opportunity
+                            :company="isset($alumni->company) ? $alumni->company->translations->where('locale', app()->getLocale())->first() : null"
+                            :opportunity="$alumni->opportunity->translations->where('locale', app()->getLocale())->first()"/>
                     </section>
                 @endif
             </div>
@@ -180,10 +182,11 @@
                     class="font-display font-semibold text-blue text-xl tracking-wider">{{__('alumnis.single.projects_from', ['name' => $alumni->firstname])}}</h2>
                 <div class="flex flex-col gap-2">
                     <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
-                        @foreach($alumni->projects as $index => $project)
-                            @if($index < 3)
-                                <x-projects.article :project="$project" :student="$alumni"/>
-                            @endif
+                        @foreach($projects as $project)
+                            <x-projects.article
+                                :project="$project->translations->where('locale', app()->getLocale())->first()"
+                                :student="$alumni"
+                                :all-categories="$project->categories"/>
                         @endforeach
                     </div>
                     <a href="/{{app()->getLocale()}}/projects"

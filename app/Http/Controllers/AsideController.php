@@ -15,7 +15,6 @@ class AsideController extends Controller
             $news[] = $new->translations->where('locale', app()->getLocale())->first();
         }
 
-
         $allOffers = Offer::limit(3)->get();
         $offers = [];
         foreach ($allOffers as $offer) {

@@ -44,6 +44,8 @@ class Student extends Resource
 
             HasMany::make('StudentTranslations', 'translations'),
 
+            HasMany::make('Projects'),
+
         ];
     }
 

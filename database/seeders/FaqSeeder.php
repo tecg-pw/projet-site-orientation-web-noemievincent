@@ -20,8 +20,12 @@ class FaqSeeder extends Seeder
         $json = File::get("database/data/faq.json");
         $faq = json_decode($json);
 
-        for ($i = 0; $i < (count($faq) / 2); $i++) {
-            Faq::create();
+        foreach ($faq as $key => $value) {
+            if ($key % 2 == 0) {
+                Faq::create([
+                    "category_id" => $value->category_id,
+                ]);
+            }
         }
 
         foreach ($faq as $key => $value) {
@@ -29,7 +33,6 @@ class FaqSeeder extends Seeder
                 "title" => $value->title,
                 "slug" => Str::slug($value->title),
                 "body" => $value->body,
-                "category" => $value->category,
                 "locale" => $value->locale,
                 "faq_id" => $value->faq_id,
             ]);

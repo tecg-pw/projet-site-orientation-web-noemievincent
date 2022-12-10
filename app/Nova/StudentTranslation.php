@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -46,8 +45,6 @@ class StudentTranslation extends Resource
 
             BelongsTo::make('Student')
                 ->hideFromIndex(),
-
-            HasMany::make('Projects'),
 
             Text::make('firstname')
                 ->hideFromIndex(),
