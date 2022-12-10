@@ -47,7 +47,7 @@
                 <div class="flex flex-col gap-10 col-span-2">
                     <div class="flex justify-between items-center">
                         <div class="flex gap-2">
-                            <p>{{__('projects.single.alternative')}}</p>
+                            <p>{{__('jobs.single.alternative')}}</p>
                             <ul class="flex gap-2">
                                 @foreach($alternatives as $key => $alt)
                                     <li>

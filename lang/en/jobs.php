@@ -12,6 +12,7 @@ return [
     ],
     'published_at' => '<p class="text-sm">published on <time datetime=":datetime">:date</time></p>',
     'single' => [
+        'alternative' => 'This offer is also available in :',
         'back_to_offers_link' => 'Back to offers',
         'skills_title' => 'Skills needed',
         'description_title' => 'Description and tasks of the internship',

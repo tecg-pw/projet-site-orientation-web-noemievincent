@@ -12,6 +12,7 @@ return [
     ],
     'published_at' => '<p class="text-sm">publiée le <time datetime=":datetime">:date</time></p>',
     'single' => [
+        'alternative' => 'Cette offre est aussi disponible en :',
         'back_to_offers_link' => 'Retour aux offres',
         'skills_title' => 'Compétences nécessaires',
         'description_title' => 'Description et missions du stage',
