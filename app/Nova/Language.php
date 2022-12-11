@@ -3,7 +3,10 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Slug;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Language extends Resource
@@ -20,7 +23,7 @@ class Language extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -28,7 +31,7 @@ class Language extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name', 'slug'
     ];
 
     /**
@@ -40,7 +43,17 @@ class Language extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make()->sortable(),
+
+            Text::make('Name'),
+
+            Slug::make('Slug')
+                ->from('name')
+                ->hideFromIndex(),
+
+            BelongsToMany::make('Tutorials'),
+
+            BelongsToMany::make('Documentations'),
         ];
     }
 

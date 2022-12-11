@@ -3,21 +3,20 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Project extends Resource
+class Tutorial extends Resource
 {
-    public static $with = ['translations'];
-
     /**
      * The model the resource corresponds to.
      *
-     * @var string
+     * @var class-string<\App\Models\Tutorial>
      */
-    public static $model = \App\Models\Project::class;
+    public static $model = \App\Models\Tutorial::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -37,16 +36,16 @@ class Project extends Resource
 
     public function title()
     {
-        return \App\Models\ProjectTranslation::where('project_id', $this->id)->first()->title;
+        return \App\Models\TutorialTranslation::where('tutorial_id', $this->id)->first()->title;
     }
 
     /**
      * Get the fields displayed by the resource.
      *
-     * @param Request $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
             ID::make()->sortable(),
@@ -55,19 +54,19 @@ class Project extends Resource
                 return $this->title();
             }),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\ProjectTranslation'),
+            HasMany::make('Translations', 'translations', '\App\Nova\TutorialTranslation'),
 
-            BelongsTo::make('Student', 'student', '\App\Nova\Student'),
+            BelongsToMany::make('Languages'),
         ];
     }
 
     /**
      * Get the cards available for the request.
      *
-     * @param Request $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -75,10 +74,10 @@ class Project extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param Request $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [];
     }
@@ -86,10 +85,10 @@ class Project extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param Request $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -97,10 +96,10 @@ class Project extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param Request $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [];
     }

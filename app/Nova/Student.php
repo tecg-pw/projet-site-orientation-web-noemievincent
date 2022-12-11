@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Student extends Resource
@@ -20,7 +21,7 @@ class Student extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = '';
 
     /**
      * The columns that should be searched.
@@ -30,6 +31,10 @@ class Student extends Resource
     public static $search = [
         'id',
     ];
+    public function title()
+    {
+        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->fullname;
+    }
 
     /**
      * Get the fields displayed by the resource.
@@ -42,7 +47,11 @@ class Student extends Resource
         return [
             ID::make()->sortable(),
 
-            HasMany::make('StudentTranslations', 'translations'),
+            Text::make('Name', function () {
+                return $this->title();
+            }),
+
+            HasMany::make('Translations', 'translations', '\App\Nova\StudentTranslation'),
 
             HasMany::make('Projects'),
 

@@ -3,12 +3,20 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class StudentTranslation extends Resource
 {
+//    public static $displayInNavigation = false;
+
     /**
      * The model the resource corresponds to.
      *
@@ -29,7 +37,7 @@ class StudentTranslation extends Resource
      * @var array
      */
     public static $search = [
-        'fullname',
+        'fullname', 'firstname', 'lastname'
     ];
 
     /**
@@ -46,15 +54,47 @@ class StudentTranslation extends Resource
             BelongsTo::make('Student')
                 ->hideFromIndex(),
 
-            Text::make('firstname')
+            Text::make('Firstname')
+                ->onlyOnForms(),
+
+            Text::make('Lastname')
+                ->onlyOnForms(),
+
+            Text::make('Name', 'fullname'),
+
+            Slug::make('Slug')
+                ->from('fullname')
                 ->hideFromIndex(),
 
-            Text::make('lastname')
+            Trix::make('Bio'),
+
+            Date::make('Start year', 'start_year')
                 ->hideFromIndex(),
 
-            Text::make('fullname'),
+            Date::make('End year', 'end_year')
+                ->hideFromIndex()
+                ->nullable(),
 
+            Heading::make('Links'),
+            URL::make('Website', 'website_link')
+                ->displayUsing(fn() => $this->website_link)
+                ->hideFromIndex()
+                ->nullable(),
 
+            URL::make('GitHub', 'github_link')
+                ->displayUsing(fn() => $this->github_link)
+                ->hideFromIndex()
+                ->nullable(),
+
+            URL::make('Linkedin', 'linkedin_link')
+                ->displayUsing(fn() => $this->linkedin_link)
+                ->hideFromIndex()
+                ->nullable(),
+
+            URL::make('Instagram', 'instagram_link')
+                ->displayUsing(fn() => $this->instagram_link)
+                ->hideFromIndex()
+                ->nullable(),
         ];
     }
 

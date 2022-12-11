@@ -2,28 +2,31 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\HasMany;
+use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Course extends Resource
+class DocumentationTranslation extends Resource
 {
+//    public static $displayInNavigation = false;
+
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Course>
+     * @var class-string<\App\Models\DocumentationTranslation>
      */
-    public static $model = \App\Models\Course::class;
+    public static $model = \App\Models\DocumentationTranslation::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = '';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -33,15 +36,11 @@ class Course extends Resource
     public static $search = [
         'id',
     ];
-    public function title()
-    {
-        return \App\Models\CourseTranslation::where('course_id', $this->id)->first()->name;
-    }
 
     /**
      * Get the fields displayed by the resource.
      *
-     * @param NovaRequest $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
     public function fields(NovaRequest $request)
@@ -49,24 +48,24 @@ class Course extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Title', function () {
-                return $this->title();
-            }),
+            BelongsTo::make('Documentation')
+                ->hideFromIndex(),
 
-            Number::make('Year', function () {
-                return 'Bloc ' . \App\Models\CourseTranslation::where('course_id', $this->id)->first()->year;
-            }),
+            Text::make('Title')
+                ->hideFromDetail(),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\CourseTranslation'),
+            Trix::make('Description'),
 
-            HasMany::make('Projects', 'projects', '\App\Nova\Project'),
+            URL::make('Link')
+                ->displayUsing(fn() => $this->link)
+                ->hideFromIndex(),
         ];
     }
 
     /**
      * Get the cards available for the request.
      *
-     * @param NovaRequest $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
     public function cards(NovaRequest $request)
@@ -77,7 +76,7 @@ class Course extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param NovaRequest $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
     public function filters(NovaRequest $request)
@@ -88,7 +87,7 @@ class Course extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param NovaRequest $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
     public function lenses(NovaRequest $request)
@@ -99,7 +98,7 @@ class Course extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param NovaRequest $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
     public function actions(NovaRequest $request)

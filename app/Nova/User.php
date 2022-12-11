@@ -3,10 +3,13 @@
 namespace App\Nova;
 
 use Illuminate\Validation\Rules;
+use Laravel\Nova\Fields\Email;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class User extends Resource
@@ -51,9 +54,24 @@ class User extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Email')
+            Text::make('Firstname')
+                ->onlyOnForms()
                 ->sortable()
-                ->rules('required', 'email', 'max:254')
+                ->rules('required', 'max:255'),
+
+            Text::make('Lastname')
+                ->onlyOnForms()
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Slug::make('Slug')
+                ->onlyOnForms()
+                ->sortable()
+                ->rules('required', 'unique'),
+
+            Email::make('Email')
+                ->sortable()
+                ->rules('required', 'unique', 'email', 'max:254')
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
@@ -61,6 +79,9 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', Rules\Password::defaults())
                 ->updateRules('nullable', Rules\Password::defaults()),
+
+            Trix::make('Bio')
+                ->hideFromIndex(),
         ];
     }
 

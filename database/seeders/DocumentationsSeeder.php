@@ -27,7 +27,6 @@ class DocumentationsSeeder extends Seeder
         foreach ($documentations as $key => $value) {
             DocumentationTranslation::create([
                 "title" => $value->title,
-                "slug" => Str::slug($value->title),
                 "description" => $value->description,
                 "link" => $value->link,
                 "locale" => $value->locale,

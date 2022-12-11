@@ -14,6 +14,8 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ProjectTranslation extends Resource
 {
+//    public static $displayInNavigation = false;
+
     /**
      * The model the resource corresponds to.
      *
@@ -50,32 +52,32 @@ class ProjectTranslation extends Resource
             BelongsTo::make('Project')
                 ->hideFromIndex(),
 
-            Text::make('locale'),
+            Text::make('Locale'),
 
-            Text::make('title')
+            Text::make('Title')
                 ->sortable(),
 
-            Slug::make('slug')
+            Slug::make('Slug')
                 ->from('title')
                 ->hideFromIndex(),
 
-            Trix::make('body')
+            Trix::make('Body'),
+
+            Image::make('Picture')
                 ->hideFromIndex(),
 
-            Image::make('picture')
-                ->hideFromIndex(),
-
-            URL::make('website_link')
+            URL::make('Website', 'website_link')
                 ->displayUsing(fn() => $this->website_link)
                 ->hideFromIndex()
                 ->nullable(),
 
-            URL::make('github_link')
+            URL::make('Github', 'github_link')
                 ->displayUsing(fn() => $this->github_link)
                 ->hideFromIndex()
                 ->nullable(),
 
-            Date::make('published_at')
+            Date::make('Published at','published_at')
+                ->hideFromIndex()
                 ->sortable(),
 
         ];

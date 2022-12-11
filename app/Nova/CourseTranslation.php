@@ -4,12 +4,18 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class CourseTranslation extends Resource
 {
+//    public static $displayInNavigation = false;
+
     /**
      * The model the resource corresponds to.
      *
@@ -33,6 +39,8 @@ class CourseTranslation extends Resource
         'name',
     ];
 
+
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -47,10 +55,49 @@ class CourseTranslation extends Resource
             BelongsTo::make('Course')
                 ->hideFromIndex(),
 
-            Text::make('name')->sortable(),
+            Text::make('Name')
+                ->onlyOnForms()
+                ->sortable(),
 
-            Slug::make('slug')->from('name')->hideFromIndex(),
+            Slug::make('Slug')
+                ->from('name')
+                ->hideFromIndex(),
 
+            Trix::make('Description'),
+
+            Select::make('Orientation')->options([
+                'common' => 'Tronc commun',
+                'web' => 'Web',
+                'dg' => 'Design Graphique',
+                '3d' => '3D et Vidéos',
+            ])->displayUsingLabels(),
+
+            Select::make('Year')->options([
+                '1' => 'Bloc 1',
+                '2' => 'Bloc 2',
+                '3' => 'Bloc 3',
+            ])->displayUsingLabels(),
+
+            Text::make('Period')
+                ->hideFromIndex()
+                ->nullable(),
+
+            Number::make('Hours')
+                ->hideFromIndex(),
+
+            Number::make('ECTs')
+                ->hideFromIndex()
+                ->nullable(),
+
+            URL::make('ECTs link')
+                ->displayUsing(fn() => $this->ects_link)
+                ->hideFromIndex()
+                ->nullable(),
+
+            URL::make('Github', 'github_link')
+                ->displayUsing(fn() => $this->github_link)
+                ->hideFromIndex()
+                ->nullable(),
         ];
     }
 

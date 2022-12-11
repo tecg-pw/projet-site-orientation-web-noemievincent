@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->string('slug');
             $table->text('description');
             $table->text('orientation');
-            $table->string('year');
+            $table->integer('year');
             $table->string('period')->nullable();
             $table->integer('hours');
             $table->integer('ects')->nullable();
