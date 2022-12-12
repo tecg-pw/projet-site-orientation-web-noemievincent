@@ -4,7 +4,7 @@
     <div class="flex justify-between">
         <div class="flex flex-col gap-4">
             <img src="https://placehold.jp/160x160.png" alt="nom" height="160" width="160" class="rounded-full">
-            <h3 class="cursor-pointer font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$member->fullname}}</h3>
+            <h3 class="cursor-pointer font-semibold text-xl">{{$member->fullname}}</h3>
         </div>
         <ul class="flex flex-col gap-4">
             <li><a href="{{$member->github_link}}">

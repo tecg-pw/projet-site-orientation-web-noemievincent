@@ -60,11 +60,15 @@ class AlumnisController extends Controller
         $alumniRef = Student::find($alumni->student_id);
         $alumni = $alumniRef->translations->where('locale', $locale)->first();
 
+        $internship = $alumniRef->internship;
+        $opportunity = $alumniRef->opportunity;
+        $company = $alumniRef->company;
+
         $projects = $alumniRef->projects;
 
         $aside = AsideController::get();
 
-        return view('alumnis.show', compact('alumni', 'projects', 'aside'));
+        return view('alumnis.show', compact('alumni', 'internship', 'opportunity', 'company', 'projects', 'aside'));
     }
 
     /**

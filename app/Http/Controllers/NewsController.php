@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
-use App\Models\ArticleCategory;
 use App\Models\ArticleCategoryTranslation;
 use App\Models\ArticleTranslation;
 use Illuminate\Contracts\Foundation\Application;
@@ -60,20 +59,13 @@ class NewsController extends Controller
     public function show(string $locale, ArticleTranslation $article)
     {
         $articleRef = Article::find($article->article_id);
+
         $article = $articleRef->translations->where('locale', app()->getLocale())->first();
 
         $author = $articleRef->author;
-        $categoryRef = $article->category;
-        $category = ArticleCategory::find($categoryRef->category_id);
+        $category = $articleRef->category;
 
-        $articlesRef = ArticleTranslation::where('category_id', $article->category_id)->get();
-
-        $articles = [];
-        foreach ($articlesRef as $a) {
-            if ($a->locale == app()->getLocale()) {
-                $articles[] = Article::find($a->article_id);
-            }
-        }
+        $articles = Article::where('category_id', $articleRef->category_id)->get();
 
         $alternatives = [];
         foreach ($articleRef->translations as $translation) {

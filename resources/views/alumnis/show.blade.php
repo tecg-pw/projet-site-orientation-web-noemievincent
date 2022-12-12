@@ -159,21 +159,21 @@
                 </div>
             </div>
             <div class="grid grid-cols-3 gap-11">
-                @if(isset($alumni->internship))
+                @if(isset($internship))
                     <section aria-labelledby="internship" class="col-span-1">
                         <h3 id="internship"
                             class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.internship_title')}}</h3>
                         <x-partners.article
-                            :partner="$alumni->internship->translations->where('locale', app()->getLocale())->first()"/>
+                            :partner="$internship->translations->where('locale', app()->getLocale())->first()"/>
                     </section>
                 @endif
-                @if(isset($alumni->opportunity))
+                @if(isset($opportunity))
                     <section aria-labelledby="job" class="col-span-2">
                         <h3 id="job"
                             class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.job_title')}}</h3>
                         <x-about.opportunity
-                            :company="isset($alumni->company) ? $alumni->company->translations->where('locale', app()->getLocale())->first() : null"
-                            :opportunity="$alumni->opportunity->translations->where('locale', app()->getLocale())->first()"/>
+                            :company="isset($company) ? $company->translations->where('locale', app()->getLocale())->first() : null"
+                            :opportunity="$opportunity->translations->where('locale', app()->getLocale())->first()"/>
                     </section>
                 @endif
             </div>

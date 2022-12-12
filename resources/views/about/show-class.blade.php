@@ -62,7 +62,8 @@
                             @foreach($projects as $project)
                                 <x-projects.article
                                     :project="$project->translations->where('locale', app()->getLocale())->first()"
-                                    :student="$project->student" :all-categories="$project->categories"/>
+                                    :student="$project->student->translations->where('locale', app()->getLocale())->first()"
+                                    :all-categories="$project->categories"/>
                             @endforeach
                         </div>
                         <a href="/{{app()->getLocale()}}/projects"

@@ -75,6 +75,7 @@ class OffersController extends Controller
         }
 
         $offer = $offerRef->translations->where('locale', app()->getLocale())->first();
+        $skills = $offerRef->skills;
 
         $alternatives = [];
         foreach ($offerRef->translations as $translation) {
@@ -85,7 +86,7 @@ class OffersController extends Controller
 
         $aside = AsideController::get();
 
-        return view('jobs.show', compact('company', 'alternatives', 'offer', 'aside'));
+        return view('jobs.show', compact('company', 'alternatives', 'offer', 'skills', 'aside'));
     }
 
     /**
