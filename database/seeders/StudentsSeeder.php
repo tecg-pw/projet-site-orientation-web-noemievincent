@@ -26,6 +26,7 @@ class StudentsSeeder extends Seeder
                 Student::create([
                     "company_id" => $value->company_id,
                     "internship_id" => $value->internship_id,
+                    "opportunity_id" => $value->opportunity_id,
                 ]);
             }
         }
@@ -49,7 +50,6 @@ class StudentsSeeder extends Seeder
                 "end_year" => $value->end_year != null ? Carbon::create($value->end_year) : $value->end_year,
                 "locale" => $value->locale,
                 "student_id" => $value->student_id,
-                "opportunity_id" => $value->opportunity_id,
             ]);
         }
     }

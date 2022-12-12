@@ -27,6 +27,7 @@ class UsersSeeder extends Seeder
                 "slug" => Str::slug($value->firstname . '-' . $value->lastname),
                 "email" => $value->email,
                 'email_verified_at' => now(),
+                "is_admin" => $value->is_admin,
                 'password' => bcrypt('change_this'),
                 'remember_token' => \Illuminate\Support\Str::random(10),
                 "picture" => $value->picture,

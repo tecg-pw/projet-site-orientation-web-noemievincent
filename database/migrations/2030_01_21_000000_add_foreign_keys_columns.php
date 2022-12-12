@@ -20,11 +20,11 @@ return new class extends Migration {
         Schema::table('students', static function (Blueprint $table) {
             $table->foreignId('company_id')->nullable()->constrained()->onUpdate('cascade');
             $table->foreignId('internship_id')->nullable()->constrained('companies')->onUpdate('cascade');
+            $table->foreignId('opportunity_id')->nullable()->constrained()->onUpdate('cascade');
         });
 
         Schema::table('studenttranslations', static function (Blueprint $table) {
             $table->foreignId('student_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('opportunity_id')->nullable()->constrained()->onUpdate('cascade');
         });
 
         Schema::table('projecttranslations', static function (Blueprint $table) {

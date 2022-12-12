@@ -33,6 +33,7 @@ Route::get('/', function () {
     $locale = substr(Request::server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
     return redirect('/' . $locale);
 });
+
 Route::get('/{locale?}', [HomeController::class, 'index'])->middleware('setLocale');
 
 Route::get('/{locale?}/terms', function () {
