@@ -55,7 +55,8 @@ class ProjectTranslation extends Resource
             Text::make('Locale'),
 
             Text::make('Title')
-                ->sortable(),
+                ->sortable()
+                ->hideFromDetail(),
 
             Slug::make('Slug')
                 ->from('title')
@@ -76,7 +77,7 @@ class ProjectTranslation extends Resource
                 ->hideFromIndex()
                 ->nullable(),
 
-            Date::make('Published at','published_at')
+            Date::make('Published at', 'published_at')
                 ->hideFromIndex()
                 ->sortable(),
 

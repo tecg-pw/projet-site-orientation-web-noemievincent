@@ -5,7 +5,6 @@ namespace App\Nova;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -33,10 +32,6 @@ class Course extends Resource
     public static $search = [
         'id',
     ];
-    public function title()
-    {
-        return \App\Models\CourseTranslation::where('course_id', $this->id)->first()->name;
-    }
 
     /**
      * Get the fields displayed by the resource.
@@ -51,7 +46,7 @@ class Course extends Resource
 
             Text::make('Title', function () {
                 return $this->title();
-            }),
+            })->hideFromDetail(),
 
             Number::make('Year', function () {
                 return 'Bloc ' . \App\Models\CourseTranslation::where('course_id', $this->id)->first()->year;
@@ -61,6 +56,11 @@ class Course extends Resource
 
             HasMany::make('Projects', 'projects', '\App\Nova\Project'),
         ];
+    }
+
+    public function title()
+    {
+        return \App\Models\CourseTranslation::where('course_id', $this->id)->first()->name;
     }
 
     /**

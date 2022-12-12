@@ -2,26 +2,26 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Student extends Resource
+class Reply extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Student>
+     * @var class-string<\App\Models\Reply>
      */
-    public static $model = \App\Models\Student::class;
+    public static $model = \App\Models\Reply::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = '';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -43,20 +43,13 @@ class Student extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name', function () {
-                return $this->title();
-            })->hideFromDetail(),
+            Text::make('Body'),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\StudentTranslation'),
+            BelongsTo::make('User', 'user', '\App\Nova\User'),
 
-            HasMany::make('Projects'),
+            BelongsTo::make('Question', 'question', '\App\Nova\Question'),
 
         ];
-    }
-
-    public function title()
-    {
-        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->fullname;
     }
 
     /**

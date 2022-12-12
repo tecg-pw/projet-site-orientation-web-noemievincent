@@ -40,7 +40,6 @@ class CourseTranslation extends Resource
     ];
 
 
-
     /**
      * Get the fields displayed by the resource.
      *
@@ -55,8 +54,10 @@ class CourseTranslation extends Resource
             BelongsTo::make('Course')
                 ->hideFromIndex(),
 
+            Text::make('Locale'),
+
             Text::make('Name')
-                ->onlyOnForms()
+                ->hideFromDetail()
                 ->sortable(),
 
             Slug::make('Slug')

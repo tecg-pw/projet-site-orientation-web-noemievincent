@@ -4,7 +4,6 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Slug;
@@ -54,13 +53,16 @@ class StudentTranslation extends Resource
             BelongsTo::make('Student')
                 ->hideFromIndex(),
 
+            Text::make('Locale'),
+
             Text::make('Firstname')
                 ->onlyOnForms(),
 
             Text::make('Lastname')
                 ->onlyOnForms(),
 
-            Text::make('Name', 'fullname'),
+            Text::make('Name', 'fullname')
+                ->hideFromDetail(),
 
             Slug::make('Slug')
                 ->from('fullname')

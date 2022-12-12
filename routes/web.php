@@ -38,7 +38,8 @@ Route::get('/{locale?}', [HomeController::class, 'index'])->middleware('setLocal
 
 Route::get('/{locale?}/terms', function () {
     return view('terms');
-});
+})->middleware('setLocale');
+
 Route::get('/{locale?}/search', [SearchController::class, 'index'])->middleware('setLocale');
 
 //ROUTE : About

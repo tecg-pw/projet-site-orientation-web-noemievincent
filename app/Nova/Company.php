@@ -7,14 +7,14 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Student extends Resource
+class Company extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Student>
+     * @var class-string<\App\Models\Company>
      */
-    public static $model = \App\Models\Student::class;
+    public static $model = \App\Models\Company::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -47,16 +47,17 @@ class Student extends Resource
                 return $this->title();
             })->hideFromDetail(),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\StudentTranslation'),
+            HasMany::make('Offers'),
 
-            HasMany::make('Projects'),
+            HasMany::make('Members', 'members', 'App\Nova\CompanyMember'),
 
+            HasMany::make('Students'),
         ];
     }
 
     public function title()
     {
-        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->fullname;
+        return \App\Models\CompanyTranslation::where('company_id', $this->id)->first()->name;
     }
 
     /**

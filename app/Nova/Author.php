@@ -7,21 +7,21 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Student extends Resource
+class Author extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Student>
+     * @var class-string<\App\Models\Author>
      */
-    public static $model = \App\Models\Student::class;
+    public static $model = \App\Models\Author::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = '';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -43,20 +43,11 @@ class Student extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name', function () {
-                return $this->title();
-            })->hideFromDetail(),
+            HasMany::make('Articles'),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\StudentTranslation'),
-
-            HasMany::make('Projects'),
-
+            Text::make('Name')
+                ->hideFromDetail(),
         ];
-    }
-
-    public function title()
-    {
-        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->fullname;
     }
 
     /**

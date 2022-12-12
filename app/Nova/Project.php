@@ -35,11 +35,6 @@ class Project extends Resource
         'id',
     ];
 
-    public function title()
-    {
-        return \App\Models\ProjectTranslation::where('project_id', $this->id)->first()->title;
-    }
-
     /**
      * Get the fields displayed by the resource.
      *
@@ -53,12 +48,17 @@ class Project extends Resource
 
             Text::make('Title', function () {
                 return $this->title();
-            }),
+            })->hideFromDetail(),
 
             HasMany::make('Translations', 'translations', '\App\Nova\ProjectTranslation'),
 
             BelongsTo::make('Student', 'student', '\App\Nova\Student'),
         ];
+    }
+
+    public function title()
+    {
+        return \App\Models\ProjectTranslation::where('project_id', $this->id)->first()->title;
     }
 
     /**

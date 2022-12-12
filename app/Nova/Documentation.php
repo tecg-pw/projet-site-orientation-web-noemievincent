@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -34,15 +33,10 @@ class Documentation extends Resource
         'id',
     ];
 
-    public function title()
-    {
-        return \App\Models\DocumentationTranslation::where('documentation_id', $this->id)->first()->title;
-    }
-
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @param NovaRequest $request
      * @return array
      */
     public function fields(NovaRequest $request)
@@ -52,7 +46,7 @@ class Documentation extends Resource
 
             Text::make('Title', function () {
                 return $this->title();
-            }),
+            })->hideFromDetail(),
 
             HasMany::make('Translations', 'translations', '\App\Nova\DocumentationTranslation'),
 
@@ -60,10 +54,15 @@ class Documentation extends Resource
         ];
     }
 
+    public function title()
+    {
+        return \App\Models\DocumentationTranslation::where('documentation_id', $this->id)->first()->title;
+    }
+
     /**
      * Get the cards available for the request.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @param NovaRequest $request
      * @return array
      */
     public function cards(NovaRequest $request)
@@ -74,7 +73,7 @@ class Documentation extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @param NovaRequest $request
      * @return array
      */
     public function filters(NovaRequest $request)
@@ -85,7 +84,7 @@ class Documentation extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @param NovaRequest $request
      * @return array
      */
     public function lenses(NovaRequest $request)
@@ -96,7 +95,7 @@ class Documentation extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @param NovaRequest $request
      * @return array
      */
     public function actions(NovaRequest $request)

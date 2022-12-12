@@ -7,7 +7,6 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Language extends Resource
 {
@@ -37,7 +36,7 @@ class Language extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return array
      */
     public function fields(Request $request)
@@ -45,7 +44,8 @@ class Language extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name'),
+            Text::make('Name')
+                ->hideFromDetail(),
 
             Slug::make('Slug')
                 ->from('name')
@@ -60,7 +60,7 @@ class Language extends Resource
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return array
      */
     public function cards(Request $request)
@@ -71,7 +71,7 @@ class Language extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return array
      */
     public function filters(Request $request)
@@ -82,7 +82,7 @@ class Language extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return array
      */
     public function lenses(Request $request)
@@ -93,7 +93,7 @@ class Language extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return array
      */
     public function actions(Request $request)

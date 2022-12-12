@@ -7,14 +7,14 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Student extends Resource
+class FaqCategory extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Student>
+     * @var class-string<\App\Models\FaqCategory>
      */
-    public static $model = \App\Models\Student::class;
+    public static $model = \App\Models\FaqCategory::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -47,16 +47,16 @@ class Student extends Resource
                 return $this->title();
             })->hideFromDetail(),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\StudentTranslation'),
+            HasMany::make('Translations', 'translations', '\App\Nova\FaqCategoryTranslation'),
 
-            HasMany::make('Projects'),
+            HasMany::make('Questions', 'questions', '\App\Nova\Faq'),
 
         ];
     }
 
     public function title()
     {
-        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->fullname;
+        return \App\Models\FaqCategoryTranslation::where('category_id', $this->id)->first()->name;
     }
 
     /**
