@@ -6,7 +6,6 @@ use App\Models\Tool;
 use App\Models\ToolTranslation;
 use File;
 use Illuminate\Database\Seeder;
-use Str;
 
 class ToolsSeeder extends Seeder
 {
@@ -27,7 +26,6 @@ class ToolsSeeder extends Seeder
         foreach ($tools as $key => $value) {
             ToolTranslation::create([
                 "title" => $value->title,
-                "slug" => Str::slug($value->title),
                 "description" => $value->description,
                 "link" => $value->link,
                 "locale" => $value->locale,

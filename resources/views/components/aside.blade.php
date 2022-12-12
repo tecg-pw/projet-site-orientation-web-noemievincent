@@ -7,12 +7,8 @@
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('aside.news_title')}}</h3>
         <div class="flex flex-col gap-3">
             @foreach($aside['news'] as $new)
-                @php
-                    $categoryRef = $new->category;
-                    $category = App\Models\ArticleCategory::find($categoryRef->category_id);
-                @endphp
-                <x-news.aside-article :new="$new"
-                                      :category="$category->translations->where('locale', app()->getLocale())->first()"/>
+                <x-news.aside-article :new="$new->translations->where('locale', app()->getLocale())->first()"
+                                      :category="$new->category->translations->where('locale', app()->getLocale())->first()"/>
             @endforeach
         </div>
         <a href="/{{app()->getLocale()}}/news"
@@ -31,12 +27,8 @@
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('aside.offers_title')}}</h3>
         <div class="flex flex-col gap-3">
             @foreach($aside['offers'] as $offer)
-                @php
-                    $company = Offer::find($offer->offer_id)->company;
-//                    dd($company);
-                @endphp
-                <x-jobs.aside-article :offer="$offer"
-                                      :company="$company->translations->where('locale', app()->getLocale())->first()"/>
+                <x-jobs.aside-article :offer="$offer->translations->where('locale', app()->getLocale())->first()"
+                                      :company="$offer->company->translations->where('locale', app()->getLocale())->first()"/>
             @endforeach
         </div>
         <a href="/{{app()->getLocale()}}/jobs"

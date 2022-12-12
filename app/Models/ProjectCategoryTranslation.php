@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProjectCategoryTranslation extends Model
@@ -17,13 +17,8 @@ class ProjectCategoryTranslation extends Model
         'locale', 'name', 'slug', 'category_id'
     ];
 
-    public function categories(): BelongsToMany
+    public function category(): BelongsTo
     {
-        return $this->belongsToMany(ProjectCategory::class);
+        return $this->belongsTo(ProjectCategory::class);
     }
-
-//    public function projects(): BelongsToMany
-//    {
-//        return $this->belongsToMany(Project::class);
-//    }
 }

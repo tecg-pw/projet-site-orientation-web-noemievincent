@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class QuestionCategory extends Model
 {
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'questioncategories';
 
@@ -17,5 +18,10 @@ class QuestionCategory extends Model
     public function translations(): HasMany
     {
         return $this->hasMany(QuestionCategoryTranslation::class, 'category_id');
+    }
+
+    public function questions(): HasMany
+    {
+        return $this->hasMany(Question::class, 'category_id');
     }
 }

@@ -12,7 +12,7 @@ class Documentation extends Model
 {
     use HasFactory, SoftDeletes;
 
-//    protected $with = ['translations', 'languages'];
+    protected $with = ['translations'];
 
     public function translations(): HasMany
     {

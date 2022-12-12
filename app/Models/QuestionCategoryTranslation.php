@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class QuestionCategoryTranslation extends Model
@@ -14,15 +13,10 @@ class QuestionCategoryTranslation extends Model
 
     protected $table = 'questioncategoriestranslations';
 
-    protected $fillable = ['name', 'slug'];
+    protected $fillable = ['name', 'slug', 'category_id'];
 
-    public function categories(): BelongsToMany
+    public function category(): BelongsTo
     {
-        return $this->belongsToMany(QuestionCategory::class);
-    }
-
-    public function questions(): HasMany
-    {
-        return $this->hasMany(Question::class, 'category_id');
+        return $this->belongsTo(QuestionCategory::class);
     }
 }

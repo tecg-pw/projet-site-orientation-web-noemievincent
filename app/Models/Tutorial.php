@@ -12,7 +12,7 @@ class Tutorial extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $with = ['translations', 'languages'];
+    protected $with = ['translations'];
 
     public function translations(): HasMany
     {
@@ -22,5 +22,10 @@ class Tutorial extends Model
     public function languages(): BelongsToMany
     {
         return $this->belongsToMany(Language::class);
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
     }
 }

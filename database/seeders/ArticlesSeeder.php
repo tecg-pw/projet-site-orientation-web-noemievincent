@@ -25,6 +25,7 @@ class ArticlesSeeder extends Seeder
             if ($key % 2 == 0) {
                 Article::create([
                     "author_id" => $value->author_id,
+                    "category_id" => $value->category_id,
                 ]);
             }
         }
@@ -39,7 +40,6 @@ class ArticlesSeeder extends Seeder
                 "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
                 "locale" => $value->locale,
                 "article_id" => $value->article_id,
-                "category_id" => $value->category_id,
             ]);
         }
     }

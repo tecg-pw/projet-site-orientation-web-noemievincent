@@ -13,7 +13,7 @@ class FaqTranslation extends Model
 
     protected $table = 'faqtranslations';
 
-    protected $fillable = ['locale', 'title', 'slug', 'body', 'category', 'faq_id'];
+    protected $fillable = ['locale', 'title', 'slug', 'body', 'faq_id'];
 
     public function faq(): BelongsTo
     {
