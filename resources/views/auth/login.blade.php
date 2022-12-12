@@ -7,11 +7,11 @@
             <x-email-field/>
             <x-password-field/>
             <div class="flex justify-between items-center font-light text-sm">
-                <fieldset class="flex gap-2 items-center">
+                <div class="flex gap-2 items-center">
                     <input type="checkbox" id="remember" value="{{__('forms.labels.remember_me')}}"
                            class="accent-orange">
                     <label for="remember">{{__('forms.labels.remember_me')}}</label>
-                </fieldset>
+                </div>
                 <a href="/{{app()->getLocale()}}/reset-password"
                    class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('forms.links.reset_password')}}</a>
             </div>

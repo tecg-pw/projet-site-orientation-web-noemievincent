@@ -8,7 +8,7 @@
         </div>
         <form action="/reset-password" method="post" class="flex flex-col gap-4 mb-12">
             @csrf
-            <fieldset class="flex flex-col gap-1">
+            <div class="flex flex-col gap-1">
                 <label for="email" class="text-lg text-blue-dark flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                          class="fill-none stroke-blue-dark stroke-2">
@@ -21,7 +21,7 @@
                 </label>
                 <input type="email" id="email" placeholder="name@example.com"
                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-            </fieldset>
+            </div>
             <button type="submit"
                     class="uppercase font-light bg-orange text-white py-2 self-start px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
                 {{__('forms.buttons.reset_password')}}

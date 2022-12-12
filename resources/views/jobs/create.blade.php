@@ -22,7 +22,7 @@
                     <div>
                         <h3 class="font-semibold font-display text-xl">{{__('jobs.create.form.company.title')}}</h3>
                         <div class="flex justify-between gap-6">
-                            <fieldset class="flex flex-col gap-1 w-full">
+                            <div class="flex flex-col gap-1 w-full">
                                 <label for="company-logo" class="text-lg text-blue-dark flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="18" width="18"
                                          class="fill-blue-dark">
@@ -33,8 +33,8 @@
                                 </label>
                                 <input type="file" id="company-logo" name="company-logo"
                                        class="py-2 file:border file:border-solid file:border-orange file:rounded-lg file:bg-white file:px-3 file:py-1 file:text-blue file:hover:bg-orange file:cursor-pointer file:hover:text-white file:transition-all file:ease-in-out file:duration-200">
-                            </fieldset>
-                            <fieldset class="flex flex-col gap-1 w-full">
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
                                 <label for="name" class="text-lg text-blue-dark flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                                          class="fill-blue-dark">
@@ -45,8 +45,8 @@
                                 </label>
                                 <input type="text" id="name" placeholder="White Cube"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </fieldset>
-                            <fieldset class="flex flex-col gap-1 w-full">
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
                                 <label for="website" class="text-lg text-blue-dark flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                                          class="fill-blue-dark">
@@ -57,13 +57,13 @@
                                 </label>
                                 <input type="text" id="website" placeholder="whitecube.be"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </fieldset>
+                            </div>
                         </div>
                     </div>
                     <div>
                         <h3 class="font-semibold font-display text-xl">{{__('jobs.create.form.informations.title')}}</h3>
                         <div class="grid grid-cols-3 gap-6">
-                            <fieldset class="flex flex-col gap-1 w-full">
+                            <div class="flex flex-col gap-1 w-full">
                                 <label for="full-name" class="text-lg text-blue-dark flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                                          class="fill-blue-dark">
@@ -74,8 +74,8 @@
                                 </label>
                                 <input type="text" id="full-name" placeholder="Jonathan Prevost"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </fieldset>
-                            <fieldset class="flex flex-col gap-1 col-span-2">
+                            </div>
+                            <div class="flex flex-col gap-1 col-span-2">
                                 <label for="email" class="text-lg text-blue-dark flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                                          class="fill-none stroke-blue-dark stroke-2">
@@ -88,27 +88,27 @@
                                 </label>
                                 <input type="email" id="email" placeholder="name@example.com"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </fieldset>
+                            </div>
                         </div>
                     </div>
                     <div>
                         <h3 class="font-semibold font-display text-xl">{{__('jobs.create.form.offer.title')}}</h3>
                         <div class="flex flex-col gap-2">
-                            <fieldset class="flex flex-col gap-2">
+                            <div class="flex flex-col gap-2">
                                 <label for="title" class="text-lg">{{__('jobs.create.form.offer.labels.title')}}</label>
                                 <input type="text" id="title"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </fieldset>
-                            <fieldset class="flex flex-col gap-2">
+                            </div>
+                            <div class="flex flex-col gap-2">
                                 <label for="desc" class="text-lg ">{{__('jobs.create.form.offer.labels.body')}}</label>
                                 <textarea name="desc" id="desc" cols="30" rows="10"
                                           class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200"></textarea>
-                            </fieldset>
+                            </div>
                             <div>
-                                <fieldset class="flex flex-col gap-2">
+                                <div class="flex flex-col gap-2">
                                     <label for="desc"
                                            class="text-lg ">{{__('jobs.create.form.offer.labels.skills')}}</label>
-                                    <fieldset>
+                                    <div>
                                         @foreach($skills as $skill)
                                             <div class="flex gap-2 items-center">
                                                 <input type="checkbox" id="{{$skill->slug}}" value="{{$skill->slug}}"
@@ -116,8 +116,8 @@
                                                 <label for="{{$skill->slug}}">{{$skill->name}}</label>
                                             </div>
                                         @endforeach
-                                    </fieldset>
-                                </fieldset>
+                                    </div>
+                                </div>
                                 <div>
                                     <p class="mb-1">{{__('jobs.create.form.offer.labels.other_skills')}}</p>
                                     <div class="flex flex-col gap-3">
@@ -134,32 +134,32 @@
                     <div>
                         <h3 class="font-semibold font-display text-xl">{{__('jobs.create.form.contract.title')}}</h3>
                         <div class="flex justify-between gap-6">
-                            <fieldset class="flex flex-col gap-1 w-full">
+                            <div class="flex flex-col gap-1 w-full">
                                 <label for="date" class="text-lg text-blue-dark flex items-center gap-2">
                                     <span>{{__('jobs.create.form.contract.labels.date')}}</span>
                                 </label>
                                 <input type="date" id="date"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </fieldset>
-                            <fieldset class="flex flex-col gap-1 w-full">
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
                                 <label for="duration" class="text-lg text-blue-dark flex items-center gap-2">
                                     <span>{{__('jobs.create.form.contract.labels.duration')}}</span>
                                 </label>
                                 <input type="text" id="duration" placeholder="12 semaines"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </fieldset>
-                            <fieldset class="flex flex-col gap-1 w-full">
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
                                 <label for="location" class="text-lg text-blue-dark flex items-center gap-2">
                                     <span>{{__('jobs.create.form.contract.labels.location')}}</span>
                                 </label>
                                 <input type="text" id="location" placeholder="Liège"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </fieldset>
+                            </div>
                         </div>
                     </div>
                     <div>
                         <h3 class="font-semibold font-display text-xl">{{__('jobs.create.form.reception_mode.title')}}</h3>
-                        <fieldset class="flex flex-col gap-6">
+                        <div class="flex flex-col gap-6">
                             <div class="flex flex-col gap-2">
                                 <div class="radio-btn--parent flex gap-3 items-center">
                                     <input type="radio" id="email-reception" name="reception-mode" value="email"
@@ -194,7 +194,7 @@
                                            class="pl-3 py-2 col-span-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
                                 </div>
                             </div>
-                        </fieldset>
+                        </div>
                     </div>
                     <div class="flex flex-col gap-3">
                         <button type="submit"

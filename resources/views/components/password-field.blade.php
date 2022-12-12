@@ -1,4 +1,4 @@
-<fieldset class="flex flex-col gap-1">
+<div class="flex flex-col gap-1">
     <label for="password" class="">
                     <span class="text-lg text-blue-dark flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
@@ -25,4 +25,4 @@
                         </svg>
                     </span>
     </div>
-</fieldset>
+</div>

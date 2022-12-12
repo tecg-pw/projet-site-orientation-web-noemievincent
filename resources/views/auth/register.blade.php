@@ -9,7 +9,7 @@
         <form action="/register" method="post" class="flex flex-col gap-4">
             @csrf
             <div class="flex justify-between gap-3">
-                <fieldset class="flex flex-col gap-1 w-full">
+                <div class="flex flex-col gap-1 w-full">
                     <label for="firstname" class="text-lg text-blue-dark flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                              class="fill-blue-dark">
@@ -20,8 +20,8 @@
                     </label>
                     <input type="text" id="firstname" placeholder="Pierre" name="firstname" dusk="firstname-field"
                            class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                </fieldset>
-                <fieldset class="flex flex-col gap-1 w-full">
+                </div>
+                <div class="flex flex-col gap-1 w-full">
                     <label for="lastname" class="text-lg text-blue-dark flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                              class="fill-blue-dark">
@@ -32,7 +32,7 @@
                     </label>
                     <input type="text" id="lastname" placeholder="Dumont" name="lastname" dusk="lastname-field"
                            class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                </fieldset>
+                </div>
             </div>
             <x-email-field/>
             <x-password-field/>

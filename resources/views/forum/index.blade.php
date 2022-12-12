@@ -30,17 +30,17 @@
                 <div class="flex flex-col gap-6">
                     <form action="forum/create" class="flex flex-col gap-4">
                         @csrf
-                        <fieldset class="flex flex-col gap-2">
+                        <div class="flex flex-col gap-2">
                             <label for="subject" class="text-lg">{{__('forms.labels.subjects')}}</label>
                             <input type="text" id="subject"
                                    class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                        </fieldset>
-                        <fieldset class="flex flex-col gap-2">
+                        </div>
+                        <div class="flex flex-col gap-2">
                             <label for="reply" class="text-lg sr-only">{{__('forms.labels.message')}}</label>
                             <textarea name="reply" id="reply" cols="30" rows="10"
                                       class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200"></textarea>
-                        </fieldset>
-                        <fieldset class="flex gap-2">
+                        </div>
+                        <div class="flex gap-2">
                             <label for="category" class="text-lg">{{__('forms.labels.category')}} :</label>
                             <select name="category" id="category" class="rounded-lg px-4">
                                 <option value="category">Catégorie</option>
@@ -48,7 +48,7 @@
                                     <option value="{{$category->slug}}">{{$category->name}}</option>
                                 @endforeach
                             </select>
-                        </fieldset>
+                        </div>
                         <div class="flex gap-8 items-center justify-end">
                             <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
                             <button type="submit"
