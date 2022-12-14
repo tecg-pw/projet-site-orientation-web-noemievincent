@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -32,6 +33,11 @@ class Company extends Resource
         'id',
     ];
 
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->withCount('offers');
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -41,23 +47,41 @@ class Company extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
-            })->hideFromDetail(),
+            }),
 
-            HasMany::make('Offers'),
 
+            Number::make('Traductions', function () {
+                return $this->translationsCount();
+            })->onlyOnIndex(),
+
+            Number::make(__('Nombre d‘offres'), 'offers_count')
+                ->sortable()->onlyOnIndex(),
+
+            HasMany::make('Traductions', 'translations', '\App\Nova\ArticleTranslation'),
+
+            HasMany::make('Offres', 'offers', 'App\Nova\Offer'),
             HasMany::make('Members', 'members', 'App\Nova\CompanyMember'),
-
-            HasMany::make('Students'),
+            HasMany::make('Étudiants', 'students', 'App\Nova\Student'),
         ];
     }
 
     public function title()
     {
         return \App\Models\CompanyTranslation::where('company_id', $this->id)->first()->name;
+    }
+
+    public function translationsCount()
+    {
+        $translations = \App\Models\CompanyTranslation::select('locale')->where('company_id', $this->id)->get();
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+
+        return implode(', ', $locales);
     }
 
     /**

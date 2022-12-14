@@ -3,9 +3,12 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class OfferTranslation extends Resource
@@ -42,18 +45,41 @@ class OfferTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            BelongsTo::make('Offer')
+            BelongsTo::make('Offre', 'offer', 'App\Nova\Offer')
                 ->hideFromIndex(),
 
-            Text::make('Locale'),
+            Text::make('Locale')->sortable(),
 
-            Text::make('Title')
+            Text::make('Titre', 'title')
                 ->sortable()
                 ->hideFromDetail(),
 
-            BelongsToMany::make('Skills'),
+            Slug::make('Slug')->from('title')
+                ->hideFromIndex(),
+
+            Trix::make('Body', 'body'),
+
+            Date::make('Publiée le', 'published_at')
+                ->sortable(),
+
+            Heading::make('Convention de stage'),
+            Date::make('Date de début', 'start_date')
+                ->onlyOnDetail(),
+
+            Text::make('Durée', 'duration')
+                ->onlyOnDetail(),
+
+            Text::make('Lieu', 'location')
+                ->onlyOnDetail(),
+
+            Heading::make('Mode des réception des candidatures'),
+            Text::make('Méthode', 'method')
+                ->onlyOnDetail(),
+
+            Text::make('Lien ou email', 'method_link')
+                ->onlyOnDetail(),
         ];
     }
 
@@ -76,7 +102,9 @@ class OfferTranslation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Locale(),
+        ];
     }
 
     /**

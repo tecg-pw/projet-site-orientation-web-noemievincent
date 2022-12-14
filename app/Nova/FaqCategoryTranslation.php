@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -41,16 +42,19 @@ class FaqCategoryTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            BelongsTo::make('Category', 'category', 'App\Nova\FaqCategory')
+            BelongsTo::make('Catégorie', 'category', 'App\Nova\FaqCategory')
                 ->hideFromIndex(),
 
-            Text::make('Locale'),
+            Text::make('Locale')->sortable(),
 
-            Text::make('Name')
+            Text::make('Nom', 'name')
                 ->sortable()
                 ->hideFromDetail(),
+
+            Slug::make('Slug')->from('name')
+                ->sortable(),
         ];
     }
 
@@ -73,7 +77,9 @@ class FaqCategoryTranslation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Locale(),
+        ];
     }
 
     /**

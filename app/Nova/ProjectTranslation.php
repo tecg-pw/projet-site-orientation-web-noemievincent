@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -47,14 +48,17 @@ class ProjectTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            BelongsTo::make('Project')
+            BelongsTo::make('Projets', 'project', 'App\Nova\Project')
                 ->hideFromIndex(),
 
-            Text::make('Locale'),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels(),
 
-            Text::make('Title')
+            Text::make('Titre', 'title')
                 ->sortable()
                 ->hideFromDetail(),
 
@@ -64,10 +68,10 @@ class ProjectTranslation extends Resource
 
             Trix::make('Body'),
 
-            Image::make('Picture')
+            Image::make('Photo principale', 'picture')
                 ->hideFromIndex(),
 
-            URL::make('Website', 'website_link')
+            URL::make('Site web', 'website_link')
                 ->displayUsing(fn() => $this->website_link)
                 ->hideFromIndex()
                 ->nullable(),
@@ -77,8 +81,7 @@ class ProjectTranslation extends Resource
                 ->hideFromIndex()
                 ->nullable(),
 
-            Date::make('Published at', 'published_at')
-                ->hideFromIndex()
+            Date::make('Publié le', 'published_at')
                 ->sortable(),
 
         ];
@@ -103,7 +106,9 @@ class ProjectTranslation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Locale(),
+        ];
     }
 
     /**

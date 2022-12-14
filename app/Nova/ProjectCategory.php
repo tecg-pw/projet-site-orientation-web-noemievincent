@@ -2,8 +2,10 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -32,6 +34,11 @@ class ProjectCategory extends Resource
         'id',
     ];
 
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->withCount('projects');
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -41,21 +48,38 @@ class ProjectCategory extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
-            })->hideFromDetail(),
+            }),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\ProjectCategoryTranslation'),
+            Number::make(__('Nombre de projets'), 'projects_count')
+                ->sortable()->onlyOnIndex(),
 
-            HasMany::make('Projects', 'projects', '\App\Nova\Project'),
+            Number::make('Traductions', function () {
+                return $this->translationsCount();
+            })->onlyOnIndex(),
+
+            HasMany::make('Traductions', 'translations', '\App\Nova\ProjectCategoryTranslation'),
+
+            BelongsToMany::make('Projets', 'projects', '\App\Nova\Project'),
         ];
     }
 
     public function title()
     {
         return \App\Models\ProjectCategoryTranslation::where('category_id', $this->id)->first()->name;
+    }
+
+    public function translationsCount()
+    {
+        $translations = \App\Models\ProjectCategoryTranslation::select('locale')->where('category_id', $this->id)->get();
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+
+        return implode(', ', $locales);
     }
 
     /**

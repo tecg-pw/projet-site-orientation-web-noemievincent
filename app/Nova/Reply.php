@@ -2,9 +2,11 @@
 
 namespace App\Nova;
 
+use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Reply extends Resource
@@ -21,7 +23,7 @@ class Reply extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = '';
 
     /**
      * The columns that should be searched.
@@ -41,13 +43,21 @@ class Reply extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Body'),
+            Text::make('Body')
+                ->onlyOnIndex()
+                ->sortable()
+                ->displayUsing(function ($value) {
+                    return Str::limit($value, 60, '...');
+                }),
 
-            BelongsTo::make('User', 'user', '\App\Nova\User'),
+            Trix::make('Body')
+                ->alwaysShow(),
 
-            BelongsTo::make('Question', 'question', '\App\Nova\Question'),
+            BelongsTo::make('User', 'user', '\App\Nova\User')->sortable(),
+
+            BelongsTo::make('Question', 'question', '\App\Nova\Question')->sortable(),
 
         ];
     }
@@ -71,7 +81,9 @@ class Reply extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\User(),
+        ];
     }
 
     /**

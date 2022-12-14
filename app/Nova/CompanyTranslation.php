@@ -3,8 +3,13 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class CompanyTranslation extends Resource
@@ -41,12 +46,35 @@ class CompanyTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
-
-            Text::make('Name')
-                ->hideFromDetail(),
+            ID::make()->hide(),
 
             BelongsTo::make('Company')
+                ->hideFromIndex(),
+
+            Text::make('Locale')->sortable(),
+
+            Image::make('Logo'),
+            Text::make('Name')
+                ->sortable()
+                ->hideFromDetail(),
+
+            Slug::make('Slug')->from('name')
+                ->sortable()
+                ->hideFromIndex(),
+
+            Trix::make('Description'),
+
+            URL::make('Lien du site web', 'website_link')
+                ->displayUsing(fn() => $this->website_link)
+                ->hideFromIndex()
+                ->nullable(),
+
+            Heading::make('Adresse'),
+            Text::make('Rue et numéro', 'streetAddress')
+                ->hideFromIndex(),
+            Text::make('Code postal', 'postalCode')
+                ->hideFromIndex(),
+            Text::make('Localité', 'addressLocality')
                 ->hideFromIndex(),
         ];
     }
@@ -70,7 +98,9 @@ class CompanyTranslation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Locale(),
+        ];
     }
 
     /**

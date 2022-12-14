@@ -19,4 +19,9 @@ class ArticleCategory extends Model
     {
         return $this->hasMany(ArticleCategoryTranslation::class, 'category_id');
     }
+
+    public function articles(): HasMany
+    {
+        return $this->hasMany(Article::class, 'category_id');
+    }
 }

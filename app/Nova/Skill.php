@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -33,6 +34,11 @@ class Skill extends Resource
         'id',
     ];
 
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->withCount('offers');
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -42,16 +48,20 @@ class Skill extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Name')
-                ->hideFromDetail(),
+            Text::make('Nom', 'name')
+                ->hideFromDetail()
+                ->sortable(),
 
             Slug::make('Slug')
                 ->from('name')
-                ->hideFromIndex(),
+                ->sortable(),
 
-            BelongsToMany::make('Offers')
+            Number::make(__('Nombre d‘offres'), 'offers_count')
+                ->sortable()->onlyOnIndex(),
+
+            BelongsToMany::make('Offres', 'offers', 'App\Nova\Offer')
         ];
     }
 

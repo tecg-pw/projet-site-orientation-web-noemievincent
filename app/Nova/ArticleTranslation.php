@@ -2,9 +2,15 @@
 
 namespace App\Nova;
 
+use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ArticleTranslation extends Resource
@@ -41,17 +47,35 @@ class ArticleTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
             BelongsTo::make('Article')
                 ->hideFromIndex(),
 
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels(),
 
-            Text::make('Locale'),
-
-            Text::make('Title')
+            Text::make('Titre', 'title')
                 ->sortable()
-                ->hideFromDetail(),
+                ->hideFromDetail()
+                ->displayUsing(function ($value) {
+                    return Str::limit($value, 60, '...');
+                }),
+
+            Slug::make('Slug')->from('title')
+                ->sortable()
+                ->hideFromIndex(),
+
+            Image::make('Photo', 'picture')
+                ->hideFromIndex(),
+
+            Trix::make('Excerpt', 'excerpt'),
+            Trix::make('Body', 'body'),
+
+            Date::make('Publiée le', 'published_at')
+                ->sortable(),
         ];
     }
 
@@ -74,7 +98,9 @@ class ArticleTranslation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Locale(),
+        ];
     }
 
     /**

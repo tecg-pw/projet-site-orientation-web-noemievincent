@@ -2,8 +2,10 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -41,15 +43,27 @@ class Student extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
             })->hideFromDetail(),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\StudentTranslation'),
+            BelongsTo::make('Débouché', 'opportunity', 'App\Nova\Opportunity')
+                ->hideFromIndex(),
+            BelongsTo::make('Entreprise', 'company', 'App\Nova\Company')
+                ->hideFromIndex(),
+            BelongsTo::make('Stage', 'internship', 'App\Nova\Company')
+                ->hideFromIndex(),
 
-            HasMany::make('Projects'),
+            HasMany::make('Traductions', 'translations', '\App\Nova\StudentTranslation'),
+
+            HasMany::make('Projets', 'projects', 'App\Nova\Project'),
+
+            Number::make('Traductions', function () {
+                return $this->translationsCount();
+            })->onlyOnIndex(),
+
 
         ];
     }
@@ -57,6 +71,16 @@ class Student extends Resource
     public function title()
     {
         return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->fullname;
+    }
+
+    public function translationsCount()
+    {
+        $translations = \App\Models\StudentTranslation::select('locale')->where('student_id', $this->id)->get();
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+
+        return implode(', ', $locales);
     }
 
     /**

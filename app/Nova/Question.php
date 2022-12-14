@@ -3,8 +3,14 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Question extends Resource
@@ -41,13 +47,34 @@ class Question extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Title')->hideFromDetail(),
 
-            BelongsTo::make('User', 'user', '\App\Nova\User'),
+            Text::make('Titre', 'title')
+                ->hideFromDetail()
+                ->sortable(),
 
-            BelongsTo::make('Category', 'category', '\App\Nova\QuestionCategory'),
+            BelongsTo::make('Auteur', 'user', '\App\Nova\User')
+                ->sortable(),
+
+            BelongsTo::make('Catégorie', 'category', '\App\Nova\QuestionCategory')
+                ->sortable(),
+
+            Slug::make('Slug')
+                ->hideFromIndex(),
+
+            Trix::make('Body'),
+
+            Boolean::make('Résolue', 'is_solved'),
+
+            Date::make('Publiée le', 'published_at')
+                ->sortable(),
+
+            Number::make('Réponses', 'replies_count')
+                ->onlyOnIndex()
+                ->sortable(),
+
+            HasMany::make('Réponses', 'replies', 'App\Nova\Reply'),
         ];
     }
 
@@ -70,7 +97,11 @@ class Question extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\User(),
+            new Filters\QuestionCategory(),
+//            new Filters\IsSolved(),
+        ];
     }
 
     /**

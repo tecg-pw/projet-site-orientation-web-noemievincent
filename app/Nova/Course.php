@@ -42,25 +42,38 @@ class Course extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Title', function () {
+            Text::make('Titre', function () {
                 return $this->title();
             })->hideFromDetail(),
 
-            Number::make('Year', function () {
+            Number::make('Année', function () {
                 return 'Bloc ' . \App\Models\CourseTranslation::where('course_id', $this->id)->first()->year;
             }),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\CourseTranslation'),
+            Number::make('Traductions', function () {
+                return $this->translationsCount();
+            })->onlyOnIndex(),
 
-            HasMany::make('Projects', 'projects', '\App\Nova\Project'),
+            HasMany::make('Traductions', 'translations', '\App\Nova\CourseTranslation'),
+            HasMany::make('Projets', 'projects', '\App\Nova\Project'),
         ];
     }
 
     public function title()
     {
         return \App\Models\CourseTranslation::where('course_id', $this->id)->first()->name;
+    }
+
+    public function translationsCount()
+    {
+        $translations = \App\Models\CourseTranslation::select('locale')->where('course_id', $this->id)->get();
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+
+        return implode(', ', $locales);
     }
 
     /**
@@ -82,7 +95,9 @@ class Course extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\CourseYear(),
+        ];
     }
 
     /**

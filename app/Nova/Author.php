@@ -4,6 +4,8 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -32,6 +34,11 @@ class Author extends Resource
         'id',
     ];
 
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->withCount('articles');
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -41,12 +48,19 @@ class Author extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
+
+            Text::make('Nom', 'name')
+                ->sortable()
+                ->hideFromDetail(),
+
+            Slug::make('Slug')->from('name')
+                ->sortable(),
+
+            Number::make(__('Nombre d‘articles'), 'articles_count')
+                ->sortable()->onlyOnIndex(),
 
             HasMany::make('Articles'),
-
-            Text::make('Name')
-                ->hideFromDetail(),
         ];
     }
 

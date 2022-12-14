@@ -4,8 +4,10 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 
 class Project extends Resource
@@ -44,21 +46,40 @@ class Project extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Title', function () {
+            Text::make('Titre', function () {
                 return $this->title();
             })->hideFromDetail(),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\ProjectTranslation'),
 
-            BelongsTo::make('Student', 'student', '\App\Nova\Student'),
+            BelongsTo::make('Étudiant', 'student', '\App\Nova\Student'),
+            BelongsTo::make('Cours', 'course', '\App\Nova\Course'),
+
+            HasMany::make('Traductions', 'translations', '\App\Nova\ProjectTranslation'),
+
+            BelongsToMany::make('Catégories', 'categories', 'App\Nova\ProjectCategory'),
+
+            Number::make('Traductions', function () {
+                return $this->translationsCount();
+            })->onlyOnIndex(),
+
         ];
     }
 
     public function title()
     {
         return \App\Models\ProjectTranslation::where('project_id', $this->id)->first()->title;
+    }
+
+    public function translationsCount()
+    {
+        $translations = \App\Models\ProjectTranslation::select('locale')->where('project_id', $this->id)->get();
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+
+        return implode(', ', $locales);
     }
 
     /**
@@ -80,7 +101,10 @@ class Project extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\Student(),
+            new Filters\Course(),
+        ];
     }
 
     /**

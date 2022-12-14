@@ -2,9 +2,12 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class CompanyMember extends Resource
@@ -41,12 +44,33 @@ class CompanyMember extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Name', 'fullname')
-                ->hideFromDetail(),
+            Avatar::make('Photo', 'picture'),
 
-            BelongsTo::make('Company'),
+            Text::make('Nom', 'fullname')
+                ->hideFromDetail()
+                ->sortable(),
+
+            BelongsTo::make('Entreprise', 'company', 'App\Nova\Company')
+                ->sortable(),
+
+            Text::make('Firstname')
+                ->onlyOnForms(),
+
+            Text::make('Lastname')
+                ->onlyOnForms(),
+
+            Heading::make('Links'),
+            URL::make('GitHub', 'github_link')
+                ->displayUsing(fn() => $this->github_link)
+                ->hideFromIndex()
+                ->nullable(),
+
+            URL::make('Linkedin', 'linkedin_link')
+                ->displayUsing(fn() => $this->linkedin_link)
+                ->hideFromIndex()
+                ->nullable(),
         ];
     }
 
@@ -69,7 +93,9 @@ class CompanyMember extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Company(),
+        ];
     }
 
     /**

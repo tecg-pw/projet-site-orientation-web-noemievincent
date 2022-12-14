@@ -49,48 +49,51 @@ class CourseTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            BelongsTo::make('Course')
+            BelongsTo::make('Cours', 'course', 'App\Nova\Course')
                 ->hideFromIndex(),
 
-            Text::make('Locale'),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels(),
 
-            Text::make('Name')
+            Text::make('Nom', 'name')
                 ->hideFromDetail()
                 ->sortable(),
 
             Slug::make('Slug')
-                ->from('name')
-                ->hideFromIndex(),
+                ->from('name'),
 
             Trix::make('Description'),
 
-            Select::make('Orientation')->options([
+            Select::make('Option', 'orientation')->options([
                 'common' => 'Tronc commun',
                 'web' => 'Web',
                 'dg' => 'Design Graphique',
                 '3d' => '3D et Vidéos',
             ])->displayUsingLabels(),
 
-            Select::make('Year')->options([
+            Select::make('Année', 'year')->options([
                 '1' => 'Bloc 1',
                 '2' => 'Bloc 2',
                 '3' => 'Bloc 3',
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
-            Text::make('Period')
+
+            Text::make('Période', 'period')
                 ->hideFromIndex()
                 ->nullable(),
 
-            Number::make('Hours')
+            Number::make('Heures', 'hours')
                 ->hideFromIndex(),
 
-            Number::make('ECTs')
+            Number::make('crédits', 'ects')
                 ->hideFromIndex()
                 ->nullable(),
 
-            URL::make('ECTs link')
+            URL::make('Fiche ECT', 'ects_link')
                 ->displayUsing(fn() => $this->ects_link)
                 ->hideFromIndex()
                 ->nullable(),
@@ -121,7 +124,10 @@ class CourseTranslation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\CourseYear(),
+            new Filters\Locale(),
+        ];
     }
 
     /**

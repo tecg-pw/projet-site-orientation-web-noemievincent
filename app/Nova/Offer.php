@@ -4,8 +4,11 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Email;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Stack;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -43,24 +46,56 @@ class Offer extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Title', function () {
+            Text::make('Titre', function () {
                 return $this->title();
             })->hideFromDetail(),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\OfferTranslation'),
+            BelongsTo::make('Entreprise', 'company', '\App\Nova\Company'),
 
-            BelongsTo::make('Company'),
+            Stack::make('Personne de contact', [
+                Text::make('Nom et prénom', function () {
+                    return $this->contact_name();
+                }),
+                Email::make('Email', function () {
+                    return $this->contact_email();
+                }),
 
-            BelongsToMany::make('Skills')
+            ]),
 
+            Number::make('Traductions', function () {
+                return $this->translationsCount();
+            })->onlyOnIndex(),
+
+            HasMany::make('Traductions', 'translations', '\App\Nova\OfferTranslation'),
+            BelongsToMany::make('Compétences', 'skills', '\App\Nova\Skill'),
         ];
     }
 
     public function title()
     {
         return \App\Models\OfferTranslation::where('offer_id', $this->id)->first()->title;
+    }
+
+    public function contact_name()
+    {
+        return \App\Models\OfferTranslation::where('offer_id', $this->id)->first()->contact_name;
+    }
+
+    public function contact_email()
+    {
+        return \App\Models\OfferTranslation::where('offer_id', $this->id)->first()->contact_email;
+    }
+
+    public function translationsCount()
+    {
+        $translations = \App\Models\OfferTranslation::select('locale')->where('offer_id', $this->id)->get();
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+
+        return implode(', ', $locales);
     }
 
     /**
@@ -82,7 +117,9 @@ class Offer extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Company(),
+        ];
     }
 
     /**

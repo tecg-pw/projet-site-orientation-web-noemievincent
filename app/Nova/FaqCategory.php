@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -32,6 +33,11 @@ class FaqCategory extends Resource
         'id',
     ];
 
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->withCount('questions');
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -41,14 +47,20 @@ class FaqCategory extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
-            })->hideFromDetail(),
+            }),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\FaqCategoryTranslation'),
+            Number::make(__('Nombre de questions'), 'questions_count')
+                ->sortable()->onlyOnIndex(),
 
+            Number::make('Traductions', function () {
+                return $this->translationsCount();
+            })->onlyOnIndex(),
+
+            HasMany::make('Traductions', 'translations', '\App\Nova\FaqCategoryTranslation'),
             HasMany::make('Questions', 'questions', '\App\Nova\Faq'),
 
         ];
@@ -57,6 +69,16 @@ class FaqCategory extends Resource
     public function title()
     {
         return \App\Models\FaqCategoryTranslation::where('category_id', $this->id)->first()->name;
+    }
+
+    public function translationsCount()
+    {
+        $translations = \App\Models\FaqCategoryTranslation::select('locale')->where('category_id', $this->id)->get();
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+
+        return implode(', ', $locales);
     }
 
     /**

@@ -45,19 +45,19 @@ class DocumentationTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
             BelongsTo::make('Documentation')
                 ->hideFromIndex(),
 
-            Text::make('Locale'),
+            Text::make('Locale')->sortable(),
 
-            Text::make('Title')
+            Text::make('Titre', 'title')
                 ->hideFromDetail(),
 
             Trix::make('Description'),
 
-            URL::make('Link')
+            URL::make('Lien', 'link')
                 ->displayUsing(fn() => $this->link)
                 ->hideFromIndex(),
         ];
@@ -82,7 +82,9 @@ class DocumentationTranslation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Locale(),
+        ];
     }
 
     /**
