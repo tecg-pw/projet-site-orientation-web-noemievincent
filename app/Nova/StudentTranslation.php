@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Heading;
@@ -51,21 +52,23 @@ class StudentTranslation extends Resource
         return [
             ID::make()->hide(),
 
-            BelongsTo::make('Student')
+            BelongsTo::make('Étudiant', 'student', 'App\Nova\Student')
                 ->hideFromIndex(),
 
             Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
-            Text::make('Firstname')
+            Avatar::make('Photo', 'picture'),
+
+            Text::make('Prénom', 'firstname')
                 ->onlyOnForms(),
 
-            Text::make('Lastname')
+            Text::make('Nom de famille', 'lastname')
                 ->onlyOnForms(),
 
-            Text::make('Name', 'fullname')
+            Text::make('Nom', 'fullname')
                 ->hideFromDetail(),
 
             Slug::make('Slug')
@@ -74,15 +77,15 @@ class StudentTranslation extends Resource
 
             Trix::make('Bio'),
 
-            Date::make('Start year', 'start_year')
+            Date::make('Date d‘entrée', 'start_year')
                 ->hideFromIndex(),
 
-            Date::make('End year', 'end_year')
+            Date::make('Date de sortie', 'end_year')
                 ->hideFromIndex()
                 ->nullable(),
 
-            Heading::make('Links'),
-            URL::make('Website', 'website_link')
+            Heading::make('Liens'),
+            URL::make('Site web', 'website_link')
                 ->displayUsing(fn() => $this->website_link)
                 ->hideFromIndex()
                 ->nullable(),

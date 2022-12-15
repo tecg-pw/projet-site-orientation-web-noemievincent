@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\URL;
@@ -43,19 +44,22 @@ class ToolTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
             BelongsTo::make('Tool')
                 ->hideFromIndex(),
 
-            Text::make('Locale'),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels()->sortable(),
 
-            Text::make('Title')
+            Text::make('Titre', 'title')
                 ->hideFromDetail(),
 
             Trix::make('Description'),
 
-            URL::make('Link')
+            URL::make('Lien', 'link')
                 ->displayUsing(fn() => $this->link)
                 ->hideFromIndex(),
         ];
@@ -80,7 +84,9 @@ class ToolTranslation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Locale(),
+        ];
     }
 
     /**

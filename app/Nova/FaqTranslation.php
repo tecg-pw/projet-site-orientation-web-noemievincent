@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -48,7 +49,10 @@ class FaqTranslation extends Resource
             BelongsTo::make('Faq')
                 ->hideFromIndex(),
 
-            Text::make('Locale')->sortable(),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels(),
 
             Text::make('Titre', 'title')
                 ->sortable()

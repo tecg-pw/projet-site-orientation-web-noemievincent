@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -51,7 +52,10 @@ class CompanyTranslation extends Resource
             BelongsTo::make('Company')
                 ->hideFromIndex(),
 
-            Text::make('Locale')->sortable(),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels(),
 
             Image::make('Logo'),
             Text::make('Name')

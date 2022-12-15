@@ -2,9 +2,16 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Email;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class TeacherTranslation extends Resource
@@ -41,15 +48,46 @@ class TeacherTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            BelongsTo::make('Teacher')
+            BelongsTo::make('Professeur', 'teacher', 'App\Nova\Teacher')
                 ->hideFromIndex(),
 
-            Text::make('Locale'),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels(),
 
-            Text::make('Name', 'fullname')
+            Avatar::make('Photo', 'picture'),
+
+            Text::make('Prénom', 'firstname')
+                ->onlyOnForms(),
+
+            Text::make('Nom de famille', 'lastname')
+                ->onlyOnForms(),
+
+            Text::make('Nom', 'fullname')
                 ->hideFromDetail(),
+
+            Slug::make('Slug')
+                ->from('fullname')
+                ->hideFromIndex(),
+
+            Email::make('Email')
+                ->hideFromIndex(),
+
+            Trix::make('Bio'),
+
+            Heading::make('Liens'),
+            URL::make('GitHub', 'github_link')
+                ->displayUsing(fn() => $this->github_link)
+                ->hideFromIndex()
+                ->nullable(),
+
+            URL::make('Linkedin', 'linkedin_link')
+                ->displayUsing(fn() => $this->linkedin_link)
+                ->hideFromIndex()
+                ->nullable(),
         ];
     }
 

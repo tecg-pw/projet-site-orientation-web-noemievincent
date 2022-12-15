@@ -3,10 +3,12 @@
 namespace App\Nova;
 
 use Illuminate\Validation\Rules;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Email;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -46,29 +48,30 @@ class User extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
             Gravatar::make()->maxWidth(50),
 
-            Text::make('Name', 'fullname')
+            Text::make('Nom', 'fullname')
                 ->sortable()
                 ->hideFromDetail()
                 ->rules('required', 'max:255'),
 
-            Text::make('Firstname')
+            Text::make('Prénom', 'firstname')
                 ->onlyOnForms()
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Lastname')
+            Text::make('Nom de famille', 'lastname')
                 ->onlyOnForms()
                 ->sortable()
                 ->rules('required', 'max:255'),
 
             Slug::make('Slug')
-                ->onlyOnForms()
+                ->from('fullname')
                 ->sortable()
                 ->rules('required', 'unique'),
+
 
             Email::make('Email')
                 ->sortable()
@@ -76,13 +79,21 @@ class User extends Resource
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
-            Password::make('Password')
+            Password::make('Mot de passe', 'password')
                 ->onlyOnForms()
                 ->creationRules('required', Rules\Password::defaults())
                 ->updateRules('nullable', Rules\Password::defaults()),
 
+            Boolean::make('Admin', 'is_admin'),
+
             Trix::make('Bio')
                 ->hideFromIndex(),
+
+            Select::make('Genre')->options([
+                'male' => 'Homme',
+                'female' => 'Femme',
+                'prefer-not-to-say' => 'Ne préfère pas le préciser'
+            ])->displayUsingLabels()->hideFromIndex(),
         ];
     }
 

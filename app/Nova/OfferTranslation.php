@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -50,7 +51,10 @@ class OfferTranslation extends Resource
             BelongsTo::make('Offre', 'offer', 'App\Nova\Offer')
                 ->hideFromIndex(),
 
-            Text::make('Locale')->sortable(),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels(),
 
             Text::make('Titre', 'title')
                 ->sortable()

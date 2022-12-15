@@ -2,9 +2,12 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Email;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -42,21 +45,53 @@ class Teacher extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
+
+            Avatar::make('Photo', function () {
+                return $this->picture();
+            }),
 
             Text::make('Name', function () {
                 return $this->title();
             })->hideFromDetail(),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\TeacherTranslation'),
+            Email::make('Email', function () {
+                return $this->email();
+            }),
 
-            BelongsToMany::make('Courses'),
+            Number::make('Traductions', function () {
+                return $this->translationsCount();
+            })->onlyOnIndex(),
+
+            HasMany::make('Traductions', 'translations', '\App\Nova\TeacherTranslation'),
+
+            BelongsToMany::make('Cours', 'courses', 'App\Nova\Course'),
         ];
+    }
+
+    public function picture()
+    {
+        return \App\Models\TeacherTranslation::where('teacher_id', $this->id)->first()->picture;
     }
 
     public function title()
     {
         return \App\Models\TeacherTranslation::where('teacher_id', $this->id)->first()->fullname;
+    }
+
+    public function email()
+    {
+        return \App\Models\TeacherTranslation::where('teacher_id', $this->id)->first()->email;
+    }
+
+    public function translationsCount()
+    {
+        $translations = \App\Models\TeacherTranslation::select('locale')->where('teacher_id', $this->id)->get();
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+
+        return implode(', ', $locales);
     }
 
     /**

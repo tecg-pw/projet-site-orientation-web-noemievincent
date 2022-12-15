@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -48,7 +49,10 @@ class OpportunityTranslation extends Resource
             BelongsTo::make('Débouchés', 'opportunity', 'App\Nova\Opportunity')
                 ->hideFromIndex(),
 
-            Text::make('Locale')->sortable(),
+            Text::make('Locale')->sortable(), Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels(),
 
             Text::make('Nom', 'name')
                 ->sortable()

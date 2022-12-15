@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\URL;
@@ -50,7 +51,10 @@ class DocumentationTranslation extends Resource
             BelongsTo::make('Documentation')
                 ->hideFromIndex(),
 
-            Text::make('Locale')->sortable(),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels(),
 
             Text::make('Titre', 'title')
                 ->hideFromDetail(),

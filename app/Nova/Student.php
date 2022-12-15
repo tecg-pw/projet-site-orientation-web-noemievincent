@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -45,6 +46,10 @@ class Student extends Resource
         return [
             ID::make()->hide(),
 
+            Avatar::make('Photo', function () {
+                return $this->picture();
+            }),
+
             Text::make('Nom', function () {
                 return $this->title();
             })->hideFromDetail(),
@@ -66,6 +71,11 @@ class Student extends Resource
 
 
         ];
+    }
+
+    public function picture()
+    {
+        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->picture;
     }
 
     public function title()

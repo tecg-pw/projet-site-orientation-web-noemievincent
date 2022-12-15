@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\URL;
@@ -45,16 +46,22 @@ class TutorialTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            BelongsTo::make('Tutorial')
+            BelongsTo::make('Tutoriel', 'tutorial', 'App\Nova\Tutorial')
                 ->hideFromIndex(),
 
-            Text::make('Title')->hideFromDetail(),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en'
+            ])->displayUsingLabels(),
+
+            Text::make('Titre', 'title')
+                ->hideFromDetail(),
 
             Trix::make('Description'),
 
-            URL::make('Link')
+            URL::make('Lien', 'link')
                 ->displayUsing(fn() => $this->link)
                 ->hideFromIndex(),
         ];

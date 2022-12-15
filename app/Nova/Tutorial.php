@@ -5,7 +5,9 @@ namespace App\Nova;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Tutorial extends Resource
@@ -42,13 +44,21 @@ class Tutorial extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hide(),
 
-            Text::make('Title', function () {
+            Text::make('Titre', function () {
                 return $this->title();
-            })->hideFromDetail(),
+            })->onlyOnIndex(),
 
-            HasMany::make('Translations', 'translations', '\App\Nova\TutorialTranslation'),
+            URL::make('Lien', function () {
+                return $this->link();
+            })->displayUsing(fn() => $this->link())->textAlign('left'),
+
+            Number::make('Traductions', function () {
+                return $this->translationsCount();
+            })->onlyOnIndex(),
+
+            HasMany::make('Traductions', 'translations', '\App\Nova\TutorialTranslation'),
 
             BelongsToMany::make('Languages'),
         ];
@@ -57,6 +67,21 @@ class Tutorial extends Resource
     public function title()
     {
         return \App\Models\TutorialTranslation::where('tutorial_id', $this->id)->first()->title;
+    }
+
+    public function link()
+    {
+        return \App\Models\TutorialTranslation::where('tutorial_id', $this->id)->first()->link;
+    }
+
+    public function translationsCount()
+    {
+        $translations = \App\Models\TutorialTranslation::select('locale')->where('tutorial_id', $this->id)->get();
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+
+        return implode(', ', $locales);
     }
 
     /**

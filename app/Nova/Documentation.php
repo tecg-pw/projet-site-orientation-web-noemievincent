@@ -52,7 +52,7 @@ class Documentation extends Resource
 
             URL::make('Lien', function () {
                 return $this->link();
-            })->displayUsing(fn() => $this->link()),
+            })->displayUsing(fn() => $this->link())->textAlign('left'),
 
             Number::make('Traductions', function () {
                 return $this->translationsCount();

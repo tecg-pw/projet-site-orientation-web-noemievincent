@@ -44,7 +44,7 @@ class FaqCategory extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $categoriesRefs = FaqCategoryTranslation::select('name', 'category_id')->whereNotNull('name')->groupBy('name', 'category_id')->get();
+        $categoriesRefs = FaqCategoryTranslation::where('locale', 'fr')->select('name', 'category_id')->whereNotNull('name')->groupBy('name', 'category_id')->get();
 
         $categories = [];
         foreach ($categoriesRefs as $category) {
