@@ -54,6 +54,10 @@ class Documentation extends Resource
                 return $this->link();
             })->displayUsing(fn() => $this->link())->textAlign('left'),
 
+            Text::make('Languages', function () {
+                return $this->languages();
+            })->onlyOnIndex(),
+
             Number::make('Traductions', function () {
                 return $this->translationsCount();
             })->onlyOnIndex(),
@@ -72,6 +76,15 @@ class Documentation extends Resource
     public function link()
     {
         return \App\Models\DocumentationTranslation::where('documentation_id', $this->id)->first()->link;
+    }
+
+    public function languages()
+    {
+        $allLanguages = $this->languages;
+
+        return $allLanguages->map(function ($language) {
+            return $language->name;
+        })->join(', ');
     }
 
     public function translationsCount()
@@ -103,7 +116,9 @@ class Documentation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Languages('documentations'),
+        ];
     }
 
     /**

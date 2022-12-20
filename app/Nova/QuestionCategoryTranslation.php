@@ -31,7 +31,7 @@ class QuestionCategoryTranslation extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**
@@ -51,7 +51,7 @@ class QuestionCategoryTranslation extends Resource
             Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
             Text::make('Nom', 'name')
                 ->sortable()

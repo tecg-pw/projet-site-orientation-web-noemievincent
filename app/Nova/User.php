@@ -36,7 +36,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'fullname', 'email',
+        'fullname', 'email',
     ];
 
     /**
@@ -71,7 +71,6 @@ class User extends Resource
                 ->from('fullname')
                 ->sortable()
                 ->rules('required', 'unique'),
-
 
             Email::make('Email')
                 ->sortable()

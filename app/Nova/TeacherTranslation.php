@@ -36,7 +36,7 @@ class TeacherTranslation extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'fullname',
     ];
 
     /**
@@ -56,7 +56,7 @@ class TeacherTranslation extends Resource
             Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
             Avatar::make('Photo', 'picture'),
 

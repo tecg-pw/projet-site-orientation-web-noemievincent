@@ -21,7 +21,7 @@ class ArticleCategory extends Filter
      *
      * @var string
      */
-    public $name = 'Catégories';
+    public $name = 'Catégorie';
 
     /**
      * Apply the filter to the given query.
@@ -44,7 +44,7 @@ class ArticleCategory extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $categoriesRefs = ArticleCategoryTranslation::select('name', 'category_id')->whereNotNull('name')->groupBy('name', 'category_id')->get();
+        $categoriesRefs = ArticleCategoryTranslation::select('name', 'category_id')->where('locale', app()->getLocale())->get();
 
         $categories = [];
         foreach ($categoriesRefs as $category) {

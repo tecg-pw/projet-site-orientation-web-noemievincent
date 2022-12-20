@@ -62,7 +62,6 @@ class FaqCategory extends Resource
 
             HasMany::make('Traductions', 'translations', '\App\Nova\FaqCategoryTranslation'),
             HasMany::make('Questions', 'questions', '\App\Nova\Faq'),
-
         ];
     }
 

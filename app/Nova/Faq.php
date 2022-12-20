@@ -60,7 +60,6 @@ class Faq extends Resource
             Number::make('Traductions', function () {
                 return $this->translationsCount();
             })->onlyOnIndex(),
-
         ];
     }
 

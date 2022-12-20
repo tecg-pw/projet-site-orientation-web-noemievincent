@@ -31,7 +31,7 @@ class Skill extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     public static function indexQuery(NovaRequest $request, $query)

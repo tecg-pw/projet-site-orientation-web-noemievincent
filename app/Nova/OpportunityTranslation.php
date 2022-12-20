@@ -32,7 +32,7 @@ class OpportunityTranslation extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**
@@ -49,10 +49,10 @@ class OpportunityTranslation extends Resource
             BelongsTo::make('Débouchés', 'opportunity', 'App\Nova\Opportunity')
                 ->hideFromIndex(),
 
-            Text::make('Locale')->sortable(), Select::make('Locale')->options([
+            Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
             Text::make('Nom', 'name')
                 ->sortable()

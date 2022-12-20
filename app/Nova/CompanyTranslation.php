@@ -35,7 +35,7 @@ class CompanyTranslation extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**
@@ -55,9 +55,10 @@ class CompanyTranslation extends Resource
             Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
             Image::make('Logo'),
+
             Text::make('Name')
                 ->sortable()
                 ->hideFromDetail(),

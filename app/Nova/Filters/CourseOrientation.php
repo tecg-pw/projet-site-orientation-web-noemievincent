@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Course extends Filter
+class CourseOrientation extends Filter
 {
     /**
      * The filter's component.
@@ -21,7 +21,25 @@ class Course extends Filter
      *
      * @var string
      */
-    public $name = 'Cours';
+    public $name = 'Option';
+
+    /**
+     * The column that should be filtered on.
+     *
+     * @var string
+     */
+    protected $column;
+
+    /**
+     * Create a new filter instance.
+     *
+     * @param string $column
+     * @return void
+     */
+    public function __construct($column)
+    {
+        $this->column = $column;
+    }
 
     /**
      * Apply the filter to the given query.
@@ -33,7 +51,14 @@ class Course extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        return $query->where('course_id', $value);
+        $courses = CourseTranslation::where('orientation', $value)->get();
+
+        $ids = [];
+        foreach ($courses as $course) {
+            $ids[] = $course->course_id;
+        }
+
+        return $query->whereIn($this->column, $ids);
     }
 
     /**
@@ -44,13 +69,11 @@ class Course extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $coursesRefs = CourseTranslation::where('locale', app()->getLocale())->where('orientation', 'web')->select('course_id', 'name', 'year')->get();
-
-        $courses = [];
-        foreach ($coursesRefs as $course) {
-            $courses[$course->name . ' - ' . $course->year] = $course->course_id;
+        $orientations = [];
+        foreach (__('classes.orientation') as $key => $orientation) {
+            $orientations[$orientation] = $key;
         }
 
-        return $courses;
+        return $orientations;
     }
 }

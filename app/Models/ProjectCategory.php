@@ -14,7 +14,7 @@ class ProjectCategory extends Model
 
     protected $table = 'projectcategories';
 
-    protected $with = ['translations'];
+    protected $with = ['translations', 'projects'];
 
     public function translations(): HasMany
     {

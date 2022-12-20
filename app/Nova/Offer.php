@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Email;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -64,6 +65,10 @@ class Offer extends Resource
 
             ]),
 
+            Date::make('Publiée le', function () {
+                return $this->published_at();
+            }),
+
             Number::make('Traductions', function () {
                 return $this->translationsCount();
             })->onlyOnIndex(),
@@ -86,6 +91,11 @@ class Offer extends Resource
     public function contact_email()
     {
         return \App\Models\OfferTranslation::where('offer_id', $this->id)->first()->contact_email;
+    }
+
+    public function published_at()
+    {
+        return \App\Models\OfferTranslation::where('offer_id', $this->id)->first()->published_at;
     }
 
     public function translationsCount()

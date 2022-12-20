@@ -32,7 +32,7 @@ class FaqTranslation extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
     ];
 
     /**
@@ -52,7 +52,7 @@ class FaqTranslation extends Resource
             Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
             Text::make('Titre', 'title')
                 ->sortable()

@@ -2,11 +2,12 @@
 
 namespace App\Nova\Filters;
 
+use App\Models\ProjectCategoryTranslation;
 use Illuminate\Database\Eloquent\Builder;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Locale extends Filter
+class ProjectCategory extends Filter
 {
     /**
      * The filter's component.
@@ -20,7 +21,7 @@ class Locale extends Filter
      *
      * @var string
      */
-    public $name = 'Langue';
+    public $name = 'Catégories';
 
     /**
      * Apply the filter to the given query.
@@ -32,7 +33,15 @@ class Locale extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        return $query->where('locale', $value);
+        $projects = \App\Models\ProjectCategory::where('id', '=', $value)->first()->projects;
+
+        $ids = [];
+
+        foreach ($projects as $project) {
+            $ids[] = $project->id;
+        }
+
+        return $query->whereIn('id', $ids);
     }
 
     /**
@@ -43,12 +52,13 @@ class Locale extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $locales = [];
+        $categoriesRefs = ProjectCategoryTranslation::where('locale', 'fr')->select('name', 'category_id')->whereNotNull('name')->groupBy('name', 'category_id')->get();
 
-        foreach (config('app.available_locales') as $locale) {
-            $locales[__('locales.' . $locale)] = $locale;
+        $categories = [];
+        foreach ($categoriesRefs as $category) {
+            $categories[$category->name] = $category->category_id;
         }
 
-        return $locales;
+        return $categories;
     }
 }

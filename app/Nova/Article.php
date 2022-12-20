@@ -110,8 +110,9 @@ class Article extends Resource
     public function filters(NovaRequest $request)
     {
         return [
-            new Filters\ArticleCategory(),
             new Filters\Author(),
+            new Filters\ArticleCategory(),
+            new Filters\Date(\App\Models\Article::class, ArticleTranslation::class, 'id'),
         ];
     }
 

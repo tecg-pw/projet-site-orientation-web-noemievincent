@@ -31,7 +31,7 @@ class Author extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name', 'slug'
     ];
 
     public static function indexQuery(NovaRequest $request, $query)

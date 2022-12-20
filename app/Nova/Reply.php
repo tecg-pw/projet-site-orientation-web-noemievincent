@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -54,6 +55,9 @@ class Reply extends Resource
 
             Trix::make('Body')
                 ->alwaysShow(),
+
+            Date::make('Publiée le', 'published_at')
+                ->sortable(),
 
             BelongsTo::make('User', 'user', '\App\Nova\User')->sortable(),
 

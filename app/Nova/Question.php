@@ -35,7 +35,7 @@ class Question extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
     ];
 
     /**
@@ -48,7 +48,6 @@ class Question extends Resource
     {
         return [
             ID::make()->hide(),
-
 
             Text::make('Titre', 'title')
                 ->hideFromDetail()

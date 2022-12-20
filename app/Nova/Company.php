@@ -53,7 +53,6 @@ class Company extends Resource
                 return $this->title();
             }),
 
-
             Number::make('Traductions', function () {
                 return $this->translationsCount();
             })->onlyOnIndex(),

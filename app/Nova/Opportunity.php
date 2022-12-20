@@ -54,7 +54,6 @@ class Opportunity extends Resource
 
             HasMany::make('Traductions', 'translations', '\App\Nova\OpportunityTranslation'),
             HasMany::make('Étudiants', 'students', '\App\Nova\Student'),
-
         ];
     }
 

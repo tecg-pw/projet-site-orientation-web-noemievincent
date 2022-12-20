@@ -49,8 +49,12 @@ class Course extends Resource
             })->hideFromDetail(),
 
             Number::make('Année', function () {
-                return 'Bloc ' . \App\Models\CourseTranslation::where('course_id', $this->id)->first()->year;
+                return __('classes.years.' . \App\Models\CourseTranslation::where('course_id', $this->id)->first()->year);
             }),
+
+            Text::make('Option', function () {
+                return __('classes.orientation.' . \App\Models\CourseTranslation::where('course_id', $this->id)->first()->orientation);
+            })->textAlign('right'),
 
             Number::make('Traductions', function () {
                 return $this->translationsCount();
@@ -96,7 +100,8 @@ class Course extends Resource
     public function filters(NovaRequest $request)
     {
         return [
-            new Filters\CourseYear(),
+            new Filters\CourseYear('id'),
+            new Filters\CourseOrientation('id'),
         ];
     }
 

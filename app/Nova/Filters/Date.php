@@ -2,12 +2,13 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\CourseTranslation;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class CourseYear extends Filter
+class Date extends Filter
 {
     /**
      * The filter's component.
@@ -21,7 +22,21 @@ class CourseYear extends Filter
      *
      * @var string
      */
-    public $name = 'Année du cours';
+    public $name = 'Date de publication';
+
+    /**
+     * The column that should be filtered on.
+     *
+     * @var Model
+     */
+    protected $model;
+
+    /**
+     * The column that should be filtered on.
+     *
+     * @var Model
+     */
+    protected $translatedModel;
 
     /**
      * The column that should be filtered on.
@@ -33,11 +48,13 @@ class CourseYear extends Filter
     /**
      * Create a new filter instance.
      *
-     * @param string $column
+     * @param Model
      * @return void
      */
-    public function __construct($column)
+    public function __construct($model, $translatedModel, $column)
     {
+        $this->model = $model;
+        $this->translatedModel = $translatedModel;
         $this->column = $column;
     }
 
@@ -51,11 +68,14 @@ class CourseYear extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        $courses = CourseTranslation::where('year', $value)->get();
+        $ressources = $this->model::all();
 
         $ids = [];
-        foreach ($courses as $course) {
-            $ids[] = $course->course_id;
+
+        foreach ($ressources as $ressource) {
+            if ($ressource->translations->where('locale', app()->getLocale())->first()->published_at == Carbon::parse($value)) {
+                $ids[] = $ressource->id;
+            }
         }
 
         return $query->whereIn($this->column, $ids);
@@ -69,11 +89,13 @@ class CourseYear extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $years = [];
-        foreach (__('classes.years') as $key => $year) {
-            $years[$year] = $key;
+        $dateRefs = $this->translatedModel::where('locale', app()->getLocale())->select('published_at')->get();
+
+        $dates = [];
+        foreach ($dateRefs as $date) {
+            $dates[ucfirst($date->published_at->translatedFormat('F Y'))] = strval($date->published_at);
         }
 
-        return $years;
+        return $dates;
     }
 }

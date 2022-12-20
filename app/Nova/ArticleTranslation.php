@@ -55,7 +55,7 @@ class ArticleTranslation extends Resource
             Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
             Text::make('Titre', 'title')
                 ->sortable()
@@ -100,6 +100,7 @@ class ArticleTranslation extends Resource
     {
         return [
             new Filters\Locale(),
+            new Filters\Date(\App\Models\Article::class, \App\Models\ArticleTranslation::class, 'article_id'),
         ];
     }
 

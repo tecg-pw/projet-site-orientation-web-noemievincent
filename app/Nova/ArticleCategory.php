@@ -62,7 +62,6 @@ class ArticleCategory extends Resource
 
             HasMany::make('Traductions', 'translations', '\App\Nova\ArticleCategoryTranslation'),
             HasMany::make('Articles', 'articles', '\App\Nova\Article'),
-
         ];
     }
 

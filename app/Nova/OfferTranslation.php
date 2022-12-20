@@ -34,7 +34,7 @@ class OfferTranslation extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
     ];
 
     /**
@@ -54,7 +54,7 @@ class OfferTranslation extends Resource
             Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
             Text::make('Titre', 'title')
                 ->sortable()
@@ -108,6 +108,7 @@ class OfferTranslation extends Resource
     {
         return [
             new Filters\Locale(),
+            new Filters\Date(\App\Models\Offer::class, \App\Models\OfferTranslation::class, 'offer_id'),
         ];
     }
 

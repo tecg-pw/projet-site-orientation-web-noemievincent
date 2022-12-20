@@ -4,9 +4,11 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Stack;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -54,6 +56,15 @@ class Student extends Resource
                 return $this->title();
             })->hideFromDetail(),
 
+            Stack::make('Date d’entrée et de sortie', [
+                Date::make('Date d’entrée', function () {
+                    return $this->start_year();
+                }),
+                Date::make('Date de sortie', function () {
+                    return $this->end_year();
+                }),
+            ]),
+
             BelongsTo::make('Débouché', 'opportunity', 'App\Nova\Opportunity')
                 ->hideFromIndex(),
             BelongsTo::make('Entreprise', 'company', 'App\Nova\Company')
@@ -81,6 +92,16 @@ class Student extends Resource
     public function title()
     {
         return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->fullname;
+    }
+
+    public function start_year()
+    {
+        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->start_year;
+    }
+
+    public function end_year()
+    {
+        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->end_year;
     }
 
     public function translationsCount()
@@ -112,7 +133,10 @@ class Student extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\StartYear(),
+            new Filters\EndYear(),
+        ];
     }
 
     /**

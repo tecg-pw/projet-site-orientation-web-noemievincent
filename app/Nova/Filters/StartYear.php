@@ -2,11 +2,13 @@
 
 namespace App\Nova\Filters;
 
+use App\Models\StudentTranslation;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Locale extends Filter
+class StartYear extends Filter
 {
     /**
      * The filter's component.
@@ -14,13 +16,6 @@ class Locale extends Filter
      * @var string
      */
     public $component = 'select-filter';
-
-    /**
-     * The displayable name of the filter.
-     *
-     * @var string
-     */
-    public $name = 'Langue';
 
     /**
      * Apply the filter to the given query.
@@ -32,7 +27,17 @@ class Locale extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        return $query->where('locale', $value);
+        $ressources = \App\Models\Student::all();
+
+        $ids = [];
+
+        foreach ($ressources as $ressource) {
+            if ($ressource->translations->where('locale', app()->getLocale())->first()->start_year == Carbon::parse($value)) {
+                $ids[] = $ressource->id;
+            }
+        }
+
+        return $query->whereIn('id', $ids);
     }
 
     /**
@@ -43,12 +48,13 @@ class Locale extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $locales = [];
+        $dateRefs = StudentTranslation::where('locale', app()->getLocale())->select('start_year')->get();
 
-        foreach (config('app.available_locales') as $locale) {
-            $locales[__('locales.' . $locale)] = $locale;
+        $dates = [];
+        foreach ($dateRefs as $date) {
+            $dates[ucfirst($date->start_year->translatedFormat('F Y'))] = strval($date->start_year);
         }
 
-        return $locales;
+        return $dates;
     }
 }

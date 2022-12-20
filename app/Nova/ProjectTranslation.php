@@ -36,7 +36,7 @@ class ProjectTranslation extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'title', 'slug'
+        'title', 'slug'
     ];
 
     /**
@@ -56,7 +56,7 @@ class ProjectTranslation extends Resource
             Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
             Text::make('Titre', 'title')
                 ->sortable()
@@ -83,7 +83,6 @@ class ProjectTranslation extends Resource
 
             Date::make('Publié le', 'published_at')
                 ->sortable(),
-
         ];
     }
 
@@ -108,6 +107,7 @@ class ProjectTranslation extends Resource
     {
         return [
             new Filters\Locale(),
+            new Filters\Date(\App\Models\Project::class, \App\Models\ProjectTranslation::class, 'project_id'),
         ];
     }
 

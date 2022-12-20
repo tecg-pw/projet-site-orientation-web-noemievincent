@@ -57,30 +57,21 @@ class CourseTranslation extends Resource
             Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
             Text::make('Nom', 'name')
                 ->hideFromDetail()
                 ->sortable(),
 
             Slug::make('Slug')
-                ->from('name'),
+                ->from('name')
+                ->hideFromIndex(),
 
             Trix::make('Description'),
 
-            Select::make('Option', 'orientation')->options([
-                'common' => 'Tronc commun',
-                'web' => 'Web',
-                'dg' => 'Design Graphique',
-                '3d' => '3D et Vidéos',
-            ])->displayUsingLabels(),
+            Select::make('Option', 'orientation')->options(__('classes.orientation'))->displayUsingLabels()->sortable(),
 
-            Select::make('Année', 'year')->options([
-                '1' => 'Bloc 1',
-                '2' => 'Bloc 2',
-                '3' => 'Bloc 3',
-            ])->displayUsingLabels()->sortable(),
-
+            Select::make('Année', 'year')->options(__('classes.years'))->displayUsingLabels()->sortable(),
 
             Text::make('Période', 'period')
                 ->hideFromIndex()
@@ -125,8 +116,9 @@ class CourseTranslation extends Resource
     public function filters(NovaRequest $request)
     {
         return [
-            new Filters\CourseYear(),
             new Filters\Locale(),
+            new Filters\CourseYear('course_id'),
+            new Filters\CourseOrientation('course_id'),
         ];
     }
 
