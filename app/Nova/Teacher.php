@@ -60,7 +60,7 @@ class Teacher extends Resource
             }),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\TeacherTranslation::class, 'teacher_id');
             })->onlyOnIndex(),
 
             HasMany::make('Traductions', 'translations', '\App\Nova\TeacherTranslation'),
@@ -71,27 +71,32 @@ class Teacher extends Resource
 
     public function picture()
     {
-        return \App\Models\TeacherTranslation::where('teacher_id', $this->id)->first()->picture;
+        $ref = \App\Models\TeacherTranslation::where('teacher_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->picture;
+        }
+
+        return '';
     }
 
     public function title()
     {
-        return \App\Models\TeacherTranslation::where('teacher_id', $this->id)->first()->fullname;
+        $ref = \App\Models\TeacherTranslation::where('teacher_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->fullname;
+        }
+
+        return '';
     }
 
     public function email()
     {
-        return \App\Models\TeacherTranslation::where('teacher_id', $this->id)->first()->email;
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\TeacherTranslation::select('locale')->where('teacher_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
+        $ref = \App\Models\TeacherTranslation::where('teacher_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->email;
         }
 
-        return implode(', ', $locales);
+        return '';
     }
 
     /**

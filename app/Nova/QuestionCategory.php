@@ -57,7 +57,7 @@ class QuestionCategory extends Resource
                 ->sortable()->onlyOnIndex(),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\QuestionCategoryTranslation::class, 'category_id');
             })->onlyOnIndex(),
 
             HasMany::make('Traductions', 'translations', '\App\Nova\QuestionCategoryTranslation'),
@@ -68,17 +68,12 @@ class QuestionCategory extends Resource
 
     public function title()
     {
-        return \App\Models\QuestionCategoryTranslation::where('category_id', $this->id)->first()->name;
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\QuestionCategoryTranslation::select('locale')->where('category_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
+        $ref = \App\Models\QuestionCategoryTranslation::where('category_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->name;
         }
 
-        return implode(', ', $locales);
+        return '';
     }
 
     /**

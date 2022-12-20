@@ -67,7 +67,7 @@ class TeacherTranslation extends Resource
                 ->onlyOnForms(),
 
             Text::make('Nom', 'fullname')
-                ->hideFromDetail(),
+                ->hideFromDetail()->sortable(),
 
             Slug::make('Slug')
                 ->from('fullname')

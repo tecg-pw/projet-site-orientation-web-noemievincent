@@ -70,7 +70,7 @@ class Offer extends Resource
             }),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\OfferTranslation::class, 'offer_id');
             })->onlyOnIndex(),
 
             HasMany::make('Traductions', 'translations', '\App\Nova\OfferTranslation'),
@@ -80,32 +80,42 @@ class Offer extends Resource
 
     public function title()
     {
-        return \App\Models\OfferTranslation::where('offer_id', $this->id)->first()->title;
+        $ref = \App\Models\OfferTranslation::where('offer_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->title;
+        }
+
+        return '';
     }
 
     public function contact_name()
     {
-        return \App\Models\OfferTranslation::where('offer_id', $this->id)->first()->contact_name;
+        $ref = \App\Models\OfferTranslation::where('offer_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->contact_name;
+        }
+
+        return '';
     }
 
     public function contact_email()
     {
-        return \App\Models\OfferTranslation::where('offer_id', $this->id)->first()->contact_email;
+        $ref = \App\Models\OfferTranslation::where('offer_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->contact_email;
+        }
+
+        return '';
     }
 
     public function published_at()
     {
-        return \App\Models\OfferTranslation::where('offer_id', $this->id)->first()->published_at;
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\OfferTranslation::select('locale')->where('offer_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
+        $ref = \App\Models\OfferTranslation::where('offer_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->published_at;
         }
 
-        return implode(', ', $locales);
+        return '';
     }
 
     /**

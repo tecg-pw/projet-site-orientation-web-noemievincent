@@ -59,7 +59,7 @@ class Tutorial extends Resource
             })->onlyOnIndex(),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\TutorialTranslation::class, 'tutorial_id');
             })->onlyOnIndex(),
 
             HasMany::make('Traductions', 'translations', '\App\Nova\TutorialTranslation'),
@@ -70,12 +70,22 @@ class Tutorial extends Resource
 
     public function title()
     {
-        return \App\Models\TutorialTranslation::where('tutorial_id', $this->id)->first()->title;
+        $ref = \App\Models\TutorialTranslation::where('tutorial_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->title;
+        }
+
+        return '';
     }
 
     public function link()
     {
-        return \App\Models\TutorialTranslation::where('tutorial_id', $this->id)->first()->link;
+        $ref = \App\Models\TutorialTranslation::where('tutorial_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->link;
+        }
+
+        return '';
     }
 
     public function languages()
@@ -85,16 +95,6 @@ class Tutorial extends Resource
         return $allLanguages->map(function ($language) {
             return $language->name;
         })->join(', ');
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\TutorialTranslation::select('locale')->where('tutorial_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
-        }
-
-        return implode(', ', $locales);
     }
 
     /**

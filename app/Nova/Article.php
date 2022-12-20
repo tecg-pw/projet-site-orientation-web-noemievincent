@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use App\Models\ArticleTranslation;
 use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
@@ -11,7 +10,6 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use function str_limit;
 
 class Article extends Resource
 {
@@ -63,7 +61,7 @@ class Article extends Resource
             }),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\ArticleTranslation::class, 'article_id');
             })->onlyOnIndex(),
 
             HasMany::make('Traductions', 'translations', '\App\Nova\ArticleTranslation'),
@@ -72,22 +70,22 @@ class Article extends Resource
 
     public function title()
     {
-        return ArticleTranslation::where('article_id', $this->id)->first()->title;
+        $ref = \App\Models\ArticleTranslation::where('article_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->title;
+        }
+
+        return '';
     }
 
     public function published_at()
     {
-        return ArticleTranslation::where('article_id', $this->id)->first()->published_at;
-    }
-
-    public function translationsCount()
-    {
-        $translations = ArticleTranslation::select('locale')->where('article_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
+        $ref = \App\Models\ArticleTranslation::where('article_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->published_at;
         }
 
-        return implode(', ', $locales);
+        return '';
     }
 
     /**
@@ -112,7 +110,7 @@ class Article extends Resource
         return [
             new Filters\Author(),
             new Filters\ArticleCategory(),
-            new Filters\Date(\App\Models\Article::class, ArticleTranslation::class, 'id'),
+            new Filters\Date(\App\Models\Article::class, \App\Models\ArticleTranslation::class, 'id'),
         ];
     }
 

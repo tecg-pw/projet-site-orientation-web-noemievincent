@@ -54,10 +54,10 @@ class TutorialTranslation extends Resource
             Select::make('Locale')->options([
                 'fr' => 'fr',
                 'en' => 'en'
-            ])->displayUsingLabels(),
+            ])->displayUsingLabels()->sortable(),
 
             Text::make('Titre', 'title')
-                ->hideFromDetail(),
+                ->hideFromDetail()->sortable(),
 
             Trix::make('Description'),
 

@@ -58,24 +58,19 @@ class Faq extends Resource
             HasMany::make('Traductions', 'translations', '\App\Nova\FaqTranslation'),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\FaqTranslation::class, 'faq_id');
             })->onlyOnIndex(),
         ];
     }
 
     public function title()
     {
-        return \App\Models\FaqTranslation::where('faq_id', $this->id)->first()->title;
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\FaqTranslation::select('locale')->where('faq_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
+        $ref = \App\Models\FaqTranslation::where('faq_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->title;
         }
 
-        return implode(', ', $locales);
+        return '';
     }
 
     /**

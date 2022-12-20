@@ -55,7 +55,7 @@ class ToolTranslation extends Resource
             ])->displayUsingLabels()->sortable(),
 
             Text::make('Titre', 'title')
-                ->hideFromDetail(),
+                ->hideFromDetail()->sortable(),
 
             Trix::make('Description'),
 

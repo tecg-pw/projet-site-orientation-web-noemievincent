@@ -32,7 +32,7 @@ class CompanyMember extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'fullname',
     ];
 
     /**

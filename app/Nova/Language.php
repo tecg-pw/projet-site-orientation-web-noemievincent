@@ -52,7 +52,7 @@ class Language extends Resource
             ID::make()->hide(),
 
             Text::make('Nom', 'name')
-                ->hideFromDetail(),
+                ->hideFromDetail()->sortable(),
 
             Slug::make('Slug')
                 ->from('name')
@@ -63,7 +63,6 @@ class Language extends Resource
 
             Number::make(__('Nombre de documentations'), 'documentations_count')
                 ->sortable()->onlyOnIndex(),
-
 
             BelongsToMany::make('Tutoriels', 'tutorials', 'App\Nova\Tutorial'),
             BelongsToMany::make('Documentations'),

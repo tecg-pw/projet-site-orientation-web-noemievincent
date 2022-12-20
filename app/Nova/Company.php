@@ -52,15 +52,15 @@ class Company extends Resource
             Text::make('Nom', function () {
                 return $this->title();
             }),
-
-            Number::make('Traductions', function () {
-                return $this->translationsCount();
-            })->onlyOnIndex(),
-
+            
             Number::make(__('Nombre d‘offres'), 'offers_count')
                 ->sortable()->onlyOnIndex(),
 
-            HasMany::make('Traductions', 'translations', '\App\Nova\ArticleTranslation'),
+            Number::make('Traductions', function () {
+                return $this->translationsCount(\App\Models\CompanyTranslation::class, 'company_id');
+            })->onlyOnIndex(),
+
+            HasMany::make('Traductions', 'translations', '\App\Nova\CompanyTranslation'),
 
             HasMany::make('Offres', 'offers', 'App\Nova\Offer'),
             HasMany::make('Members', 'members', 'App\Nova\CompanyMember'),
@@ -70,17 +70,12 @@ class Company extends Resource
 
     public function title()
     {
-        return \App\Models\CompanyTranslation::where('company_id', $this->id)->first()->name;
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\CompanyTranslation::select('locale')->where('company_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
+        $ref = \App\Models\CompanyTranslation::where('company_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->name;
         }
 
-        return implode(', ', $locales);
+        return '';
     }
 
     /**

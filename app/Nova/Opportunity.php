@@ -49,7 +49,7 @@ class Opportunity extends Resource
             }),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\OpportunityTranslation::class, 'opportunity_id');
             })->onlyOnIndex(),
 
             HasMany::make('Traductions', 'translations', '\App\Nova\OpportunityTranslation'),
@@ -59,17 +59,12 @@ class Opportunity extends Resource
 
     public function title()
     {
-        return \App\Models\OpportunityTranslation::where('opportunity_id', $this->id)->first()->name;
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\OpportunityTranslation::select('locale')->where('opportunity_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
+        $ref = \App\Models\OpportunityTranslation::where('opportunity_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->name;
         }
 
-        return implode(', ', $locales);
+        return '';
     }
 
     /**

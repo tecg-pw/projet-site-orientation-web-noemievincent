@@ -13,8 +13,6 @@ use Laravel\Nova\Fields\Text;
 
 class Project extends Resource
 {
-    public static $with = ['translations'];
-
     /**
      * The model the resource corresponds to.
      *
@@ -69,7 +67,7 @@ class Project extends Resource
             })->onlyOnIndex(),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\ProjectTranslation::class, 'project_id');
             })->onlyOnIndex(),
 
         ];
@@ -99,21 +97,9 @@ class Project extends Resource
         $ref = \App\Models\ProjectTranslation::where('project_id', $this->id)->first();
         if (isset($ref)) {
             return $ref->published_at;
-//            return ucfirst($ref->published_at->translatedFormat('F Y'));
         }
 
         return "";
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\ProjectTranslation::select('locale')->where('project_id', $this->id)->get();
-        $locales = [];
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
-        }
-
-        return implode(', ', $locales);
     }
 
     /**

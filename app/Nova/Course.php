@@ -49,15 +49,15 @@ class Course extends Resource
             })->hideFromDetail(),
 
             Number::make('Année', function () {
-                return __('classes.years.' . \App\Models\CourseTranslation::where('course_id', $this->id)->first()->year);
+                return $this->year();
             }),
 
             Text::make('Option', function () {
-                return __('classes.orientation.' . \App\Models\CourseTranslation::where('course_id', $this->id)->first()->orientation);
+                return $this->orientation();
             })->textAlign('right'),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\CourseTranslation::class, 'course_id');
             })->onlyOnIndex(),
 
             HasMany::make('Traductions', 'translations', '\App\Nova\CourseTranslation'),
@@ -67,17 +67,32 @@ class Course extends Resource
 
     public function title()
     {
-        return \App\Models\CourseTranslation::where('course_id', $this->id)->first()->name;
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\CourseTranslation::select('locale')->where('course_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
+        $ref = \App\Models\CourseTranslation::where('course_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->name;
         }
 
-        return implode(', ', $locales);
+        return '';
+    }
+
+    public function year()
+    {
+        $ref = \App\Models\CourseTranslation::where('course_id', $this->id)->first();
+        if (isset($ref)) {
+            return __('classes.years.' . $ref->year);
+        }
+
+        return '';
+    }
+
+    public function orientation()
+    {
+        $ref = \App\Models\CourseTranslation::where('course_id', $this->id)->first();
+        if (isset($ref)) {
+            return __('classes.orientation.' . $ref->orientation);
+        }
+
+        return '';
     }
 
     /**

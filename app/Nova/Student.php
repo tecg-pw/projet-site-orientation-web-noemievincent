@@ -77,7 +77,7 @@ class Student extends Resource
             HasMany::make('Projets', 'projects', 'App\Nova\Project'),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\StudentTranslation::class, 'student_id');
             })->onlyOnIndex(),
 
 
@@ -86,32 +86,42 @@ class Student extends Resource
 
     public function picture()
     {
-        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->picture;
+        $ref = \App\Models\StudentTranslation::where('student_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->picture;
+        }
+
+        return '';
     }
 
     public function title()
     {
-        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->fullname;
+        $ref = \App\Models\StudentTranslation::where('student_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->fullname;
+        }
+
+        return '';
     }
 
     public function start_year()
     {
-        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->start_year;
+        $ref = \App\Models\StudentTranslation::where('student_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->start_year;
+        }
+
+        return '';
     }
 
     public function end_year()
     {
-        return \App\Models\StudentTranslation::where('student_id', $this->id)->first()->end_year;
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\StudentTranslation::select('locale')->where('student_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
+        $ref = \App\Models\StudentTranslation::where('student_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->end_year;
         }
 
-        return implode(', ', $locales);
+        return '';
     }
 
     /**

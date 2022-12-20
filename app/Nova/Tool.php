@@ -54,7 +54,7 @@ class Tool extends Resource
             })->displayUsing(fn() => $this->link())->textAlign('left'),
 
             Number::make('Traductions', function () {
-                return $this->translationsCount();
+                return $this->translationsCount(\App\Models\ToolTranslation::class, 'tool_id');
             })->onlyOnIndex(),
 
             HasMany::make('Traductions', 'translations', '\App\Nova\ToolTranslation'),
@@ -63,22 +63,22 @@ class Tool extends Resource
 
     public function title()
     {
-        return \App\Models\ToolTranslation::where('tool_id', $this->id)->first()->title;
+        $ref = \App\Models\ToolTranslation::where('tool_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->title;
+        }
+
+        return '';
     }
 
     public function link()
     {
-        return \App\Models\ToolTranslation::where('tool_id', $this->id)->first()->link;
-    }
-
-    public function translationsCount()
-    {
-        $translations = \App\Models\ToolTranslation::select('locale')->where('tool_id', $this->id)->get();
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
+        $ref = \App\Models\ToolTranslation::where('tool_id', $this->id)->first();
+        if (isset($ref)) {
+            return $ref->link;
         }
 
-        return implode(', ', $locales);
+        return '';
     }
 
     /**

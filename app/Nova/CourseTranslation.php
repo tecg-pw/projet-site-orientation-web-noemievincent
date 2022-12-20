@@ -39,7 +39,6 @@ class CourseTranslation extends Resource
         'name',
     ];
 
-
     /**
      * Get the fields displayed by the resource.
      *
