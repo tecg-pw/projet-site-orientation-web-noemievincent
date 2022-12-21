@@ -16,7 +16,7 @@
                 <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('footer.socials_title')}}</h3>
                 <ul class="flex flex-col gap-3">
                     <li>
-                        <a href="#"
+                        <a href="https://www.facebook.com/hepl.be/"
                            class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
                             <svg version="1.1" id="footer-facebook" xmlns="http://www.w3.org/2000/svg"
                                  x="0px" y="0px" width="20"
@@ -41,7 +41,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="https://www.instagram.com/heplinfographie/"
                            class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
                             <svg version="1.1" id="footer-instagram" xmlns="http://www.w3.org/2000/svg"
                                  x="0px" y="0px" width="20"
@@ -100,7 +100,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="https://twitter.com/hepl_be?lang=fr"
                            class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
                             <svg version="1.1" id="footer-twitter" xmlns="http://www.w3.org/2000/svg"
                                  x="0px" y="0px" width="20"
@@ -119,7 +119,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="https://github.com/tecg-web"
                            class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
                             <svg version="1.1" id="footer-github" xmlns="http://www.w3.org/2000/svg"
                                  x="0px" y="0px" width="20"
