@@ -10,7 +10,7 @@ return [
         'password' => 'Password',
         'old_password' => 'Old password',
         'new_password' => 'New password',
-        'password_requirements' => 'Between 8 and 64 characters, with 1 upper case and 1 lower case',
+        'password_requirements' => 'The password must contain between 8 and 64 characters',
         'description' => 'Description',
         'remember_me' => 'Remember me',
         'genre' => 'You are',

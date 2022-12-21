@@ -6,6 +6,10 @@
 @tailwind utilities;
 
 @layer components {
+    .error-outline {
+        @apply outline outline-2 outline-red-600
+    }
+
     .full-link {
         position: absolute;
         top: 0;

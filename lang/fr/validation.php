@@ -47,8 +47,8 @@ return [
     'doesnt_start_with' => 'La valeur fournie ne peut pas commencer par l’un des éléments suivants : :values.',
     'email' => 'L’adresse email fournie doit être une adresse email valide.',
     'ends_with' => 'La valeur fournie doit se terminer par l’un des éléments suivants : :values.',
-    'enum' => 'La valeur sélectionnée n’est pas valide.',
-    'exists' => 'La valeur sélectionnée n’est pas valide.',
+    'enum' => 'La valeur fournie n’est pas valide.',
+    'exists' => ':attribute n’est pas valide.',
     'file' => 'Le fichier fourni doit être un fichier.',
     'filled' => 'Le champ :attribute doit avoir une valeur.',
     'gt' => [
@@ -64,7 +64,7 @@ return [
         'string' => 'La valeur fournie doit comprendre :values caractères ou plus.',
     ],
     'image' => 'Le fichier fourni doit être une image.',
-    'in' => 'La valeur sélectionnée n’est pas valide.',
+    'in' => 'La valeur fournie n’est pas valide.',
     'in_array' => 'La valeur sélectionnée n’existe pas dans :other.',
     'integer' => 'La valeur fournie être un nombre entier.',
     'ip' => 'La valeur fournie doit être une adresse IP valide.',
@@ -97,7 +97,7 @@ return [
         'array' => 'La valeur fournie doit comporter au moins :min éléments.',
         'file' => 'La taille du fichier fourni doit être d’au moins :min kilo-octets.',
         'numeric' => 'La valeur fournie doit être au moins égale à :min.',
-        'string' => 'La valeur fournie doit comporter au moins :min caractères.',
+        'string' => ':attribute doit comporter au moins :min caractères.',
     ],
     'min_digits' => 'La valeur fournie doit avoir au moins :min chiffres.',
     'multiple_of' => 'La valeur fournie doit être un multiple de :value.',
@@ -109,8 +109,7 @@ return [
         'mixed' => 'Le mot de passe doit contenir au moins une lettre majuscule et une lettre minuscule.',
         'numbers' => 'Le mot de passe doit contenir au moins un chiffre.',
         'symbols' => 'Le mot de passe doit contenir au moins un symbole.',
-        'uncompromised' => 'Le mot de passe fourni est apparu dans une fuite de données. Veuillez choisir un autre mot de passe.
-',
+        'uncompromised' => 'Le mot de passe fourni est apparu dans une fuite de données. Veuillez choisir un autre mot de passe.',
     ],
     'present' => 'Le champ :attribute doit être présent.',
     'prohibited' => 'Le champ :attribute est interdit.',
@@ -118,7 +117,7 @@ return [
     'prohibited_unless' => 'Le champ :attribute est interdit sauf si :other figure dans :values.',
     'prohibits' => 'Le champ :attribute interdit la présence de :other.',
     'regex' => 'Le format de la valeur fournie n’est pas valide.',
-    'required' => 'Le champ :attribute est obligatoire.',
+    'required' => ':attribute est obligatoire.',
     'required_array_keys' => 'Le champ :attribute doit contenir des entrées pour : :values.',
     'required_if' => 'Le champ :attribute est obligatoire lorsque :other est :value.',
     'required_if_accepted' => 'Le champ :attribute est obligatoire lorsque :other est accepté.',
@@ -170,6 +169,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email' => 'Adresse e-mail',
+        'password' => 'Mot de passe',
+        'lastname' => 'Nom',
+        'firstname' => 'Prénom',
+    ],
 
 ];

@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\LoginFormRequest;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -14,14 +11,21 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }
 
-    public function store()
+    public function store(string $locale, LoginFormRequest $request)
     {
-        $user = User::where('email', request('email'))->first();
-        if (Hash::check(request('password'), $user->password)) {
-            Auth::login($user);
-            return Redirect::to('/')->with('success', 'You are logged in');
+        $validated = $request->validated();
+
+        if (auth()->attempt($validated)) {
+            request()->session()->regenerate();
+            return redirect('/')->with('success', 'Welcome back, ' . auth()->user()->name);
         }
-        ddd('pas ok');
+
+        return back()
+            ->withErrors([
+                'email' => trans('auth.failed'),
+                'password' => trans('auth.password'),
+            ])
+            ->withInput();
     }
 
     public function destroy()

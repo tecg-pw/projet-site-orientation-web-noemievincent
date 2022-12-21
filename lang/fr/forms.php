@@ -10,7 +10,7 @@ return [
         'password' => 'Mot de passe',
         'old_password' => 'Ancien mot de passe',
         'new_password' => 'Nouveau mot de passe',
-        'password_requirements' => 'Entre 8 et 64 caractères, avec 1 majuscule et 1 minuscule',
+        'password_requirements' => 'Le mot de passe doit contenir entre 8 et 64 caractères',
         'description' => 'Description',
         'remember_me' => 'Se souvenir de moi',
         'genre' => 'Vous êtes',

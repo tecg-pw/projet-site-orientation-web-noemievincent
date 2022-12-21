@@ -1,18 +1,22 @@
 <div class="flex flex-col gap-1">
-    <label for="password" class="">
-                    <span class="text-lg text-blue-dark flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
-                             class="fill-blue-dark">
-                            <path
-                                d="M12,8a2,2,0,0,0-2,2,2,2,0,0,0,1,1.72V15a1,1,0,0,0,2,0V11.72A2,2,0,0,0,14,10,2,2,0,0,0,12,8Zm0-6A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
-                        </svg>
-                        <span>{{__('forms.labels.password')}}</span>
-                    </span>
+    <label for="password">
+        @if ($errors->has('password'))
+            <x-forms.error-label :label="'password'"/>
+        @else
+            <span class="text-lg text-blue-dark flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
+                 class="fill-blue-dark">
+                <path
+                    d="M12,8a2,2,0,0,0-2,2,2,2,0,0,0,1,1.72V15a1,1,0,0,0,2,0V11.72A2,2,0,0,0,14,10,2,2,0,0,0,12,8Zm0-6A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
+            </svg>
+            <span>{{__('forms.labels.password')}}</span>
+            </span>
+        @endif
         <span
             class="font-light text-sm">{{__('forms.labels.password_requirements')}}</span>
     </label>
     <div
-        class="flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
+        class="@error('password') error-outline @enderror flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
         <input type="password" id="password" name="password" dusk="password-field"
                class="password py-2 h-full w-full placeholder:font-light focus:outline-none font-mono font-lig">
         <span class="show-password cursor-pointer">

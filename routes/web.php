@@ -81,11 +81,11 @@ Route::get('/{locale?}/users/{user:slug}/edit', [UserController::class, 'edit'])
 
 //ROUTE : Auth
 Route::get('/{locale?}/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware(['guest', 'setLocale']);
-Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware('guest');
+Route::post('/{locale?}/login', [AuthenticatedSessionController::class, 'store'])->middleware(['guest', 'setLocale']);
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
 
-Route::get('/{locale?}/register', [RegisterSessionController::class, 'create'])->middleware(['guest', 'setLocale']);
-Route::post('/register', [RegisterSessionController::class, 'store'])->middleware('guest');
+Route::get('/{locale?}/register', [RegisterSessionController::class, 'create'])->name('register')->middleware(['guest', 'setLocale']);
+Route::post('/{locale?}/register', [RegisterSessionController::class, 'store'])->middleware(['guest', 'setLocale']);
 
 Route::get('/{locale?}/reset-password', function () {
     return view('auth.reset-password');

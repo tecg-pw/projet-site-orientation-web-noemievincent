@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterFormRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -9,7 +10,7 @@ use Str;
 
 class RegisterSessionController extends Controller
 {
-    public function store()
+    public function store(RegisterFormRequest $request)
     {
         $firstname = request('firstname');
         $lastname = request('lastname');

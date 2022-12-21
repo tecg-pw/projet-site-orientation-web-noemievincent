@@ -21,13 +21,13 @@ return [
     'login' => [
         'head_title' => 'Connexion',
         'title' => 'Connexion',
-        'register_link' => '<p class="text-sm font-light">Pas encore de compte ? <a href="/register" class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">Inscrivez-vous</a></p>',
+        'register_link' => '<p class="text-sm font-light">Pas encore de compte ? <a href="/fr/register" class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">Inscrivez-vous</a></p>',
     ],
     'register' => [
         'head_title' => 'Inscription',
         'title' => 'Inscription',
         'tagline' => 'Nulla officia magna ullamco id irure aute aliqua dolore qui duis.',
-        'login_link' => '<p class="text-sm font-light">Déjà un compte ? <a href="/login" class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">Connectez-vous</a></p>',
+        'login_link' => '<p class="text-sm font-light">Déjà un compte ? <a href="/fr/login" class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">Connectez-vous</a></p>',
     ],
     'reset_password' => [
         'head_title' => 'Réinitialiser votre mot de passe',
