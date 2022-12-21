@@ -89,5 +89,5 @@ Route::post('/{locale?}/register', [RegisterSessionController::class, 'store'])-
 
 Route::get('/{locale?}/reset-password', function () {
     return view('auth.reset-password');
-})->middleware(['guest', 'setLocale']);
+})->middleware('setLocale');
 

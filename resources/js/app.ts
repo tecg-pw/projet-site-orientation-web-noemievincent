@@ -3,6 +3,8 @@ import './bootstrap';
 window.addEventListener('load', init);
 
 function init() {
+    document.body.classList.remove('no-js');
+    document.body.classList.add('js-only');
     handlePassword();
 }
 
@@ -20,5 +22,5 @@ function handlePassword() {
             show[index].classList.toggle('hidden');
             hide[index].classList.toggle('hidden');
         });
-    })
+    });
 }
