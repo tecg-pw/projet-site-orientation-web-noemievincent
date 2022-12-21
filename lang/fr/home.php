@@ -13,7 +13,7 @@ return [
                 création, à l’utilisation et à la diffusion du produit, notamment sur les réseaux et les plateformes
                 mobiles.',
     'learn_more_button' => 'En savoir plus',
-    'visit_website_link' => 'Visiter le site de l‘HEPL',
+    'visit_website_link' => 'Visiter le site de l’HEPL',
     'projects_title' => 'Les dernières réalisations',
     'all_projects_link' => 'Tous les projets',
     'forum_title' => 'Posez-nous vos questions',

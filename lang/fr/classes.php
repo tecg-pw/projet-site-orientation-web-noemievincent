@@ -24,7 +24,7 @@ return [
         'year' => 'Année du cursus : ',
         'teachers' => 'Professeurs : ',
         'period' => 'Période : ',
-        'hours' => 'Nombres d‘heures : ',
+        'hours' => 'Nombres d’heures : ',
         'ects' => 'Crédits ECTS : ',
         'ects_link' => 'Voir la fiche ECTS complète',
         'desc_title' => 'Description',

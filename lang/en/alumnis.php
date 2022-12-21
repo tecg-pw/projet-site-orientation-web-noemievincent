@@ -8,9 +8,9 @@ return [
     'end_year' => 'now',
     'single' => [
         'back_to_students_link' => 'Back to students',
-        'github_link' => 'Go to :name‘s GitHub',
-        'linkedin_link' => 'Go to :name‘s Linkedin page',
-        'instagram_link' => 'Go to :name‘s Instagram',
+        'github_link' => 'Go to :name’s GitHub',
+        'linkedin_link' => 'Go to :name’s Linkedin page',
+        'instagram_link' => 'Go to :name’s Instagram',
         'internship_title' => 'Did his internship at',
         'job_title' => 'Works as a',
         'projects_from' => 'Projects from :name',

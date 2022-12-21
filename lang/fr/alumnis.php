@@ -10,7 +10,7 @@ return [
         'back_to_students_link' => 'Retour aux élèves',
         'github_link' => 'Se rendre sur le GitHub de :name',
         'linkedin_link' => 'Se rendre sur la page Linkedin de :name',
-        'instagram_link' => 'Se rendre sur l‘Instagram de :name',
+        'instagram_link' => 'Se rendre sur l’Instagram de :name',
         'internship_title' => 'À fait son stage chez',
         'job_title' => 'Travaille en tant que',
         'projects_from' => 'Projets de :name',

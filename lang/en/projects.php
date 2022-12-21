@@ -3,7 +3,7 @@
 return [
 
     'head_title' => 'Projects',
-    'title' => 'Our student‘s projects',
+    'title' => 'Our student’s projects',
     'tagline' => 'TFE, portfolios, applications, mobile games,... Discover the numerous projects realized by our students over the years.',
     'see_link' => 'See the project :title',
     'single' => [

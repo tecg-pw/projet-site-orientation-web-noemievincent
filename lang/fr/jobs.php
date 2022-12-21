@@ -24,7 +24,7 @@ return [
         'form' => [
             'tagline' => 'Vous êtes une entreprise en recherche de stagiaires ? Publiez directement votre proposition sur ce site et les candidatures seront garanties.',
             'company' => [
-                'title' => 'Informations de l‘entreprise',
+                'title' => 'Informations de l’entreprise',
                 'labels' => [
                     'logo' => 'Logo de votre entreprise',
                     'name' => 'Nom de votre entreprise',
@@ -39,9 +39,9 @@ return [
                 ]
             ],
             'offer' => [
-                'title' => 'Description de l‘offre',
+                'title' => 'Description de l’offre',
                 'labels' => [
-                    'title' => 'Titre de l‘offre',
+                    'title' => 'Titre de l’offre',
                     'body' => 'Description et missions du stage',
                     'skills' => 'Compétences nécessaires',
                     'other_skills' => 'Autres :',
@@ -81,7 +81,7 @@ return [
         'single' => [
             'back_to_partners_link' => 'Retour aux entreprises partenaires',
             'website_button' => 'Visiter leur site web',
-            'members_title' => 'Membres de l‘équipe',
+            'members_title' => 'Membres de l’équipe',
             'internships_title' => 'Leurs offres de stages',
             'alumnis_title' => 'Nos alumnis chez eux',
         ],

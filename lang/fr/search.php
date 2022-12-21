@@ -24,7 +24,7 @@ return [
     'no_results' => [
         'head_title' => 'Aucun résultats pour',
         'title' => 'Aucun résultats pour',
-        'tagline' => 'Votre recherche n‘a aucun résultat',
+        'tagline' => 'Votre recherche n’a aucun résultat',
         'hints' => [
             'Vérifiez que l’orthographe est correcte.',
             'Supprimez les guillemets autour des expressions pour rechercher chaque mot séparément.',
