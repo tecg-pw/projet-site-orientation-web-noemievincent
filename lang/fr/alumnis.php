@@ -11,9 +11,9 @@ return [
         'github_link' => 'Se rendre sur le GitHub de :name',
         'linkedin_link' => 'Se rendre sur la page Linkedin de :name',
         'instagram_link' => 'Se rendre sur l’Instagram de :name',
-        'internship_title' => 'À fait son stage chez',
+        'internship_title' => '{male} À fait son stage chez|{female} À fait son stage chez',
         'job_title' => 'Travaille en tant que',
         'projects_from' => 'Projets de :name',
-        'all_projects_from_link' => 'Tous ses projets',
+        'all_projects_from_link' => '{male} Tous ses projets|{female} Tous ses projets',
     ],
 ];

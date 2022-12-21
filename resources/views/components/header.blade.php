@@ -14,18 +14,18 @@
     <title>{{__($head_title)}} - Web Design</title>
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
+<body class="text-blue-dark font-body flex flex-col h-screen selection:bg-blue-light">
 <div
-    class="text-center bg-red-300 sm:bg-orange-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-cyan-300 2xl:bg-purple-200 transition ease-in-out duration-700">
+    class="fixed z-20 right-0 left-0 text-center bg-red-300 sm:bg-orange-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-cyan-300 2xl:bg-purple-200 transition ease-in-out duration-700">
     <p class="after:content-['phone'] sm:after:content-['tablet'] md:after:content-['small_screen'] lg:after:content-['default_screen'] xl:after:content-['large_screen'] 2xl:after:content-['extra_large_screen']">
         size for : </p>
 </div>
-<body class="text-blue-dark font-body flex flex-col h-screen selection:bg-blue-light">
 <h1 class="sr-only">
     {{__('header.title')}}
 </h1>
-<header class="uppercase text-blue mb-16 h-full relative lg:mb-0">
+<header class="uppercase text-blue mb-20 h-full relative lg:mb-0">
     <input id="toggle" class="toggle absolute hidden" type="checkbox">
-    <div class="bg-blue-light top-bar w-full px-4 py-4 flex justify-between fixed z-50 lg:hidden">
+    <div class="top-[24px] top-bar bg-blue-light w-full px-4 py-4 flex justify-between fixed z-50 lg:hidden">
         <a href="/{{app()->getLocale()}}">
             <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
                  height="24" viewBox="0 0 130 35"
@@ -83,7 +83,7 @@
         </div>
     </div>
     <div
-        class="menu bg-red-light px-4 py-6 flex flex-col gap-10 fixed z-[100] top-14 h-full left-full -right-[150%] transition-position ease-in-out duration-700 lg:static lg:flex-col-reverse lg:bg-transparent lg:p-0 lg:gap-0">
+        class="menu bg-blue-light px-4 pb-6 pt-10 flex flex-col gap-10 fixed top-14 z-40 h-full left-full -right-[150%] transition-position ease-in-out duration-700 lg:static lg:flex-col-reverse lg:bg-transparent lg:p-0 lg:gap-0">
         <nav class="lg:bg-white/60 lg:px-10 lg:py-6">
             <h2 class="sr-only">{{__('header.main_nav_title')}}</h2>
             <div class="flex flex-col gap-8 lg:flex-row lg:justify-between lg:items-center">

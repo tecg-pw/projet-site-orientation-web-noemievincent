@@ -12,7 +12,7 @@ return [
         'github_link' => 'GitHub du projet',
         'website_link' => 'Site du projet',
         'others_projects_from' => 'Autres projets de :name',
-        'all_projects_from_link' => 'Tous ses projets',
+        'all_projects_from_link' => '{male} Tous ses projets|{female} Tous ses projets',
     ],
 
 ];

@@ -11,9 +11,9 @@ return [
         'github_link' => 'Go to :name’s GitHub',
         'linkedin_link' => 'Go to :name’s Linkedin page',
         'instagram_link' => 'Go to :name’s Instagram',
-        'internship_title' => 'Did his internship at',
+        'internship_title' => '{male} Did his internship at|{female}Did her internship at',
         'job_title' => 'Works as a',
         'projects_from' => 'Projects from :name',
-        'all_projects_from_link' => 'All his projects',
+        'all_projects_from_link' => '{male} All his projects|{female}All her projects',
     ],
 ];

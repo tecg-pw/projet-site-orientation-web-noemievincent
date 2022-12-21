@@ -24,13 +24,10 @@
                         <div>
                             <a href="/{{app()->getLocale()}}/alumnis/{{$student->slug}}"
                                class="text-xl font-semibold hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$student->fullname}}</a>
-                            <p>@if($student->role == 'student')
-                                    {{__('roles.student')}}
-                                @elseif($student->role == 'student_teacher')
-                                    {{__('roles.student_teacher')}}
-                                @endif
+                            <p>
+                                {{trans_choice('roles.' . $student->role, $student->genre)}}
                                 {{$student->start_year->format('Y')}}
-                                {{$student->end_year != null ? ' - ' . $student->end_year->format('Y') : ''}}</p>
+                                {{$student->end_year != null ? ' - ' . $student->end_year->translatedFormat('Y') : ''}}</p>
                         </div>
                     </div>
                     <ul class="flex gap-4">
@@ -207,7 +204,7 @@
                         </ul>
                     </div>
                     <div>
-                        <p>{{$project->body}}</p>
+                        {!! $project->body !!}
                     </div>
                     {{--                    <div class="flex flex-wrap gap-8">--}}
                     {{--                        <img src="https://placehold.jp/320x374.png" alt="">--}}
@@ -231,7 +228,7 @@
                     </div>
                     <a href="/{{app()->getLocale()}}/projects"
                        class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-                        <span>{{__('projects.single.all_projects_from_link')}}</span>
+                        <span>{{trans_choice('projects.single.all_projects_from_link', $student->genre)}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                              class="fill-orange h-full">
                             <path

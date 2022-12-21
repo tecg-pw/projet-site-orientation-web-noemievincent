@@ -22,11 +22,8 @@
                             <h2 id="{{$alumni->slug}}"
                                 class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$alumni->fullname}}</h2>
                             <div class="text-lg">
-                                <p>@if($alumni->role == 'student')
-                                        {{__('roles.student')}}
-                                    @elseif($alumni->role == 'student_teacher')
-                                        {{__('roles.student_teacher')}}
-                                    @endif
+                                <p>
+                                    {{trans_choice('roles.' . $alumni->role, $alumni->genre)}}
                                     {{$alumni->start_year->format('Y')}}
                                     {{$alumni->end_year != null ? ' - ' . $alumni->end_year->format('Y') : ''}}</p>
                                 <div class="flex gap-3">
@@ -162,7 +159,7 @@
                 @if(isset($internship))
                     <section aria-labelledby="internship" class="col-span-1">
                         <h3 id="internship"
-                            class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('alumnis.single.internship_title')}}</h3>
+                            class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{trans_choice('alumnis.single.internship_title', $alumni->genre)}}</h3>
                         <x-partners.article
                             :partner="$internship->translations->where('locale', app()->getLocale())->first()"/>
                     </section>
@@ -191,7 +188,7 @@
                     </div>
                     <a href="/{{app()->getLocale()}}/projects"
                        class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-                        <span>{{__('alumnis.single.all_projects_from_link')}}</span>
+                        <span>{{trans_choice('alumnis.single.all_projects_from_link', $alumni->genre)}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                              class="fill-orange h-full">
                             <path

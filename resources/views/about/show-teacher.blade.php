@@ -22,7 +22,7 @@
                             <h2 id="{{$teacher->fullname}}"
                                 class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$teacher->fullname}}</h2>
                             <div class="text-lg">
-                                <p>{{__('roles.' . $teacher->role)}}</p>
+                                <p>{{trans_choice('roles.' . $teacher->role, $teacher->genre)}}</p>
                                 <a href="mailto:{{$teacher->email}}">{{$teacher->email}}</a>
                             </div>
                         </div>

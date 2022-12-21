@@ -7,7 +7,7 @@
             <p class="text-lg font-medium"><a href="/{{app()->getLocale()}}/users/{{$reply->user->slug}}"
                                               class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$reply->user->fullname}}</a>
             </p>
-            <p class="text-sm">{{__('roles.' . $reply->user->role)}}</p>
+            <p class="text-sm">{{trans_choice('roles.' . $reply->user->role, $reply->user->genre)}}</p>
         </div>
     </div>
     <div class="flex flex-col gap-2">

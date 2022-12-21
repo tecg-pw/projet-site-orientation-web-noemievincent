@@ -12,7 +12,7 @@ return [
         'github_link' => 'GitHub',
         'website_link' => 'Website',
         'others_projects_from' => 'Other projects by :name',
-        'all_projects_from_link' => 'All his projects',
+        'all_projects_from_link' => '{male} All his projects|{female}All her projects',
     ],
 
 ];

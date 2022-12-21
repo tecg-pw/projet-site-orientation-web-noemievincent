@@ -10,7 +10,11 @@
                          class="rounded-full">
                     <div class="mt-2">
                         <p class="text-2xl font-semibold">{{$user->fullname}}</p>
-                        {!! __('profile.infos', ['datetime' => $user->created_at->format('m-Y'), 'date' => $user->created_at->format('F Y')]) !!}
+                        @if($user->role == 'user')
+                            {!! __('profile.user_infos', ['role' => trans_choice("roles." . $user->role, $user->genre),'datetime' => $user->created_at->translatedFormat('m-Y'), 'date' => $user->created_at->translatedFormat('F Y')]) !!}
+                        @else
+                            {!! __('profile.infos', ['role' => trans_choice("roles." . $user->role, $user->genre)]) !!}
+                        @endif
                     </div>
                 </div>
                 @auth
@@ -37,14 +41,14 @@
                         <div class="flex gap-12 col-span-2">
                             @if($user->slug === auth()->user()->slug)
                                 <a href="?forum-tab=questions"
-                                   class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : ''}}">{{__('Mes questions')}}</a>
+                                   class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.questions')}}</a>
                                 <a href="?forum-tab=replies"
-                                   class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'replies' ? 'font-bold' : ''}}">{{__('Mes réponses')}}</a>
+                                   class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'replies' ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.replies')}}</a>
                             @else
                                 <a href="?forum-tab=questions"
-                                   class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : 'underline'}}">{{__('Ses questions')}}</a>
+                                   class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.questions', $user->genre)}}</a>
                                 <a href="?forum-tab=replies"
-                                   class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'replies' ? 'font-bold' : 'underline'}}">{{__('Ses réponses')}}</a>
+                                   class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'replies' ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.replies', $user->genre)}}</a>
                             @endif
                         </div>
                         <x-filters.search/>
@@ -52,7 +56,11 @@
                 </div>
                 @if(Request::query('forum-tab') === 'questions' || Request::all() == null)
                     @if(count($questions) === 0)
-                        {{__('profile.no_question')}}
+                        @if($user->slug === auth()->user()->slug)
+                            {{__('profile.user.no_questions')}}
+                        @else
+                            {{__('profile.guest.no_questions', ['name' => $user->firstname])}}
+                        @endif
                     @else
                         <div class="flex flex-col gap-6">
                             @foreach($questions as $question)
@@ -64,7 +72,11 @@
                 @endif
                 @if(Request::query('forum-tab') === 'replies')
                     @if(count($replies) === 0)
-                        {{__('profile.no_reply')}}
+                        @if($user->slug === auth()->user()->slug)
+                            {{__('profile.user.no_replies')}}
+                        @else
+                            {{__('profile.guest.no_replies', ['name' => $user->firstname])}}
+                        @endif
                     @else
                         <div class="flex flex-col gap-6">
                             @foreach($replies as $reply)

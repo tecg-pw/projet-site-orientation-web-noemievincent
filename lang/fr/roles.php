@@ -2,9 +2,9 @@
 
 return [
 
-    'teacher' => 'Professeur',
-    'student_teacher' => 'Professeur — Ancien étudiant',
-    'student' => 'Étudiant',
-    'alumni' => 'Ancien étudiant',
-    'user' => 'Utilisateur'
+    'teacher' => '{male} Professeur|{female} Professeur',
+    'student_teacher' => '{male} Professeur – Alumni|{female} Professeur – Alumni',
+    'student' => '{male} Étudiant|{female} Étudiante',
+    'alumni' => '{male} Alumni|{female} Alumni',
+    'user' => '{male} Utilisateur|{female} Utilisatrice'
 ];

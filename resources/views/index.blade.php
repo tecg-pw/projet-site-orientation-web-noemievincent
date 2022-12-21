@@ -1,5 +1,5 @@
 <x-header :head_title="'home.head_title'"/>
-<main class="flex-1 px-10">
+<main class="flex-1 px-5 lg:px-10">
     <section aria-labelledby="introduction" class="mt-10 flex gap-12">
         <div class="col-span-2 flex flex-col gap-6">
             <h2 id="introduction"
@@ -7,7 +7,8 @@
             <p class="font-light leading-7">
                 {{__('home.hero_description')}}
             </p>
-            <div class="flex items-center gap-10 uppercase">
+            <div
+                class="uppercase flex flex-col text-center gap-4 sm:flex-row sm:gap-24 sm:justify-center lg:justify-start lg:items-center">
                 <a href="/{{app()->getLocale()}}/about"
                    class="rounded-lg px-12 py-3 text-white transition-all duration-200 ease-in-out bg-orange hover:bg-orange-dark">{{__('home.learn_more_button')}}</a>
                 <a href="https://hepl.be/fr"
@@ -16,12 +17,13 @@
         </div>
         <img src="/img/marvin-meyer-SYTO3xs06fU-unsplash.jpg" alt="" class="hidden lg:block">
     </section>
-    <div class="mt-20 lg:grid grid-cols-4 justify-between gap-12">
+    <div class="mt-10 justify-between gap-12 lg:grid lg:grid-cols-4 lg:mt-20">
         <div class="col-span-3">
             <section aria-labelledby="projects" class="mb-14 flex flex-col gap-6">
                 <h2 id="projects"
                     class="text-4xl font-medium uppercase tracking-wider font-display text-blue">{{__('home.projects_title')}}</h2>
-                <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
+                <div
+                    class="flex flex-col gap-10 justify-items-center sm:grid sm:grid-cols-2 sm:gap-x-11 sm:gap-y-8 lg:grid-cols-3">
                     @foreach($projects as $projectRef)
                         <x-projects.article
                             :project="$projectRef->translations->where('locale', app()->getLocale())->first()"

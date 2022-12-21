@@ -1,8 +1,8 @@
 <footer class="bg-blue-light px-4 py-8 text-sm mt-20 lg:px-10">
     <section aria-labelledby="footer">
         <h2 id="footer" class="sr-only">{{__('footer.title')}}</h2>
-        <div class="lg:my-6 flex flex-col gap-6 lg:flex-row justify-between">
-            <nav class="hidden lg:block">
+        <div class="flex flex-col gap-6 justify-between lg:my-6 lg:flex-row">
+            <nav class="sr-only lg:not-sr-only">
                 <h3 class="text-blue font-bold text-lg mb-4">{{__('footer.nav_title')}}</h3>
                 <ul class="flex flex-col gap-2">
                     @foreach(__('header.main_nav_items') as $slug => $name)
@@ -158,7 +158,7 @@
                     <p itemprop="telephone">+32 (0)4 279 55 20</p>
                 </div>
             </div>
-            <div class="max-w-md">
+            <div>
                 <h3 class="text-blue font-bold text-lg mb-2 lg:mb-4">{{__('footer.newsletter_title')}}</h3>
                 <div>
                     <p class="font-light">{{__('footer.newsletter_tagline')}}</p>
