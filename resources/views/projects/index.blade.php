@@ -1,3 +1,6 @@
+@php
+    $action = '/test'
+@endphp
 <x-header :head_title="'projects.head_title'"/>
 <main class="px-10 flex-1 mt-6">
     <div class="lg:grid grid-cols-4 justify-between gap-12">
@@ -13,7 +16,7 @@
                         <p class="uppercase text-lg">{{__('filters.title')}}</p>
                         <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
                     </div>
-                    <x-filters.search/>
+                    <x-filters.search :action="$action"/>
                 </div>
                 <form class="flex col-span-2 items-center justify-between">
                     @csrf

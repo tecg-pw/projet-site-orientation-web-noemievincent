@@ -16,11 +16,13 @@
                 <h2 id="edit-profile"
                     class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('profile.edit.informations_form_title')}}</h2>
             </div>
-            <form action="/users/{{$user->slug}}/edit-infos" method="post" class="flex flex-col gap-8">
+            <form action="/{{app()->getLocale()}}/users/{{$user->slug}}/update-infos" method="post"
+                  class="flex flex-col gap-8">
+                @csrf
                 <div class="flex flex-col gap-4">
                     <div class="flex gap-8">
                         <div class="relative">
-                            <label for="file"
+                            <label for="picture"
                                    class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center rounded-full bg-blue/40 hover:bg-blue/60 cursor-pointer transition-all ease-in-out duration-200">
                                 <span class="sr-only">{{__('forms.labels.picture')}}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -29,12 +31,12 @@
                                         d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
                                 </svg>
                             </label>
-                            <input type="file" id="file" class="hidden">
+                            <input type="file" id="picture" name="picture" class="hidden">
                             <img src="https://placehold.jp/160x160.png" alt="{{$user->name}}"
                                  class="rounded-full">
                         </div>
                         <div class="flex-1 flex flex-col justify-between gap-3">
-                            <fieldset class="flex flex-col gap-1 w-full">
+                            <div class="flex flex-col gap-1 w-full">
                                 <label for="firstname" class="text-lg text-blue-dark flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                                          class="fill-blue-dark">
@@ -43,10 +45,10 @@
                                     </svg>
                                     <span>{{__('forms.labels.firstname')}}</span>
                                 </label>
-                                <input type="text" id="firstname" value="{{$user->firstname}}"
+                                <input type="text" id="firstname" name="firstname" value="{{$user->firstname}}"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </fieldset>
-                            <fieldset class="flex flex-col gap-1 w-full">
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
                                 <label for="lastname" class="text-lg text-blue-dark flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                                          class="fill-blue-dark">
@@ -55,12 +57,12 @@
                                     </svg>
                                     <span>{{__('forms.labels.lastname')}}</span>
                                 </label>
-                                <input type="text" id="lastname" value="{{$user->lastname}}"
+                                <input type="text" id="lastname" name="lastname" value="{{$user->lastname}}"
                                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </fieldset>
+                            </div>
                         </div>
                     </div>
-                    <fieldset class="flex flex-col gap-1">
+                    <div class="flex flex-col gap-1">
                         <label for="email" class="text-lg text-blue-dark flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                                  class="fill-none stroke-blue-dark stroke-2">
@@ -71,40 +73,41 @@
                             </svg>
                             <span>{{__('forms.labels.email')}}</span>
                         </label>
-                        <input type="email" id="email" value="{{$user->email}}"
+                        <input type="email" id="email" name="email" value="{{$user->email}}"
                                class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                    </fieldset>
-                    <fieldset class="flex flex-col gap-1">
-                        <label for="email" class="text-lg text-blue-dark">{{__('forms.labels.genre')}}</label>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <p class="text-lg text-blue-dark">{{__('forms.labels.gender')}}</p>
                         <div class="flex justify-between">
-                            @foreach(__('forms.genres') as $id => $label)
+                            @foreach(__('forms.genders') as $value => $label)
                                 <div class="flex gap-2">
-                                    <input type="radio" id="{{$id}}" name="gender">
-                                    <label for="{{$id}}">{{$label}}</label>
+                                    <input type="radio" value="{{$value}}" name="gender"
+                                           value="{{$value}}" @checked($value === auth()->user()->gender)>
+                                    <label for="{{$value}}">{{$label}}</label>
                                 </div>
                             @endforeach
                         </div>
-                    </fieldset>
-                    <fieldset class="flex flex-col gap-2">
-                        <label for="reply" class="text-lg text-blue-dark">{{__('forms.labels.description')}}</label>
-                        <textarea name="reply" id="reply" cols="30" rows="5"
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="bio" class="text-lg text-blue-dark">{{__('forms.labels.description')}}</label>
+                        <textarea name="bio" id="bio" cols="30" rows="5"
                                   class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">{{$user->bio}}</textarea>
-                    </fieldset>
+                    </div>
                 </div>
                 <div class="flex gap-8 items-center justify-between">
                     <button type="submit"
                             class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('forms.buttons.edit_infos')}}
                     </button>
-                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
+                    {{--                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>--}}
                 </div>
             </form>
         </div>
         <div>
             <h3 class="font-semibold font-display text-xl">{{__('profile.edit.password_form_title')}}</h3>
-            <form action="/users{{$user->slug}}/edit-password" class="flex flex-col gap-8">
+            <form action="/{{app()->getLocale()}}/users{{$user->slug}}/update-password" class="flex flex-col gap-8">
                 @csrf
                 <div class="flex flex-col gap-4">
-                    <fieldset class="flex flex-col gap-1">
+                    <div class="flex flex-col gap-1">
                         <label for="old-password" class="">
                             <span class="text-lg text-blue-dark flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
@@ -129,8 +132,8 @@
                         </svg>
                     </span>
                         </div>
-                    </fieldset>
-                    <fieldset class="flex flex-col gap-1">
+                    </div>
+                    <div class="flex flex-col gap-1">
                         <label for="new-password" class="">
                             <span class="text-lg text-blue-dark flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
@@ -157,7 +160,7 @@
                         </svg>
                     </span>
                         </div>
-                    </fieldset>
+                    </div>
                     <a href="/{{app()->getLocale()}}/reset-password"
                        class="font-light text-sm text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('forms.links.reset_password')}}</a>
                 </div>
@@ -165,7 +168,7 @@
                     <button type="submit"
                             class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('forms.buttons.edit_password')}}
                     </button>
-                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
+                    {{--                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>--}}
                 </div>
             </form>
         </div>

@@ -13,7 +13,7 @@ return [
         'password_requirements' => 'The password must contain between 8 and 64 characters',
         'description' => 'Description',
         'remember_me' => 'Remember me',
-        'genre' => 'You are',
+        'gender' => 'You are',
         'subjects' => 'Subject of the question',
         'message' => 'Message',
         'category' => 'Category of the question',
@@ -34,7 +34,7 @@ return [
         'cancel' => 'Cancel',
         'delete_account' => 'Delete my account',
     ],
-    'genres' => [
+    'genders' => [
         'male' => 'A man',
         'female' => 'A woman',
         'prefer-not-to-say' => 'Prefer not to say',

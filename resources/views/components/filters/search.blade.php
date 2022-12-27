@@ -1,4 +1,9 @@
-<div class="flex col-start-3 rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
+@props([
+    'action'
+])
+<form action="{{$action}}" method="get"
+      class="flex col-start-3 rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
+    @csrf
     <label for="search-keyword" class="h-full flex-1">
         <span class="sr-only">{{__('filters.titles.search')}}</span>
         <input placeholder="{{__('filters.titles.search')}}" type="search" id="search-keyword"
@@ -17,4 +22,4 @@
         <span class="sr-only">
                             {{__('filters.search_button')}}
                         </span></button>
-</div>
+</form>

@@ -16,6 +16,7 @@ use App\Http\Controllers\ResourcesController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TutorialsController;
+use App\Http\Controllers\UpdateUserInfosController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -78,6 +79,8 @@ Route::get('/{locale?}/resources', [ResourcesController::class, 'index'])->middl
 //ROUTE : Profile
 Route::get('/{locale?}/users/{user:slug}', [UserController::class, 'show'])->middleware('setLocale');
 Route::get('/{locale?}/users/{user:slug}/edit', [UserController::class, 'edit'])->middleware(['auth', 'setLocale']);
+
+Route::post('/{locale?}/users/{user:slug}/update-infos', UpdateUserInfosController::class)->middleware(['auth', 'setLocale']);
 
 //ROUTE : Auth
 Route::get('/{locale?}/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware(['guest', 'setLocale']);

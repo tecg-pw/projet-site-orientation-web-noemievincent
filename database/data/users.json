@@ -5,7 +5,7 @@
         "email": "dominique.vilain@hepl.be",
         "is_admin": true,
         "picture": "",
-        "genre": "male",
+        "gender": "male",
         "role": "teacher",
         "bio": "Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et."
     },
@@ -15,7 +15,7 @@
         "email": "myriam.dupont@hepl.be",
         "is_admin": false,
         "picture": "",
-        "genre": "female",
+        "gender": "female",
         "role": "teacher",
         "bio": "Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et."
     },
@@ -25,7 +25,7 @@
         "email": "gwenaelle.batta@student.hepl.be",
         "is_admin": false,
         "picture": "",
-        "genre": "female",
+        "gender": "female",
         "role": "alumni",
         "bio": "Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et."
     },
@@ -35,7 +35,7 @@
         "email": "fredco@gmail.be",
         "is_admin": false,
         "picture": "",
-        "genre": "male",
+        "gender": "male",
         "role": "user",
         "bio": "Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et."
     }
