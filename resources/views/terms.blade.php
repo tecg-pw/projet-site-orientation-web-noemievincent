@@ -1,8 +1,8 @@
 <x-header :head_title="'terms.head_title'"/>
-<main class="mt-6 flex-1 px-10">
+<main class="main">
     <section aria-labelledby="terms" class="flex flex-col gap-8">
         <h2 id="terms"
-            class="text-5xl font-bold uppercase tracking-wider font-display text-blue">{{__('terms.title')}}</h2>
+            class="h2">{{__('terms.title')}}</h2>
         <div class="flex flex-col gap-12">
             <div class="flex flex-col gap-2">
                 <p class="text-xl font-semibold text-blue">{{__('Qui sommes nous ?')}}</p>
