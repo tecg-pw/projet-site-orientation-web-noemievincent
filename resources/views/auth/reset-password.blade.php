@@ -23,7 +23,7 @@
                        class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
             </div>
             <button type="submit"
-                    class="uppercase font-light bg-orange text-white py-2 self-start px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                    class="uppercase font-light bg-orange text-white py-2 self-start px-6 rounded-lg hover:bg-orange-dark transitionable">
                 {{__('forms.buttons.reset_password')}}
             </button>
         </form>

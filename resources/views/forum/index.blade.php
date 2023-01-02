@@ -1,7 +1,7 @@
 <x-header :head_title="'forum.head_title'"/>
 <main class="main">
-    <div class="xl:grid grid-cols-4 justify-between gap-12">
-        <section aria-labelledby="forum" class="col-span-3 flex flex-col gap-8">
+    <div class="xl:grid xl:grid-cols-4 xl:gap-10">
+        <section aria-labelledby="forum" class="flex flex-col gap-8 lg:col-span-3">
             <div class="flex flex-col gap-2">
                 <h2 id="forum"
                     class="h2">{{__('forum.title')}}</h2>
@@ -14,7 +14,7 @@
                 @auth()
                     <div class="flex flex-col gap-4 justify-between items-center sm:flex-row">
                         <a href="/{{app()->getLocale()}}/forum?ask-a-question"
-                           class="flex self-start gap-2 uppercase bg-orange text-white py-3 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                           class="flex self-start gap-2 uppercase bg-orange text-white py-3 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  class="fill-white">
                                 <path
@@ -43,7 +43,6 @@
                         <div class="flex gap-2">
                             <label for="category" class="text-lg">{{__('forms.labels.category')}} :</label>
                             <select name="category" id="category" class="rounded-lg px-4">
-                                <option value="category">Catégorie</option>
                                 @foreach($categories as $category)
                                     <option value="{{$category->slug}}">{{$category->name}}</option>
                                 @endforeach
@@ -52,7 +51,7 @@
                         <div class="flex gap-14 items-center justify-end">
                             <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
                             <button type="submit"
-                                    class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('forms.buttons.post_question')}}
+                                    class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">{{__('forms.buttons.post_question')}}
                             </button>
                         </div>
                     </form>
@@ -74,7 +73,7 @@
                         <x-filters.forum-status/>
                     </div>
                     <button type="submit"
-                            class="self-start font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                            class="self-start font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transitionable">
                         {{__('filters.filter_button')}}
                     </button>
                 </form>

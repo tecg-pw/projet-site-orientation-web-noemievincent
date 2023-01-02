@@ -1,6 +1,6 @@
 @props(['alumni'])
 <div
-    class="w-full bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5">
+    class="w-full bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transitionable p-5">
     <div class="flex justify-between md:flex-col md:gap-3 lg:flex-row">
         <div class="flex flex-col gap-4">
             <img src="https://placehold.jp/160x160.png" alt="{{$alumni->fullname}}" height="160"

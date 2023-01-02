@@ -7,11 +7,11 @@
 
 @layer components {
     .main {
-        @apply flex-1 px-5 mt-10 lg:px-10
+        @apply flex-1 mt-10 px-5 lg:px-10 2xl:px-24
     }
 
     .h2 {
-        @apply font-display font-bold text-blue tracking-wider uppercase text-4xl md:text-5xl
+        @apply font-display font-bold uppercase tracking-wider leading-snug text-blue text-4xl md:text-5xl
     }
 
     .single-h2 {
@@ -20,6 +20,10 @@
 
     .error-outline {
         @apply outline outline-2 outline-red-600
+    }
+
+    .transitionable {
+        @apply transition-all duration-200 ease-in-out
     }
 
     .no-js .show-password {

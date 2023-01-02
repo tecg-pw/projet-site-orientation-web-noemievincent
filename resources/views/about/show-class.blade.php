@@ -4,7 +4,7 @@
         <section aria-labelledby="{{$course->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/{{app()->getLocale()}}/about#classes"
-                   class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transition-all ease-in-out duration-200">
+                   class="flex items-center gap-4 uppercase text-orange text-lg hover:gap-6 transitionable">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="16" width="8"
                          class="-scale-x-100 fill-orange h-full">
                         <path
@@ -27,7 +27,7 @@
                                 @foreach($teachers as $key => $teacher)
                                     <li>
                                         <a href="/{{app()->getLocale()}}/teachers/{{$teacher->translations->where('locale', app()->getLocale())->first()->slug}}"
-                                           class="underline underline-offset-2 hover:text-orange transition-all ease-in-out duration-200">{{$teacher->translations->where('locale', app()->getLocale())->first()->fullname}}</a>{{$key == count($teachers)-1 ? '' : ', '}}
+                                           class="underline underline-offset-2 hover:text-orange transitionable">{{$teacher->translations->where('locale', app()->getLocale())->first()->fullname}}</a>{{$key == count($teachers)-1 ? '' : ', '}}
                                     </li>
                                 @endforeach
                             </ul>
@@ -68,7 +68,7 @@
                             @endforeach
                         </div>
                         <a href="/{{app()->getLocale()}}/projects"
-                           class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
+                           class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transitionable">
                             <span>{{__('classes.single.all_projects_link')}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                                  class="fill-orange h-full">

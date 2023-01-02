@@ -37,7 +37,7 @@
             </div>
             @auth()
                 <a href="#reply"
-                   class="flex items-center gap-4 uppercase text-orange hover:text-orange-dark transition-all ease-in-out duration-200">
+                   class="flex items-center gap-4 uppercase text-orange hover:text-orange-dark transitionable">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
                          class="fill-orange h-full">
                         <path
@@ -64,7 +64,7 @@
                 <div class="flex gap-8 items-center justify-end">
                     <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
                     <button type="submit"
-                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
                              class="fill-white h-full">
                             <path

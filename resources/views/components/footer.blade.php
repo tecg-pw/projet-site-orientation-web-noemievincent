@@ -1,4 +1,4 @@
-<footer class="bg-blue-light px-4 py-8 text-sm mt-20 lg:px-10">
+<footer class="bg-blue-light px-4 py-8 text-sm mt-20 lg:px-10 2xl:px-24">
     <section aria-labelledby="footer">
         <h2 id="footer" class="sr-only">{{__('footer.title')}}</h2>
         <div class="flex flex-col gap-6 justify-between lg:my-6 lg:flex-row">
@@ -7,7 +7,7 @@
                 <ul class="flex flex-col gap-2">
                     @foreach(__('header.main_nav_items') as $slug => $name)
                         <li><a href="/{{app()->getLocale()}}/{{$slug}}"
-                               class="hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
+                               class="hover:text-orange transitionable">{{$name}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -17,7 +17,7 @@
                 <ul class="flex flex-col gap-3">
                     <li>
                         <a href="https://www.facebook.com/hepl.be/"
-                           class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
+                           class="flex items-center gap-2 hover:text-orange transitionable">
                             <svg version="1.1" id="footer-facebook" xmlns="http://www.w3.org/2000/svg"
                                  x="0px" y="0px" width="20"
                                  viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
@@ -42,7 +42,7 @@
                     </li>
                     <li>
                         <a href="https://www.instagram.com/heplinfographie/"
-                           class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
+                           class="flex items-center gap-2 hover:text-orange transitionable">
                             <svg version="1.1" id="footer-instagram" xmlns="http://www.w3.org/2000/svg"
                                  x="0px" y="0px" width="20"
                                  viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
@@ -101,7 +101,7 @@
                     </li>
                     <li>
                         <a href="https://twitter.com/hepl_be?lang=fr"
-                           class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
+                           class="flex items-center gap-2 hover:text-orange transitionable">
                             <svg version="1.1" id="footer-twitter" xmlns="http://www.w3.org/2000/svg"
                                  x="0px" y="0px" width="20"
                                  viewBox="0 0 20 16.3" style="enable-background:new 0 0 20 16.3;" xml:space="preserve">
@@ -120,7 +120,7 @@
                     </li>
                     <li>
                         <a href="https://github.com/tecg-web"
-                           class="flex items-center gap-2 hover:text-orange transition-all ease-in-out duration-200">
+                           class="flex items-center gap-2 hover:text-orange transitionable">
                             <svg version="1.1" id="footer-github" xmlns="http://www.w3.org/2000/svg"
                                  x="0px" y="0px" width="20"
                                  viewBox="0 0 20 19.5" style="enable-background:new 0 0 20 19.5;" xml:space="preserve">

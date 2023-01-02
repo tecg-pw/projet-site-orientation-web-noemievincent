@@ -84,14 +84,14 @@
     </div>
     <div
         class="menu bg-blue-light px-4 pb-6 pt-10 flex flex-col gap-10 fixed top-14 z-40 h-full left-full -right-[150%] transition-position ease-in-out duration-700 lg:static lg:flex-col-reverse lg:bg-transparent lg:p-0 lg:gap-0">
-        <nav class="lg:bg-white/60 lg:px-10 lg:py-6">
+        <nav class="lg:bg-white/60 lg:px-10 lg:py-6 2xl:px-24">
             <h2 class="sr-only">{{__('header.main_nav_title')}}</h2>
             <div class="flex flex-col gap-8 lg:flex-row lg:justify-between lg:items-center">
                 <a href="/{{app()->getLocale()}}" class="hidden lg:block">
                     <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
                          height="24" viewBox="0 0 130 35"
                          xml:space="preserve"
-                         class="fill-blue-dark hover:fill-orange transition-all ease-in-out duration-200"
+                         class="fill-blue-dark hover:fill-orange transitionable"
                          aria-labelledby="logoTitle">
                                 <title id="logoTitle">{{__('header.home_link')}}</title>
                         <g>
@@ -138,7 +138,7 @@
                 <ul class="flex flex-col gap-4 lg:flex-row lg:gap-12 xl:gap-24">
                     @foreach(__('header.main_nav_items') as $slug => $name)
                         <li><a href="/{{app()->getLocale()}}/{{$slug}}"
-                               class="font-semibold {{Request::is(app()->getLocale() . '/' . $slug) ? 'lg:font-bold' : 'lg:font-normal'}} hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
+                               class="font-semibold {{Request::is(app()->getLocale() . '/' . $slug) ? 'lg:font-bold' : 'lg:font-normal'}} hover:text-orange transitionable">{{$name}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -155,14 +155,14 @@
             </div>
         </nav>
         <div
-            class="space-y-10 lg:space-y-0 lg:bg-blue-light lg:flex lg:flex-row-reverse lg:items-center lg:justify-between lg:px-10 lg:py-3 lg:text-sm">
+            class="space-y-10 lg:space-y-0 lg:bg-blue-light lg:flex lg:flex-row-reverse lg:items-center lg:justify-between lg:px-10 lg:py-3 lg:text-sm 2xl:px-24">
             <div class="space-y-10 lg:space-y-0 lg:flex lg:flex-row lg:gap-16">
                 <nav>
                     <h2 class="sr-only">{{__('header.sub_nav_title')}}</h2>
                     <ul class="flex flex-col gap-3 lg:flex-row lg:gap-8">
                         @foreach(__('header.sub_nav_items') as $slug => $name)
                             <li><a href="/{{app()->getLocale()}}/{{$slug}}"
-                                   class="{{Request::is(app()->getLocale() . '/' . $slug) ? 'lg:font-bold' : ''}} hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>
+                                   class="{{Request::is(app()->getLocale() . '/' . $slug) ? 'lg:font-bold' : ''}} hover:text-orange transitionable">{{$name}}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -176,7 +176,7 @@
                     @endphp
                     @foreach(config('app.available_locales') as $locale)
                         <li><a href="/{{empty($url) ? $locale : $locale . '/' . $url}}"
-                               class="{{$locale == app()->getLocale() ? 'font-bold' : ''}} hover:text-orange transition-all ease-in-out duration-200">{{ucwords($locale)}}</a>
+                               class="{{$locale == app()->getLocale() ? 'font-bold' : ''}} hover:text-orange transitionable">{{ucwords($locale)}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -199,7 +199,7 @@
                             <img src="https://placehold.jp/30x30.png" alt="{{auth()->user()->fullname}}"
                                  class="rounded-full">
                             <span dusk="logged-user-fullname"
-                                  class="hover:text-orange transition-all ease-in-out duration-200">{{auth()->user()->fullname}}</span>
+                                  class="hover:text-orange transitionable">{{auth()->user()->fullname}}</span>
                         </a><span class="hidden lg:block">—</span>
                         <form action="/logout"
                               method="post">

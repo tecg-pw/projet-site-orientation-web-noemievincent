@@ -1,18 +1,21 @@
 @php use App\Models\Offer; @endphp
 @props(['aside'])
-<aside class="hidden md:flex md:flex-col">
+<aside class="hidden lg:mt-14 lg:flex lg:flex-col lg:gap-4 xl:mt-0 xl:gap-6">
     <h2 class="sr-only">{{__('aside.title')}}</h2>
-    <section aria-labelledby="aside-news" class="flex flex-col gap-2">
+    <section aria-labelledby="aside-news" class="flex flex-col gap-4">
         <h3 id="aside-news"
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('aside.news_title')}}</h3>
-        <div class="flex flex-row gap-3 xl:flex-col">
+        <div class="flex flex-row gap-4 xl:flex-col xl:items-end">
             @foreach($aside['news'] as $new)
-                <x-news.aside-article :new="$new->translations->where('locale', app()->getLocale())->first()"
-                                      :category="$new->category->translations->where('locale', app()->getLocale())->first()"/>
+                <x-news.article :new="$new->translations->where('locale', app()->getLocale())->first()"
+                                :category="$new->category->translations->where('locale', app()->getLocale())->first()">
+                    <h4 id="{{$new->translations->where('locale', app()->getLocale())->first()->slug}}"
+                        class="text-white text-lg lg:text-xl">{{$new->translations->where('locale', app()->getLocale())->first()->title}}</h4>
+                </x-news.article>
             @endforeach
         </div>
         <a href="/{{app()->getLocale()}}/news"
-           class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
+           class="flex items-center self-end gap-3 uppercase text-orange text-sm hover:gap-6 transitionable">
             <span>{{__('aside.all_news_link')}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                  class="fill-orange h-full">
@@ -22,17 +25,20 @@
             </svg>
         </a>
     </section>
-    <section aria-labelledby="aside-jobs" class="flex flex-col gap-2 mt-8">
+    <section aria-labelledby="aside-jobs" class="flex flex-col gap-4">
         <h3 id="aside-jobs"
             class="font-display font-medium text-blue text-2xl tracking-wider uppercase">{{__('aside.offers_title')}}</h3>
-        <div class="flex flex-row gap-3 xl:flex-col">
+        <div class="flex flex-row gap-4 xl:flex-col xl:items-end">
             @foreach($aside['offers'] as $offer)
-                <x-jobs.aside-article :offer="$offer->translations->where('locale', app()->getLocale())->first()"
-                                      :company="$offer->company->translations->where('locale', app()->getLocale())->first()"/>
+                <x-jobs.article :offer="$offer->translations->where('locale', app()->getLocale())->first()"
+                                :company="$offer->company->translations->where('locale', app()->getLocale())->first()">
+                    <h4 id="{{$offer->translations->where('locale', app()->getLocale())->first()->slug}}"
+                        class="text-xl uppercase">{{$offer->translations->where('locale', app()->getLocale())->first()->title}}</h4>
+                </x-jobs.article>
             @endforeach
         </div>
         <a href="/{{app()->getLocale()}}/jobs"
-           class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
+           class="flex items-center self-end gap-3 uppercase text-orange text-sm hover:gap-6 transitionable">
             <span>{{__('aside.all_offers_link')}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                  class="fill-orange h-full">

@@ -4,10 +4,10 @@
         $categories[] = $category->translations->where('locale', app()->getLocale())->first();
     }
 @endphp
-<article aria-labelledby="{{$project->slug}}" class="relative">
+<article aria-labelledby="{{$project->slug}}" class="relative max-w-xs">
     <div class="flex gap-2 absolute -top-2 left-5 z-10">
         @foreach($categories as $category)
-            <p class="rounded bg-blue text-white text-sm px-3 py-1 hover:bg-orange-dark transition-all ease-in-out duration-200">{{$category->name}}</p>
+            <p class="text-white text-sm rounded bg-blue px-2 py-1 hover:bg-orange-dark transitionable">{{$category->name}}</p>
         @endforeach
     </div>
     <div class="group bg-blue-card rounded-2xl relative">
@@ -15,21 +15,21 @@
            class="full-link">{{__('projects.see_link', ['title' => $project->title])}}</a>
         <div>
             <div
-                class="relative before:overlay before:bg-blue/5 before:rounded-t-2xl before:transition before:ease-in-out before:duration-200 group-hover:before:bg-blue/30">
+                class="relative before:overlay before:bg-blue/5 before:rounded-t-2xl group-hover:before:bg-blue/30 before:transitionable">
                 <img src="https://placehold.jp/450x350.png" height="350" width="450"
                      alt="{{__('projects.see_project', ['title' => $project->title])}}"
-                     class="object-cover w-full rounded-t-2xl">
+                     class="w-full object-cover rounded-t-2xl">
             </div>
-            <div class="p-4 flex flex-col gap-12">
+            <div class="p-4 flex flex-col gap-4">
                 <h3 id="{{$project->slug}}" class="uppercase text-2xl">{{$project->title}}</h3>
                 <div>
-                    <p class="text-xl mb-1">{{$student->fullname}}</p>
+                    <p class="text-xl">{{$student->fullname}}</p>
                     <div class="flex justify-between">
                         <time datetime="{{$project->published_at->translatedFormat('Y-m')}}"
                               class="font-light">{{ucfirst($project->published_at->translatedFormat('F Y'))}}</time>
                         <a href="/projects/{{$project->slug}}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24"
-                                 height="24" width="12" aria-labelledby="projectTitle">
+                                 height="22" width="10" aria-labelledby="projectTitle">
                                 <title
                                     id="projectTitle">{{__('projects.see_project', ['title' => $project->title])}}</title>
                                 <path

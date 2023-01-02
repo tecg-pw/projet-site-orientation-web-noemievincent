@@ -17,7 +17,7 @@
             <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-between sm:gap-16 sm:items-center">
                 {!! __('auth.register.login_link', ['locale' => app()->getLocale()]) !!}
                 <button type="submit" dusk="submit-credentials"
-                        class="uppercase font-light bg-orange text-white py-2 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                        class="uppercase font-light bg-orange text-white py-2 px-6 rounded-lg hover:bg-orange-dark transitionable">
                     {{__('forms.buttons.register')}}
                 </button>
             </div>
