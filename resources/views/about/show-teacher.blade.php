@@ -1,5 +1,5 @@
 <x-header :head_title="$teacher->fullname"/>
-<main class="px-10 flex-1 mt-6">
+<main class="main">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$teacher->fullname}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
@@ -13,14 +13,14 @@
                     </svg>
                     <span>{{__('teachers.single.back_to_teachers_link')}}</span>
                 </a>
-                <div class="flex justify-between">
+                <div class="flex flex-col gap-3 justify-between lg:flex-row">
                     <div class="flex gap-6">
                         <img src="https://placehold.jp/120x120.png" alt="{{$teacher->fullname}}" height="120"
                              width="120"
-                             class="rounded-full">
+                             class="hidden rounded-full lg:block">
                         <div class="flex flex-col gap-3">
                             <h2 id="{{$teacher->fullname}}"
-                                class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$teacher->fullname}}</h2>
+                                class="single-h2">{{$teacher->fullname}}</h2>
                             <div class="text-lg">
                                 <p>{{trans_choice('roles.' . $teacher->role, $teacher->genre)}}</p>
                                 <a href="mailto:{{$teacher->email}}">{{$teacher->email}}</a>
@@ -88,7 +88,7 @@
             <section aria-labelledby="classes">
                 <h3 id="classes"
                     class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('teachers.single.classes_title')}}</h3>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-col gap-6 sm:grid sm:grid-cols-2 sm:gap-4">
                     @foreach($courses as $course)
                         <x-about.class :course="$course->translations->where('locale', app()->getLocale())->first()"/>
                     @endforeach
@@ -99,7 +99,8 @@
                     <h2 id="projects"
                         class="font-display font-semibold text-blue text-xl tracking-wider">{{__('alumnis.single.projects_from', ['name' => $teacher->firstname])}}</h2>
                     <div class="flex flex-col gap-2">
-                        <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
+                        <div
+                            class="flex flex-col gap-10 justify-items-center sm:grid sm:grid-cols-2 sm:gap-x-11 sm:gap-y-8 lg:grid-cols-3">
                             @foreach($projects as $project)
                                 <x-projects.article
                                     :project="$project->translations->where('locale', app()->getLocale())->first()"
@@ -108,7 +109,7 @@
                         </div>
                         <a href="/{{app()->getLocale()}}/projects"
                            class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-                            <span>{{__('alumnis.single.all_projects_from_link')}}</span>
+                            <span>{{trans_choice('alumnis.single.all_projects_from_link', $teacher->genre)}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                                  class="fill-orange h-full">
                                 <path

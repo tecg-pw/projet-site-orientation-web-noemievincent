@@ -1,15 +1,13 @@
 <x-header :head_title="$user->fullname"/>
-<main class="px-10 flex-1 mt-6">
-    <div class="lg:grid grid-cols-4 justify-between gap-12">
+<main class="main">
+    <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$user->slug}}" class="col-span-3 flex flex-col gap-8">
-            <h2 id="{{$user->slug}}"
-                class="sr-only">{{$user->fullname}}</h2>
-            <div class="flex justify-between items-start">
+            <div class="flex flex-col justify-between items-start md:flex-row">
                 <div class="flex gap-8">
                     <img src="https://placehold.jp/120x120.png" alt="{{$user->fullname}}"
                          class="rounded-full">
                     <div class="mt-2">
-                        <p class="text-2xl font-semibold">{{$user->fullname}}</p>
+                        <h2 id="{{$user->slug}}" class="text-2xl font-semibold">{{$user->fullname}}</h2>
                         @if($user->role == 'user')
                             {!! __('profile.user_infos', ['role' => trans_choice("roles." . $user->role, $user->genre),'datetime' => $user->created_at->translatedFormat('m-Y'), 'date' => $user->created_at->translatedFormat('F Y')]) !!}
                         @else
@@ -36,23 +34,21 @@
             <div class="bg-blue/50 h-px w-full"></div>
             <div class="flex flex-col gap-4">
                 <h3 class="font-semibold font-display text-xl">{{__('profile.forum_title')}}</h3>
-                <div class="flex flex-col gap-3">
-                    <div class="grid grid-cols-3 gap-x-11">
-                        <div class="flex gap-12 col-span-2">
-                            @if($user->slug === auth()->user()->slug)
-                                <a href="?forum-tab=questions"
-                                   class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.questions')}}</a>
-                                <a href="?forum-tab=replies"
-                                   class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'replies' ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.replies')}}</a>
-                            @else
-                                <a href="?forum-tab=questions"
-                                   class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.questions', $user->genre)}}</a>
-                                <a href="?forum-tab=replies"
-                                   class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'replies' ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.replies', $user->genre)}}</a>
-                            @endif
-                        </div>
-                        <x-filters.search/>
+                <div class="flex flex-col gap-3 lg:grid lg:grid-cols-3 lg:gap-x-11">
+                    <div class="flex gap-12 col-span-2">
+                        @if($user->slug === auth()->user()->slug)
+                            <a href="?forum-tab=questions"
+                               class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.questions')}}</a>
+                            <a href="?forum-tab=replies"
+                               class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'replies' ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.replies')}}</a>
+                        @else
+                            <a href="?forum-tab=questions"
+                               class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.questions', $user->genre)}}</a>
+                            <a href="?forum-tab=replies"
+                               class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'replies' ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.replies', $user->genre)}}</a>
+                        @endif
                     </div>
+                    <x-filters.search/>
                 </div>
                 @if(Request::query('forum-tab') === 'questions' || Request::all() == null)
                     @if(count($questions) === 0)
@@ -92,20 +88,21 @@
                     <div class="flex flex-col gap-4">
                         <h3 class="font-semibold font-display text-xl">{{__('profile.tutorials_title')}}</h3>
                         <div class="flex flex-col gap-3">
-                            <div class="grid grid-cols-3 gap-x-11">
+                            <div class="lg:grid lg:grid-cols-3 lg:gap-x-11">
                                 <div class="flex gap-6 items-center col-span-2">
                                     <p class="uppercase text-lg">{{__('filters.title')}}</p>
                                     <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
                                 </div>
                                 <x-filters.search/>
                             </div>
-                            <form class="flex col-span-2 items-center justify-between">
+                            <form
+                                class="flex flex-col gap-2 sm:flex-row sm:col-span-2 sm:items-center sm:justify-between">
                                 @csrf
                                 <div class="flex gap-4">
                                     <x-filters.languages :languages="$languages"/>
                                 </div>
                                 <button type="submit"
-                                        class="font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                                        class="self-start font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
                                     {{__('filters.filter_button')}}
                                 </button>
                             </form>

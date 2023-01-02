@@ -1,9 +1,9 @@
 <x-header :head_title="'auth.reset_password.head_title'"/>
-<main class="px-10 flex-1 xl:mx-96 mt-12">
+<main class="main xl:mx-64">
     <section aria-labelledby="reset-password" class="col-start-2">
         <div class="mb-8">
             <h2 id="reset-password"
-                class="uppercase font-display font-bold text-4xl text-blue">{{__('auth.reset_password.title')}}</h2>
+                class="h2">{{__('auth.reset_password.title')}}</h2>
             <p>{{__('auth.reset_password.tagline')}}</p>
         </div>
         <form action="/reset-password" method="post" class="flex flex-col gap-4 mb-12">

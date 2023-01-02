@@ -63,7 +63,7 @@ return [
                     'url' => 'Redirection to a page on your site',
                 ],
                 'taglines' => [
-                    'email' => '(You will receive the candidate’s information directly by e-mail)',
+                    'email' => '(You will receive the candidate’s information by e-mail)',
                     'url' => '(The application will be made directly on your site)',
                 ],
                 'inputs' => [

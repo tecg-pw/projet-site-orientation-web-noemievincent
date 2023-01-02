@@ -1,5 +1,5 @@
 <x-header :head_title="$course->name"/>
-<main class="px-10 flex-1 mt-6">
+<main class="main">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$course->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
@@ -14,10 +14,10 @@
                     <span>{{__('classes.single.back_to_classes_link')}}</span>
                 </a>
                 <h2 id="{{$course->slug}}"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$course->name}}</h2>
+                    class="single-h2">{{$course->name}}</h2>
             </div>
-            <div class="flex justify-between">
-                <ul class="text-lg">
+            <div class="flex flex-col gap-4 justify-between sm:flex-row">
+                <ul class="text-lg flex flex-col gap-2">
                     <li><span
                             class="font-semibold">{{__('classes.single.year')}}</span><span>Bloc {{$course->year}}</span>
                     </li>
@@ -58,7 +58,8 @@
                 <div class="flex flex-col gap-5">
                     <h2 class="font-display font-semibold text-blue text-xl tracking-wider">{{__('classes.single.some_projects_from')}}</h2>
                     <div class="flex flex-col gap-2">
-                        <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
+                        <div
+                            class="flex flex-col gap-10 justify-items-center sm:grid sm:grid-cols-2 sm:gap-x-11 sm:gap-y-8 lg:grid-cols-3">
                             @foreach($projects as $project)
                                 <x-projects.article
                                     :project="$project->translations->where('locale', app()->getLocale())->first()"

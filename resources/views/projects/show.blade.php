@@ -1,6 +1,6 @@
 <x-header :head_title="$project->title"/>
-<main class="px-10 flex-1 mt-6">
-    <div class="lg:grid grid-cols-4 justify-between gap-12">
+<main class="main">
+    <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$project->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/{{app()->getLocale()}}/projects"
@@ -14,11 +14,11 @@
                     <span>{{__('projects.single.back_to_projects_link')}}</span>
                 </a>
                 <h2 id="{{$project->slug}}"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$project->title}}</h2>
+                    class="single-h2">{{$project->title}}</h2>
             </div>
-            <div class="flex justify-between gap-28">
+            <div class="flex flex-col-reverse justify-between gap-12 lg:gap-28 md:flex-row">
                 <div class="flex flex-col gap-6">
-                    <div class="flex flex-col gap-3">
+                    <div class="flex gap-3 md:flex-col">
                         <img src="https://placehold.jp/230x230.png" alt="{{$student->fullname}}"
                              class="rounded-full">
                         <div>
@@ -177,8 +177,8 @@
                     </div>
                 </div>
                 <div class="h-full w-full flex flex-col gap-10">
-                    <div class="flex justify-between items-center">
-                        <div class="flex gap-3">
+                    <div class="flex justify-between lg:items-center">
+                        <div class="flex flex-col gap-1 lg:gap-3 lg:flex-row">
                             <ul class="flex gap-2">
                                 @foreach($categories as $category)
                                     <li class="after:content-['-'] flex gap-2 last:after:content-none">{{$category->name}}</li>
@@ -186,7 +186,7 @@
                             </ul>
                             <div class="bg-blue/50 h-max-content w-px"></div>
                             <time
-                                datetime="{{$project->published_at->format('Y-m')}}">{{$project->published_at->format('F Y')}}</time>
+                                datetime="{{$project->published_at->format('Y-m')}}">{{ucfirst($project->published_at->translatedFormat('F Y'))}}</time>
                             <div class="bg-blue/50 h-max-content w-px"></div>
                             <a href="/{{app()->getLocale()}}/classes/{{$course->slug}}">{{$course->name}}</a>
                         </div>
@@ -216,7 +216,8 @@
             <div class="flex flex-col gap-5">
                 <h2 class="font-display font-semibold text-blue text-xl tracking-wider">{{__('projects.single.others_projects_from', ['name' => $student->firstname])}}</h2>
                 <div class="flex flex-col gap-2">
-                    <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
+                    <div
+                        class="flex flex-col gap-6 justify-items-center sm:grid sm:grid-cols-2 sm:gap-x-11 sm:gap-y-8 lg:grid-cols-3">
                         @foreach($otherProjects as $otherProject)
                             @if($otherProject->translations->where('locale', app()->getLocale())->first()->project_id != $project->project_id)
                                 <x-projects.article

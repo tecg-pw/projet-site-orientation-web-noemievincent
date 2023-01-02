@@ -1,23 +1,25 @@
 <x-header :head_title="'home.head_title'"/>
-<main class="flex-1 px-5 lg:px-10">
-    <section aria-labelledby="introduction" class="mt-10 flex gap-12">
-        <div class="col-span-2 flex flex-col gap-6">
-            <h2 id="introduction"
-                class="text-7xl font-bold uppercase tracking-wider font-display text-blue">{{__('home.title')}}</h2>
-            <p class="font-light leading-7">
-                {{__('home.hero_description')}}
-            </p>
-            <div
-                class="uppercase flex flex-col text-center gap-4 sm:flex-row sm:gap-24 sm:justify-center lg:justify-start lg:items-center">
-                <a href="/{{app()->getLocale()}}/about"
-                   class="rounded-lg px-12 py-3 text-white transition-all duration-200 ease-in-out bg-orange hover:bg-orange-dark">{{__('home.learn_more_button')}}</a>
-                <a href="https://hepl.be/fr"
-                   class="transition-all duration-200 ease-in-out text-orange hover:text-orange-dark hover:underline hover:decoration-solid hover:decoration-2 hover:underline-offset-2">{{__('home.visit_website_link')}}</a>
+<main class="main">
+    <section aria-labelledby="introduction" class="">
+        <h2 id="introduction"
+            class="text-7xl font-bold uppercase tracking-wider font-display text-blue">{{__('home.title')}}</h2>
+        <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-12 xl:flex">
+            <div class="flex flex-col justify-between">
+                <p class="font-light leading-7">
+                    {{__('home.hero_description')}}
+                </p>
+                <div
+                    class="uppercase flex flex-col text-center gap-4 sm:flex-row sm:items-center sm:gap-24 sm:justify-center lg:justify-between lg:gap-10 xl:justify-start xl:gap-32">
+                    <a href="/{{app()->getLocale()}}/about"
+                       class="rounded-lg px-12 py-3 text-white transition-all duration-200 ease-in-out bg-orange hover:bg-orange-dark">{{__('home.learn_more_button')}}</a>
+                    <a href="https://hepl.be/fr"
+                       class="transition-all duration-200 ease-in-out text-orange hover:text-orange-dark hover:underline hover:decoration-solid hover:decoration-2 hover:underline-offset-2">{{__('home.visit_website_link')}}</a>
+                </div>
             </div>
+            <img src="/img/marvin-meyer-SYTO3xs06fU-unsplash.jpg" alt="" class="hidden lg:block">
         </div>
-        <img src="/img/marvin-meyer-SYTO3xs06fU-unsplash.jpg" alt="" class="hidden lg:block">
     </section>
-    <div class="mt-10 justify-between gap-12 lg:grid lg:grid-cols-4 lg:mt-20">
+    <div class="mt-10 justify-between gap-12 xl:grid xl:grid-cols-4 xl:mt-20">
         <div class="col-span-3">
             <section aria-labelledby="projects" class="mb-14 flex flex-col gap-6">
                 <h2 id="projects"

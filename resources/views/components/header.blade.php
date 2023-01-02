@@ -135,7 +135,7 @@
                         </g>
                             </svg>
                 </a>
-                <ul class="flex flex-col gap-4 lg:flex-row lg:gap-24">
+                <ul class="flex flex-col gap-4 lg:flex-row lg:gap-12 xl:gap-24">
                     @foreach(__('header.main_nav_items') as $slug => $name)
                         <li><a href="/{{app()->getLocale()}}/{{$slug}}"
                                class="font-semibold {{Request::is(app()->getLocale() . '/' . $slug) ? 'lg:font-bold' : 'lg:font-normal'}} hover:text-orange transition-all ease-in-out duration-200">{{$name}}</a>

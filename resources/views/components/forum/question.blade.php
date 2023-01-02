@@ -16,22 +16,24 @@
                 {{$question->body}}
             </p>
         </div>
-        <div class="flex justify-between items-center">
-            <div class="flex gap-4 font-light">
+        <div class="flex flex-col gap-6 justify-between md:flex-row md:items-center">
+            <div class="flex flex-col gap-2 sm:flex-row sm:gap-4 font-light">
                 {!! __('forum.single.infos', ['datetime' => $question->published_at->format('d-m-Y'), 'date' => $question->published_at->format('d/m/Y'), 'datetimeHours' => $question->published_at->format('H:i'), 'time' => $question->published_at->format('H:i')]) !!}
                 <div class="bg-blue/50 h-max-content w-px"></div>
-                <p>{{$question->category->translations->where('locale', app()->getLocale())->first()->name}}</p>
-                @if($question->is_solved)
-                    <div class="bg-blue/50 h-max-content w-px"></div>
-                    <p class="flex gap-2 text-green">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
-                             class="fill-green h-full">
-                            <path
-                                d="M9 16.17L5.53 12.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L9 16.17z"/>
-                        </svg>
-                        {{__('forum.single.resolved')}}
-                    </p>
-                @endif
+                <div class="flex gap-4">
+                    <p>{{$question->category->translations->where('locale', app()->getLocale())->first()->name}}</p>
+                    @if($question->is_solved)
+                        <div class="bg-blue/50 h-max-content w-px"></div>
+                        <p class="flex gap-2 text-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
+                                 class="fill-green h-full">
+                                <path
+                                    d="M9 16.17L5.53 12.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L9 16.17z"/>
+                            </svg>
+                            {{__('forum.single.resolved')}}
+                        </p>
+                    @endif
+                </div>
             </div>
             @auth()
                 <a href="#reply"

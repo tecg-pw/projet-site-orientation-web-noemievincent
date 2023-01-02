@@ -1,5 +1,5 @@
 <x-header :head_title="'profile.edit.head_title'"/>
-<main class="px-10 flex-1 lg:mx-96 mt-12">
+<main class="main xl:mx-48">
     <section aria-labelledby="edit-profile" class="col-start-2 flex flex-col gap-12">
         <div>
             <div class="flex flex-col gap-4">
@@ -14,14 +14,14 @@
                     <span>{{__('profile.edit.back_to_profile_link')}}</span>
                 </a>
                 <h2 id="edit-profile"
-                    class="uppercase font-display font-bold text-4xl text-blue mb-8">{{__('profile.edit.informations_form_title')}}</h2>
+                    class="h2">{{__('profile.edit.informations_form_title')}}</h2>
             </div>
             <form action="/{{app()->getLocale()}}/users/{{$user->slug}}/update-infos" method="post"
                   class="flex flex-col gap-8">
                 @csrf
                 <div class="flex flex-col gap-4">
                     <div class="flex gap-8">
-                        <div class="relative">
+                        <div class="relative self-start">
                             <label for="picture"
                                    class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center rounded-full bg-blue/40 hover:bg-blue/60 cursor-pointer transition-all ease-in-out duration-200">
                                 <span class="sr-only">{{__('forms.labels.picture')}}</span>
@@ -78,10 +78,10 @@
                     </div>
                     <div class="flex flex-col gap-1">
                         <p class="text-lg text-blue-dark">{{__('forms.labels.gender')}}</p>
-                        <div class="flex justify-between">
+                        <div class="flex flex-col gap-2 justify-between sm:flex-row">
                             @foreach(__('forms.genders') as $value => $label)
                                 <div class="flex gap-2">
-                                    <input type="radio" value="{{$value}}" name="gender"
+                                    <input type="radio" id="{{$value}}" value="{{$value}}" name="gender"
                                            value="{{$value}}" @checked($value === auth()->user()->gender)>
                                     <label for="{{$value}}">{{$label}}</label>
                                 </div>

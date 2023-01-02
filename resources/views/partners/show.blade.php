@@ -1,6 +1,6 @@
 <x-header :head_title="$company->name"/>
-<main class="px-10 flex-1 mt-6">
-    <div class="lg:grid grid-cols-4 justify-between gap-12">
+<main class="main">
+    <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$company->slug}}" class="col-span-3 flex flex-col gap-8" itemscope
                  itemtype="https://schema.org/Corporation">
             <div class="flex flex-col gap-4">
@@ -14,21 +14,19 @@
                     </svg>
                     <span>{{__('jobs.partners.single.back_to_partners_link')}}</span>
                 </a>
-                <div class="flex justify-between">
-                    <div class="flex gap-6">
-                        <img src="https://placehold.jp/120x120.png" alt="nom" height="120"
-                             width="120"
-                             class="rounded-full" itemprop="logo">
-                        <div class="flex flex-col gap-3">
-                            <h2 id="{{$company->slug}}"
-                                class="font-display font-bold text-blue text-4xl tracking-wider uppercase"
-                                itemprop="name">{{$company->name}}</h2>
-                            <div class="flex flex-col text-lg" itemscope itemtype="https://schema.org/PostalAddress"
-                                 itemprop="location">
-                                <p><span itemprop="streetAddress">{{$company->streetAddres}}</span></p>
-                                <p><span itemprop="postalCode">{{$company->postalCode}}</span> <span
-                                        itemprop="addressLocality">{{$company->addressLocality}}</span></p>
-                            </div>
+                <div class="flex flex-col gap-6 sm:flex-row">
+                    <img src="https://placehold.jp/120x120.png" alt="nom" height="120"
+                         width="120"
+                         class="rounded-full" itemprop="logo">
+                    <div class="flex flex-col gap-3">
+                        <h2 id="{{$company->slug}}"
+                            class="font-display font-bold text-blue text-4xl tracking-wider uppercase"
+                            itemprop="name">{{$company->name}}</h2>
+                        <div class="flex flex-col text-lg" itemscope itemtype="https://schema.org/PostalAddress"
+                             itemprop="location">
+                            <p><span itemprop="streetAddress">{{$company->streetAddres}}</span></p>
+                            <p><span itemprop="postalCode">{{$company->postalCode}}</span> <span
+                                    itemprop="addressLocality">{{$company->addressLocality}}</span></p>
                         </div>
                     </div>
                 </div>
@@ -50,7 +48,8 @@
                     <h3
                         class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.members_title')}}</h3>
                     <div class="flex flex-col gap-2">
-                        <div class="grid grid-cols-3 gap-8">
+                        <div
+                            class="flex flex-col gap-6 justify-items-center sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
                             @foreach($members as $member)
                                 <x-partners.member :member="$member"/>
                             @endforeach
@@ -62,7 +61,8 @@
                 <div class="flex flex-col gap-5">
                     <h3
                         class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.internships_title')}}</h3>
-                    <div class="grid grid-cols-3 gap-8">
+                    <div
+                        class="flex flex-col gap-6 justify-items-center sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
                         @foreach($offers as $offer)
                             <x-jobs.article :offer="$offer->translations->where('locale', app()->getLocale())->first()"
                                             :company="$offer->company->translations->where('locale', app()->getLocale())->first()"/>
@@ -75,7 +75,8 @@
                     <h3
                         class="font-display font-semibold text-blue text-xl tracking-wider">{{__('jobs.partners.single.alumnis_title')}}</h3>
                     <div class="flex flex-col gap-2">
-                        <div class="grid grid-cols-3 gap-8">
+                        <div
+                            class="flex flex-col gap-6 justify-items-center sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
                             @foreach($students as $student)
                                 <x-alumnis.card
                                     :alumni="$student->translations->where('locale', app()->getLocale())->first()"/>

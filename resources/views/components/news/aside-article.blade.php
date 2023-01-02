@@ -4,7 +4,7 @@
        class="full-link">{{__('news.read_new', ['title' => $new->title])}}</a>
     <div>
         <div class="p-4 flex flex-col justify-between absolute w-full top-0 bottom-0 z-10">
-            <h4 id="{{$new->slug}}" class="text-white text-xl">{{$new->title}}</h4>
+            <h4 id="{{$new->slug}}" class="text-white text-lg lg:text-xl">{{$new->title}}</h4>
             <div>
                 <div class="flex justify-between font-light text-white">
                     <p>{{$category->name}}</p>

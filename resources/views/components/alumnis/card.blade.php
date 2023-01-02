@@ -1,7 +1,7 @@
 @props(['alumni'])
 <div
-    class="bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5">
-    <div class="flex justify-between">
+    class="w-full bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5">
+    <div class="flex justify-between md:flex-col md:gap-3 lg:flex-row">
         <div class="flex flex-col gap-4">
             <img src="https://placehold.jp/160x160.png" alt="{{$alumni->fullname}}" height="160"
                  width="160"
@@ -20,7 +20,7 @@
                 </span>
             </div>
         </div>
-        <ul class="self-start flex flex-col gap-4">
+        <ul class="self-start flex flex-col gap-4 md:flex-row lg:flex-col">
             <li><a href="{{$alumni->github_link}}">
                     <svg version="1.1" id="github" xmlns="http://www.w3.org/2000/svg"
                          x="0px" y="0px" height="36"

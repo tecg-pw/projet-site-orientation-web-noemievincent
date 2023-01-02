@@ -11,7 +11,7 @@
             <p class="text-sm">{{$documentation->description}}
             </p>
         </div>
-        <ul class="flex gap-2">
+        <ul class="flex gap-2 flex-wrap">
             @foreach($languages as $language)
                 <x-resources.languages :language="$language"/>
             @endforeach

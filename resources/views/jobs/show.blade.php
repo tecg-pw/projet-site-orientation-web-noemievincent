@@ -1,6 +1,6 @@
 <x-header :head_title="$offer->title"/>
-<main class="px-10 flex-1 mt-6">
-    <div class="lg:grid grid-cols-4 justify-between gap-12">
+<main class="main">
+    <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$offer->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/{{app()->getLocale()}}/jobs/offers"
@@ -14,9 +14,9 @@
                     <span>{{__('jobs.single.back_to_offers_link')}}</span>
                 </a>
                 <h2 id="{{$offer->slug}}"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$offer->title}}</h2>
+                    class="single-h2">{{$offer->title}}</h2>
             </div>
-            <div class="grid grid-cols-3 gap-11">
+            <div class="lg:grid lg:grid-cols-3 lg:gap-11">
                 <div class="flex flex-col gap-6 col-span-1">
                     <div class="flex gap-3">
                         <img src="https://placehold.jp/80x80.png" alt="nom" height="80" width="80"
@@ -45,7 +45,7 @@
                     </section>
                 </div>
                 <div class="flex flex-col gap-10 col-span-2">
-                    <div class="flex justify-between items-center">
+                    <div class="flex flex-col sm:justify-between sm:items-center sm:flex-row">
                         <div class="flex gap-2">
                             <p>{{__('jobs.single.alternative')}}</p>
                             <ul class="flex gap-2">
@@ -58,7 +58,7 @@
                             </ul>
                         </div>
                         <a href="{{$offer->method_link}}"
-                           class="flex self-end gap-3 uppercase bg-orange text-white py-3 pl-7 pr-5 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
+                           class="self-center flex gap-3 sm:self-end uppercase bg-orange text-white py-3 pl-7 pr-5 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
                             <span>{{__('jobs.single.apply_button')}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                                  class="fill-white">

@@ -1,6 +1,6 @@
 <x-header :head_title="$question->title"/>
-<main class="px-10 flex-1 mt-6">
-    <div class="lg:grid grid-cols-4 justify-between gap-12">
+<main class="main">
+    <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$question->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/{{app()->getLocale()}}/forum"
@@ -14,7 +14,7 @@
                     <span>{{__('forum.single.back_to_questions_link')}}</span>
                 </a>
                 <h2 id="{{$question->slug}}"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$question->title}}</h2>
+                    class="single-h2">{{$question->title}}</h2>
             </div>
             <x-forum.question :question="$question"/>
             <div class="flex flex-col gap-8">

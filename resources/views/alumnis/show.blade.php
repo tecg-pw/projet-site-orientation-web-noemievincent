@@ -1,5 +1,5 @@
 <x-header :head_title="$alumni->fullname"/>
-<main class="px-10 flex-1 mt-6">
+<main class="main">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$alumni->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
@@ -13,20 +13,20 @@
                     </svg>
                     <span>{{__('alumnis.single.back_to_students_link')}}</span>
                 </a>
-                <div class="flex justify-between">
+                <div class="flex flex-col gap-3 justify-between lg:flex-row">
                     <div class="flex gap-6">
                         <img src="https://placehold.jp/120x120.png" alt="{{$alumni->fullname}}" height="120"
                              width="120"
-                             class="rounded-full">
+                             class="hidden rounded-full lg:block">
                         <div class="flex flex-col gap-3">
                             <h2 id="{{$alumni->slug}}"
-                                class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$alumni->fullname}}</h2>
+                                class="single-h2">{{$alumni->fullname}}</h2>
                             <div class="text-lg">
                                 <p>
                                     {{trans_choice('roles.' . $alumni->role, $alumni->genre)}}
                                     {{$alumni->start_year->format('Y')}}
                                     {{$alumni->end_year != null ? ' - ' . $alumni->end_year->format('Y') : ''}}</p>
-                                <div class="flex gap-3">
+                                <div class="flex flex-col lg:flex-row lg:gap-3">
                                     <a href="mailto:{{$alumni->email}}"
                                        class="hover:text-orange hover:underline hover:underline-offset-2 transition ease-in-out duration-200">{{$alumni->email}}</a>
                                     <div class="bg-blue/50 h-max-content w-px"></div>
@@ -155,7 +155,7 @@
                     <p>{{__('Amet non laboris commodo sint occaecat. Occaecat cupidatat labore tempor ea veniam nulla ipsum. Aliquip cillum est minim nulla est. Ipsum in occaecat consectetur aute qui tempor duis minim fugiat. Voluptate magna ad commodo non adipisicing reprehenderit nostrud id voluptate minim eu mollit enim dolore commodo. Consequat labore ullamco elit excepteur in duis quis proident do enim incididunt occaecat est est commodo.')}}</p>
                 </div>
             </div>
-            <div class="grid grid-cols-3 gap-11">
+            <div class="flex flex-col gap-3 lg:grid lg:grid-cols-3 lg:gap-11">
                 @if(isset($internship))
                     <section aria-labelledby="internship" class="col-span-1">
                         <h3 id="internship"
@@ -178,7 +178,8 @@
                 <h2 id="projects"
                     class="font-display font-semibold text-blue text-xl tracking-wider">{{__('alumnis.single.projects_from', ['name' => $alumni->firstname])}}</h2>
                 <div class="flex flex-col gap-2">
-                    <div class="grid grid-cols-3 gap-x-11 gap-y-8 justify-items-center">
+                    <div
+                        class="flex flex-col gap-10 justify-items-center sm:grid sm:grid-cols-2 sm:gap-x-11 sm:gap-y-8 lg:grid-cols-3">
                         @foreach($projects as $project)
                             <x-projects.article
                                 :project="$project->translations->where('locale', app()->getLocale())->first()"

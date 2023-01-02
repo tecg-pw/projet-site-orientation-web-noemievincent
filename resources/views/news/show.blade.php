@@ -1,6 +1,6 @@
 <x-header :head_title="$article->title"/>
-<main class="px-10 flex-1 mt-6">
-    <div class="lg:grid grid-cols-4 justify-between gap-12">
+<main class="main">
+    <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$article->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <a href="/{{app()->getLocale()}}/news"
@@ -14,7 +14,7 @@
                     <span>{{__('news.single.back_to_news_link')}}</span>
                 </a>
                 <h2 id="{{$article->slug}}"
-                    class="font-display font-bold text-blue text-4xl tracking-wider uppercase">{{$article->title}}</h2>
+                    class="single-h2">{{$article->title}}</h2>
             </div>
             <div class="flex justify-between gap-28">
                 <div class="h-full w-full flex flex-col gap-6">
