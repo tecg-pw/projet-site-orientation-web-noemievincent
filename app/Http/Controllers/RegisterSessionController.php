@@ -17,7 +17,7 @@ class RegisterSessionController extends Controller
         $fullname = $firstname . ' ' . $lastname;
         $slug = Str::slug($firstname . '-' . $lastname);
         $email = request('email');
-        $password = bcrypt(request('password'));
+        $password = password_hash(request('password'), PASSWORD_DEFAULT);
 
         $user = User::create([
             'firstname' => $firstname,

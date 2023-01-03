@@ -28,7 +28,7 @@ class UsersSeeder extends Seeder
                 "email" => $value->email,
                 'email_verified_at' => now(),
                 "is_admin" => $value->is_admin,
-                'password' => bcrypt('change_this'),
+                'password' => password_hash('change_this', PASSWORD_DEFAULT),
                 'remember_token' => \Illuminate\Support\Str::random(10),
                 "picture" => $value->picture,
                 "bio" => $value->bio,

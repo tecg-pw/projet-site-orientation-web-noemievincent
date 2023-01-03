@@ -32,7 +32,7 @@ return [
     ],
     'boolean' => 'Le champ :attribute doit être vrai ou faux.',
     'confirmed' => 'La confirmation du champ :attribute ne correspond pas.',
-    'current_password' => 'Le mot de passe est incorrect.',
+    'current_password' => 'Le mot de passe fourni est incorrect.',
     'date' => 'La date fournie n’est pas une date valide.',
     'date_equals' => 'La date fournie doit être une date égale à :date.',
     'date_format' => 'La date fournie ne correspond pas au format :format.',
@@ -172,6 +172,8 @@ return [
     'attributes' => [
         'email' => 'Adresse e-mail',
         'password' => 'Mot de passe',
+        'old-password' => 'Ancien mot de passe',
+        'new-password' => 'Nouveau mot de passe',
         'lastname' => 'Nom',
         'firstname' => 'Prénom',
         'bio' => 'Description',
