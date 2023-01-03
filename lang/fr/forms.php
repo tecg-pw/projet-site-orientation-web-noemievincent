@@ -11,7 +11,7 @@ return [
         'old_password' => 'Ancien mot de passe',
         'new_password' => 'Nouveau mot de passe',
         'password_requirements' => 'Le mot de passe doit contenir entre 8 et 64 caractères',
-        'description' => 'Description',
+        'bio' => 'Description',
         'remember_me' => 'Se souvenir de moi',
         'gender' => 'Vous êtes',
         'subjects' => 'Sujet de la question',

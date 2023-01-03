@@ -29,7 +29,7 @@ class UpdateUserInfosRequest extends FormRequest
             'lastname' => 'required|string',
             'email' => 'required|email',
             'gender' => 'in:male,female,prefer-not-to-say',
-            'bio' => 'min:20, max:300',
+            'bio' => 'min:3, max:300',
         ];
     }
 }

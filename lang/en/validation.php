@@ -174,6 +174,7 @@ return [
         'password' => 'Password',
         'lastname' => 'Last name',
         'firstname' => 'First name',
+        'bio' => 'Description',
     ],
 
 ];

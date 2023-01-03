@@ -1,3 +1,4 @@
+@props(['email'])
 <div class="flex flex-col gap-1">
     <label for="email">
         @if ($errors->has('email'))
@@ -16,7 +17,7 @@
         @endif
     </label>
     <input type="email" id="email" name="email"
-           placeholder="name@example.com" value="{{old('email')}}"
-           class="@error('email') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200"
+           placeholder="name@example.com" value="{{old('email') ?? ($email ?? '')}}"
+           class="@error('email') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transitionable"
            dusk="email-field">
 </div>

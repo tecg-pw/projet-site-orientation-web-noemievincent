@@ -1,3 +1,4 @@
+@props(['firstname'])
 <div class="flex flex-col gap-1 w-full">
     <label for="firstname">
         @if ($errors->has('firstname'))
@@ -14,6 +15,6 @@
         @endif
     </label>
     <input type="text" id="firstname" name="firstname"
-           placeholder="Pierre" dusk="firstname-field" value="{{old('firstname')}}"
-           class="@error('firstname') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
+           placeholder="Pierre" dusk="firstname-field" value="{{old('firstname') ?? ($firstname ?? '')}}"
+           class="@error('firstname') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transitionable">
 </div>

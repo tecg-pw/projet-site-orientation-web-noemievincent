@@ -22,6 +22,9 @@
                 <div class="flex flex-col gap-4">
                     <div class="flex gap-8">
                         <div class="relative self-start">
+                            @error('picture')
+                            {{$message}}
+                            @enderror
                             <label for="picture"
                                    class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center rounded-full bg-blue/40 hover:bg-blue/60 cursor-pointer transition-all ease-in-out duration-200">
                                 <span class="sr-only">{{__('forms.labels.picture')}}</span>
@@ -36,67 +39,41 @@
                                  class="rounded-full">
                         </div>
                         <div class="flex-1 flex flex-col justify-between gap-3">
-                            <div class="flex flex-col gap-1 w-full">
-                                <label for="firstname" class="text-lg text-blue-dark flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
-                                         class="fill-blue-dark">
-                                        <path
-                                            d="M12,2A10,10,0,0,0,4.65,18.76h0a10,10,0,0,0,14.7,0h0A10,10,0,0,0,12,2Zm0,18a8,8,0,0,1-5.55-2.25,6,6,0,0,1,11.1,0A8,8,0,0,1,12,20ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Zm8.91,6A8,8,0,0,0,15,12.62a4,4,0,1,0-6,0A8,8,0,0,0,5.09,16,7.92,7.92,0,0,1,4,12a8,8,0,0,1,16,0A7.92,7.92,0,0,1,18.91,16Z"/>
-                                    </svg>
-                                    <span>{{__('forms.labels.firstname')}}</span>
-                                </label>
-                                <input type="text" id="firstname" name="firstname" value="{{$user->firstname}}"
-                                       class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </div>
-                            <div class="flex flex-col gap-1 w-full">
-                                <label for="lastname" class="text-lg text-blue-dark flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
-                                         class="fill-blue-dark">
-                                        <path
-                                            d="M12,2A10,10,0,0,0,4.65,18.76h0a10,10,0,0,0,14.7,0h0A10,10,0,0,0,12,2Zm0,18a8,8,0,0,1-5.55-2.25,6,6,0,0,1,11.1,0A8,8,0,0,1,12,20ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Zm8.91,6A8,8,0,0,0,15,12.62a4,4,0,1,0-6,0A8,8,0,0,0,5.09,16,7.92,7.92,0,0,1,4,12a8,8,0,0,1,16,0A7.92,7.92,0,0,1,18.91,16Z"/>
-                                    </svg>
-                                    <span>{{__('forms.labels.lastname')}}</span>
-                                </label>
-                                <input type="text" id="lastname" name="lastname" value="{{$user->lastname}}"
-                                       class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                            </div>
+                            <x-forms.firstname-field :firstname="$user->firstname"/>
+                            <x-forms.lastname-field :lastname="$user->lastname"/>
                         </div>
                     </div>
-                    <div class="flex flex-col gap-1">
-                        <label for="email" class="text-lg text-blue-dark flex items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
-                                 class="fill-none stroke-blue-dark stroke-2">
-                                <g stroke-linecap="round" stroke-linejoin="round" transform="translate(0 1)">
-                                    <circle cx="11" cy="10" r="4"/>
-                                    <path d="M15 10v1a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/>
-                                </g>
-                            </svg>
-                            <span>{{__('forms.labels.email')}}</span>
-                        </label>
-                        <input type="email" id="email" name="email" value="{{$user->email}}"
-                               class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                    </div>
+                    <x-forms.email-field :email="$user->email"/>
                     <div class="flex flex-col gap-1">
                         <p class="text-lg text-blue-dark">{{__('forms.labels.gender')}}</p>
+                        @error('gender')
+                        <p class="font-medium text-red-600">{{$message}}</p>
+                        @enderror
                         <div class="flex flex-col gap-2 justify-between sm:flex-row">
                             @foreach(__('forms.genders') as $value => $label)
                                 <div class="flex gap-2">
                                     <input type="radio" id="{{$value}}" value="{{$value}}" name="gender"
-                                           value="{{$value}}" @checked($value === auth()->user()->gender)>
+                                           value="{{$value}}" @checked(old('gender') ? $value === old('gender') : $value === auth()->user()->gender)>
                                     <label for="{{$value}}">{{$label}}</label>
                                 </div>
                             @endforeach
                         </div>
                     </div>
                     <div class="flex flex-col gap-2">
-                        <label for="bio" class="text-lg text-blue-dark">{{__('forms.labels.description')}}</label>
+                        <label for="bio" class="text-lg text-blue-dark">
+                            @if ($errors->has('bio'))
+                                <x-forms.error-label :label="'bio'"/>
+                            @else
+                                {{__('forms.labels.bio')}}
+                            @endif
+                        </label>
                         <textarea name="bio" id="bio" cols="30" rows="5"
-                                  class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">{{$user->bio}}</textarea>
+                                  class="@error('bio') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transitionable">{{old('bio') ?? $user->bio}}</textarea>
                     </div>
                 </div>
                 <div class="flex gap-8 items-center justify-between">
                     <button type="submit"
-                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('forms.buttons.edit_infos')}}
+                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">{{__('forms.buttons.edit_infos')}}
                     </button>
                     {{--                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>--}}
                 </div>

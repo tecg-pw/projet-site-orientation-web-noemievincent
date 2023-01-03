@@ -16,7 +16,7 @@
             class="font-light text-sm">{{__('forms.labels.password_requirements')}}</span>
     </label>
     <div
-        class="@error('password') error-outline @enderror flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
+        class="@error('password') error-outline @enderror flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange transitionable">
         <input type="password" id="password" name="password" dusk="password-field"
                class="password py-2 h-full w-full placeholder:font-light focus:outline-none font-mono font-lig">
         <span class="show-password cursor-pointer">

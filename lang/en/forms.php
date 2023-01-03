@@ -11,7 +11,7 @@ return [
         'old_password' => 'Old password',
         'new_password' => 'New password',
         'password_requirements' => 'The password must contain between 8 and 64 characters',
-        'description' => 'Description',
+        'bio' => 'Description',
         'remember_me' => 'Remember me',
         'gender' => 'You are',
         'subjects' => 'Subject of the question',

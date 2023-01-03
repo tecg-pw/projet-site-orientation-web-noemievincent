@@ -1,5 +1,10 @@
 <x-header :head_title="$user->fullname"/>
 <main class="main">
+    @if(session('success'))
+        <div class="bg-green-success text-white text-center p-3 -mt-10 mb-8">
+            <p>{{session('success')}}</p>
+        </div>
+    @endif
     <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$user->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col justify-between items-start md:flex-row">

@@ -26,6 +26,6 @@ class UpdateUserInfosController extends Controller
 
         $user->update($validatedData);
 
-        return redirect('/' . app()->getLocale() . '/users/' . $user->slug . '/');
+        return redirect('/' . app()->getLocale() . '/users/' . $user->slug . '/')->with('success', __('success.update_infos'));
     }
 }
