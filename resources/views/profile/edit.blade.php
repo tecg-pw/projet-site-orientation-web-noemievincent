@@ -53,6 +53,7 @@
                             @foreach(__('forms.genders') as $value => $label)
                                 <div class="flex gap-2">
                                     <input type="radio" id="{{$value}}" value="{{$value}}" name="gender"
+                                           class="accent-orange"
                                            value="{{$value}}" @checked(old('gender') ? $value === old('gender') : $value === auth()->user()->gender)>
                                     <label for="{{$value}}">{{$label}}</label>
                                 </div>
@@ -75,7 +76,6 @@
                     <button type="submit"
                             class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">{{__('forms.buttons.edit_infos')}}
                     </button>
-                    {{--                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>--}}
                 </div>
             </form>
         </div>
@@ -147,14 +147,12 @@
                     </span>
                         </div>
                     </div>
-                    <a href="/{{app()->getLocale()}}/reset-password"
-                       class="font-light text-sm text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('forms.links.reset_password')}}</a>
                 </div>
                 <div class="flex gap-8 items-center justify-between">
                     <button type="submit"
                             class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">{{__('forms.buttons.edit_password')}}
                     </button>
-                    {{--                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>--}}
+                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
                 </div>
             </form>
         </div>
