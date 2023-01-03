@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
 
         if (auth()->attempt($validated)) {
             request()->session()->regenerate();
-            return redirect('/')->with('success', 'Welcome back, ' . auth()->user()->name);
+            return redirect('/' . app()->getLocale())->with('success', __('success.login', ['name' => auth()->user()->firstname]));
         }
 
         return back()

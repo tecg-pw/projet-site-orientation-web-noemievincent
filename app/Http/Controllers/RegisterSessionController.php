@@ -29,7 +29,7 @@ class RegisterSessionController extends Controller
         ]);
 
         Auth::login($user);
-        return Redirect::to('/')->with('success', 'Your account was created successfully !');
+        return Redirect::to('/' . app()->getLocale())->with('success', __('success.register', ['name' => auth()->user()->firstname]));
     }
 
     public function create()

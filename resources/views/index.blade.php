@@ -1,5 +1,10 @@
 <x-header :head_title="'home.head_title'"/>
 <main class="main">
+    @if(session('success'))
+        <div class="bg-green-success text-white text-center p-3 -mt-10 mb-8">
+            <p>{{session('success')}}</p>
+        </div>
+    @endif
     <section aria-labelledby="introduction" class="flex flex-col gap-6">
         <h2 id="introduction"
             class="font-display font-bold uppercase tracking-wider text-blue text-5xl sm:text-7xl">{{__('home.title')}}</h2>
