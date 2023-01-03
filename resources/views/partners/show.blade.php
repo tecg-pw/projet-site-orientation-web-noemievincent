@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div>
-                    <p>{{$company->description}}</p>
+                    {!! $company->description !!}
                 </div>
             </div>
             <a href="{{$company->website_link}}"

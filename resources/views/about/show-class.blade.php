@@ -47,7 +47,7 @@
             <div>
                 <h3 class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('classes.single.desc_title')}}</h3>
                 <div class="flex flex-col gap-2">
-                    <p>{{$course->description}}</p>
+                    {!! $course->description !!}
                     @if($course->github_link)
                         <a href="{{$course->github_link}}"
                            class="self-start underline underline-offset-2 hover:text-orange">{{__('classes.single.github_link')}}</a>

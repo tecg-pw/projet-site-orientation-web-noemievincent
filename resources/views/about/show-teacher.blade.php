@@ -82,7 +82,7 @@
                     </ul>
                 </div>
                 <div>
-                    <p>{{$teacher->bio}}</p>
+                    {!! $teacher->bio !!}
                 </div>
             </div>
             <section aria-labelledby="classes">

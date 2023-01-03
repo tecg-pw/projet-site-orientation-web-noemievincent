@@ -8,8 +8,8 @@
                     {{$documentation->title}}
                 </a>
             </h3>
-            <p class="text-sm">{{$documentation->description}}
-            </p>
+            <div class="text-sm">{!! $documentation->description !!}
+            </div>
         </div>
         <ul class="flex gap-2 flex-wrap">
             @foreach($languages as $language)

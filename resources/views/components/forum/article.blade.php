@@ -20,9 +20,9 @@
             {{--                     class="rounded-full hidden md:block">--}}
             {{--            </div>--}}
         </div>
-        <p class="font-light cut-text text-sm">
-            {{$question->body}}
-        </p>
+        <div class="font-light cut-text text-sm">
+            {!! $question->body !!}
+        </div>
         <div class="font-light text-sm flex justify-between sm:justify-start sm:gap-10">
             <a href="#">{{$category->name}}</a>
             <p>{{$question->replies_count}} {{__('forum.reply.count')}}</p>

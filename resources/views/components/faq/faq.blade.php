@@ -13,9 +13,9 @@
                 </svg>
             </a>
         </div>
-        <p class="font-light cut-text text-sm">
-            {{$question->body}}
-        </p>
+        <div class="font-light cut-text text-sm">
+            {!! $question->body !!}
+        </div>
     </div>
     <div class="bg-blue/50 h-px w-full"></div>
 </article>

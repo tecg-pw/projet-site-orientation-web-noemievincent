@@ -20,8 +20,8 @@
                     </svg>
                 </a>
             </div>
-            <p class="text-sm">{{$tutorial->description}}
-            </p>
+            <div class="text-sm">{!! $tutorial->description !!}
+            </div>
         </div>
         <ul class="flex gap-2">
             @foreach($languages as $language)

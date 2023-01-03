@@ -15,6 +15,6 @@
             </a>
         @endif
     </div>
-    <p class="text-sm">{{$opportunity->description}}
-    </p>
+    <div class="text-sm">{!! $opportunity->description !!}
+    </div>
 </div>

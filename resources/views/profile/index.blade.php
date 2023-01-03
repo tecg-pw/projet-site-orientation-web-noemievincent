@@ -35,13 +35,15 @@
                     @endif
                 @endauth
             </div>
-            <p>{{$user->bio}}</p>
+            <div>
+                {!! $user->bio !!}
+            </div>
             <div class="bg-blue/50 h-px w-full"></div>
             <div class="flex flex-col gap-4">
                 <h3 class="font-semibold font-display text-xl">{{__('profile.forum_title')}}</h3>
                 <div class="flex flex-col gap-3 lg:grid lg:grid-cols-3 lg:gap-x-11">
                     <div class="flex gap-12 col-span-2">
-                        @if($user->slug === auth()->user()->slug)
+                        @if(auth()->user() && $user->slug === auth()->user()->slug)
                             <a href="?forum-tab=questions"
                                class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.questions')}}</a>
                             <a href="?forum-tab=replies"

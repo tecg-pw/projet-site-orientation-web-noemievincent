@@ -12,9 +12,7 @@
             </div>
         </div>
         <div>
-            <p>
-                {{$question->body}}
-            </p>
+            {!! $question->body !!}
         </div>
         <div class="flex flex-col gap-6 justify-between md:flex-row md:items-center">
             <div class="flex flex-col gap-2 sm:flex-row sm:gap-4 font-light">

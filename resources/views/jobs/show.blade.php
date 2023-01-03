@@ -70,9 +70,7 @@
                     <section aria-labelledby="description">
                         <h3 id="description"
                             class="font-display font-semibold text-blue text-xl tracking-wider mb-4">{{__('jobs.single.description_title')}}</h3>
-                        <p>
-                            {{$offer->body}}
-                        </p>
+                        {!! $offer->body !!}
                     </section>
                 </div>
             </div>

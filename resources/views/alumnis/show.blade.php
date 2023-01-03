@@ -152,7 +152,7 @@
                     </ul>
                 </div>
                 <div>
-                    <p>{{__('Amet non laboris commodo sint occaecat. Occaecat cupidatat labore tempor ea veniam nulla ipsum. Aliquip cillum est minim nulla est. Ipsum in occaecat consectetur aute qui tempor duis minim fugiat. Voluptate magna ad commodo non adipisicing reprehenderit nostrud id voluptate minim eu mollit enim dolore commodo. Consequat labore ullamco elit excepteur in duis quis proident do enim incididunt occaecat est est commodo.')}}</p>
+                    {!! $alumni->bio !!}
                 </div>
             </div>
             <div class="flex flex-col gap-3 lg:grid lg:grid-cols-3 lg:gap-11">

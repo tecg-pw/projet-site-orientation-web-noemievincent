@@ -11,9 +11,7 @@
         </div>
     </div>
     <div class="flex flex-col gap-2">
-        <p>
-            {{$reply->body}}
-        </p>
+        {!! $reply->body !!}
         <div class="font-light flex flex-col gap-1 sm:flex-row sm:gap-4">
             {!! __('forum.reply.infos', ['datetime' => $reply->published_at->format('d-m-Y'), 'date' => $reply->published_at->format('d/m/Y'), 'datetimeHours' => $reply->published_at->format('H:i'), 'time' => $reply->published_at->format('H:i')]) !!}
             @if(Request::path() != app()->getLocale() . '/forum/' . $reply->question->slug)
