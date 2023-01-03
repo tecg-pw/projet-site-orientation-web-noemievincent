@@ -43,8 +43,11 @@
                     <div class="flex flex-col gap-4">
                         <h3 class="text-2xl font-semibold font-display">{{__('search.titles.projects')}}</h3>
                         <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
-                            @foreach($projects as $project)
-                                <x-projects.article :project="$project" :student="$project->student"/>
+                            @foreach($projects as $projectRef)
+                                <x-projects.article
+                                    :project="$projectRef->translations->where('locale', app()->getLocale())->first()"
+                                    :student="$projectRef->student->translations->where('locale', app()->getLocale())->first()"
+                                    :all-categories="$projectRef->categories"/>
                             @endforeach
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
@@ -61,7 +64,8 @@
                         <h3 class="text-2xl font-semibold font-display">{{__('search.titles.forum')}}</h3>
                         <div class="flex flex-col gap-4">
                             @foreach($questions as $question)
-                                <x-forum.article :question="$question"/>
+                                <x-forum.article :question="$question"
+                                                 :category="$question->category->translations->where('locale', app()->getLocale())->first()"/>
                             @endforeach
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
@@ -78,7 +82,10 @@
                         <h3 class="text-2xl font-semibold font-display">{{__('search.titles.tutorials')}}</h3>
                         <div class="grid grid-cols-2 gap-8">
                             @foreach($tutorials as $tutorial)
-                                <x-resources.tutorial :tutorial="$tutorial" :is_favorite="false"/>
+                                <x-resources.tutorial
+                                    :tutorial="$tutorial->translations->where('locale', app()->getLocale())->first()"
+                                    :languages="$tutorial->languages"
+                                    is_favorite="false"/>
                             @endforeach
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
@@ -95,7 +102,11 @@
                         <h3 class="text-2xl font-semibold font-display">{{__('search.titles.news')}}</h3>
                         <div class="grid grid-cols-3 justify-items-center gap-x-11 gap-y-8">
                             @foreach($news as $new)
-                                <x-news.article :new="$new"/>
+                                <x-news.article :new="$new->translations->where('locale', app()->getLocale())->first()"
+                                                :category="$new->category->translations->where('locale', app()->getLocale())->first()">
+                                    <h3 id="{{$new->translations->where('locale', app()->getLocale())->first()->slug}}"
+                                        class="text-white text-xl">{{$new->translations->where('locale', app()->getLocale())->first()->title}}</h3>
+                                </x-news.article>
                             @endforeach
                         </div>
                         <a href="#" class="flex items-center gap-4 text-sm uppercase text-orange">
