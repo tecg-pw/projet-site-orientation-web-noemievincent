@@ -8,8 +8,7 @@
             <x-forms.password-field/>
             <div class="flex justify-between items-center font-light text-sm">
                 <div class="flex gap-2 items-center">
-                    <input type="checkbox" id="remember" value="{{__('forms.labels.remember_me')}}"
-                           class="accent-orange">
+                    <input type="checkbox" id="remember" name="remember" value="1" class="accent-orange">
                     <label for="remember">{{__('forms.labels.remember_me')}}</label>
                 </div>
                 <a href="/{{app()->getLocale()}}/reset-password"
