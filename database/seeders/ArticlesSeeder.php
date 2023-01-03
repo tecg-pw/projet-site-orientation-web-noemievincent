@@ -26,8 +26,6 @@ class ArticlesSeeder extends Seeder
                 'author_id' => $value['author_id'],
                 'category_id' => $value['category_id'],
             ]);
-
-            Article::factory()->create();
         }
 
         foreach ($articles['translations'] as $key => $value) {
@@ -41,8 +39,6 @@ class ArticlesSeeder extends Seeder
                 'locale' => $value['locale'],
                 'article_id' => $value['article_id'],
             ]);
-
-            ArticleTranslation::factory()->create();
         }
     }
 }

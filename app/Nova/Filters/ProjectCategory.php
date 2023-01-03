@@ -36,7 +36,6 @@ class ProjectCategory extends Filter
         $projects = \App\Models\ProjectCategory::where('id', '=', $value)->first()->projects;
 
         $ids = [];
-
         foreach ($projects as $project) {
             $ids[] = $project->id;
         }

@@ -44,10 +44,9 @@ class Languages extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
+        $ids = [];
         if ($this->resource === 'tutorials') {
             $tutorials = Language::where('id', '=', $value)->first()->tutorials;
-
-            $ids = [];
 
             foreach ($tutorials as $tutorial) {
                 $ids[] = $tutorial->id;
@@ -56,8 +55,6 @@ class Languages extends Filter
 
         if ($this->resource === 'documentations') {
             $documentations = Language::where('id', '=', $value)->first()->documentations;
-
-            $ids = [];
 
             foreach ($documentations as $documentation) {
                 $ids[] = $documentation->id;

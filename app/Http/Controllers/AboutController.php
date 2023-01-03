@@ -21,16 +21,19 @@ class AboutController extends Controller
     public function index()
     {
         $allCourses = Course::get();
+        $courses = [];
         foreach ($allCourses as $course) {
             $courses[] = $course->translations->where('locale', app()->getLocale())->first();
         }
 
         $allTeachers = Teacher::get();
+        $teachers = [];
         foreach ($allTeachers as $teacher) {
             $teachers[] = $teacher->translations->where('locale', app()->getLocale())->first();
         }
 
         $allOpportunities = Opportunity::get();
+        $opportunities = [];
         foreach ($allOpportunities as $opportunity) {
             $opportunities[] = $opportunity->translations->where('locale', app()->getLocale())->first();
         }

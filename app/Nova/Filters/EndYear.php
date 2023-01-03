@@ -30,7 +30,6 @@ class EndYear extends Filter
         $ressources = \App\Models\Student::all();
 
         $ids = [];
-
         foreach ($ressources as $ressource) {
             if ($ressource->translations->where('locale', app()->getLocale())->first()->end_year == Carbon::parse($value)) {
                 $ids[] = $ressource->id;

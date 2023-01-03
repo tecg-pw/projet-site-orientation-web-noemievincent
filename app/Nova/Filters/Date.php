@@ -71,7 +71,6 @@ class Date extends Filter
         $ressources = $this->model::all();
 
         $ids = [];
-
         foreach ($ressources as $ressource) {
             if ($ressource->translations->where('locale', app()->getLocale())->first()->published_at == Carbon::parse($value)) {
                 $ids[] = $ressource->id;

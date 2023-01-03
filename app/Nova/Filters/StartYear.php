@@ -30,7 +30,6 @@ class StartYear extends Filter
         $ressources = \App\Models\Student::all();
 
         $ids = [];
-
         foreach ($ressources as $ressource) {
             if ($ressource->translations->where('locale', app()->getLocale())->first()->start_year == Carbon::parse($value)) {
                 $ids[] = $ressource->id;
