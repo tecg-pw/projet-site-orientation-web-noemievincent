@@ -6,7 +6,6 @@ use App\Models\Documentation;
 use App\Models\DocumentationTranslation;
 use File;
 use Illuminate\Database\Seeder;
-use Str;
 
 class DocumentationsSeeder extends Seeder
 {
@@ -17,20 +16,20 @@ class DocumentationsSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/documentations.json");
-        $documentations = json_decode($json);
+        $json = File::get('database/data/documentations.json');
+        $documentations = json_decode($json, true);
 
-        for ($i = 0; $i < (count($documentations) / 2); $i++) {
-            Documentation::create();
+        foreach ($documentations['references'] as $key => $value) {
+            Documentation::factory()->create();
         }
 
-        foreach ($documentations as $key => $value) {
-            DocumentationTranslation::create([
-                "title" => $value->title,
-                "description" => $value->description,
-                "link" => $value->link,
-                "locale" => $value->locale,
-                "documentation_id" => $value->documentation_id,
+        foreach ($documentations['translations'] as $key => $value) {
+            DocumentationTranslation::factory()->create([
+                'title' => $value['title'],
+                'description' => $value['description'],
+                'link' => $value['link'],
+                'locale' => $value['locale'],
+                'documentation_id' => $value['documentation_id'],
             ]);
         }
     }

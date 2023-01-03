@@ -16,15 +16,15 @@ class RepliesSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/replies.json");
+        $json = File::get('database/data/replies.json');
         $replies = json_decode($json);
 
         foreach ($replies as $key => $value) {
-            Reply::create([
-                "body" => $value->body,
-                "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
-                "question_id" => $value->question_id,
-                "user_id" => $value->user_id,
+            Reply::factory()->create([
+                'body' => $value->body,
+                'published_at' => Carbon::parse($value->published_at)->toDateTimeString(),
+                'question_id' => $value->question_id,
+                'user_id' => $value->user_id,
             ]);
         }
     }

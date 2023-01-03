@@ -17,19 +17,19 @@ class ArticleCategoriesSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/article_categories.json");
-        $categories = json_decode($json);
+        $json = File::get('database/data/article_categories.json');
+        $categories = json_decode($json, true);
 
-        for ($i = 0; $i < (count($categories) / 2); $i++) {
-            ArticleCategory::create();
+        foreach ($categories['references'] as $key => $value) {
+            ArticleCategory::factory()->create();
         }
 
-        foreach ($categories as $key => $value) {
-            ArticleCategoryTranslation::create([
-                "name" => $value->name,
-                "slug" => Str::slug($value->name),
-                "locale" => $value->locale,
-                "category_id" => $value->category_id,
+        foreach ($categories['translations'] as $key => $value) {
+            ArticleCategoryTranslation::factory()->create([
+                'name' => $value['name'],
+                'slug' => Str::slug($value['name']),
+                'locale' => $value['locale'],
+                'category_id' => $value['category_id'],
             ]);
         }
     }

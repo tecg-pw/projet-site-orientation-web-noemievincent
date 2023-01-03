@@ -15,7 +15,7 @@ class DocumentationLanguageSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/documentation_language.json");
+        $json = File::get('database/data/documentation_language.json');
         $relation = json_decode($json);
 
         foreach ($relation as $key => $value) {

@@ -15,7 +15,7 @@ class CategoryProjectSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/category_project.json");
+        $json = File::get('database/data/category_project.json');
         $relation = json_decode($json);
 
         foreach ($relation as $key => $value) {

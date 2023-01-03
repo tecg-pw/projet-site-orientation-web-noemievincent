@@ -1,86 +1,108 @@
-[
-    {
-        "locale": "fr",
-        "title": "MDN Web Docs",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://developer.mozilla.org/fr/",
-        "documentation_id": 1
-    },
-    {
-        "locale": "en",
-        "title": "MDN Web Docs",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://developer.mozilla.org/fr/",
-        "documentation_id": 1
-    },
-    {
-        "locale": "fr",
-        "title": "PHP",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://www.php.net/",
-        "documentation_id": 2
-    },
-    {
-        "locale": "en",
-        "title": "PHP",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://www.php.net/",
-        "documentation_id": 2
-    },
-    {
-        "locale": "fr",
-        "title": "HTML Living Standard — WHATWG",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://html.spec.whatwg.org/multipage/",
-        "documentation_id": 3
-    },
-    {
-        "locale": "en",
-        "title": "HTML Living Standard — WHATWG",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://html.spec.whatwg.org/multipage/",
-        "documentation_id": 3
-    },
-    {
-        "locale": "fr",
-        "title": "SQL",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://sql.sh/",
-        "documentation_id": 4
-    },
-    {
-        "locale": "en",
-        "title": "SQL",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://sql.sh/",
-        "documentation_id": 4
-    },
-    {
-        "locale": "fr",
-        "title": "ZEAL",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://zealdocs.org/",
-        "documentation_id": 5
-    },
-    {
-        "locale": "en",
-        "title": "ZEAL",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://zealdocs.org/",
-        "documentation_id": 5
-    },
-    {
-        "locale": "fr",
-        "title": "DASH",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://kapeli.com/dash",
-        "documentation_id": 6
-    },
-    {
-        "locale": "en",
-        "title": "DASH",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://kapeli.com/dash",
-        "documentation_id": 6
-    }
-]
+{
+    "references": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        },
+        {
+            "id": 3
+        },
+        {
+            "id": 4
+        },
+        {
+            "id": 5
+        },
+        {
+            "id": 6
+        }
+    ],
+    "translations": [
+        {
+            "locale": "fr",
+            "title": "MDN Web Docs",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://developer.mozilla.org/fr/",
+            "documentation_id": 1
+        },
+        {
+            "locale": "en",
+            "title": "MDN Web Docs",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://developer.mozilla.org/fr/",
+            "documentation_id": 1
+        },
+        {
+            "locale": "fr",
+            "title": "PHP",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://www.php.net/",
+            "documentation_id": 2
+        },
+        {
+            "locale": "en",
+            "title": "PHP",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://www.php.net/",
+            "documentation_id": 2
+        },
+        {
+            "locale": "fr",
+            "title": "HTML Living Standard — WHATWG",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://html.spec.whatwg.org/multipage/",
+            "documentation_id": 3
+        },
+        {
+            "locale": "en",
+            "title": "HTML Living Standard — WHATWG",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://html.spec.whatwg.org/multipage/",
+            "documentation_id": 3
+        },
+        {
+            "locale": "fr",
+            "title": "SQL",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://sql.sh/",
+            "documentation_id": 4
+        },
+        {
+            "locale": "en",
+            "title": "SQL",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://sql.sh/",
+            "documentation_id": 4
+        },
+        {
+            "locale": "fr",
+            "title": "ZEAL",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://zealdocs.org/",
+            "documentation_id": 5
+        },
+        {
+            "locale": "en",
+            "title": "ZEAL",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://zealdocs.org/",
+            "documentation_id": 5
+        },
+        {
+            "locale": "fr",
+            "title": "DASH",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://kapeli.com/dash",
+            "documentation_id": 6
+        },
+        {
+            "locale": "en",
+            "title": "DASH",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://kapeli.com/dash",
+            "documentation_id": 6
+        }
+    ]
+}

@@ -17,20 +17,20 @@ class OpportunitiesSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/opportunities.json");
-        $opportunities = json_decode($json);
+        $json = File::get('database/data/opportunities.json');
+        $opportunities = json_decode($json, true);
 
-        for ($i = 0; $i < (count($opportunities) / 2); $i++) {
-            Opportunity::create();
+        foreach ($opportunities['references'] as $key => $value) {
+            Opportunity::factory()->create();
         }
 
-        foreach ($opportunities as $key => $value) {
-            OpportunityTranslation::create([
-                "name" => $value->name,
-                "slug" => Str::slug($value->name),
-                "description" => $value->description,
-                "locale" => $value->locale,
-                "opportunity_id" => $value->opportunity_id,
+        foreach ($opportunities['translations'] as $key => $value) {
+            OpportunityTranslation::factory()->create([
+                'name' => $value['name'],
+                'slug' => Str::slug($value['name']),
+                'description' => $value['description'],
+                'locale' => $value['locale'],
+                'opportunity_id' => $value['opportunity_id'],
             ]);
         }
     }

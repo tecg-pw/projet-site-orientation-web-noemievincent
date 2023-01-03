@@ -15,7 +15,7 @@ class LanguageTutorialSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/language_tutorial.json");
+        $json = File::get('database/data/language_tutorial.json');
         $relation = json_decode($json);
 
         foreach ($relation as $key => $value) {

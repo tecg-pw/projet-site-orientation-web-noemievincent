@@ -18,29 +18,28 @@ class ProjectsSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/projects.json");
-        $projects = json_decode($json);
+        $json = File::get('database/data/projects.json');
+        $projects = json_decode($json, true);
 
-        foreach ($projects as $key => $value) {
-            if ($key % 2 == 0) {
-                Project::create([
-                    "student_id" => $value->student_id,
-                    "course_id" => $value->course_id,
-                ]);
-            }
+        foreach ($projects['references'] as $key => $value) {
+            Project::factory()->create([
+                'student_id' => $value['student_id'],
+                'course_id' => $value['course_id'],
+            ]);
         }
 
-        foreach ($projects as $key => $value) {
-            ProjectTranslation::create([
-                "title" => $value->title,
-                "slug" => Str::slug($value->title),
-                "picture" => $value->picture,
-                "body" => $value->body,
-                "website_link" => $value->website_link,
-                "github_link" => $value->github_link,
-                "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
-                "locale" => $value->locale,
-                "project_id" => $value->project_id,
+        foreach ($projects['translations'] as $key => $value) {
+            ProjectTranslation::factory()->create([
+                'title' => $value['title'],
+                'slug' => Str::slug($value['title']),
+                'picture' => $value['picture'],
+                'body' => $value['body'],
+                'website_link' => $value['website_link'],
+                'github_link' => $value['github_link'],
+                'gallery' => json_encode($value['gallery']),
+                'published_at' => Carbon::parse($value['published_at'])->toDateTimeString(),
+                'locale' => $value['locale'],
+                'project_id' => $value['project_id'],
             ]);
         }
     }

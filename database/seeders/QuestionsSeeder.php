@@ -17,18 +17,18 @@ class QuestionsSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/questions.json");
+        $json = File::get('database/data/questions.json');
         $questions = json_decode($json);
 
         foreach ($questions as $key => $value) {
-            Question::create([
-                "title" => $value->title,
-                "slug" => Str::slug($value->title),
-                "body" => $value->body,
-                "is_solved" => $value->is_solved,
-                "published_at" => Carbon::parse($value->published_at)->toDateTimeString(),
-                "category_id" => $value->category_id,
-                "user_id" => $value->user_id,
+            Question::factory()->create([
+                'title' => $value->title,
+                'slug' => Str::slug($value->title),
+                'body' => $value->body,
+                'is_solved' => $value->is_solved,
+                'published_at' => Carbon::parse($value->published_at)->toDateTimeString(),
+                'category_id' => $value->category_id,
+                'user_id' => $value->user_id,
             ]);
         }
     }

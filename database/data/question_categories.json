@@ -1,32 +1,45 @@
-[
-    {
-        "locale": "fr",
-        "name": "Inscription",
-        "category_id": 1
-    },
-    {
-        "locale": "fr",
-        "name": "Parler avec les anciens",
-        "category_id": 2
-    },
-    {
-        "locale": "fr",
-        "name": "Question technique",
-        "category_id": 3
-    },
-    {
-        "locale": "en",
-        "name": "Inscription",
-        "category_id": 1
-    },
-    {
-        "locale": "en",
-        "name": "Talk with former students",
-        "category_id": 2
-    },
-    {
-        "locale": "en",
-        "name": "Technical question",
-        "category_id": 3
-    }
-]
+{
+    "references": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        },
+        {
+            "id": 3
+        }
+    ],
+    "translations": [
+        {
+            "locale": "fr",
+            "name": "Inscription",
+            "category_id": 1
+        },
+        {
+            "locale": "fr",
+            "name": "Parler avec les anciens",
+            "category_id": 2
+        },
+        {
+            "locale": "fr",
+            "name": "Question technique",
+            "category_id": 3
+        },
+        {
+            "locale": "en",
+            "name": "Inscription",
+            "category_id": 1
+        },
+        {
+            "locale": "en",
+            "name": "Talk with former students",
+            "category_id": 2
+        },
+        {
+            "locale": "en",
+            "name": "Technical question",
+            "category_id": 3
+        }
+    ]
+}

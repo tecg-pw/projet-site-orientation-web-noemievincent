@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Article;
+use App\Models\ArticleCategory;
+use App\Models\Author;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,9 +19,12 @@ class ArticleFactory extends Factory
      */
     public function definition()
     {
+        $authors_ids = Author::pluck('id');
+        $categories_ids = ArticleCategory::pluck('id');
+
         return [
-            'author_id' => 1,
-            'category_id' => 1,
+            'author_id' => $authors_ids->random(),
+            'category_id' => $categories_ids->random(),
         ];
     }
 }

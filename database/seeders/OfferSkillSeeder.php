@@ -15,7 +15,7 @@ class OfferSkillSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/offer_skill.json");
+        $json = File::get('database/data/offer_skill.json');
         $relation = json_decode($json);
 
         foreach ($relation as $key => $value) {

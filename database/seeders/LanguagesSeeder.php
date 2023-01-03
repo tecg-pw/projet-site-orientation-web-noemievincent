@@ -16,13 +16,13 @@ class LanguagesSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/languages.json");
+        $json = File::get('database/data/languages.json');
         $languages = json_decode($json);
 
         foreach ($languages as $key => $value) {
-            Language::create([
-                "name" => $value->name,
-                "slug" => Str::slug($value->name),
+            Language::factory()->create([
+                'name' => $value->name,
+                'slug' => Str::slug($value->name),
             ]);
         }
     }

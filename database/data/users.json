@@ -7,7 +7,7 @@
         "picture": "",
         "gender": "male",
         "role": "teacher",
-        "bio": "Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et."
+        "bio": "<p>Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>"
     },
     {
         "firstname": "Myriam",
@@ -17,7 +17,7 @@
         "picture": "",
         "gender": "female",
         "role": "teacher",
-        "bio": "Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et."
+        "bio": "<p>Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>"
     },
     {
         "firstname": "Gwenaëlle",
@@ -27,7 +27,7 @@
         "picture": "",
         "gender": "female",
         "role": "alumni",
-        "bio": "Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et."
+        "bio": "<p>Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>"
     },
     {
         "firstname": "Frederic",
@@ -37,6 +37,6 @@
         "picture": "",
         "gender": "male",
         "role": "user",
-        "bio": "Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et."
+        "bio": "<p>Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>"
     }
 ]

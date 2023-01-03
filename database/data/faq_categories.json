@@ -1,32 +1,45 @@
-[
-    {
-        "locale": "fr",
-        "name": "Général",
-        "category_id": 1
-    },
-    {
-        "locale": "fr",
-        "name": "Inscription",
-        "category_id": 2
-    },
-    {
-        "locale": "fr",
-        "name": "La HEPL",
-        "category_id": 3
-    },
-    {
-        "locale": "en",
-        "name": "General",
-        "category_id": 1
-    },
-    {
-        "locale": "en",
-        "name": "Enrolment",
-        "category_id": 2
-    },
-    {
-        "locale": "en",
-        "name": "HEPL",
-        "category_id": 3
-    }
-]
+{
+    "references": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        },
+        {
+            "id": 3
+        }
+    ],
+    "translations": [
+        {
+            "locale": "fr",
+            "name": "Général",
+            "category_id": 1
+        },
+        {
+            "locale": "fr",
+            "name": "Inscription",
+            "category_id": 2
+        },
+        {
+            "locale": "fr",
+            "name": "La HEPL",
+            "category_id": 3
+        },
+        {
+            "locale": "en",
+            "name": "General",
+            "category_id": 1
+        },
+        {
+            "locale": "en",
+            "name": "Enrolment",
+            "category_id": 2
+        },
+        {
+            "locale": "en",
+            "name": "HEPL",
+            "category_id": 3
+        }
+    ]
+}

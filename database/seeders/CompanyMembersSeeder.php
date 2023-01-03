@@ -15,18 +15,18 @@ class CompanyMembersSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/company_members.json");
+        $json = File::get('database/data/company_members.json');
         $members = json_decode($json);
 
         foreach ($members as $key => $value) {
-            CompanyMember::create([
-                "firstname" => $value->firstname,
-                "lastname" => $value->lastname,
-                "fullname" => $value->firstname . ' ' . $value->lastname,
-                "picture" => $value->picture,
-                "github_link" => $value->github_link,
-                "linkedin_link" => $value->linkedin_link,
-                "company_id" => $value->company_id,
+            CompanyMember::factory()->create([
+                'firstname' => $value->firstname,
+                'lastname' => $value->lastname,
+                'fullname' => $value->firstname . ' ' . $value->lastname,
+                'picture' => $value->picture,
+                'github_link' => $value->github_link,
+                'linkedin_link' => $value->linkedin_link,
+                'company_id' => $value->company_id,
             ]);
         }
     }

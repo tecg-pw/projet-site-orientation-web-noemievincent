@@ -16,23 +16,21 @@ class FaqSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/faq.json");
-        $faq = json_decode($json);
+        $json = File::get('database/data/faq.json');
+        $faq = json_decode($json, true);
 
-        foreach ($faq as $key => $value) {
-            if ($key % 2 == 0) {
-                Faq::create([
-                    "category_id" => $value->category_id,
-                ]);
-            }
+        foreach ($faq['references'] as $key => $value) {
+            Faq::factory()->create([
+                'category_id' => $value['category_id'],
+            ]);
         }
 
-        foreach ($faq as $key => $value) {
-            FaqTranslation::create([
-                "title" => $value->title,
-                "body" => $value->body,
-                "locale" => $value->locale,
-                "faq_id" => $value->faq_id,
+        foreach ($faq['translations'] as $key => $value) {
+            FaqTranslation::factory()->create([
+                'title' => $value['title'],
+                'body' => $value['body'],
+                'locale' => $value['locale'],
+                'faq_id' => $value['faq_id'],
             ]);
         }
     }

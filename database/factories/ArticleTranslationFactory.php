@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Article;
 use App\Models\ArticleTranslation;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -20,6 +21,8 @@ class ArticleTranslationFactory extends Factory
     public function definition()
     {
         $title = fake()->sentence();
+        $ids = Article::pluck('id');
+
         return [
             'title' => $title,
             'slug' => Str::slug($title),
@@ -27,8 +30,8 @@ class ArticleTranslationFactory extends Factory
             'excerpt' => fake()->paragraph(),
             'body' => '<p>' . implode('</p><p>', fake()->paragraphs(12)) . '</p>',
             'published_at' => Carbon::now()->toDateTimeString(),
-            'locale' => fake()->randomElement(['fr', 'en']),
-            'article_id' => 1,
+            'locale' => fake()->randomElement(config('app.available_locales')),
+            'article_id' => $ids->random(),
         ];
     }
 }

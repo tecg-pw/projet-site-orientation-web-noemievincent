@@ -1,122 +1,156 @@
-[
-    {
-        "locale": "fr",
-        "name": "Designer Web",
-        "description": "Mi-graphiste, mi-informaticien, le web- designer est spécialisé dans la création des pages Web. Il s’occupe de tout l’aspect graphique d’un site Internet (illustrations, animations, typographie…).",
-        "opportunity_id": 1
-    },
-    {
-        "locale": "en",
-        "name": "Web Designer",
-        "description": "Half graphic designer, half computer scientist, the web designer is specialized in the creation of web pages. He deals with all the graphic aspect of an Internet site (illustrations, animations, typography...).",
-        "opportunity_id": 1
-    },
-    {
-        "locale": "fr",
-        "name": "Designer mobile",
-        "description": "Il crée des designs, des vidéos ou encore des sons pour mettre en valeur les produits et les services de ses clients. Chaque client ayant des attentes différentes, il doit adapter ses créations à la taille des écrans de l’ensemble des terminaux mobiles présents sur le marché (smartphones, tablettes, ordinateurs).",
-        "opportunity_id": 2
-    },
-    {
-        "locale": "en",
-        "name": "Mobile Designer",
-        "description": "He creates designs, videos or sounds to highlight the products and services of his clients. Each client having different expectations, he must adapt his creations to the size of the screens of all the mobile terminals present on the market (smartphones, tablets, computers).",
-        "opportunity_id": 2
-    },
-    {
-        "locale": "fr",
-        "name": "Designer multimédia",
-        "description": "Le designer graphique et multimédia (également appelé webdesigner) est un dessinateur-maquettiste travaillant sur des supports électroniques : pages web, cédéroms, habillage TV ou vidéo. Sa mission ? Donner une identité forte à ces différents supports.",
-        "opportunity_id": 3
-    },
-    {
-        "locale": "en",
-        "name": "Multimedia designer",
-        "description": "The graphic and multimedia designer (also known as webdesigner) is a designer-maquettist working on electronic media: web pages, CD-ROMs, TV or video packaging. His mission? To give a strong identity to these different media.",
-        "opportunity_id": 3
-    },
-    {
-        "locale": "fr",
-        "name": "Designer d’interfaces utilisateurs (UI)",
-        "description": "Le designer UI s’occupe du lien entre la machine et l’homme. Il est en charge de la conception générale de l’interface, de la clarté de la navigation, de l’optimisation des parcours et aussi de la qualité des contenus. Il organise des éléments graphiques et textuels sur la base de normes techniques.",
-        "opportunity_id": 4
-    },
-    {
-        "locale": "en",
-        "name": "User Interface (UI) designer",
-        "description": "The UI designer takes care of the link between the machine and the human being. He is in charge of the general design of the interface, the clarity of the navigation, the optimization of the paths and also the quality of the contents. He organizes graphic and textual elements based on technical standards.",
-        "opportunity_id": 4
-    },
-    {
-        "locale": "fr",
-        "name": "Designer d’expérience utilisateur (UX)",
-        "description": "L’UX Designer, ou ergonome, a pour mission d’insérer du storytelling dans l’expérience client. Il doit analyser les besoins et les attentes des utilisateurs afin de répondre à leurs attentes et de rendre le site accessible, et facile d’utilisation. Il occupe un rôle stratégique.",
-        "opportunity_id": 5
-    },
-    {
-        "locale": "en",
-        "name": "User Experience (UX) Designer",
-        "description": "The UX Designer, or ergonomist, has the mission to insert storytelling into the customer experience. He must analyze the needs and expectations of users to meet their expectations and make the site accessible and easy to use. He plays a strategic role.",
-        "opportunity_id": 5
-    },
-    {
-        "locale": "fr",
-        "name": "Développeur Web",
-        "description": "Le développeur web, c’est le responsable de la programmation. Il est en charge de la conception de sites, d’applications, de logiciels et de programmes informatiques « sur-mesure » pour répondre aux besoins de son entreprise ou des clients.",
-        "opportunity_id": 6
-    },
-    {
-        "locale": "en",
-        "name": "Web Developer",
-        "description": "The web developer is the person responsible for programming. He is in charge of designing sites, applications, software and \"custom\" computer programs to meet the needs of his company or customers.",
-        "opportunity_id": 6
-    },
-    {
-        "locale": "fr",
-        "name": "Développeur mobile",
-        "description": "À partir d’un cahier des charges, le développeur d’applications mobiles réalise une application. Grâce à de solides connaissances en mathématiques et en informatique, il choisit les logiciels et codes spécifiques pour la construire.",
-        "opportunity_id": 7
-    },
-    {
-        "locale": "en",
-        "name": "Mobile Developer",
-        "description": "From a set of specifications, the mobile application developer creates an application. Thanks to solid knowledge in mathematics and computer science, he chooses the specific software and codes to build it.",
-        "opportunity_id": 7
-    },
-    {
-        "locale": "fr",
-        "name": "Développeur multimédia",
-        "description": "Le développeur multimédia construit une application en assemblant et en fusionnant des fichiers de natures différentes : du texte, des sons et des images. Son premier souci : réaliser la navigation la plus évidente possible pour l’utilisateur, autrement dit l’exigence de convivialité du produit multimédia.",
-        "opportunity_id": 8
-    },
-    {
-        "locale": "en",
-        "name": "Multimedia developer",
-        "description": "The multimedia developer builds an application by assembling and merging files of different natures: text, sounds and images. His or her first concern is to make the navigation as obvious as possible for the user, in other words, the requirement for user-friendliness of the multimedia product.",
-        "opportunity_id": 8
-    },
-    {
-        "locale": "fr",
-        "name": "Développeur Web front-end",
-        "description": "La mission d’un développeur Web front-end consiste à participer à la création de l’interface utilisateur d’un site ou d’une application web. Il intervient sur tous les éléments apparaissant à l’écran et géré par le navigateur web de l’utilisateur. Il y a donc une partie design/ergonomie et une partie développement dans sa mission.",
-        "opportunity_id": 9
-    },
-    {
-        "locale": "en",
-        "name": "Front-end Web Developer",
-        "description": "The mission of a front-end web developer is to participate in the creation of the user interface of a website or a web application. He intervenes on all the elements appearing on the screen and managed by the user's web browser. There is therefore a design/ergonomics part and a development part in his mission.",
-        "opportunity_id": 9
-    },
-    {
-        "locale": "fr",
-        "name": "Développeur Web back-end",
-        "description": "Le développeur back-end s’occupe du côté technique et fonctionnel d’un site web. Contrairement au développeur front-end, celui-ci travaille dans l’ombre et se charge de toute la partie back-office, c’est-à-dire les éléments indispensables pour le fonctionnement du site, mais qui sont invisibles des internautes.",
-        "opportunity_id": 10
-    },
-    {
-        "locale": "en",
-        "name": "Back-end Web Developer",
-        "description": "The back-end developer takes care of the technical and functional side of a website. Unlike the front-end developer, he works in the shadows and takes care of the back-office, that is to say the elements that are essential for the functioning of the site, but which are invisible to Internet users.",
-        "opportunity_id": 10
-    }
-]
+{
+    "references": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        },
+        {
+            "id": 3
+        },
+        {
+            "id": 4
+        },
+        {
+            "id": 5
+        },
+        {
+            "id": 6
+        },
+        {
+            "id": 7
+        },
+        {
+            "id": 8
+        },
+        {
+            "id": 9
+        },
+        {
+            "id": 10
+        }
+    ],
+    "translations": [
+        {
+            "locale": "fr",
+            "name": "Designer Web",
+            "description": "<p>Mi-graphiste, mi-informaticien, le web- designer est spécialisé dans la création des pages Web. Il s’occupe de tout l’aspect graphique d’un site Internet (illustrations, animations, typographie…).</p>",
+            "opportunity_id": 1
+        },
+        {
+            "locale": "en",
+            "name": "Web Designer",
+            "description": "<p>Half graphic designer, half computer scientist, the web designer is specialized in the creation of web pages. He deals with all the graphic aspect of an Internet site (illustrations, animations, typography...).</p>",
+            "opportunity_id": 1
+        },
+        {
+            "locale": "fr",
+            "name": "Designer mobile",
+            "description": "<p>Il crée des designs, des vidéos ou encore des sons pour mettre en valeur les produits et les services de ses clients. Chaque client ayant des attentes différentes, il doit adapter ses créations à la taille des écrans de l’ensemble des terminaux mobiles présents sur le marché (smartphones, tablettes, ordinateurs).</p>",
+            "opportunity_id": 2
+        },
+        {
+            "locale": "en",
+            "name": "Mobile Designer",
+            "description": "<p>He creates designs, videos or sounds to highlight the products and services of his clients. Each client having different expectations, he must adapt his creations to the size of the screens of all the mobile terminals present on the market (smartphones, tablets, computers).</p>",
+            "opportunity_id": 2
+        },
+        {
+            "locale": "fr",
+            "name": "Designer multimédia",
+            "description": "<p>Le designer graphique et multimédia (également appelé webdesigner) est un dessinateur-maquettiste travaillant sur des supports électroniques : pages web, cédéroms, habillage TV ou vidéo. Sa mission ? Donner une identité forte à ces différents supports.</p>",
+            "opportunity_id": 3
+        },
+        {
+            "locale": "en",
+            "name": "Multimedia designer",
+            "description": "<p>The graphic and multimedia designer (also known as webdesigner) is a designer-maquettist working on electronic media: web pages, CD-ROMs, TV or video packaging. His mission? To give a strong identity to these different media.</p>",
+            "opportunity_id": 3
+        },
+        {
+            "locale": "fr",
+            "name": "Designer d’interfaces utilisateurs (UI)",
+            "description": "<p>Le designer UI s’occupe du lien entre la machine et l’homme. Il est en charge de la conception générale de l’interface, de la clarté de la navigation, de l’optimisation des parcours et aussi de la qualité des contenus. Il organise des éléments graphiques et textuels sur la base de normes techniques.</p>",
+            "opportunity_id": 4
+        },
+        {
+            "locale": "en",
+            "name": "User Interface (UI) designer",
+            "description": "<p>The UI designer takes care of the link between the machine and the human being. He is in charge of the general design of the interface, the clarity of the navigation, the optimization of the paths and also the quality of the contents. He organizes graphic and textual elements based on technical standards.</p>",
+            "opportunity_id": 4
+        },
+        {
+            "locale": "fr",
+            "name": "Designer d’expérience utilisateur (UX)",
+            "description": "<p>L’UX Designer, ou ergonome, a pour mission d’insérer du storytelling dans l’expérience client. Il doit analyser les besoins et les attentes des utilisateurs afin de répondre à leurs attentes et de rendre le site accessible, et facile d’utilisation. Il occupe un rôle stratégique.</p>",
+            "opportunity_id": 5
+        },
+        {
+            "locale": "en",
+            "name": "User Experience (UX) Designer",
+            "description": "<p>The UX Designer, or ergonomist, has the mission to insert storytelling into the customer experience. He must analyze the needs and expectations of users to meet their expectations and make the site accessible and easy to use. He plays a strategic role.</p>",
+            "opportunity_id": 5
+        },
+        {
+            "locale": "fr",
+            "name": "Développeur Web",
+            "description": "<p>Le développeur web, c’est le responsable de la programmation. Il est en charge de la conception de sites, d’applications, de logiciels et de programmes informatiques « sur-mesure » pour répondre aux besoins de son entreprise ou des clients.</p>",
+            "opportunity_id": 6
+        },
+        {
+            "locale": "en",
+            "name": "Web Developer",
+            "description": "<p>The web developer is the person responsible for programming. He is in charge of designing sites, applications, software and \"custom\" computer programs to meet the needs of his company or customers.</p>",
+            "opportunity_id": 6
+        },
+        {
+            "locale": "fr",
+            "name": "Développeur mobile",
+            "description": "<p>À partir d’un cahier des charges, le développeur d’applications mobiles réalise une application. Grâce à de solides connaissances en mathématiques et en informatique, il choisit les logiciels et codes spécifiques pour la construire.</p>",
+            "opportunity_id": 7
+        },
+        {
+            "locale": "en",
+            "name": "Mobile Developer",
+            "description": "<p>From a set of specifications, the mobile application developer creates an application. Thanks to solid knowledge in mathematics and computer science, he chooses the specific software and codes to build it.</p>",
+            "opportunity_id": 7
+        },
+        {
+            "locale": "fr",
+            "name": "Développeur multimédia",
+            "description": "<p>Le développeur multimédia construit une application en assemblant et en fusionnant des fichiers de natures différentes : du texte, des sons et des images. Son premier souci : réaliser la navigation la plus évidente possible pour l’utilisateur, autrement dit l’exigence de convivialité du produit multimédia.</p>",
+            "opportunity_id": 8
+        },
+        {
+            "locale": "en",
+            "name": "Multimedia developer",
+            "description": "<p>The multimedia developer builds an application by assembling and merging files of different natures: text, sounds and images. His or her first concern is to make the navigation as obvious as possible for the user, in other words, the requirement for user-friendliness of the multimedia product.</p>",
+            "opportunity_id": 8
+        },
+        {
+            "locale": "fr",
+            "name": "Développeur Web front-end",
+            "description": "<p>La mission d’un développeur Web front-end consiste à participer à la création de l’interface utilisateur d’un site ou d’une application web. Il intervient sur tous les éléments apparaissant à l’écran et géré par le navigateur web de l’utilisateur. Il y a donc une partie design/ergonomie et une partie développement dans sa mission.</p>",
+            "opportunity_id": 9
+        },
+        {
+            "locale": "en",
+            "name": "Front-end Web Developer",
+            "description": "<p>The mission of a front-end web developer is to participate in the creation of the user interface of a website or a web application. He intervenes on all the elements appearing on the screen and managed by the user's web browser. There is therefore a design/ergonomics part and a development part in his mission.</p>",
+            "opportunity_id": 9
+        },
+        {
+            "locale": "fr",
+            "name": "Développeur Web back-end",
+            "description": "<p>Le développeur back-end s’occupe du côté technique et fonctionnel d’un site web. Contrairement au développeur front-end, celui-ci travaille dans l’ombre et se charge de toute la partie back-office, c’est-à-dire les éléments indispensables pour le fonctionnement du site, mais qui sont invisibles des internautes.</p>",
+            "opportunity_id": 10
+        },
+        {
+            "locale": "en",
+            "name": "Back-end Web Developer",
+            "description": "<p>The back-end developer takes care of the technical and functional side of a website. Unlike the front-end developer, he works in the shadows and takes care of the back-office, that is to say the elements that are essential for the functioning of the site, but which are invisible to Internet users.</p>",
+            "opportunity_id": 10
+        }
+    ]
+}

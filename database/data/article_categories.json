@@ -1,32 +1,45 @@
-[
-    {
-        "locale": "fr",
-        "name": "Actualité",
-        "category_id": 1
-    },
-    {
-        "locale": "fr",
-        "name": "Conseil",
-        "category_id": 2
-    },
-    {
-        "locale": "fr",
-        "name": "Évènement",
-        "category_id": 3
-    },
-    {
-        "locale": "en",
-        "name": "News",
-        "category_id": 1
-    },
-    {
-        "locale": "en",
-        "name": "Advice",
-        "category_id": 2
-    },
-    {
-        "locale": "en",
-        "name": "Event",
-        "category_id": 3
-    }
-]
+{
+    "references": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        },
+        {
+            "id": 3
+        }
+    ],
+    "translations": [
+        {
+            "locale": "fr",
+            "name": "Actualité",
+            "category_id": 1
+        },
+        {
+            "locale": "fr",
+            "name": "Conseil",
+            "category_id": 2
+        },
+        {
+            "locale": "fr",
+            "name": "Évènement",
+            "category_id": 3
+        },
+        {
+            "locale": "en",
+            "name": "News",
+            "category_id": 1
+        },
+        {
+            "locale": "en",
+            "name": "Advice",
+            "category_id": 2
+        },
+        {
+            "locale": "en",
+            "name": "Event",
+            "category_id": 3
+        }
+    ]
+}

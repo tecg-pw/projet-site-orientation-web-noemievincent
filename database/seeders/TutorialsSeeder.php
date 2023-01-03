@@ -16,20 +16,20 @@ class TutorialsSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/tutorials.json");
-        $tutorials = json_decode($json);
+        $json = File::get('database/data/tutorials.json');
+        $tutorials = json_decode($json, true);
 
-        for ($i = 0; $i < (count($tutorials) / 2); $i++) {
-            Tutorial::create();
+        foreach ($tutorials['references'] as $key => $value) {
+            Tutorial::factory()->create();
         }
 
-        foreach ($tutorials as $key => $value) {
-            TutorialTranslation::create([
-                "title" => $value->title,
-                "description" => $value->description,
-                "link" => $value->link,
-                "locale" => $value->locale,
-                "tutorial_id" => $value->tutorial_id,
+        foreach ($tutorials['translations'] as $key => $value) {
+            TutorialTranslation::factory()->create([
+                'title' => $value['title'],
+                'description' => $value['description'],
+                'link' => $value['link'],
+                'locale' => $value['locale'],
+                'tutorial_id' => $value['tutorial_id'],
             ]);
         }
     }

@@ -15,7 +15,7 @@ class TutorialUserSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/tutorial_user.json");
+        $json = File::get('database/data/tutorial_user.json');
         $relation = json_decode($json);
 
         foreach ($relation as $key => $value) {

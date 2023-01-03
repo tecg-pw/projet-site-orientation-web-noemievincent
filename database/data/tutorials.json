@@ -1,86 +1,108 @@
-[
-    {
-        "locale": "fr",
-        "title": "Javascript 30",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://javascript30.com/",
-        "tutorial_id": 1
-    },
-    {
-        "locale": "en",
-        "title": "Javascript 30",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://javascript30.com/",
-        "tutorial_id": 1
-    },
-    {
-        "locale": "fr",
-        "title": "Introduction JS : dessiner et animer",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://fr.khanacademy.org/computing/computer-programming/programming",
-        "tutorial_id": 2
-    },
-    {
-        "locale": "en",
-        "title": "Introduction JS: drawing and animating",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://fr.khanacademy.org/computing/computer-programming/programming",
-        "tutorial_id": 2
-    },
-    {
-        "locale": "fr",
-        "title": "Flexbox Froggy",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://flexboxfroggy.com/#fr",
-        "tutorial_id": 3
-    },
-    {
-        "locale": "en",
-        "title": "Flexbox Froggy",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://flexboxfroggy.com/#fr",
-        "tutorial_id": 3
-    },
-    {
-        "locale": "fr",
-        "title": "Grid Garden",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://cssgridgarden.com/#fr",
-        "tutorial_id": 4
-    },
-    {
-        "locale": "en",
-        "title": "Grid Garden",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://cssgridgarden.com/#fr",
-        "tutorial_id": 4
-    },
-    {
-        "locale": "fr",
-        "title": "BugDroid",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://github.com/tecg-cpw/html-bugdroid",
-        "tutorial_id": 5
-    },
-    {
-        "locale": "en",
-        "title": "BugDroid",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://github.com/tecg-cpw/html-bugdroid",
-        "tutorial_id": 5
-    },
-    {
-        "locale": "fr",
-        "title": "Les listes HTML",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://github.com/tecg-cpw/html-lists-base",
-        "tutorial_id": 6
-    },
-    {
-        "locale": "en",
-        "title": "HTML Lists base",
-        "description": "Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.",
-        "link": "https://github.com/tecg-cpw/html-lists-base",
-        "tutorial_id": 6
-    }
-]
+{
+    "references": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        },
+        {
+            "id": 3
+        },
+        {
+            "id": 4
+        },
+        {
+            "id": 5
+        },
+        {
+            "id": 6
+        }
+    ],
+    "translations": [
+        {
+            "locale": "fr",
+            "title": "Javascript 30",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://javascript30.com/",
+            "tutorial_id": 1
+        },
+        {
+            "locale": "en",
+            "title": "Javascript 30",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://javascript30.com/",
+            "tutorial_id": 1
+        },
+        {
+            "locale": "fr",
+            "title": "Introduction JS : dessiner et animer",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://fr.khanacademy.org/computing/computer-programming/programming",
+            "tutorial_id": 2
+        },
+        {
+            "locale": "en",
+            "title": "Introduction JS: drawing and animating",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://fr.khanacademy.org/computing/computer-programming/programming",
+            "tutorial_id": 2
+        },
+        {
+            "locale": "fr",
+            "title": "Flexbox Froggy",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://flexboxfroggy.com/#fr",
+            "tutorial_id": 3
+        },
+        {
+            "locale": "en",
+            "title": "Flexbox Froggy",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://flexboxfroggy.com/#fr",
+            "tutorial_id": 3
+        },
+        {
+            "locale": "fr",
+            "title": "Grid Garden",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://cssgridgarden.com/#fr",
+            "tutorial_id": 4
+        },
+        {
+            "locale": "en",
+            "title": "Grid Garden",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://cssgridgarden.com/#fr",
+            "tutorial_id": 4
+        },
+        {
+            "locale": "fr",
+            "title": "BugDroid",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://github.com/tecg-cpw/html-bugdroid",
+            "tutorial_id": 5
+        },
+        {
+            "locale": "en",
+            "title": "BugDroid",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://github.com/tecg-cpw/html-bugdroid",
+            "tutorial_id": 5
+        },
+        {
+            "locale": "fr",
+            "title": "Les listes HTML",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://github.com/tecg-cpw/html-lists-base",
+            "tutorial_id": 6
+        },
+        {
+            "locale": "en",
+            "title": "HTML Lists base",
+            "description": "<p>Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et. Ad consequat nulla commodo laboris occaecat est irure excepteur anim sunt qui anim dolor Lorem et.</p>",
+            "link": "https://github.com/tecg-cpw/html-lists-base",
+            "tutorial_id": 6
+        }
+    ]
+}

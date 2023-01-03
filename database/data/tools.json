@@ -1,142 +1,176 @@
-[
-    {
-        "locale": "fr",
-        "title": "Headings Map",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi",
-        "tool_id": 1
-    },
-    {
-        "locale": "en",
-        "title": "Headings Map",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi",
-        "tool_id": 1
-    },
-    {
-        "locale": "fr",
-        "title": "Web Developer",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=fr",
-        "tool_id": 2
-    },
-    {
-        "locale": "en",
-        "title": "Web Developer",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=fr",
-        "tool_id": 2
-    },
-    {
-        "locale": "fr",
-        "title": "Total Validator",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://www.totalvalidator.com/downloads/extension.html",
-        "tool_id": 3
-    },
-    {
-        "locale": "en",
-        "title": "Total Validator",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://www.totalvalidator.com/downloads/extension.html",
-        "tool_id": 3
-    },
-    {
-        "locale": "fr",
-        "title": "Font Ninja",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://chrome.google.com/webstore/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh",
-        "tool_id": 4
-    },
-    {
-        "locale": "en",
-        "title": "Font Ninja",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://chrome.google.com/webstore/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh",
-        "tool_id": 4
-    },
-    {
-        "locale": "fr",
-        "title": "W3C Validator",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://validator.w3.org/nu/",
-        "tool_id": 5
-    },
-    {
-        "locale": "en",
-        "title": "W3C Validator",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://validator.w3.org/nu/",
-        "tool_id": 5
-    },
-    {
-        "locale": "fr",
-        "title": "Données structurés",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://schema.org/",
-        "tool_id": 6
-    },
-    {
-        "locale": "en",
-        "title": "Données structurés",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://schema.org/",
-        "tool_id": 6
-    },
-    {
-        "locale": "fr",
-        "title": "GTMétrix",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://gtmetrix.com/",
-        "tool_id": 7
-    },
-    {
-        "locale": "en",
-        "title": "GTMétrix",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://gtmetrix.com/",
-        "tool_id": 7
-    },
-    {
-        "locale": "fr",
-        "title": "Checklist WCAG",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://www.anysurfer.be/fr/documentation/articles/detail/webaims-wcag-2-checklist",
-        "tool_id": 8
-    },
-    {
-        "locale": "en",
-        "title": "Checklist WCAG",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://www.anysurfer.be/fr/documentation/articles/detail/webaims-wcag-2-checklist",
-        "tool_id": 8
-    },
-    {
-        "locale": "fr",
-        "title": "Can I Use",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://caniuse.com/",
-        "tool_id": 9
-    },
-    {
-        "locale": "en",
-        "title": "Can I Use",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://caniuse.com/",
-        "tool_id": 9
-    },
-    {
-        "locale": "fr",
-        "title": "Image Optim",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://imageoptim.com/fr",
-        "tool_id": 10
-    },
-    {
-        "locale": "en",
-        "title": "Image Optim",
-        "description": "Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.",
-        "link": "https://imageoptim.com/fr",
-        "tool_id": 10
-    }
-]
+{
+    "references": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        },
+        {
+            "id": 3
+        },
+        {
+            "id": 4
+        },
+        {
+            "id": 5
+        },
+        {
+            "id": 6
+        },
+        {
+            "id": 7
+        },
+        {
+            "id": 8
+        },
+        {
+            "id": 9
+        },
+        {
+            "id": 10
+        }
+    ],
+    "translations": [
+        {
+            "locale": "fr",
+            "title": "Headings Map",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi",
+            "tool_id": 1
+        },
+        {
+            "locale": "en",
+            "title": "Headings Map",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi",
+            "tool_id": 1
+        },
+        {
+            "locale": "fr",
+            "title": "Web Developer",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=fr",
+            "tool_id": 2
+        },
+        {
+            "locale": "en",
+            "title": "Web Developer",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=fr",
+            "tool_id": 2
+        },
+        {
+            "locale": "fr",
+            "title": "Total Validator",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://www.totalvalidator.com/downloads/extension.html",
+            "tool_id": 3
+        },
+        {
+            "locale": "en",
+            "title": "Total Validator",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://www.totalvalidator.com/downloads/extension.html",
+            "tool_id": 3
+        },
+        {
+            "locale": "fr",
+            "title": "Font Ninja",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://chrome.google.com/webstore/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh",
+            "tool_id": 4
+        },
+        {
+            "locale": "en",
+            "title": "Font Ninja",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://chrome.google.com/webstore/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh",
+            "tool_id": 4
+        },
+        {
+            "locale": "fr",
+            "title": "W3C Validator",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://validator.w3.org/nu/",
+            "tool_id": 5
+        },
+        {
+            "locale": "en",
+            "title": "W3C Validator",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://validator.w3.org/nu/",
+            "tool_id": 5
+        },
+        {
+            "locale": "fr",
+            "title": "Données structurés",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://schema.org/",
+            "tool_id": 6
+        },
+        {
+            "locale": "en",
+            "title": "Données structurés",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://schema.org/",
+            "tool_id": 6
+        },
+        {
+            "locale": "fr",
+            "title": "GTMétrix",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://gtmetrix.com/",
+            "tool_id": 7
+        },
+        {
+            "locale": "en",
+            "title": "GTMétrix",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://gtmetrix.com/",
+            "tool_id": 7
+        },
+        {
+            "locale": "fr",
+            "title": "Checklist WCAG",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://www.anysurfer.be/fr/documentation/articles/detail/webaims-wcag-2-checklist",
+            "tool_id": 8
+        },
+        {
+            "locale": "en",
+            "title": "Checklist WCAG",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://www.anysurfer.be/fr/documentation/articles/detail/webaims-wcag-2-checklist",
+            "tool_id": 8
+        },
+        {
+            "locale": "fr",
+            "title": "Can I Use",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://caniuse.com/",
+            "tool_id": 9
+        },
+        {
+            "locale": "en",
+            "title": "Can I Use",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://caniuse.com/",
+            "tool_id": 9
+        },
+        {
+            "locale": "fr",
+            "title": "Image Optim",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://imageoptim.com/fr",
+            "tool_id": 10
+        },
+        {
+            "locale": "en",
+            "title": "Image Optim",
+            "description": "<p>Velit ut ad incididunt occaecat labore pariatur consectetur consequat consectetur aliqua non magna fugiat et.</p>",
+            "link": "https://imageoptim.com/fr",
+            "tool_id": 10
+        }
+    ]
+}

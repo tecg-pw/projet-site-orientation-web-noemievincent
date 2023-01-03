@@ -16,13 +16,13 @@ class AuthorSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/authors.json");
+        $json = File::get('database/data/authors.json');
         $authors = json_decode($json);
 
         foreach ($authors as $key => $value) {
-            Author::create([
-                "name" => $value->name,
-                "slug" => Str::slug($value->name),
+            Author::factory()->create([
+                'name' => $value->name,
+                'slug' => Str::slug($value->name),
             ]);
         }
     }
