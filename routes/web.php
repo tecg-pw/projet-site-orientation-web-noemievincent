@@ -12,6 +12,7 @@ use App\Http\Controllers\OffersController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\RegisterSessionController;
+use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\ResourcesController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TeacherController;
@@ -92,7 +93,8 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->midd
 Route::get('/{locale?}/register', [RegisterSessionController::class, 'create'])->name('register')->middleware(['guest', 'setLocale']);
 Route::post('/{locale?}/register', [RegisterSessionController::class, 'store'])->middleware(['guest', 'setLocale']);
 
-Route::get('/{locale?}/reset-password', function () {
-    return view('auth.reset-password');
-})->middleware('setLocale');
+Route::get('/{locale?}/forgot-password', [ResetPasswordController::class, 'create'])->middleware(['guest', 'setLocale'])->name('password.email');
+Route::post('/{locale?}/forgot-password', [ResetPasswordController::class, 'store'])->middleware(['guest', 'setLocale']);
 
+Route::get('/{locale?}/reset-password/{token}', [ResetPasswordController::class, 'edit'])->middleware(['guest', 'setLocale'])->name('password.reset');
+Route::post('/{locale?}/reset-password', [ResetPasswordController::class, 'update'])->middleware(['guest', 'setLocale']);

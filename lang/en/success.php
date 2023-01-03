@@ -6,4 +6,6 @@ return [
     'register' => 'Welcome, :name !',
     'update_infos' => 'Your changes were successfully saved!',
     'update_password' => 'Your new password has been saved.',
+    'reset_password' => 'Your password has been successfully reset!',
+
 ];

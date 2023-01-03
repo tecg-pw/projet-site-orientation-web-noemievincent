@@ -29,11 +29,15 @@ return [
         'tagline' => 'Nulla officia magna ullamco id irure aute aliqua dolore qui duis.',
         'login_link' => '<p class="text-sm font-light">Déjà un compte ? <a href="/fr/login" class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">Connectez-vous</a></p>',
     ],
-    'reset_password' => [
+    'forgot_password' => [
         'head_title' => 'Réinitialiser votre mot de passe',
         'title' => 'Mot de passe oublié ?',
         'tagline' => 'Veuillez saisir votre adresse email ci-dessous. Vous recevrez un lien pour réinitialiser votre mot de passe.',
         'back_to_login_link' => 'Retourner sur la page de connexion',
+    ],
+    'reset_password' => [
+        'head_title' => 'Réinitialiser votre mot de passe',
+        'title' => 'Réinitialiser votre mot de passe',
     ],
 
 ];

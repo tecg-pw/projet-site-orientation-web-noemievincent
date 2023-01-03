@@ -22,6 +22,7 @@ return [
     'buttons' => [
         'login' => 'Login',
         'register' => 'Create my account',
+        'forgot_password' => 'Send the reset email',
         'reset_password' => 'Reset my password',
         'edit_infos' => 'Save changes',
         'edit_password' => 'Update my password',

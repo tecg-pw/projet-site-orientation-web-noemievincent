@@ -22,7 +22,8 @@ return [
     'buttons' => [
         'login' => 'Me connecter',
         'register' => 'Créer mon compte',
-        'reset_password' => 'Réinitialiser mon mot de passe',
+        'forgot_password' => 'Envoyer le mail de réinitialisation',
+        'reset_password' => 'Changer mon mot de passe',
         'edit_infos' => 'Enregistrer les modifications',
         'edit_password' => 'Changer mon mot de passe',
         'post_question' => 'Poser ma question',

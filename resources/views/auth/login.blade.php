@@ -11,7 +11,7 @@
                     <input type="checkbox" id="remember" name="remember" value="1" class="accent-orange">
                     <label for="remember">{{__('forms.labels.remember_me')}}</label>
                 </div>
-                <a href="/{{app()->getLocale()}}/reset-password"
+                <a href="/{{app()->getLocale()}}/forgot-password"
                    class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('forms.links.reset_password')}}</a>
             </div>
             <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-between sm:gap-16 sm:items-center">
