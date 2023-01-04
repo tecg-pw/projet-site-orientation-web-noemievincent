@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->string('slug')->unique();
             $table->text('body');
             $table->boolean('is_solved')->default(false);
-            $table->timestamp('published_at');
+            $table->timestamp('published_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at');
             $table->softDeletes();

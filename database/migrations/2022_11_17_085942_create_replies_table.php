@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('replies', function (Blueprint $table) {
             $table->id();
             $table->text('body');
-            $table->timestamp('published_at');
+            $table->timestamp('published_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at');
             $table->softDeletes();

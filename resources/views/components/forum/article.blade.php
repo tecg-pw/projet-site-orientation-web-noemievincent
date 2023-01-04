@@ -1,7 +1,7 @@
 @props(['question', 'category'])
 <article aria-labelledby="{{$question->slug}}"
          class="relative bg-white rounded-2xl border border-blue/20 p-4 hover:bg-blue-card transitionable">
-    <a href="/{{app()->getLocale()}}/forum/{{$question->slug}}" class="full-link">{{$question->title}}</a>
+    <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}" class="full-link">{{$question->title}}</a>
     <div class="flex flex-col gap-3">
         <div class="flex gap-2.5 flex-col lg:flex-row lg:justify-between">
             <div class="flex items-center gap-2">
@@ -25,7 +25,7 @@
         </div>
         <div class="font-light text-sm flex justify-between sm:justify-start sm:gap-10">
             <a href="#">{{$category->name}}</a>
-            <p>{{$question->replies_count}} {{__('forum.reply.count')}}</p>
+            <p>{{$question->replies_count}} {{trans_choice('forum.reply.count', $question->replies_count)}}</p>
             <time
                 datetime="{{$question->published_at->translatedFormat('d-m-Y')}}">{{$question->published_at->translatedFormat('d/m/Y')}}</time>
         </div>

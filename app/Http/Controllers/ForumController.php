@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreQuestionRequest;
+use App\Models\Post;
 use App\Models\Question;
 use App\Models\QuestionCategoryTranslation;
 use App\Models\Reply;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
+use Str;
 
 class ForumController extends Controller
 {
@@ -32,24 +37,35 @@ class ForumController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return Application|RedirectResponse|Redirector
      */
-    public function store(Request $request)
+    public function store(string $locale, StoreQuestionRequest $request)
     {
-        //
+        $validatedData = $request->safe()->all();
+        $validatedData['slug'] = Str::slug($validatedData['title']);
+        $validatedData['user_id'] = auth()->id();
+
+        $question = Question::create($validatedData);
+
+        return redirect('/' . app()->getLocale() . '/forum/questions/' . $question->slug);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Application|Factory|View
+     */
+    public function create()
+    {
+        //filters
+        $categories = QuestionCategoryTranslation::select('name', 'category_id')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'category_id')->get();
+
+        $aside = AsideController::get();
+
+        return view('forum.create', compact('categories', 'aside'));
     }
 
     /**

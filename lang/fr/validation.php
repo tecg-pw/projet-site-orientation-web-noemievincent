@@ -177,6 +177,8 @@ return [
         'lastname' => 'Nom',
         'firstname' => 'Prénom',
         'bio' => 'Description',
+        'title' => 'Sujet de la question',
+        'body' => 'Message',
     ],
 
 ];

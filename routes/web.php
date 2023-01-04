@@ -12,6 +12,7 @@ use App\Http\Controllers\OffersController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\RegisterSessionController;
+use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\ResourcesController;
 use App\Http\Controllers\SearchController;
@@ -64,8 +65,13 @@ Route::get('/{locale?}/news/{article:slug}', [NewsController::class, 'show'])->m
 
 //ROUTE : Forum + Faq
 Route::get('/{locale?}/forum', [ForumController::class, 'index'])->middleware('setLocale');
-Route::get('/{locale?}/forum/{question:slug}', [ForumController::class, 'show'])->middleware('setLocale');
+Route::get('/{locale?}/forum/questions/{question:slug}', [ForumController::class, 'show'])->middleware('setLocale');
 Route::get('/{locale?}/faq', [FaqController::class, 'index'])->middleware('setLocale');
+
+Route::get('/{locale?}/forum/create', [ForumController::class, 'create'])->middleware(['auth', 'setLocale']);
+Route::post('/{locale?}/forum/create', [ForumController::class, 'store'])->middleware(['auth', 'setLocale']);
+
+Route::post('/{locale?}/forum/questions/{question:slug}/reply', [ReplyController::class, 'store'])->middleware(['auth', 'setLocale']);
 
 //ROUTE : Jobs
 Route::get('/{locale?}/jobs/offers', [OffersController::class, 'index'])->middleware('setLocale');

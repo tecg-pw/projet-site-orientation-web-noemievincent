@@ -8,12 +8,15 @@
         },
         {
             "id": 3
+        },
+        {
+            "id": 4
         }
     ],
     "translations": [
         {
             "locale": "fr",
-            "name": "Inscription",
+            "name": "Générale",
             "category_id": 1
         },
         {
@@ -27,8 +30,13 @@
             "category_id": 3
         },
         {
-            "locale": "en",
+            "locale": "fr",
             "name": "Inscription",
+            "category_id": 4
+        },
+        {
+            "locale": "en",
+            "name": "General",
             "category_id": 1
         },
         {
@@ -40,6 +48,11 @@
             "locale": "en",
             "name": "Technical question",
             "category_id": 3
+        },
+        {
+            "locale": "en",
+            "name": "Inscription",
+            "category_id": 4
         }
     ]
 }

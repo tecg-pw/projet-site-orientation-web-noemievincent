@@ -14,9 +14,9 @@ return [
         'bio' => 'Description',
         'remember_me' => 'Remember me',
         'gender' => 'You are',
-        'subjects' => 'Subject of the question',
+        'title' => 'Subject of the question',
         'message' => 'Message',
-        'category' => 'Category of the question',
+        'category' => 'Category of the question :',
         'answer' => 'Your reply',
     ],
     'buttons' => [

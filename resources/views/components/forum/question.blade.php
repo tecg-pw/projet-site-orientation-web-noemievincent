@@ -34,7 +34,7 @@
                 </div>
             </div>
             @auth()
-                <a href="#reply"
+                <a href="{{Request::has('reply') ? '/' . app()->getLocale() . '/forum/questions/' . $question->slug : '?reply'}}"
                    class="flex items-center gap-4 uppercase text-orange hover:text-orange-dark transitionable">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
                          class="fill-orange h-full">
@@ -52,27 +52,37 @@
             {!! __('forum.single.guest_link') !!}
         @endguest
         @auth()
-            <form action="/forum/slug/reply" class="flex flex-col gap-4">
-                @csrf
-                <div class="flex flex-col gap-2">
-                    <label for="reply" class="text-lg">{{__('forms.labels.answer')}}</label>
-                    <textarea name="reply" id="reply" cols="30" rows="10"
-                              class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200"></textarea>
-                </div>
-                <div class="flex gap-8 items-center justify-end">
-                    <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
-                    <button type="submit"
-                            class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
-                             class="fill-white h-full">
-                            <path
-                                d="M17,9.5H7.41l1.3-1.29A1,1,0,0,0,7.29,6.79l-3,3a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l3,3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L7.41,11.5H17a1,1,0,0,1,1,1v4a1,1,0,0,0,2,0v-4A3,3,0,0,0,17,9.5Z"/>
-                        </svg>
-                        <span>{{__('forms.buttons.post_reply')}}</span>
-                    </button>
-                </div>
-            </form>
+            @if(Request::has('reply'))
+                <form action="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}/reply" method="post"
+                      class="flex flex-col gap-4">
+                    @csrf
+                    <div class="flex flex-col gap-2">
+                        <label for="body" class="text-lg text-blue-dark">
+                            @if ($errors->has('body'))
+                                <x-forms.error-label :label="'body'"/>
+                            @else
+                                {{__('forms.labels.answer')}}
+                            @endif
+                        </label>
+                        <textarea name="body" id="body" cols="30" rows="10"
+                                  class="@error('body') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">{{old('body')}}</textarea>
+                    </div>
+                    <div class="flex gap-8 items-center justify-end">
+                        <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}"
+                           class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
+                        <button type="submit"
+                                class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
+                                 class="fill-white h-full">
+                                <path
+                                    d="M17,9.5H7.41l1.3-1.29A1,1,0,0,0,7.29,6.79l-3,3a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l3,3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L7.41,11.5H17a1,1,0,0,1,1,1v4a1,1,0,0,0,2,0v-4A3,3,0,0,0,17,9.5Z"/>
+                            </svg>
+                            <span>{{__('forms.buttons.post_reply')}}</span>
+                        </button>
+                    </div>
+                </form>
+                <div class="bg-blue/50 h-px w-full"></div>
+            @endif
         @endauth
-        <div class="bg-blue/50 h-px w-full"></div>
     </div>
 </div>

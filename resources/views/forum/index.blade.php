@@ -13,7 +13,7 @@
                 @endguest
                 @auth()
                     <div class="flex flex-col gap-4 justify-between items-center sm:flex-row">
-                        <a href="/{{app()->getLocale()}}/forum?ask-a-question"
+                        <a href="/{{app()->getLocale()}}/forum/create"
                            class="flex self-start gap-2 uppercase bg-orange text-white py-3 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  class="fill-white">
@@ -22,42 +22,10 @@
                             </svg>
                             <span>{{__('forum.ask_question')}}</span>
                         </a>
-                        {!! __('forum.profile_link') !!}
+                        {!! __('forum.profile_link', ['slug' => auth()->user()->slug]) !!}
                     </div>
                 @endauth
             </div>
-            @auth()
-                <div class="flex flex-col gap-6">
-                    <form action="forum/create" class="flex flex-col gap-4">
-                        @csrf
-                        <div class="flex flex-col gap-2">
-                            <label for="subject" class="text-lg">{{__('forms.labels.subjects')}}</label>
-                            <input type="text" id="subject"
-                                   class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="reply" class="text-lg sr-only">{{__('forms.labels.message')}}</label>
-                            <textarea name="reply" id="reply" cols="30" rows="10"
-                                      class="pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200"></textarea>
-                        </div>
-                        <div class="flex gap-2">
-                            <label for="category" class="text-lg">{{__('forms.labels.category')}} :</label>
-                            <select name="category" id="category" class="rounded-lg px-4">
-                                @foreach($categories as $category)
-                                    <option value="{{$category->slug}}">{{$category->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="flex gap-14 items-center justify-end">
-                            <a href="#" class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
-                            <button type="submit"
-                                    class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">{{__('forms.buttons.post_question')}}
-                            </button>
-                        </div>
-                    </form>
-                    <div class="bg-blue/50 h-px w-full"></div>
-                </div>
-            @endauth
             <div class="flex flex-col gap-3">
                 <div class="lg:grid lg:grid-cols-3 lg:gap-x-11">
                     <div class="flex gap-6 items-center col-span-2">
