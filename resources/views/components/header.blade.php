@@ -25,7 +25,7 @@
 </h1>
 <header class="uppercase text-blue mb-20 h-full relative lg:mb-0">
     <input id="toggle" class="toggle absolute hidden" type="checkbox">
-    <div class="top-[24px] top-bar bg-blue-light w-full px-4 py-4 flex justify-between fixed z-50 lg:hidden">
+    <div class="top-bar bg-blue-light w-full px-4 py-4 flex justify-between fixed z-50 lg:hidden">
         <a href="/{{app()->getLocale()}}">
             <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
                  height="24" viewBox="0 0 130 35"

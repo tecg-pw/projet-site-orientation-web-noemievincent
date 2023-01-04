@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreQuestionRequest;
+use App\Http\Requests\QuestionRequest;
 use App\Models\Post;
 use App\Models\Question;
 use App\Models\QuestionCategoryTranslation;
@@ -42,9 +42,9 @@ class ForumController extends Controller
      * @param Request $request
      * @return Application|RedirectResponse|Redirector
      */
-    public function store(string $locale, StoreQuestionRequest $request)
+    public function store(string $locale, QuestionRequest $request)
     {
-        $validatedData = $request->safe()->all();
+        $validatedData = $request->validated();
         $validatedData['slug'] = Str::slug($validatedData['title']);
         $validatedData['user_id'] = auth()->id();
 
@@ -87,11 +87,15 @@ class ForumController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return Response
+     * @return Application|Factory|View
      */
-    public function edit($id)
+    public function edit(string $locale, Question $question)
     {
-        //
+        $categories = QuestionCategoryTranslation::select('name', 'category_id')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'category_id')->get();
+
+        $aside = AsideController::get();
+
+        return view('forum.edit', compact('question', 'categories', 'aside'));
     }
 
     /**
@@ -99,11 +103,17 @@ class ForumController extends Controller
      *
      * @param Request $request
      * @param int $id
-     * @return Response
+     * @return Application|Redirector|RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(string $locale, Question $question, QuestionRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+        $validatedData['slug'] = Str::slug($validatedData['title']);
+        $validatedData['user_id'] = auth()->id();
+
+        $question->update($validatedData);
+
+        return redirect('/' . app()->getLocale() . '/forum/questions/' . $question->slug);
     }
 
     /**

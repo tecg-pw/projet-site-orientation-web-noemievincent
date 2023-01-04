@@ -14,6 +14,10 @@ return [
         'head_title' => 'Poser une question',
         'title' => 'Poser une question',
     ],
+    'edit' => [
+        'head_title' => 'Modifier votre question',
+        'title' => 'Modifier votre question',
+    ],
     'single' => [
         'back_to_questions_link' => 'Retour aux questions',
         'more_replies' => 'Plus de réponses',

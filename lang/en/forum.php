@@ -14,6 +14,10 @@ return [
         'head_title' => 'Ask a question',
         'title' => 'Ask a question',
     ],
+    'edit' => [
+        'head_title' => 'Update your question',
+        'title' => 'Update your question',
+    ],
     'single' => [
         'back_to_questions_link' => 'Back to questions',
         'more_replies' => 'More answers',

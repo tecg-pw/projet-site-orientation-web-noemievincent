@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreReplyRequest;
+use App\Http\Requests\ReplyRequest;
 use App\Models\Question;
 use App\Models\Reply;
 use Illuminate\Contracts\Foundation\Application;
@@ -29,7 +29,7 @@ class ReplyController extends Controller
      * @param Request $request
      * @return Application|RedirectResponse|Redirector
      */
-    public function store(string $locale, Question $question, StoreReplyRequest $request)
+    public function store(string $locale, Question $question, ReplyRequest $request)
     {
         $validatedData = $request->validated();
         $validatedData['user_id'] = auth()->id();

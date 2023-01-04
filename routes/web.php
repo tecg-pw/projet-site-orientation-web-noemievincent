@@ -65,11 +65,16 @@ Route::get('/{locale?}/news/{article:slug}', [NewsController::class, 'show'])->m
 
 //ROUTE : Forum + Faq
 Route::get('/{locale?}/forum', [ForumController::class, 'index'])->middleware('setLocale');
-Route::get('/{locale?}/forum/questions/{question:slug}', [ForumController::class, 'show'])->middleware('setLocale');
-Route::get('/{locale?}/faq', [FaqController::class, 'index'])->middleware('setLocale');
 
 Route::get('/{locale?}/forum/create', [ForumController::class, 'create'])->middleware(['auth', 'setLocale']);
 Route::post('/{locale?}/forum/create', [ForumController::class, 'store'])->middleware(['auth', 'setLocale']);
+
+Route::get('/{locale?}/forum/questions/{question:slug}/edit', [ForumController::class, 'edit'])->middleware(['auth', 'setLocale']);
+Route::post('/{locale?}/forum/questions/{question:slug}/edit', [ForumController::class, 'update'])->middleware(['auth', 'setLocale']);
+
+Route::get('/{locale?}/forum/questions/{question:slug}', [ForumController::class, 'show'])->middleware('setLocale');
+Route::get('/{locale?}/faq', [FaqController::class, 'index'])->middleware('setLocale');
+
 
 Route::post('/{locale?}/forum/questions/{question:slug}/reply', [ReplyController::class, 'store'])->middleware(['auth', 'setLocale']);
 
