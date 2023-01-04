@@ -24,7 +24,7 @@
                         </svg>
                     </span>
                 </a>
-                <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}/delete">
+                <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}?confirm-delete">
                     <span class="sr-only">Supprimer la question</span>
                     <span>
                         <svg class="h-8 w-8 text-red-600 hover:text-red-700 transitionable" fill="none"

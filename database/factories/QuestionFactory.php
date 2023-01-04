@@ -27,7 +27,7 @@ class QuestionFactory extends Factory
 
         return [
             'title' => $title,
-            'slug' => Str::slug($title),
+            'slug' => Str::slug($title) . '_' . uuid_create(),
             'body' => '<p>' . fake()->paragraph(2) . '</p>',
             'is_solved' => fake()->boolean(),
             'published_at' => Carbon::now()->toDateTimeString(),

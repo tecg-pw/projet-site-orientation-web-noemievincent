@@ -23,7 +23,7 @@ class QuestionsSeeder extends Seeder
         foreach ($questions as $key => $value) {
             Question::factory()->create([
                 'title' => $value->title,
-                'slug' => Str::slug($value->title),
+                'slug' => Str::slug($value->title) . '_' . uuid_create(),
                 'body' => $value->body,
                 'is_solved' => $value->is_solved,
                 'published_at' => Carbon::parse($value->published_at)->toDateTimeString(),

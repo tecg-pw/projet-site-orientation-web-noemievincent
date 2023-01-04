@@ -72,6 +72,8 @@ Route::post('/{locale?}/forum/create', [ForumController::class, 'store'])->middl
 Route::get('/{locale?}/forum/questions/{question:slug}/edit', [ForumController::class, 'edit'])->middleware(['auth', 'setLocale']);
 Route::post('/{locale?}/forum/questions/{question:slug}/edit', [ForumController::class, 'update'])->middleware(['auth', 'setLocale']);
 
+Route::post('/{locale?}/forum/questions/{question:slug}/delete', [ForumController::class, 'destroy'])->middleware(['auth', 'setLocale']);
+
 Route::get('/{locale?}/forum/questions/{question:slug}', [ForumController::class, 'show'])->middleware('setLocale');
 Route::get('/{locale?}/faq', [FaqController::class, 'index'])->middleware('setLocale');
 

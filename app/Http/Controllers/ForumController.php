@@ -12,7 +12,6 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Str;
 
@@ -45,7 +44,7 @@ class ForumController extends Controller
     public function store(string $locale, QuestionRequest $request)
     {
         $validatedData = $request->validated();
-        $validatedData['slug'] = Str::slug($validatedData['title']);
+        $validatedData['slug'] = Str::slug($validatedData['title']) . '_' . uuid_create();
         $validatedData['user_id'] = auth()->id();
 
         $question = Question::create($validatedData);
@@ -107,8 +106,10 @@ class ForumController extends Controller
      */
     public function update(string $locale, Question $question, QuestionRequest $request)
     {
+        $uuid = explode('_', $question->slug)[1];
+
         $validatedData = $request->validated();
-        $validatedData['slug'] = Str::slug($validatedData['title']);
+        $validatedData['slug'] = Str::slug($validatedData['title']) . '_' . $uuid;
         $validatedData['user_id'] = auth()->id();
 
         $question->update($validatedData);
@@ -120,10 +121,11 @@ class ForumController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return Response
+     * @return Application|Redirector|RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(string $locale, Question $question)
     {
-        //
+        $question->delete();
+        return redirect('/' . app()->getLocale() . '/forum');
     }
 }
