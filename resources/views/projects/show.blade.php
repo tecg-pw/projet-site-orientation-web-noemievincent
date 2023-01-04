@@ -19,8 +19,8 @@
             <div class="flex flex-col-reverse justify-between gap-12 lg:gap-28 md:flex-row">
                 <div class="flex flex-col gap-6">
                     <div class="flex gap-3 md:flex-col">
-                        <img src="https://placehold.jp/230x230.png" alt="{{$student->fullname}}"
-                             class="rounded-full">
+                        <img src="https://placehold.jp/200x200.png" alt="{{$student->fullname}}"
+                             class="rounded-full" height="200" width="200">
                         <div>
                             <a href="/{{app()->getLocale()}}/alumnis/{{$student->slug}}"
                                class="text-xl font-semibold hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$student->fullname}}</a>

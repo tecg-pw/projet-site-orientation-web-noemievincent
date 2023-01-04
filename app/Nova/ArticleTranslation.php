@@ -5,8 +5,8 @@ namespace App\Nova;
 use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
@@ -68,8 +68,10 @@ class ArticleTranslation extends Resource
                 ->sortable()
                 ->hideFromIndex(),
 
-            Image::make('Photo', 'picture')
-                ->hideFromIndex(),
+            File::make('Photo', 'picture')
+                ->hideFromIndex()
+                ->disk('public')
+                ->path('/img/news'),
 
             Trix::make('Excerpt', 'excerpt'),
             Trix::make('Body', 'body'),

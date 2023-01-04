@@ -15,9 +15,8 @@
                 </a>
                 <div class="flex flex-col gap-3 justify-between lg:flex-row">
                     <div class="flex gap-6">
-                        <img src="https://placehold.jp/120x120.png" alt="{{$alumni->fullname}}" height="120"
-                             width="120"
-                             class="hidden rounded-full lg:block">
+                        <img src="/img/placeholders/person-180x180.png"
+                             alt="{{$alumni->fullname}}" class="hidden rounded-full lg:block">
                         <div class="flex flex-col gap-3">
                             <h2 id="{{$alumni->slug}}"
                                 class="single-h2">{{$alumni->fullname}}</h2>

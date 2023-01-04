@@ -15,9 +15,8 @@
                     <span>{{__('jobs.partners.single.back_to_partners_link')}}</span>
                 </a>
                 <div class="flex flex-col gap-6 sm:flex-row">
-                    <img src="https://placehold.jp/120x120.png" alt="nom" height="120"
-                         width="120"
-                         class="rounded-full" itemprop="logo">
+                    <img src="/img/placeholders/logo-160x160.png"
+                         alt="{{$company->name}}" class="rounded-full" itemprop="logo">
                     <div class="flex flex-col gap-3">
                         <h2 id="{{$company->slug}}"
                             class="font-display font-bold text-blue text-4xl tracking-wider uppercase"

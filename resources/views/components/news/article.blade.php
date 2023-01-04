@@ -14,10 +14,10 @@
             </div>
         </div>
         <div
-            class="relative before:overlay before:bg-blue/40 before:rounded-2xl before:transitionable group-hover:before:bg-blue/60">
-            <img src="https://placehold.jp/424x290.png" height="290" width="424"
+            class="relative w-full h-full before:overlay before:bg-blue/50 before:rounded-2xl before:transitionable group-hover:before:bg-blue/70">
+            <img src="{{$new->picture ? '/' . $new->picture : '/img/placeholders/news-384x262.png'}}"
                  alt="{{__('news.read_new', ['title' => $new->title])}}"
-                 class="object-cover w-full rounded-2xl">
+                 class="w-full h-full rounded-2xl">
         </div>
     </div>
 </article>

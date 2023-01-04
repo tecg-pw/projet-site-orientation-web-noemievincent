@@ -2,8 +2,8 @@
 <div class="flex flex-col gap-4" id="reply-{{$reply->id}}">
     <div class="flex justify-between items-center">
         <div class="flex gap-4">
-            <img src="https://placehold.jp/50x50.png" alt="{{$reply->user->fullname}}"
-                 class="rounded-full">
+            <img src="/img/placeholders/person-60x60.png"
+                 alt="{{$reply->user->fullname}}" class="rounded-full">
             <div>
                 <p class="text-lg font-medium"><a href="/{{app()->getLocale()}}/users/{{$reply->user->slug}}"
                                                   class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$reply->user->fullname}}</a>

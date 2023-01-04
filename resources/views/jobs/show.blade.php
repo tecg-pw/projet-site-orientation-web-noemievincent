@@ -19,8 +19,8 @@
             <div class="lg:grid lg:grid-cols-3 lg:gap-11">
                 <div class="flex flex-col gap-6 col-span-1">
                     <div class="flex gap-3">
-                        <img src="https://placehold.jp/80x80.png" alt="nom" height="80" width="80"
-                             class="rounded-full items-start">
+                        <img src="/img/placeholders/logo-80x80.png"
+                             alt="{{$company->name}}" class="rounded-full items-start">
                         <div>
                             <a href="/{{app()->getLocale()}}/jobs/partners/{{$company->slug}}"
                                class="text-xl underline underline-offset-2 hover:text-orange transition ease-in-out duration-200">

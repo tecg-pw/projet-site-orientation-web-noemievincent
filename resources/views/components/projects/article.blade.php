@@ -4,7 +4,7 @@
         $categories[] = $category->translations->where('locale', app()->getLocale())->first();
     }
 @endphp
-<article aria-labelledby="{{$project->slug}}" class="relative max-w-xs">
+<article aria-labelledby="{{$project->slug}}" class="relative max-w-md w-full">
     <div class="flex gap-2 absolute -top-2 left-5 z-10">
         @foreach($categories as $category)
             <p class="text-white text-sm rounded bg-blue px-2 py-1 hover:bg-orange-dark transitionable">{{$category->name}}</p>
@@ -16,7 +16,7 @@
         <div>
             <div
                 class="relative before:overlay before:bg-blue/5 before:rounded-t-2xl group-hover:before:bg-blue/30 before:transitionable">
-                <img src="https://placehold.jp/450x350.png" height="350" width="450"
+                <img src="/img/placeholders/project-448x348.png"
                      alt="{{__('projects.see_project', ['title' => $project->title])}}"
                      class="w-full object-cover rounded-t-2xl">
             </div>

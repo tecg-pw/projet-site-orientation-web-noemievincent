@@ -70,8 +70,16 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+//        public_path('storage') => storage_path('app/public'),
         public_path('img/home') => storage_path('app/public/img/home'),
+        public_path('img/placeholders') => storage_path('app/public/img/placeholders'),
+        public_path('img/projects') => storage_path('app/public/img/projects'),
+        public_path('img/news') => storage_path('app/public/img/news'),
+        public_path('img/people/students') => storage_path('app/public/img/people/students'),
+        public_path('img/people/teachers') => storage_path('app/public/img/people/teachers'),
+        public_path('img/people/users') => storage_path('app/public/img/people/users'),
+        public_path('img/partners/members') => storage_path('app/public/img/partners/members'),
+        public_path('img/partners/logos') => storage_path('app/public/img/partners/logos'),
     ],
 
 ];

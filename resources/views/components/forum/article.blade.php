@@ -15,10 +15,6 @@
                 <h3 id="{{$question->slug}}" class="text-xl">{{$question->title}}</h3>
             </div>
             <p>{{$question->user->fullname}}</p>
-            {{--            <div class="flex items-center gap-2 lg:flex-row-reverse">--}}
-            {{--                <img src="https://placehold.jp/25x25.png" alt="{{$question->user->fullname}}"--}}
-            {{--                     class="rounded-full hidden md:block">--}}
-            {{--            </div>--}}
         </div>
         <div class="font-light cut-text text-sm">
             {!! $question->body !!}

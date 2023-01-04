@@ -185,8 +185,8 @@
                 @guest
                     <div>
                         <a href="/{{app()->getLocale()}}/login" class="flex items-center gap-3">
-                            <img src="https://placehold.jp/30x30.png" alt="{{__('header.login_link')}}"
-                                 class="rounded-full h-full">
+                            <img src="/img/placeholders/person-30x30.png"
+                                 alt="{{__('header.login_link')}}" class="rounded-full h-full">
                             <span
                                 class="text-orange-dark hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">{{__('header.login_link')}}</span>
                         </a>
@@ -196,7 +196,7 @@
                     <div class="flex flex-col gap-2 lg:flex-row lg:items-center">
                         <a href="/{{app()->getLocale()}}/users/{{auth()->user()->slug}}"
                            class="flex items-center gap-3">
-                            <img src="https://placehold.jp/30x30.png" alt="{{auth()->user()->fullname}}"
+                            <img src="/img/placeholders/person-30x30.png" alt="{{auth()->user()->fullname}}"
                                  class="rounded-full">
                             <span dusk="logged-user-fullname"
                                   class="hover:text-orange transitionable">{{auth()->user()->fullname}}</span>

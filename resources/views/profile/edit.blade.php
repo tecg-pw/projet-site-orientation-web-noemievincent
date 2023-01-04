@@ -35,8 +35,8 @@
                                 </svg>
                             </label>
                             <input type="file" id="picture" name="picture" class="hidden">
-                            <img src="https://placehold.jp/160x160.png" alt="{{$user->name}}"
-                                 class="rounded-full">
+                            <img src="/img/placeholders/person-160x160.png"
+                                 alt="{{$user->name}}" class="rounded-full">
                         </div>
                         <div class="flex-1 flex flex-col justify-between gap-3">
                             <x-forms.firstname-field :firstname="$user->firstname"/>
