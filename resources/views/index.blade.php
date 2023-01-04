@@ -22,16 +22,11 @@
                 </div>
             </div>
             <picture>
-                <img
-                    sizes="(max-width: 3840px) 40vw, 1536px"
-                    srcset="/img/home/home,w_300.jpg 300w,
-                    /img/home/home,w_721.jpg 721w,
-                    /img/home/home,w_976.jpg 976w,
-                    /img/home/home,w_1273.jpg 1273w,
-                    /img/home/home,w_1393.jpg 1393w,
-                    /img/home/home,w_1536.jpg 1536w"
-                    src="/img/home/home,w_1536.jpg"
-                    alt="" class="hidden lg:block">
+                <source media="(max-width: 768px)" srcset="/img/home/home-300w.jpg">
+                <source media="(max-width: 1280px)" srcset="/img/home/home-1273w.jpg">
+                <source media="(max-width: 1400px)" srcset="/img/home/home-1393w.jpg">
+                <img src="/img/home/home-1536w.jpg"
+                     alt="" class="hidden lg:block">
             </picture>
         </div>
     </section>
