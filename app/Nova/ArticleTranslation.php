@@ -2,10 +2,11 @@
 
 namespace App\Nova;
 
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
@@ -68,8 +69,16 @@ class ArticleTranslation extends Resource
                 ->sortable()
                 ->hideFromIndex(),
 
-            File::make('Photo', 'picture')
+            AdvancedImage::make('Photo', 'picture')
                 ->hideFromIndex()
+                ->croppable()
+                ->resize(384)
+                ->storeAs(function (Request $request) {
+                    $name = sha1_file($request->file('picture'));
+                    $ext = $request->file('picture')->getClientOriginalExtension();
+
+                    return 'thumbnail-' . $name . '.' . $ext;
+                })
                 ->disk('public')
                 ->path('/img/news'),
 

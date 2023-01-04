@@ -2,10 +2,11 @@
 
 namespace App\Nova;
 
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
@@ -68,8 +69,16 @@ class ProjectTranslation extends Resource
 
             Trix::make('Body'),
 
-            Image::make('Photo principale', 'picture')
-                ->hideFromIndex(),
+            File::make('Photo', 'picture')
+                ->hideFromIndex()
+                ->storeAs(function (Request $request) {
+                    $name = sha1_file($request->file('picture'));
+                    $ext = $request->file('picture')->getClientOriginalExtension();
+
+                    return 'thumbnail-' . $name . '.' . $ext;
+                })
+                ->disk('public')
+                ->path('/img/news'),
 
             URL::make('Site web', 'website_link')
                 ->displayUsing(fn() => $this->website_link)
