@@ -27,7 +27,9 @@ return [
         'edit_infos' => 'Enregistrer les modifications',
         'edit_password' => 'Changer mon mot de passe',
         'post_question' => 'Poser ma question',
+        'update_question' => 'Modifier ma question',
         'post_reply' => 'Répondre',
+        'update_reply' => 'Modifier',
     ],
     'links' => [
         'logout' => 'Se déconnecter',

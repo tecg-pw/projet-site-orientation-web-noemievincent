@@ -56,7 +56,7 @@
                             <a href="/{{app()->getLocale()}}/forum"
                                class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
                             <button type="submit"
-                                    class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">{{__('forms.buttons.post_question')}}
+                                    class="flex gap-4 uppercase font-light bg-orange text-white py-2 pl-5 pr-7 rounded-lg hover:bg-orange-dark transitionable">{{__('forms.buttons.update_question')}}
                             </button>
                         </div>
                     </form>

@@ -12,10 +12,12 @@
                     <p class="text-sm">{{trans_choice('roles.' . $question->user->role, $question->user->genre)}}</p>
                 </div>
             </div>
-            <div class="flex gap-2">
-                <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}/edit">
-                    <span class="sr-only">Modifier la question</span>
-                    <span>
+            @auth()
+                @if(auth()->user()->id === $question->user->id)
+                    <div class="flex gap-2">
+                        <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}/edit">
+                            <span class="sr-only">Modifier la question</span>
+                            <span>
                         <svg class="h-8 w-8 text-orange hover:text-orange-dark transitionable" fill="none"
                              viewBox="0 0 24 24"
                              stroke="currentColor">
@@ -23,10 +25,10 @@
                                   d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
                         </svg>
                     </span>
-                </a>
-                <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}?confirm-delete">
-                    <span class="sr-only">Supprimer la question</span>
-                    <span>
+                        </a>
+                        <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}?confirm-delete=question">
+                            <span class="sr-only">Supprimer la question</span>
+                            <span>
                         <svg class="h-8 w-8 text-red-600 hover:text-red-700 transitionable" fill="none"
                              viewBox="0 0 24 24"
                              stroke="currentColor">
@@ -34,8 +36,10 @@
                                   d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
                         </svg>
                     </span>
-                </a>
-            </div>
+                        </a>
+                    </div>
+                @endif
+            @endauth
         </div>
         <div>
             {!! $question->body !!}

@@ -27,7 +27,9 @@ return [
         'edit_infos' => 'Save changes',
         'edit_password' => 'Update my password',
         'post_question' => 'Post question',
+        'update_question' => 'Update question',
         'post_reply' => 'Reply',
+        'update_reply' => 'Update',
     ],
     'links' => [
         'logout' => 'Logout',
