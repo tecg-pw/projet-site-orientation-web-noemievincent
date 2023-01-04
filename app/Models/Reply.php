@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\ReplyCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -16,7 +17,11 @@ class Reply extends Model
     protected $fillable = [
         'body', 'published_at', 'question_id', 'user_id'
     ];
-    
+
+    protected $dispatchesEvents = [
+        'created' => ReplyCreated::class,
+    ];
+
     public function question(): BelongsTo
     {
         return $this->belongsTo(Question::class);
