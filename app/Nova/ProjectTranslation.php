@@ -2,10 +2,10 @@
 
 namespace App\Nova;
 
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
@@ -69,8 +69,10 @@ class ProjectTranslation extends Resource
 
             Trix::make('Body'),
 
-            File::make('Photo', 'picture')
+            AdvancedImage::make('Photo', 'picture')
                 ->hideFromIndex()
+                ->croppable()
+                ->resize(384)
                 ->storeAs(function (Request $request) {
                     $name = sha1_file($request->file('picture'));
                     $ext = $request->file('picture')->getClientOriginalExtension();
@@ -78,7 +80,7 @@ class ProjectTranslation extends Resource
                     return 'thumbnail-' . $name . '.' . $ext;
                 })
                 ->disk('public')
-                ->path('/img/news'),
+                ->path('/img/projects'),
 
             URL::make('Site web', 'website_link')
                 ->displayUsing(fn() => $this->website_link)
