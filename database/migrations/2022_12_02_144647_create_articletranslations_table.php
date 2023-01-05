@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('slug');
             $table->string('picture')->nullable();
             $table->json('pictures')->nullable();
+            $table->json('srcset')->nullable();
             $table->text('excerpt');
             $table->text('body');
             $table->timestamp('published_at');

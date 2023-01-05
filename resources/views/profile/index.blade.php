@@ -9,7 +9,7 @@
         <section aria-labelledby="{{$user->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col justify-between items-start md:flex-row">
                 <div class="flex gap-8">
-                    <img src="/img/placeholders/person-160x160.png"
+                    <img src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}"
                          alt="{{$user->fullname}}" class="rounded-full">
                     <div class="mt-2">
                         <h2 id="{{$user->slug}}" class="text-2xl font-semibold">{{$user->fullname}}</h2>

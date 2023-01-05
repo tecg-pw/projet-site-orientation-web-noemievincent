@@ -21,6 +21,7 @@ return new class extends Migration {
             $table->string('slug');
             $table->string('email');
             $table->string('picture')->nullable();
+            $table->json('pictures')->nullable();
             $table->string('gender')->nullable();
             $table->text('bio')->nullable();
             $table->string('role');

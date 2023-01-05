@@ -196,7 +196,7 @@
                     <div class="flex flex-col gap-2 lg:flex-row lg:items-center">
                         <a href="/{{app()->getLocale()}}/users/{{auth()->user()->slug}}"
                            class="flex items-center gap-3">
-                            <img src="/img/placeholders/person-30x30.png" alt="{{auth()->user()->fullname}}"
+                            <img src="{{auth()->user()->pictures && auth()->user()->pictures['small'] ? '/' . auth()->user()->pictures['small'] : '/img/placeholders/person-30x30.png'}}" alt="{{auth()->user()->fullname}}"
                                  class="rounded-full">
                             <span dusk="logged-user-fullname"
                                   class="hover:text-orange transitionable">{{auth()->user()->fullname}}</span>

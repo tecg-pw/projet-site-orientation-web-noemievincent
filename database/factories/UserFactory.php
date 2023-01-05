@@ -32,6 +32,7 @@ class UserFactory extends Factory
             'password' => password_hash('change_this', PASSWORD_DEFAULT),
             'remember_token' => Str::random(10),
             'picture' => '',
+            'pictures' => json_encode(''),
             'bio' => '<p>' . fake()->paragraph(2) . '</p>',
             'gender' => fake()->randomElement(['', 'male', 'female']),
             'role' => 'user',

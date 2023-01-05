@@ -34,6 +34,7 @@ class ArticlesSeeder extends Seeder
                 'slug' => Str::slug($value['title']),
                 'picture' => $value['picture'],
                 'pictures' => $value['pictures'],
+                'srcset' => $value['srcset'],
                 'excerpt' => $value['excerpt'],
                 'body' => $value['body'],
                 'published_at' => Carbon::parse($value['published_at'])->toDateTimeString(),

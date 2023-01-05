@@ -15,7 +15,7 @@
                 </a>
                 <div class="flex flex-col gap-3 justify-between lg:flex-row">
                     <div class="flex gap-6">
-                        <img src="/img/placeholders/person-180x180.png"
+                        <img src="{{$alumni->pictures && $alumni->pictures['full'] ? '/' . $alumni->pictures['full'] : '/img/placeholders/person-180x180.png'}}"
                              alt="{{$alumni->fullname}}" class="hidden rounded-full lg:block">
                         <div class="flex flex-col gap-3">
                             <h2 id="{{$alumni->slug}}"
@@ -34,6 +34,26 @@
                                 </div>
                             </div>
                         </div>
+
+{{--                        <img src="{{$alumni->srcset && $alumni->srcset['full'] ? '/' . $alumni->srcset['full'] : '/img/placeholders/person-180x180.png'}}"--}}
+{{--                             alt="{{$alumni->fullname}}" class="hidden rounded-full lg:block">--}}
+{{--                        <div class="flex flex-col gap-3">--}}
+{{--                            <h2 id="{{$alumni->slug}}"--}}
+{{--                                class="single-h2">{{$alumni->fullname}}</h2>--}}
+{{--                            <div class="text-lg">--}}
+{{--                                <p>--}}
+{{--                                    {{trans_choice('roles.' . $alumni->role, $alumni->genre)}}--}}
+{{--                                    {{$alumni->start_year->format('Y')}}--}}
+{{--                                    {{$alumni->end_year != null ? ' - ' . $alumni->end_year->format('Y') : ''}}</p>--}}
+{{--                                <div class="flex flex-col lg:flex-row lg:gap-3">--}}
+{{--                                    <a href="mailto:{{$alumni->email}}"--}}
+{{--                                       class="hover:text-orange hover:underline hover:underline-offset-2 transition ease-in-out duration-200">{{$alumni->email}}</a>--}}
+{{--                                    <div class="bg-blue/50 h-max-content w-px"></div>--}}
+{{--                                    <a href="{{$alumni->website_link}}"--}}
+{{--                                       class="hover:text-orange hover:underline hover:underline-offset-2 transition ease-in-out duration-200">{{preg_replace('(https://|http://)', '',$alumni->website_link)}}</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                     <ul class="flex gap-4">
                         <li><a href="{{$alumni->github_link}}">

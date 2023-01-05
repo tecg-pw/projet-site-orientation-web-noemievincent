@@ -32,6 +32,7 @@ class TeachersSeeder extends Seeder
                 'slug' => Str::slug($value['firstname'] . '-' . $value['lastname']),
                 'email' => $value['email'],
                 'picture' => $value['picture'],
+                'pictures' => $value['pictures'],
                 'gender' => $value['gender'],
                 'bio' => $value['bio'],
                 'role' => $value['role'],

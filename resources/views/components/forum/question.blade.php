@@ -3,7 +3,7 @@
     <div class="flex flex-col gap-6">
         <div class="flex justify-between items-center">
             <div class="flex gap-4">
-                <img src="/img/placeholders/person-60x60.png"
+                <img src="{{$question->user->pictures && $question->user->pictures['medium'] ? '/' . $question->user->pictures['medium'] : '/img/placeholders/person-60x60.png'}}"
                      alt="{{$question->user->fullname}}" class="rounded-full">
                 <div>
                     <p class="text-lg font-medium"><a href="/{{app()->getLocale()}}/users/{{$question->user->slug}}"

@@ -15,7 +15,7 @@
                     <span>{{__('jobs.partners.single.back_to_partners_link')}}</span>
                 </a>
                 <div class="flex flex-col gap-6 sm:flex-row">
-                    <img src="/img/placeholders/logo-160x160.png"
+                    <img src="{{$company->pictures && $company->pictures['full'] ? '/' . $company->pictures['full'] : '/img/placeholders/logo-160x160.png'}}"
                          alt="{{$company->name}}" class="rounded-full" itemprop="logo">
                     <div class="flex flex-col gap-3">
                         <h2 id="{{$company->slug}}"

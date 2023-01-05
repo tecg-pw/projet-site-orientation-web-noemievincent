@@ -26,7 +26,8 @@ class ProjectTranslationFactory extends Factory
         return [
             'title' => $title,
             'slug' => Str::slug($title),
-            'thumbnail' => '',
+            'picture' => '',
+            'pictures' => json_encode(''),
             'body' => '<p>' . implode('</p><p>', fake()->paragraphs(12)) . '</p>',
             'website_link' => fake()->url(),
             'github_link' => fake()->url(),

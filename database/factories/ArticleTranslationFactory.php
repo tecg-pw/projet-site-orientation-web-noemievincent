@@ -28,6 +28,7 @@ class ArticleTranslationFactory extends Factory
             'slug' => Str::slug($title),
             'picture' => '',
             'pictures' => json_encode(''),
+            'srcset' => json_encode(''),
             'excerpt' => fake()->paragraph(),
             'body' => '<p>' . implode('</p><p>', fake()->paragraphs(12)) . '</p>',
             'published_at' => Carbon::now()->toDateTimeString(),

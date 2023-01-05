@@ -70,19 +70,57 @@ class ArticleTranslation extends Resource
                 ->sortable()
                 ->hideFromIndex(),
 
-            File::make('thumbnail')
+            File::make('picture')
                 ->store(function (Request $request, $model) {
-                    $ext = $request->thumbnail->getClientOriginalExtension();
-                    $thumbnail_name =  'thumbnail-' . sha1_file($request->thumbnail);
-                    $thumbnail_path = 'img/news/' . $thumbnail_name . '.' . $ext;
+                    $ext = $request->picture->getClientOriginalExtension();
+                    $name =  sha1_file($request->picture);
+                    $thumbnail_path = 'img/news/' . 'thumbnail-' .  $name . '.' . $ext;
 
-                    Image::make($request->thumbnail)->resize(384, null, function ($constraint) {
+                    Image::make($request->picture)->resize(384, null, function ($constraint) {
                         $constraint->aspectRatio();
                     })->save($thumbnail_path);
 
+
+                    $srcset_640_path = 'img/news/srcset/' . '640-' .  $name . '.' . $ext;
+                    $srcset_768_path = 'img/news/srcset/' . '768-' .  $name . '.' . $ext;
+                    $srcset_1024_path = 'img/news/srcset/' . '1024-' .  $name . '.' . $ext;
+                    $srcset_1520_path = 'img/news/srcset/' . '1520-' .  $name . '.' . $ext;
+                    $srcset_2560_path = 'img/news/srcset/' . '2560-' .  $name . '.' . $ext;
+
+                    Image::make($request->picture)->resize(640, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_640_path);
+
+                    Image::make($request->picture)->resize(768, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_768_path);
+
+                    Image::make($request->picture)->resize(1024, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_1024_path);
+
+                    Image::make($request->picture)->resize(1520, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_1520_path);
+
+                    Image::make($request->picture)->resize(2560, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_2560_path);
+
                     return [
-                        'thumbnail' => $thumbnail_path,
-                        'pictures' => ['thumbnail' => $thumbnail_path],
+                        'picture' => $thumbnail_path,
+                        'pictures' => [
+                            'thumbnail' => $thumbnail_path,
+                        ],
+                        'srcset' => [
+                            'thumbnail' => [
+                                '640' => $srcset_640_path,
+                                '768' => $srcset_768_path,
+                                '1024' => $srcset_1024_path,
+                                '1520' => $srcset_1520_path,
+                                '2560' => $srcset_2560_path,
+                            ],
+                        ],
                     ];
                 }),
 

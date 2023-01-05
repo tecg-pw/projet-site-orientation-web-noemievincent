@@ -2,10 +2,11 @@
 
 namespace App\Nova;
 
-use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
@@ -69,18 +70,21 @@ class ProjectTranslation extends Resource
 
             Trix::make('Body'),
 
-            AdvancedImage::make('Photo', 'thumbnail')
-                ->hideFromIndex()
-                ->croppable()
-                ->resize(448, 348)
-                ->storeAs(function (Request $request) {
-                    $name = sha1_file($request->file('thumbnail'));
-                    $ext = $request->file('thumbnail')->getClientOriginalExtension();
+            File::make('thumbnail')
+                ->store(function (Request $request, $model) {
+                    $ext = $request->thumbnail->getClientOriginalExtension();
+                    $thumbnail_name =  'thumbnail-' . sha1_file($request->thumbnail);
+                    $thumbnail_path = 'img/news/' . $thumbnail_name . '.' . $ext;
 
-                    return 'thumbnail-' . $name . '.' . $ext;
-                })
-                ->disk('public')
-                ->path('/img/projects'),
+                    Image::make($request->thumbnail)->resize(384, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($thumbnail_path);
+
+                    return [
+                        'thumbnail' => $thumbnail_path,
+                        'pictures' => ['thumbnail' => $thumbnail_path],
+                    ];
+                }),
 
             URL::make('Site web', 'website_link')
                 ->displayUsing(fn() => $this->website_link)

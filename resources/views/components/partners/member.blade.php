@@ -3,7 +3,7 @@
     class="w-full bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5">
     <div class="flex justify-between">
         <div class="flex flex-col gap-4">
-            <img src="/img/placeholders/person-160x160.png"
+            <img src="{{$member->pictures && $member->pictures['thumbnail'] ? '/' . $member->pictures['thumbnail'] : '/img/placeholders/person-160x160.png'}}"
                  alt="{{$member->fullname}}" class="rounded-full">
             <h3 class="cursor-pointer font-semibold text-xl">{{$member->fullname}}</h3>
         </div>

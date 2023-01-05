@@ -15,9 +15,20 @@
         </div>
         <div
             class="relative w-full h-full before:overlay before:bg-blue/50 before:rounded-2xl before:transitionable group-hover:before:bg-blue/70">
-            <img src="{{$new->pictures && $new->pictures['thumbnail'] ? '/' . $new->pictures['thumbnail'] : '/img/placeholders/news-384x262.png'}}"
-                 alt="{{__('news.read_new', ['title' => $new->title])}}"
-                 class="w-full h-full rounded-2xl">
+            @if($new->srcset && $new->srcset['thumbnail'])
+                <picture>
+                    @foreach($new->srcset['thumbnail'] as $size => $path)
+                        <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
+                    @endforeach
+                    <img
+                        src="{{$new->pictures && $new->pictures['thumbnail'] ? '/' . $new->pictures['thumbnail'] : '/img/placeholders/news-384x262.png'}}}}"
+                        alt="{{__('news.read_new', ['title' => $new->title])}}" class="w-full h-full rounded-2xl">
+                </picture>
+            @else
+                <img
+                    src="{{$new->pictures && $new->pictures['thumbnail'] ? '/' . $new->pictures['thumbnail'] : '/img/placeholders/news-384x262.png'}}"
+                    alt="{{__('news.read_new', ['title' => $new->title])}}" class="w-full h-full rounded-2xl">
+            @endif
         </div>
     </div>
 </article>

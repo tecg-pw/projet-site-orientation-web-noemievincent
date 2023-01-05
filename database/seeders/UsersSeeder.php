@@ -31,6 +31,7 @@ class UsersSeeder extends Seeder
                 'password' => password_hash('change_this', PASSWORD_DEFAULT),
                 'remember_token' => \Illuminate\Support\Str::random(10),
                 'picture' => $value->picture,
+                'pictures' => $value->pictures,
                 'bio' => $value->bio,
                 'gender' => $value->gender,
                 'role' => $value->role,

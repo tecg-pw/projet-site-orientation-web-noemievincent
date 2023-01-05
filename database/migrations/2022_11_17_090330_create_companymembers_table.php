@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('lastname');
             $table->string('fullname');
             $table->string('picture')->nullable();
+            $table->json('pictures')->nullable();
             $table->string('github_link')->nullable();
             $table->string('linkedin_link')->nullable();
             $table->timestamp('created_at')->useCurrent();

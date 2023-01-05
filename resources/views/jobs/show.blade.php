@@ -19,7 +19,7 @@
             <div class="lg:grid lg:grid-cols-3 lg:gap-11">
                 <div class="flex flex-col gap-6 col-span-1">
                     <div class="flex gap-3">
-                        <img src="/img/placeholders/logo-80x80.png"
+                        <img src="{{$company->pictures && $company->pictures['medium'] ? '/' . $company->pictures['medium'] : '/img/placeholders/logo-80x80.png'}}"
                              alt="{{$company->name}}" class="rounded-full items-start">
                         <div>
                             <a href="/{{app()->getLocale()}}/jobs/partners/{{$company->slug}}"

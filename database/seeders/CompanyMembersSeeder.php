@@ -24,6 +24,7 @@ class CompanyMembersSeeder extends Seeder
                 'lastname' => $value->lastname,
                 'fullname' => $value->firstname . ' ' . $value->lastname,
                 'picture' => $value->picture,
+                'pictures' => $value->pictures,
                 'github_link' => $value->github_link,
                 'linkedin_link' => $value->linkedin_link,
                 'company_id' => $value->company_id,

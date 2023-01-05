@@ -6,7 +6,7 @@
         <div>
             <div class="p-3 flex flex-col gap-3">
                 <div class="flex gap-3">
-                    <img src="/img/placeholders/logo-60x60.png" alt="" class="rounded-full" itemprop="logo">
+                    <img src="{{$partner->pictures && $partner->pictures['thumbnail'] ? '/' . $partner->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}" alt="" class="rounded-full" itemprop="logo">
                     <h3 id="{{$partner->slug}}" class="text-xl uppercase" itemprop="name">{{$partner->name}}</h3>
                 </div>
                 <div class="font-light flex flex-col text-sm" itemscope itemtype="https://schema.org/PostalAddress"

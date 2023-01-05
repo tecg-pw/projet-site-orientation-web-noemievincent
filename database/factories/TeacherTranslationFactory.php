@@ -30,6 +30,7 @@ class TeacherTranslationFactory extends Factory
             'slug' => Str::slug($firstname . '-' . $lastname),
             'email' => fake()->email(),
             'picture' => '',
+            'pictures' => json_encode(''),
             'bio' => '<p>' . fake()->paragraph(2) . '</p>',
             'gender' => fake()->randomElement(['male', 'female']),
             'role' => fake()->randomElement(['teacher', 'student_teacher']),

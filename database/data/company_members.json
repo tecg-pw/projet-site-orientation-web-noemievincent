@@ -3,6 +3,7 @@
         "firstname": "Olivier",
         "lastname": "Léonard",
         "picture": "",
+        "pictures": null,
         "github_link": "",
         "linkedin_link": "https://be.linkedin.com/in/olivier-leonard-lws-heusy",
         "company_id": 2
@@ -11,6 +12,7 @@
         "firstname": "Ludovic",
         "lastname": "Chavée",
         "picture": "",
+        "pictures": null,
         "github_link": "",
         "linkedin_link": "https://www.linkedin.com/in/ludovic-chavée-40008131",
         "company_id": 2
@@ -19,6 +21,7 @@
         "firstname": "Jonathan",
         "lastname": "Juhasz",
         "picture": "",
+        "pictures": null,
         "github_link": "",
         "linkedin_link": "https://www.linkedin.com/in/jonathanjuhasz",
         "company_id": 2
@@ -27,6 +30,7 @@
         "firstname": "Maïde",
         "lastname": "Akdede",
         "picture": "",
+        "pictures": null,
         "github_link": "",
         "linkedin_link": "https://www.linkedin.com/in/maïde-akdede-7491a4226",
         "company_id": 2

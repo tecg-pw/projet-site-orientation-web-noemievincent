@@ -8,7 +8,7 @@
             <div class="p-3 flex flex-col gap-3">
                 {{$slot}}
                 <div class="flex gap-3">
-                    <img src="/img/placeholders/logo-60x60.png" alt="{{$company->name}}" class="rounded-full">
+                    <img src="{{$company->pictures && $company->pictures['thumbnail'] ? '/' . $company->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}" alt="{{$company->name}}" class="rounded-full">
                     <div>
                         <p>{{$company->name}}</p>
                         <p class="font-light">{{$offer->location}}</p>

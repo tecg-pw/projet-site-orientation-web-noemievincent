@@ -2,7 +2,7 @@
 <div class="flex flex-col gap-4" id="reply-{{$reply->id}}">
     <div class="flex justify-between items-center">
         <div class="flex gap-4">
-            <img src="/img/placeholders/person-60x60.png"
+            <img src="{{$reply->user->pictures && $reply->user->pictures['medium'] ? '/' . $reply->user->pictures['medium'] : '/img/placeholders/person-60x60.png'}}"
                  alt="{{$reply->user->fullname}}" class="rounded-full">
             <div>
                 <p class="text-lg font-medium"><a href="/{{app()->getLocale()}}/users/{{$reply->user->slug}}"

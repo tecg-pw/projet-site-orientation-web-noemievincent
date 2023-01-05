@@ -17,7 +17,8 @@ return new class extends Migration {
             $table->string('locale');
             $table->string('name');
             $table->string('slug');
-            $table->string('logo');
+            $table->string('logo')->nullable();
+            $table->json('logos')->nullable();
             $table->string('streetAddress')->nullable();
             $table->string('postalCode')->nullable();
             $table->string('addressLocality')->nullable();

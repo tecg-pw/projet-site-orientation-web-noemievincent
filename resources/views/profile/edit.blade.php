@@ -35,7 +35,7 @@
                                 </svg>
                             </label>
                             <input type="file" id="picture" name="picture" class="hidden">
-                            <img src="/img/placeholders/person-160x160.png"
+                            <img src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}"
                                  alt="{{$user->name}}" class="rounded-full">
                         </div>
                         <div class="flex-1 flex flex-col justify-between gap-3">

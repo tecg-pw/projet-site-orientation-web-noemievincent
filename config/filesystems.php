@@ -75,6 +75,7 @@ return [
         public_path('img/placeholders') => storage_path('app/public/img/placeholders'),
         public_path('img/projects') => storage_path('app/public/img/projects'),
         public_path('img/news') => storage_path('app/public/img/news'),
+        public_path('img/news/srcset') => storage_path('app/public/img/news/srcset'),
         public_path('img/people/students') => storage_path('app/public/img/people/students'),
         public_path('img/people/teachers') => storage_path('app/public/img/people/teachers'),
         public_path('img/people/users') => storage_path('app/public/img/people/users'),
