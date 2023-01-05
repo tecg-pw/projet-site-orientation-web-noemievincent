@@ -15,8 +15,12 @@ class ArticleTranslation extends Model
 
     protected $dates = ['published_at'];
 
+    protected $casts = [
+        'pictures' => 'array'
+    ];
+
     protected $fillable = [
-        'locale', 'title', 'slug', 'picture', 'body', 'excerpt', 'article_id'
+        'locale', 'title', 'slug', 'picture', 'pictures', 'body', 'excerpt', 'article_id'
     ];
 
     public function article(): BelongsTo

@@ -69,13 +69,13 @@ class ProjectTranslation extends Resource
 
             Trix::make('Body'),
 
-            AdvancedImage::make('Photo', 'picture')
+            AdvancedImage::make('Photo', 'thumbnail')
                 ->hideFromIndex()
                 ->croppable()
-                ->resize(384)
+                ->resize(448, 348)
                 ->storeAs(function (Request $request) {
-                    $name = sha1_file($request->file('picture'));
-                    $ext = $request->file('picture')->getClientOriginalExtension();
+                    $name = sha1_file($request->file('thumbnail'));
+                    $ext = $request->file('thumbnail')->getClientOriginalExtension();
 
                     return 'thumbnail-' . $name . '.' . $ext;
                 })

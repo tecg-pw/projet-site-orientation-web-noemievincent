@@ -2,11 +2,12 @@
 
 namespace App\Nova;
 
-use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
@@ -69,18 +70,21 @@ class ArticleTranslation extends Resource
                 ->sortable()
                 ->hideFromIndex(),
 
-            AdvancedImage::make('Photo', 'picture')
-                ->hideFromIndex()
-                ->croppable()
-                ->resize(384)
-                ->storeAs(function (Request $request) {
-                    $name = sha1_file($request->file('picture'));
-                    $ext = $request->file('picture')->getClientOriginalExtension();
+            File::make('thumbnail')
+                ->store(function (Request $request, $model) {
+                    $ext = $request->thumbnail->getClientOriginalExtension();
+                    $thumbnail_name =  'thumbnail-' . sha1_file($request->thumbnail);
+                    $thumbnail_path = 'img/news/' . $thumbnail_name . '.' . $ext;
 
-                    return 'thumbnail-' . $name . '.' . $ext;
-                })
-                ->disk('public')
-                ->path('/img/news'),
+                    Image::make($request->thumbnail)->resize(384, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($thumbnail_path);
+
+                    return [
+                        'thumbnail' => $thumbnail_path,
+                        'pictures' => ['thumbnail' => $thumbnail_path],
+                    ];
+                }),
 
             Trix::make('Excerpt', 'excerpt'),
             Trix::make('Body', 'body'),

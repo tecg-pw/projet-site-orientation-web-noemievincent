@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Events\ReplyCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,7 +18,7 @@ class Reply extends Model
     ];
 
     protected $dispatchesEvents = [
-        'created' => ReplyCreated::class,
+//        'created' => ReplyCreated::class,
     ];
 
     public function question(): BelongsTo

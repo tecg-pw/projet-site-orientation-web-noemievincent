@@ -32,7 +32,7 @@ class ProjectsSeeder extends Seeder
             ProjectTranslation::factory()->create([
                 'title' => $value['title'],
                 'slug' => Str::slug($value['title']),
-                'picture' => $value['picture'],
+                'thumbnail' => $value['thumbnail'],
                 'body' => $value['body'],
                 'website_link' => $value['website_link'],
                 'github_link' => $value['github_link'],

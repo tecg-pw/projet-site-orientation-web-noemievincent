@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('locale');
             $table->string('title');
             $table->string('slug');
-            $table->string('picture');
+            $table->string('thumbnail');
             $table->text('body');
             $table->string('website_link')->nullable();
             $table->string('github_link')->nullable();

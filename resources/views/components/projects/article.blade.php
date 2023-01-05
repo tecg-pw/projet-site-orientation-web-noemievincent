@@ -16,7 +16,7 @@
         <div>
             <div
                 class="relative before:overlay before:bg-blue/5 before:rounded-t-2xl group-hover:before:bg-blue/30 before:transitionable">
-                <img src="{{$project->picture ? '/' . $project->picture : '/img/placeholders/project-448x348.png'}}"
+                <img src="{{$project->thumbnail ? '/' . $project->thumbnail : '/img/placeholders/project-448x348.png'}}"
                      alt="{{__('projects.see_project', ['title' => $project->title])}}"
                      class="w-full object-cover rounded-t-2xl">
             </div>

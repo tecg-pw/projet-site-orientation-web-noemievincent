@@ -15,7 +15,7 @@
         </div>
         <div
             class="relative w-full h-full before:overlay before:bg-blue/50 before:rounded-2xl before:transitionable group-hover:before:bg-blue/70">
-            <img src="{{$new->picture ? '/' . $new->picture : '/img/placeholders/news-384x262.png'}}"
+            <img src="{{$new->pictures && $new->pictures['thumbnail'] ? '/' . $new->pictures['thumbnail'] : '/img/placeholders/news-384x262.png'}}"
                  alt="{{__('news.read_new', ['title' => $new->title])}}"
                  class="w-full h-full rounded-2xl">
         </div>
