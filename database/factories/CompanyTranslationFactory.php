@@ -27,6 +27,7 @@ class CompanyTranslationFactory extends Factory
             'slug' => Str::slug($name),
             'logo' => '',
             'logos' => json_encode(''),
+            'srcset' => json_encode(''),
             'description' => '<p>' . implode('</p><p>', fake()->paragraphs(12)) . '</p>',
             'website_link' => fake()->url(),
             'streetAddress' => fake()->streetAddress(),

@@ -33,6 +33,7 @@ class TeachersSeeder extends Seeder
                 'email' => $value['email'],
                 'picture' => $value['picture'],
                 'pictures' => $value['pictures'],
+                'srcset' => $value['srcset'],
                 'gender' => $value['gender'],
                 'bio' => $value['bio'],
                 'role' => $value['role'],

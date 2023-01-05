@@ -14,10 +14,11 @@ class CompanyTranslation extends Model
     protected $table = 'companytranslations';
 
     protected $casts = [
-        'pictures' => 'array'
+        'logos' => 'array',
+        'srcset' => 'array'
     ];
 
-    protected $fillable = ['locale', 'name', 'slug', 'logo', 'logos', 'streetAddress', 'postalCode', 'addressLocality', 'website_link', 'description', 'company_id'];
+    protected $fillable = ['locale', 'name', 'slug', 'logo', 'logos', 'srcset', 'streetAddress', 'postalCode', 'addressLocality', 'website_link', 'description', 'company_id'];
 
     public function company(): BelongsTo
     {

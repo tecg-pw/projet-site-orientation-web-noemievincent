@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('slug');
             $table->string('logo')->nullable();
             $table->json('logos')->nullable();
+            $table->json('srcset')->nullable();
             $table->string('streetAddress')->nullable();
             $table->string('postalCode')->nullable();
             $table->string('addressLocality')->nullable();

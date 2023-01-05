@@ -35,8 +35,16 @@
                                 </svg>
                             </label>
                             <input type="file" id="picture" name="picture" class="hidden">
-                            <img src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}"
-                                 alt="{{$user->name}}" class="rounded-full">
+                            <picture>
+                                @if($user->srcset && $user->srcset['full'])
+                                    @foreach($user->srcset['full'] as $size => $path)
+                                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                                    @endforeach
+                                @endif
+                                <img
+                                    src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}"
+                                    alt="{{$user->name}}" class="rounded-full">
+                            </picture>
                         </div>
                         <div class="flex-1 flex flex-col justify-between gap-3">
                             <x-forms.firstname-field :firstname="$user->firstname"/>

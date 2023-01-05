@@ -30,6 +30,7 @@ class CompaniesSeeder extends Seeder
                 'slug' => Str::slug($value['name']),
                 'logo' => $value['logo'],
                 'logos' => $value['logos'],
+                'srcset' => $value['srcset'],
                 'description' => $value['description'],
                 'website_link' => $value['website_link'],
                 'streetAddress' => $value['streetAddress'],

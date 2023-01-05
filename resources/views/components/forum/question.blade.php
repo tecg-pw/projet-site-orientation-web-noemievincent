@@ -3,8 +3,16 @@
     <div class="flex flex-col gap-6">
         <div class="flex justify-between items-center">
             <div class="flex gap-4">
-                <img src="{{$question->user->pictures && $question->user->pictures['medium'] ? '/' . $question->user->pictures['medium'] : '/img/placeholders/person-60x60.png'}}"
-                     alt="{{$question->user->fullname}}" class="rounded-full">
+                <picture>
+                    @if($question->user->srcset && $question->user->srcset['medium'])
+                        @foreach($question->user->srcset['medium'] as $size => $path)
+                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                        @endforeach
+                    @endif
+                    <img
+                        src="{{$question->user->pictures && $question->user->pictures['medium'] ? '/' . $question->user->pictures['medium'] : '/img/placeholders/person-60x60.png'}}"
+                        alt="{{$question->user->fullname}}" class="rounded-full">
+                </picture>
                 <div>
                     <p class="text-lg font-medium"><a href="/{{app()->getLocale()}}/users/{{$question->user->slug}}"
                                                       class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$question->user->fullname}}</a>

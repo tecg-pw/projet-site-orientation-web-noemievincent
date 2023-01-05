@@ -15,20 +15,16 @@
         </div>
         <div
             class="relative w-full h-full before:overlay before:bg-blue/50 before:rounded-2xl before:transitionable group-hover:before:bg-blue/70">
-            @if($new->srcset && $new->srcset['thumbnail'])
-                <picture>
+            <picture>
+                @if($new->srcset && $new->srcset['thumbnail'])
                     @foreach($new->srcset['thumbnail'] as $size => $path)
-                        <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
+                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
                     @endforeach
-                    <img
-                        src="{{$new->pictures && $new->pictures['thumbnail'] ? '/' . $new->pictures['thumbnail'] : '/img/placeholders/news-384x262.png'}}}}"
-                        alt="{{__('news.read_new', ['title' => $new->title])}}" class="w-full h-full rounded-2xl">
-                </picture>
-            @else
-                <img
-                    src="{{$new->pictures && $new->pictures['thumbnail'] ? '/' . $new->pictures['thumbnail'] : '/img/placeholders/news-384x262.png'}}"
-                    alt="{{__('news.read_new', ['title' => $new->title])}}" class="w-full h-full rounded-2xl">
-            @endif
+                @endif
+            </picture>
+            <img
+                src="{{$new->pictures && $new->pictures['thumbnail'] ? '/' . $new->pictures['thumbnail'] : '/img/placeholders/news-384x262.png'}}"
+                alt="{{__('news.read_new', ['title' => $new->title])}}" class="w-full h-full rounded-2xl">
         </div>
     </div>
 </article>

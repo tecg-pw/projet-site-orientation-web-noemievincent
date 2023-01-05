@@ -16,11 +16,12 @@ class ProjectTranslation extends Model
     protected $dates = ['published_at'];
 
     protected $casts = [
-        'pictures' => 'array'
+        'pictures' => 'array',
+        'srcset' => 'array'
     ];
 
     protected $fillable = [
-        'locale', 'title', 'slug', 'picture', 'pictures', 'body', 'published_at', 'website_link', 'github_link', 'gallery', 'project_id'
+        'locale', 'title', 'slug', 'picture', 'pictures', 'srcset', 'body', 'published_at', 'website_link', 'github_link', 'gallery', 'project_id'
     ];
 
     public function project(): BelongsTo

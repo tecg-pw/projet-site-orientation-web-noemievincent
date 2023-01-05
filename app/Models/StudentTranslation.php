@@ -16,11 +16,12 @@ class StudentTranslation extends Model
     protected $dates = ['start_year', 'end_year'];
 
     protected $casts = [
-        'pictures' => 'array'
+        'pictures' => 'array',
+        'srcset' => 'array'
     ];
 
     protected $fillable = [
-        'locale', 'firstname', 'lastname', 'fullname', 'slug', 'email', 'picture', 'pictures', 'bio', 'role', 'genre', 'github_link', 'linkedin_link', 'instagram_link', 'website_link', 'start_year', 'end_year', 'student_id'
+        'locale', 'firstname', 'lastname', 'fullname', 'slug', 'email', 'picture', 'pictures', 'srcset', 'bio', 'role', 'genre', 'github_link', 'linkedin_link', 'instagram_link', 'website_link', 'start_year', 'end_year', 'student_id'
     ];
 
     public function student(): BelongsTo

@@ -8,7 +8,14 @@
             <div class="p-3 flex flex-col gap-3">
                 {{$slot}}
                 <div class="flex gap-3">
-                    <img src="{{$company->pictures && $company->pictures['thumbnail'] ? '/' . $company->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}" alt="{{$company->name}}" class="rounded-full">
+                    <picture>
+                        @if($company->srcset && $company->srcset['thumbnail'])
+                            @foreach($company->srcset['thumbnail'] as $size => $path)
+                                <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                            @endforeach
+                        @endif
+                            <img src="{{$company->pictures && $company->pictures['thumbnail'] ? '/' . $company->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}" alt="{{$company->name}}" class="rounded-full">
+                    </picture>
                     <div>
                         <p>{{$company->name}}</p>
                         <p class="font-light">{{$offer->location}}</p>

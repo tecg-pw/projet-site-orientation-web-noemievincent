@@ -15,8 +15,16 @@
                     <span>{{__('jobs.partners.single.back_to_partners_link')}}</span>
                 </a>
                 <div class="flex flex-col gap-6 sm:flex-row">
-                    <img src="{{$company->pictures && $company->pictures['full'] ? '/' . $company->pictures['full'] : '/img/placeholders/logo-160x160.png'}}"
-                         alt="{{$company->name}}" class="rounded-full" itemprop="logo">
+                    <picture>
+                        @if($company->srcset && $company->srcset['full'])
+                            @foreach($company->srcset['full'] as $size => $path)
+                                <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                            @endforeach
+                        @endif
+                        <img
+                            src="{{$company->pictures && $company->pictures['full'] ? '/' . $company->pictures['full'] : '/img/placeholders/logo-160x160.png'}}"
+                            alt="{{$company->name}}" class="rounded-full" itemprop="logo">
+                    </picture>
                     <div class="flex flex-col gap-3">
                         <h2 id="{{$company->slug}}"
                             class="font-display font-bold text-blue text-4xl tracking-wider uppercase"

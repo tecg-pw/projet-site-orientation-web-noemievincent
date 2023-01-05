@@ -2,10 +2,11 @@
 
 namespace App\Nova;
 
-use Illuminate\Validation\Rules;
+use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Email;
-use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Select;
@@ -50,45 +51,153 @@ class User extends Resource
         return [
             ID::make()->hide(),
 
-            Gravatar::make()->maxWidth(50),
+            Avatar::make('Photo', 'picture')
+                ->store(function (Request $request, $model) {
+                    $ext = $request->picture->getClientOriginalExtension();
+                    $name =  sha1_file($request->picture);
+
+                    $full_path = 'img/people/users/' . 'full-' .  $name . '.' . $ext;
+                    $full = Image::make($request->picture)->resize(160, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($full_path);
+
+                    $srcset_full_640_path = 'img/people/users/srcset/' . 'full-640-' .  $name . '.' . $ext;
+                    $srcset_full_768_path = 'img/people/users/srcset/' . 'full-768-' .  $name . '.' . $ext;
+                    $srcset_full_1024_path = 'img/people/users/srcset/' . 'full-1024-' .  $name . '.' . $ext;
+                    $srcset_full_1520_path = 'img/people/users/srcset/' . 'full-1520-' .  $name . '.' . $ext;
+                    $srcset_full_2560_path = 'img/people/users/srcset/' . 'full-2560-' .  $name . '.' . $ext;
+
+                    Image::make($full)->resize($full->width() / 1.02, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_full_640_path);
+                    Image::make($full)->resize($full->width() / 1.8, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_full_768_path);
+                    Image::make($full)->resize($full->width() / 2, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_full_1024_path);
+                    Image::make($full)->resize($full->width() / 1.4, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_full_1520_path);
+                    Image::make($full)->resize($full->width(), null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_full_2560_path);
+
+                    $medium_path = 'img/people/users/' . 'medium-' .  $name . '.' . $ext;
+                    $medium = Image::make($request->picture)->resize(60, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($medium_path);
+
+                    $srcset_medium_640_path = 'img/people/users/srcset/' . 'medium-640-' .  $name . '.' . $ext;
+                    $srcset_medium_768_path = 'img/people/users/srcset/' . 'medium-768-' .  $name . '.' . $ext;
+                    $srcset_medium_1024_path = 'img/people/users/srcset/' . 'medium-1024-' .  $name . '.' . $ext;
+                    $srcset_medium_1520_path = 'img/people/users/srcset/' . 'medium-1520-' .  $name . '.' . $ext;
+                    $srcset_medium_2560_path = 'img/people/users/srcset/' . 'medium-2560-' .  $name . '.' . $ext;
+
+                    Image::make($medium)->resize($medium->width() / 1.02, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_medium_640_path);
+                    Image::make($medium)->resize($medium->width() / 1.8, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_medium_768_path);
+                    Image::make($medium)->resize($medium->width() / 2, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_medium_1024_path);
+                    Image::make($medium)->resize($medium->width() / 1.4, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_medium_1520_path);
+                    Image::make($medium)->resize($medium->width(), null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_medium_2560_path);
+
+                    $small_path = 'img/people/users/' . 'small-' .  $name . '.' . $ext;
+                    $small = Image::make($request->picture)->resize(30, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($small_path);
+
+                    $srcset_small_640_path = 'img/people/users/srcset/' . 'small-640-' .  $name . '.' . $ext;
+                    $srcset_small_768_path = 'img/people/users/srcset/' . 'small-768-' .  $name . '.' . $ext;
+                    $srcset_small_1024_path = 'img/people/users/srcset/' . 'small-1024-' .  $name . '.' . $ext;
+                    $srcset_small_1520_path = 'img/people/users/srcset/' . 'small-1520-' .  $name . '.' . $ext;
+                    $srcset_small_2560_path = 'img/people/users/srcset/' . 'small-2560-' .  $name . '.' . $ext;
+
+                    Image::make($small)->resize($small->width() / 1.02, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_small_640_path);
+                    Image::make($small)->resize($small->width() / 1.8, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_small_768_path);
+                    Image::make($small)->resize($small->width() / 2, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_small_1024_path);
+                    Image::make($small)->resize($small->width() / 1.4, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_small_1520_path);
+                    Image::make($small)->resize($small->width(), null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($srcset_small_2560_path);
+
+                    return [
+                        'picture' => $full_path,
+                        'pictures' => [
+                            'full' => $full_path,
+                            'medium' => $medium_path,
+                            'small' => $small_path,
+                        ],
+                        'srcset' => [
+                            'full' => [
+                                '640' => $srcset_full_640_path,
+                                '768' => $srcset_full_768_path,
+                                '1024' => $srcset_full_1024_path,
+                                '1520' => $srcset_full_1520_path,
+                                '2560' => $srcset_full_2560_path,
+                            ],
+                            'medium' => [
+                                '640' => $srcset_medium_640_path,
+                                '768' => $srcset_medium_768_path,
+                                '1024' => $srcset_medium_1024_path,
+                                '1520' => $srcset_medium_1520_path,
+                                '2560' => $srcset_medium_2560_path,
+                            ],
+                            'small' => [
+                                '640' => $srcset_small_640_path,
+                                '768' => $srcset_small_768_path,
+                                '1024' => $srcset_small_1024_path,
+                                '1520' => $srcset_small_1520_path,
+                                '2560' => $srcset_small_2560_path,
+                            ],
+                        ],
+                    ];
+                }),
 
             Text::make('Nom', 'fullname')
                 ->sortable()
-                ->hideFromDetail()
-                ->rules('required', 'max:255'),
+                ->hideFromDetail(),
 
             Text::make('Prénom', 'firstname')
                 ->onlyOnForms()
-                ->sortable()
-                ->rules('required', 'max:255'),
+                ->sortable(),
 
             Text::make('Nom de famille', 'lastname')
                 ->onlyOnForms()
-                ->sortable()
-                ->rules('required', 'max:255'),
+                ->sortable(),
 
             Slug::make('Slug')
                 ->from('fullname')
-                ->sortable()
-                ->rules('required', 'unique'),
+                ->sortable(),
 
             Email::make('Email')
-                ->sortable()
-                ->rules('required', 'unique', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+                ->sortable(),
 
             Password::make('Mot de passe', 'password')
-                ->onlyOnForms()
-                ->creationRules('required', Rules\Password::defaults())
-                ->updateRules('nullable', Rules\Password::defaults()),
+                ->onlyOnForms(),
 
             Boolean::make('Admin', 'is_admin'),
 
             Trix::make('Bio')
                 ->hideFromIndex(),
 
-            Select::make('Genre')->options([
+            Select::make('Genre', 'gender')->options([
                 'male' => 'Homme',
                 'female' => 'Femme',
                 'prefer-not-to-say' => 'Ne préfère pas le préciser'

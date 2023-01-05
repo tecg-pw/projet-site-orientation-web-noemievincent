@@ -16,9 +16,17 @@
         <div>
             <div
                 class="relative before:overlay before:bg-blue/5 before:rounded-t-2xl group-hover:before:bg-blue/30 before:transitionable">
-                <img src="{{$project->thumbnail ? '/' . $project->thumbnail : '/img/placeholders/project-448x348.png'}}"
-                     alt="{{__('projects.see_project', ['title' => $project->title])}}"
-                     class="w-full object-cover rounded-t-2xl">
+                <picture>
+                    @if($project->srcset && $project->srcset['thumbnail'])
+                        @foreach($project->srcset['thumbnail'] as $size => $path)
+                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                        @endforeach
+                    @endif
+                    <img
+                        src="{{$project->thumbnail ? '/' . $project->thumbnail : '/img/placeholders/project-448x348.png'}}"
+                        alt="{{__('projects.see_project', ['title' => $project->title])}}"
+                        class="w-full object-cover rounded-t-2xl">
+                </picture>
             </div>
             <div class="p-4 flex flex-col gap-4">
                 <h3 id="{{$project->slug}}" class="uppercase text-2xl">{{$project->title}}</h3>

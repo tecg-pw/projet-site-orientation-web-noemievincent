@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('slug');
             $table->string('picture')->nullable();
             $table->json('pictures')->nullable();
+            $table->json('srcset')->nullable();
             $table->text('body');
             $table->string('website_link')->nullable();
             $table->string('github_link')->nullable();

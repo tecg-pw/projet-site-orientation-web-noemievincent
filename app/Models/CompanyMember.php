@@ -14,10 +14,11 @@ class CompanyMember extends Model
     protected $table = 'companymembers';
 
     protected $casts = [
-        'pictures' => 'array'
+        'pictures' => 'array',
+        'srcset' => 'array'
     ];
 
-    protected $fillable = ['firstname', 'lastname', 'fullname', 'picture', 'pictures', 'github_link', 'linkedin_link', 'company_id'];
+    protected $fillable = ['firstname', 'lastname', 'fullname', 'picture', 'pictures', 'srcset', 'github_link', 'linkedin_link', 'company_id'];
 
     public function company(): BelongsTo
     {

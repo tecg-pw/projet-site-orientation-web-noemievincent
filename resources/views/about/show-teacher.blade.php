@@ -15,8 +15,15 @@
                 </a>
                 <div class="flex flex-col gap-3 justify-between lg:flex-row">
                     <div class="flex gap-6">
+                        <picture>
+                            @if($teacher->srcset && $teacher->srcset['full'])
+                                @foreach($teacher->srcset['full'] as $size => $path)
+                                    <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                                @endforeach
+                            @endif
                         <img src="{{$teacher->pictures && $teacher->pictures['full'] ? '/' . $teacher->pictures['full'] : '/img/placeholders/person-180x180.png'}}"
                              alt="{{$teacher->fullname}}" class="hidden rounded-full lg:block">
+                        </picture>
                         <div class="flex flex-col gap-3">
                             <h2 id="{{$teacher->fullname}}"
                                 class="single-h2">{{$teacher->fullname}}</h2>

@@ -3,8 +3,16 @@
     class="w-full xl:max-w-sm bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5">
     <div class="flex justify-between md:flex-col md:gap-2 lg:flex-row">
         <div class="flex flex-col gap-4">
-            <img src="{{$teacher->pictures && $teacher->pictures['thumbnail'] ? '/' . $teacher->pictures['thumbnail'] : '/img/placeholders/person-160x160.png'}}"
-                 alt="{{$teacher->fullname}}" class="rounded-full">
+            <picture>
+                @if($teacher->srcset && $teacher->srcset['thumbnail'])
+                    @foreach($teacher->srcset['thumbnail'] as $size => $path)
+                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                    @endforeach
+                @endif
+                <img
+                    src="{{$teacher->pictures && $teacher->pictures['thumbnail'] ? '/' . $teacher->pictures['thumbnail'] : '/img/placeholders/person-160x160.png'}}"
+                    alt="{{$teacher->fullname}}" class="rounded-full">
+            </picture>
             <div>
                 <h3 class="cursor-pointer font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
                     <a href="/{{app()->getLocale()}}/teachers/{{$teacher->slug}}">{{$teacher->fullname}}</a></h3>

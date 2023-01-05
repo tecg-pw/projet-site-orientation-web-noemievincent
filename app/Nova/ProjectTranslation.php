@@ -70,19 +70,52 @@ class ProjectTranslation extends Resource
 
             Trix::make('Body'),
 
-            File::make('thumbnail')
+            File::make('Photo', 'picture')
                 ->store(function (Request $request, $model) {
-                    $ext = $request->thumbnail->getClientOriginalExtension();
-                    $thumbnail_name =  'thumbnail-' . sha1_file($request->thumbnail);
-                    $thumbnail_path = 'img/news/' . $thumbnail_name . '.' . $ext;
+                    $ext = $request->picture->getClientOriginalExtension();
+                    $name =  sha1_file($request->picture);
 
-                    Image::make($request->thumbnail)->resize(384, null, function ($constraint) {
+                    $thumbnail_path = 'img/news/' . 'thumbnail-' .  $name . '.' . $ext;
+                    $thumbnail = Image::make($request->picture)->resize(448, null, function ($constraint) {
                         $constraint->aspectRatio();
                     })->save($thumbnail_path);
 
+                    $thumbnail_srcset_640_path = 'img/news/srcset/' . 'thumbnail-640-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_768_path = 'img/news/srcset/' . 'thumbnail-768-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_1024_path = 'img/news/srcset/' . 'thumbnail-1024-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_1520_path = 'img/news/srcset/' . 'thumbnail-1520-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_2560_path = 'img/news/srcset/' . 'thumbnail-2560-' .  $name . '.' . $ext;
+
+                    Image::make($thumbnail)->resize($thumbnail->width() / 1.02, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($thumbnail_srcset_640_path);
+                    Image::make($thumbnail)->resize($thumbnail->width() / 1.8, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($thumbnail_srcset_768_path);
+                    Image::make($thumbnail)->resize($thumbnail->width() / 2, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($thumbnail_srcset_1024_path);
+                    Image::make($thumbnail)->resize($thumbnail->width() / 1.4, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($thumbnail_srcset_1520_path);
+                    Image::make($thumbnail)->resize($thumbnail->width(), null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($thumbnail_srcset_2560_path);
+
                     return [
-                        'thumbnail' => $thumbnail_path,
-                        'pictures' => ['thumbnail' => $thumbnail_path],
+                        'picture' => $thumbnail_path,
+                        'pictures' => [
+                            'thumbnail' => $thumbnail_path,
+                        ],
+                        'srcset' => [
+                            'thumbnail' => [
+                                '640' => $thumbnail_srcset_640_path,
+                                '768' => $thumbnail_srcset_768_path,
+                                '1024' => $thumbnail_srcset_1024_path,
+                                '1520' => $thumbnail_srcset_1520_path,
+                                '2560' => $thumbnail_srcset_2560_path,
+                            ],
+                        ],
                     ];
                 }),
 

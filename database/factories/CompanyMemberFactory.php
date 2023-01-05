@@ -28,6 +28,7 @@ class CompanyMemberFactory extends Factory
             'fullname' => $firstname . ' ' . $lastname,
             'picture' => '',
             'pictures' => json_encode(''),
+            'srcset' => json_encode(''),
             'github_link' => fake()->url(),
             'linkedin_link' => fake()->url(),
             'company_id' => $ids->random(),

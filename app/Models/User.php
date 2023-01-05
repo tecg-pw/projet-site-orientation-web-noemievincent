@@ -29,6 +29,7 @@ class User extends Authenticatable
         'password',
         'picture',
         'pictures',
+        'srcset',
         'gender',
         'bio',
         'role',
@@ -51,7 +52,8 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'pictures' => 'array'
+        'pictures' => 'array',
+        'srcset' => 'array'
     ];
 
     protected $dates = ['created_at'];

@@ -6,7 +6,16 @@
         <div>
             <div class="p-3 flex flex-col gap-3">
                 <div class="flex gap-3">
-                    <img src="{{$partner->pictures && $partner->pictures['thumbnail'] ? '/' . $partner->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}" alt="" class="rounded-full" itemprop="logo">
+                    <picture>
+                        @if($partner->srcset && $partner->srcset['thumbnail'])
+                            @foreach($partner->srcset['thumbnail'] as $size => $path)
+                                <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                            @endforeach
+                        @endif
+                        <img
+                            src="{{$partner->pictures && $partner->pictures['thumbnail'] ? '/' . $partner->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}"
+                            alt="" class="rounded-full" itemprop="logo">
+                    </picture>
                     <h3 id="{{$partner->slug}}" class="text-xl uppercase" itemprop="name">{{$partner->name}}</h3>
                 </div>
                 <div class="font-light flex flex-col text-sm" itemscope itemtype="https://schema.org/PostalAddress"

@@ -9,8 +9,16 @@
         <section aria-labelledby="{{$user->slug}}" class="col-span-3 flex flex-col gap-8">
             <div class="flex flex-col justify-between items-start md:flex-row">
                 <div class="flex gap-8">
-                    <img src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}"
-                         alt="{{$user->fullname}}" class="rounded-full">
+                    <picture>
+                        @if($user->srcset && $user->srcset['full'])
+                            @foreach($user->srcset['full'] as $size => $path)
+                                <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                            @endforeach
+                        @endif
+                        <img
+                            src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}"
+                            alt="{{$user->name}}" class="rounded-full">
+                    </picture>
                     <div class="mt-2">
                         <h2 id="{{$user->slug}}" class="text-2xl font-semibold">{{$user->fullname}}</h2>
                         @if($user->role == 'user')

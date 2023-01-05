@@ -33,6 +33,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'picture' => '',
             'pictures' => json_encode(''),
+            'srcset' => json_encode(''),
             'bio' => '<p>' . fake()->paragraph(2) . '</p>',
             'gender' => fake()->randomElement(['', 'male', 'female']),
             'role' => 'user',

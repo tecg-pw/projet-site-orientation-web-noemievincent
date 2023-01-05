@@ -34,6 +34,7 @@ class ProjectsSeeder extends Seeder
                 'slug' => Str::slug($value['title']),
                 'picture' => $value['picture'],
                 'pictures' => $value['pictures'],
+                'srcset' => $value['srcset'],
                 'body' => $value['body'],
                 'website_link' => $value['website_link'],
                 'github_link' => $value['github_link'],

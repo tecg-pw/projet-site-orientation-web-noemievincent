@@ -38,6 +38,7 @@ class StudentsSeeder extends Seeder
                 'email' => $value['email'],
                 'picture' => $value['picture'],
                 'pictures' => $value['pictures'],
+                'srcset' => $value['srcset'],
                 'bio' => $value['bio'],
                 'gender' => $value['gender'],
                 'role' => $value['role'],

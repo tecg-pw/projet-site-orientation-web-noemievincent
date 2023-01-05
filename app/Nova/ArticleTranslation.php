@@ -70,42 +70,37 @@ class ArticleTranslation extends Resource
                 ->sortable()
                 ->hideFromIndex(),
 
-            File::make('picture')
+            File::make('Photo', 'picture')
                 ->store(function (Request $request, $model) {
                     $ext = $request->picture->getClientOriginalExtension();
                     $name =  sha1_file($request->picture);
-                    $thumbnail_path = 'img/news/' . 'thumbnail-' .  $name . '.' . $ext;
 
-                    Image::make($request->picture)->resize(384, null, function ($constraint) {
+                    $thumbnail_path = 'img/news/' . 'thumbnail-' .  $name . '.' . $ext;
+                    $thumbnail = Image::make($request->picture)->resize(384, null, function ($constraint) {
                         $constraint->aspectRatio();
                     })->save($thumbnail_path);
 
+                    $thumbnail_srcset_640_path = 'img/news/srcset/' . 'thumbnail-640-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_768_path = 'img/news/srcset/' . 'thumbnail-768-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_1024_path = 'img/news/srcset/' . 'thumbnail-1024-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_1520_path = 'img/news/srcset/' . 'thumbnail-1520-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_2560_path = 'img/news/srcset/' . 'thumbnail-2560-' .  $name . '.' . $ext;
 
-                    $srcset_640_path = 'img/news/srcset/' . '640-' .  $name . '.' . $ext;
-                    $srcset_768_path = 'img/news/srcset/' . '768-' .  $name . '.' . $ext;
-                    $srcset_1024_path = 'img/news/srcset/' . '1024-' .  $name . '.' . $ext;
-                    $srcset_1520_path = 'img/news/srcset/' . '1520-' .  $name . '.' . $ext;
-                    $srcset_2560_path = 'img/news/srcset/' . '2560-' .  $name . '.' . $ext;
-
-                    Image::make($request->picture)->resize(640, null, function ($constraint) {
+                    Image::make($thumbnail)->resize($thumbnail->width() / 1.02, null, function ($constraint) {
                         $constraint->aspectRatio();
-                    })->save($srcset_640_path);
-
-                    Image::make($request->picture)->resize(768, null, function ($constraint) {
+                    })->save($thumbnail_srcset_640_path);
+                    Image::make($thumbnail)->resize($thumbnail->width() / 1.8, null, function ($constraint) {
                         $constraint->aspectRatio();
-                    })->save($srcset_768_path);
-
-                    Image::make($request->picture)->resize(1024, null, function ($constraint) {
+                    })->save($thumbnail_srcset_768_path);
+                    Image::make($thumbnail)->resize($thumbnail->width() / 2, null, function ($constraint) {
                         $constraint->aspectRatio();
-                    })->save($srcset_1024_path);
-
-                    Image::make($request->picture)->resize(1520, null, function ($constraint) {
+                    })->save($thumbnail_srcset_1024_path);
+                    Image::make($thumbnail)->resize($thumbnail->width() / 1.4, null, function ($constraint) {
                         $constraint->aspectRatio();
-                    })->save($srcset_1520_path);
-
-                    Image::make($request->picture)->resize(2560, null, function ($constraint) {
+                    })->save($thumbnail_srcset_1520_path);
+                    Image::make($thumbnail)->resize($thumbnail->width(), null, function ($constraint) {
                         $constraint->aspectRatio();
-                    })->save($srcset_2560_path);
+                    })->save($thumbnail_srcset_2560_path);
 
                     return [
                         'picture' => $thumbnail_path,
@@ -114,11 +109,11 @@ class ArticleTranslation extends Resource
                         ],
                         'srcset' => [
                             'thumbnail' => [
-                                '640' => $srcset_640_path,
-                                '768' => $srcset_768_path,
-                                '1024' => $srcset_1024_path,
-                                '1520' => $srcset_1520_path,
-                                '2560' => $srcset_2560_path,
+                                '640' => $thumbnail_srcset_640_path,
+                                '768' => $thumbnail_srcset_768_path,
+                                '1024' => $thumbnail_srcset_1024_path,
+                                '1520' => $thumbnail_srcset_1520_path,
+                                '2560' => $thumbnail_srcset_2560_path,
                             ],
                         ],
                     ];

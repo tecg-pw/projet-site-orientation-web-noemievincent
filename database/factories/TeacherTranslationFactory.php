@@ -31,6 +31,7 @@ class TeacherTranslationFactory extends Factory
             'email' => fake()->email(),
             'picture' => '',
             'pictures' => json_encode(''),
+            'srcset' => json_encode(''),
             'bio' => '<p>' . fake()->paragraph(2) . '</p>',
             'gender' => fake()->randomElement(['male', 'female']),
             'role' => fake()->randomElement(['teacher', 'student_teacher']),
