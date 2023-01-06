@@ -11,10 +11,13 @@
                     <picture>
                         @if($company->srcset && $company->srcset['thumbnail'])
                             @foreach($company->srcset['thumbnail'] as $size => $path)
-                                <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                                <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                        srcset="/{{$path}}">
                             @endforeach
                         @endif
-                            <img src="{{$company->pictures && $company->pictures['thumbnail'] ? '/' . $company->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}" alt="{{$company->name}}" class="rounded-full">
+                        <img
+                            src="{{$company->pictures && $company->pictures['thumbnail'] ? '/' . $company->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}"
+                            alt="{{$company->name}}" class="rounded-full">
                     </picture>
                     <div>
                         <p>{{$company->name}}</p>

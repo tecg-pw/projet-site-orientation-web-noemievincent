@@ -22,11 +22,13 @@
                         <picture>
                             @if($company->srcset && $company->srcset['medium'])
                                 @foreach($company->srcset['medium'] as $size => $path)
-                                    <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                                    <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                            srcset="/{{$path}}">
                                 @endforeach
                             @endif
-                                <img src="{{$company->pictures && $company->pictures['medium'] ? '/' . $company->pictures['medium'] : '/img/placeholders/logo-80x80.png'}}"
-                                     alt="{{$company->name}}" class="rounded-full items-start">
+                            <img
+                                src="{{$company->pictures && $company->pictures['medium'] ? '/' . $company->pictures['medium'] : '/img/placeholders/logo-80x80.png'}}"
+                                alt="{{$company->name}}" class="rounded-full items-start">
                         </picture>
                         <div>
                             <a href="/{{app()->getLocale()}}/jobs/partners/{{$company->slug}}"

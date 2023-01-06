@@ -21,10 +21,10 @@
                         <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
                     @endforeach
                 @endif
+                    <img
+                        src="{{$new->pictures && $new->pictures['thumbnail'] ? '/' . $new->pictures['thumbnail'] : '/img/placeholders/news-384x262.png'}}"
+                        alt="{{__('news.read_new', ['title' => $new->title])}}" class="w-full h-full rounded-2xl">
             </picture>
-            <img
-                src="{{$new->pictures && $new->pictures['thumbnail'] ? '/' . $new->pictures['thumbnail'] : '/img/placeholders/news-384x262.png'}}"
-                alt="{{__('news.read_new', ['title' => $new->title])}}" class="w-full h-full rounded-2xl">
         </div>
     </div>
 </article>

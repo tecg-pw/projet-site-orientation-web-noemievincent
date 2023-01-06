@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
@@ -62,6 +63,7 @@ class Course extends Resource
 
             HasMany::make('Traductions', 'translations', '\App\Nova\CourseTranslation'),
             HasMany::make('Projets', 'projects', '\App\Nova\Project'),
+            BelongsToMany::make('Professeurs', 'teachers', '\App\Nova\Teacher')
         ];
     }
 
