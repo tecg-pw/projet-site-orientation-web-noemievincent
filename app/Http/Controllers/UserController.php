@@ -72,6 +72,9 @@ class UserController extends Controller
      */
     public function edit(string $locale, User $user)
     {
+        if (auth()->user()->id != $user->id) {
+            return redirect('/' . app()->getLocale() . '/users/' . $user->slug);
+        }
         return view('profile.edit', compact('user'));
     }
 
