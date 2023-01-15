@@ -92,7 +92,7 @@
                     @else
                         <div class="flex flex-col gap-6">
                             @foreach($replies as $reply)
-                                <x-forum.reply :reply="$reply"/>
+                                <x-forum.reply :reply="$reply" :question="$reply->question"/>
                             @endforeach
                         </div>
                     @endif
