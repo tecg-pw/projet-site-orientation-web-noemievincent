@@ -3,15 +3,33 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="bg-white">
 <head>
     <meta charset="UTF-8">
-    <meta name="description"
-          content="{{__('header.description')}}">
     <meta name="keywords"
           content="@foreach(__('header.keywords') as $keyword){{$keyword}}@endforeach">
     <meta name="author" content="Noémie Vincent">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Primary Meta Tags -->
     <title>{{__($head_title)}} - Web Design</title>
+    <meta name="title" content="{{__($head_title)}} - Web Design">
+    <meta name="description" content="{{__('header.description')}}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{config('app.url')}}">
+    <meta property="og:title" content="{{__($head_title)}} - Web Design">
+    <meta property="og:description" content="{{__('header.description')}}">
+    <meta property="og:image" content="{{config('app.url')}}/img/meta-logo.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{config('app.url')}}">
+    <meta property="twitter:title" content="{{__($head_title)}} - Web Design">
+    <meta property="twitter:description" content="{{__('header.description')}}">
+    <meta property="twitter:image" content="{{config('app.url')}}/img/meta-logo.jpg">
+
+
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
 <body class="no-js text-blue-dark font-body flex flex-col h-screen selection:bg-blue-light relative">
