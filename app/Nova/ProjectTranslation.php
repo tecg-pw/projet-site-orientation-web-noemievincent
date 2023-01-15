@@ -75,16 +75,16 @@ class ProjectTranslation extends Resource
                     $ext = $request->picture->getClientOriginalExtension();
                     $name =  sha1_file($request->picture);
 
-                    $thumbnail_path = 'img/news/' . 'thumbnail-' .  $name . '.' . $ext;
+                    $thumbnail_path = 'img/projects/' . 'thumbnail-' .  $name . '.' . $ext;
                     $thumbnail = Image::make($request->picture)->resize(448, null, function ($constraint) {
                         $constraint->aspectRatio();
                     })->save($thumbnail_path);
 
-                    $thumbnail_srcset_640_path = 'img/news/srcset/' . 'thumbnail-640-' .  $name . '.' . $ext;
-                    $thumbnail_srcset_768_path = 'img/news/srcset/' . 'thumbnail-768-' .  $name . '.' . $ext;
-                    $thumbnail_srcset_1024_path = 'img/news/srcset/' . 'thumbnail-1024-' .  $name . '.' . $ext;
-                    $thumbnail_srcset_1520_path = 'img/news/srcset/' . 'thumbnail-1520-' .  $name . '.' . $ext;
-                    $thumbnail_srcset_2560_path = 'img/news/srcset/' . 'thumbnail-2560-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_640_path = 'img/projects/srcset/' . 'thumbnail-640-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_768_path = 'img/projects/srcset/' . 'thumbnail-768-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_1024_path = 'img/projects/srcset/' . 'thumbnail-1024-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_1520_path = 'img/projects/srcset/' . 'thumbnail-1520-' .  $name . '.' . $ext;
+                    $thumbnail_srcset_2560_path = 'img/projects/srcset/' . 'thumbnail-2560-' .  $name . '.' . $ext;
 
                     Image::make($thumbnail)->resize($thumbnail->width() / 1.02, null, function ($constraint) {
                         $constraint->aspectRatio();

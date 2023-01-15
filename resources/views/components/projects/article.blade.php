@@ -19,7 +19,7 @@
                 <picture>
                     @if($project->srcset && $project->srcset['thumbnail'])
                         @foreach($project->srcset['thumbnail'] as $size => $path)
-                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                            <source media="(max-width: {{$size}}px)"
                                     srcset="/{{$path}}">
                         @endforeach
                     @endif

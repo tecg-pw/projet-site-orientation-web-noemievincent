@@ -38,7 +38,7 @@
                             <picture>
                                 @if($user->srcset && $user->srcset['full'])
                                     @foreach($user->srcset['full'] as $size => $path)
-                                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                        <source media="(max-width: {{$size}}px)"
                                                 srcset="/{{$path}}">
                                     @endforeach
                                 @endif
