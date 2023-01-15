@@ -10,6 +10,13 @@ return [
             'action' => 'See the question',
             'closure' => 'Have a nice day,',
         ],
+        'resolved_question' => [
+            'subject' => 'Your question has been solved !',
+            'greetings' => 'Hello :name,',
+            'body' => 'Your question « :title » has been marked as solved by one of our admin.',
+            'action' => 'See the question',
+            'closure' => 'Have a nice day,',
+        ],
         'reply_created' => [
             'subject' => 'We answered you!',
             'greetings' => 'Hello :name,',
