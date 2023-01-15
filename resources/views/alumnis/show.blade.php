@@ -31,7 +31,7 @@
                                 class="single-h2">{{$alumni->fullname}}</h2>
                             <div class="text-lg">
                                 <p>
-                                    {{trans_choice('roles.' . $alumni->role, $alumni->genre)}}
+                                    {{trans_choice('roles.' . $alumni->role, $alumni->gender)}}
                                     {{$alumni->start_year->format('Y')}}
                                     {{$alumni->end_year != null ? ' - ' . $alumni->end_year->format('Y') : ''}}</p>
                                 <div class="flex flex-col lg:flex-row lg:gap-3">
@@ -50,7 +50,7 @@
                         {{--                                class="single-h2">{{$alumni->fullname}}</h2>--}}
                         {{--                            <div class="text-lg">--}}
                         {{--                                <p>--}}
-                        {{--                                    {{trans_choice('roles.' . $alumni->role, $alumni->genre)}}--}}
+                        {{--                                    {{trans_choice('roles.' . $alumni->role, $alumni->gender)}}--}}
                         {{--                                    {{$alumni->start_year->format('Y')}}--}}
                         {{--                                    {{$alumni->end_year != null ? ' - ' . $alumni->end_year->format('Y') : ''}}</p>--}}
                         {{--                                <div class="flex flex-col lg:flex-row lg:gap-3">--}}
@@ -186,7 +186,7 @@
                 @if(isset($internship))
                     <section aria-labelledby="internship" class="col-span-1">
                         <h3 id="internship"
-                            class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{trans_choice('alumnis.single.internship_title', $alumni->genre)}}</h3>
+                            class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{trans_choice('alumnis.single.internship_title', $alumni->gender)}}</h3>
                         <x-partners.article
                             :partner="$internship->translations->where('locale', app()->getLocale())->first()"/>
                     </section>
@@ -216,7 +216,7 @@
                     </div>
                     <a href="/{{app()->getLocale()}}/projects"
                        class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transitionable">
-                        <span>{{trans_choice('alumnis.single.all_projects_from_link', $alumni->genre)}}</span>
+                        <span>{{trans_choice('alumnis.single.all_projects_from_link', $alumni->gender)}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                              class="fill-orange h-full">
                             <path

@@ -17,7 +17,7 @@
                     <p class="text-lg font-medium"><a href="/{{app()->getLocale()}}/users/{{$question->user->slug}}"
                                                       class="hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$question->user->fullname}}</a>
                     </p>
-                    <p class="text-sm">{{trans_choice('roles.' . $question->user->role, $question->user->genre)}}</p>
+                    <p class="text-sm">{{trans_choice('roles.' . $question->user->role, $question->user->gender)}}</p>
                 </div>
             </div>
             @auth()

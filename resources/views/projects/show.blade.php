@@ -25,7 +25,7 @@
                             <a href="/{{app()->getLocale()}}/alumnis/{{$student->slug}}"
                                class="text-xl font-semibold hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$student->fullname}}</a>
                             <p>
-                                {{trans_choice('roles.' . $student->role, $student->genre)}}
+                                {{trans_choice('roles.' . $student->role, $student->gender)}}
                                 {{$student->start_year->format('Y')}}
                                 {{$student->end_year != null ? ' - ' . $student->end_year->translatedFormat('Y') : ''}}</p>
                         </div>
@@ -229,7 +229,7 @@
                     </div>
                     <a href="/{{app()->getLocale()}}/projects"
                        class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transition-all ease-in-out duration-200">
-                        <span>{{trans_choice('projects.single.all_projects_from_link', $student->genre)}}</span>
+                        <span>{{trans_choice('projects.single.all_projects_from_link', $student->gender)}}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                              class="fill-orange h-full">
                             <path

@@ -30,7 +30,7 @@
                             <h2 id="{{$teacher->fullname}}"
                                 class="single-h2">{{$teacher->fullname}}</h2>
                             <div class="text-lg">
-                                <p>{{trans_choice('roles.' . $teacher->role, $teacher->genre)}}</p>
+                                <p>{{trans_choice('roles.' . $teacher->role, $teacher->gender)}}</p>
                                 <a href="mailto:{{$teacher->email}}">{{$teacher->email}}</a>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                         </div>
                         <a href="/{{app()->getLocale()}}/projects"
                            class="flex items-center self-end gap-4 uppercase text-orange text-sm mt-1 hover:gap-6 transitionable">
-                            <span>{{trans_choice('alumnis.single.all_projects_from_link', $teacher->genre)}}</span>
+                            <span>{{trans_choice('alumnis.single.all_projects_from_link', $teacher->gender)}}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="12" width="6"
                                  class="fill-orange h-full">
                                 <path

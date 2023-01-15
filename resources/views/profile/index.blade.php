@@ -23,9 +23,9 @@
                     <div class="mt-2">
                         <h2 id="{{$user->slug}}" class="text-2xl font-semibold">{{$user->fullname}}</h2>
                         @if($user->role == 'user')
-                            {!! __('profile.user_infos', ['role' => trans_choice("roles." . $user->role, $user->genre),'datetime' => $user->created_at->translatedFormat('m-Y'), 'date' => $user->created_at->translatedFormat('F Y')]) !!}
+                            {!! __('profile.user_infos', ['role' => trans_choice("roles." . $user->role, $user->gender),'datetime' => $user->created_at->translatedFormat('m-Y'), 'date' => ucwords($user->created_at->translatedFormat('F Y'))]) !!}
                         @else
-                            {!! __('profile.infos', ['role' => trans_choice("roles." . $user->role, $user->genre)]) !!}
+                            {!! __('profile.infos', ['role' => trans_choice("roles." . $user->role, $user->gender)]) !!}
                         @endif
                     </div>
                 </div>
@@ -59,9 +59,9 @@
                                class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'replies' ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.replies')}}</a>
                         @else
                             <a href="?forum-tab=questions"
-                               class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.questions', $user->genre)}}</a>
+                               class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.questions', $user->gender)}}</a>
                             <a href="?forum-tab=replies"
-                               class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'replies' ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.replies', $user->genre)}}</a>
+                               class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'replies' ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.replies', $user->gender)}}</a>
                         @endif
                     </div>
                     <x-filters.search/>
