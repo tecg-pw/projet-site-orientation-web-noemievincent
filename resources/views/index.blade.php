@@ -1,8 +1,13 @@
 <x-header :head_title="'home.head_title'"/>
 <main class="main">
     @if(session('success'))
-        <div class="-mt-10 mb-8 p-3 text-center text-white bg-green-success">
-            <p>{{session('success')}}</p>
+{{--        <div class="-mt-10 mb-8 p-3 text-center text-white bg-blue-success">--}}
+{{--            <p>{{session('success')}}</p>--}}
+{{--        </div>--}}
+        <div class="flex justify-center cursor-default">
+            <div class="absolute top-4 z-50 py-3 px-6 rounded-lg text-center text-white bg-blue-success">
+                <p>{{session('success')}}</p>
+            </div>
         </div>
     @endif
     <section aria-labelledby="introduction" class="flex flex-col gap-6">
