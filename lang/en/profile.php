@@ -5,7 +5,7 @@ return [
     'edit_link' => 'Edit my information',
     'forum_title' => 'Questions and answers',
     'tutorials_title' => 'Saved Tutorials',
-    'user_infos' => '<p class="text-lg">:role <span class="font-light">since <time datetime=:datetime">:date</time></span></p>',
+    'user_infos' => '<p class="text-lg">:role <span class="font-light">since <time datetime=":datetime">:date</time></span></p>',
     'infos' => '<p class="text-lg">:role</p>',
     'user' => ['no_questions' => 'You did not ask any questions.', 'no_replies' => 'You have not answered any questions.'],
     'guest' => ['no_questions' => ':name did not ask any questions.', 'no_replies' => ':name has not answered any questions.'],

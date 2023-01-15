@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="keywords"
-          content="@foreach(__('header.keywords') as $keyword){{$keyword}}@endforeach">
+          content="{{implode(', ', __('header.keywords'))}}">
     <meta name="author" content="Noémie Vincent">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -45,7 +45,7 @@
     <input id="toggle" class="toggle absolute hidden" type="checkbox">
     <div class="top-bar bg-blue-light w-full px-4 py-4 flex justify-between fixed z-30 lg:hidden">
         <a href="/{{app()->getLocale()}}">
-            <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg"
+            <svg version="1.1" id="logo-burger" xmlns="http://www.w3.org/2000/svg"
                  height="24" viewBox="0 0 130 35"
                  xml:space="preserve" class="fill-blue-dark hover:fill-orange transition ease-in-out duration-200">
                 <g>

@@ -1,5 +1,5 @@
-@props(['offer', 'company'])
-<article aria-labelledby="{{$offer->slug}}"
+@props(['offer', 'company', 'parent'])
+<article aria-labelledby="{{$offer->slug}}-{{$company->slug}}{{$parent === 'aside' ? '-aside' : ''}}"
          class="bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 w-full max-w-sm">
     <div class="relative">
         <a href="/{{app()->getLocale()}}/jobs/offers/{{$company->slug}}/{{$offer->slug}}"
@@ -26,11 +26,11 @@
                 </div>
                 <div class="flex gap-2 font-light text-sm">
                     <time
-                        datetime="{{$offer->start_date->format('d-m-Y')}}">{{$offer->start_date->translatedFormat('d F Y')}}</time>
+                        datetime="{{$offer->start_date->format('Y-m-d')}}">{{$offer->start_date->translatedFormat('d F Y')}}</time>
                     —
                     <p>{{$offer->duration}}</p>
                 </div>
-                {!! __('jobs.published_at', ['datetime' => $offer->published_at->translatedFormat('d-m-Y'), 'date' => $offer->published_at->translatedFormat('d F Y')]) !!}
+                {!! __('jobs.published_at', ['datetime' => $offer->published_at->translatedFormat('Y-m-d'), 'date' => $offer->published_at->translatedFormat('d F Y')]) !!}
             </div>
         </div>
     </div>

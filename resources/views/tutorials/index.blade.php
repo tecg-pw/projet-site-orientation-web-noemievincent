@@ -13,7 +13,7 @@
                         <p class="uppercase text-lg">{{__('filters.title')}}</p>
                         <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
                     </div>
-                    <x-filters.search/>
+                    <x-filters.search :element="'tutorials'"/>
                 </div>
                 <form class="flex flex-col gap-2 sm:flex-row sm:col-span-2 sm:items-center sm:justify-between">
                     @csrf

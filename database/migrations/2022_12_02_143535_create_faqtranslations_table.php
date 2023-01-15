@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->string('locale');
             $table->string('title');
+            $table->string('slug');
             $table->text('body');
             $table->string('category')->default('general');
             $table->timestamps();

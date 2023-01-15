@@ -5,7 +5,7 @@ return [
     'head_title' => 'News',
     'title' => 'Our latest news',
     'tagline' => 'Find the news of the section and the events in which our students participate since several years.',
-    'read_new' => 'Read the news :title',
+    'read_new' => 'Read the news ":title"',
     'single' => [
         'alternative' => 'This news is also available in :',
         'back_to_news_link' => 'Back to news',

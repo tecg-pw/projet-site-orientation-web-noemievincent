@@ -13,7 +13,7 @@
                         <p class="uppercase text-lg">{{__('filters.title')}}</p>
                         <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
                     </div>
-                    <x-filters.search/>
+                    <x-filters.search :element="'news'"/>
                 </div>
                 <form class="flex flex-col gap-2 sm:flex-row sm:col-span-2 sm:items-center sm:justify-between">
                     @csrf
@@ -32,7 +32,7 @@
                     class="flex flex-col gap-8 justify-items-center sm:grid sm:grid-cols-2 md:grid-cols-3">
                     @foreach($news as $new)
                         <x-news.article :new="$new->translations->where('locale', app()->getLocale())->first()"
-                                        :category="$new->category->translations->where('locale', app()->getLocale())->first()">
+                                        :category="$new->category->translations->where('locale', app()->getLocale())->first()" :parent="'index'">
                             <h3 id="{{$new->translations->where('locale', app()->getLocale())->first()->slug}}"
                                 class="text-white text-xl">{{$new->translations->where('locale', app()->getLocale())->first()->title}}</h3>
                         </x-news.article>

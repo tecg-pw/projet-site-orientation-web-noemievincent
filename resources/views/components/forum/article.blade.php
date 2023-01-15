@@ -23,7 +23,7 @@
             <a href="#">{{$category->name}}</a>
             <p>{{$question->replies_count}} {{trans_choice('forum.reply.count', $question->replies_count)}}</p>
             <time
-                datetime="{{$question->published_at->translatedFormat('d-m-Y')}}">{{$question->published_at->translatedFormat('d/m/Y')}}</time>
+                datetime="{{$question->published_at->translatedFormat('Y-m-d')}}">{{$question->published_at->translatedFormat('d/m/Y')}}</time>
         </div>
     </div>
 </article>

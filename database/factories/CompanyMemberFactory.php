@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Company;
 use App\Models\CompanyMember;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Str;
 
 /**
  * @extends Factory<CompanyMember>
@@ -26,6 +27,7 @@ class CompanyMemberFactory extends Factory
             'firstname' => $firstname,
             'lastname' => $lastname,
             'fullname' => $firstname . ' ' . $lastname,
+            'slug' => Str::slug($firstname . '-' . $lastname),
             'picture' => '',
             'pictures' => json_encode(''),
             'srcset' => json_encode(''),

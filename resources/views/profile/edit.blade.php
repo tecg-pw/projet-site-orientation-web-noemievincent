@@ -62,8 +62,7 @@
                             @foreach(__('forms.genders') as $value => $label)
                                 <div class="flex gap-2">
                                     <input type="radio" id="{{$value}}" value="{{$value}}" name="gender"
-                                           class="accent-orange"
-                                           value="{{$value}}" @checked(old('gender') ? $value === old('gender') : $value === auth()->user()->gender)>
+                                           class="accent-orange" @checked(old('gender') ? $value === old('gender') : $value === auth()->user()->gender)>
                                     <label for="{{$value}}">{{$label}}</label>
                                 </div>
                             @endforeach

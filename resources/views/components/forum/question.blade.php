@@ -54,7 +54,7 @@
         </div>
         <div class="flex flex-col gap-6 justify-between md:flex-row md:items-center">
             <div class="flex flex-col gap-2 sm:flex-row sm:gap-4 font-light">
-                {!! __('forum.single.infos', ['datetime' => $question->published_at->format('d-m-Y'), 'date' => $question->published_at->format('d/m/Y'), 'datetimeHours' => $question->published_at->format('H:i'), 'time' => $question->published_at->format('H:i')]) !!}
+                {!! __('forum.single.infos', ['datetime' => $question->published_at->format('Y-m-d'), 'date' => $question->published_at->format('d/m/Y'), 'datetimeHours' => $question->published_at->format('H:i'), 'time' => $question->published_at->format('H:i')]) !!}
                 <div class="bg-blue/50 h-max-content w-px"></div>
                 <div class="flex gap-4">
                     <p>{{$question->category->translations->where('locale', app()->getLocale())->first()->name}}</p>

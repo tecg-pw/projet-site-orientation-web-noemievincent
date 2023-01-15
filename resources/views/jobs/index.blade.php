@@ -22,7 +22,7 @@
                             <p class="uppercase text-lg">{{__('filters.title')}}</p>
                             <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
                         </div>
-                        <x-filters.search/>
+                        <x-filters.search :element="'offers'"/>
                     </div>
                     <form class="flex flex-col gap-2 sm:flex-row sm:col-span-2 sm:items-center sm:justify-between">
                         @csrf
@@ -43,8 +43,8 @@
                     class="flex flex-col gap-4 justify-items-center sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
                     @foreach($offers as $offer)
                         <x-jobs.article :offer="$offer->translations->where('locale', app()->getLocale())->first()"
-                                        :company="$offer->company->translations->where('locale', app()->getLocale())->first()">
-                            <h3 id="{{$offer->translations->where('locale', app()->getLocale())->first()->slug}}"
+                                        :company="$offer->company->translations->where('locale', app()->getLocale())->first()" :parent="'index'">
+                            <h3 id="{{$offer->translations->where('locale', app()->getLocale())->first()->slug}}-{{$offer->company->translations->where('locale', app()->getLocale())->first()->slug}}"
                                 class="text-xl uppercase">{{$offer->translations->where('locale', app()->getLocale())->first()->title}}</h3>
                         </x-jobs.article>
                     @endforeach

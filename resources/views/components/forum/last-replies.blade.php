@@ -3,7 +3,7 @@
     <div class="flex flex-col gap-8">
         @foreach($replies as $reply)
             @php
-                $question = \App\Models\Question::find($reply->id)
+                $question = \App\Models\Question::find($reply->question_id);
             @endphp
             <x-forum.reply :reply="$reply" :question="$question"/>
         @endforeach

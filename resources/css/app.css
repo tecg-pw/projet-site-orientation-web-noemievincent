@@ -63,43 +63,43 @@
         text-overflow: ellipsis;
     }
 
-    .tag#html {
+    .tag.html {
         background-color: #E44D26;
     }
 
-    .tag#css {
+    .tag.css {
         background-color: #4FA3D8;
     }
 
-    .tag#javascript {
+    .tag.javascript {
         background-color: #F2C610;
     }
 
-    .tag#php {
+    .tag.php {
         background-color: #777BB3;
     }
 
-    .tag#sql {
+    .tag.sql {
         background-color: #F29111;
     }
 
-    .tag#html:hover {
+    .tag.html:hover {
         background-color: #BD3A18;
     }
 
-    .tag#css:hover {
+    .tag.css:hover {
         background-color: #2B87C1;
     }
 
-    .tag#javascript:hover {
+    .tag.javascript:hover {
         background-color: #C4A00B;
     }
 
-    .tag#php:hover {
+    .tag.php:hover {
         background-color: #555A99;
     }
 
-    .tag#sql:hover {
+    .tag.sql:hover {
         background-color: #C4740B;
     }
 

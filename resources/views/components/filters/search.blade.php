@@ -1,17 +1,17 @@
 @props([
-    'action'
+    'action', 'element'
 ])
 <form action="/test" method="get"
       class="flex col-start-3 rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange">
     @csrf
-    <label for="search-keyword" class="h-full flex-1">
+    <label for="search-keyword-{{$element}}" class="h-full flex-1">
         <span class="sr-only">{{__('filters.titles.search')}}</span>
-        <input placeholder="{{__('filters.titles.search')}}" type="search" id="search-keyword"
+        <input placeholder="{{__('filters.titles.search')}}" type="search" id="search-keyword-{{$element}}"
                class="h-full w-full pl-3 py-1 border border-orange-light border-r-0 focus:outline-none rounded-l-lg placeholder:font-light transition ease-in-out duration-200">
     </label>
     <button
         class="bg-orange text-white px-3 rounded-r-lg uppercase hover:bg-orange-dark transition ease-in-out duration-200 lg:h-full">
-        <svg version="1.1" id="search-keyword-svg" xmlns="http://www.w3.org/2000/svg"
+        <svg version="1.1" id="search-keyword-{{$element}}-svg" xmlns="http://www.w3.org/2000/svg"
              x="0px" y="0px" height="18"
              viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve"
              class="fill-white">

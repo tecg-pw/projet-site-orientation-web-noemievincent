@@ -6,6 +6,7 @@ use App\Models\Faq;
 use App\Models\FaqTranslation;
 use File;
 use Illuminate\Database\Seeder;
+use Str;
 
 class FaqSeeder extends Seeder
 {
@@ -28,6 +29,7 @@ class FaqSeeder extends Seeder
         foreach ($faq['translations'] as $key => $value) {
             FaqTranslation::factory()->create([
                 'title' => $value['title'],
+                'slug' => Str::slug($value['title']),
                 'body' => $value['body'],
                 'locale' => $value['locale'],
                 'faq_id' => $value['faq_id'],

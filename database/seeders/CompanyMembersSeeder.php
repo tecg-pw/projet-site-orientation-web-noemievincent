@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\CompanyMember;
 use File;
 use Illuminate\Database\Seeder;
+use Str;
 
 class CompanyMembersSeeder extends Seeder
 {
@@ -23,6 +24,7 @@ class CompanyMembersSeeder extends Seeder
                 'firstname' => $value->firstname,
                 'lastname' => $value->lastname,
                 'fullname' => $value->firstname . ' ' . $value->lastname,
+                'slug' => Str::slug($value->firstname . '-' . $value->lastname),
                 'picture' => $value->picture,
                 'pictures' => $value->pictures,
                 'srcset' => $value->srcset,

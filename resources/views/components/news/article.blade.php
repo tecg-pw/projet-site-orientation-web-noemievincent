@@ -1,5 +1,5 @@
-@props(['new', 'category'])
-<article aria-labelledby="{{$new->slug}}" class="group relative max-w-sm">
+@props(['new', 'category', 'parent'])
+<article aria-labelledby="{{$new->slug}}{{$parent === 'aside' ? '-aside' : ''}}" class="group relative max-w-sm">
     <a href="/{{app()->getLocale()}}/news/{{$new->slug}}"
        class="full-link">{{__('news.read_new', ['title' => $new->title])}}</a>
     <div>
@@ -9,7 +9,7 @@
                 <div class="font-light text-white flex justify-between">
                     <p>{{$category->name}}</p>
                     <time
-                        datetime="{{$new->published_at->translatedFormat('d-m-Y')}}">{{$new->published_at->translatedFormat('d F Y')}}</time>
+                        datetime="{{$new->published_at->translatedFormat('Y-m-d')}}">{{$new->published_at->translatedFormat('d F Y')}}</time>
                 </div>
             </div>
         </div>

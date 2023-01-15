@@ -8,8 +8,8 @@
         <div class="flex flex-row gap-4 xl:flex-col xl:items-end">
             @foreach($aside['news'] as $new)
                 <x-news.article :new="$new->translations->where('locale', app()->getLocale())->first()"
-                                :category="$new->category->translations->where('locale', app()->getLocale())->first()">
-                    <h4 id="{{$new->translations->where('locale', app()->getLocale())->first()->slug}}"
+                                :category="$new->category->translations->where('locale', app()->getLocale())->first()" :parent="'aside'">
+                    <h4 id="{{$new->translations->where('locale', app()->getLocale())->first()->slug}}-aside"
                         class="text-white text-lg lg:text-xl">{{$new->translations->where('locale', app()->getLocale())->first()->title}}</h4>
                 </x-news.article>
             @endforeach
@@ -31,8 +31,8 @@
         <div class="flex flex-row gap-4 xl:flex-col xl:items-end">
             @foreach($aside['offers'] as $offer)
                 <x-jobs.article :offer="$offer->translations->where('locale', app()->getLocale())->first()"
-                                :company="$offer->company->translations->where('locale', app()->getLocale())->first()">
-                    <h4 id="{{$offer->translations->where('locale', app()->getLocale())->first()->slug}}"
+                                :company="$offer->company->translations->where('locale', app()->getLocale())->first()" :parent="'aside'">
+                    <h4 id="{{$offer->translations->where('locale', app()->getLocale())->first()->slug}}-{{$offer->company->translations->where('locale', app()->getLocale())->first()->slug}}-aside"
                         class="text-xl uppercase">{{$offer->translations->where('locale', app()->getLocale())->first()->title}}</h4>
                 </x-jobs.article>
             @endforeach

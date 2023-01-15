@@ -39,7 +39,7 @@
                     </div>
                     <div class="flex gap-2">
                         <time
-                            datetime="{{$offer->published_at->format('d-m-Y')}}">{{$offer->published_at->format('d F Y')}}</time>
+                            datetime="{{$offer->published_at->format('Y-m-d')}}">{{$offer->published_at->format('d F Y')}}</time>
                         -
                         <p>{{$offer->duration}}</p>
                     </div>

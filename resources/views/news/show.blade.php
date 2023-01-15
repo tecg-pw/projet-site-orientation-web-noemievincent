@@ -19,7 +19,7 @@
             <div class="flex justify-between gap-28">
                 <div class="h-full w-full flex flex-col gap-6">
                     <div class="flex justify-between items-center">
-                        {!! __('news.single.infos', ['datetime' => $article->published_at->format('d-m-Y'), 'date' => $article->published_at->translatedFormat('d F Y'), 'author' => $author->name, 'category' => $category->translations->where('locale', app()->getLocale())->first()->name]) !!}
+                        {!! __('news.single.infos', ['datetime' => $article->published_at->format('Y-m-d'), 'date' => $article->published_at->translatedFormat('d F Y'), 'author' => $author->name, 'category' => $category->translations->where('locale', app()->getLocale())->first()->name]) !!}
                         <x-share/>
                     </div>
                     <div class="flex gap-2">

@@ -5,7 +5,7 @@ return [
     'head_title' => 'Projects',
     'title' => 'Our student’s projects',
     'tagline' => 'TFE, portfolios, applications, mobile games,... Discover the numerous projects realized by our students over the years.',
-    'see_link' => 'See the project :title',
+    'see_link' => 'See the project ":title" from :name',
     'single' => [
         'alternative' => 'This project is also available in :',
         'back_to_projects_link' => 'Back to projects',

@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('firstname');
             $table->string('lastname');
             $table->string('fullname');
+            $table->string('slug')->unique();
             $table->string('picture')->nullable();
             $table->json('pictures')->nullable();
             $table->json('srcset')->nullable();

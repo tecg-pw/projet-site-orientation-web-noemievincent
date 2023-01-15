@@ -15,7 +15,7 @@
                         @endif
                         <img
                             src="{{$partner->pictures && $partner->pictures['thumbnail'] ? '/' . $partner->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}"
-                            alt="" class="rounded-full" itemprop="logo">
+                            alt="{{$partner->name}}" class="rounded-full" itemprop="logo">
                     </picture>
                     <h3 id="{{$partner->slug}}" class="text-xl uppercase" itemprop="name">{{$partner->name}}</h3>
                 </div>
