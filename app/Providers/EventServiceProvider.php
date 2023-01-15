@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\QuestionCreated;
 use App\Events\ReplyCreated;
 use App\Listeners\NotifyUserAReplyHasBeenPostedToTheirQuestion;
+use App\Listeners\NotifyUserTheyPostedAQuestion;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -21,6 +23,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         ReplyCreated::class => [
             NotifyUserAReplyHasBeenPostedToTheirQuestion::class
+        ],
+        QuestionCreated::class => [
+            NotifyUserTheyPostedAQuestion::class
         ],
     ];
 

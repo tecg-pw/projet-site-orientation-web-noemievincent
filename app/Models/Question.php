@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\QuestionCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,6 +20,10 @@ class Question extends Model
     ];
 
     protected $withCount = ['replies'];
+
+    protected $dispatchesEvents = [
+        'created' => QuestionCreated::class,
+    ];
 
     public function replies(): HasMany
     {
