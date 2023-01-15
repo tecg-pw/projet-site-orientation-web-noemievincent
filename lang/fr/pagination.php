@@ -13,7 +13,9 @@ return [
     |
     */
 
-    'previous' => '&laquo; Précédent',
-    'next' => 'Suivant &raquo;',
+    'previous' => 'Précédent',
+    'skip-previous' => 'Retourner à la première page',
+    'next' => 'Suivant',
+    'skip-next' => 'Se rendre sur la dernière page',
 
 ];

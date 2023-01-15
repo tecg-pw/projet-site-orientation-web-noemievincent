@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\QuestionRequest;
-use App\Models\Post;
 use App\Models\Question;
 use App\Models\QuestionCategoryTranslation;
 use App\Models\Reply;
