@@ -215,12 +215,12 @@
                         <a href="/{{app()->getLocale()}}/users/{{auth()->user()->slug}}"
                            class="flex items-center gap-3">
                             <picture>
-                                @if(auth()->user()->srcset && auth()->user()->srcset['small'])
-                                    @foreach(auth()->user()->srcset['small'] as $size => $path)
-                                        <source media="(max-width: {{$size}}px)"
-                                                srcset="/{{$path}}">
-                                    @endforeach
-                                @endif
+{{--                                @if(auth()->user()->srcset && auth()->user()->srcset['small'])--}}
+{{--                                    @foreach(auth()->user()->srcset['small'] as $size => $path)--}}
+{{--                                        <source media="(max-width: {{$size}}px)"--}}
+{{--                                                srcset="/{{$path}}">--}}
+{{--                                    @endforeach--}}
+{{--                                @endif--}}
                                 <img
                                     src="{{auth()->user()->pictures && auth()->user()->pictures['small'] ? '/' . auth()->user()->pictures['small'] : '/img/placeholders/person-30x30.png'}}"
                                     alt="{{auth()->user()->fullname}}"

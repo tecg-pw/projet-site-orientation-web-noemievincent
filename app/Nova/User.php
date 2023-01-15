@@ -57,8 +57,8 @@ class User extends Resource
                     $name =  sha1_file($request->picture);
 
                     $full_path = 'img/people/users/' . 'full-' .  $name . '.' . $ext;
-                    $full = Image::make($request->picture)->resize(160, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    $full = Image::make($request->picture)->fit(160, 160, function ($constraint) {
+                        $constraint->upsize();
                     })->save($full_path);
 
                     $srcset_full_640_path = 'img/people/users/srcset/' . 'full-640-' .  $name . '.' . $ext;
@@ -67,25 +67,25 @@ class User extends Resource
                     $srcset_full_1520_path = 'img/people/users/srcset/' . 'full-1520-' .  $name . '.' . $ext;
                     $srcset_full_2560_path = 'img/people/users/srcset/' . 'full-2560-' .  $name . '.' . $ext;
 
-                    Image::make($full)->resize($full->width() / 1.02, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($full)->fit((int) ($full->width() / 1.02), (int) ($full->width() / 1.02), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_full_640_path);
-                    Image::make($full)->resize($full->width() / 1.8, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($full)->fit((int) ($full->width() / 1.8), (int) ($full->width() / 1.8), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_full_768_path);
-                    Image::make($full)->resize($full->width() / 2, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($full)->fit((int) ($full->width() / 2), (int) ($full->width() / 2), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_full_1024_path);
-                    Image::make($full)->resize($full->width() / 1.4, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($full)->fit((int) ($full->width() / 1.4), (int) ($full->width() / 1.4), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_full_1520_path);
-                    Image::make($full)->resize($full->width(), null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($full)->fit((int) ($full->width()), (int) ($full->width()), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_full_2560_path);
 
                     $medium_path = 'img/people/users/' . 'medium-' .  $name . '.' . $ext;
-                    $medium = Image::make($request->picture)->resize(60, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    $medium = Image::make($request->picture)->fit(60, 60, function ($constraint) {
+                        $constraint->upsize();
                     })->save($medium_path);
 
                     $srcset_medium_640_path = 'img/people/users/srcset/' . 'medium-640-' .  $name . '.' . $ext;
@@ -94,25 +94,25 @@ class User extends Resource
                     $srcset_medium_1520_path = 'img/people/users/srcset/' . 'medium-1520-' .  $name . '.' . $ext;
                     $srcset_medium_2560_path = 'img/people/users/srcset/' . 'medium-2560-' .  $name . '.' . $ext;
 
-                    Image::make($medium)->resize($medium->width() / 1.02, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($medium)->fit((int) ($medium->width() / 1.02), (int) ($medium->width() / 1.02), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_medium_640_path);
-                    Image::make($medium)->resize($medium->width() / 1.8, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($medium)->fit((int) ($medium->width() / 1.8), (int) ($medium->width() / 1.8), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_medium_768_path);
-                    Image::make($medium)->resize($medium->width() / 2, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($medium)->fit((int) ($medium->width() / 2), (int) ($medium->width() / 2), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_medium_1024_path);
-                    Image::make($medium)->resize($medium->width() / 1.4, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($medium)->fit((int) ($medium->width() / 1.4), (int) ($medium->width() / 1.4), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_medium_1520_path);
-                    Image::make($medium)->resize($medium->width(), null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($medium)->fit((int) ($medium->width()), (int) ($medium->width()), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_medium_2560_path);
 
                     $small_path = 'img/people/users/' . 'small-' .  $name . '.' . $ext;
-                    $small = Image::make($request->picture)->resize(30, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    $small = Image::make($request->picture)->fit(30, 30, function ($constraint) {
+                        $constraint->upsize();
                     })->save($small_path);
 
                     $srcset_small_640_path = 'img/people/users/srcset/' . 'small-640-' .  $name . '.' . $ext;
@@ -121,20 +121,20 @@ class User extends Resource
                     $srcset_small_1520_path = 'img/people/users/srcset/' . 'small-1520-' .  $name . '.' . $ext;
                     $srcset_small_2560_path = 'img/people/users/srcset/' . 'small-2560-' .  $name . '.' . $ext;
 
-                    Image::make($small)->resize($small->width() / 1.02, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($small)->fit((int) ($small->width() / 1.02), (int) ($small->width() / 1.02), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_small_640_path);
-                    Image::make($small)->resize($small->width() / 1.8, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($small)->fit((int) ($small->width() / 1.8), (int) ($small->width() / 1.8), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_small_768_path);
-                    Image::make($small)->resize($small->width() / 2, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($small)->fit((int) ($small->width() / 2), (int) ($small->width() / 2), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_small_1024_path);
-                    Image::make($small)->resize($small->width() / 1.4, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($small)->fit((int) ($small->width() / 1.4), (int) ($small->width() / 1.4), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_small_1520_path);
-                    Image::make($small)->resize($small->width(), null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($small)->fit((int) ($small->width()), (int) ($small->width()), function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_small_2560_path);
 
                     return [

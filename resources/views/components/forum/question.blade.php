@@ -4,11 +4,11 @@
         <div class="flex justify-between items-center">
             <div class="flex gap-4">
                 <picture>
-                    @if($question->user->srcset && $question->user->srcset['medium'])
-                        @foreach($question->user->srcset['medium'] as $size => $path)
-                            <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
-                        @endforeach
-                    @endif
+{{--                    @if($question->user->srcset && $question->user->srcset['medium'])--}}
+{{--                        @foreach($question->user->srcset['medium'] as $size => $path)--}}
+{{--                            <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">--}}
+{{--                        @endforeach--}}
+{{--                    @endif--}}
                     <img
                         src="{{$question->user->pictures && $question->user->pictures['medium'] ? '/' . $question->user->pictures['medium'] : '/img/placeholders/person-60x60.png'}}"
                         alt="{{$question->user->fullname}}" class="rounded-full">

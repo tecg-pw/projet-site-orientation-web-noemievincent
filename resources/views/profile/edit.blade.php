@@ -17,37 +17,40 @@
                     class="h2">{{__('profile.edit.informations_form_title')}}</h2>
             </div>
             <form action="/{{app()->getLocale()}}/users/{{$user->slug}}/update-infos" method="post"
-                  class="flex flex-col gap-8">
+                  class="flex flex-col gap-8" enctype="multipart/form-data">
                 @csrf
                 <div class="flex flex-col gap-4">
-                    <div class="flex gap-8">
-                        <div class="relative self-start">
+                    <div class="flex flex-col gap-8 sm:flex-row">
+                        <div class="self-start">
                             @error('picture')
                             {{$message}}
                             @enderror
-                            <label for="picture"
-                                   class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center rounded-full bg-blue/40 hover:bg-blue/60 cursor-pointer transition-all ease-in-out duration-200">
-                                <span class="sr-only">{{__('forms.labels.picture')}}</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     class="fill-white">
-                                    <path
-                                        d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
-                                </svg>
-                            </label>
-                            <input type="file" id="picture" name="picture" class="hidden">
-                            <picture>
-                                @if($user->srcset && $user->srcset['full'])
-                                    @foreach($user->srcset['full'] as $size => $path)
-                                        <source media="(max-width: {{$size}}px)"
-                                                srcset="/{{$path}}">
-                                    @endforeach
-                                @endif
-                                <img
-                                    src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}"
-                                    alt="{{$user->name}}" class="rounded-full">
-                            </picture>
+                            <div class="relative max-w-[160px]">
+                                <label for="picture"
+                                       class="absolute z-20 w-full h-full flex items-center justify-center rounded-full bg-blue/40 hover:bg-blue/60 cursor-pointer transition-all ease-in-out duration-200">
+                                    <span class="sr-only">{{__('forms.labels.picture')}}</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         class="fill-white">
+                                        <path
+                                            d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                                    </svg>
+                                </label>
+                                <img id="js-preview" class="rounded-full absolute z-10 w-full h-full object-cover hidden" alt="{{$user->name}}"
+                                    src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}">
+                                <picture>
+{{--                                    @if($user->srcset && $user->srcset['full'])--}}
+{{--                                        @foreach($user->srcset['full'] as $size => $path)--}}
+{{--                                            <source media="(max-width: {{$size}}px)"--}}
+{{--                                                    srcset="/{{$path}}">--}}
+{{--                                        @endforeach--}}
+{{--                                    @endif--}}
+                                    <img alt="{{$user->name}}" class="rounded-full"
+                                        src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}">
+                                </picture>
+                            </div>
+                            <input type="file" id="picture" name="picture" class="file:sr-only text-sm">
                         </div>
-                        <div class="flex-1 flex flex-col justify-between gap-3">
+                        <div class="flex-1 flex flex-col gap-3">
                             <x-forms.firstname-field :firstname="$user->firstname"/>
                             <x-forms.lastname-field :lastname="$user->lastname"/>
                         </div>

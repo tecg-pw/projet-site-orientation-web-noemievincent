@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateUserInfosRequest;
+use App\Http\Uploads\HandlesProfilePictureUploads;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
@@ -12,6 +13,8 @@ use Str;
 
 class UpdateUserInfosController extends Controller
 {
+    use HandlesProfilePictureUploads;
+
     /**
      * Handle the incoming request.
      *
@@ -23,6 +26,16 @@ class UpdateUserInfosController extends Controller
         $validatedData = $request->safe()->all();
         $validatedData['fullname'] = $validatedData['firstname'] . ' ' . $validatedData['lastname'];
         $validatedData['slug'] = Str::slug($validatedData['fullname']);
+
+        if ($request->hasFile('picture')) {
+            $uploaded_file =  $request->file('picture');
+
+            $datas = $this->resizeAndSave($uploaded_file);
+
+            $validatedData['picture'] = $datas['picture'];
+            $validatedData['pictures'] = $datas['pictures'];
+            $validatedData['srcset'] = $datas['srcset'];
+        }
 
         $user->update($validatedData);
 

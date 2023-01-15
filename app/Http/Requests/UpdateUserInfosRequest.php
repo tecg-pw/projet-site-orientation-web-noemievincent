@@ -24,7 +24,7 @@ class UpdateUserInfosRequest extends FormRequest
     public function rules()
     {
         return [
-            'picture' => '',
+            'picture' => 'nullable|image',
             'firstname' => 'required|string',
             'lastname' => 'required|string',
             'email' => 'required|email',

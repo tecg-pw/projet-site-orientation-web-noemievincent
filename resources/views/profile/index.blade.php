@@ -10,12 +10,12 @@
             <div class="flex flex-col justify-between items-start md:flex-row">
                 <div class="flex gap-8">
                     <picture>
-                        @if($user->srcset && $user->srcset['full'])
-                            @foreach($user->srcset['full'] as $size => $path)
-                                <source media="(max-width: {{$size}}px)"
-                                        srcset="/{{$path}}">
-                            @endforeach
-                        @endif
+{{--                        @if($user->srcset && $user->srcset['full'])--}}
+{{--                            @foreach($user->srcset['full'] as $size => $path)--}}
+{{--                                <source media="(max-width: {{$size}}px)"--}}
+{{--                                        srcset="/{{$path}}">--}}
+{{--                            @endforeach--}}
+{{--                        @endif--}}
                         <img
                             src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}"
                             alt="{{$user->name}}" class="rounded-full">
