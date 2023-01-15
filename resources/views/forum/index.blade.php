@@ -7,6 +7,11 @@
                     class="h2">{{__('forum.title')}}</h2>
                 {!! __('forum.tagline') !!}
             </div>
+            @if(session('success'))
+                <div class="bg-green-success text-white text-center p-3">
+                    <p>{{session('success')}}</p>
+                </div>
+            @endif
             <div class="flex flex-col">
                 @guest()
                     {!!__('forum.guest_link', ['locale' => app()->getLocale()])!!}

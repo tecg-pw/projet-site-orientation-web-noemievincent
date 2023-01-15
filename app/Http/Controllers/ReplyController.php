@@ -65,6 +65,6 @@ class ReplyController extends Controller
     public function destroy(string $locale, string $slug, Reply $reply)
     {
         $reply->delete();
-        return redirect('/' . app()->getLocale() . '/forum/questions/' . $slug);
+        return redirect('/' . app()->getLocale() . '/forum/questions/' . $slug)->with('success', __('success.delete_reply'));
     }
 }

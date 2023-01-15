@@ -5,7 +5,7 @@
         $url = '/'.app()->getLocale().'/forum/questions/'.$question->slug;
     @endphp
     <x-forms.confirm-delete
-        :action="$action" :url="$url"/>
+        :action="$action" :url="$url" :element="'reply'"/>
 @endif
 @if(Request::query('confirm-delete')==='question')
     @php
@@ -13,7 +13,7 @@
         $url = '/'.app()->getLocale().'/forum/questions/'.$question->slug;
     @endphp
     <x-forms.confirm-delete
-        :action="$action" :url="$url"/>
+        :action="$action" :url="$url" :element="'question'"/>
 @endif
 <main class="main">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
@@ -32,6 +32,11 @@
                 <h2 id="{{$question->slug}}"
                     class="single-h2">{{$question->title}}</h2>
             </div>
+            @if(session('success'))
+                <div class="bg-green-success text-white text-center p-3">
+                    <p>{{session('success')}}</p>
+                </div>
+            @endif
             <x-forum.question :question="$question"/>
             @if(count($replies) > 0)
                 <div class="flex flex-col gap-8">

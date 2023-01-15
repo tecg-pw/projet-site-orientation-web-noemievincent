@@ -42,5 +42,14 @@ return [
         'female' => 'A woman',
         'prefer-not-to-say' => 'Prefer not to say',
     ],
+    'delete' => [
+        'title' => 'Confirm deletion',
+        'cancel' => 'Cancel',
+        'confirm' => 'Delete',
+        'elements' => [
+            'question' => 'Are you sure you want to delete your question?',
+            'reply' => 'Are you sure you want to delete your reply?'
+        ]
+    ]
 
 ];

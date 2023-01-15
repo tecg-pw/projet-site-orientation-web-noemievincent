@@ -126,6 +126,6 @@ class ForumController extends Controller
     public function destroy(string $locale, Question $question)
     {
         $question->delete();
-        return redirect('/' . app()->getLocale() . '/forum');
+        return redirect('/' . app()->getLocale() . '/forum')->with('success', __('success.delete_question'));
     }
 }

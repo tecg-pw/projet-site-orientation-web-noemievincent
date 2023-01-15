@@ -42,5 +42,14 @@ return [
         'female' => 'Une femme',
         'prefer-not-to-say' => 'Je ne souhaite pas le préciser',
     ],
+    'delete' => [
+        'title' => 'Confirmer la suppression',
+        'cancel' => 'Annuler',
+        'confirm' => 'Supprimer',
+        'elements' => [
+            'question' => 'Souhaitez-vous supprimer votre question ?',
+            'reply' => 'Souhaitez-vous supprimer votre réponse ?'
+        ]
+    ]
 
 ];

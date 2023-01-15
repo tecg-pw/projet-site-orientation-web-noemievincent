@@ -23,7 +23,7 @@ return [
         'more_replies' => 'More answers',
         'resolved' => 'Solved',
         'answer_button' => 'Answer',
-        'infos' => '<p>published on the <time datetime=":datetime">:date</time> et <time datetime=":datetimeHours">:time</time></p>',
+        'infos' => '<p>published on the <time datetime=":datetime">:date</time> at <time datetime=":datetimeHours">:time</time></p>',
         'guest_link' => '<p><a href="/' . app()->getLocale() . '/login" class="underline underline-offset-2 decoration-1 decoration-solid text-orange">Login</a> or <a href="/' . app()->getLocale() . '/register" class="underline underline-offset-2 decoration-1 decoration-solid text-orange">register</a> to answer</p>',
     ],
     'reply' => [

@@ -72,7 +72,7 @@
                 </div>
             </div>
             @auth()
-                <a href="{{Request::has('reply') ? '/' . app()->getLocale() . '/forum/questions/' . $question->slug : '?reply'}}"
+                <a href="{{Request::has('post-reply') ? '/' . app()->getLocale() . '/forum/questions/' . $question->slug : '?post-reply'}}"
                    class="flex items-center gap-4 uppercase text-orange hover:text-orange-dark transitionable">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width=24
                          class="fill-orange h-full">
@@ -90,7 +90,7 @@
             {!! __('forum.single.guest_link') !!}
         @endguest
         @auth()
-            @if(Request::has('reply'))
+            @if(Request::has('post-reply'))
                 <form action="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}/reply" method="post"
                       class="flex flex-col gap-4">
                     @csrf

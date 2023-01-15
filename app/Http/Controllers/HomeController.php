@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function index()
     {
         $projects = Project::with('student')->limit(6)->get();
-        $questions = Question::limit(6)->get();
+        $questions = Question::latest('published_at')->limit(6)->get();
 
         $aside = AsideController::get();
 
