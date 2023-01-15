@@ -14,7 +14,6 @@
             </span>
         @endif
     </label>
-    <input type="text" id="lastname" name="lastname"
-           placeholder="Dumont" dusk="lastname-field" value="{{old('lastname') ?? ($lastname ?? '')}}"
-           class="@error('lastname') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transitionable">
+    <input type="text" id="lastname" name="lastname" dusk="lastname-field" value="{{old('lastname') ?? ($lastname ?? '')}}"
+           class="@error('lastname') error-outline @enderror pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transitionable">
 </div>

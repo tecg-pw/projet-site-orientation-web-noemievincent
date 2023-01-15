@@ -77,7 +77,7 @@
                             @endif
                         </label>
                         <textarea name="bio" id="bio" cols="30" rows="5"
-                                  class="@error('bio') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transitionable">{{old('bio') ?? $user->bio}}</textarea>
+                                  class="@error('bio') error-outline @enderror pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transitionable">{{old('bio') ?? $user->bio}}</textarea>
                     </div>
                 </div>
                 <div class="flex gap-8 items-center justify-between">
@@ -109,9 +109,9 @@
                             @endif
                         </label>
                         <div
-                            class="@error('old-password') error-outline @enderror flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange transitionable">
+                            class="@error('old-password') error-outline @enderror flex justify-between items-center px-3 bg-orange-light/20 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange transitionable">
                             <input type="password" id="old-password" name="old-password" dusk="old-password-field"
-                                   class="password py-2 h-full w-full placeholder:font-light focus:outline-none font-mono font-lig">
+                                   class="password py-2 h-full w-full focus:outline-none font-mono font-lg bg-transparent">
                             <span class="show-password cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="20" height="20"
                              class="fill-orange">
@@ -141,9 +141,9 @@
                                 class="font-light text-sm">{{__('forms.labels.password_requirements')}}</span>
                         </label>
                         <div
-                            class="@error('new-password') error-outline @enderror flex justify-between items-center px-3 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange transitionable">
+                            class="@error('new-password') error-outline @enderror flex justify-between items-center px-3 bg-orange-light/20 border border-orange-light rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange transitionable">
                             <input type="password" id="new-password" name="new-password" dusk="new-password-field"
-                                   class="password py-2 h-full w-full placeholder:font-light focus:outline-none font-mono font-lig">
+                                   class="password py-2 h-full w-full focus:outline-none font-mono font-lg bg-transparent">
                             <span class="show-password cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="20" height="20"
                              class="fill-orange">

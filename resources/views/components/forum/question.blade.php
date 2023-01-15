@@ -103,7 +103,7 @@
                             @endif
                         </label>
                         <textarea name="body" id="body" cols="30" rows="10"
-                                  class="@error('body') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">{{old('body')}}</textarea>
+                                  class="@error('body') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">{{old('body')}}</textarea>
                     </div>
                     <div class="flex gap-8 items-center justify-end">
                         <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}"

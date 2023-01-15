@@ -16,8 +16,7 @@
             </span>
         @endif
     </label>
-    <input type="email" id="email" name="email"
-           placeholder="name@example.com" value="{{old('email') ?? ($email ?? '')}}"
-           class="@error('email') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transitionable"
+    <input type="email" id="email" name="email" value="{{old('email') ?? ($email ?? '')}}"
+           class="@error('email') error-outline @enderror pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transitionable"
            dusk="email-field">
 </div>

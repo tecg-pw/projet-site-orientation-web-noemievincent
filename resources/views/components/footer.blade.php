@@ -169,8 +169,8 @@
                             <span class="sr-only">
                                 {{__('footer.newsletter_label')}}
                             </span>
-                            <input placeholder="name@example.com" type="email" id="newsletter"
-                                   class="h-full w-full pl-3 border border-orange-light focus:outline-none rounded-lg placeholder:font-light transition ease-in-out duration-200">
+                            <input type="email" id="newsletter"
+                                   class="h-full w-full pl-3 border border-orange-light focus:outline-none rounded-lg transition ease-in-out duration-200">
                         </label>
                         <button
                             class="row-span-full col-start-3 bg-orange text-white h-full px-6 rounded-r-lg hover:bg-orange-dark transition ease-in-out duration-200 text-sm lg:text-base">{{__('footer.newsletter_button')}}</button>

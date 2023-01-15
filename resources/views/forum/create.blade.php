@@ -23,7 +23,7 @@
                                 @endif
                             </label>
                             <input type="text" id="title" name="title" value="{{old('title')}}"
-                                   class="@error('title') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">
+                                   class="@error('title') error-outline @enderror pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                         </div>
                         <div class="flex flex-col gap-2">
                             <label for="body" class="text-lg text-blue-dark">
@@ -34,7 +34,7 @@
                                 @endif
                             </label>
                             <textarea name="body" id="body" cols="30" rows="10"
-                                      class="@error('body') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange placeholder:font-light transition ease-in-out duration-200">{{old('body')}}</textarea>
+                                      class="@error('body') error-outline @enderror pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">{{old('body')}}</textarea>
                         </div>
                         <div class="flex gap-2">
                             <label for="category_id" class="text-lg text-blue-dark">
