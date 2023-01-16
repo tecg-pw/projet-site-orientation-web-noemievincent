@@ -7,6 +7,7 @@ function init() {
     document.body.classList.add('js-only');
     handlePassword();
     updatePreviewOnInputChange();
+    displayInputWhenRadioButtonIsChecked();
 }
 
 function handlePassword() {
@@ -35,11 +36,31 @@ function updatePreviewOnInputChange() {
     if (input && preview) {
         preview.classList.remove('hidden');
 
-        input.addEventListener('change', (e ) => {
-            let target = e.currentTarget as HTMLInputElement
-            if(target.files.length > 0){
+        input.addEventListener('change', (e) => {
+            let target = e.currentTarget as HTMLInputElement;
+            if (target.files.length > 0) {
                 preview.src = URL.createObjectURL(target.files[0]);
             }
-        })
+        });
+    }
+}
+
+function displayInputWhenRadioButtonIsChecked() {
+    let btns = document.getElementsByClassName('reception-btn') as HTMLCollection;
+    let inputs = document.getElementsByClassName('reception-input') as HTMLCollection;
+
+    if (btns && inputs) {
+        // @ts-ignore
+        Array.from(btns).forEach((btn, index) => {
+            btn.addEventListener('change', (e) => {
+                // @ts-ignore
+                Array.from(inputs).forEach((input, index) => {
+                    input.classList.add('sr-only');
+                    if (e.currentTarget.checked && e.currentTarget.dataset.input_id === input.id) {
+                        input.classList.remove('sr-only');
+                    }
+                });
+            });
+        });
     }
 }

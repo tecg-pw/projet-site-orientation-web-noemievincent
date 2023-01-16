@@ -51,7 +51,7 @@ return [
             'contract' => [
                 'title' => 'Convention de stage',
                 'labels' => [
-                    'date' => 'Date du stage',
+                    'start_date' => 'Date du stage',
                     'duration' => 'Durée du stage',
                     'location' => 'Lieu du stage',
                 ]

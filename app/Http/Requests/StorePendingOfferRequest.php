@@ -24,7 +24,7 @@ class StorePendingOfferRequest extends FormRequest
     public function rules()
     {
         return [
-            'company_logo' => 'required',
+            'company_logo' => 'required|mimes:jpg,bmp,png,webp',
             'company_name' => 'required',
             'website' => 'required',
             'contact_name' => 'required',

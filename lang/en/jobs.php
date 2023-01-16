@@ -51,7 +51,7 @@ return [
             'contract' => [
                 'title' => 'Internship agreement',
                 'labels' => [
-                    'date' => 'Starting date',
+                    'start_date' => 'Starting date',
                     'duration' => 'Duration',
                     'location' => 'Location',
                 ]
