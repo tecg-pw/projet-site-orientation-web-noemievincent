@@ -21,6 +21,10 @@ return [
     'create' => [
         'head_title' => 'Proposer un stage',
         'title' => 'Proposer un stage',
+        'success' => [
+            'title' => 'Votre offre nous a été envoyée !',
+            'tagline' => 'Vous recevrez un mail avec un résumé de votre offre et un administrateur la vérifiera avant de la publier.',
+        ],
         'form' => [
             'tagline' => 'Vous êtes une entreprise en recherche de stagiaires ? Publiez directement votre proposition sur ce site et les candidatures seront garanties.',
             'company' => [

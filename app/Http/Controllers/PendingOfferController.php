@@ -11,7 +11,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class PendingOfferController extends Controller
 {
@@ -21,7 +20,7 @@ class PendingOfferController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(string $locale, StorePendingOfferRequest $request)
     {
@@ -40,7 +39,7 @@ class PendingOfferController extends Controller
 
         $offer = PendingOffer::create($validatedData);
 
-        return $offer;
+        return redirect()->back()->with('success', __('jobs.create.success.title'));
 
     }
 

@@ -21,6 +21,10 @@ return [
     'create' => [
         'head_title' => 'Submit an internship',
         'title' => 'Submit an internship',
+        'success' => [
+            'title' => 'Your offer has been sent to us!',
+            'tagline' => 'You will receive an email with a summary of your offer and an administrator will check it before publishing it.',
+        ],
         'form' => [
             'tagline' => 'Are you a company looking for interns? Post your offer directly on this site and applications will be guaranteed.',
             'company' => [
