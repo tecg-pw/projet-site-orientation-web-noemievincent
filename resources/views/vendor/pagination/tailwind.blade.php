@@ -1,6 +1,7 @@
 @if ($paginator->hasPages())
-    <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}"
+    <nav aria-labelledby="pagination" aria-label="{{ __('Pagination Navigation') }}"
          class="flex items-center justify-between text-orange font-body font-light text-xl">
+        <h2 id="pagination" class="sr-only">{{__('Pagination Navigation')}}</h2>
         <div class="flex justify-between flex-1 sm:hidden">
             <div class="flex gap-3">
                 {{-- Skip Previous Page Link --}}
@@ -10,7 +11,7 @@
                                     class="relative inline-flex items-center px-2 py-2 cursor-default rounded-l-md leading-5"
                                     aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20">
-                                      <g id="skip-previous" transform="translate(-69.999 -9)" class="fill-gray-400">
+                                      <g transform="translate(-69.999 -9)" class="fill-gray-400">
                                         <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(70 9.001)" fill-rule="evenodd"/>
                                         <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(77 9.001)" fill-rule="evenodd"/>
                                       </g>
@@ -22,7 +23,7 @@
                        class="relative inline-flex items-center transition ease-in-out duration-150 group/skip-previous"
                        aria-label="{{ __('pagination.skip-previous') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20">
-                            <g id="skip-previous" transform="translate(-69.999 -9)" class="fill-orange group-hover/skip-previous:fill-orange-dark transition ease-in-out duration-150">
+                            <g transform="translate(-69.999 -9)" class="fill-orange group-hover/skip-previous:fill-orange-dark transition ease-in-out duration-150">
                                 <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(70 9.001)" fill-rule="evenodd"/>
                                 <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(77 9.001)" fill-rule="evenodd"/>
                             </g>
@@ -38,8 +39,7 @@
                                     aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20"
                                          class="fill-gray-400">
-                                        <path id="previous"
-                                              d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                                        <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                                     </svg>
                                 </span>
                             </span>
@@ -48,7 +48,7 @@
                        class="relative inline-flex items-center px-2 py-2 rounded-l-md leading-5 active transition ease-in-out duration-150 group/previous"
                        aria-label="{{ __('pagination.previous') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20" class="fill-orange group-hover/previous:fill-orange-dark transition ease-in-out duration-150">
-                            <path id="previous" d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                            <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                         </svg>
                     </a>
                 @endif
@@ -61,7 +61,7 @@
                        class="relative inline-flex items-center px-2 py-2 rounded-l-md leading-5 active transition ease-in-out duration-150 group/next"
                        aria-label="{{ __('pagination.next') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20" class="fill-orange group-hover/next:fill-orange-dark transition ease-in-out duration-150">
-                            <path id="next" d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                            <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                         </svg>
                     </a>
                 @else
@@ -71,8 +71,7 @@
                                     aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20"
                                          class="fill-gray-400">
-                                        <path id="next"
-                                              d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                                        <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                                     </svg>
                                 </span>
                             </span>
@@ -84,7 +83,7 @@
                        class="relative inline-flex items-center transition ease-in-out duration-150 group/skip-next"
                        aria-label="{{ __('pagination.skip-next') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20">
-                            <g id="skip-next" transform="translate(87 0)" class="fill-orange group-hover/skip-next:fill-orange-dark transition ease-in-out duration-150">
+                            <g transform="translate(87 0)" class="fill-orange group-hover/skip-next:fill-orange-dark transition ease-in-out duration-150">
                                 <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(-79.999 0.001)" fill-rule="evenodd"/>
                                 <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(-86.999 0.001)" fill-rule="evenodd"/>
                             </g>
@@ -96,7 +95,7 @@
                                     class="relative inline-flex items-center px-2 py-2 cursor-default rounded-l-md leading-5"
                                     aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20">
-                                      <g id="skip-next" transform="translate(87 0)" class="fill-gray-400">
+                                      <g transform="translate(87 0)" class="fill-gray-400">
                                         <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(-79.999 0.001)" fill-rule="evenodd"/>
                                         <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(-86.999 0.001)" fill-rule="evenodd"/>
                                       </g>
@@ -115,7 +114,7 @@
                                     class="relative inline-flex items-center px-2 py-2 cursor-default rounded-l-md leading-5"
                                     aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20">
-                                      <g id="skip-previous" transform="translate(-69.999 -9)" class="fill-gray-400">
+                                      <g transform="translate(-69.999 -9)" class="fill-gray-400">
                                         <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(70 9.001)" fill-rule="evenodd"/>
                                         <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(77 9.001)" fill-rule="evenodd"/>
                                       </g>
@@ -127,7 +126,7 @@
                        class="relative inline-flex items-center transition ease-in-out duration-150 group/skip-previous"
                        aria-label="{{ __('pagination.skip-previous') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20">
-                            <g id="skip-previous" transform="translate(-69.999 -9)" class="fill-orange group-hover/skip-previous:fill-orange-dark transition ease-in-out duration-150">
+                            <g transform="translate(-69.999 -9)" class="fill-orange group-hover/skip-previous:fill-orange-dark transition ease-in-out duration-150">
                                 <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(70 9.001)" fill-rule="evenodd"/>
                                 <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(77 9.001)" fill-rule="evenodd"/>
                             </g>
@@ -143,8 +142,7 @@
                                     aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20"
                                          class="fill-gray-400">
-                                        <path id="previous"
-                                              d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                                        <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                                     </svg>
                                 </span>
                             </span>
@@ -153,7 +151,7 @@
                        class="relative inline-flex items-center px-2 py-2 rounded-l-md leading-5 active transition ease-in-out duration-150 group/previous"
                        aria-label="{{ __('pagination.previous') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20" class="fill-orange group-hover/previous:fill-orange-dark transition ease-in-out duration-150">
-                            <path id="previous" d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                            <path d="M9.666,19.707a.9.9,0,0,1-1.331,0L.551,11.443a2.087,2.087,0,0,1,0-2.827L8.392.292A.9.9,0,0,1,9.713.282,1.023,1.023,0,0,1,10,.992a1.026,1.026,0,0,1-.276.715L2.547,9.323a1.043,1.043,0,0,0,0,1.414l7.119,7.557a1.042,1.042,0,0,1,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                         </svg>
                     </a>
                 @endif
@@ -195,7 +193,7 @@
                        class="relative inline-flex items-center px-2 py-2 rounded-l-md leading-5 active transition ease-in-out duration-150 group/next"
                        aria-label="{{ __('pagination.next') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20" class="fill-orange group-hover/next:fill-orange-dark transition ease-in-out duration-150">
-                            <path id="next" d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                            <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                         </svg>
                     </a>
                 @else
@@ -205,8 +203,7 @@
                                     aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20"
                                          class="fill-gray-400">
-                                        <path id="next"
-                                              d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
+                                        <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(0.001 0.001)" fill-rule="evenodd"/>
                                     </svg>
                                 </span>
                             </span>
@@ -218,7 +215,7 @@
                        class="relative inline-flex items-center transition ease-in-out duration-150 group/skip-next"
                        aria-label="{{ __('pagination.skip-next') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20">
-                            <g id="skip-next" transform="translate(87 0)" class="fill-orange group-hover/skip-next:fill-orange-dark transition ease-in-out duration-150">
+                            <g transform="translate(87 0)" class="fill-orange group-hover/skip-next:fill-orange-dark transition ease-in-out duration-150">
                                 <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(-79.999 0.001)" fill-rule="evenodd"/>
                                 <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(-86.999 0.001)" fill-rule="evenodd"/>
                             </g>
@@ -230,7 +227,7 @@
                                     class="relative inline-flex items-center px-2 py-2 cursor-default rounded-l-md leading-5"
                                     aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20">
-                                      <g id="skip-next" transform="translate(87 0)" class="fill-gray-400">
+                                      <g transform="translate(87 0)" class="fill-gray-400">
                                         <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(-79.999 0.001)" fill-rule="evenodd"/>
                                         <path d="M.333,19.707a.9.9,0,0,0,1.331,0l7.784-8.264a2.087,2.087,0,0,0,0-2.827L1.607.292A.9.9,0,0,0,.285.282,1.023,1.023,0,0,0,0,.992a1.026,1.026,0,0,0,.276.715L7.452,9.323a1.043,1.043,0,0,1,0,1.414L.333,18.294a1.042,1.042,0,0,0,0,1.413" transform="translate(-86.999 0.001)" fill-rule="evenodd"/>
                                       </g>
