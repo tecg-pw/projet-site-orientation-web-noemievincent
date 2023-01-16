@@ -172,8 +172,8 @@
                                                     @foreach($skills as $skill)
                                                         <div class="flex gap-2 items-center">
                                                             <input type="checkbox" id="{{$skill->slug}}"
-                                                                   value="{{$skill->slug}}" @if(old('skills'))
-                                                                       @checked(in_array($skill->slug, old('skills')))
+                                                                   value="{{$skill->name}}" @if(old('skills'))
+                                                                       @checked(in_array($skill->name, old('skills')))
                                                                    @endif
                                                                    class="accent-orange" name="skills[]">
                                                             <label for="{{$skill->slug}}">{{$skill->name}}</label>

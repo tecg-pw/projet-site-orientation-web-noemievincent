@@ -24,6 +24,7 @@ use App\Nova\Offer;
 use App\Nova\OfferTranslation;
 use App\Nova\Opportunity;
 use App\Nova\OpportunityTranslation;
+use App\Nova\PendingOffer;
 use App\Nova\Project;
 use App\Nova\ProjectCategory;
 use App\Nova\ProjectCategoryTranslation;
@@ -72,6 +73,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::resource(Documentation::class),
                     MenuItem::resource(Faq::class),
                     MenuItem::resource(Offer::class),
+                    MenuItem::resource(PendingOffer::class),
                     MenuItem::resource(Opportunity::class),
                     MenuItem::resource(Project::class),
                     MenuItem::resource(Question::class),
