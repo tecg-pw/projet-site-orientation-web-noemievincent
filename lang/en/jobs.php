@@ -27,7 +27,7 @@ return [
                 'title' => 'Company information',
                 'labels' => [
                     'logo' => 'Your company logo',
-                    'name' => 'Name of your company',
+                    'company-name' => 'Name of your company',
                     'website' => 'Your website',
                 ]
             ],
@@ -45,7 +45,7 @@ return [
                     'body' => 'Description and tasks of the internship',
                     'skills' => 'Skills needed',
                     'other_skills' => 'Other :',
-                    'add_skills' => 'Add skill'
+                    'add_skills_hint' => 'Add as many skills as you want, separated by a comma.'
                 ],
             ],
             'contract' => [

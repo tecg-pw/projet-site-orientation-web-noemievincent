@@ -13,11 +13,16 @@
                        class="uppercase text-lg text-orange underline">{{__('jobs.tabs.offers')}}</a>
                     <a href="/{{app()->getLocale()}}/jobs/partners"
                        class="uppercase text-lg text-orange underline">{{__('jobs.tabs.partners')}}</a>
-                    <a href="/{{app()->getLocale()}}/jobs/create"
+                    <a href="/{{app()->getLocale()}}/jobs/offers/create"
                        class="uppercase text-lg text-orange font-bold">{{__('jobs.tabs.create')}}</a>
                 </div>
                 <p class="text-lg">{{__('jobs.create.form.tagline')}}</p>
-                <form action="/jobs/create" method="post" class="flex flex-col gap-6">
+                @if($errors)
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                @endif
+                <form action="/{{app()->getLocale()}}/jobs/offers/create" method="post" class="flex flex-col gap-6" enctype="multipart/form-data">
                     @csrf
                     <div>
                         <h3 class="font-semibold font-display text-xl">{{__('jobs.create.form.company.title')}}</h3>
@@ -31,21 +36,21 @@
                                     </svg>
                                     <span>{{__('jobs.create.form.company.labels.logo')}}</span>
                                 </label>
-                                <input type="file" id="company-logo" name="company-logo"
+                                <input type="file" id="company-logo" name="company_logo"
                                        class="py-2 file:border file:border-solid file:border-orange file:rounded-lg file:bg-orange-light/20 file:px-3 file:py-1 file:text-blue file:hover:bg-orange file:cursor-pointer file:hover:text-white file:transition-all file:ease-in-out file:duration-200">
                             </div>
                             <div class="flex flex-col flex-1 justify-between gap-2 md:flex-row md:gap-6">
                                 <div class="flex flex-col gap-1 w-full">
-                                    <label for="name" class="text-lg text-blue-dark flex items-center gap-2">
+                                    <label for="company-name" class="text-lg text-blue-dark flex items-center gap-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18"
                                              height="18"
                                              class="fill-blue-dark">
                                             <path
                                                 d="M12,2A10,10,0,0,0,4.65,18.76h0a10,10,0,0,0,14.7,0h0A10,10,0,0,0,12,2Zm0,18a8,8,0,0,1-5.55-2.25,6,6,0,0,1,11.1,0A8,8,0,0,1,12,20ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Zm8.91,6A8,8,0,0,0,15,12.62a4,4,0,1,0-6,0A8,8,0,0,0,5.09,16,7.92,7.92,0,0,1,4,12a8,8,0,0,1,16,0A7.92,7.92,0,0,1,18.91,16Z"/>
                                         </svg>
-                                        <span>{{__('jobs.create.form.company.labels.name')}}</span>
+                                        <span>{{__('jobs.create.form.company.labels.company-name')}}</span>
                                     </label>
-                                    <input type="text" id="name"
+                                    <input type="text" id="company-name" name="company_name" value="{{old('company-name')}}"
                                            class="pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                                 </div>
                                 <div class="flex flex-col gap-1 w-full">
@@ -58,7 +63,7 @@
                                         </svg>
                                         <span>{{__('jobs.create.form.company.labels.website')}}</span>
                                     </label>
-                                    <input type="text" id="website"
+                                    <input type="text" id="website" name="website" value="{{old('website')}}"
                                            class="pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                                 </div>
                             </div>
@@ -68,7 +73,7 @@
                         <h3 class="font-semibold font-display text-xl">{{__('jobs.create.form.informations.title')}}</h3>
                         <div class="flex flex-col gap-2 md:grid md:grid-cols-3 md:gap-6">
                             <div class="flex flex-col gap-1 w-full">
-                                <label for="full-name" class="text-lg text-blue-dark flex items-center gap-2">
+                                <label for="contact-name" class="text-lg text-blue-dark flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                                          class="fill-blue-dark">
                                         <path
@@ -76,11 +81,11 @@
                                     </svg>
                                     <span>{{__('jobs.create.form.informations.labels.name')}}</span>
                                 </label>
-                                <input type="text" id="full-name"
+                                <input type="text" id="contact-name" name="contact_name" value="{{old('contact-name')}}"
                                        class="pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                             </div>
                             <div class="flex flex-col gap-1 col-span-2">
-                                <label for="email" class="text-lg text-blue-dark flex items-center gap-2">
+                                <label for="contact-email" class="text-lg text-blue-dark flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="18" height="18"
                                          class="fill-none stroke-blue-dark stroke-2">
                                         <g stroke-linecap="round" stroke-linejoin="round" transform="translate(0 1)">
@@ -90,7 +95,7 @@
                                     </svg>
                                     <span>{{__('jobs.create.form.informations.labels.email')}}</span>
                                 </label>
-                                <input type="email" id="email"
+                                <input type="email" id="contact-email" name="contact_email" value="{{old('contact-email')}}"
                                        class="pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                             </div>
                         </div>
@@ -100,36 +105,40 @@
                         <div class="flex flex-col gap-2">
                             <div class="flex flex-col gap-2">
                                 <label for="title" class="text-lg">{{__('jobs.create.form.offer.labels.title')}}</label>
-                                <input type="text" id="title"
+                                <input type="text" id="title" name="title" value="{{old('title')}}"
                                        class="pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                             </div>
                             <div class="flex flex-col gap-2">
-                                <label for="desc" class="text-lg ">{{__('jobs.create.form.offer.labels.body')}}</label>
-                                <textarea name="desc" id="desc" cols="30" rows="10"
-                                          class="pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200"></textarea>
+                                <label for="description"
+                                       class="text-lg ">{{__('jobs.create.form.offer.labels.body')}}</label>
+                                <textarea name="description" id="description" cols="30" rows="10"
+                                          class="pl-2 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">{{old('description')}}</textarea>
                             </div>
                             <div>
                                 <div class="flex flex-col gap-2">
-                                    <label for="desc"
-                                           class="text-lg ">{{__('jobs.create.form.offer.labels.skills')}}</label>
-                                    <div>
-                                        @foreach($skills as $skill)
-                                            <div class="flex gap-2 items-center">
-                                                <input type="checkbox" id="{{$skill->slug}}" value="{{$skill->slug}}"
-                                                       class="accent-orange">
-                                                <label for="{{$skill->slug}}">{{$skill->name}}</label>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="mb-1">{{__('jobs.create.form.offer.labels.other_skills')}}</p>
-                                    <div class="flex flex-col gap-3">
-                                        <label
-                                            for="add-skill"
-                                            class="sr-only">{{__('jobs.create.form.offer.labels.add_skills')}}</label>
-                                        <input type="text" id="add-skill"
-                                               class="self-start pl-3 py-1 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
+                                    <p class="text-lg ">{{__('jobs.create.form.offer.labels.skills')}}</p>
+                                    <div class="flex gap-20">
+                                        <div>
+                                            @foreach($skills as $skill)
+                                                <div class="flex gap-2 items-center">
+                                                    <input type="checkbox" id="{{$skill->slug}}"
+                                                           value="{{$skill->slug}}" @if(old('skills')) @checked(in_array($skill->slug, old('skills'))) @endif
+                                                           class="accent-orange" name="skills[]">
+                                                    <label for="{{$skill->slug}}">{{$skill->name}}</label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        <div class="flex-1 flex flex-col gap-3">
+                                            <label for="add_skill" class="flex flex-col">
+                                                <span>
+                                                    {{__('jobs.create.form.offer.labels.other_skills')}}
+                                                </span>
+                                                <span class="font-light text-sm">
+                                                    {{__('jobs.create.form.offer.labels.add_skills_hint')}}
+                                                </span></label>
+                                            <textarea id="add_skill" name="add_skill" rows="5"
+                                                      class="pl-2 py-1 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">{{old('add-skill')}}</textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -139,24 +148,24 @@
                         <h3 class="font-semibold font-display text-xl">{{__('jobs.create.form.contract.title')}}</h3>
                         <div class="flex flex-col justify-between gap-2 md:flex-row md:gap-6">
                             <div class="flex flex-col gap-1 w-full">
-                                <label for="date" class="text-lg text-blue-dark flex items-center gap-2">
+                                <label for="start_date" class="text-lg text-blue-dark flex items-center gap-2">
                                     <span>{{__('jobs.create.form.contract.labels.date')}}</span>
                                 </label>
-                                <input type="date" id="date"
+                                <input type="date" id="start_date" name="start_date" value="{{old('date')}}"
                                        class="pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                             </div>
                             <div class="flex flex-col gap-1 w-full">
                                 <label for="duration" class="text-lg text-blue-dark flex items-center gap-2">
                                     <span>{{__('jobs.create.form.contract.labels.duration')}}</span>
                                 </label>
-                                <input type="text" id="duration"
+                                <input type="text" id="duration" name="duration" value="{{old('duration')}}"
                                        class="pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                             </div>
                             <div class="flex flex-col gap-1 w-full">
                                 <label for="location" class="text-lg text-blue-dark flex items-center gap-2">
                                     <span>{{__('jobs.create.form.contract.labels.location')}}</span>
                                 </label>
-                                <input type="text" id="location"
+                                <input type="text" id="location" name="location" value="{{old('location')}}"
                                        class="pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                             </div>
                         </div>
@@ -166,8 +175,8 @@
                         <div class="flex flex-col gap-6">
                             <div class="flex flex-col gap-2">
                                 <div class="radio-btn--parent flex gap-3 items-center">
-                                    <input type="radio" id="email-reception" name="reception-mode" value="email"
-                                           class="radio-btn accent-orange">
+                                    <input type="radio" id="email-reception" name="reception_mode" value="email"
+                                           class="radio-btn accent-orange" @checked(old('reception_mode') === 'email')>
                                     <label for="email-reception"
                                            class="flex flex-col md:gap-2 md:flex-row md:items-center">
                                         <span>{{__('jobs.create.form.reception_mode.labels.email')}}</span>
@@ -178,14 +187,14 @@
                                 <div class="input-field ml-6 md:grid md:grid-cols-3">
                                     <label for="applications-email"
                                            class="sr-only">{{__('jobs.create.form.reception_mode.inputs.email')}}</label>
-                                    <input type="email" id="applications-email" name="applications-email"
+                                    <input type="text" id="applications-email" name="applications_email" value="{{old('applications_email')}}"
                                            class="w-full pl-3 py-2 md:col-span-3 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                                 </div>
                             </div>
                             <div class="flex flex-col gap-2">
                                 <div class="flex gap-3 items-center">
-                                    <input type="radio" id="url-reception" name="reception-mode" value="url"
-                                           class="accent-orange">
+                                    <input type="radio" id="url-reception" name="reception_mode" value="url"
+                                           class="accent-orange" @checked(old('reception_mode') === 'url')>
                                     <label for="url-reception"
                                            class="flex flex-col md:gap-2 md:flex-row md:items-center">
                                         <span>{{__('jobs.create.form.reception_mode.labels.url')}}</span>
@@ -196,7 +205,7 @@
                                 <div class="ml-6 md:grid md:grid-cols-3">
                                     <label for="applications-url"
                                            class="sr-only">{{__('jobs.create.form.reception_mode.inputs.url')}}</label>
-                                    <input type="text" id="applications-url" name="applications-url"
+                                    <input type="text" id="applications-url" name="applications_url" value="{{old('applications_url')}}"
                                            class="w-full pl-3 py-2 md:col-span-3 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                                 </div>
                             </div>

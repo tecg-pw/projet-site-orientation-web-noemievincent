@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OffersController;
 use App\Http\Controllers\PartnersController;
+use App\Http\Controllers\PendingOfferController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\RegisterSessionController;
 use App\Http\Controllers\ReplyController;
@@ -80,13 +81,13 @@ Route::post('/{locale?}/forum/questions/{question:slug}/reply/{reply:id}/delete'
 Route::get('/{locale?}/forum/questions/{question:slug}', [ForumController::class, 'show'])->middleware('setLocale');
 Route::get('/{locale?}/faq', [FaqController::class, 'index'])->middleware('setLocale');
 
-
 Route::post('/{locale?}/forum/questions/{question:slug}/reply', [ReplyController::class, 'store'])->middleware(['auth', 'setLocale']);
 
 //ROUTE : Jobs
 Route::get('/{locale?}/jobs/offers', [OffersController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/jobs/offers/{company:slug}/{offer:slug}', [OffersController::class, 'show'])->middleware('setLocale');
-Route::get('/{locale?}/jobs/create', [OffersController::class, 'create'])->middleware('setLocale');
+Route::get('/{locale?}/jobs/offers/create', [PendingOfferController::class, 'create'])->middleware('setLocale');
+Route::post('/{locale?}/jobs/offers/create', [PendingOfferController::class, 'store'])->middleware('setLocale');
 Route::get('/{locale?}/jobs/partners', [PartnersController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/jobs/partners/{company:slug}', [PartnersController::class, 'show'])->middleware('setLocale');
 

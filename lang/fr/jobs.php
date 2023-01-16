@@ -27,7 +27,7 @@ return [
                 'title' => 'Informations de l’entreprise',
                 'labels' => [
                     'logo' => 'Logo de votre entreprise',
-                    'name' => 'Nom de votre entreprise',
+                    'company-name' => 'Nom de votre entreprise',
                     'website' => 'Votre site web',
                 ]
             ],
@@ -45,7 +45,7 @@ return [
                     'body' => 'Description et missions du stage',
                     'skills' => 'Compétences nécessaires',
                     'other_skills' => 'Autres :',
-                    'add_skills' => 'Ajoutez une compétence'
+                    'add_skills_hint' => 'Ajoutez autant de compétences que vous souhaitez en les séparant par une virgule.'
                 ],
             ],
             'contract' => [

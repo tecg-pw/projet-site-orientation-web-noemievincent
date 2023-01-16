@@ -6,7 +6,6 @@ use App\Models\Company;
 use App\Models\CompanyTranslation;
 use App\Models\Offer;
 use App\Models\OfferTranslation;
-use App\Models\Skill;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -39,11 +38,7 @@ class OffersController extends Controller
      */
     public function create()
     {
-        $skills = Skill::all();
-
-        $aside = AsideController::get();
-
-        return view('jobs.create', compact('skills', 'aside'));
+        //
     }
 
     /**

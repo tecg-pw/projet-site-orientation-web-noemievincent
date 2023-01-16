@@ -87,6 +87,7 @@ return [
         public_path('img/partners/members/srcset') => storage_path('app/public/img/partners/members/srcset'),
         public_path('img/partners/logos') => storage_path('app/public/img/partners/logos'),
         public_path('img/partners/logos/srcset') => storage_path('app/public/img/partners/logos/srcset'),
+        public_path('img/pending-offers') => storage_path('app/public/img/pending-offers'),
     ],
 
 ];

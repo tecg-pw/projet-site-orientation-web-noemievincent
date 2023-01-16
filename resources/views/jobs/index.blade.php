@@ -13,7 +13,7 @@
                        class="uppercase text-lg text-orange font-bold">{{__('jobs.tabs.offers')}}</a>
                     <a href="/{{app()->getLocale()}}/jobs/partners"
                        class="uppercase text-lg text-orange underline">{{__('jobs.tabs.partners')}}</a>
-                    <a href="/{{app()->getLocale()}}/jobs/create"
+                    <a href="/{{app()->getLocale()}}/jobs/offers/create"
                        class="uppercase text-lg text-orange underline">{{__('jobs.tabs.create')}}</a>
                 </div>
                 <div class="flex flex-col gap-3">
