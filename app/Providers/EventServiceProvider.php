@@ -2,12 +2,6 @@
 
 namespace App\Providers;
 
-use App\Events\QuestionCreated;
-use App\Events\ReplyCreated;
-use App\Listeners\NotifyUserAReplyHasBeenPostedToTheirQuestion;
-use App\Listeners\NotifyUserTheyPostedAQuestion;
-use App\Models\Question;
-use App\Observers\ResolvedQuestionObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -23,12 +17,15 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        ReplyCreated::class => [
-            NotifyUserAReplyHasBeenPostedToTheirQuestion::class
-        ],
-        QuestionCreated::class => [
-            NotifyUserTheyPostedAQuestion::class
-        ],
+//        ReplyCreated::class => [
+//            NotifyUserAReplyHasBeenPostedToTheirQuestion::class
+//        ],
+//        QuestionCreated::class => [
+//            NotifyUserTheyPostedAQuestion::class
+//        ],
+//        PendingOfferCreated::class => [
+//            NotifyCompanyThatTheirOfferHasBeenSent::class
+//        ],
     ];
 
     /**
@@ -37,7 +34,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $observers = [
-        Question::class => [ResolvedQuestionObserver::class],
+//        Question::class => [ResolvedQuestionObserver::class],
     ];
 
     /**

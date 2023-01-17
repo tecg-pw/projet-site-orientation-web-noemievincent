@@ -20,6 +20,11 @@ return [
             'body' => ':name a répondu à votre question « :title ».',
             'action' => 'Aller voir le commentaire',
         ],
-    ]
+    ],
+    'pending_offer_created' => [
+        'greetings' => 'Bonjour,',
+        'subject' => 'Nous avons reçu votre offre !',
+        'body' => 'Vous avez récemment envoyé une offre de stage sur notre site. Voici ce que nous avons reçu.',
+    ],
 
 ];

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\PendingOfferCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -19,6 +20,10 @@ class PendingOffer extends Model
 
     protected $dates = [
         'start_date', 'published_at'
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => PendingOfferCreated::class,
     ];
 
     protected $fillable = [

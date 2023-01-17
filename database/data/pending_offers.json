@@ -1,0 +1,18 @@
+[
+    {
+        "company_logo": "img/pending-offers/bbc1824e78c253df1d4c1419c15cfcd7403138c8.png",
+        "company_name": "Doris à Collerette",
+        "website": "https://dac-collectif.be/",
+        "contact_name": "Maude Wera",
+        "contact_email": "bonjour@dac-collectif.be",
+        "title": "Graphic Designer",
+        "description": "Reprehenderit ea minim eiusmod. Duis in commodo laborum aute est reprehenderit cupidatat laborum. Lorem aliquip proident incididunt enim sint est eu quis ex aliqua laborum veniam proident. Dolore nulla culpa aute veniam deserunt.\r\n\r\nReprehenderit ea minim eiusmod. Duis in commodo laborum aute est reprehenderit cupidatat laborum. Lorem aliquip proident incididunt enim sint est eu quis ex aliqua laborum veniam proident. Dolore nulla culpa aute veniam deserunt.",
+        "skills": ["HTML", "CSS"],
+        "add_skill": ["Illustrator"," Photoshop"," Canva"],
+        "start_date": "1 February 2023",
+        "duration": "12 semaines",
+        "location": "Liège",
+        "reception_mode": "email",
+        "applications_link": "apply@dac-collectif.be"
+    }
+]
