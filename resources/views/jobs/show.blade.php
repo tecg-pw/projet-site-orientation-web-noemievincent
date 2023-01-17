@@ -48,7 +48,7 @@
                             class="font-display font-semibold text-blue text-lg">{{__('jobs.single.skills_title')}}</h3>
                         <ul class="list-disc list-inside marker:text-orange">
                             @foreach($skills as $skill)
-                                <li>{{$skill->name}}</li>
+                                <li>{{$skill}}</li>
                             @endforeach
                         </ul>
                     </section>

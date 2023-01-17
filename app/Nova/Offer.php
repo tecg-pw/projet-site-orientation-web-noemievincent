@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Email;
 use Laravel\Nova\Fields\HasMany;
@@ -74,7 +73,6 @@ class Offer extends Resource
             })->onlyOnIndex(),
 
             HasMany::make('Traductions', 'translations', '\App\Nova\OfferTranslation'),
-            BelongsToMany::make('Compétences', 'skills', '\App\Nova\Skill'),
         ];
     }
 

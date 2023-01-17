@@ -63,7 +63,13 @@ class OfferTranslation extends Resource
             Slug::make('Slug')->from('title')
                 ->hideFromIndex(),
 
-            Trix::make('Body', 'body'),
+            Trix::make('Description', 'body'),
+
+            Text::make('Compétences', function () {
+                return $this->displaySkills();
+            })->onlyOnDetail(),
+
+            Text::make('Compétences', 'skills')->hideFromIndex()->hideFromDetail(),
 
             Date::make('Publiée le', 'published_at')
                 ->sortable(),
@@ -85,6 +91,13 @@ class OfferTranslation extends Resource
             Text::make('Lien ou email', 'method_link')
                 ->onlyOnDetail(),
         ];
+    }
+
+    public function displaySkills() {
+        $skills = json_decode($this->skills);
+        $skills = implode(', ', $skills);
+
+        return $skills;
     }
 
     /**

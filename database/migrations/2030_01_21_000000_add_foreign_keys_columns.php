@@ -128,11 +128,6 @@ return new class extends Migration {
             $table->foreignId('teacher_id')->constrained()->onUpdate('cascade');
         });
 
-        Schema::table('offer_skill', static function (Blueprint $table) {
-            $table->foreignId('offer_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('skill_id')->constrained()->onUpdate('cascade');
-        });
-
         Schema::table('tutorial_user', static function (Blueprint $table) {
             $table->foreignId('tutorial_id')->constrained()->onUpdate('cascade');
             $table->foreignId('user_id')->constrained()->onUpdate('cascade');
@@ -270,11 +265,6 @@ return new class extends Migration {
         Schema::table('course_teacher', static function (Blueprint $table) {
             $table->dropConstrainedForeignId('course_id');
             $table->dropConstrainedForeignId('teacher_id');
-        });
-
-        Schema::table('offer_skill', static function (Blueprint $table) {
-            $table->dropConstrainedForeignId('offer_id');
-            $table->dropConstrainedForeignId('skill_id');
         });
 
         Schema::table('tutorial_user', static function (Blueprint $table) {

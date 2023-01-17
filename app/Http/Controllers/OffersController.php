@@ -70,8 +70,8 @@ class OffersController extends Controller
         }
 
         $offer = $offerRef->translations->where('locale', app()->getLocale())->first();
-        $skills = $offerRef->skills;
-
+        $skills = json_decode($offer->skills);
+        
         $alternatives = [];
         foreach ($offerRef->translations as $translation) {
             if ($translation->locale != app()->getLocale()) {

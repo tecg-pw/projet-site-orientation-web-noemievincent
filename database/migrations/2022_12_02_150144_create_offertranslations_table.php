@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('title');
             $table->string('slug');
             $table->text('body');
+            $table->json('skills');
             $table->timestamp('start_date');
             $table->string('duration');
             $table->string('location');

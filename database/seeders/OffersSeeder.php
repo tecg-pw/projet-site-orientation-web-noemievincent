@@ -32,6 +32,7 @@ class OffersSeeder extends Seeder
                 'title' => $value['title'],
                 'slug' => Str::slug($value['title']),
                 'body' => $value['body'],
+                'skills' => json_encode($value['skills']),
                 'start_date' => Carbon::parse($value['start_date'])->toDateTimeString(),
                 'duration' => $value['duration'],
                 'location' => $value['location'],

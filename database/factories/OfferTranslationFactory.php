@@ -27,6 +27,7 @@ class OfferTranslationFactory extends Factory
             'title' => $title,
             'slug' => Str::slug($title),
             'body' => '<p>' . implode('</p><p>', fake()->paragraphs(12)) . '</p>',
+            'skills' => json_encode(['HTML', 'CSS', 'Javascript']),
             'start_date' => Carbon::parse(fake()->dateTime)->toDateTimeString(),
             'duration' => fake()->numberBetween(3, 15) . ' semaines',
             'location' => fake()->city(),
