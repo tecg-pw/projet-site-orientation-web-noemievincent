@@ -2,11 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use App\Models\Project;
-use App\Models\Question;
-use App\Models\Tutorial;
-use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -24,16 +19,17 @@ class SearchController extends Controller
     {
         $search_term = "terme recherché";
 
-        $projects = Project::limit(3)->get();
-        $questions = Question::limit(3)->get();
-        $tutorials = Tutorial::limit(3)->get();
-        $news = Article::limit(3)->get();
-        $users = User::limit(3)->get();
+//        $projects = Project::limit(3)->get();
+//        $questions = Question::limit(3)->get();
+//        $tutorials = Tutorial::limit(3)->get();
+//        $news = Article::limit(3)->get();
+//        $users = User::limit(3)->get();
 
+        $results = [];
 
         $aside = AsideController::get();
 
-        return view('search', compact('search_term', 'projects', 'questions', 'tutorials', 'news', 'users', 'aside'));
+        return view('search', compact('search_term', 'results', 'aside'));
     }
 
     /**
