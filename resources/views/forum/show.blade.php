@@ -1,20 +1,23 @@
 <x-header :head_title="$question->title"/>
-@if(Request::query('confirm-delete')==='reply')
-    @php
-        $action = '/'.app()->getLocale().'/forum/questions/'.$question->slug.'/reply/'. Request::query('reply');
-        $url = '/'.app()->getLocale().'/forum/questions/'.$question->slug;
-    @endphp
-    <x-forms.confirm-delete
-        :action="$action" :url="$url" :element="'reply'"/>
-@endif
-@if(Request::query('confirm-delete')==='question')
-    @php
-        $action = '/'.app()->getLocale().'/forum/questions/'.$question->slug;
-        $url = '/'.app()->getLocale().'/forum/questions/'.$question->slug;
-    @endphp
-    <x-forms.confirm-delete
-        :action="$action" :url="$url" :element="'question'"/>
-@endif
+@auth()
+    @if(Request::query('confirm-delete')==='reply')
+        @php
+            $action = '/'.app()->getLocale().'/forum/questions/'.$question->slug.'/reply/'. Request::query('reply');
+            $url = '/'.app()->getLocale().'/forum/questions/'.$question->slug;
+        @endphp
+        <x-forms.confirm-delete
+            :action="$action" :url="$url" :element="'reply'"/>
+    @endif
+    @if(Request::query('confirm-delete')==='question')
+        @php
+            $action = '/'.app()->getLocale().'/forum/questions/'.$question->slug;
+            $url = '/'.app()->getLocale().'/forum/questions/'.$question->slug;
+        @endphp
+        <x-forms.confirm-delete
+            :action="$action" :url="$url" :element="'question'"/>
+    @endif
+
+@endauth
 <main class="main">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="{{$question->slug}}" class="col-span-3 flex flex-col gap-8">

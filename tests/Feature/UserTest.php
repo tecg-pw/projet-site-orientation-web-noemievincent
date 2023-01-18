@@ -1,49 +1,97 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
 
 uses(RefreshDatabase::class);
 
-//test('a user has a full name built from its firstname and its lastname', function () {
-//
-//    $first_name = 'Nuno';
-//    $last_name = 'Maduro';
-//    $name = 'nunomaduro';
-//    $email = 'nuno@laravel.com';
-//    $password = bcrypt('change_this');
-//
-//    $user = \App\Models\User::create(compact(
-//        'first_name', 'last_name', 'name', 'email', 'password'
-//    ));
-//
-//    $full_name = 'Nuno Maduro';
-//
-//    $this->assertModelExists($user);
-//    expect($user->full_name)->not()->toBeNull()
-//        ->and($user->full_name)->toBe($full_name);
-//});
-
-it('is not possible for a guest user to access the dashboard', function () {
+it('is not possible for a guest user to access the nova dashboard', function () {
 //    $this->withExceptionHandling();
-    $response = $this->get('/dashboard');
+    $response = $this->get('/admin');
 
-//    $response->assertSee('<h1>Dashboard</h1>', false);
-    $response->assertRedirectToRoute('login');
+    $response->assertRedirect(app()->getLocale() . '/login');
 });
 
-it('is possible for an authenticated user to access the dashboard', function () {
-    $first_name = 'Nuno';
-    $last_name = 'Maduro';
-    $email = 'nuno@laravel.com';
-    $password = bcrypt('change_this');
+it('is not possible for an authenticated user who is not admin to access the nova dashboard', function () {
+    $user = User::factory()->create();
 
-    $user = \App\Models\User::create(compact(
-        'first_name', 'last_name', 'email', 'password'
-    ));
+    actingAs($user)
+        ->get('/admin')
+        ->assertRedirect('/', false);
+});
+
+it('is possible for an authenticated user who is admin to access the nova dashboard', function () {
+    $user = User::factory()->create(['is_admin' => true]);
 
     ActingAs($user)
-        ->get('/dashboard')
-        ->assertSee('<h1>Dashboard</h1>', false);
+        ->get('/admin')
+        ->assertRedirect('/admin/nova', false);
+});
 
-//    $response->assertSee('<h1>Dashboard</h1>', false);
+it('is possible for a guest to create an account', function () {
+
+    $firstname = fake()->firstName;
+    $lastname = fake()->lastName;
+
+    $response = $this->post('/' . app()->getLocale() . '/register', [
+        'firstname' => $firstname,
+        'lastname' => $lastname,
+        'email' => fake()->email(),
+        'password' => password_hash('change_this', PASSWORD_DEFAULT),
+    ]);
+
+    $response->assertRedirect('/' . app()->getLocale());
+});
+
+it('is possible for a user to log in ', function () {
+    $firstname = 'Toto';
+    $lastname = 'Titi';
+
+    $email = 'titi@gmail.com';
+    $password = 'azerty123';
+
+    $user = User::create([
+        'firstname' => $firstname,
+        'lastname' => $lastname,
+        'fullname' => $firstname . ' ' . $lastname,
+        'slug' => Str::slug($firstname . '-' . $lastname),
+        'email' => $email,
+        'email_verified_at' => now(),
+        'is_admin' => false,
+        'password' => password_hash($password, PASSWORD_DEFAULT),
+        'remember_token' => Str::random(10),
+        'bio' => '<p>' . fake()->paragraph(2) . '</p>',
+        'gender' => fake()->randomElement(['', 'male', 'female']),
+        'role' => 'user',
+    ]);
+
+    $response = $this->post('/'.app()->getLocale().'/login',['email'=>$email, 'password'=>$password]);
+    $response->assertRedirect('/'.app()->getLocale());
+});
+
+it('is not possible for an authenticated user to access the edit page of another user’s profile', function () {
+    $user = User::factory()->create();
+    $other_user = User::factory()->create();
+
+    actingAs($user)
+        ->get('/' . app()->getLocale() . '/users/' . $other_user->slug . '/edit')
+        ->assertRedirect('/' . app()->getLocale() . '/users/' . $other_user->slug, false);
+});
+
+it('is possible for an authenticated user to access the edit page of its profile', function () {
+    $user = User::factory()->create();
+
+    $new_firstname = 'Noémie';
+    $new_lastname = 'Vincent';
+
+    $new_slug = Str::slug($new_firstname . '-' . $new_lastname);
+
+    actingAs($user)
+        ->post('/' . app()->getLocale() . '/users/' . $user->slug . '/update-infos', [
+            'firstname' => $new_firstname,
+            'lastname' => $new_lastname,
+            'email' => $user->email,
+        ])
+        ->assertRedirect('/' . app()->getLocale() . '/users/' . $new_slug);
 });

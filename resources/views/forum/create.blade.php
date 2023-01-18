@@ -1,9 +1,9 @@
 <x-header :head_title="'forum.create.head_title'"/>
 <main class="main">
     <div class="xl:grid xl:grid-cols-4 xl:gap-10">
-        <section aria-labelledby="forum" class="flex flex-col gap-8 lg:col-span-3">
+        <section aria-labelledby="forum-create" class="flex flex-col gap-8 lg:col-span-3">
             <div class="flex flex-col gap-2">
-                <h2 id="forum"
+                <h2 id="forum-create"
                     class="h2">{{__('forum.create.title')}}</h2>
                 {!! __('forum.tagline') !!}
             </div>

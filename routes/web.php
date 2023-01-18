@@ -42,7 +42,7 @@ Route::get('/', function () {
 Route::get('/{locale?}', [HomeController::class, 'index'])->middleware('setLocale');
 
 
-Route::get('/admin', \App\Http\Controllers\AdminController::class);
+Route::get('/admin', \App\Http\Controllers\AdminController::class)->name('admin');
 
 Route::get('/{locale?}/terms', function () {
     return view('terms');

@@ -210,7 +210,7 @@
             <div>
                 @guest
                     <div>
-                        <a href="/{{app()->getLocale()}}/login" class="flex items-center gap-3">
+                        <a href="/{{app()->getLocale()}}/login" class="flex items-center gap-3" dusk="login-link">
                             <img src="/img/placeholders/person-30x30.png"
                                  alt="{{__('header.login_link')}}" class="rounded-full h-full">
                             <span

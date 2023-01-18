@@ -21,7 +21,7 @@ return [
     'login' => [
         'head_title' => 'Login',
         'title' => 'Login',
-        'register_link' => '<p class="text-sm font-light">No account yet? <a href="/en/register" class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">Register</a></p>',
+        'register_link' => '<p class="text-sm font-light">No account yet? <a href="/en/register" dusk="register-link" class="text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">Register</a></p>',
     ],
     'register' => [
         'head_title' => 'Register',

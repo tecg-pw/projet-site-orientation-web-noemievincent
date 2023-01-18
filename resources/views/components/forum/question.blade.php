@@ -92,7 +92,7 @@
         @auth()
             @if(Request::has('post-reply'))
                 <form action="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}/reply" method="post"
-                      class="flex flex-col gap-4">
+                      class="flex flex-col gap-4" id="reply-form">
                     @csrf
                     <div class="flex flex-col gap-2">
                         <label for="body" class="text-lg text-blue-dark">

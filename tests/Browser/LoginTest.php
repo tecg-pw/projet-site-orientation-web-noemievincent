@@ -20,18 +20,14 @@ class LoginTest extends DuskTestCase
     {
         $email = 'toto@titi.com';
         $password = 'totoisthebest';
-        $toto = User::create([
-            'firstname' => 'Toto',
-            'lastname' => 'Titi',
-            'fullname' => 'Toto Titi',
-            'slug' => 'toto-titi',
+        $toto = User::factory()->create([
             'email' => $email,
-            'password' => bcrypt($password)
+            'password' => $password,
         ]);
 
         $this->browse(function (Browser $browser) use ($toto, $email, $password) {
-            $browser->visit('/')
-                ->clickLink('Login')
+            $browser->visit('/' . app()->getLocale())
+                ->clickLink('SE CONNECTER')
                 ->assertSee('LOGIN')
                 ->assertUrlIs('http://projets-web.test/en/login')
                 ->type('@email-field', $email)
