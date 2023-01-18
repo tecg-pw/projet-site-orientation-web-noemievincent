@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
 it('sets the lang attribute of the html tag accordingly to the url locale segment', function () {
     $locale = 'fr';
 

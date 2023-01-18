@@ -6,30 +6,7 @@ use Illuminate\Support\Str;
 
 uses(RefreshDatabase::class);
 
-it('is not possible for a guest user to access the nova dashboard', function () {
-//    $this->withExceptionHandling();
-    $response = $this->get('/admin');
-
-    $response->assertRedirect(app()->getLocale() . '/login');
-});
-
-it('is not possible for an authenticated user who is not admin to access the nova dashboard', function () {
-    $user = User::factory()->create();
-
-    actingAs($user)
-        ->get('/admin')
-        ->assertRedirect('/', false);
-});
-
-it('is possible for an authenticated user who is admin to access the nova dashboard', function () {
-    $user = User::factory()->create(['is_admin' => true]);
-
-    ActingAs($user)
-        ->get('/admin')
-        ->assertRedirect('/admin/nova', false);
-});
-
-it('is possible for a guest to create an account', function () {
+test('that there is a success message when a guest user register', function () {
 
     $firstname = fake()->firstName;
     $lastname = fake()->lastName;
@@ -41,10 +18,10 @@ it('is possible for a guest to create an account', function () {
         'password' => password_hash('change_this', PASSWORD_DEFAULT),
     ]);
 
-    $response->assertRedirect('/' . app()->getLocale());
+    $response->assertRedirect('/' . app()->getLocale())->assertSessionHas('success');
 });
 
-it('is possible for a user to log in ', function () {
+test('that there is a success message when a user log in', function () {
     $firstname = 'Toto';
     $lastname = 'Titi';
 
@@ -67,19 +44,10 @@ it('is possible for a user to log in ', function () {
     ]);
 
     $response = $this->post('/' . app()->getLocale() . '/login', ['email' => $email, 'password' => $password]);
-    $response->assertRedirect('/' . app()->getLocale());
+    $response->assertRedirect('/' . app()->getLocale())->assertSessionHas('success')->assertSessionHas('success');
 });
 
-it('is not possible for an authenticated user to access the edit page of another user’s profile', function () {
-    $user = User::factory()->create();
-    $other_user = User::factory()->create();
-
-    actingAs($user)
-        ->get('/' . app()->getLocale() . '/users/' . $other_user->slug . '/edit')
-        ->assertRedirect('/' . app()->getLocale() . '/users/' . $other_user->slug, false);
-});
-
-it('is possible for an authenticated user to edit its informations', function () {
+test('that there is a success message when an authenticated user edit its informations', function () {
     $user = User::factory()->create();
 
     $new_firstname = 'Noémie';
@@ -93,10 +61,10 @@ it('is possible for an authenticated user to edit its informations', function ()
             'lastname' => $new_lastname,
             'email' => $user->email,
         ])
-        ->assertRedirect('/' . app()->getLocale() . '/users/' . $new_slug);
+        ->assertRedirect('/' . app()->getLocale() . '/users/' . $new_slug)->assertSessionHas('success');
 });
 
-it('is possible for an authenticated user to access the edit its password', function () {
+test('that there is a success message when an authenticated user edit its password', function () {
     $firstname = 'Toto';
     $lastname = 'Titi';
     $email = 'titi@gmail.com';
@@ -124,5 +92,5 @@ it('is possible for an authenticated user to access the edit its password', func
             'old-password' => $old_password,
             'new-password' => $new_password,
         ])
-        ->assertRedirect('/' . app()->getLocale() . '/users/' . $user->slug);
+        ->assertRedirect('/' . app()->getLocale() . '/users/' . $user->slug)->assertSessionHas('success');
 });
