@@ -9,7 +9,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -17,27 +16,22 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
     <!-- Primary Meta Tags -->
     <title>{{__($head_title)}} - Web Design</title>
     <meta name="title" content="{{__($head_title)}} - Web Design">
     <meta name="description" content="{{__('header.description')}}">
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{config('app.url')}}">
     <meta property="og:title" content="{{__($head_title)}} - Web Design">
     <meta property="og:description" content="{{__('header.description')}}">
     <meta property="og:image" content="{{config('app.url')}}/img/meta-logo.jpg">
-
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{config('app.url')}}">
     <meta property="twitter:title" content="{{__($head_title)}} - Web Design">
     <meta property="twitter:description" content="{{__('header.description')}}">
     <meta property="twitter:image" content="{{config('app.url')}}/img/meta-logo.jpg">
-
-
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
 <body class="no-js text-blue-dark font-body flex flex-col h-screen selection:bg-blue-light relative">
@@ -193,6 +187,12 @@
                         @endforeach
                     </ul>
                 </nav>
+                @auth()
+                    @if(auth()->user()->is_admin)
+                        <a href="/admin/nova"
+                           class="{{Request::is(app()->getLocale() . '/' . $slug) ? 'lg:font-bold' : ''}} hover:text-orange transitionable">Nova</a>
+                    @endif
+                @endauth
                 <ul class="flex gap-2">
                     @php
                         $segments = Request::segments();
@@ -223,12 +223,12 @@
                         <a href="/{{app()->getLocale()}}/users/{{auth()->user()->slug}}"
                            class="flex items-center gap-3">
                             <picture>
-{{--                                @if(auth()->user()->srcset && auth()->user()->srcset['small'])--}}
-{{--                                    @foreach(auth()->user()->srcset['small'] as $size => $path)--}}
-{{--                                        <source media="(max-width: {{$size}}px)"--}}
-{{--                                                srcset="/{{$path}}">--}}
-{{--                                    @endforeach--}}
-{{--                                @endif--}}
+                                {{--                                @if(auth()->user()->srcset && auth()->user()->srcset['small'])--}}
+                                {{--                                    @foreach(auth()->user()->srcset['small'] as $size => $path)--}}
+                                {{--                                        <source media="(max-width: {{$size}}px)"--}}
+                                {{--                                                srcset="/{{$path}}">--}}
+                                {{--                                    @endforeach--}}
+                                {{--                                @endif--}}
                                 <img
                                     src="{{auth()->user()->pictures && auth()->user()->pictures['small'] ? '/' . auth()->user()->pictures['small'] : '/img/placeholders/person-30x30.png'}}"
                                     alt="{{auth()->user()->fullname}}"
