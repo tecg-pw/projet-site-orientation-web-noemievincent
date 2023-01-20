@@ -7,13 +7,6 @@ return [
     'label' => 'Search a keyword',
     'button' => 'Search',
     'more_results' => 'More results',
-    'filters_items' => [
-        'projects' => 'projects',
-        'forum' => 'forum questions',
-        'tutorials' => 'tutorials',
-        'news' => 'news',
-        'users' => 'users',
-    ],
     'titles' => [
         'projects' => 'Projects',
         'forum' => 'Forum questions',
@@ -21,8 +14,11 @@ return [
         'news' => 'News',
         'users' => 'Users',
     ],
+    'no_search_term' => [
+        'title' => 'Make a search',
+        'tagline' => 'Search for the title of a project, an article or a tutorial...',
+    ],
     'no_results' => [
-        'head_title' => 'No results for',
         'title' => 'No results for',
         'tagline' => 'Your search had no results',
         'hints' => [
