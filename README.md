@@ -1,3 +1,7 @@
+> Se rendre sur le [site](https://phplaravel-921869-3200121.cloudwaysapps.com)
+
+> Se rendre sur le [repo d'informations](https://github.com/noemievincent/projet-web)
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
