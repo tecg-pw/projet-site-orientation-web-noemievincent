@@ -23,8 +23,7 @@ return new class extends Migration {
             $table->json('srcset')->nullable();
             $table->string('github_link')->nullable();
             $table->string('linkedin_link')->nullable();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at');
+            $table->timestamps();
             $table->softDeletes();
         });
     }

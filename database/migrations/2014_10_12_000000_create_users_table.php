@@ -29,8 +29,7 @@ return new class extends Migration {
             $table->text('bio')->nullable();
             $table->string('role')->default('user');
             $table->rememberToken();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at');
+            $table->timestamps();
             $table->softDeletes();
         });
     }

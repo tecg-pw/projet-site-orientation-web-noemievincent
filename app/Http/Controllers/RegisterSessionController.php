@@ -15,7 +15,7 @@ class RegisterSessionController extends Controller
         $firstname = request('firstname');
         $lastname = request('lastname');
         $fullname = $firstname . ' ' . $lastname;
-        $slug = Str::slug($firstname . '-' . $lastname);
+        $slug = Str::slug($firstname . '-' . $lastname)  . '_' . uuid_create();
         $email = request('email');
         $password = password_hash(request('password'), PASSWORD_DEFAULT);
 

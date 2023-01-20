@@ -16,8 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->text('body');
             $table->timestamp('published_at')->useCurrent();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at');
+            $table->timestamps();
             $table->softDeletes();
         });
     }

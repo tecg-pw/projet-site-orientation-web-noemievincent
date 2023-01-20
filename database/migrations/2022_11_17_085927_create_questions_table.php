@@ -19,8 +19,7 @@ return new class extends Migration {
             $table->text('body');
             $table->boolean('is_solved')->default(false);
             $table->timestamp('published_at')->useCurrent();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at');
+            $table->timestamps();
             $table->softDeletes();
         });
     }

@@ -24,7 +24,7 @@ class UsersSeeder extends Seeder
                 'firstname' => $value->firstname,
                 'lastname' => $value->lastname,
                 'fullname' => $value->firstname . ' ' . $value->lastname,
-                'slug' => Str::slug($value->firstname . '-' . $value->lastname),
+                'slug' => Str::slug($value->firstname . '-' . $value->lastname)  . '_' . uuid_create(),
                 'email' => $value->email,
                 'email_verified_at' => now(),
                 'is_admin' => $value->is_admin,
