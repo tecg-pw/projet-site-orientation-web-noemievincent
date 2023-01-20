@@ -45,6 +45,7 @@ use App\Nova\TutorialTranslation;
 use App\Nova\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Nova\Menu\Menu;
 use Laravel\Nova\Menu\MenuItem;
 use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
@@ -114,6 +115,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::resource(TutorialTranslation::class),
                 ])->icon('translate')->collapsable(),
             ];
+        });
+
+        Nova::userMenu(function (Request $request, Menu $menu) {
+            return $menu
+                ->append(MenuItem::externalLink('Retour au site', config('app.url')));
         });
     }
 
