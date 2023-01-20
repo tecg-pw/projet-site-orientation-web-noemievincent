@@ -6,6 +6,7 @@
 /vendor
 .env
 .env.prod
+.env.example
 .env.dusk.local
 .env.backup
 .env.production
