@@ -1,6 +1,7 @@
 import './bootstrap';
 import {Projects} from "./Models/Projects";
 import {Faq} from "./Models/Faq";
+import {Alumnis} from "./Models/Alumnis";
 
 window.addEventListener('load', init);
 
@@ -16,11 +17,15 @@ function init() {
 
     // saveFavorite();
 
-    if (document.body.id === 'projects') {
+    if (document.body.id === 'projects_page') {
         new Projects(siteUrl);
     }
 
-    if (document.body.id === 'faq') {
+    if (document.body.id === 'alumnis_page') {
+        new Alumnis(siteUrl);
+    }
+
+    if (document.body.id === 'faq_page') {
         new Faq(siteUrl);
     }
 }

@@ -49,24 +49,29 @@ Route::get('/{locale?}/terms', function () {
 
 Route::get('/{locale?}/search', [SearchController::class, 'index'])->middleware('setLocale');
 
+
 //ROUTE : About
 Route::get('/{locale?}/about', [AboutController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/classes/{course:slug}', [CourseController::class, 'show'])->middleware('setLocale');
 Route::get('/{locale?}/teachers/{teacher:slug}', [TeacherController::class, 'show'])->middleware('setLocale');
 
+
 //ROUTE : Alumnis
 Route::get('/{locale?}/alumnis', [AlumnisController::class, 'index'])->middleware('setLocale');
+Route::get('/{locale?}/alumnis/ajax', [AlumnisController::class, 'ajax'])->middleware('setLocale');
 Route::get('/{locale?}/alumnis/{alumni:slug}', [AlumnisController::class, 'show'])->middleware('setLocale');
+
 
 //ROUTE : Projects
 Route::get('/{locale?}/projects', [ProjectsController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/projects/{student:slug}/{project:slug}', [ProjectsController::class, 'show'])->middleware('setLocale');
-
 Route::get('/{locale?}/projects/ajax', [ProjectsController::class, 'ajax'])->middleware('setLocale');
+
 
 //ROUTE : News
 Route::get('/{locale?}/news', [NewsController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/news/{article:slug}', [NewsController::class, 'show'])->middleware('setLocale');
+
 
 //ROUTE : Forum + Faq
 Route::get('/{locale?}/forum', [ForumController::class, 'index'])->middleware('setLocale');
@@ -87,6 +92,7 @@ Route::get('/{locale?}/faq/{category:slug}', [FaqController::class, 'index'])->m
 Route::get('/{locale?}/faq/{category:slug}/ajax', [FaqController::class, 'ajax'])->middleware('setLocale');
 
 Route::post('/{locale?}/forum/questions/{question:slug}/reply', [ReplyController::class, 'store'])->middleware(['auth', 'setLocale']);
+
 
 //ROUTE : Jobs
 Route::get('/{locale?}/jobs/offers', [OffersController::class, 'index'])->middleware('setLocale');

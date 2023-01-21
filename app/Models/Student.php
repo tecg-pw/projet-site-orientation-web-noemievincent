@@ -12,6 +12,8 @@ class Student extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $perPage = 9;
+
     protected $with = ['translations'];
 
     protected $fillable = [

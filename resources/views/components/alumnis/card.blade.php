@@ -14,7 +14,7 @@
                     alt="{{$alumni->fullname}}" class="rounded-full w-full h-full">
             </picture>
             <div>
-                <h3 class="font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
+                <h3 class="title first-letter:capitalize font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
                     <a href="/{{app()->getLocale()}}/alumnis/{{$alumni->slug}}">{{$alumni->fullname}}</a></h3>
                 <span class="flex gap-1">
                     <time

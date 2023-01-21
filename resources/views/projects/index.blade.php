@@ -1,4 +1,4 @@
-<x-header :head_title="'projects.head_title'" :id="'projects'"/>
+<x-header :head_title="'projects.head_title'" :id="'projects_page'"/>
 <main class="main">
     <div class="xl:grid xl:grid-cols-4 xl:gap-10">
         <section aria-labelledby="projects" class="flex flex-col gap-8 lg:col-span-3">

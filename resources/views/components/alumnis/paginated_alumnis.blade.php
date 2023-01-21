@@ -2,8 +2,6 @@
     'alumnis'
 ])
 <div class="flex flex-col gap-8" id="paginated_alumnis">
-    <x-alumnis.loop :alumnis="$alumnis"/>
-    <x-alumnis.pagination :alumnis="$alumnis"/>
     @if(count($alumnis) > 0)
         <x-alumnis.loop :alumnis="$alumnis"/>
         <x-alumnis.pagination :alumnis="$alumnis"/>

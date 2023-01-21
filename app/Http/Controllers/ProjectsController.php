@@ -33,10 +33,6 @@ class ProjectsController extends Controller
         return view('projects.index', compact('url', 'projects', 'dates', 'categories', 'aside'));
     }
 
-    /**
-     * @param string $locale
-     * @return array
-     */
     public function getProjects(string $locale)
     {
         $projects = [];

@@ -6,6 +6,9 @@ return [
     'clear_link' => 'clear filters',
     'titles' => [
         'date' => 'Date',
+        'start_date' => 'Start date',
+        'end_date' => 'End date',
+        'now' => 'Now',
         'category' => 'Categories',
         'agency' => 'Agencies',
         'location' => 'Locations',
