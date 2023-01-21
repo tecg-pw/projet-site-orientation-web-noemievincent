@@ -3,11 +3,11 @@
     <div class="flex justify-between items-center">
         <div class="flex gap-4">
             <picture>
-{{--                @if($reply->user->srcset && $reply->user->srcset['medium'])--}}
-{{--                    @foreach($reply->user->srcset['medium'] as $size => $path)--}}
-{{--                        <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">--}}
-{{--                    @endforeach--}}
-{{--                @endif--}}
+                {{--                @if($reply->user->srcset && $reply->user->srcset['medium'])--}}
+                {{--                    @foreach($reply->user->srcset['medium'] as $size => $path)--}}
+                {{--                        <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">--}}
+                {{--                    @endforeach--}}
+                {{--                @endif--}}
                 <img
                     src="{{$reply->user->pictures && $reply->user->pictures['medium'] ? '/' . $reply->user->pictures['medium'] : '/img/placeholders/person-60x60.png'}}"
                     alt="{{$reply->user->fullname}}" class="rounded-full">
@@ -54,7 +54,9 @@
                   method="post"
                   class="flex flex-col gap-4">
                 @csrf
-                <x-forms.tinymce-editor :id="'body'" :trans="'forms.labels.answer'">{{old('body') ?? $reply->body}}</x-forms.tinymce-editor>@
+                <x-forms.tinymce-editor :name="'body'"
+                                        :trans="'forms.labels.answer'">{{old('body') ?? $reply->body}}</x-forms.tinymce-editor>
+                @
                 <div class="flex gap-8 items-center justify-end">
                     <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}"
                        class="uppercase text-orange">{{__('forms.links.cancel')}}</a>
@@ -70,7 +72,9 @@
                 </div>
             </form>
         @else
-            {!! $reply->body !!}
+            <div class="wysiwyg">
+                {!! $reply->body !!}
+            </div>
             <div class="font-light flex flex-col gap-1 sm:flex-row sm:gap-4">
                 {!! __('forum.reply.infos', ['datetime' => $reply->published_at->format('Y-m-d'), 'date' => $reply->published_at->format('d/m/Y'), 'datetimeHours' => $reply->published_at->format('H:i'), 'time' => $reply->published_at->format('H:i')]) !!}
                 @if(Request::path() != app()->getLocale() . '/forum/questions/' . $reply->question->slug)

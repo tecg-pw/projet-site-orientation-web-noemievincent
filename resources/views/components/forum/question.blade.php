@@ -49,7 +49,7 @@
                 @endif
             @endauth
         </div>
-        <div>
+        <div class="wysiwyg">
             {!! $question->body !!}
         </div>
         <div class="flex flex-col gap-6 justify-between md:flex-row md:items-center">
@@ -94,7 +94,7 @@
                 <form action="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}/reply" method="post"
                       class="flex flex-col gap-4" id="reply-form">
                     @csrf
-                    <x-forms.tinymce-editor :id="'body'" :trans="'forms.labels.answer'">{{old('body')}}</x-forms.tinymce-editor>
+                    <x-forms.tinymce-editor :name="'body'" :trans="'forms.labels.answer'">{{old('body')}}</x-forms.tinymce-editor>
                     <div class="flex gap-8 items-center justify-end">
                         <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}"
                            class="uppercase text-orange">{{__('forms.links.cancel')}}</a>

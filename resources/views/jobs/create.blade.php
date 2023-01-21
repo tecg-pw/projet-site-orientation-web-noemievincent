@@ -153,7 +153,7 @@
                                         <input type="text" id="title" name="title" value="{{old('title')}}"
                                                class="@error('title') error-outline @enderror pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                                     </div>
-                                    <x-forms.tinymce-editor :id="'description'" :trans="'jobs.create.form.offer.labels.body'">{!! old('description') !!}</x-forms.tinymce-editor>
+                                    <x-forms.tinymce-editor :name="'description'" :trans="'jobs.create.form.offer.labels.body'">{!! old('description') !!}</x-forms.tinymce-editor>
                                     <div>
                                         <div class="flex flex-col gap-2">
                                             <p class="text-lg ">{{__('jobs.create.form.offer.labels.skills')}}</p>

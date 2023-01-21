@@ -25,7 +25,7 @@
                             <input type="text" id="title" name="title" value="{{old('title')}}"
                                    class="@error('title') error-outline @enderror pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">
                         </div>
-                        <x-forms.tinymce-editor :id="'body'" :trans="'forms.labels.message'">{{old('body')}}</x-forms.tinymce-editor>
+                        <x-forms.tinymce-editor :name="'body'" :trans="'forms.labels.message'">{{old('body')}}</x-forms.tinymce-editor>
                         <div class="flex gap-2">
                             <label for="category_id" class="text-lg text-blue-dark">
                                 @if ($errors->has('category'))

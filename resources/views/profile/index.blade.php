@@ -44,7 +44,7 @@
                     @endif
                 @endauth
             </div>
-            <div>
+            <div class="wysiwyg">
                 {!! $user->bio !!}
             </div>
             <div class="bg-blue/50 h-px w-full"></div>
@@ -106,18 +106,6 @@
                         <div id="container">
                             <x-tutorials.paginated_tutorials :tutorials="$tutorials"/>
                         </div>
-{{--                        @if(count($tutorials) === 0)--}}
-{{--                            {{__('profile.no_tutorial')}}--}}
-{{--                        @else--}}
-{{--                            <div class="grid grid-cols-2 gap-8 mt-6">--}}
-{{--                                @foreach($tutorials as $tutorial)--}}
-{{--                                    <x-resources.tutorial--}}
-{{--                                        :tutorial="$tutorial->translations->where('locale', app()->getLocale())->first()"--}}
-{{--                                        :languages="$tutorial->languages"--}}
-{{--                                        :is_favorite="true"/>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-{{--                        @endif--}}
                     </div>
                 @endif
             @endauth

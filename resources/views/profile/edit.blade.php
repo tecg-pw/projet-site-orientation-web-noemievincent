@@ -71,7 +71,7 @@
                             @endforeach
                         </div>
                     </div>
-                    <x-forms.tinymce-editor :id="'bio'" :trans="'forms.labels.bio'">{{old('bio') ?? htmlspecialchars_decode($user->bio)}}</x-forms.tinymce-editor>
+                    <x-forms.tinymce-editor :name="'bio'" :trans="'forms.labels.bio'">{{old('bio') ?? htmlspecialchars_decode($user->bio)}}</x-forms.tinymce-editor>
                 </div>
                 <div class="flex gap-8 items-center justify-between">
                     <button type="submit"

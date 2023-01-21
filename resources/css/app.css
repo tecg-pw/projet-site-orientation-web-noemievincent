@@ -10,6 +10,14 @@
         @apply text-orange bg-transparent
     }
 
+    .wysiwyg ul {
+        @apply list-disc list-inside
+    }
+
+    .wysiwyg ol {
+        @apply list-decimal list-inside
+    }
+
     .main {
         @apply flex-1 mt-10 px-5 lg:px-10 2xl:px-24
     }
