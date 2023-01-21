@@ -50,21 +50,18 @@
             <div class="bg-blue/50 h-px w-full"></div>
             <div class="flex flex-col gap-4">
                 <h3 class="font-semibold font-display text-xl">{{__('profile.forum_title')}}</h3>
-                <div class="flex flex-col gap-3 lg:grid lg:grid-cols-3 lg:gap-x-11">
-                    <div class="flex gap-12 col-span-2">
-                        @if(auth()->user() && $user->slug === auth()->user()->slug)
-                            <a href="?forum-tab=questions"
-                               class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.questions')}}</a>
-                            <a href="?forum-tab=replies"
-                               class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'replies' ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.replies')}}</a>
-                        @else
-                            <a href="?forum-tab=questions"
-                               class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.questions', $user->gender)}}</a>
-                            <a href="?forum-tab=replies"
-                               class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'replies' ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.replies', $user->gender)}}</a>
-                        @endif
-                    </div>
-                    <x-filters.search :element="'forum'"/>
+                <div class="flex gap-12 col-span-2">
+                    @if(auth()->user() && $user->slug === auth()->user()->slug)
+                        <a href="?forum-tab=questions"
+                           class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.questions')}}</a>
+                        <a href="?forum-tab=replies"
+                           class="uppercase text-lg text-orange underline {{Request::query('forum-tab') === 'replies' ? 'font-bold' : ''}}">{{__('profile.forum_tabs.user.replies')}}</a>
+                    @else
+                        <a href="?forum-tab=questions"
+                           class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'questions' || Request::all() == null ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.questions', $user->gender)}}</a>
+                        <a href="?forum-tab=replies"
+                           class="uppercase text-lg text-orange {{Request::input('forum-tab') === 'replies' ? 'font-bold' : 'underline'}}">{{trans_choice('profile.forum_tabs.guest.replies', $user->gender)}}</a>
+                    @endif
                 </div>
                 @if(Request::query('forum-tab') === 'questions' || Request::all() == null)
                     @if(count($questions) === 0)
@@ -103,38 +100,24 @@
                     <div class="bg-blue/50 h-px w-full"></div>
                     <div class="flex flex-col gap-4">
                         <h3 class="font-semibold font-display text-xl">{{__('profile.tutorials_title')}}</h3>
-                        <div class="flex flex-col gap-3">
-                            <div class="lg:grid lg:grid-cols-3 lg:gap-x-11">
-                                <div class="flex gap-6 items-center col-span-2">
-                                    <p class="uppercase text-lg">{{__('filters.title')}}</p>
-                                    <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
-                                </div>
-                                <x-filters.search :element="'tutorials'"/>
-                            </div>
-                            <form
-                                class="flex flex-col gap-2 sm:flex-row sm:col-span-2 sm:items-center sm:justify-between">
-                                @csrf
-                                <div class="flex gap-4">
-                                    <x-filters.languages :languages="$languages"/>
-                                </div>
-                                <button type="submit"
-                                        class="self-start font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
-                                    {{__('filters.filter_button')}}
-                                </button>
-                            </form>
+                        <x-filters.container :url="$url">
+                            <x-filters.languages :languages="$languages"/>
+                        </x-filters.container>
+                        <div id="container">
+                            <x-tutorials.paginated_tutorials :tutorials="$tutorials"/>
                         </div>
-                        @if(count($tutorials) === 0)
-                            {{__('profile.no_tutorial')}}
-                        @else
-                            <div class="grid grid-cols-2 gap-8 mt-6">
-                                @foreach($tutorials as $tutorial)
-                                    <x-resources.tutorial
-                                        :tutorial="$tutorial->translations->where('locale', app()->getLocale())->first()"
-                                        :languages="$tutorial->languages"
-                                        :is_favorite="true"/>
-                                @endforeach
-                            </div>
-                        @endif
+{{--                        @if(count($tutorials) === 0)--}}
+{{--                            {{__('profile.no_tutorial')}}--}}
+{{--                        @else--}}
+{{--                            <div class="grid grid-cols-2 gap-8 mt-6">--}}
+{{--                                @foreach($tutorials as $tutorial)--}}
+{{--                                    <x-resources.tutorial--}}
+{{--                                        :tutorial="$tutorial->translations->where('locale', app()->getLocale())->first()"--}}
+{{--                                        :languages="$tutorial->languages"--}}
+{{--                                        :is_favorite="true"/>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                        @endif--}}
                     </div>
                 @endif
             @endauth

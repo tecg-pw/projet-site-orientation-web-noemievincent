@@ -32,7 +32,7 @@ class PendingOfferController extends Controller
         $validatedData['skills'] = json_encode($validatedData['skills']);
         $validatedData['add_skill'] = json_encode(explode(',', $validatedData['add_skill']));
 
-        $validatedData['start_date'] = Carbon::parse($validatedData['start_date'])->toDateTimeString();
+        $validatedData['start_date'] = Carbon::parse($validatedData['start_date'])->toDateString();
 
         $applications_link = 'applications_' . $validatedData['reception_mode'];
         $validatedData['applications_link'] = $request->safe()->only($applications_link)[$applications_link];

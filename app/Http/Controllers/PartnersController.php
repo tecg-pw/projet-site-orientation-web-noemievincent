@@ -20,6 +20,8 @@ class PartnersController extends Controller
      */
     public function index()
     {
+        $url = request()->url();
+
         $partners = Company::paginate(9);
 
         //filters
@@ -28,7 +30,7 @@ class PartnersController extends Controller
 
         $aside = AsideController::get();
 
-        return view('partners.index', compact('partners', 'companies', 'locations', 'aside'));
+        return view('partners.index', compact('url', 'partners', 'companies', 'locations', 'aside'));
     }
 
     /**

@@ -20,13 +20,16 @@ class NewsController extends Controller
      */
     public function index()
     {
+        $url = request()->url();
+
         $news = Article::paginate(9);
 
+        $dates = ArticleTranslation::select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
         $categories = ArticleCategoryTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
 
         $aside = AsideController::get();
 
-        return view('news.index', compact('news', 'categories', 'aside'));
+        return view('news.index', compact('url', 'news', 'dates', 'categories', 'aside'));
     }
 
     /**

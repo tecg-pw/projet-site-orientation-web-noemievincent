@@ -37,7 +37,7 @@ class ArticlesSeeder extends Seeder
                 'srcset' => $value['srcset'],
                 'excerpt' => $value['excerpt'],
                 'body' => $value['body'],
-                'published_at' => Carbon::parse($value['published_at'])->toDateTimeString(),
+                'published_at' => Carbon::parse($value['published_at'])->toDateString(),
                 'locale' => $value['locale'],
                 'article_id' => $value['article_id'],
             ]);

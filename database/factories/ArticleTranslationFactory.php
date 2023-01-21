@@ -31,7 +31,7 @@ class ArticleTranslationFactory extends Factory
             'srcset' => json_encode(''),
             'excerpt' => fake()->paragraph(),
             'body' => '<p>' . implode('</p><p>', fake()->paragraphs(12)) . '</p>',
-            'published_at' => Carbon::now()->toDateTimeString(),
+            'published_at' => Carbon::now()->toDateString(),
             'locale' => fake()->randomElement(config('app.available_locales')),
             'article_id' => $ids->random(),
         ];

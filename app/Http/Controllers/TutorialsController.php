@@ -19,12 +19,14 @@ class TutorialsController extends Controller
      */
     public function index()
     {
+        $url = request()->url();
+
         $tutorials = Tutorial::paginate(9);
         $languages = Language::all();
 
         $aside = AsideController::get();
 
-        return view('tutorials.index', compact('tutorials', 'languages', 'aside'));
+        return view('tutorials.index', compact('url', 'tutorials', 'languages', 'aside'));
     }
 
     /**

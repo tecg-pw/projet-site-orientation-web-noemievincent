@@ -23,6 +23,8 @@ class ForumController extends Controller
      */
     public function index()
     {
+        $url = request()->url();
+
         $questions = Question::with('user')->latest('published_at')->paginate(5);
         $replies = Reply::with('user')->latest('published_at')->paginate(5);
 
@@ -31,7 +33,7 @@ class ForumController extends Controller
 
         $aside = AsideController::get();
 
-        return view('forum.index', compact('questions', 'replies', 'categories', 'aside'));
+        return view('forum.index', compact('url', 'questions', 'replies', 'categories', 'aside'));
     }
 
     /**

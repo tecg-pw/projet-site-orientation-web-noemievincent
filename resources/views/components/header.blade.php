@@ -1,4 +1,4 @@
-@props(['head_title'])
+@props(['head_title', 'id'])
     <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="bg-white">
 <head>
@@ -34,7 +34,7 @@
     <meta property="twitter:image" content="{{config('app.url')}}/img/meta-logo.jpg">
     @vite(['resources/css/app.css', 'resources/js/app.ts'])
 </head>
-<body class="no-js text-blue-dark font-body flex flex-col h-screen selection:bg-blue-light relative">
+<body class="no-js text-blue-dark font-body flex flex-col h-screen selection:bg-blue-light relative" id="{{$id ?? ''}}">
 {{--<div--}}
 {{--    class="fixed z-20 right-0 left-0 text-center bg-red-300 sm:bg-orange-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-cyan-300 2xl:bg-purple-200 transition ease-in-out duration-700">--}}
 {{--    <p class="after:content-['phone'] sm:after:content-['tablet'] md:after:content-['small_screen'] lg:after:content-['default_screen'] xl:after:content-['large_screen'] 2xl:after:content-['extra_large_screen']">--}}

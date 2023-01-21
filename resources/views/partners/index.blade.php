@@ -16,38 +16,12 @@
                     <a href="/{{app()->getLocale()}}/jobs/offers/create"
                        class="uppercase text-lg text-orange underline">{{__('jobs.tabs.create')}}</a>
                 </div>
-                <div class="flex flex-col gap-3">
-                    <div class="lg:grid lg:grid-cols-3 lg:gap-x-11">
-                        <div class="flex gap-6 items-center col-span-2">
-                            <p class="uppercase text-lg">{{__('filters.title')}}</p>
-                            <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
-                        </div>
-                        <x-filters.search :element="'partners'"/>
-                    </div>
-                    <form class="flex flex-col gap-2 sm:flex-row sm:col-span-2 sm:items-center sm:justify-between">
-                        @csrf
-                        <div class="flex flex-col gap-2 sm:flex-row sm:gap-4">
-                            <x-filters.jobs-agencies :companies="$companies"/>
-                            <x-filters.jobs-locations :locations="$locations"/>
-                            {{--                        <x-filters.date :dates="$dates" :property="'end_year'" :format="'Y'"/>--}}
-                        </div>
-                        <button type="submit"
-                                class="self-start font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transition-all ease-in-out duration-200">
-                            {{__('filters.filter_button')}}
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="flex flex-col gap-20">
-                <div
-                    class="flex flex-col gap-4 justify-items-center sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-                    @foreach($partners as $partner)
-                        <x-partners.article
-                            :partner="$partner->translations->where('locale', app()->getLocale())->first()"/>
-                    @endforeach
-                </div>
-                <div>
-                    {{$partners->links()}}
+                <x-filters.container :url="$url">
+                    <x-filters.jobs-agencies :companies="$companies"/>
+                    <x-filters.jobs-locations :locations="$locations"/>
+                </x-filters.container>
+                <div id="container">
+                    <x-partners.paginated_partners :partners="$partners"/>
                 </div>
             </div>
         </section>

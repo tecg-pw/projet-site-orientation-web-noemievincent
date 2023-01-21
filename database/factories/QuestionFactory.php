@@ -30,7 +30,7 @@ class QuestionFactory extends Factory
             'slug' => Str::slug($title) . '_' . uuid_create(),
             'body' => '<p>' . fake()->paragraph(2) . '</p>',
             'is_solved' => fake()->boolean(),
-            'published_at' => Carbon::now()->toDateTimeString(),
+            'published_at' => Carbon::now()->toDateString(),
             'category_id' => $categories_ids->random(),
             'user_id' => $users_ids->random(),
         ];

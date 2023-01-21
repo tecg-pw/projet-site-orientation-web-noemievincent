@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Language;
+use App\Models\Question;
+use App\Models\Reply;
+use App\Models\Tutorial;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -51,17 +54,46 @@ class UserController extends Controller
      */
     public function show(string $locale, User $user)
     {
-        $questions = $user->questions;
-        $replies = $user->replies;
+        $url = request()->url();
 
-        $tutorials = $user->tutorials;
+        $questionsRefs = $user->questions;
+        $questionsIds = [];
+        foreach ($questionsRefs as $ref) {
+            $questionsIds[] = $ref->id;
+        }
+
+        $questions = [];
+        if (count($questionsIds) > 0) {
+            $questions = Question::whereIn('id', $questionsIds)->paginate()->withQueryString();
+        }
+
+        $repliesRefs = $user->replies;
+        $repliesIds = [];
+        foreach ($repliesRefs as $ref) {
+            $repliesIds[] = $ref->id;
+        }
+
+        $replies = [];
+        if (count($repliesIds) > 0) {
+            $replies = Reply::whereIn('id', $repliesIds)->paginate()->withQueryString();
+        }
+
+        $tutorialsRefs = $user->tutorials;
+        $tutorialsIds = [];
+        foreach ($tutorialsRefs as $ref) {
+            $tutorialsIds[] = $ref->id;
+        }
+
+        $tutorials = [];
+        if (count($tutorialsIds) > 0) {
+            $tutorials = Tutorial::whereIn('id', $tutorialsIds)->paginate()->withQueryString();
+        }
+
         $languages = Language::all();
-
-//        return $tutorials;
 
         $aside = AsideController::get();
 
-        return view('profile.index', compact('user', 'questions', 'replies', 'tutorials', 'languages', 'aside'));
+        return view('profile.index', compact('url', 'user', 'questions', 'replies', 'tutorials', 'languages', 'aside'));
     }
 
     /**

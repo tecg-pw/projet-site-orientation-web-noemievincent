@@ -26,7 +26,7 @@ class QuestionsSeeder extends Seeder
                 'slug' => Str::slug($value->title) . '_' . uuid_create(),
                 'body' => $value->body,
                 'is_solved' => $value->is_solved,
-                'published_at' => Carbon::parse($value->published_at)->toDateTimeString(),
+                'published_at' => Carbon::parse($value->published_at)->toDateString(),
                 'category_id' => $value->category_id,
                 'user_id' => $value->user_id,
             ]);

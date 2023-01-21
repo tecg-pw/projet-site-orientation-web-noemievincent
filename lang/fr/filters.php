@@ -5,7 +5,7 @@ return [
     'title' => 'Filtrer par',
     'clear_link' => 'supprimer les filtres',
     'titles' => [
-        'date' => 'Année',
+        'date' => 'Date',
         'category' => 'Catégories',
         'agency' => 'Agences',
         'location' => 'Lieux',

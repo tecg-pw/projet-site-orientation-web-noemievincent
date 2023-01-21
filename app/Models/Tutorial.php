@@ -12,6 +12,8 @@ class Tutorial extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $perPage = 9;
+
     protected $with = ['translations'];
 
     public function translations(): HasMany

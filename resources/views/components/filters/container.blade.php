@@ -12,7 +12,8 @@
                 {{ $slot }}
             </div>
             <button type="submit"
-                    class="self-start font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transitionable" id="sort_btn">
+                    class="self-start font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transitionable"
+                    id="sort_btn">
                 {{__('filters.filter_button')}}
             </button>
         </form>

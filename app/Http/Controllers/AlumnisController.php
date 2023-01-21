@@ -19,13 +19,15 @@ class AlumnisController extends Controller
      */
     public function index()
     {
+        $url = request()->url();
+
         $alumnis = Student::paginate(9);
 
         $dates = StudentTranslation::select('end_year')->whereNotNull('end_year')->groupBy('end_year')->get();
 
         $aside = AsideController::get();
 
-        return view('alumnis.index', compact('alumnis', 'dates', 'aside'));
+        return view('alumnis.index', compact('url', 'alumnis', 'dates', 'aside'));
     }
 
     /**

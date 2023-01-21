@@ -21,14 +21,17 @@ class OffersController extends Controller
      */
     public function index()
     {
+        $url = request()->url();
+
         $offers = Offer::paginate(9);
 
+        $dates = OfferTranslation::select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
         $companies = CompanyTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
         $locations = OfferTranslation::without('skills')->select('location')->groupBy('location')->get();
 
         $aside = AsideController::get();
 
-        return view('jobs.index', compact('offers', 'companies', 'locations', 'aside'));
+        return view('jobs.index', compact('url', 'offers', 'dates', 'companies', 'locations', 'aside'));
     }
 
     /**
@@ -71,7 +74,7 @@ class OffersController extends Controller
 
         $offer = $offerRef->translations->where('locale', app()->getLocale())->first();
         $skills = json_decode($offer->skills);
-        
+
         $alternatives = [];
         foreach ($offerRef->translations as $translation) {
             if ($translation->locale != app()->getLocale()) {

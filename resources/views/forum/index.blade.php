@@ -31,26 +31,10 @@
                     </div>
                 @endauth
             </div>
-            <div class="flex flex-col gap-3">
-                <div class="lg:grid lg:grid-cols-3 lg:gap-x-11">
-                    <div class="flex gap-6 items-center col-span-2">
-                        <p class="uppercase text-lg">{{__('filters.title')}}</p>
-                        <a href="#" class="text-orange text-xs">{{__('filters.clear_link')}}</a>
-                    </div>
-                    <x-filters.search :element="'forum'"/>
-                </div>
-                <form class="flex flex-col gap-2 sm:flex-row sm:col-span-2 sm:items-center sm:justify-between">
-                    @csrf
-                    <div class="flex flex-col gap-2 sm:flex-row sm:gap-4">
-                        <x-filters.forum-categories :categories="$categories"/>
-                        <x-filters.forum-status/>
-                    </div>
-                    <button type="submit"
-                            class="self-start font-light bg-orange text-white py-1 px-6 rounded-lg hover:bg-orange-dark transitionable">
-                        {{__('filters.filter_button')}}
-                    </button>
-                </form>
-            </div>
+            <x-filters.container :url="$url">
+                <x-filters.forum-categories :categories="$categories"/>
+                <x-filters.forum-status/>
+            </x-filters.container>
             <div class="flex gap-4">
                 <a href="?last-subjects"
                    class="rounded-lg py-1 px-3 border border-blue/40 {{Request::has('last-subjects') || Request::all() == null ? 'bg-blue/20' : 'bg-white'}}">{{__('forum.last_subjects')}}</a>
@@ -58,11 +42,14 @@
                    class="rounded-lg py-1 px-3 border border-blue/40 {{Request::has('last-replies') ? 'bg-blue/20' : 'bg-white'}}">{{__('forum.last_replies')}}</a>
             </div>
             @if(Request::has('last-subjects') || Request::all() == null)
-                <x-forum.last-subjects :questions="$questions"/>
+                <div id="container">
+                    <x-forum.paginated_subjects :questions="$questions"/>
+                </div>
             @endif
-
             @if(Request::has('last-replies'))
-                <x-forum.last-replies :replies="$replies"/>
+                <div id="container">
+                    <x-forum.paginated_replies :replies="$replies"/>
+                </div>
             @endif
         </section>
         <x-aside :aside="$aside"/>

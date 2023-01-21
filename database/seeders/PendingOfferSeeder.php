@@ -30,7 +30,7 @@ class PendingOfferSeeder extends Seeder
                 'description' => $value->description,
                 'skills' => json_encode($value->skills),
                 'add_skill' => json_encode($value->add_skill),
-                'start_date' => Carbon::parse($value->start_date)->toDateTimeString(),
+                'start_date' => Carbon::parse($value->start_date)->toDateString(),
                 'duration' => $value->duration,
                 'location' => $value->location,
                 'reception_mode' => $value->reception_mode,

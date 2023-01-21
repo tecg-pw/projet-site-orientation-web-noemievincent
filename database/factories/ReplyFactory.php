@@ -25,7 +25,7 @@ class ReplyFactory extends Factory
 
         return [
             'body' => '<p>' . fake()->paragraph(2) . '</p>',
-            'published_at' => Carbon::now()->toDateTimeString(),
+            'published_at' => Carbon::now()->toDateString(),
             'question_id' => $questions_ids->random(),
             'user_id' => $users_ids->random(),
         ];
