@@ -95,8 +95,6 @@ export class Projects {
             title.innerHTML = title.innerHTML.replace(match, `<mark>${state.search_term}</mark>`);
         }
 
-        console.log(match);
-
         this.handlePagination(state);
     }
 
