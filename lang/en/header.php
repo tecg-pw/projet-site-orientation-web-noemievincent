@@ -23,7 +23,7 @@ return [
     'sub_nav_items' => [
         'tutorials' => 'Tutorials',
         'resources' => 'Resources',
-        'faq' => 'FAQs',
+        'faq/general' => 'FAQs',
     ],
     'login_link' => 'Login',
     'logout_link' => 'Logout',

@@ -64,11 +64,9 @@ Route::get('/{locale?}/projects/{student:slug}/{project:slug}', [ProjectsControl
 
 Route::get('/{locale?}/projects/ajax', [ProjectsController::class, 'ajax'])->middleware('setLocale');
 
-
 //ROUTE : News
 Route::get('/{locale?}/news', [NewsController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/news/{article:slug}', [NewsController::class, 'show'])->middleware('setLocale');
-
 
 //ROUTE : Forum + Faq
 Route::get('/{locale?}/forum', [ForumController::class, 'index'])->middleware('setLocale');
@@ -85,10 +83,10 @@ Route::post('/{locale?}/forum/questions/{question:slug}/reply/{reply:id}/edit', 
 Route::post('/{locale?}/forum/questions/{question:slug}/reply/{reply:id}/delete', [ReplyController::class, 'destroy'])->middleware(['auth', 'setLocale']);
 
 Route::get('/{locale?}/forum/questions/{question:slug}', [ForumController::class, 'show'])->middleware('setLocale');
-Route::get('/{locale?}/faq', [FaqController::class, 'index'])->middleware('setLocale');
+Route::get('/{locale?}/faq/{category:slug}', [FaqController::class, 'index'])->middleware('setLocale');
+Route::get('/{locale?}/faq/{category:slug}/ajax', [FaqController::class, 'ajax'])->middleware('setLocale');
 
 Route::post('/{locale?}/forum/questions/{question:slug}/reply', [ReplyController::class, 'store'])->middleware(['auth', 'setLocale']);
-
 
 //ROUTE : Jobs
 Route::get('/{locale?}/jobs/offers', [OffersController::class, 'index'])->middleware('setLocale');

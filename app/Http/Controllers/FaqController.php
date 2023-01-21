@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faq;
 use App\Models\FaqCategory;
 use App\Models\FaqCategoryTranslation;
+use App\Models\FaqTranslation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class FaqController extends Controller
 {
@@ -17,16 +17,13 @@ class FaqController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(Request $request)
+    public function index(string $locale, FaqCategoryTranslation $category)
     {
         $url = request()->url();
 
-        $categorySlug = $request->query('category') ?? 'general';
+        $category = FaqCategory::find($category->category_id);
 
-        $categoryRef = FaqCategoryTranslation::where('locale', app()->getLocale())->where('slug', $categorySlug)->first();
-        $category = FaqCategory::find($categoryRef->category_id);
-
-        $questions = $category->questions;
+        $questions = $this->getQuestions($category, $locale);
 
         $categories = FaqCategory::all();
 
@@ -36,68 +33,55 @@ class FaqController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
+     * @param $category
+     * @param string $locale
+     * @return array
      */
-    public function create()
+    public function getQuestions($category, string $locale)
     {
-        //
+        $search_term = request()->input('search_term') ?? '';
+        $questions = $category->questions;
+
+        if ($search_term) {
+            $questionsIds = [];
+            foreach ($category->questions as $q) {
+                $questionsIds[] = $q->id;
+            }
+
+            $ids = [];
+
+            $refs = FaqTranslation::where('locale', $locale)
+                ->whereIn('faq_id', $questionsIds)
+                ->where(function ($query) use ($search_term) {
+                    $query->where('title', 'like', '%' . $search_term . '%')
+                        ->orWhere('body', 'like', '%' . $search_term . '%');
+                })
+                ->get();
+
+            foreach ($refs as $ref) {
+                $ids[] = $ref->faq_id;
+            }
+
+            if (count($ids) > 0) {
+                $questions = Faq::whereIn('id', $ids)->get();
+            } else {
+                $questions = [];
+            }
+        }
+        return $questions;
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display a listing of the resource.
      *
-     * @param Request $request
-     * @return Response
+     * @return Application|Factory|View
      */
-    public function store(Request $request)
+    public function ajax(string $locale, FaqCategoryTranslation $category)
     {
-        //
-    }
+        $category = FaqCategory::find($category->category_id);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        $questions = $this->getQuestions($category, $locale);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param int $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('components.faq.questions', compact('questions'));
     }
 }

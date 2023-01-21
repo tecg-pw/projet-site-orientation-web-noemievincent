@@ -2,7 +2,7 @@
 <article aria-labelledby="{{$question->slug}}" class="flex flex-col gap-5">
     <div class="flex flex-col gap-3">
         <div class="flex justify-between">
-            <h3 id="{{$question->slug}}" class="sm:text-xl">{{$question->title}}</h3>
+            <h3 id="{{$question->slug}}" class="title sm:text-xl first-letter:capitalize">{{$question->title}}</h3>
             <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" height="18"
                      width="9"
@@ -13,7 +13,7 @@
                 </svg>
             </a>
         </div>
-        <div class="wysiwyg font-light cut-text text-sm">
+        <div class="wysiwyg body first-letter:capitalize font-light cut-text text-sm">
             {!! $question->body !!}
         </div>
     </div>

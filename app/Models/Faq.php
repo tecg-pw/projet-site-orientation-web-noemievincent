@@ -12,6 +12,8 @@ class Faq extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $perPage = 9;
+
     protected $table = 'faq';
 
     protected $with = ['translations'];

@@ -1,5 +1,6 @@
 import './bootstrap';
 import {Projects} from "./Models/Projects";
+import {Faq} from "./Models/Faq";
 
 window.addEventListener('load', init);
 
@@ -17,6 +18,10 @@ function init() {
 
     if (document.body.id === 'projects') {
         new Projects(siteUrl);
+    }
+
+    if (document.body.id === 'faq') {
+        new Faq(siteUrl);
     }
 }
 
