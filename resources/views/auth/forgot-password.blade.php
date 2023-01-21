@@ -1,27 +1,29 @@
 <x-header :head_title="'auth.forgot_password.head_title'"/>
 <main class="main xl:mx-64">
-    <section aria-labelledby="forgot-password" class="col-start-2">
-        <div class="mb-8">
+    <section aria-labelledby="forgot-password" class="col-start-2 flex flex-col gap-12">
+        <div class="flex flex-col gap-4">
             <h2 id="forgot-password"
                 class="h2">{{__('auth.forgot_password.title')}}</h2>
             <p>{{__('auth.forgot_password.tagline')}}</p>
         </div>
-        @if(session('status'))
-            <div>
-                <p>{{session('status')}}</p>
-            </div>
-        @else
-            <form action="/{{app()->getLocale()}}/forgot-password" method="post" class="flex flex-col gap-4 mb-12">
-                @csrf
-                <x-forms.email-field/>
-                <button type="submit"
-                        class="uppercase font-light bg-orange text-white py-2 self-start px-6 rounded-lg hover:bg-orange-dark transitionable">
-                    {{__('forms.buttons.forgot_password')}}
-                </button>
-            </form>
-        @endif
+        <div>
+            @if(session('status'))
+                <div class="py-6">
+                    <p>{{session('status')}}</p>
+                </div>
+            @else
+                <form action="/{{app()->getLocale()}}/forgot-password" method="post" class="flex flex-col gap-4 mb-12">
+                    @csrf
+                    <x-forms.email-field/>
+                    <button type="submit"
+                            class="uppercase font-light bg-orange text-white py-2 self-start px-6 rounded-lg hover:bg-orange-dark transitionable">
+                        {{__('forms.buttons.forgot_password')}}
+                    </button>
+                </form>
+            @endif
+        </div>
         <a href="/{{app()->getLocale()}}/login"
-           class="flex items-center self-end gap-2 text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
+           class="flex items-center gap-2 text-orange hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-solid">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" class="fill-orange h-full">
                 <g>
                     <rect width="24" height="24" opacity="0" transform="rotate(90 12 12)"/>
