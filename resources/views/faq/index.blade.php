@@ -19,7 +19,7 @@
                         </li>
                     @endforeach
                 </ul>
-                <x-filters.search :element="'faq'"/>
+                <x-filters.search :action="$url"/>
             </div>
             <div class="flex flex-col gap-20">
                 <div class="flex flex-col gap-6">

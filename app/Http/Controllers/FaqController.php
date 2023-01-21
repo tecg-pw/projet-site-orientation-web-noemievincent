@@ -19,6 +19,8 @@ class FaqController extends Controller
      */
     public function index(Request $request)
     {
+        $url = request()->url();
+
         $categorySlug = $request->query('category') ?? 'general';
 
         $categoryRef = FaqCategoryTranslation::where('locale', app()->getLocale())->where('slug', $categorySlug)->first();
@@ -30,7 +32,7 @@ class FaqController extends Controller
 
         $aside = AsideController::get();
 
-        return view('faq.index', compact('questions', 'categories', 'aside'));
+        return view('faq.index', compact('url', 'questions', 'categories', 'aside'));
     }
 
     /**
