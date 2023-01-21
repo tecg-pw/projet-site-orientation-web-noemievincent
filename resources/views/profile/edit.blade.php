@@ -71,17 +71,7 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="flex flex-col gap-2">
-                        <label for="bio" class="text-lg text-blue-dark">
-                            @if ($errors->has('bio'))
-                                <x-forms.error-label :label="'bio'"/>
-                            @else
-                                {{__('forms.labels.bio')}}
-                            @endif
-                        </label>
-                        <textarea name="bio" id="bio" cols="30" rows="5"
-                                  class="@error('bio') error-outline @enderror pl-3 py-2 bg-orange-light/20 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transitionable">{{old('bio') ?? $user->bio}}</textarea>
-                    </div>
+                    <x-forms.tinymce-editor :id="'bio'" :trans="'forms.labels.bio'">{{old('bio') ?? htmlspecialchars_decode($user->bio)}}</x-forms.tinymce-editor>
                 </div>
                 <div class="flex gap-8 items-center justify-between">
                     <button type="submit"

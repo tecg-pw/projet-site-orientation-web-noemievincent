@@ -54,17 +54,7 @@
                   method="post"
                   class="flex flex-col gap-4">
                 @csrf
-                <div class="flex flex-col gap-2">
-                    <label for="body" class="text-lg text-blue-dark">
-                        @if ($errors->has('body'))
-                            <x-forms.error-label :label="'body'"/>
-                        @else
-                            {{__('forms.labels.answer')}}
-                        @endif
-                    </label>
-                    <textarea name="body" id="body" cols="30" rows="10"
-                              class="@error('body') error-outline @enderror pl-3 py-2 border border-orange-light rounded-lg focus:outline focus:outline-1 focus:outline-orange transition ease-in-out duration-200">{{old('body') ?? $reply->body}}</textarea>
-                </div>
+                <x-forms.tinymce-editor :id="'body'" :trans="'forms.labels.answer'">{{old('body') ?? $reply->body}}</x-forms.tinymce-editor>@
                 <div class="flex gap-8 items-center justify-end">
                     <a href="/{{app()->getLocale()}}/forum/questions/{{$question->slug}}"
                        class="uppercase text-orange">{{__('forms.links.cancel')}}</a>

@@ -2,6 +2,7 @@
     <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="bg-white">
 <head>
+    <x-head.tinymce-config/>
     <meta charset="UTF-8">
     <meta name="keywords"
           content="{{implode(', ', __('header.keywords'))}}">
