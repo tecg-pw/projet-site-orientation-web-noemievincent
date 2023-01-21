@@ -96,14 +96,9 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div>
+                    <div class="wysiwyg">
                         {!! $project->body !!}
                     </div>
-                    {{--                    <div class="flex flex-wrap gap-8">--}}
-                    {{--                        <img src="https://placehold.jp/320x374.png" alt="">--}}
-                    {{--                        <img src="https://placehold.jp/320x374.png" alt="">--}}
-                    {{--                        <img src="https://placehold.jp/672x374.png" alt="">--}}
-                    {{--                    </div>--}}
                 </div>
             </div>
             <div class="flex flex-col gap-5">

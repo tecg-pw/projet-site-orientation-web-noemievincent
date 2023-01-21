@@ -71,7 +71,7 @@
                         @endif
                     </ul>
                 </div>
-                <div>
+                <div class="wysiwyg">
                     {!! $alumni->bio !!}
                 </div>
             </div>

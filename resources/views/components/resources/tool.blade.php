@@ -5,6 +5,5 @@
     <div class="flex justify-between mb-2">
         <h3 class="text-xl font-semibold">{{$tool->title}}</h3>
     </div>
-    <div class="text-sm">{!! $tool->description !!}
-    </div>
+    <div class="wysiwyg text-sm">{!! $tool->description !!}</div>
 </div>

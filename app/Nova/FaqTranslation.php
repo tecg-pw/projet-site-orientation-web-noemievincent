@@ -7,8 +7,8 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class FaqTranslation extends Resource
 {
@@ -61,7 +61,8 @@ class FaqTranslation extends Resource
                     return Str::limit($value, 60, '...');
                 }),
 
-            Trix::make('Body'),
+            TinymceEditor::make('Description', 'body'),
+
         ];
     }
 

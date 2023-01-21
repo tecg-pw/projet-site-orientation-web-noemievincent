@@ -10,8 +10,8 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class Question extends Resource
 {
@@ -62,7 +62,7 @@ class Question extends Resource
             Slug::make('Slug')
                 ->hideFromIndex(),
 
-            Trix::make('Body'),
+            TinymceEditor::make('Description', 'body'),
 
             Boolean::make('Résolue', 'is_solved'),
 

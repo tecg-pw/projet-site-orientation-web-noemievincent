@@ -13,8 +13,7 @@
                     <x-save_form :tutorial="$tutorial" :is_favorite="$is_favorite"/>
                 @endauth
             </div>
-            <div class="text-sm">{!! $tutorial->description !!}
-            </div>
+            <div class="wysiwyg text-sm">{!! $tutorial->description !!}</div>
         </div>
         <ul class="flex gap-2">
             @foreach($languages as $language)

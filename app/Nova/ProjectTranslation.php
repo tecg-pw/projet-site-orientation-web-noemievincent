@@ -11,9 +11,9 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class ProjectTranslation extends Resource
 {
@@ -68,7 +68,7 @@ class ProjectTranslation extends Resource
                 ->from('title')
                 ->hideFromIndex(),
 
-            Trix::make('Body'),
+            TinymceEditor::make('Description', 'body'),
 
             File::make('Photo', 'picture')
                 ->store(function (Request $request, $model) {

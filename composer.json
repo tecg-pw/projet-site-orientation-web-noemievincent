@@ -15,6 +15,7 @@
         "laravel/nova": "~4.0",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "murdercode/nova4-tinymce-editor": "^1.0",
         "spatie/laravel-translatable": "^6.1",
         "spatie/nova-translatable": "^3.1"
     },

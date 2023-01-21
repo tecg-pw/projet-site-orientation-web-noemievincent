@@ -46,7 +46,7 @@
             </div>
             <div>
                 <h3 class="font-display font-semibold text-blue text-xl tracking-wider mb-2">{{__('classes.single.desc_title')}}</h3>
-                <div class="flex flex-col gap-2">
+                <div class="wysiwyg flex flex-col gap-2">
                     {!! $course->description !!}
                     @if($course->github_link)
                         <a href="{{$course->github_link}}"

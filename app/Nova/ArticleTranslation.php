@@ -12,8 +12,8 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class ArticleTranslation extends Resource
 {
@@ -119,8 +119,8 @@ class ArticleTranslation extends Resource
                     ];
                 }),
 
-            Trix::make('Excerpt', 'excerpt'),
-            Trix::make('Body', 'body'),
+            TinymceEditor::make('Excerpt', 'excerpt'),
+            TinymceEditor::make('Description', 'body'),
 
             Date::make('Publiée le', 'published_at')
                 ->sortable(),

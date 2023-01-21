@@ -24,6 +24,6 @@
             </a>
         @endif
     </div>
-    <div class="text-sm">{!! $opportunity->description !!}
+    <div class="wysiwyg text-sm">{!! $opportunity->description !!}
     </div>
 </div>

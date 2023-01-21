@@ -12,8 +12,8 @@ use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class User extends Resource
 {
@@ -194,8 +194,7 @@ class User extends Resource
 
             Boolean::make('Admin', 'is_admin'),
 
-            Trix::make('Bio')
-                ->hideFromIndex(),
+            TinymceEditor::make('Description', 'bio'),
 
             Select::make('Genre', 'gender')->options([
                 'male' => 'Homme',

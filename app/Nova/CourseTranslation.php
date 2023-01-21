@@ -8,9 +8,9 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class CourseTranslation extends Resource
 {
@@ -66,7 +66,7 @@ class CourseTranslation extends Resource
                 ->from('name')
                 ->hideFromIndex(),
 
-            Trix::make('Description'),
+            TinymceEditor::make('Description', 'description'),
 
             Select::make('Option', 'orientation')->options(__('classes.orientation'))->displayUsingLabels()->sortable(),
 

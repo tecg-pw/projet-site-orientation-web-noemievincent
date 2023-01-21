@@ -7,8 +7,8 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class Reply extends Resource
 {
@@ -53,8 +53,7 @@ class Reply extends Resource
                     return Str::limit($value, 60, '...');
                 }),
 
-            Trix::make('Body')
-                ->alwaysShow(),
+            TinymceEditor::make('Description', 'body'),
 
             Date::make('Publiée le', 'published_at')
                 ->sortable(),

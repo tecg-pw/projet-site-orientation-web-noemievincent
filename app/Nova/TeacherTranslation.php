@@ -12,9 +12,9 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class TeacherTranslation extends Resource
 {
@@ -161,7 +161,7 @@ class TeacherTranslation extends Resource
             Email::make('Email')
                 ->hideFromIndex(),
 
-            Trix::make('Bio'),
+            TinymceEditor::make('Description', 'bio'),
 
             Heading::make('Liens'),
             URL::make('GitHub', 'github_link')

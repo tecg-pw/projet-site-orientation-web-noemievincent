@@ -44,7 +44,7 @@
                         @endif
                     </ul>
                 </div>
-                <div>
+                <div class="wysiwyg">
                     {!! $teacher->bio !!}
                 </div>
             </div>

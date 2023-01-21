@@ -13,7 +13,7 @@
                 </svg>
             </a>
         </div>
-        <div class="font-light cut-text text-sm">
+        <div class="wysiwyg font-light cut-text text-sm">
             {!! $question->body !!}
         </div>
     </div>

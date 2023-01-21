@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="wysiwyg">
                     {!! $company->description !!}
                 </div>
             </div>

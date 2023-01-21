@@ -34,10 +34,10 @@
                         </ul>
                     </div>
                     <div class="leading-8 flex flex-col gap-4">
-                        <div class="font-bold">
+                        <div class="wysiwyg font-bold">
                             {!! $article->excerpt !!}
                         </div>
-                        <div>
+                        <div class="wysiwyg">
                             {!! $article->body !!}
                         </div>
                     </div>

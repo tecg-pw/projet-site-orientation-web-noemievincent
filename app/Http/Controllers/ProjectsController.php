@@ -145,7 +145,7 @@ class ProjectsController extends Controller
 
         $course = $projectRef->course->translations->where('locale', $locale)->first();
 
-        $otherProjects = $studentRef->projects->where('id', '!=', $projectRef->id)->take();
+        $otherProjects = $studentRef->projects->where('id', '!=', $projectRef->id)->take(3);
 
         $alternatives = [];
         foreach ($projectRef->translations as $translation) {

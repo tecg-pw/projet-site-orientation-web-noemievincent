@@ -9,8 +9,8 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class OfferTranslation extends Resource
 {
@@ -63,7 +63,7 @@ class OfferTranslation extends Resource
             Slug::make('Slug')->from('title')
                 ->hideFromIndex(),
 
-            Trix::make('Description', 'body'),
+            TinymceEditor::make('Description', 'body'),
 
             Text::make('Compétences', function () {
                 return $this->displaySkills();
