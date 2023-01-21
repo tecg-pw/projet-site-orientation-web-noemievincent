@@ -64,7 +64,7 @@ class UserController extends Controller
 
         $questions = [];
         if (count($questionsIds) > 0) {
-            $questions = Question::whereIn('id', $questionsIds)->paginate()->withQueryString();
+            $questions = Question::whereIn('id', $questionsIds)->paginate(3)->withQueryString();
         }
 
         $repliesRefs = $user->replies;
@@ -75,7 +75,7 @@ class UserController extends Controller
 
         $replies = [];
         if (count($repliesIds) > 0) {
-            $replies = Reply::whereIn('id', $repliesIds)->paginate()->withQueryString();
+            $replies = Reply::whereIn('id', $repliesIds)->paginate(3)->withQueryString();
         }
 
         $tutorialsRefs = $user->tutorials;
@@ -86,7 +86,7 @@ class UserController extends Controller
 
         $tutorials = [];
         if (count($tutorialsIds) > 0) {
-            $tutorials = Tutorial::whereIn('id', $tutorialsIds)->paginate()->withQueryString();
+            $tutorials = Tutorial::whereIn('id', $tutorialsIds)->paginate(3)->withQueryString();
         }
 
         $languages = Language::all();

@@ -11,6 +11,8 @@ return [
         'head_title' => 'Tutorials',
         'title' => 'Tutorials',
         'tagline' => 'Velit aliquip nulla non commodo nisi pariatur magna ut magna laboris. Culpa eu culpa ipsum dolore laboris voluptate laboris sint.',
+        'save' => 'Add to favorites',
+        'unsave' => 'Remove from favorites',
     ],
 
 ];

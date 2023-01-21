@@ -69,6 +69,7 @@ Route::get('/{locale?}/projects/ajax', [ProjectsController::class, 'ajax'])->mid
 Route::get('/{locale?}/news', [NewsController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/news/{article:slug}', [NewsController::class, 'show'])->middleware('setLocale');
 
+
 //ROUTE : Forum + Faq
 Route::get('/{locale?}/forum', [ForumController::class, 'index'])->middleware('setLocale');
 
@@ -88,6 +89,7 @@ Route::get('/{locale?}/faq', [FaqController::class, 'index'])->middleware('setLo
 
 Route::post('/{locale?}/forum/questions/{question:slug}/reply', [ReplyController::class, 'store'])->middleware(['auth', 'setLocale']);
 
+
 //ROUTE : Jobs
 Route::get('/{locale?}/jobs/offers', [OffersController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/jobs/offers/{company:slug}/{offer:slug}', [OffersController::class, 'show'])->middleware('setLocale');
@@ -96,9 +98,12 @@ Route::post('/{locale?}/jobs/offers/create', [PendingOfferController::class, 'st
 Route::get('/{locale?}/jobs/partners', [PartnersController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/jobs/partners/{company:slug}', [PartnersController::class, 'show'])->middleware('setLocale');
 
+
 //ROUTE : Tutorials + Resources
 Route::get('/{locale?}/tutorials', [TutorialsController::class, 'index'])->middleware('setLocale');
+Route::post('/{locale?}/tutorials/save', [TutorialsController::class, 'saveFavorite'])->middleware('setLocale');
 Route::get('/{locale?}/resources', [ResourcesController::class, 'index'])->middleware('setLocale');
+
 
 //ROUTE : Profile
 Route::get('/{locale?}/users/{user:slug}', [UserController::class, 'show'])->middleware('setLocale');
@@ -106,6 +111,7 @@ Route::get('/{locale?}/users/{user:slug}/edit', [UserController::class, 'edit'])
 
 Route::post('/{locale?}/users/{user:slug}/update-infos', UpdateUserInfosController::class)->middleware(['auth', 'setLocale']);
 Route::post('/{locale?}/users/{user:slug}/update-password', UpdateUserPasswordController::class)->middleware(['auth', 'setLocale']);
+
 
 //ROUTE : Auth
 Route::get('/{locale?}/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware(['guest', 'setLocale']);

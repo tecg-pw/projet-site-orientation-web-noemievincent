@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTutorialFavoriteRequest;
 use App\Models\Language;
 use App\Models\Tutorial;
+use DB;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class TutorialsController extends Controller
 {
@@ -29,69 +29,24 @@ class TutorialsController extends Controller
         return view('tutorials.index', compact('url', 'tutorials', 'languages', 'aside'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
+    public function saveFavorite(StoreTutorialFavoriteRequest $request)
     {
-        //
-    }
+        $validated = $request->validated();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $status = DB::table('tutorial_user')
+            ->where('user_id', $validated['user_id'])
+            ->where('tutorial_id', $validated['tuto_id'])
+            ->first();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        if ($status) {
+            DB::table('tutorial_user')->where('id', $status->id)->delete();
+        } else {
+            DB::table('tutorial_user')->insert([
+                'tutorial_id' => $validated['tuto_id'],
+                'user_id' => $validated['user_id'],
+            ]);
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param int $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect()->back();
     }
 }
