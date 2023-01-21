@@ -26,7 +26,7 @@ return new class extends Migration {
             $table->string('method_link')->nullable();
             $table->string('contact_name')->nullable();
             $table->string('contact_email')->nullable();
-            $table->timestamp('published_at');
+            $table->timestamp('published_at')->useCurrent();
             $table->timestamps();
             $table->softDeletes();
         });
