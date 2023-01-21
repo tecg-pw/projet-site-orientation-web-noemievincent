@@ -1,5 +1,6 @@
 import './bootstrap';
 import {Projects} from "./Models/Projects";
+import {News} from "./Models/News";
 import {Faq} from "./Models/Faq";
 import {Alumnis} from "./Models/Alumnis";
 
@@ -19,6 +20,10 @@ function init() {
 
     if (document.body.id === 'projects_page') {
         new Projects(siteUrl);
+    }
+
+    if (document.body.id === 'news_page') {
+        new News(siteUrl);
     }
 
     if (document.body.id === 'alumnis_page') {

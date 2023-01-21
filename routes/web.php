@@ -70,6 +70,7 @@ Route::get('/{locale?}/projects/ajax', [ProjectsController::class, 'ajax'])->mid
 
 //ROUTE : News
 Route::get('/{locale?}/news', [NewsController::class, 'index'])->middleware('setLocale');
+Route::get('/{locale?}/news/ajax', [NewsController::class, 'ajax'])->middleware('setLocale');
 Route::get('/{locale?}/news/{article:slug}', [NewsController::class, 'show'])->middleware('setLocale');
 
 
