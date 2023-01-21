@@ -1,13 +1,21 @@
 import './bootstrap';
+import {Projects} from "./Models/Projects";
 
 window.addEventListener('load', init);
+
+let siteUrl = 'http://projets-web.test/';
 
 function init() {
     document.body.classList.remove('no-js');
     document.body.classList.add('js-only');
+
     handlePassword();
     updatePreviewOnInputChange();
     displayInputWhenRadioButtonIsChecked();
+
+    if (document.body.id === 'projects') {
+        new Projects(siteUrl);
+    }
 }
 
 function handlePassword() {

@@ -62,6 +62,9 @@ Route::get('/{locale?}/alumnis/{alumni:slug}', [AlumnisController::class, 'show'
 Route::get('/{locale?}/projects', [ProjectsController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/projects/{student:slug}/{project:slug}', [ProjectsController::class, 'show'])->middleware('setLocale');
 
+Route::get('/{locale?}/projects/ajax', [ProjectsController::class, 'ajax'])->middleware('setLocale');
+
+
 //ROUTE : News
 Route::get('/{locale?}/news', [NewsController::class, 'index'])->middleware('setLocale');
 Route::get('/{locale?}/news/{article:slug}', [NewsController::class, 'show'])->middleware('setLocale');

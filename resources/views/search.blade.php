@@ -138,13 +138,13 @@
                     <div class="flex flex-col gap-12">
                         <div class="flex flex-col gap-2">
                             <h2 id="search-results"
-                                class="text-5xl font-bold uppercase tracking-wider font-display text-blue">{{__('search.no_results.title')}}</h2>
+                                class="text-5xl font-bold uppercase tracking-wider font-display text-blue">{{__('search.no_results_for.title')}}</h2>
                             <p class="text-2xl font-semibold text-blue">&laquo; {{$search_term}} &raquo;</p>
                         </div>
                         <div>
-                            <p class="mb-3 text-2xl">{{__('search.no_results.tagline')}}</p>
+                            <p class="mb-3 text-2xl">{{__('search.no_results_for.tagline')}}</p>
                             <ul class="ml-6 list-disc list-inside marker:text-orange text-lg leading-7">
-                                @foreach(__('search.no_results.hints') as $hint)
+                                @foreach(__('search.no_results_for.hints') as $hint)
                                     <li>{{$hint}}</li>
                                 @endforeach
                             </ul>

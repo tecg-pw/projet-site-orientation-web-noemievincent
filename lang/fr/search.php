@@ -7,6 +7,7 @@ return [
     'label' => 'Recherchez un mot clé',
     'button' => 'Rechercher',
     'more_results' => 'Plus de résultats',
+    'no_results' => 'Il n’y a aucun résultat :(',
     'titles' => [
         'projects' => 'Projets',
         'forum' => 'Question du forum',
@@ -18,7 +19,7 @@ return [
         'title' => 'Faites une recherche',
         'tagline' => 'Recherchez le titre d’un projet, d’un article ou d’un tutoriel...',
     ],
-    'no_results' => [
+    'no_results_for' => [
         'head_title' => 'Aucun résultats pour',
         'title' => 'Aucun résultats pour',
         'tagline' => 'Votre recherche n’a aucun résultat',

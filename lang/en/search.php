@@ -7,6 +7,7 @@ return [
     'label' => 'Search a keyword',
     'button' => 'Search',
     'more_results' => 'More results',
+    'no_results' => 'There is no matches :(',
     'titles' => [
         'projects' => 'Projects',
         'forum' => 'Forum questions',
@@ -18,7 +19,7 @@ return [
         'title' => 'Make a search',
         'tagline' => 'Search for the title of a project, an article or a tutorial...',
     ],
-    'no_results' => [
+    'no_results_for' => [
         'title' => 'No results for',
         'tagline' => 'Your search had no results',
         'hints' => [

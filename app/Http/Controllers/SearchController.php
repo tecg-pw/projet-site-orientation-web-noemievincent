@@ -26,18 +26,13 @@ class SearchController extends Controller
     public function index(string $locale)
     {
         $search_term = request()->input('search_term') ?? '';
-        $sort_by = request()->input('sort_by') ?? '';
 
         if ($search_term) {
-            if ($sort_by) {
-                $this->$sort_by($locale, $search_term);
-            } else {
-                $this->projects($locale, $search_term);
-                $this->questions($locale, $search_term);
-                $this->tutorials($locale, $search_term);
-                $this->news($locale, $search_term);
-                $this->users($locale, $search_term);
-            }
+            $this->projects($locale, $search_term);
+            $this->questions($locale, $search_term);
+            $this->tutorials($locale, $search_term);
+            $this->news($locale, $search_term);
+            $this->users($locale, $search_term);
         }
 
         $results = $this->results;
@@ -54,8 +49,7 @@ class SearchController extends Controller
 
         return view('search', compact('search_term', 'results', 'total', 'aside'));
     }
-
-
+    
     private function projects(string $locale, string $search_term): void
     {
         $ids = [];

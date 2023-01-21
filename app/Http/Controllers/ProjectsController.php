@@ -20,16 +20,68 @@ class ProjectsController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(string $locale)
     {
-        $projects = Project::paginate(9);
+        $url = request()->url();
+
+        $projects = [];
+        $search_term = request()->input('search_term') ?? '';
+
+        if ($search_term) {
+            $ids = [];
+
+            $projectsRefs = ProjectTranslation::where('locale', $locale)
+                ->where('title', 'like', '%' . $search_term . '%')
+                ->get();
+
+            foreach ($projectsRefs as $ref) {
+                $ids[] = $ref->project_id;
+            }
+
+            if (count($ids) > 0) {
+                $projects = Project::whereIn('id', $ids)->paginate(3);
+            }
+        } else {
+            $projects = Project::paginate(3);
+        }
 
         $dates = ProjectTranslation::select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
         $categories = ProjectCategoryTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
 
         $aside = AsideController::get();
 
-        return view('projects.index', compact('projects', 'dates', 'categories', 'aside'));
+        return view('projects.index', compact('url','projects', 'dates', 'categories', 'aside'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Application|Factory|View
+     */
+    public function ajax(string $locale)
+    {
+        $projects = [];
+        $search_term = request()->input('search_term') ?? '';
+
+        if ($search_term) {
+            $ids = [];
+
+            $projectsRefs = ProjectTranslation::where('locale', $locale)
+                ->where('title', 'like', '%' . $search_term . '%')
+                ->get();
+
+            foreach ($projectsRefs as $ref) {
+                $ids[] = $ref->project_id;
+            }
+
+            if (count($ids) > 0) {
+                $projects = Project::whereIn('id', $ids)->paginate(3);
+            }
+        } else {
+            $projects = Project::paginate(3);
+        }
+
+        return view('components.projects.paginated_projects', compact('projects'));
     }
 
     /**
