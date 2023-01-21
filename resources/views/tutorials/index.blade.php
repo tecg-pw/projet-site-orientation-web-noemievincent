@@ -1,4 +1,4 @@
-<x-header :head_title="'resources.tutorials.head_title'"/>
+<x-header :head_title="'resources.tutorials.head_title'" :id="'tutorials_page'"/>
 <main class="main">
     <div class="xl:grid grid-cols-4 justify-between gap-12">
         <section aria-labelledby="tutorials" class="col-span-3 flex flex-col gap-8">

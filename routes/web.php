@@ -106,6 +106,7 @@ Route::get('/{locale?}/jobs/partners/{company:slug}', [PartnersController::class
 
 //ROUTE : Tutorials + Resources
 Route::get('/{locale?}/tutorials', [TutorialsController::class, 'index'])->middleware('setLocale');
+Route::get('/{locale?}/tutorials/ajax', [TutorialsController::class, 'ajax'])->middleware('setLocale');
 Route::post('/{locale?}/tutorials/save', [TutorialsController::class, 'saveFavorite'])->middleware('setLocale');
 //Route::post('/{locale?}/tutorials/save/ajax', [TutorialsController::class, 'ajaxSaveFavorite'])->middleware('setLocale');
 Route::get('/{locale?}/resources', [ResourcesController::class, 'index'])->middleware('setLocale');
@@ -113,6 +114,7 @@ Route::get('/{locale?}/resources', [ResourcesController::class, 'index'])->middl
 
 //ROUTE : Profile
 Route::get('/{locale?}/users/{user:slug}', [UserController::class, 'show'])->middleware('setLocale');
+Route::get('/{locale?}/users/{user:slug}/ajax', [UserController::class, 'ajax'])->middleware('setLocale');
 Route::get('/{locale?}/users/{user:slug}/edit', [UserController::class, 'edit'])->middleware(['auth', 'setLocale']);
 
 Route::post('/{locale?}/users/{user:slug}/update-infos', UpdateUserInfosController::class)->middleware(['auth', 'setLocale']);

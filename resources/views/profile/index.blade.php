@@ -1,4 +1,4 @@
-<x-header :head_title="$user->fullname"/>
+<x-header :head_title="$user->fullname" :id="'user_profile'"/>
 <main class="main">
     @if(session('success'))
         <div class="bg-green-success text-white text-center p-3 -mt-10 mb-8">

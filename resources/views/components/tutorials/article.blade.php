@@ -4,7 +4,7 @@
     <div class="flex flex-col gap-3">
         <div>
             <div class="flex justify-between mb-2">
-                <h3 class="text-xl font-semibold hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
+                <h3 class="title first-letter:capitalize text-xl font-semibold hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
                     <a href="{{$tutorial->link}}">
                         {{$tutorial->title}}
                     </a>
@@ -13,7 +13,7 @@
                     <x-save_form :tutorial="$tutorial" :is_favorite="$is_favorite"/>
                 @endauth
             </div>
-            <div class="wysiwyg text-sm">{!! $tutorial->description !!}</div>
+            <div class="wysiwyg description first-letter:capitalize text-sm">{!! $tutorial->description !!}</div>
         </div>
         <ul class="flex gap-2">
             @foreach($languages as $language)

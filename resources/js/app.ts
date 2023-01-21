@@ -3,6 +3,7 @@ import {Projects} from "./Models/Projects";
 import {News} from "./Models/News";
 import {Faq} from "./Models/Faq";
 import {Alumnis} from "./Models/Alumnis";
+import {Tutorials} from "./Models/Tutorials";
 
 window.addEventListener('load', init);
 
@@ -28,6 +29,10 @@ function init() {
 
     if (document.body.id === 'alumnis_page') {
         new Alumnis(siteUrl);
+    }
+
+    if (document.body.id === 'tutorials_page' || document.body.id === 'user_profile') {
+        new Tutorials(siteUrl, document.body.id === 'user_profile');
     }
 
     if (document.body.id === 'faq_page') {
