@@ -24,6 +24,7 @@ class StoreTutorialFavoriteRequest extends FormRequest
     public function rules()
     {
         return [
+            '_token' => 'required',
             'user_id' => 'required|exists:users,id',
             'tuto_id' => 'required|exists:tutorials,id'
         ];

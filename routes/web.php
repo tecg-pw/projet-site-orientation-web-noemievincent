@@ -102,6 +102,7 @@ Route::get('/{locale?}/jobs/partners/{company:slug}', [PartnersController::class
 //ROUTE : Tutorials + Resources
 Route::get('/{locale?}/tutorials', [TutorialsController::class, 'index'])->middleware('setLocale');
 Route::post('/{locale?}/tutorials/save', [TutorialsController::class, 'saveFavorite'])->middleware('setLocale');
+//Route::post('/{locale?}/tutorials/save/ajax', [TutorialsController::class, 'ajaxSaveFavorite'])->middleware('setLocale');
 Route::get('/{locale?}/resources', [ResourcesController::class, 'index'])->middleware('setLocale');
 
 

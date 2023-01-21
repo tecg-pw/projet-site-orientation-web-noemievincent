@@ -13,6 +13,8 @@ function init() {
     updatePreviewOnInputChange();
     displayInputWhenRadioButtonIsChecked();
 
+    // saveFavorite();
+
     if (document.body.id === 'projects') {
         new Projects(siteUrl);
     }
@@ -71,4 +73,51 @@ function displayInputWhenRadioButtonIsChecked() {
             });
         });
     }
+}
+
+function saveFavorite() {
+    const state = {
+        user_id: null,
+        tuto_id: null,
+    };
+
+    let save_forms = document.getElementsByClassName('save_form') as HTMLCollection;
+
+    let locale = window.location.pathname.split('/')[1];
+    let url = `${siteUrl}${locale}/tutorials/save/ajax`;
+
+    // @ts-ignore
+    Array.from(save_forms).forEach((form) => {
+        // @ts-ignore
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let token = (e.currentTarget as HTMLFormElement)['_token'].value;
+            state.user_id = (e.currentTarget as HTMLFormElement)['user_id'].value;
+            state.tuto_id = (e.currentTarget as HTMLFormElement)['tuto_id'].value;
+
+            // @ts-ignore
+            fetch(url, {
+                method: 'post',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json, text-plain, */*",
+                    "X-Requested-With": "XMLHttpRequest",
+                    "X-CSRF-TOKEN": token
+                },
+                credentials: "same-origin",
+                body: JSON.stringify({
+                    _token: token,
+                    user_id: state.user_id,
+                    tuto_id: state.tuto_id
+                })
+            }).then((response) => response.text())
+                .then((data) => {
+                    console.log(data);
+                    form.innerHTML = data;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        });
+    });
 }

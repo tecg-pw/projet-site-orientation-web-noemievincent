@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTutorialFavoriteRequest;
 use App\Models\Language;
 use App\Models\Tutorial;
+use App\Models\TutorialTranslation;
 use DB;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -48,5 +49,30 @@ class TutorialsController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function ajaxSaveFavorite(string $locale, StoreTutorialFavoriteRequest $request)
+    {
+        $validated = $request->validated();
+
+        $status = DB::table('tutorial_user')
+            ->where('user_id', $validated['user_id'])
+            ->where('tutorial_id', $validated['tuto_id'])
+            ->first();
+
+        if ($status) {
+            DB::table('tutorial_user')->where('id', $status->id)->delete();
+            $is_favorite = false;
+        } else {
+            DB::table('tutorial_user')->insert([
+                'tutorial_id' => $validated['tuto_id'],
+                'user_id' => $validated['user_id'],
+            ]);
+            $is_favorite = true;
+        }
+
+        $tutorial = TutorialTranslation::where('locale', $locale)->where('tutorial_id', $validated['tuto_id'])->first();
+
+        return view('components.save_form', compact('is_favorite', 'tutorial'));
     }
 }
