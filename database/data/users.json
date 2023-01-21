@@ -15,7 +15,7 @@
         "firstname": "Myriam",
         "lastname": "Dupont",
         "email": "myriam.dupont@hepl.be",
-        "is_admin": false,
+        "is_admin": true,
         "picture": "",
         "pictures": null,
         "srcset": null,
