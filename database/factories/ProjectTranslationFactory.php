@@ -33,7 +33,7 @@ class ProjectTranslationFactory extends Factory
             'website_link' => fake()->url(),
             'github_link' => fake()->url(),
             'gallery' => json_encode(''),
-            'published_at' => Carbon::now()->toDateTimeString(),
+            'published_at' => Carbon::now()->toDateString(),
             'locale' => fake()->randomElement(config('app.available_locales')),
             'project_id' => $ids->random(),
         ];
