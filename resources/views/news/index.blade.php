@@ -9,7 +9,7 @@
             </div>
             <x-filters.container :url="$url">
                 <x-filters.news-categories :categories="$categories"/>
-                <x-filters.date :dates="$dates" :property="'published_at'" :format="'Y'"/>
+                <x-filters.date :label="'date'" :dates="$dates" :property="'published_at'" :format="'Y'"/>
             </x-filters.container>
             <div id="container">
                 <x-news.paginated_news :news="$news"/>

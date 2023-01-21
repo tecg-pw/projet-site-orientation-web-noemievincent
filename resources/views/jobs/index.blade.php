@@ -19,7 +19,7 @@
                 <x-filters.container :url="$url">
                     <x-filters.jobs-agencies :companies="$companies"/>
                     <x-filters.jobs-locations :locations="$locations"/>
-                    <x-filters.date :dates="$dates" :property="'published_at'" :format="'F Y'"/>
+                    <x-filters.date :label="'date'" :dates="$dates" :property="'published_at'" :format="'F Y'"/>
                 </x-filters.container>
                 <div id="container">
                     <x-jobs.paginated_jobs :offers="$offers"/>

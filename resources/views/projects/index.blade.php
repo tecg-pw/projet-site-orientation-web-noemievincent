@@ -9,7 +9,7 @@
             </div>
             <x-filters.container :url="$url">
                 <x-filters.project-categories :categories="$categories"/>
-                <x-filters.date :dates="$dates" :property="'published_at'" :format="'F Y'"/>
+                <x-filters.date :label="'date'" :dates="$dates" :property="'published_at'" :format="'F Y'"/>
             </x-filters.container>
             <div id="container">
                 <x-projects.paginated_projects :projects="$projects"/>
