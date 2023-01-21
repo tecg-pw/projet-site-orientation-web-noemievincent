@@ -30,7 +30,7 @@
                 </picture>
             </div>
             <div class="p-4 flex flex-col gap-4">
-                <h3 id="{{$project->slug}}-{{$student->slug}}" class="uppercase text-2xl">{{$project->title}}</h3>
+                <h3 id="{{$project->slug}}-{{$student->slug}}" class="title uppercase text-2xl">{{$project->title}}</h3>
                 <div>
                     <p class="text-xl">{{$student->fullname}}</p>
                     <div class="flex justify-between">

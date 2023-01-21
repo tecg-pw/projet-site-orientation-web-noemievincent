@@ -33,6 +33,16 @@ export class Projects {
     updateContainer(data: string, state) {
         document.getElementById('container').innerHTML = data;
 
+        let match = new RegExp(state.search_term, 'ig');
+        let titles = document.getElementsByClassName('title') as HTMLCollection;
+
+        // @ts-ignore
+        for (const title of titles) {
+            title.innerHTML = title.innerHTML.replace(match, `<mark>${state.search_term}</mark>`)
+        }
+
+        console.log(match);
+
         this.handlepagination(state);
     }
 

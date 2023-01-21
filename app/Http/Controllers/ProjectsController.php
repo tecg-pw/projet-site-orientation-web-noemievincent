@@ -39,10 +39,10 @@ class ProjectsController extends Controller
             }
 
             if (count($ids) > 0) {
-                $projects = Project::whereIn('id', $ids)->paginate(3);
+                $projects = Project::whereIn('id', $ids)->paginate()->withQueryString();
             }
         } else {
-            $projects = Project::paginate(3);
+            $projects = Project::paginate()->withQueryString();
         }
 
         $dates = ProjectTranslation::select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
@@ -75,10 +75,10 @@ class ProjectsController extends Controller
             }
 
             if (count($ids) > 0) {
-                $projects = Project::whereIn('id', $ids)->paginate(3);
+                $projects = Project::whereIn('id', $ids)->paginate()->withQueryString();
             }
         } else {
-            $projects = Project::paginate(3);
+            $projects = Project::paginate()->withQueryString();
         }
 
         return view('components.projects.paginated_projects', compact('projects'));
@@ -126,7 +126,7 @@ class ProjectsController extends Controller
 
         $course = $projectRef->course->translations->where('locale', $locale)->first();
 
-        $otherProjects = $studentRef->projects->where('id', '!=', $projectRef->id)->take(3);
+        $otherProjects = $studentRef->projects->where('id', '!=', $projectRef->id)->take();
 
         $alternatives = [];
         foreach ($projectRef->translations as $translation) {

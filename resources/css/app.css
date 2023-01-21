@@ -6,6 +6,10 @@
 @tailwind utilities;
 
 @layer components {
+    mark {
+        @apply text-orange bg-transparent
+    }
+
     .main {
         @apply flex-1 mt-10 px-5 lg:px-10 2xl:px-24
     }

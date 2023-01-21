@@ -5,7 +5,7 @@
       class="flex col-start-3 rounded-lg focus-within:outline focus-within:outline-1 focus-within:outline-orange max-h-[34px]">
     <label for="search_term" class="h-full flex-1">
         <span class="sr-only">{{__('filters.titles.search')}}</span>
-        <input placeholder="{{__('filters.titles.search')}}" type="search" id="search_term" name="search_term"
+        <input placeholder="{{__('filters.titles.search')}}" type="search" id="search_term" name="search_term" value="{{request()->input('search_term') ?? ''}}"
                class="h-full w-full pl-3 py-1 bg-orange-light/20 border border-orange-light border-r-0 focus:outline-none rounded-l-lg placeholder:font-light transition ease-in-out duration-200">
     </label>
     <button
