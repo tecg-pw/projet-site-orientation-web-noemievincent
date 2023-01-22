@@ -6,6 +6,6 @@
         <div class="flex justify-between items-center mb-2">
             <h3 class="text-xl font-semibold">{{$course->name}}</h3>
         </div>
-        <p class="text-sm">{{$course->description}}</p>
+        <p class="text-sm">{!! $course->description !!}</p>
     </div>
 </div>

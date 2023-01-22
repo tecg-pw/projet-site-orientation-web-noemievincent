@@ -19,8 +19,16 @@
             <div class="flex flex-col-reverse justify-between gap-12 lg:gap-28 md:flex-row">
                 <div class="flex flex-col gap-6">
                     <div class="flex gap-3 md:flex-col">
-                        <img src="https://placehold.jp/200x200.png" alt="{{$student->fullname}}"
-                             class="rounded-full" height="200" width="200">
+                        <picture>
+                            @if($student->srcset && $student->srcset['thumbnail'])
+                                @foreach($student->srcset['thumbnail'] as $size => $path)
+                                    <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
+                                @endforeach
+                            @endif
+                            <img
+                                src="{{$student->pictures && $student->pictures['thumbnail'] ? '/' . $student->pictures['thumbnail'] : '/img/placeholders/person-160x160.png'}}"
+                                alt="{{$student->fullname}}" class="rounded-full w-full h-full">
+                        </picture>
                         <div>
                             <a href="/{{app()->getLocale()}}/alumnis/{{$student->slug}}"
                                class="text-xl font-semibold hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$student->fullname}}</a>

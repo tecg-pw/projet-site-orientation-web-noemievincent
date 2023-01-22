@@ -65,62 +65,46 @@ class StudentTranslation extends Resource
             Avatar::make('Photo', 'picture')
                 ->store(function (Request $request, $model) {
                     $ext = $request->picture->getClientOriginalExtension();
-                    $name =  sha1_file($request->picture);
+                    $name = sha1_file($request->picture);
 
-                    $thumbnail_path = 'img/people/students/' . 'thumbnail-' .  $name . '.' . $ext;
-                    $thumbnail = Image::make($request->picture)->resize(160, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    $thumbnail_path = 'img/people/students/' . 'thumbnail-' . $name . '.' . $ext;
+                    $thumbnail = Image::make($request->picture)->fit(110, 110, function ($constraint) {
+                        $constraint->upsize();
                     })->save($thumbnail_path);
 
-                    $srcset_thumbnail_640_path = 'img/people/students/srcset/' . 'thumbnail-640-' .  $name . '.' . $ext;
-                    $srcset_thumbnail_768_path = 'img/people/students/srcset/' . 'thumbnail-768-' .  $name . '.' . $ext;
-                    $srcset_thumbnail_1024_path = 'img/people/students/srcset/' . 'thumbnail-1024-' .  $name . '.' . $ext;
-                    $srcset_thumbnail_1520_path = 'img/people/students/srcset/' . 'thumbnail-1520-' .  $name . '.' . $ext;
-                    $srcset_thumbnail_2560_path = 'img/people/students/srcset/' . 'thumbnail-2560-' .  $name . '.' . $ext;
+                    $srcset_thumbnail_640_path = 'img/people/students/srcset/' . 'thumbnail-640-' . $name . '.' . $ext;
+                    $srcset_thumbnail_768_path = 'img/people/students/srcset/' . 'thumbnail-768-' . $name . '.' . $ext;
+                    $srcset_thumbnail_1024_path = 'img/people/students/srcset/' . 'thumbnail-1024-' . $name . '.' . $ext;
+                    $srcset_thumbnail_1520_path = 'img/people/students/srcset/' . 'thumbnail-1520-' . $name . '.' . $ext;
 
-                    Image::make($thumbnail)->resize($thumbnail->width() / 1.02, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($request->picture)->fit(140, 140, function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_thumbnail_640_path);
-                    Image::make($thumbnail)->resize($thumbnail->width() / 1.8, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($request->picture)->fit(120, 120, function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_thumbnail_768_path);
-                    Image::make($thumbnail)->resize($thumbnail->width() / 2, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($request->picture)->fit(140, 140, function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_thumbnail_1024_path);
-                    Image::make($thumbnail)->resize($thumbnail->width() / 1.4, null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($srcset_thumbnail_1520_path);
-                    Image::make($thumbnail)->resize($thumbnail->width(), null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($srcset_thumbnail_2560_path);
+                    Image::make($request->picture)->fit(160, 160, function ($constraint) {
+                        $constraint->upsize();
+                    })->save($srcset_thumbnail_1520_path);;
 
 
-                    $full_path = 'img/people/students/' . 'full-' .  $name . '.' . $ext;
-                    $full = Image::make($request->picture)->resize(180, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    $full_path = 'img/people/students/' . 'full-' . $name . '.' . $ext;
+                    $full = Image::make($request->picture)->fit(130, 130, function ($constraint) {
+                        $constraint->upsize();
                     })->save($full_path);
 
-                    $srcset_full_640_path = 'img/people/students/srcset/' . 'full-640-' .  $name . '.' . $ext;
-                    $srcset_full_768_path = 'img/people/students/srcset/' . 'full-768-' .  $name . '.' . $ext;
-                    $srcset_full_1024_path = 'img/people/students/srcset/' . 'full-1024-' .  $name . '.' . $ext;
-                    $srcset_full_1520_path = 'img/people/students/srcset/' . 'full-1520-' .  $name . '.' . $ext;
-                    $srcset_full_2560_path = 'img/people/students/srcset/' . 'full-2560-' .  $name . '.' . $ext;
+                    $srcset_full_768_path = 'img/people/students/srcset/' . 'full-768-' . $name . '.' . $ext;
+                    $srcset_full_1024_path = 'img/people/students/srcset/' . 'full-1024-' . $name . '.' . $ext;
 
-                    Image::make($full)->resize($full->width() / 1.02, null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($srcset_full_640_path);
-                    Image::make($full)->resize($full->width() / 1.8, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($request->picture)->fit(150, 150, function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_full_768_path);
-                    Image::make($full)->resize($full->width() / 2, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    Image::make($request->picture)->fit(180, 180, function ($constraint) {
+                        $constraint->upsize();
                     })->save($srcset_full_1024_path);
-                    Image::make($full)->resize($full->width() / 1.4, null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($srcset_full_1520_path);
-                    Image::make($full)->resize($full->width(), null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($srcset_full_2560_path);
 
                     return [
                         'picture' => $thumbnail_path,
@@ -134,14 +118,10 @@ class StudentTranslation extends Resource
                                 '768' => $srcset_thumbnail_768_path,
                                 '1024' => $srcset_thumbnail_1024_path,
                                 '1520' => $srcset_thumbnail_1520_path,
-                                '2560' => $srcset_thumbnail_2560_path,
                             ],
                             'full' => [
-                                '640' => $srcset_full_640_path,
                                 '768' => $srcset_full_768_path,
                                 '1024' => $srcset_full_1024_path,
-                                '1520' => $srcset_full_1520_path,
-                                '2560' => $srcset_full_2560_path,
                             ],
                         ],
                     ];
