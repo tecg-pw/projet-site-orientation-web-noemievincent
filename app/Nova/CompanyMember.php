@@ -53,35 +53,28 @@ class CompanyMember extends Resource
                     $ext = $request->picture->getClientOriginalExtension();
                     $name =  sha1_file($request->picture);
 
-                    $thumbnail_path = 'img/partners/members/' . 'thumbnail-' .  $name . '.' . $ext;
-                    $thumbnail = Image::make($request->picture)->resize(160, null, function ($constraint) {
-                        $constraint->aspectRatio();
+                    $thumbnail_path = 'img/partners/members/' . 'thumbnail-' . $name . '.' . $ext;
+                    $thumbnail = Image::make($request->picture)->fit(110, 110, function ($constraint) {
+                        $constraint->upsize();
                     })->save($thumbnail_path);
 
-                    $thumbnail_srcset_640_path = 'img/partners/members/srcset/' . 'thumbnail-640-' .  $name . '.' . $ext;
-                    $thumbnail_srcset_768_path = 'img/partners/members/srcset/' . 'thumbnail-768-' .  $name . '.' . $ext;
-                    $thumbnail_srcset_1024_path = 'img/partners/members/srcset/' . 'thumbnail-1024-' .  $name . '.' . $ext;
-                    $thumbnail_srcset_1520_path = 'img/partners/members/srcset/' . 'thumbnail-1520-' .  $name . '.' . $ext;
-                    $thumbnail_srcset_2560_path = 'img/partners/members/srcset/' . 'thumbnail-2560-' .  $name . '.' . $ext;
+                    $srcset_thumbnail_640_path = 'img/partners/members/srcset/' . 'thumbnail-640-' . $name . '.' . $ext;
+                    $srcset_thumbnail_768_path = 'img/partners/members/srcset/' . 'thumbnail-768-' . $name . '.' . $ext;
+                    $srcset_thumbnail_1024_path = 'img/partners/members/srcset/' . 'thumbnail-1024-' . $name . '.' . $ext;
+                    $srcset_thumbnail_1520_path = 'img/partners/members/srcset/' . 'thumbnail-1520-' . $name . '.' . $ext;
 
-                    Image::make($thumbnail)->resize($thumbnail->width() / 1.02, null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($thumbnail_srcset_640_path);
-                    Image::make($thumbnail)->resize($thumbnail->width() / 1.8, null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($thumbnail_srcset_768_path);
-
-                    Image::make($thumbnail)->resize($thumbnail->width() / 2, null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($thumbnail_srcset_1024_path);
-
-                    Image::make($thumbnail)->resize($thumbnail->width() / 1.4, null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($thumbnail_srcset_1520_path);
-
-                    Image::make($thumbnail)->resize($thumbnail->width(), null, function ($constraint) {
-                        $constraint->aspectRatio();
-                    })->save($thumbnail_srcset_2560_path);
+                    Image::make($request->picture)->fit(140, 140, function ($constraint) {
+                        $constraint->upsize();
+                    })->save($srcset_thumbnail_640_path);
+                    Image::make($request->picture)->fit(120, 120, function ($constraint) {
+                        $constraint->upsize();
+                    })->save($srcset_thumbnail_768_path);
+                    Image::make($request->picture)->fit(140, 140, function ($constraint) {
+                        $constraint->upsize();
+                    })->save($srcset_thumbnail_1024_path);
+                    Image::make($request->picture)->fit(160, 160, function ($constraint) {
+                        $constraint->upsize();
+                    })->save($srcset_thumbnail_1520_path);;
 
                     return [
                         'picture' => $thumbnail_path,
@@ -90,11 +83,10 @@ class CompanyMember extends Resource
                         ],
                         'srcset' => [
                             'thumbnail' => [
-                                '640' => $thumbnail_srcset_640_path,
-                                '768' => $thumbnail_srcset_768_path,
-                                '1024' => $thumbnail_srcset_1024_path,
-                                '1520' => $thumbnail_srcset_1520_path,
-                                '2560' => $thumbnail_srcset_2560_path,
+                                '640' => $srcset_thumbnail_640_path,
+                                '768' => $srcset_thumbnail_768_path,
+                                '1024' => $srcset_thumbnail_1024_path,
+                                '1520' => $srcset_thumbnail_1520_path,
                             ],
                         ],
                     ];
