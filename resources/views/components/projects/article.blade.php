@@ -10,10 +10,10 @@
             <p class="text-white text-sm rounded bg-blue px-2 py-1 hover:bg-orange-dark transitionable">{{$category->name}}</p>
         @endforeach
     </div>
-    <div class="group bg-blue-card rounded-2xl relative">
+    <div class="group bg-blue-card rounded-2xl relative flex flex-col justify-between h-ful">
         <a href="/{{app()->getLocale()}}/projects/{{$student->slug}}/{{$project->slug}}"
            class="full-link">{{__('projects.see_link', ['title' => $project->title])}}</a>
-        <div>
+        <div class="flex flex-col h-full">
             <div
                 class="relative before:overlay before:bg-blue/5 before:rounded-t-2xl group-hover:before:bg-blue/30 before:transitionable">
                 <picture>
@@ -31,7 +31,7 @@
             </div>
             <div class="p-4 flex flex-col gap-4">
                 <h3 id="{{$project->slug}}-{{$student->slug}}" class="title uppercase text-2xl">{{$project->title}}</h3>
-                <div>
+                <div class="flex flex-col justify-end">
                     <p class="text-xl">{{$student->fullname}}</p>
                     <div class="flex justify-between">
                         <time datetime="{{$project->published_at->translatedFormat('Y-m')}}"

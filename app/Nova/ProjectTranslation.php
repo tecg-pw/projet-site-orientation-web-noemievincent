@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
@@ -70,14 +69,15 @@ class ProjectTranslation extends Resource
 
             TinymceEditor::make('Description', 'body'),
 
-            File::make('Photo', 'picture')
+            \Laravel\Nova\Fields\Image::make('Photo', 'picture')
                 ->store(function (Request $request, $model) {
                     $ext = $request->picture->getClientOriginalExtension();
                     $name =  sha1_file($request->picture);
 
                     $thumbnail_path = 'img/projects/' . 'thumbnail-' .  $name . '.' . $ext;
-                    $thumbnail = Image::make($request->picture)->resize(448, null, function ($constraint) {
+                    $thumbnail = Image::make($request->picture)->fit(374, 290, function ($constraint) {
                         $constraint->aspectRatio();
+                        $constraint->upsize();
                     })->save($thumbnail_path);
 
                     $thumbnail_srcset_640_path = 'img/projects/srcset/' . 'thumbnail-640-' .  $name . '.' . $ext;
@@ -86,20 +86,25 @@ class ProjectTranslation extends Resource
                     $thumbnail_srcset_1520_path = 'img/projects/srcset/' . 'thumbnail-1520-' .  $name . '.' . $ext;
                     $thumbnail_srcset_2560_path = 'img/projects/srcset/' . 'thumbnail-2560-' .  $name . '.' . $ext;
 
-                    Image::make($thumbnail)->resize($thumbnail->width() / 1.02, null, function ($constraint) {
+                    Image::make($request->picture)->fit(284, 220, function ($constraint) {
                         $constraint->aspectRatio();
+                        $constraint->upsize();
                     })->save($thumbnail_srcset_640_path);
-                    Image::make($thumbnail)->resize($thumbnail->width() / 1.8, null, function ($constraint) {
+                    Image::make($request->picture)->fit(222, 170, function ($constraint) {
                         $constraint->aspectRatio();
+                        $constraint->upsize();
                     })->save($thumbnail_srcset_768_path);
-                    Image::make($thumbnail)->resize($thumbnail->width() / 2, null, function ($constraint) {
+                    Image::make($request->picture)->fit(293, 228, function ($constraint) {
                         $constraint->aspectRatio();
+                        $constraint->upsize();
                     })->save($thumbnail_srcset_1024_path);
-                    Image::make($thumbnail)->resize($thumbnail->width() / 1.4, null, function ($constraint) {
+                    Image::make($request->picture)->fit(275, 213, function ($constraint) {
                         $constraint->aspectRatio();
+                        $constraint->upsize();
                     })->save($thumbnail_srcset_1520_path);
-                    Image::make($thumbnail)->resize($thumbnail->width(), null, function ($constraint) {
+                    Image::make($request->picture)->fit(311, 241, function ($constraint) {
                         $constraint->aspectRatio();
+                        $constraint->upsize();
                     })->save($thumbnail_srcset_2560_path);
 
                     return [
