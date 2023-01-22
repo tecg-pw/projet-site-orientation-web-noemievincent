@@ -25,10 +25,24 @@
             "firstname": "Dominique",
             "lastname": "Vilain",
             "email": "dominique.vilain@hepl.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+            "pictures": {
+                "full": "img/people/teachers/full-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+                "thumbnail": "img/people/teachers/thumbnail-6df304d459399f2ae74e241908ed69a4b481967c.jpeg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+                    "1024": "img/people/teachers/srcset/full-1024-6df304d459399f2ae74e241908ed69a4b481967c.jpeg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-6df304d459399f2ae74e241908ed69a4b481967c.jpeg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "male",
             "role": "teacher",
             "github_link": "https://github.com/dominiquevilain",
@@ -40,10 +54,24 @@
             "firstname": "Dominique",
             "lastname": "Vilain",
             "email": "dominique.vilain@hepl.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+            "pictures": {
+                "full": "img/people/teachers/full-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+                "thumbnail": "img/people/teachers/thumbnail-6df304d459399f2ae74e241908ed69a4b481967c.jpeg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+                    "1024": "img/people/teachers/srcset/full-1024-6df304d459399f2ae74e241908ed69a4b481967c.jpeg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-6df304d459399f2ae74e241908ed69a4b481967c.jpeg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "male",
             "role": "teacher",
             "github_link": "https://github.com/dominiquevilain",
@@ -55,10 +83,24 @@
             "firstname": "Myriam",
             "lastname": "Dupont",
             "email": "myriam.dupont@hepl.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+            "pictures": {
+                "full": "img/people/teachers/full-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+                "thumbnail": "img/people/teachers/thumbnail-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+                    "1024": "img/people/teachers/srcset/full-1024-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "female",
             "role": "teacher",
             "github_link": "https://github.com/myriamdupont",
@@ -70,10 +112,24 @@
             "firstname": "Myriam",
             "lastname": "Dupont",
             "email": "myriam.dupont@hepl.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+            "pictures": {
+                "full": "img/people/teachers/full-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+                "thumbnail": "img/people/teachers/thumbnail-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+                    "1024": "img/people/teachers/srcset/full-1024-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "female",
             "role": "teacher",
             "github_link": "https://github.com/myriamdupont",
@@ -85,10 +141,24 @@
             "firstname": "Daniel",
             "lastname": "Schreurs",
             "email": "daniel.schreurs@hepl.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+            "pictures": {
+                "full": "img/people/teachers/full-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+                "thumbnail": "img/people/teachers/thumbnail-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+                    "1024": "img/people/teachers/srcset/full-1024-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "male",
             "role": "student_teacher",
             "github_link": "https://github.com/DanielSchreurs",
@@ -100,10 +170,24 @@
             "firstname": "Daniel",
             "lastname": "Schreurs",
             "email": "daniel.schreurs@hepl.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+            "pictures": {
+                "full": "img/people/teachers/full-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+                "thumbnail": "img/people/teachers/thumbnail-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+                    "1024": "img/people/teachers/srcset/full-1024-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-c430f91ec1267a0ae40191ef40f2f406d37843c7.jpeg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "male",
             "role": "student_teacher",
             "github_link": "https://github.com/DanielSchreurs",
@@ -115,10 +199,24 @@
             "firstname": "Cédric",
             "lastname": "Müller",
             "email": "cedric.muller@hepl.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+            "pictures": {
+                "full": "img/people/teachers/full-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+                "thumbnail": "img/people/teachers/thumbnail-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+                    "1024": "img/people/teachers/srcset/full-1024-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "male",
             "role": "student_teacher",
             "github_link": "https://github.com/MullerCWeb",
@@ -130,10 +228,24 @@
             "firstname": "Cédric",
             "lastname": "Müller",
             "email": "cedric.muller@hepl.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+            "pictures": {
+                "full": "img/people/teachers/full-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+                "thumbnail": "img/people/teachers/thumbnail-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+                    "1024": "img/people/teachers/srcset/full-1024-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "male",
             "role": "student_teacher",
             "github_link": "https://github.com/MullerCWeb",
@@ -145,10 +257,24 @@
             "firstname": "François",
             "lastname": "Parmentier",
             "email": "francois.parmentier@hepl.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+            "pictures": {
+                "full": "img/people/teachers/full-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+                "thumbnail": "img/people/teachers/thumbnail-738b2516400352daeb504343712e06de2fbbccfb.jpeg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+                    "1024": "img/people/teachers/srcset/full-1024-738b2516400352daeb504343712e06de2fbbccfb.jpeg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-738b2516400352daeb504343712e06de2fbbccfb.jpeg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "male",
             "role": "teacher",
             "github_link": "https://github.com/fprms",
@@ -160,10 +286,24 @@
             "firstname": "François",
             "lastname": "Parmentier",
             "email": "francois.parmentier@hepl.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+            "pictures": {
+                "full": "img/people/teachers/full-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+                "thumbnail": "img/people/teachers/thumbnail-738b2516400352daeb504343712e06de2fbbccfb.jpeg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+                    "1024": "img/people/teachers/srcset/full-1024-738b2516400352daeb504343712e06de2fbbccfb.jpeg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-738b2516400352daeb504343712e06de2fbbccfb.jpeg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-738b2516400352daeb504343712e06de2fbbccfb.jpeg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "male",
             "role": "teacher",
             "github_link": "https://github.com/fprms",
@@ -175,10 +315,24 @@
             "firstname": "Toon",
             "lastname": "Van Den Bos",
             "email": "toon@whitecude.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+            "pictures": {
+                "full": "img/people/teachers/full-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+                "thumbnail": "img/people/teachers/thumbnail-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+                    "1024": "img/people/teachers/srcset/full-1024-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "male",
             "role": "teacher",
             "github_link": "https://github.com/toonvandenbos",
@@ -190,10 +344,24 @@
             "firstname": "Toon",
             "lastname": "Van Den Bos",
             "email": "toon@whitecude.be",
-            "picture": "",
-            "pictures": null,
-            "srcset": null,
-            "bio": "",
+            "picture": "img/people/teachers/thumbnail-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+            "pictures": {
+                "full": "img/people/teachers/full-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+                "thumbnail": "img/people/teachers/thumbnail-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg"
+            },
+            "srcset": {
+                "full": {
+                    "768": "img/people/teachers/srcset/full-768-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+                    "1024": "img/people/teachers/srcset/full-1024-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg"
+                },
+                "thumbnail": {
+                    "640": "img/people/teachers/srcset/thumbnail-640-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+                    "768": "img/people/teachers/srcset/thumbnail-768-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+                    "1024": "img/people/teachers/srcset/thumbnail-1024-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg",
+                    "1520": "img/people/teachers/srcset/thumbnail-1520-b8319545ea25b2658ae3ef16c5f3ab8e621cc3a0.jpg"
+                }
+            },
+            "bio": "<p><strong>Labore mollit aute ipsum consequat ipsum laboris sunt qui exercitation ullamco laborum veniam elit. Deserunt et ad consequat amet adipisicing irure adipisicing. </strong></p>\n<p>&nbsp;</p>\n<p><em>Ut do do id ut aute consequat irure qui Lorem. Cillum nulla ex proident enim.</em></p>\n<p>&nbsp;</p>\n<p>Laborum est consequat duis sit aliqua duis aliqua deserunt Lorem irure veniam. Amet laborum magna voluptate quis adipisicing duis pariatur nulla eiusmod aute. Sunt ad Lorem consequat pariatur do nisi duis fugiat commodo do occaecat. Voluptate tempor cupidatat voluptate irure culpa proident tempor anim sit eiusmod et id incididunt. Magna anim pariatur eiusmod et consequat ipsum.</p>",
             "gender": "male",
             "role": "teacher",
             "github_link": "https://github.com/toonvandenbos",

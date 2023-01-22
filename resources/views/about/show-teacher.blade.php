@@ -14,7 +14,7 @@
                     <span>{{__('teachers.single.back_to_teachers_link')}}</span>
                 </a>
                 <div class="flex flex-col gap-3 justify-between lg:flex-row">
-                    <div class="flex gap-6">
+                    <div class="flex gap-6 flex-col sm:flex-row">
                         <picture>
                             @if($teacher->srcset && $teacher->srcset['full'])
                                 @foreach($teacher->srcset['full'] as $size => $path)
@@ -24,7 +24,7 @@
                             @endif
                             <img
                                 src="{{$teacher->pictures && $teacher->pictures['full'] ? '/' . $teacher->pictures['full'] : '/img/placeholders/person-180x180.png'}}"
-                                alt="{{$teacher->fullname}}" class="hidden rounded-full lg:block">
+                                alt="{{$teacher->fullname}}" class="rounded-full lg:block">
                         </picture>
                         <div class="flex flex-col gap-3">
                             <h2 id="{{$teacher->slug}}"
