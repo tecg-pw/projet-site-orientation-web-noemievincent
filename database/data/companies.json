@@ -14,24 +14,9 @@
         {
             "locale": "fr",
             "name": "White Cube",
-            "logo": "img/partners/logos/full-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-            "logos": {
-                "full": "img/partners/logos/full-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                "small": "img/partners/logos/small-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                "medium": "img/partners/logos/medium-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                "thumbnail": "img/partners/logos/thumbnail-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg"
-            },
-            "srcset": {
-                "full": {
-                    "640": "img/partners/logos/srcset/full-640-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                    "1024": "img/partners/logos/srcset/full-1024-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                    "1520": "img/partners/logos/srcset/full-1520-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg"
-                },
-                "medium": {
-                    "640": "img/partners/logos/srcset/medium-640-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                    "1520": "img/partners/logos/srcset/medium-1520-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg"
-                }
-            },
+            "logo": "",
+            "logos": null,
+            "srcset": null,
             "description": "<p>Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.</p>",
             "streetAddress": "Rue des Anges, 17",
             "postalCode": "4000",
@@ -42,24 +27,9 @@
         {
             "locale": "en",
             "name": "White Cube",
-            "logo": "img/partners/logos/full-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-            "logos": {
-                "full": "img/partners/logos/full-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                "small": "img/partners/logos/small-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                "medium": "img/partners/logos/medium-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                "thumbnail": "img/partners/logos/thumbnail-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg"
-            },
-            "srcset": {
-                "full": {
-                    "640": "img/partners/logos/srcset/full-640-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                    "1024": "img/partners/logos/srcset/full-1024-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                    "1520": "img/partners/logos/srcset/full-1520-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg"
-                },
-                "medium": {
-                    "640": "img/partners/logos/srcset/medium-640-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg",
-                    "1520": "img/partners/logos/srcset/medium-1520-4c10e55f45e27cc98824710c2582ac7bde9d1b53.jpeg"
-                }
-            },
+            "logo": "",
+            "logos": null,
+            "srcset": null,
             "description": "<p>Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.</p>",
             "streetAddress": "Rue des Anges, 17",
             "postalCode": "4000",
@@ -70,24 +40,9 @@
         {
             "locale": "fr",
             "name": "Léonard Web Solutions",
-            "logo": "img/partners/logos/full-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-            "logos": {
-                "full": "img/partners/logos/full-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                "small": "img/partners/logos/small-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                "medium": "img/partners/logos/medium-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                "thumbnail": "img/partners/logos/thumbnail-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg"
-            },
-            "srcset": {
-                "full": {
-                    "640": "img/partners/logos/srcset/full-640-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                    "1024": "img/partners/logos/srcset/full-1024-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                    "1520": "img/partners/logos/srcset/full-1520-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg"
-                },
-                "medium": {
-                    "640": "img/partners/logos/srcset/medium-640-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                    "1520": "img/partners/logos/srcset/medium-1520-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg"
-                }
-            },
+            "logo": "",
+            "logos": null,
+            "srcset": null,
             "description": "<p>Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.</p>",
             "streetAddress": "Rue de Bellaire, 9",
             "postalCode": "4802",
@@ -98,24 +53,9 @@
         {
             "locale": "en",
             "name": "Léonard Web Solutions",
-            "logo": "img/partners/logos/full-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-            "logos": {
-                "full": "img/partners/logos/full-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                "small": "img/partners/logos/small-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                "medium": "img/partners/logos/medium-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                "thumbnail": "img/partners/logos/thumbnail-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg"
-            },
-            "srcset": {
-                "full": {
-                    "640": "img/partners/logos/srcset/full-640-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                    "1024": "img/partners/logos/srcset/full-1024-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                    "1520": "img/partners/logos/srcset/full-1520-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg"
-                },
-                "medium": {
-                    "640": "img/partners/logos/srcset/medium-640-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg",
-                    "1520": "img/partners/logos/srcset/medium-1520-3aaee18164d38af60a95874725a3f32c5e88cab5.jpeg"
-                }
-            },
+            "logo": "",
+            "logos": null,
+            "srcset": null,
             "description": "<p>Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.</p>",
             "streetAddress": "Rue de Bellaire, 9",
             "postalCode": "4802",
@@ -126,24 +66,9 @@
         {
             "locale": "fr",
             "name": "Epic Agency",
-            "logo": "img/partners/logos/full-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-            "logos": {
-                "full": "img/partners/logos/full-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                "small": "img/partners/logos/small-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                "medium": "img/partners/logos/medium-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                "thumbnail": "img/partners/logos/thumbnail-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg"
-            },
-            "srcset": {
-                "full": {
-                    "640": "img/partners/logos/srcset/full-640-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                    "1024": "img/partners/logos/srcset/full-1024-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                    "1520": "img/partners/logos/srcset/full-1520-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg"
-                },
-                "medium": {
-                    "640": "img/partners/logos/srcset/medium-640-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                    "1520": "img/partners/logos/srcset/medium-1520-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg"
-                }
-            },
+            "logo": "",
+            "logos": null,
+            "srcset": null,
             "description": "<p>Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.</p>",
             "streetAddress": "Rue Wiertz, 38",
             "postalCode": "4000",
@@ -154,24 +79,9 @@
         {
             "locale": "en",
             "name": "Epic Agency",
-            "logo": "img/partners/logos/full-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-            "logos": {
-                "full": "img/partners/logos/full-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                "small": "img/partners/logos/small-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                "medium": "img/partners/logos/medium-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                "thumbnail": "img/partners/logos/thumbnail-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg"
-            },
-            "srcset": {
-                "full": {
-                    "640": "img/partners/logos/srcset/full-640-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                    "1024": "img/partners/logos/srcset/full-1024-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                    "1520": "img/partners/logos/srcset/full-1520-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg"
-                },
-                "medium": {
-                    "640": "img/partners/logos/srcset/medium-640-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg",
-                    "1520": "img/partners/logos/srcset/medium-1520-5a93e712a8b447239916444f9df08d4fa9eafc73.jpeg"
-                }
-            },
+            "logo": "",
+            "logos": null,
+            "srcset": null,
             "description": "<p>Dolor duis veniam consequat ea commodo proident consequat sunt Lorem fugiat magna deserunt. Lorem ex aliquip sit. Id fugiat tempor anim ut laboris eu aute Lorem voluptate enim. Ad proident aliqua est ut proident fugiat. Amet proident sunt excepteur ea proident non sint excepteur esse. Deserunt dolor occaecat sint esse laboris.</p>",
             "streetAddress": "Rue Wiertz, 38",
             "postalCode": "4000",

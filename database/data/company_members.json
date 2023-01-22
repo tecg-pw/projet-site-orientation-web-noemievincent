@@ -2,18 +2,9 @@
     {
         "firstname": "Olivier",
         "lastname": "Léonard",
-        "picture": "img/partners/members/thumbnail-66c64563ffc673bdcdee7c893c6ac4a677754422.jpg",
-        "pictures": {
-            "thumbnail": "img/partners/members/thumbnail-66c64563ffc673bdcdee7c893c6ac4a677754422.jpg"
-        },
-        "srcset": {
-            "thumbnail": {
-                "640": "img/partners/members/srcset/thumbnail-640-66c64563ffc673bdcdee7c893c6ac4a677754422.jpg",
-                "768": "img/partners/members/srcset/thumbnail-768-66c64563ffc673bdcdee7c893c6ac4a677754422.jpg",
-                "1024": "img/partners/members/srcset/thumbnail-1024-66c64563ffc673bdcdee7c893c6ac4a677754422.jpg",
-                "1520": "img/partners/members/srcset/thumbnail-1520-66c64563ffc673bdcdee7c893c6ac4a677754422.jpg"
-            }
-        },
+        "picture": "",
+        "pictures": null,
+        "srcset": null,
         "github_link": "",
         "linkedin_link": "https://be.linkedin.com/in/olivier-leonard-lws-heusy",
         "company_id": 2
@@ -21,18 +12,9 @@
     {
         "firstname": "Ludovic",
         "lastname": "Chavée",
-        "picture": "img/partners/members/thumbnail-1eb02a78739894bd846b633e81412ee24e18c151.JPG",
-        "pictures": {
-            "thumbnail": "img/partners/members/thumbnail-1eb02a78739894bd846b633e81412ee24e18c151.JPG"
-        },
-        "srcset": {
-            "thumbnail": {
-                "640": "img/partners/members/srcset/thumbnail-640-1eb02a78739894bd846b633e81412ee24e18c151.JPG",
-                "768": "img/partners/members/srcset/thumbnail-768-1eb02a78739894bd846b633e81412ee24e18c151.JPG",
-                "1024": "img/partners/members/srcset/thumbnail-1024-1eb02a78739894bd846b633e81412ee24e18c151.JPG",
-                "1520": "img/partners/members/srcset/thumbnail-1520-1eb02a78739894bd846b633e81412ee24e18c151.JPG"
-            }
-        },
+        "picture": "",
+        "pictures": null,
+        "srcset": null,
         "github_link": "",
         "linkedin_link": "https://www.linkedin.com/in/ludovic-chavée-40008131",
         "company_id": 2
@@ -40,18 +22,9 @@
     {
         "firstname": "Jonathan",
         "lastname": "Juhasz",
-        "picture": "img/partners/members/thumbnail-d6b50111fe1b3fa130a81568a3e501d023c633d9.png",
-        "pictures": {
-            "thumbnail": "img/partners/members/thumbnail-d6b50111fe1b3fa130a81568a3e501d023c633d9.png"
-        },
-        "srcset": {
-            "thumbnail": {
-                "640": "img/partners/members/srcset/thumbnail-640-d6b50111fe1b3fa130a81568a3e501d023c633d9.png",
-                "768": "img/partners/members/srcset/thumbnail-768-d6b50111fe1b3fa130a81568a3e501d023c633d9.png",
-                "1024": "img/partners/members/srcset/thumbnail-1024-d6b50111fe1b3fa130a81568a3e501d023c633d9.png",
-                "1520": "img/partners/members/srcset/thumbnail-1520-d6b50111fe1b3fa130a81568a3e501d023c633d9.png"
-            }
-        },
+        "picture": "",
+        "pictures": null,
+        "srcset": null,
         "github_link": "",
         "linkedin_link": "https://www.linkedin.com/in/jonathanjuhasz",
         "company_id": 2
@@ -59,18 +32,9 @@
     {
         "firstname": "Maïde",
         "lastname": "Akdede",
-        "picture": "img/partners/members/thumbnail-36d15df45afc017736e2047b5f8910d90e47b06b.JPG",
-        "pictures": {
-            "thumbnail": "img/partners/members/thumbnail-36d15df45afc017736e2047b5f8910d90e47b06b.JPG"
-        },
-        "srcset": {
-            "thumbnail": {
-                "640": "img/partners/members/srcset/thumbnail-640-36d15df45afc017736e2047b5f8910d90e47b06b.JPG",
-                "768": "img/partners/members/srcset/thumbnail-768-36d15df45afc017736e2047b5f8910d90e47b06b.JPG",
-                "1024": "img/partners/members/srcset/thumbnail-1024-36d15df45afc017736e2047b5f8910d90e47b06b.JPG",
-                "1520": "img/partners/members/srcset/thumbnail-1520-36d15df45afc017736e2047b5f8910d90e47b06b.JPG"
-            }
-        },
+        "picture": "",
+        "pictures": null,
+        "srcset": null,
         "github_link": "",
         "linkedin_link": "https://www.linkedin.com/in/maïde-akdede-7491a4226",
         "company_id": 2

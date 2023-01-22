@@ -59,11 +59,15 @@
                 </div>
                 @if(Request::query('forum-tab') === 'questions' || Request::all() == null)
                     @if(count($questions) === 0)
-                        @if($user->slug === auth()->user()->slug)
-                            {{__('profile.user.no_questions')}}
-                        @else
+                        @auth()
+                            @if($user->slug === auth()->user()->slug)
+                                {{__('profile.user.no_questions')}}
+                            @else
+                                {{__('profile.guest.no_questions', ['name' => $user->firstname])}}
+                            @endif
+                        @elseguest()
                             {{__('profile.guest.no_questions', ['name' => $user->firstname])}}
-                        @endif
+                        @endauth
                     @else
                         <div class="flex flex-col gap-6">
                             @foreach($questions as $question)
@@ -75,11 +79,15 @@
                 @endif
                 @if(Request::query('forum-tab') === 'replies')
                     @if(count($replies) === 0)
-                        @if($user->slug === auth()->user()->slug)
-                            {{__('profile.user.no_replies')}}
-                        @else
+                        @auth()
+                            @if($user->slug === auth()->user()->slug)
+                                {{__('profile.user.no_replies')}}
+                            @else
+                                {{__('profile.guest.no_replies', ['name' => $user->firstname])}}
+                            @endif
+                        @elseguest()
                             {{__('profile.guest.no_replies', ['name' => $user->firstname])}}
-                        @endif
+                        @endauth
                     @else
                         <div class="flex flex-col gap-6">
                             @foreach($replies as $reply)

@@ -3,8 +3,13 @@
     class="bg-white rounded-2xl border border-blue/20 hover:bg-blue-card transition ease-in-out duration-200 p-5">
     <div class="flex justify-between">
         <div class="flex flex-col gap-4">
-            <img src="https://placehold.jp/160x160.png" alt="nom" height="160" width="160" class="rounded-full">
-            <h3 class="cursor-pointer font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">{{$user->fullname}}</h3>
+            <picture>
+                <img
+                    src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}"
+                    alt="{{$user->name}}" class="rounded-full">
+            </picture>
+            <h3 class="title first-letter:capitalize font-semibold text-xl hover:underline underline-offset-2 decoration-2 decoration-solid hover:text-orange transition ease-in-out duration-200">
+                <a href="/{{app()->getLocale()}}/users/{{$user->slug}}">{{$user->fullname}}</a></h3>
         </div>
         <ul class="flex flex-col gap-4">
             <li><a href="{{$user->github_link}}">

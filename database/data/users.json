@@ -4,12 +4,8 @@
         "lastname": "Vilain",
         "email": "dominique.vilain@hepl.be",
         "is_admin": true,
-        "picture": "img/people/users/full-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
-        "pictures": {
-            "full": "img/people/users/full-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
-            "small": "img/people/users/small-6df304d459399f2ae74e241908ed69a4b481967c.jpeg",
-            "medium": "img/people/users/medium-6df304d459399f2ae74e241908ed69a4b481967c.jpeg"
-        },
+        "picture": "",
+        "pictures": null,
         "gender": "male",
         "role": "teacher",
         "bio": "<p><strong>Ea laboris ad dolore laborum officia ex ipsum do veniam. Dolore sit do exercitation ad irure. Sunt pariatur nisi ut elit consectetur laboris tempor culpa commodo ad. </strong></p>\n<p>Exercitation esse aliquip officia fugiat commodo cupidatat nulla et anim labore et. Deserunt quis qui voluptate excepteur sit laborum nostrud mollit consequat proident ex consectetur. Esse aliqua consectetur labore irure proident nostrud consequat.</p>"
@@ -19,12 +15,8 @@
         "lastname": "Dupont",
         "email": "myriam.dupont@hepl.be",
         "is_admin": true,
-        "picture": "img/people/users/full-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
-        "pictures": {
-            "full": "img/people/users/full-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
-            "small": "img/people/users/small-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg",
-            "medium": "img/people/users/medium-90c7eee2247f35cf584c805a4e12167ecd5f6122.jpeg"
-        },
+        "picture": "",
+        "pictures": null,
         "gender": "female",
         "role": "teacher",
         "bio": "<p><strong>Ea laboris ad dolore laborum officia ex ipsum do veniam. Dolore sit do exercitation ad irure. Sunt pariatur nisi ut elit consectetur laboris tempor culpa commodo ad. </strong></p>\n<p>Exercitation esse aliquip officia fugiat commodo cupidatat nulla et anim labore et. Deserunt quis qui voluptate excepteur sit laborum nostrud mollit consequat proident ex consectetur. Esse aliqua consectetur labore irure proident nostrud consequat.</p>"
@@ -34,12 +26,8 @@
         "lastname": "Batta",
         "email": "gwenaelle.batta@student.hepl.be",
         "is_admin": false,
-        "picture": "img/people/users/full-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-        "pictures": {
-            "full": "img/people/users/full-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-            "small": "img/people/users/small-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-            "medium": "img/people/users/medium-9175c24646e00a4616f011400b955173d671b2cb.jpeg"
-        },
+        "picture": "",
+        "pictures": null,
         "gender": "female",
         "role": "alumni",
         "bio": "<p><strong>Ea laboris ad dolore laborum officia ex ipsum do veniam. Dolore sit do exercitation ad irure. Sunt pariatur nisi ut elit consectetur laboris tempor culpa commodo ad. </strong></p>\n<p>Exercitation esse aliquip officia fugiat commodo cupidatat nulla et anim labore et. Deserunt quis qui voluptate excepteur sit laborum nostrud mollit consequat proident ex consectetur. Esse aliqua consectetur labore irure proident nostrud consequat.</p>"
@@ -49,12 +37,8 @@
         "lastname": "Copay",
         "email": "fredco@gmail.be",
         "is_admin": false,
-        "picture": "img/people/users/full-0d114a075b3933db5bba16fbdfa084f861e4d4b3.jpeg",
-        "pictures": {
-            "full": "img/people/users/full-0d114a075b3933db5bba16fbdfa084f861e4d4b3.jpeg",
-            "small": "img/people/users/small-0d114a075b3933db5bba16fbdfa084f861e4d4b3.jpeg",
-            "medium": "img/people/users/medium-0d114a075b3933db5bba16fbdfa084f861e4d4b3.jpeg"
-        },
+        "picture": "",
+        "pictures": null,
         "gender": "male",
         "role": "user",
         "bio": "<p><strong>Ea laboris ad dolore laborum officia ex ipsum do veniam. Dolore sit do exercitation ad irure. Sunt pariatur nisi ut elit consectetur laboris tempor culpa commodo ad. </strong></p>\n<p>Exercitation esse aliquip officia fugiat commodo cupidatat nulla et anim labore et. Deserunt quis qui voluptate excepteur sit laborum nostrud mollit consequat proident ex consectetur. Esse aliqua consectetur labore irure proident nostrud consequat.</p>"

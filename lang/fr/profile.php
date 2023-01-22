@@ -7,8 +7,8 @@ return [
     'tutorials_title' => 'Tutoriels enregistrés',
     'user_infos' => '<p class="text-lg">:role <span class="font-light">depuis <time datetime=":datetime">:date</time></span></p>',
     'infos' => '<p class="text-lg">:role</p>',
-    'user' => ['no_questions' => 'Vous n’avez posé aucune question.', 'no_replies' => ':name n’a posé aucune question.'],
-    'guest' => ['no_questions' => 'Vous n’avez répondu à aucune question.', 'no_replies' => ':name n’a répondu à aucune question.'],
+    'user' => ['no_questions' => 'Vous n’avez posé aucune question.', 'no_replies' => 'Vous n’avez répondu à aucune question.'],
+    'guest' => ['no_questions' => ':name n’a posé aucune question.', 'no_replies' => ':name n’a répondu à aucune question.'],
     'no_tutorial' => 'Vous n’avez enregistrer aucun tutoriels.',
     'forum_tabs' => [
         'user' => [

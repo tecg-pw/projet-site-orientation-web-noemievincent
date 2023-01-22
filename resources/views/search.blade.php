@@ -72,7 +72,7 @@
                                 <h3 class="text-2xl font-semibold font-display">{{__('search.titles.tutorials')}} ({{count($results['tutorials'])}})</h3>
                                 <div class="grid grid-cols-2 gap-8">
                                     @foreach($results['tutorials'] as $tutorial)
-                                        <x-resources.tutorial
+                                        <x-tutorials.article
                                             :tutorial="$tutorial->translations->where('locale', app()->getLocale())->first()"
                                             :languages="$tutorial->languages"
                                             is_favorite="false"/>

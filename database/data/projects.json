@@ -45,19 +45,9 @@
         {
             "locale": "fr",
             "title": "Portfolio",
-            "picture": "img/projects/thumbnail-f0092e94829419f488bad639750e02edb77cca43.png",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-f0092e94829419f488bad639750e02edb77cca43.png"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-f0092e94829419f488bad639750e02edb77cca43.png",
-                    "768": "img/projects/srcset/thumbnail-768-f0092e94829419f488bad639750e02edb77cca43.png",
-                    "1024": "img/projects/srcset/thumbnail-1024-f0092e94829419f488bad639750e02edb77cca43.png",
-                    "1520": "img/projects/srcset/thumbnail-1520-f0092e94829419f488bad639750e02edb77cca43.png",
-                    "2560": "img/projects/srcset/thumbnail-2560-f0092e94829419f488bad639750e02edb77cca43.png"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "https://gwenaelle-batta.be/",
             "github_link": "https://github.com/GwenaelleBatta/portfolio",
@@ -68,19 +58,9 @@
         {
             "locale": "en",
             "title": "Portfolio",
-            "picture": "img/projects/thumbnail-f0092e94829419f488bad639750e02edb77cca43.png",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-f0092e94829419f488bad639750e02edb77cca43.png"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-f0092e94829419f488bad639750e02edb77cca43.png",
-                    "768": "img/projects/srcset/thumbnail-768-f0092e94829419f488bad639750e02edb77cca43.png",
-                    "1024": "img/projects/srcset/thumbnail-1024-f0092e94829419f488bad639750e02edb77cca43.png",
-                    "1520": "img/projects/srcset/thumbnail-1520-f0092e94829419f488bad639750e02edb77cca43.png",
-                    "2560": "img/projects/srcset/thumbnail-2560-f0092e94829419f488bad639750e02edb77cca43.png"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "https://gwenaelle-batta.be/",
             "github_link": "https://github.com/GwenaelleBatta/portfolio",
@@ -91,19 +71,9 @@
         {
             "locale": "fr",
             "title": "Ecosph’air",
-            "picture": "img/projects/thumbnail-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg",
-                    "768": "img/projects/srcset/thumbnail-768-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg",
-                    "1024": "img/projects/srcset/thumbnail-1024-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg",
-                    "1520": "img/projects/srcset/thumbnail-1520-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg",
-                    "2560": "img/projects/srcset/thumbnail-2560-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "https://ecosphair.gwenaelle-batta.be/fr/",
             "github_link": "https://github.com/GwenaelleBatta/projet-antilope",
@@ -114,19 +84,9 @@
         {
             "locale": "en",
             "title": "Ecosph’air",
-            "picture": "img/projects/thumbnail-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg",
-                    "768": "img/projects/srcset/thumbnail-768-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg",
-                    "1024": "img/projects/srcset/thumbnail-1024-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg",
-                    "1520": "img/projects/srcset/thumbnail-1520-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg",
-                    "2560": "img/projects/srcset/thumbnail-2560-4938c59e216b4b2049fbc475fd972c5e7003f579.jpg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "https://ecosphair.gwenaelle-batta.be/fr/",
             "github_link": "https://github.com/GwenaelleBatta/projet-antilope",
@@ -137,19 +97,9 @@
         {
             "locale": "fr",
             "title": "CV",
-            "picture": "img/projects/thumbnail-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png",
-                    "768": "img/projects/srcset/thumbnail-768-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png",
-                    "1024": "img/projects/srcset/thumbnail-1024-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png",
-                    "1520": "img/projects/srcset/thumbnail-1520-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png",
-                    "2560": "img/projects/srcset/thumbnail-2560-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "",
             "github_link": "",
@@ -160,19 +110,9 @@
         {
             "locale": "en",
             "title": "CV",
-            "picture": "img/projects/thumbnail-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png",
-                    "768": "img/projects/srcset/thumbnail-768-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png",
-                    "1024": "img/projects/srcset/thumbnail-1024-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png",
-                    "1520": "img/projects/srcset/thumbnail-1520-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png",
-                    "2560": "img/projects/srcset/thumbnail-2560-50c9d651dd6ff0b0ef9b631eb8312aa54493f07a.png"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "",
             "github_link": "",
@@ -183,19 +123,9 @@
         {
             "locale": "fr",
             "title": "Doodle Jump",
-            "picture": "img/projects/thumbnail-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png",
-                    "768": "img/projects/srcset/thumbnail-768-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png",
-                    "1024": "img/projects/srcset/thumbnail-1024-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png",
-                    "1520": "img/projects/srcset/thumbnail-1520-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png",
-                    "2560": "img/projects/srcset/thumbnail-2560-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "",
             "github_link": "",
@@ -206,19 +136,9 @@
         {
             "locale": "en",
             "title": "Doodle Jump",
-            "picture": "img/projects/thumbnail-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png",
-                    "768": "img/projects/srcset/thumbnail-768-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png",
-                    "1024": "img/projects/srcset/thumbnail-1024-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png",
-                    "1520": "img/projects/srcset/thumbnail-1520-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png",
-                    "2560": "img/projects/srcset/thumbnail-2560-a902412fd0c3277be4ec3d7f0b2d2edb490a8727.png"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "",
             "github_link": "",
@@ -229,19 +149,9 @@
         {
             "locale": "fr",
             "title": "Portfolio",
-            "picture": "img/projects/thumbnail-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg",
-                    "768": "img/projects/srcset/thumbnail-768-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg",
-                    "1024": "img/projects/srcset/thumbnail-1024-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg",
-                    "1520": "img/projects/srcset/thumbnail-1520-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg",
-                    "2560": "img/projects/srcset/thumbnail-2560-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "https://noemie-vincent.be/fr/",
             "github_link": "https://github.com/noemievincent/portfolio",
@@ -252,19 +162,9 @@
         {
             "locale": "en",
             "title": "Portfolio",
-            "picture": "img/projects/thumbnail-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg",
-                    "768": "img/projects/srcset/thumbnail-768-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg",
-                    "1024": "img/projects/srcset/thumbnail-1024-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg",
-                    "1520": "img/projects/srcset/thumbnail-1520-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg",
-                    "2560": "img/projects/srcset/thumbnail-2560-627bc7c46ee0a76ac38ade098fbe6c64aa37f590.jpg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "https://noemie-vincent.be/fr/",
             "github_link": "https://github.com/noemievincent/portfolio",
@@ -275,19 +175,9 @@
         {
             "locale": "fr",
             "title": "Antilope",
-            "picture": "img/projects/thumbnail-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg",
-                    "768": "img/projects/srcset/thumbnail-768-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg",
-                    "1024": "img/projects/srcset/thumbnail-1024-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg",
-                    "1520": "img/projects/srcset/thumbnail-1520-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg",
-                    "2560": "img/projects/srcset/thumbnail-2560-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "date": "Août 2022",
             "website_link": "https://antilope.noemie-vincent.be/fr/",
@@ -299,19 +189,9 @@
         {
             "locale": "en",
             "title": "Antilope",
-            "picture": "img/projects/thumbnail-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg",
-                    "768": "img/projects/srcset/thumbnail-768-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg",
-                    "1024": "img/projects/srcset/thumbnail-1024-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg",
-                    "1520": "img/projects/srcset/thumbnail-1520-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg",
-                    "2560": "img/projects/srcset/thumbnail-2560-7084a262204388e9e5d5a8ca65ea87ed78f63655.jpg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "date": "Août 2022",
             "website_link": "https://antilope.noemie-vincent.be/fr/",
@@ -323,19 +203,9 @@
         {
             "locale": "fr",
             "title": "CV",
-            "picture": "img/projects/thumbnail-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png",
-                    "768": "img/projects/srcset/thumbnail-768-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png",
-                    "1024": "img/projects/srcset/thumbnail-1024-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png",
-                    "1520": "img/projects/srcset/thumbnail-1520-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png",
-                    "2560": "img/projects/srcset/thumbnail-2560-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "https://antilope.noemie-vincent.be/fr/",
             "github_link": "https://github.com/noemievincent/antilope",
@@ -346,19 +216,9 @@
         {
             "locale": "en",
             "title": "CV",
-            "picture": "img/projects/thumbnail-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png",
-                    "768": "img/projects/srcset/thumbnail-768-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png",
-                    "1024": "img/projects/srcset/thumbnail-1024-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png",
-                    "1520": "img/projects/srcset/thumbnail-1520-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png",
-                    "2560": "img/projects/srcset/thumbnail-2560-aa217cef3112ff81b7310a3da1c01d73bc5e3701.png"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "https://antilope.noemie-vincent.be/fr/",
             "github_link": "https://github.com/noemievincent/antilope",
@@ -369,19 +229,9 @@
         {
             "locale": "fr",
             "title": "le.flatmate",
-            "picture": "img/projects/thumbnail-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg",
-                    "768": "img/projects/srcset/thumbnail-768-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg",
-                    "1024": "img/projects/srcset/thumbnail-1024-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg",
-                    "1520": "img/projects/srcset/thumbnail-1520-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg",
-                    "2560": "img/projects/srcset/thumbnail-2560-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "",
             "github_link": "https://github.com/MullerCedric/flatmate-client",
@@ -392,19 +242,9 @@
         {
             "locale": "en",
             "title": "le.flatmate",
-            "picture": "img/projects/thumbnail-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg",
-            "pictures": {
-                "thumbnail": "img/projects/thumbnail-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg"
-            },
-            "srcset": {
-                "thumbnail": {
-                    "640": "img/projects/srcset/thumbnail-640-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg",
-                    "768": "img/projects/srcset/thumbnail-768-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg",
-                    "1024": "img/projects/srcset/thumbnail-1024-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg",
-                    "1520": "img/projects/srcset/thumbnail-1520-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg",
-                    "2560": "img/projects/srcset/thumbnail-2560-0b04aef8aa554d6a102b41b51ecd542f49cdf300.jpg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "body": "<p>Eiusmod sint id et anim dolor ipsum. Fugiat commodo eiusmod sit. Ea sunt est excepteur. Ex culpa dolor consectetur. Aliquip dolor minim reprehenderit tempor duis fugiat quis. Qui Lorem laboris deserunt eu sint magna officia nulla ad irure nulla. Lorem et eiusmod sint laboris consectetur. Nisi ut laboris ut sunt sint aliqua labore reprehenderit. Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
             "website_link": "",
             "github_link": "https://github.com/MullerCedric/flatmate-client",

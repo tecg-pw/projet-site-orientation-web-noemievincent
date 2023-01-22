@@ -3,7 +3,7 @@
 {{__('emails.greetings', ['name' => $question->user->firstname])}}<br>
 {{__('emails.forum.reply_created.body', ['name' => $reply->user->firstname, 'title' => $question->title])}}
 <x-mail::button
-    :url="'http://projets-web.test/' . app()->getLocale() . '/forum/questions/' . $question->slug . '#reply-' . $reply->id">
+    :url="config('app.url'). '/' . app()->getLocale() . '/forum/questions/' . $question->slug . '#reply-' . $reply->id">
 {{__('emails.forum.reply_created.action')}}
 </x-mail::button>
 {{__('emails.closure')}}<br>

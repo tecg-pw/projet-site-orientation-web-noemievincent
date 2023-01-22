@@ -25,23 +25,9 @@
             "firstname": "Gwenaëlle",
             "lastname": "Batta",
             "email": "gwenaelle.batta@student.hepl.be",
-            "picture": "img/people/students/thumbnail-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-            "pictures": {
-                "full": "img/people/students/full-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-                "thumbnail": "img/people/students/thumbnail-9175c24646e00a4616f011400b955173d671b2cb.jpeg"
-            },
-            "srcset": {
-                "full": {
-                    "768": "img/people/students/srcset/full-768-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-                    "1024": "img/people/students/srcset/full-1024-9175c24646e00a4616f011400b955173d671b2cb.jpeg"
-                },
-                "thumbnail": {
-                    "640": "img/people/students/srcset/thumbnail-640-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-                    "768": "img/people/students/srcset/thumbnail-768-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-                    "1024": "img/people/students/srcset/thumbnail-1024-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-                    "1520": "img/people/students/srcset/thumbnail-1520-9175c24646e00a4616f011400b955173d671b2cb.jpeg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "gender": "female",
             "role": "student",
             "bio": "<p>Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
@@ -62,23 +48,9 @@
             "firstname": "Gwenaëlle",
             "lastname": "Batta",
             "email": "gwenaelle.batta@student.hepl.be",
-            "picture": "img/people/students/thumbnail-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-            "pictures": {
-                "full": "img/people/students/full-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-                "thumbnail": "img/people/students/thumbnail-9175c24646e00a4616f011400b955173d671b2cb.jpeg"
-            },
-            "srcset": {
-                "full": {
-                    "768": "img/people/students/srcset/full-768-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-                    "1024": "img/people/students/srcset/full-1024-9175c24646e00a4616f011400b955173d671b2cb.jpeg"
-                },
-                "thumbnail": {
-                    "640": "img/people/students/srcset/thumbnail-640-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-                    "768": "img/people/students/srcset/thumbnail-768-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-                    "1024": "img/people/students/srcset/thumbnail-1024-9175c24646e00a4616f011400b955173d671b2cb.jpeg",
-                    "1520": "img/people/students/srcset/thumbnail-1520-9175c24646e00a4616f011400b955173d671b2cb.jpeg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "gender": "female",
             "role": "student",
             "bio": "<p>Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
@@ -99,23 +71,9 @@
             "firstname": "Noémie",
             "lastname": "Vincent",
             "email": "noemie.vincent1@student.hepl.be",
-            "picture": "img/people/students/thumbnail-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-            "pictures": {
-                "full": "img/people/students/full-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-                "thumbnail": "img/people/students/thumbnail-744afcb6957225f94393c94e53fda423eb0bae8b.JPG"
-            },
-            "srcset": {
-                "full": {
-                    "768": "img/people/students/srcset/full-768-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-                    "1024": "img/people/students/srcset/full-1024-744afcb6957225f94393c94e53fda423eb0bae8b.JPG"
-                },
-                "thumbnail": {
-                    "640": "img/people/students/srcset/thumbnail-640-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-                    "768": "img/people/students/srcset/thumbnail-768-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-                    "1024": "img/people/students/srcset/thumbnail-1024-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-                    "1520": "img/people/students/srcset/thumbnail-1520-744afcb6957225f94393c94e53fda423eb0bae8b.JPG"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "gender": "female",
             "role": "student",
             "bio": "<p>Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
@@ -136,23 +94,9 @@
             "firstname": "Noémie",
             "lastname": "Vincent",
             "email": "noemie.vincent1@student.hepl.be",
-            "picture": "img/people/students/thumbnail-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-            "pictures": {
-                "full": "img/people/students/full-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-                "thumbnail": "img/people/students/thumbnail-744afcb6957225f94393c94e53fda423eb0bae8b.JPG"
-            },
-            "srcset": {
-                "full": {
-                    "768": "img/people/students/srcset/full-768-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-                    "1024": "img/people/students/srcset/full-1024-744afcb6957225f94393c94e53fda423eb0bae8b.JPG"
-                },
-                "thumbnail": {
-                    "640": "img/people/students/srcset/thumbnail-640-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-                    "768": "img/people/students/srcset/thumbnail-768-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-                    "1024": "img/people/students/srcset/thumbnail-1024-744afcb6957225f94393c94e53fda423eb0bae8b.JPG",
-                    "1520": "img/people/students/srcset/thumbnail-1520-744afcb6957225f94393c94e53fda423eb0bae8b.JPG"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "gender": "female",
             "role": "student",
             "bio": "<p>Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
@@ -173,23 +117,9 @@
             "firstname": "Cédric",
             "lastname": "Müller",
             "email": "cedric.muller@hepl.be",
-            "picture": "img/people/students/thumbnail-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-            "pictures": {
-                "full": "img/people/students/full-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-                "thumbnail": "img/people/students/thumbnail-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
-            },
-            "srcset": {
-                "full": {
-                    "768": "img/people/students/srcset/full-768-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-                    "1024": "img/people/students/srcset/full-1024-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
-                },
-                "thumbnail": {
-                    "640": "img/people/students/srcset/thumbnail-640-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-                    "768": "img/people/students/srcset/thumbnail-768-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-                    "1024": "img/people/students/srcset/thumbnail-1024-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-                    "1520": "img/people/students/srcset/thumbnail-1520-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "gender": "male",
             "role": "student_teacher",
             "bio": "<p>Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
@@ -210,23 +140,9 @@
             "firstname": "Cédric",
             "lastname": "Müller",
             "email": "cedric.muller@hepl.be",
-            "picture": "img/people/students/thumbnail-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-            "pictures": {
-                "full": "img/people/students/full-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-                "thumbnail": "img/people/students/thumbnail-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
-            },
-            "srcset": {
-                "full": {
-                    "768": "img/people/students/srcset/full-768-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-                    "1024": "img/people/students/srcset/full-1024-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
-                },
-                "thumbnail": {
-                    "640": "img/people/students/srcset/thumbnail-640-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-                    "768": "img/people/students/srcset/thumbnail-768-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-                    "1024": "img/people/students/srcset/thumbnail-1024-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg",
-                    "1520": "img/people/students/srcset/thumbnail-1520-89cc6895a87399b251d2bd2723917d4fb9b66b49.jpeg"
-                }
-            },
+            "picture": "",
+            "pictures": null,
+            "srcset": null,
             "gender": "male",
             "role": "student_teacher",
             "bio": "<p>Aliqua consectetur consequat sunt. Aliqua occaecat elit sint in do ipsum dolor aute laborum quis culpa reprehenderit consequat adipisicing. Consectetur nulla non aute culpa dolor ea consectetur nostrud sint velit adipisicing cillum aliquip adipisicing. Ipsum ullamco labore eu do irure proident consequat id proident id pariatur dolor elit et.</p>",
