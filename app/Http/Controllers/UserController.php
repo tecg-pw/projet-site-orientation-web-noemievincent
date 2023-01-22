@@ -47,7 +47,7 @@ class UserController extends Controller
         }
 
         $tutorials = $this->getTutorials($locale, $user);
-        
+
         $languages = Language::all();
 
         $aside = AsideController::get();
@@ -116,5 +116,13 @@ class UserController extends Controller
         $tutorials = $this->getTutorials($locale, $user);
 
         return view('components.tutorials.paginated_tutorials', compact('tutorials'));
+    }
+
+    public function edit(string $locale, User $user)
+    {
+        if (auth()->user()->id != $user->id) {
+            return redirect('/' . app()->getLocale() . '/users/' . $user->slug);
+        }
+        return view('profile.edit', compact('user'));
     }
 }

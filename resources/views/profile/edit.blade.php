@@ -38,12 +38,6 @@
                                 <img id="js-preview" class="rounded-full absolute z-10 w-full h-full object-cover hidden" alt="{{$user->name}}"
                                     src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}">
                                 <picture>
-{{--                                    @if($user->srcset && $user->srcset['full'])--}}
-{{--                                        @foreach($user->srcset['full'] as $size => $path)--}}
-{{--                                            <source media="(max-width: {{$size}}px)"--}}
-{{--                                                    srcset="/{{$path}}">--}}
-{{--                                        @endforeach--}}
-{{--                                    @endif--}}
                                     <img alt="{{$user->name}}" class="rounded-full"
                                         src="{{$user->pictures && $user->pictures['full'] ? '/' . $user->pictures['full'] : '/img/placeholders/person-160x160.png'}}">
                                 </picture>

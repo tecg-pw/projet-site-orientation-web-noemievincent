@@ -32,7 +32,6 @@ class UsersSeeder extends Seeder
                 'remember_token' => \Illuminate\Support\Str::random(10),
                 'picture' => $value->picture,
                 'pictures' => $value->pictures,
-                'srcset' => $value->srcset,
                 'bio' => $value->bio,
                 'gender' => $value->gender,
                 'role' => $value->role,

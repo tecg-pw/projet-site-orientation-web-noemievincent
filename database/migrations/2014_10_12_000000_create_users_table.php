@@ -24,7 +24,6 @@ return new class extends Migration {
             $table->boolean('is_admin')->default(false);
             $table->string('picture')->nullable();
             $table->json('pictures')->nullable();
-            $table->json('srcset')->nullable();
             $table->string('gender')->nullable();
             $table->text('bio')->nullable();
             $table->string('role')->default('user');

@@ -23,18 +23,20 @@ class UpdateUserInfosController extends Controller
      */
     public function __invoke(string $locale, User $user, UpdateUserInfosRequest $request)
     {
+        $uuid = explode('_', $user->slug);
+        $uuid = end($uuid);
+
         $validatedData = $request->safe()->all();
         $validatedData['fullname'] = $validatedData['firstname'] . ' ' . $validatedData['lastname'];
-        $validatedData['slug'] = Str::slug($validatedData['fullname']);
-
+        $validatedData['slug'] = Str::slug($validatedData['fullname']) . '_' . $uuid;
+        
         if ($request->hasFile('picture')) {
-            $uploaded_file =  $request->file('picture');
+            $uploaded_file = $request->file('picture');
 
             $datas = $this->resizeAndSave($uploaded_file);
 
             $validatedData['picture'] = $datas['picture'];
             $validatedData['pictures'] = $datas['pictures'];
-            $validatedData['srcset'] = $datas['srcset'];
         }
 
         $user->update($validatedData);

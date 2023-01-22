@@ -82,7 +82,6 @@ return [
         public_path('img/people/teachers') => storage_path('app/public/img/people/teachers'),
         public_path('img/people/teachers/srcset') => storage_path('app/public/img/people/teachers/srcset'),
         public_path('img/people/users') => storage_path('app/public/img/people/users'),
-        public_path('img/people/users/srcset') => storage_path('app/public/img/people/users/srcset'),
         public_path('img/partners/members') => storage_path('app/public/img/partners/members'),
         public_path('img/partners/members/srcset') => storage_path('app/public/img/partners/members/srcset'),
         public_path('img/partners/logos') => storage_path('app/public/img/partners/logos'),

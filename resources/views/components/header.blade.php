@@ -38,7 +38,7 @@
 <body class="no-js text-blue-dark font-body flex flex-col selection:bg-blue-light relative" id="{{$id ?? ''}}">
 {{--<div--}}
 {{--    class="fixed z-20 right-0 left-0 text-center bg-red-300 sm:bg-orange-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-cyan-300 2xl:bg-purple-200 transition ease-in-out duration-700">--}}
-{{--    <p class="after:content-['phone'] sm:after:content-['tablet'] md:after:content-['small_screen'] lg:after:content-['default_screen'] xl:after:content-['large_screen'] 2xl:after:content-['extra_large_screen']">--}}
+{{--    <p class="after:content-['normal'] sm:after:content-['sm'] md:after:content-['md'] lg:after:content-['lg'] xl:after:content-['xl'] 2xl:after:content-['2xl']">--}}
 {{--        size for : </p>--}}
 {{--</div>--}}
 <h1 class="sr-only">
@@ -224,12 +224,6 @@
                         <a href="/{{app()->getLocale()}}/users/{{auth()->user()->slug}}"
                            class="flex items-center gap-3">
                             <picture>
-                                {{--                                @if(auth()->user()->srcset && auth()->user()->srcset['small'])--}}
-                                {{--                                    @foreach(auth()->user()->srcset['small'] as $size => $path)--}}
-                                {{--                                        <source media="(max-width: {{$size}}px)"--}}
-                                {{--                                                srcset="/{{$path}}">--}}
-                                {{--                                    @endforeach--}}
-                                {{--                                @endif--}}
                                 <img
                                     src="{{auth()->user()->pictures && auth()->user()->pictures['small'] ? '/' . auth()->user()->pictures['small'] : '/img/placeholders/person-30x30.png'}}"
                                     alt="{{auth()->user()->fullname}}"
