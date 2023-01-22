@@ -9,14 +9,8 @@
                 {{$slot}}
                 <div class="flex gap-3">
                     <picture>
-                        @if($company->srcset && $company->srcset['thumbnail'])
-                            @foreach($company->srcset['thumbnail'] as $size => $path)
-                                <source media="(max-width: {{$size}}px)"
-                                        srcset="/{{$path}}">
-                            @endforeach
-                        @endif
                         <img
-                            src="{{$company->pictures && $company->pictures['thumbnail'] ? '/' . $company->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}"
+                            src="{{$company->logos && $company->logos['thumbnail'] ? '/' . $company->logos['thumbnail'] : '/img/placeholders/logo-60x60.png'}}"
                             alt="{{$company->name}}" class="rounded-full">
                     </picture>
                     <div>

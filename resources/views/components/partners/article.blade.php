@@ -7,14 +7,8 @@
             <div class="p-3 flex flex-col gap-3">
                 <div class="flex gap-3">
                     <picture>
-                        @if($partner->srcset && $partner->srcset['thumbnail'])
-                            @foreach($partner->srcset['thumbnail'] as $size => $path)
-                                <source media="(max-width: {{$size}}px)"
-                                        srcset="/{{$path}}">
-                            @endforeach
-                        @endif
                         <img
-                            src="{{$partner->pictures && $partner->pictures['thumbnail'] ? '/' . $partner->pictures['thumbnail'] : '/img/placeholders/logo-60x60.png'}}"
+                            src="{{$partner->logos && $partner->logos['thumbnail'] ? '/' . $partner->logos['thumbnail'] : '/img/placeholders/logo-60x60.png'}}"
                             alt="{{$partner->name}}" class="rounded-full" itemprop="logo">
                     </picture>
                     <h3 id="{{$partner->slug}}" class="text-xl uppercase" itemprop="name">{{$partner->name}}</h3>

@@ -11,14 +11,8 @@
                 <span
                     class="text-sm underline group-hover:underline group-hover:underline-offset-2 group-hover:text-orange transition ease-in-out duration-200">{{$company->name}}</span>
                 <picture>
-                    @if($company->srcset && $company->srcset['small'])
-                        @foreach($company->srcset['small'] as $size => $path)
-                            <source media="(max-width: {{$size}}px)"
-                                    srcset="/{{$path}}">
-                        @endforeach
-                    @endif
                     <img
-                        src="{{$company->pictures && $company->pictures['small'] ? '/' . $company->pictures['small'] : '/img/placeholders/logo-30x30.png'}}"
+                        src="{{$company->logos && $company->logos['small'] ? '/' . $company->logos['small'] : '/img/placeholders/logo-30x30.png'}}"
                         alt="{{$company->name}}" class="rounded-full">
                 </picture>
             </a>

@@ -27,7 +27,7 @@
                                 @endforeach
                             @endif
                             <img
-                                src="{{$company->pictures && $company->pictures['medium'] ? '/' . $company->pictures['medium'] : '/img/placeholders/logo-80x80.png'}}"
+                                src="{{$company->logos && $company->logos['medium'] ? '/' . $company->logos['medium'] : '/img/placeholders/logo-80x80.png'}}"
                                 alt="{{$company->name}}" class="rounded-full items-start">
                         </picture>
                         <div>

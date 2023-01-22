@@ -23,7 +23,7 @@
                             @endforeach
                         @endif
                         <img
-                            src="{{$company->pictures && $company->pictures['full'] ? '/' . $company->pictures['full'] : '/img/placeholders/logo-160x160.png'}}"
+                            src="{{$company->logos && $company->logos['full'] ? '/' . $company->logos['full'] : '/img/placeholders/logo-160x160.png'}}"
                             alt="{{$company->name}}" class="rounded-full" itemprop="logo">
                     </picture>
                     <div class="flex flex-col gap-3">
