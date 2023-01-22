@@ -1,5 +1,5 @@
 @props(['new', 'category', 'parent'])
-<article aria-labelledby="{{$new->slug}}{{$parent === 'aside' ? '-aside' : ''}}" class="group relative max-w-sm">
+<article aria-labelledby="{{$new->slug}}{{$parent === 'aside' ? '-aside' : ''}}" class="group relative max-w-sm w-full">
     <a href="/{{app()->getLocale()}}/news/{{$new->slug}}"
        class="full-link">{{__('news.read_new', ['title' => $new->title])}}</a>
     <div>

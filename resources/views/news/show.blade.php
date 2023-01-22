@@ -52,7 +52,11 @@
                                 @if($otherArticle->translations->where('locale', app()->getLocale())->first()->article_id != $article->article_id)
                                     <x-news.article
                                         :new="$otherArticle->translations->where('locale', app()->getLocale())->first()"
-                                        :category="$category->translations->where('locale', app()->getLocale())->first()"/>
+                                        :category="$category->translations->where('locale', app()->getLocale())->first()"
+                                        :parent="'show'">
+                                        <h3 id="{{$otherArticle->translations->where('locale', app()->getLocale())->first()->slug}}"
+                                            class="title first-letter:capitalize text-white text-xl">{{$otherArticle->translations->where('locale', app()->getLocale())->first()->title}}</h3>
+                                    </x-news.article>
                                 @endif
                             @endforeach
                         </div>

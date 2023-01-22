@@ -75,7 +75,7 @@ class ProjectTranslation extends Resource
                     $name =  sha1_file($request->picture);
 
                     $thumbnail_path = 'img/projects/' . 'thumbnail-' .  $name . '.' . $ext;
-                    $thumbnail = Image::make($request->picture)->fit(374, 290, function ($constraint) {
+                    $thumbnail = Image::make($request->picture)->fit(374, null, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })->save($thumbnail_path);
@@ -86,23 +86,23 @@ class ProjectTranslation extends Resource
                     $thumbnail_srcset_1520_path = 'img/projects/srcset/' . 'thumbnail-1520-' .  $name . '.' . $ext;
                     $thumbnail_srcset_2560_path = 'img/projects/srcset/' . 'thumbnail-2560-' .  $name . '.' . $ext;
 
-                    Image::make($request->picture)->fit(284, 220, function ($constraint) {
+                    Image::make($request->picture)->fit(284, null, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })->save($thumbnail_srcset_640_path);
-                    Image::make($request->picture)->fit(222, 170, function ($constraint) {
+                    Image::make($request->picture)->fit(348, null, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })->save($thumbnail_srcset_768_path);
-                    Image::make($request->picture)->fit(293, 228, function ($constraint) {
+                    Image::make($request->picture)->fit(293, null, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })->save($thumbnail_srcset_1024_path);
-                    Image::make($request->picture)->fit(275, 213, function ($constraint) {
+                    Image::make($request->picture)->fit(275, null, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })->save($thumbnail_srcset_1520_path);
-                    Image::make($request->picture)->fit(311, 241, function ($constraint) {
+                    Image::make($request->picture)->fit(311, null, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })->save($thumbnail_srcset_2560_path);
