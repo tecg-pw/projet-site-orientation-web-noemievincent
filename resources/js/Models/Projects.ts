@@ -8,19 +8,19 @@ export class Projects {
             page: 1,
             search_term: '',
             category: 'all',
-            date: 'all',
+            published_at: 'all',
         };
 
         this.handleSearch(state);
         this.handleFilters(state);
     }
 
-    private handleFilters(state: { date: string; search_term: string; page: number; category: string }) {
+    private handleFilters(state: { published_at: string; search_term: string; page: number; category: string }) {
         document.getElementById('sort_btn').classList.add('hidden');
 
         let sort_by_category = document.getElementById('category') as HTMLInputElement;
         // sort_by_category.value = 'all';
-        let sort_by_date = document.getElementById('date') as HTMLInputElement;
+        let sort_by_date = document.getElementById('published_at') as HTMLInputElement;
         // sort_by_date.value = 'all';
 
         sort_by_category.addEventListener('change', (e) => {
@@ -31,14 +31,14 @@ export class Projects {
         });
 
         sort_by_date.addEventListener('change', (e) => {
-            state.date = (e.currentTarget as HTMLSelectElement).value;
+            state.published_at = (e.currentTarget as HTMLSelectElement).value;
             state.page = 1;
 
             this.makeRequest(state);
         });
     }
 
-    private handleSearch(state: { date: string; search_term: string; page: number; category: string }) {
+    private handleSearch(state: { published_at: string; search_term: string; page: number; category: string }) {
         document.getElementById('search_form').addEventListener('submit', (e) => {
             e.preventDefault();
         });

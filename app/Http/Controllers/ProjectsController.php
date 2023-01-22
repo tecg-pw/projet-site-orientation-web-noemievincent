@@ -24,7 +24,7 @@ class ProjectsController extends Controller
         $url = request()->url();
 
         $projects = $this->getProjects($locale);
-
+        
         $dates = ProjectTranslation::select('published_at')->whereNotNull('published_at')->groupBy('published_at')->get();
         $categories = ProjectCategoryTranslation::select('name', 'slug')->where('locale', app()->getLocale())->whereNotNull('name')->groupBy('name', 'slug')->get();
 
@@ -38,7 +38,7 @@ class ProjectsController extends Controller
         $projects = [];
         $search_term = request()->input('search_term') ?? '';
         $sort_by_category = request()->input('category') ?? 'all';
-        $sort_by_date = request()->input('date') ?? 'all';
+        $sort_by_date = request()->input('published_at') ?? 'all';
 
         if ($search_term) {
             $ids = [];
