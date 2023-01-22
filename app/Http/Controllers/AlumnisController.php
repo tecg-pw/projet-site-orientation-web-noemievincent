@@ -28,7 +28,6 @@ class AlumnisController extends Controller
 
         return view('alumnis.index', compact('url', 'alumnis', 'start_dates', 'end_dates', 'aside'));
     }
-
     public function getStudents(string $locale)
     {
         $alumnis = [];
